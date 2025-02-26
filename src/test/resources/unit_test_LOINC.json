@@ -1,0 +1,78 @@
+{
+  "resourceType": "CodeSystem",
+  "id": "loinc",
+  "url": "http://loinc.org",
+  "identifier": [ {
+    "system": "urn:ietf:rfc:3986",
+    "value": "urn:oid:2.16.840.1.113883.6.1"
+  } ],
+  "version": "1.0.0",
+  "name": "LOINC",
+  "title": "LOINC Code System",
+  "status": "active",
+  "experimental": false,
+  "publisher": "Regenstrief Institute, Inc.",
+  "contact": [ {
+    "telecom": [ {
+      "value": "http://loinc.org"
+    } ]
+  } ],
+  "description": "LOINC is a freely available international standard for tests, measurements, and observations",
+  "copyright": "This content from LOINC® is copyright © 1995 Regenstrief Institute, Inc. and the LOINC Committee, and available at no cost under the license at http://loinc.org/terms-of-use",
+  "caseSensitive": false,
+  "valueSet": " http://loinc.org/vs",
+  "compositional": false,
+  "versionNeeded": false,
+  "content": "fragment",
+  "count": 4048,
+  "concept": [{
+    "code": "22825-4",
+    "display": "Influenza virus A Ag [Presence] in Specimen by Immune diffusion (ID)"
+  }, {
+    "code": "22826-2",
+    "display": "Influenza virus A identified in Specimen by Bioassay"
+  }, {
+    "code": "22827-0",
+    "display": "Influenza virus A subtype [Identifier] in Specimen by NAA with probe detection"
+  }, {
+    "code": "22828-8",
+    "display": "Influenza virus A subtype [Identifier] in Specimen by Immune diffusion (ID)"
+  }, {
+    "code": "50702-0",
+    "display": "Influenza virus A matrix protein RNA [Presence] in Isolate by Sequencing"
+  }, {
+    "code": "23769-3",
+    "display": "Porcine influenza virus A Ag [Presence] in Tissue by Immune stain"
+  }, {
+    "code": "50704-6",
+    "display": "Influenza virus A nucleoprotein RNA [Presence] in Isolate by Sequencing"
+  },{
+    "code": "258607008",
+    "display": "Bronchoalveolar lavage fluid sample (specimen)"
+  }, {
+    "code": "399492000",
+    "display": "Tissue specimen from lung (specimen)"
+  }, {
+    "code": "122610009",
+    "display": "Specimen from lung obtained by biopsy (specimen)"
+  }, {
+    "code": "258446004",
+    "display": "Bronchial fluid sample (specimen)"
+  }, {
+    "code": "309174004",
+    "display": "Bronchial biopsy sample (specimen)"
+  }, {
+    "code": "445447003",
+    "display": "Specimen from trachea obtained by aspiration (specimen)"
+  }, {
+    "code": "10673-2",
+    "display": "Hepatitis B virus core Ag [Presence] in Tissue by Immune stain"
+  }, {
+    "code": "10674-0",
+    "display": "Hepatitis B virus surface Ag [Presence] in Tissue by Immune stain"
+  }, {
+    "code": "10675-7",
+    "display": "Hepatitis B virus surface Ag [Presence] in Tissue by Orcein stain"
+  }
+  ]
+}

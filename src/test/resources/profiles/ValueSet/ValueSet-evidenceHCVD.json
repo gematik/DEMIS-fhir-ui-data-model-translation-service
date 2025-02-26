@@ -1,0 +1,86 @@
+{
+  "resourceType": "ValueSet",
+  "id": "evidenceHCVD",
+  "url": "https://demis.rki.de/fhir/ValueSet/evidenceHCVD",
+  "version": "1.2.0",
+  "name": "EvidenceHCVD",
+  "title": "Hepatitis C-Symptom und -Manifestation",
+  "status": "active",
+  "date": "2023-12-11",
+  "description": "Das ValueSet EvidenceHCVD enthält die Codes der Hepatitis C-Symptome und -Manifestationen.",
+  "compose": {
+    "include": [
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/900000000000207008/version/20230901",
+        "concept": [
+          {
+            "code": "18165001",
+            "display": "Gelbsucht (Ikterus)",
+            "designation": [
+              {
+                "language": "en-US",
+                "use": {
+                  "system": "http://snomed.info/sct",
+                  "code": "900000000000003001"
+                },
+                "value": "Jaundice (finding)"
+              }
+            ]
+          },
+          {
+            "code": "105721009:{363698007=80581009}",
+            "display": "Oberbauchbeschwerden",
+            "designation": [
+              {
+                "language": "en-US",
+                "use": {
+                  "system": "http://snomed.info/sct",
+                  "code": "1119454002"
+                },
+                "value": "105721009 | General problem AND/OR complaint (finding) | : {363698007 | Finding site (attribute) | = 80581009 | Upper abdomen structure (body structure) |}"
+              }
+            ]
+          },
+          {
+            "code": "707724006",
+            "display": "Serumtransaminasen, erhöht",
+            "designation": [
+              {
+                "language": "en-US",
+                "use": {
+                  "system": "http://snomed.info/sct",
+                  "code": "900000000000003001"
+                },
+                "value": "Liver enzymes level above reference range (finding)"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "expansion": {
+    "timestamp": "2023-12-11T00:00:00+01:00",
+    "contains": [
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/900000000000207008/version/20230901",
+        "code": "105721009:{363698007=80581009}",
+        "display": "Oberbauchbeschwerden"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/900000000000207008/version/20230901",
+        "code": "707724006",
+        "display": "Serumtransaminasen, erhöht"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/900000000000207008/version/20230901",
+        "code": "18165001",
+        "display": "Gelbsucht (Ikterus)"
+      }
+    ]
+  }
+}

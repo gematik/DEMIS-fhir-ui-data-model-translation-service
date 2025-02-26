@@ -1,0 +1,35 @@
+{
+  "resourceType": "ValueSet",
+  "id": "laboratoryTestABVP",
+  "url": "https://demis.rki.de/fhir/ValueSet/laboratoryTestABVP",
+  "version": "1.4.0",
+  "name": "LaboratoryTestABVP",
+  "title": "Labortest für Arboviren (sonstige)",
+  "status": "active",
+  "date": "2023-05-04",
+  "description": "Das ValueSet LaboratoryTestABVP enthält die Codes der Labortests für Arboviren (sonstige).",
+  "compose": {
+    "include": [
+      {
+        "system": "http://loinc.org",
+        "version": "2.74",
+        "concept": [
+          {
+            "code": "6309-9",
+            "display": "Arbovirus identified in Blood by Organism specific culture",
+            "designation": [
+              {
+                "language": "de-DE",
+                "use": {
+                  "system": "http://loinc.org",
+                  "code": "LONG_COMMON_NAME"
+                },
+                "value": "Arbovirus identifiziert in Blut mit erregerspezifischer Kultur"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

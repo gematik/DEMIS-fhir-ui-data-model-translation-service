@@ -1,0 +1,835 @@
+[
+  {
+    "template": "<h1>Covid-19-spezifische klinische und epidemiologische Angaben</h1>"
+  },
+  {
+    "key": "infectionSource",
+    "fieldGroup": [
+      {
+        "template": "<h4 class=\"question-title\">Kontakt zu bestätigtem Fall</h4>"
+      },
+      {
+        "type": "autocomplete-coding",
+        "props": {
+          "options": [
+            {
+              "code": "code1",
+              "display": "display1",
+              "system": "https://demis.rki.de/fhir/ValueSet/yesOrNoOrNoInformation"
+            },
+            {
+              "code": "code2",
+              "display": "display2",
+              "system": "https://demis.rki.de/fhir/ValueSet/yesOrNoOrNoInformation"
+            }
+          ],
+          "required": true,
+          "clearable": true,
+          "defaultCode": "NASK"
+        },
+        "key": "VALUE"
+      }
+    ]
+  },
+  {
+    "key": "infectionEnvironmentSetting",
+    "fieldGroup": [
+      {
+        "template": "<h4 class=\"question-title\">Infektionsumfeld vorhanden</h4>"
+      },
+      {
+        "type": "autocomplete-coding",
+        "props": {
+          "options": [
+            {
+              "code": "code1",
+              "display": "display1",
+              "system": "https://demis.rki.de/fhir/ValueSet/yesOrNoOrNoInformation"
+            },
+            {
+              "code": "code2",
+              "display": "display2",
+              "system": "https://demis.rki.de/fhir/ValueSet/yesOrNoOrNoInformation"
+            }
+          ],
+          "required": true,
+          "clearable": true,
+          "defaultCode": "NASK"
+        },
+        "key": "VALUE"
+      },
+      {
+        "key": "infectionEnvironmentSettingGroup",
+        "fieldGroupClassName": "ITEM_GROUP infectionEnvironmentSettingGroup",
+        "fieldGroup": [
+          {
+            "key": "infectionEnvironmentSettingKind",
+            "fieldGroup": [
+              {
+                "template": "<h4 class=\"question-title\">Wahrscheinliches Infektionsumfeld</h4>"
+              },
+              {
+                "type": "autocomplete-coding",
+                "props": {
+                  "options": [
+                    {
+                      "code": "code1",
+                      "display": "display1",
+                      "system": "https://demis.rki.de/fhir/ValueSet/yesOrNoOrNoInformation"
+                    },
+                    {
+                      "code": "code2",
+                      "display": "display2",
+                      "system": "https://demis.rki.de/fhir/ValueSet/yesOrNoOrNoInformation"
+                    }
+                  ],
+                  "required": false,
+                  "clearable": true
+                },
+                "key": "VALUE"
+              }
+            ],
+            "expressions": {
+              "hide": "!( field?.parent?.parent?.model?.VALUE?.code === 'yes' )"
+            }
+          },
+          {
+            "key": "infectionEnvironmentSettingBegin",
+            "fieldGroup": [
+              {
+                "template": "<h4 class=\"question-title\">Beginn Infektionsumfeld</h4>"
+              },
+              {
+                "type": "input",
+                "props": {
+                  "placeholder": "TT.MM.JJJJ | MM.JJJJ | JJJJ"
+                },
+                "validators": {
+                  "validation": []
+                },
+                "key": "VALUE"
+              }
+            ],
+            "expressions": {
+              "hide": "!( field?.parent?.parent?.model?.VALUE?.code === 'yes' )"
+            }
+          },
+          {
+            "key": "infectionEnvironmentSettingEnd",
+            "fieldGroup": [
+              {
+                "template": "<h4 class=\"question-title\">Ende Infektionsumfeld</h4>"
+              },
+              {
+                "type": "input",
+                "props": {
+                  "placeholder": "TT.MM.JJJJ | MM.JJJJ | JJJJ"
+                },
+                "validators": {
+                  "validation": []
+                },
+                "key": "VALUE"
+              }
+            ],
+            "expressions": {
+              "hide": "!( field?.parent?.parent?.model?.VALUE?.code === 'yes' )"
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "key": "immunization",
+    "fieldGroup": [
+      {
+        "template": "<h4 class=\"question-title\">Wurde die betroffene Person jemals in Bezug auf die Krankheit geimpft?</h4>"
+      },
+      {
+        "type": "autocomplete-coding",
+        "props": {
+          "options": [
+            {
+              "code": "code1",
+              "display": "display1",
+              "system": "https://demis.rki.de/fhir/ValueSet/yesOrNoOrNoInformation"
+            },
+            {
+              "code": "code2",
+              "display": "display2",
+              "system": "https://demis.rki.de/fhir/ValueSet/yesOrNoOrNoInformation"
+            }
+          ],
+          "required": true,
+          "clearable": true,
+          "defaultCode": "NASK"
+        },
+        "key": "VALUE"
+      },
+      {
+        "fieldGroup": [
+          {
+            "key": "immunizationRef",
+            "type": "repeat-section",
+            "props": {
+              "itemName": "Impfinformationen"
+            },
+            "fieldArray": {
+              "fieldGroup": [
+                {
+                  "template": "<h4 class=\"question-title\">Impfinformationen</h4>"
+                },
+                {
+                  "fieldGroupClassName": "ITEM_REFERENCE",
+                  "fieldGroup": [
+                    {
+                      "fieldGroupClassName": "INSIDE_REF",
+                      "fieldGroup": [
+                        {
+                          "template": "The base language in which the resource is written."
+                        },
+                        {
+                          "props": {
+                            "options": [
+                              {
+                                "code": "code1",
+                                "display": "display1",
+                                "system": "https://demis.rki.de/fhir/ValueSet/yesOrNoOrNoInformation"
+                              },
+                              {
+                                "code": "code2",
+                                "display": "display2",
+                                "system": "https://demis.rki.de/fhir/ValueSet/yesOrNoOrNoInformation"
+                              }
+                            ]
+                          },
+                          "key": "VALUE",
+                          "type": "autocomplete-coding"
+                        }
+                      ],
+                      "key": "language"
+                    },
+                    {
+                      "fieldGroupClassName": "INSIDE_REF",
+                      "fieldGroup": [
+                        {
+                          "template": "Text summary of the resource, for human interpretation"
+                        },
+                        {
+                          "props": {},
+                          "type": "textarea",
+                          "key": "VALUE"
+                        }
+                      ],
+                      "key": "text"
+                    },
+                    {
+                      "fieldGroupClassName": "INSIDE_REF",
+                      "fieldGroup": [
+                        {
+                          "template": "Indicates the current status of the immunization event."
+                        },
+                        {
+                          "props": {
+                            "options": [
+                              {
+                                "code": "completed",
+                                "display": "Completed!",
+                                "system": "http://hl7.org/fhir/ValueSet/immunization-status|4.0.1"
+                              },
+                              {
+                                "code": "entered-in-error",
+                                "display": "Entered in Error!",
+                                "system": "http://hl7.org/fhir/ValueSet/immunization-status|4.0.1"
+                              },
+                              {
+                                "code": "not-done",
+                                "display": "Not done!",
+                                "system": "http://hl7.org/fhir/ValueSet/immunization-status|4.0.1"
+                              }
+                            ],
+                            "required": true
+                          },
+                          "key": "VALUE",
+                          "type": "autocomplete-coding"
+                        }
+                      ],
+                      "key": "status"
+                    },
+                    {
+                      "fieldGroupClassName": "INSIDE_REF",
+                      "fieldGroup": [
+                        {
+                          "template": "Indicates the reason the immunization event was not performed."
+                        },
+                        {
+                          "props": {
+                            "options": [
+                              {
+                                "code": "code1",
+                                "display": "display1",
+                                "system": "https://demis.rki.de/fhir/ValueSet/yesOrNoOrNoInformation"
+                              },
+                              {
+                                "code": "code2",
+                                "display": "display2",
+                                "system": "https://demis.rki.de/fhir/ValueSet/yesOrNoOrNoInformation"
+                              }
+                            ]
+                          },
+                          "key": "VALUE",
+                          "type": "autocomplete-coding"
+                        }
+                      ],
+                      "key": "statusReason"
+                    },
+                    {
+                      "fieldGroupClassName": "INSIDE_REF",
+                      "fieldGroup": [
+                        {
+                          "template": "Verabreichter Covid-19-Impfstoff"
+                        },
+                        {
+                          "props": {
+                            "options": [
+                              {
+                                "code": "code1",
+                                "display": "display1",
+                                "system": "https://demis.rki.de/fhir/ValueSet/yesOrNoOrNoInformation"
+                              },
+                              {
+                                "code": "code2",
+                                "display": "display2",
+                                "system": "https://demis.rki.de/fhir/ValueSet/yesOrNoOrNoInformation"
+                              }
+                            ],
+                            "required": true
+                          },
+                          "key": "VALUE",
+                          "type": "autocomplete-coding"
+                        }
+                      ],
+                      "key": "vaccineCode"
+                    },
+                    {
+                      "fieldGroupClassName": "INSIDE_REF",
+                      "fieldGroup": [
+                        {
+                          "template": "Datum der Impfung"
+                        },
+                        {
+                          "props": {
+                            "required": true
+                          },
+                          "key": "VALUE",
+                          "type": "input"
+                        }
+                      ],
+                      "key": "occurrence"
+                    },
+                    {
+                      "fieldGroupClassName": "INSIDE_REF",
+                      "fieldGroup": [
+                        {
+                          "template": "The date the occurrence of the immunization was first captured in the record - potentially significantly after the occurrence of the event."
+                        },
+                        {
+                          "props": {},
+                          "key": "VALUE",
+                          "type": "input"
+                        }
+                      ],
+                      "key": "recorded"
+                    },
+                    {
+                      "fieldGroupClassName": "INSIDE_REF",
+                      "fieldGroup": [
+                        {
+                          "template": "The source of the data when the report of the immunization event is not based on information from the person who administered the vaccine."
+                        },
+                        {
+                          "props": {
+                            "options": [
+                              {
+                                "code": "code1",
+                                "display": "display1",
+                                "system": "https://demis.rki.de/fhir/ValueSet/yesOrNoOrNoInformation"
+                              },
+                              {
+                                "code": "code2",
+                                "display": "display2",
+                                "system": "https://demis.rki.de/fhir/ValueSet/yesOrNoOrNoInformation"
+                              }
+                            ]
+                          },
+                          "key": "VALUE",
+                          "type": "autocomplete-coding"
+                        }
+                      ],
+                      "key": "reportOrigin"
+                    },
+                    {
+                      "fieldGroupClassName": "INSIDE_REF",
+                      "fieldGroup": [
+                        {
+                          "template": "Name of vaccine manufacturer.  / reference to: http://hl7.org/fhir/StructureDefinition/Organization"
+                        },
+                        {
+                          "props": {},
+                          "key": "VALUE"
+                        }
+                      ],
+                      "key": "manufacturer"
+                    },
+                    {
+                      "fieldGroupClassName": "INSIDE_REF",
+                      "fieldGroup": [
+                        {
+                          "template": "Chargenbezeichnung"
+                        },
+                        {
+                          "props": {},
+                          "key": "VALUE",
+                          "type": "input"
+                        }
+                      ],
+                      "key": "lotNumber"
+                    },
+                    {
+                      "fieldGroupClassName": "INSIDE_REF",
+                      "fieldGroup": [
+                        {
+                          "template": "Date vaccine batch expires."
+                        },
+                        {
+                          "props": {},
+                          "key": "VALUE",
+                          "type": "datepicker"
+                        }
+                      ],
+                      "key": "expirationDate"
+                    },
+                    {
+                      "fieldGroupClassName": "INSIDE_REF",
+                      "fieldGroup": [
+                        {
+                          "template": "Body site where vaccine was administered."
+                        },
+                        {
+                          "props": {
+                            "options": [
+                              {
+                                "code": "code1",
+                                "display": "display1",
+                                "system": "https://demis.rki.de/fhir/ValueSet/yesOrNoOrNoInformation"
+                              },
+                              {
+                                "code": "code2",
+                                "display": "display2",
+                                "system": "https://demis.rki.de/fhir/ValueSet/yesOrNoOrNoInformation"
+                              }
+                            ]
+                          },
+                          "key": "VALUE",
+                          "type": "autocomplete-coding"
+                        }
+                      ],
+                      "key": "site"
+                    },
+                    {
+                      "fieldGroupClassName": "INSIDE_REF",
+                      "fieldGroup": [
+                        {
+                          "template": "The path by which the vaccine product is taken into the body."
+                        },
+                        {
+                          "props": {
+                            "options": [
+                              {
+                                "code": "code1",
+                                "display": "display1",
+                                "system": "https://demis.rki.de/fhir/ValueSet/yesOrNoOrNoInformation"
+                              },
+                              {
+                                "code": "code2",
+                                "display": "display2",
+                                "system": "https://demis.rki.de/fhir/ValueSet/yesOrNoOrNoInformation"
+                              }
+                            ]
+                          },
+                          "key": "VALUE",
+                          "type": "autocomplete-coding"
+                        }
+                      ],
+                      "key": "route"
+                    },
+                    {
+                      "fieldGroupClassName": "INSIDE_REF",
+                      "fieldGroup": [
+                        {
+                          "template": "The quantity of vaccine product that was administered."
+                        },
+                        {
+                          "props": {
+                            "type": "number"
+                          },
+                          "key": "VALUE",
+                          "type": "input"
+                        }
+                      ],
+                      "key": "doseQuantity"
+                    },
+                    {
+                      "fieldGroupClassName": "INSIDE_REF",
+                      "fieldGroup": [
+                        {
+                          "template": "Hinweis zur Impfung"
+                        },
+                        {
+                          "props": {},
+                          "key": "VALUE",
+                          "type": "textarea"
+                        }
+                      ],
+                      "key": "note"
+                    },
+                    {
+                      "fieldGroupClassName": "INSIDE_REF",
+                      "fieldGroup": [
+                        {
+                          "template": "A human language representation of the concept as seen/selected/uttered by the user who entered the data and/or which represents the intended meaning of the user."
+                        },
+                        {
+                          "props": {
+                            "options": [
+                              {
+                                "code": "code1",
+                                "display": "display1",
+                                "system": "https://demis.rki.de/fhir/ValueSet/yesOrNoOrNoInformation"
+                              },
+                              {
+                                "code": "code2",
+                                "display": "display2",
+                                "system": "https://demis.rki.de/fhir/ValueSet/yesOrNoOrNoInformation"
+                              }
+                            ],
+                            "required": true,
+                            "label": "Indicates that this coding was chosen by a user directly - e.g. off a pick list of available items (codes or displays)."
+                          },
+                          "key": "VALUE",
+                          "type": "input"
+                        }
+                      ],
+                      "key": "reasonCode"
+                    },
+                    {
+                      "fieldGroupClassName": "INSIDE_REF",
+                      "fieldGroup": [
+                        {
+                          "template": "Reason why a dose is considered to be subpotent."
+                        },
+                        {
+                          "props": {
+                            "options": [
+                              {
+                                "code": "code1",
+                                "display": "display1",
+                                "system": "https://demis.rki.de/fhir/ValueSet/yesOrNoOrNoInformation"
+                              },
+                              {
+                                "code": "code2",
+                                "display": "display2",
+                                "system": "https://demis.rki.de/fhir/ValueSet/yesOrNoOrNoInformation"
+                              }
+                            ]
+                          },
+                          "key": "VALUE",
+                          "type": "autocomplete-coding"
+                        }
+                      ],
+                      "key": "subpotentReason"
+                    },
+                    {
+                      "fieldGroupClassName": "INSIDE_REF",
+                      "fieldGroup": [
+                        {
+                          "template": "Date the educational material was given to the patient."
+                        },
+                        {
+                          "props": {},
+                          "key": "VALUE",
+                          "type": "input"
+                        }
+                      ],
+                      "key": "education"
+                    },
+                    {
+                      "fieldGroupClassName": "INSIDE_REF",
+                      "fieldGroup": [
+                        {
+                          "template": "Indicates a patient's eligibility for a funding program."
+                        },
+                        {
+                          "props": {
+                            "options": [
+                              {
+                                "code": "ineligible",
+                                "display": "Not Eligible",
+                                "system": "http://hl7.org/fhir/ValueSet/immunization-program-eligibility"
+                              },
+                              {
+                                "code": "uninsured",
+                                "display": "Uninsured",
+                                "system": "http://hl7.org/fhir/ValueSet/immunization-program-eligibility"
+                              }
+                            ]
+                          },
+                          "key": "VALUE",
+                          "type": "autocomplete-coding"
+                        }
+                      ],
+                      "key": "programEligibility"
+                    },
+                    {
+                      "fieldGroupClassName": "INSIDE_REF",
+                      "fieldGroup": [
+                        {
+                          "template": "Indicates the source of the vaccine actually administered. This may be different than the patient eligibility (e.g. the patient may be eligible for a publically purchased vaccine but due to inventory issues, vaccine purchased with private funds was actually administered)."
+                        },
+                        {
+                          "props": {
+                            "options": [
+                              {
+                                "code": "code1",
+                                "display": "display1",
+                                "system": "https://demis.rki.de/fhir/ValueSet/yesOrNoOrNoInformation"
+                              },
+                              {
+                                "code": "code2",
+                                "display": "display2",
+                                "system": "https://demis.rki.de/fhir/ValueSet/yesOrNoOrNoInformation"
+                              }
+                            ]
+                          },
+                          "key": "VALUE",
+                          "type": "autocomplete-coding"
+                        }
+                      ],
+                      "key": "fundingSource"
+                    },
+                    {
+                      "fieldGroupClassName": "INSIDE_REF",
+                      "fieldGroup": [
+                        {
+                          "template": "Details of the reaction.  / reference to: http://hl7.org/fhir/StructureDefinition/Observation"
+                        },
+                        {
+                          "props": {
+                            "label": "Self-reported indicator."
+                          },
+                          "key": "VALUE",
+                          "type": "checkbox"
+                        }
+                      ],
+                      "key": "reaction"
+                    },
+                    {
+                      "fieldGroupClassName": "INSIDE_REF",
+                      "fieldGroup": [
+                        {
+                          "template": "The recommended number of doses to achieve immunity."
+                        },
+                        {
+                          "props": {
+                            "options": [
+                              {
+                                "code": "code1",
+                                "display": "display1",
+                                "system": "https://demis.rki.de/fhir/ValueSet/yesOrNoOrNoInformation"
+                              },
+                              {
+                                "code": "code2",
+                                "display": "display2",
+                                "system": "https://demis.rki.de/fhir/ValueSet/yesOrNoOrNoInformation"
+                              }
+                            ],
+                            "required": true
+                          },
+                          "key": "VALUE",
+                          "type": "input"
+                        }
+                      ],
+                      "key": "protocolApplied"
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        ],
+        "expressions": {
+          "hide": "!( field?.parent?.model?.VALUE?.code === 'yes' )"
+        }
+      }
+    ]
+  },
+  {
+    "key": "reason",
+    "fieldGroup": [
+      {
+        "template": "<h4 class=\"question-title\">Grund der Hospitalisierung</h4>"
+      },
+      {
+        "type": "autocomplete-coding",
+        "props": {
+          "options": [
+            {
+              "code": "code1",
+              "display": "display1",
+              "system": "https://demis.rki.de/fhir/ValueSet/yesOrNoOrNoInformation"
+            },
+            {
+              "code": "code2",
+              "display": "display2",
+              "system": "https://demis.rki.de/fhir/ValueSet/yesOrNoOrNoInformation"
+            }
+          ],
+          "required": false,
+          "clearable": true,
+          "defaultCode": "NASK"
+        },
+        "key": "VALUE"
+      }
+    ]
+  },
+  {
+    "fieldGroup": [
+      {
+        "key": "infectionRiskKind",
+        "type": "repeat-section",
+        "props": {
+          "itemName": "Welche Risikofaktoren liegen bei der betroffenen Person vor?"
+        },
+        "fieldArray": {
+          "fieldGroup": [
+            {
+              "template": "<h4 class=\"question-title\">Welche Risikofaktoren liegen bei der betroffenen Person vor?</h4>"
+            },
+            {
+              "type": "autocomplete-coding",
+              "props": {
+                "options": [
+                  {
+                    "code": "code1",
+                    "display": "display1",
+                    "system": "https://demis.rki.de/fhir/ValueSet/yesOrNoOrNoInformation"
+                  },
+                  {
+                    "code": "code2",
+                    "display": "display2",
+                    "system": "https://demis.rki.de/fhir/ValueSet/yesOrNoOrNoInformation"
+                  }
+                ],
+                "required": false,
+                "clearable": true,
+                "defaultCode": "NASK"
+              },
+              "key": "VALUE"
+            },
+            {
+              "key": "trimester",
+              "fieldGroup": [
+                {
+                  "template": "<h4 class=\"question-title\">Trimester</h4>"
+                },
+                {
+                  "type": "autocomplete-coding",
+                  "props": {
+                    "options": [
+                      {
+                        "code": "code1",
+                        "display": "display1",
+                        "system": "https://demis.rki.de/fhir/ValueSet/yesOrNoOrNoInformation"
+                      },
+                      {
+                        "code": "code2",
+                        "display": "display2",
+                        "system": "https://demis.rki.de/fhir/ValueSet/yesOrNoOrNoInformation"
+                      }
+                    ],
+                    "required": false,
+                    "clearable": true,
+                    "defaultCode": "NASK"
+                  },
+                  "key": "VALUE"
+                }
+              ],
+              "expressions": {
+                "hide": "!( field?.parent?.model?.VALUE?.code === '77386006' )"
+              }
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "key": "outbreak",
+    "fieldGroup": [
+      {
+        "template": "<h4 class=\"question-title\">Kann der gemeldete Fall einem Ausbruch zugeordnet werden?</h4>"
+      },
+      {
+        "type": "autocomplete-coding",
+        "props": {
+          "options": [
+            {
+              "code": "code1",
+              "display": "display1",
+              "system": "https://demis.rki.de/fhir/ValueSet/yesOrNoOrNoInformation"
+            },
+            {
+              "code": "code2",
+              "display": "display2",
+              "system": "https://demis.rki.de/fhir/ValueSet/yesOrNoOrNoInformation"
+            }
+          ],
+          "required": false,
+          "clearable": true,
+          "defaultCode": "NASK"
+        },
+        "key": "VALUE"
+      },
+      {
+        "key": "outbreakNote",
+        "fieldGroup": [
+          {
+            "template": "<h4 class=\"question-title\">Fallbezogene Zusatzinformationen zum Ausbruch</h4>"
+          },
+          {
+            "type": "textarea",
+            "key": "VALUE"
+          }
+        ],
+        "expressions": {
+          "hide": "!( field?.parent?.model?.VALUE?.code === 'yes' )"
+        }
+      },
+      {
+        "key": "outbreakNotificationId",
+        "fieldGroup": [
+          {
+            "template": "<h4 class=\"question-title\">Notification-Id der zugehörigen Ausbruchsmeldung</h4>"
+          },
+          {
+            "template": "<h1>Reference without extension: outbreakNotificationId</h1>"
+          }
+        ],
+        "expressions": {
+          "hide": "!( field?.parent?.model?.VALUE?.code === 'yes' )"
+        }
+      }
+    ]
+  }
+]
+        

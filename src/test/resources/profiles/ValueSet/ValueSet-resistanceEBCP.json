@@ -1,0 +1,96 @@
+{
+  "resourceType": "ValueSet",
+  "id": "resistanceEBCP",
+  "url": "https://demis.rki.de/fhir/ValueSet/resistanceEBCP",
+  "version": "1.0.0",
+  "name": "ResistanceEBCP",
+  "title": "Resistenz für Enterobacterales bei Nachweis einer Carbapenemase-Determinante oder mit verminderter Empfindlichkeit gegenüber Carbapenemen außer bei natürlicher Resistenz; Meldepflicht nur bei Infektion oder Kolonisation",
+  "status": "active",
+  "experimental": false,
+  "date": "2023-11-15",
+  "publisher": "Robert Koch-Institut",
+  "description": "Das ValueSet ResistanceEBCP enthält die Codes der Resistenz für Enterobacterales bei Nachweis einer Carbapenemase-Determinante oder mit verminderter Empfindlichkeit gegenüber Carbapenemen außer bei natürlicher Resistenz; Meldepflicht nur bei Infektion oder Kolonisation.",
+  "compose": {
+    "include": [
+      {
+        "system": "http://loinc.org",
+        "version": "2.76",
+        "concept": [
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 100
+              }
+            ],
+            "code": "18879-7",
+            "display": "Cefepime [Susceptibility]",
+            "designation": [
+              {
+                "language": "de-DE",
+                "use": {
+                  "system": "http://loinc.org",
+                  "code": "LONG_COMMON_NAME"
+                },
+                "value": "Cefepim [Empfindlichkeit]"
+              }
+            ]
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 100
+              }
+            ],
+            "code": "99280-0",
+            "display": "Cefiderocol [Susceptibility]"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 100
+              }
+            ],
+            "code": "18886-2",
+            "display": "Cefotaxime [Susceptibility]",
+            "designation": [
+              {
+                "language": "de-DE",
+                "use": {
+                  "system": "http://loinc.org",
+                  "code": "LONG_COMMON_NAME"
+                },
+                "value": "Cefotaxim [Empfindlichkeit]"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "expansion": {
+    "timestamp": "2023-11-15T00:00:00+01:00",
+    "contains": [
+      {
+        "system": "http://loinc.org",
+        "version": "2.76",
+        "code": "18879-7",
+        "display": "Cefepime [Susceptibility]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.76",
+        "code": "99280-0",
+        "display": "Cefiderocol [Susceptibility]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.76",
+        "code": "18886-2",
+        "display": "Cefotaxime [Susceptibility]"
+      }
+    ]
+  }
+}

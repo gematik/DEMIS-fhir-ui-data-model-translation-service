@@ -1,0 +1,1261 @@
+[
+  {
+    "template": "<h1>Covid-19-spezifische klinische und epidemiologische Angaben</h1>"
+  },
+  {
+    "key": "infectionSource.answer",
+    "fieldGroup": [
+      {
+        "template": "<h4 class=\"question-title\">Kontakt zu bestätigtem Fall</h4>"
+      },
+      {
+        "key": "valueCoding",
+        "type": "autocomplete-coding",
+        "props": {
+          "options": [
+            {
+              "code": "yes",
+              "display": "Ja",
+              "system": "https://demis.rki.de/fhir/CodeSystem/yesOrNoAnswer"
+            },
+            {
+              "code": "NASK",
+              "display": "not asked",
+              "system": "http://terminology.hl7.org/CodeSystem/v3-NullFlavor"
+            },
+            {
+              "code": "no",
+              "display": "Nein",
+              "system": "https://demis.rki.de/fhir/CodeSystem/yesOrNoAnswer"
+            },
+            {
+              "code": "ASKU",
+              "display": "asked but unknown",
+              "system": "http://terminology.hl7.org/CodeSystem/v3-NullFlavor"
+            }
+          ],
+          "required": true,
+          "clearable": true,
+          "defaultCode": "NASK"
+        }
+      }
+    ]
+  },
+  {
+    "key": "infectionEnvironmentSetting.answer",
+    "fieldGroup": [
+      {
+        "template": "<h4 class=\"question-title\">Infektionsumfeld vorhanden</h4>"
+      },
+      {
+        "key": "valueCoding",
+        "type": "radio-button-coding",
+        "props": {
+          "options": [
+            {
+              "code": "yes",
+              "display": "Ja",
+              "system": "https://demis.rki.de/fhir/CodeSystem/yesOrNoAnswer"
+            },
+            {
+              "code": "NASK",
+              "display": "not asked",
+              "system": "http://terminology.hl7.org/CodeSystem/v3-NullFlavor"
+            },
+            {
+              "code": "no",
+              "display": "Nein",
+              "system": "https://demis.rki.de/fhir/CodeSystem/yesOrNoAnswer"
+            },
+            {
+              "code": "ASKU",
+              "display": "asked but unknown",
+              "system": "http://terminology.hl7.org/CodeSystem/v3-NullFlavor"
+            }
+          ],
+          "required": true,
+          "clearable": true,
+          "defaultCode": "NASK"
+        }
+      },
+      {
+        "fieldGroup": [
+          {
+            "key": "infectionEnvironmentSettingGroup",
+            "type": "repeat-section",
+            "fieldGroupClassName": "REPEATED",
+            "props": {},
+            "fieldArray": {
+              "fieldGroup": [
+                {
+                  "key": "infectionEnvironmentSettingKind.answer",
+                  "fieldGroup": [
+                    {
+                      "template": "<h4 class=\"question-title\">Wahrscheinliches Infektionsumfeld</h4>"
+                    },
+                    {
+                      "key": "valueCoding",
+                      "type": "autocomplete-coding",
+                      "props": {
+                        "options": [],
+                        "required": false,
+                        "clearable": true
+                      }
+                    }
+                  ],
+                  "expressions": {
+                    "hide": "!( field?.parent?.parent?.parent?.model?.valueCoding?.code === 'yes' )"
+                  }
+                },
+                {
+                  "key": "infectionEnvironmentSettingBegin.answer",
+                  "fieldGroup": [
+                    {
+                      "template": "<h4 class=\"question-title\">Beginn Infektionsumfeld</h4>"
+                    },
+                    {
+                      "type": "input",
+                      "key": "valueDate",
+                      "props": {
+                        "placeholder": "TT.MM.JJJJ | MM.JJJJ | JJJJ"
+                      },
+                      "validators": {
+                        "validation": []
+                      }
+                    }
+                  ],
+                  "expressions": {
+                    "hide": "!( field?.parent?.parent?.parent?.model?.valueCoding?.code === 'yes' )"
+                  }
+                },
+                {
+                  "key": "infectionEnvironmentSettingEnd.answer",
+                  "fieldGroup": [
+                    {
+                      "template": "<h4 class=\"question-title\">Ende Infektionsumfeld</h4>"
+                    },
+                    {
+                      "type": "input",
+                      "key": "valueDate",
+                      "props": {
+                        "placeholder": "TT.MM.JJJJ | MM.JJJJ | JJJJ"
+                      },
+                      "validators": {
+                        "validation": []
+                      }
+                    }
+                  ],
+                  "expressions": {
+                    "hide": "!( field?.parent?.parent?.parent?.model?.valueCoding?.code === 'yes' )"
+                  }
+                }
+              ]
+            }
+          }
+        ],
+        "expressions": {
+          "hide": "!( field?.parent?.model?.valueCoding?.code === 'yes' )"
+        },
+        "fieldGroupClassName": "ITEM_GROUP LinkId_infectionEnvironmentSettingGroup"
+      }
+    ]
+  },
+  {
+    "key": "immunization.answer",
+    "fieldGroup": [
+      {
+        "template": "<h4 class=\"question-title\">Wurde die betroffene Person jemals in Bezug auf die Krankheit geimpft?</h4>"
+      },
+      {
+        "key": "valueCoding",
+        "type": "autocomplete-coding",
+        "props": {
+          "options": [
+            {
+              "code": "yes",
+              "display": "Ja",
+              "system": "https://demis.rki.de/fhir/CodeSystem/yesOrNoAnswer"
+            },
+            {
+              "code": "NASK",
+              "display": "not asked",
+              "system": "http://terminology.hl7.org/CodeSystem/v3-NullFlavor"
+            },
+            {
+              "code": "no",
+              "display": "Nein",
+              "system": "https://demis.rki.de/fhir/CodeSystem/yesOrNoAnswer"
+            },
+            {
+              "code": "ASKU",
+              "display": "asked but unknown",
+              "system": "http://terminology.hl7.org/CodeSystem/v3-NullFlavor"
+            }
+          ],
+          "required": true,
+          "clearable": true,
+          "defaultCode": "NASK"
+        }
+      },
+      {
+        "fieldGroup": [
+          {
+            "template": "<h4 class=\"question-title\">Impfinformationen</h4>"
+          },
+          {
+            "key": "immunizationRef.answer",
+            "type": "repeat-section",
+            "fieldGroupClassName": "REPEATED",
+            "props": {
+              "itemName": "Impfinformationen"
+            },
+            "fieldArray": {
+              "fieldGroup": [
+                {
+                  "key": "✂ Immunization",
+                  "fieldGroupClassName": "ITEM_REFERENCE",
+                  "fieldGroup": [
+                    {
+                      "fieldGroupClassName": "INSIDE_REF",
+                      "fieldGroup": [
+                        {
+                          "template": "The base language in which the resource is written."
+                        },
+                        {
+                          "props": {
+                            "options": []
+                          },
+                          "type": "autocomplete-coding",
+                          "key": "valueCoding"
+                        }
+                      ],
+                      "key": "language"
+                    },
+                    {
+                      "fieldGroupClassName": "INSIDE_REF",
+                      "fieldGroup": [
+                        {
+                          "template": "Text summary of the resource, for human interpretation"
+                        },
+                        {
+                          "props": {},
+                          "type": "textarea",
+                          "key": "valueString"
+                        }
+                      ],
+                      "key": "text"
+                    },
+                    {
+                      "fieldGroupClassName": "INSIDE_REF",
+                      "fieldGroup": [
+                        {
+                          "template": "Indicates the current status of the immunization event."
+                        },
+                        {
+                          "props": {
+                            "options": [
+                              {
+                                "code": "completed",
+                                "display": "Completed!",
+                                "system": "http://hl7.org/fhir/ValueSet/immunization-status|4.0.1"
+                              },
+                              {
+                                "code": "entered-in-error",
+                                "display": "Entered in Error!",
+                                "system": "http://hl7.org/fhir/ValueSet/immunization-status|4.0.1"
+                              },
+                              {
+                                "code": "not-done",
+                                "display": "Not done!",
+                                "system": "http://hl7.org/fhir/ValueSet/immunization-status|4.0.1"
+                              }
+                            ],
+                            "required": true
+                          },
+                          "type": "autocomplete-coding",
+                          "key": "valueCoding"
+                        }
+                      ],
+                      "key": "status"
+                    },
+                    {
+                      "fieldGroupClassName": "INSIDE_REF",
+                      "fieldGroup": [
+                        {
+                          "template": "Indicates the reason the immunization event was not performed."
+                        },
+                        {
+                          "props": {
+                            "options": [
+                              {
+                                "code": "IMMUNE",
+                                "display": "ERROR: no designation for code IMMUNE",
+                                "system": "http://hl7.org/fhir/ValueSet/immunization-status-reason"
+                              },
+                              {
+                                "code": "MEDPREC",
+                                "display": "ERROR: no designation for code MEDPREC",
+                                "system": "http://hl7.org/fhir/ValueSet/immunization-status-reason"
+                              },
+                              {
+                                "code": "OSTOCK",
+                                "display": "ERROR: no designation for code OSTOCK",
+                                "system": "http://hl7.org/fhir/ValueSet/immunization-status-reason"
+                              },
+                              {
+                                "code": "PATOBJ",
+                                "display": "ERROR: no designation for code PATOBJ",
+                                "system": "http://hl7.org/fhir/ValueSet/immunization-status-reason"
+                              }
+                            ]
+                          },
+                          "type": "autocomplete-coding",
+                          "key": "valueCoding"
+                        }
+                      ],
+                      "key": "statusReason"
+                    },
+                    {
+                      "fieldGroupClassName": "INSIDE_REF",
+                      "fieldGroup": [
+                        {
+                          "template": "Verabreichter Covid-19-Impfstoff"
+                        },
+                        {
+                          "props": {
+                            "options": [
+                              {
+                                "code": "1162643001",
+                                "display": "COVID-19-Impfstoff (Proteinbasierter Impfstoff, rekombinant, adjuvantiert) (Sanofi - GSK)",
+                                "system": "http://snomed.info/sct"
+                              },
+                              {
+                                "code": "1157024006",
+                                "display": "COVID-19-Impfstoff (Virusimpfstoff, inaktiviert, adjuvantiert) (Valneva)",
+                                "system": "http://snomed.info/sct"
+                              },
+                              {
+                                "code": "29061000087103",
+                                "display": "COVID-19-Impfstoff (Vektor-Impfstoff)  (Astra Zeneca, Johnson&Johnson bzw. Janssen-Cilag)",
+                                "system": "http://snomed.info/sct"
+                              },
+                              {
+                                "code": "1119349007",
+                                "display": "COVID-19-Impfstoff (mRNA) (BioNTech / Pfizer, Moderna)",
+                                "system": "http://snomed.info/sct"
+                              },
+                              {
+                                "code": "1187593009",
+                                "display": "COVID-19-Impfstoff (Proteinbasierter Impfstoff)  (Novavax)",
+                                "system": "http://snomed.info/sct"
+                              },
+                              {
+                                "code": "74964007",
+                                "display": "-andere/sonstige-",
+                                "system": "http://snomed.info/sct"
+                              },
+                              {
+                                "code": "NASK",
+                                "display": "not asked",
+                                "system": "http://terminology.hl7.org/CodeSystem/v3-NullFlavor"
+                              },
+                              {
+                                "code": "ASKU",
+                                "display": "asked but unknown",
+                                "system": "http://terminology.hl7.org/CodeSystem/v3-NullFlavor"
+                              }
+                            ],
+                            "required": true
+                          },
+                          "type": "autocomplete-coding",
+                          "key": "valueCoding"
+                        }
+                      ],
+                      "key": "vaccineCode"
+                    },
+                    {
+                      "fieldGroupClassName": "INSIDE_REF",
+                      "fieldGroup": [
+                        {
+                          "template": "Datum der Impfung"
+                        },
+                        {
+                          "props": {
+                            "required": true
+                          },
+                          "type": "input",
+                          "key": "valueDate"
+                        }
+                      ],
+                      "key": "occurrence"
+                    },
+                    {
+                      "fieldGroupClassName": "INSIDE_REF",
+                      "fieldGroup": [
+                        {
+                          "template": "The date the occurrence of the immunization was first captured in the record - potentially significantly after the occurrence of the event."
+                        },
+                        {
+                          "props": {},
+                          "type": "input",
+                          "key": "valueDate"
+                        }
+                      ],
+                      "key": "recorded"
+                    },
+                    {
+                      "fieldGroupClassName": "INSIDE_REF",
+                      "fieldGroup": [
+                        {
+                          "template": "The source of the data when the report of the immunization event is not based on information from the person who administered the vaccine."
+                        },
+                        {
+                          "props": {
+                            "options": [
+                              {
+                                "code": "provider",
+                                "display": "Other Provider",
+                                "system": "http://hl7.org/fhir/ValueSet/immunization-origin"
+                              },
+                              {
+                                "code": "record",
+                                "display": "Written Record",
+                                "system": "http://hl7.org/fhir/ValueSet/immunization-origin"
+                              },
+                              {
+                                "code": "recall",
+                                "display": "Parent/Guardian/Patient Recall",
+                                "system": "http://hl7.org/fhir/ValueSet/immunization-origin"
+                              },
+                              {
+                                "code": "school",
+                                "display": "School Record",
+                                "system": "http://hl7.org/fhir/ValueSet/immunization-origin"
+                              }
+                            ]
+                          },
+                          "type": "autocomplete-coding",
+                          "key": "valueCoding"
+                        }
+                      ],
+                      "key": "reportOrigin"
+                    },
+                    {
+                      "fieldGroupClassName": "INSIDE_REF",
+                      "fieldGroup": [
+                        {
+                          "template": "Name of vaccine manufacturer.  / reference to: http://hl7.org/fhir/StructureDefinition/Organization"
+                        },
+                        {
+                          "props": {}
+                        }
+                      ],
+                      "key": "manufacturer"
+                    },
+                    {
+                      "fieldGroupClassName": "INSIDE_REF",
+                      "fieldGroup": [
+                        {
+                          "template": "Chargenbezeichnung"
+                        },
+                        {
+                          "props": {},
+                          "type": "input",
+                          "key": "valueString"
+                        }
+                      ],
+                      "key": "lotNumber"
+                    },
+                    {
+                      "fieldGroupClassName": "INSIDE_REF",
+                      "fieldGroup": [
+                        {
+                          "template": "Date vaccine batch expires."
+                        },
+                        {
+                          "props": {},
+                          "type": "datepicker",
+                          "key": "valueDate"
+                        }
+                      ],
+                      "key": "expirationDate"
+                    },
+                    {
+                      "fieldGroupClassName": "INSIDE_REF",
+                      "fieldGroup": [
+                        {
+                          "template": "Body site where vaccine was administered."
+                        },
+                        {
+                          "props": {
+                            "options": [
+                              {
+                                "code": "LA",
+                                "display": "Left arm",
+                                "system": "http://hl7.org/fhir/ValueSet/immunization-site"
+                              },
+                              {
+                                "code": "RA",
+                                "display": "Right arm",
+                                "system": "http://hl7.org/fhir/ValueSet/immunization-site"
+                              }
+                            ]
+                          },
+                          "type": "autocomplete-coding",
+                          "key": "valueCoding"
+                        }
+                      ],
+                      "key": "site"
+                    },
+                    {
+                      "fieldGroupClassName": "INSIDE_REF",
+                      "fieldGroup": [
+                        {
+                          "template": "The path by which the vaccine product is taken into the body."
+                        },
+                        {
+                          "props": {
+                            "options": [
+                              {
+                                "code": "IDINJ",
+                                "display": "Injection, intradermal",
+                                "system": "http://hl7.org/fhir/ValueSet/immunization-route"
+                              },
+                              {
+                                "code": "IM",
+                                "display": "Injection, intramuscular",
+                                "system": "http://hl7.org/fhir/ValueSet/immunization-route"
+                              },
+                              {
+                                "code": "IVINJ",
+                                "display": "Injection, intravenous",
+                                "system": "http://hl7.org/fhir/ValueSet/immunization-route"
+                              },
+                              {
+                                "code": "PO",
+                                "display": "Swallow, oral",
+                                "system": "http://hl7.org/fhir/ValueSet/immunization-route"
+                              },
+                              {
+                                "code": "SQ",
+                                "display": "Injection, subcutaneous",
+                                "system": "http://hl7.org/fhir/ValueSet/immunization-route"
+                              },
+                              {
+                                "code": "TRNSDERM",
+                                "display": "Transdermal",
+                                "system": "http://hl7.org/fhir/ValueSet/immunization-route"
+                              }
+                            ]
+                          },
+                          "type": "autocomplete-coding",
+                          "key": "valueCoding"
+                        }
+                      ],
+                      "key": "route"
+                    },
+                    {
+                      "fieldGroupClassName": "INSIDE_REF",
+                      "fieldGroup": [
+                        {
+                          "template": "The quantity of vaccine product that was administered."
+                        },
+                        {
+                          "props": {
+                            "type": "number"
+                          },
+                          "type": "input",
+                          "key": "valueNumber"
+                        }
+                      ],
+                      "key": "doseQuantity"
+                    },
+                    {
+                      "fieldGroupClassName": "INSIDE_REF",
+                      "fieldGroup": [
+                        {
+                          "template": "Hinweis zur Impfung"
+                        },
+                        {
+                          "props": {},
+                          "type": "textarea",
+                          "key": "valueString"
+                        }
+                      ],
+                      "key": "note"
+                    },
+                    {
+                      "fieldGroupClassName": "INSIDE_REF",
+                      "fieldGroup": [
+                        {
+                          "template": "A human language representation of the concept as seen/selected/uttered by the user who entered the data and/or which represents the intended meaning of the user."
+                        },
+                        {
+                          "props": {
+                            "options": [
+                              {
+                                "code": "A",
+                                "display": "Auffrischimpfungen",
+                                "system": "https://demis.rki.de/fhir/CodeSystem/vaccinationIndication"
+                              },
+                              {
+                                "code": "S",
+                                "display": "Standardimpfungen mit allgemeiner Anwendung",
+                                "system": "https://demis.rki.de/fhir/CodeSystem/vaccinationIndication"
+                              },
+                              {
+                                "code": "B",
+                                "display": "Impfungen aufgrund eines erhöhten beruflichen bzw. arbeitsbedingten Risikos, z. B. nach Gefährdungsbeurteilung gemäß Arbeitsschutzgesetz (ArbSchG)/Biostoffverordnung (BioStoffV)/ Verordnung zur arbeitsmedizinischen Vorsorge (ArbMedVV) und/oder zum Schutz Dritter im Rahmen der beruflichen Tätigkeit",
+                                "system": "https://demis.rki.de/fhir/CodeSystem/vaccinationIndication"
+                              },
+                              {
+                                "code": "R",
+                                "display": "Impfungen aufgrund von Reisen",
+                                "system": "https://demis.rki.de/fhir/CodeSystem/vaccinationIndication"
+                              },
+                              {
+                                "code": "I",
+                                "display": "Indikationsimpfungen für Risikogruppen bei individuell (nicht arbeitsbedingt) erhöhtem Expositions-, Erkrankungs- oder Komplikationsrisiko sowie zum Schutz Dritter",
+                                "system": "https://demis.rki.de/fhir/CodeSystem/vaccinationIndication"
+                              }
+                            ],
+                            "required": true,
+                            "label": "Indicates that this coding was chosen by a user directly - e.g. off a pick list of available items (codes or displays)."
+                          },
+                          "type": "input",
+                          "key": "valueString"
+                        }
+                      ],
+                      "key": "reasonCode"
+                    },
+                    {
+                      "fieldGroupClassName": "INSIDE_REF",
+                      "fieldGroup": [
+                        {
+                          "template": "Reason why a dose is considered to be subpotent."
+                        },
+                        {
+                          "props": {
+                            "options": [
+                              {
+                                "code": "partialdose",
+                                "display": "Partial Dose",
+                                "system": "http://hl7.org/fhir/ValueSet/immunization-subpotent-reason"
+                              },
+                              {
+                                "code": "coldchainbreak",
+                                "display": "Cold Chain Break",
+                                "system": "http://hl7.org/fhir/ValueSet/immunization-subpotent-reason"
+                              },
+                              {
+                                "code": "recall",
+                                "display": "Manufacturer Recall",
+                                "system": "http://hl7.org/fhir/ValueSet/immunization-subpotent-reason"
+                              },
+                              {
+                                "code": "adversestorage",
+                                "display": "Adverse Storage",
+                                "system": "http://hl7.org/fhir/ValueSet/immunization-subpotent-reason"
+                              },
+                              {
+                                "code": "expired",
+                                "display": "Expired Product",
+                                "system": "http://hl7.org/fhir/ValueSet/immunization-subpotent-reason"
+                              }
+                            ]
+                          },
+                          "type": "autocomplete-coding",
+                          "key": "valueCoding"
+                        }
+                      ],
+                      "key": "subpotentReason"
+                    },
+                    {
+                      "fieldGroupClassName": "INSIDE_REF",
+                      "fieldGroup": [
+                        {
+                          "template": "Date the educational material was given to the patient."
+                        },
+                        {
+                          "props": {},
+                          "type": "input",
+                          "key": "valueDate"
+                        }
+                      ],
+                      "key": "education"
+                    },
+                    {
+                      "fieldGroupClassName": "INSIDE_REF",
+                      "fieldGroup": [
+                        {
+                          "template": "Indicates a patient's eligibility for a funding program."
+                        },
+                        {
+                          "props": {
+                            "options": [
+                              {
+                                "code": "ineligible",
+                                "display": "Not Eligible",
+                                "system": "http://hl7.org/fhir/ValueSet/immunization-program-eligibility"
+                              },
+                              {
+                                "code": "uninsured",
+                                "display": "Uninsured",
+                                "system": "http://hl7.org/fhir/ValueSet/immunization-program-eligibility"
+                              }
+                            ]
+                          },
+                          "type": "autocomplete-coding",
+                          "key": "valueCoding"
+                        }
+                      ],
+                      "key": "programEligibility"
+                    },
+                    {
+                      "fieldGroupClassName": "INSIDE_REF",
+                      "fieldGroup": [
+                        {
+                          "template": "Indicates the source of the vaccine actually administered. This may be different than the patient eligibility (e.g. the patient may be eligible for a publically purchased vaccine but due to inventory issues, vaccine purchased with private funds was actually administered)."
+                        },
+                        {
+                          "props": {
+                            "options": [
+                              {
+                                "code": "private",
+                                "display": "Private",
+                                "system": "http://hl7.org/fhir/ValueSet/immunization-funding-source"
+                              },
+                              {
+                                "code": "public",
+                                "display": "Public",
+                                "system": "http://hl7.org/fhir/ValueSet/immunization-funding-source"
+                              }
+                            ]
+                          },
+                          "type": "autocomplete-coding",
+                          "key": "valueCoding"
+                        }
+                      ],
+                      "key": "fundingSource"
+                    },
+                    {
+                      "fieldGroupClassName": "INSIDE_REF",
+                      "fieldGroup": [
+                        {
+                          "template": "Details of the reaction.  / reference to: http://hl7.org/fhir/StructureDefinition/Observation"
+                        },
+                        {
+                          "props": {
+                            "label": "Self-reported indicator."
+                          },
+                          "type": "checkbox",
+                          "key": "valueBoolean"
+                        }
+                      ],
+                      "key": "reaction"
+                    },
+                    {
+                      "fieldGroupClassName": "INSIDE_REF",
+                      "fieldGroup": [
+                        {
+                          "template": "The recommended number of doses to achieve immunity."
+                        },
+                        {
+                          "props": {
+                            "options": [
+                              {
+                                "code": "397428000",
+                                "display": "ERROR: no designation for code 397428000",
+                                "system": "http://hl7.org/fhir/ValueSet/immunization-target-disease"
+                              },
+                              {
+                                "code": "27836007",
+                                "display": "ERROR: no designation for code 27836007",
+                                "system": "http://hl7.org/fhir/ValueSet/immunization-target-disease"
+                              },
+                              {
+                                "code": "76902006",
+                                "display": "ERROR: no designation for code 76902006",
+                                "system": "http://hl7.org/fhir/ValueSet/immunization-target-disease"
+                              },
+                              {
+                                "code": "721764008",
+                                "display": "ERROR: no designation for code 721764008",
+                                "system": "http://hl7.org/fhir/ValueSet/immunization-target-disease"
+                              },
+                              {
+                                "code": "14189004",
+                                "display": "ERROR: no designation for code 14189004",
+                                "system": "http://hl7.org/fhir/ValueSet/immunization-target-disease"
+                              },
+                              {
+                                "code": "36989005",
+                                "display": "ERROR: no designation for code 36989005",
+                                "system": "http://hl7.org/fhir/ValueSet/immunization-target-disease"
+                              },
+                              {
+                                "code": "36653000",
+                                "display": "ERROR: no designation for code 36653000",
+                                "system": "http://hl7.org/fhir/ValueSet/immunization-target-disease"
+                              },
+                              {
+                                "code": "16814004",
+                                "display": "ERROR: no designation for code 16814004",
+                                "system": "http://hl7.org/fhir/ValueSet/immunization-target-disease"
+                              },
+                              {
+                                "code": "23511006",
+                                "display": "ERROR: no designation for code 23511006",
+                                "system": "http://hl7.org/fhir/ValueSet/immunization-target-disease"
+                              },
+                              {
+                                "code": "709410003",
+                                "display": "ERROR: no designation for code 709410003",
+                                "system": "http://hl7.org/fhir/ValueSet/immunization-target-disease"
+                              },
+                              {
+                                "code": "56717001",
+                                "display": "ERROR: no designation for code 56717001",
+                                "system": "http://hl7.org/fhir/ValueSet/immunization-target-disease"
+                              },
+                              {
+                                "code": "363354003",
+                                "display": "ERROR: no designation for code 363354003",
+                                "system": "http://hl7.org/fhir/ValueSet/immunization-target-disease"
+                              },
+                              {
+                                "code": "266113007",
+                                "display": "ERROR: no designation for code 266113007",
+                                "system": "http://hl7.org/fhir/ValueSet/immunization-target-disease"
+                              },
+                              {
+                                "code": "415822001",
+                                "display": "ERROR: no designation for code 415822001",
+                                "system": "http://hl7.org/fhir/ValueSet/immunization-target-disease"
+                              },
+                              {
+                                "code": "66071002",
+                                "display": "ERROR: no designation for code 66071002",
+                                "system": "http://hl7.org/fhir/ValueSet/immunization-target-disease"
+                              },
+                              {
+                                "code": "40468003",
+                                "display": "ERROR: no designation for code 40468003",
+                                "system": "http://hl7.org/fhir/ValueSet/immunization-target-disease"
+                              },
+                              {
+                                "code": "7111000119109",
+                                "display": "ERROR: no designation for code 7111000119109",
+                                "system": "http://hl7.org/fhir/ValueSet/immunization-target-disease"
+                              },
+                              {
+                                "code": "719590007",
+                                "display": "ERROR: no designation for code 719590007",
+                                "system": "http://hl7.org/fhir/ValueSet/immunization-target-disease"
+                              },
+                              {
+                                "code": "719865001",
+                                "display": "ERROR: no designation for code 719865001",
+                                "system": "http://hl7.org/fhir/ValueSet/immunization-target-disease"
+                              },
+                              {
+                                "code": "38907003",
+                                "display": "ERROR: no designation for code 38907003",
+                                "system": "http://hl7.org/fhir/ValueSet/immunization-target-disease"
+                              },
+                              {
+                                "code": "4740000",
+                                "display": "ERROR: no designation for code 4740000",
+                                "system": "http://hl7.org/fhir/ValueSet/immunization-target-disease"
+                              },
+                              {
+                                "code": "55735004",
+                                "display": "ERROR: no designation for code 55735004",
+                                "system": "http://hl7.org/fhir/ValueSet/immunization-target-disease"
+                              },
+                              {
+                                "code": "240613006",
+                                "display": "ERROR: no designation for code 240613006",
+                                "system": "http://hl7.org/fhir/ValueSet/immunization-target-disease"
+                              },
+                              {
+                                "code": "4834000",
+                                "display": "ERROR: no designation for code 4834000",
+                                "system": "http://hl7.org/fhir/ValueSet/immunization-target-disease"
+                              },
+                              {
+                                "code": "85904008",
+                                "display": "ERROR: no designation for code 85904008",
+                                "system": "http://hl7.org/fhir/ValueSet/immunization-target-disease"
+                              },
+                              {
+                                "code": "63650001",
+                                "display": "ERROR: no designation for code 63650001",
+                                "system": "http://hl7.org/fhir/ValueSet/immunization-target-disease"
+                              },
+                              {
+                                "code": "16541001",
+                                "display": "ERROR: no designation for code 16541001",
+                                "system": "http://hl7.org/fhir/ValueSet/immunization-target-disease"
+                              },
+                              {
+                                "code": "38362002",
+                                "display": "ERROR: no designation for code 38362002",
+                                "system": "http://hl7.org/fhir/ValueSet/immunization-target-disease"
+                              },
+                              {
+                                "code": "61462000",
+                                "display": "ERROR: no designation for code 61462000",
+                                "system": "http://hl7.org/fhir/ValueSet/immunization-target-disease"
+                              },
+                              {
+                                "code": "14168008",
+                                "display": "ERROR: no designation for code 14168008",
+                                "system": "http://hl7.org/fhir/ValueSet/immunization-target-disease"
+                              },
+                              {
+                                "code": "186772009",
+                                "display": "ERROR: no designation for code 186772009",
+                                "system": "http://hl7.org/fhir/ValueSet/immunization-target-disease"
+                              },
+                              {
+                                "code": "712986001",
+                                "display": "ERROR: no designation for code 712986001",
+                                "system": "http://hl7.org/fhir/ValueSet/immunization-target-disease"
+                              },
+                              {
+                                "code": "52947006",
+                                "display": "ERROR: no designation for code 52947006",
+                                "system": "http://hl7.org/fhir/ValueSet/immunization-target-disease"
+                              },
+                              {
+                                "code": "186788009",
+                                "display": "ERROR: no designation for code 186788009",
+                                "system": "http://hl7.org/fhir/ValueSet/immunization-target-disease"
+                              },
+                              {
+                                "code": "409498004",
+                                "display": "ERROR: no designation for code 409498004",
+                                "system": "http://hl7.org/fhir/ValueSet/immunization-target-disease"
+                              },
+                              {
+                                "code": "58750007",
+                                "display": "ERROR: no designation for code 58750007",
+                                "system": "http://hl7.org/fhir/ValueSet/immunization-target-disease"
+                              },
+                              {
+                                "code": "19265001",
+                                "display": "ERROR: no designation for code 19265001",
+                                "system": "http://hl7.org/fhir/ValueSet/immunization-target-disease"
+                              },
+                              {
+                                "code": "23502006",
+                                "display": "ERROR: no designation for code 23502006",
+                                "system": "http://hl7.org/fhir/ValueSet/immunization-target-disease"
+                              },
+                              {
+                                "code": "75702008",
+                                "display": "ERROR: no designation for code 75702008",
+                                "system": "http://hl7.org/fhir/ValueSet/immunization-target-disease"
+                              },
+                              {
+                                "code": "80612004",
+                                "display": "ERROR: no designation for code 80612004",
+                                "system": "http://hl7.org/fhir/ValueSet/immunization-target-disease"
+                              },
+                              {
+                                "code": "186747009",
+                                "display": "ERROR: no designation for code 186747009",
+                                "system": "http://hl7.org/fhir/ValueSet/immunization-target-disease"
+                              },
+                              {
+                                "code": "67924001",
+                                "display": "ERROR: no designation for code 67924001",
+                                "system": "http://hl7.org/fhir/ValueSet/immunization-target-disease"
+                              },
+                              {
+                                "code": "70090004",
+                                "display": "ERROR: no designation for code 70090004",
+                                "system": "http://hl7.org/fhir/ValueSet/immunization-target-disease"
+                              }
+                            ],
+                            "required": true
+                          },
+                          "type": "input",
+                          "key": "valueString"
+                        }
+                      ],
+                      "key": "protocolApplied"
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        ],
+        "expressions": {
+          "hide": "!( field?.parent?.model?.valueCoding?.code === 'yes' )"
+        }
+      }
+    ]
+  },
+  {
+    "key": "reason.answer",
+    "fieldGroup": [
+      {
+        "template": "<h4 class=\"question-title\">Grund der Hospitalisierung</h4>"
+      },
+      {
+        "key": "valueCoding",
+        "type": "autocomplete-coding",
+        "props": {
+          "options": [
+            {
+              "code": "becauseOfOtherReason",
+              "display": "Hospitalisiert aufgrund einer anderen Ursache als der gemeldeten Krankheit",
+              "system": "https://demis.rki.de/fhir/CodeSystem/hospitalizationReason"
+            },
+            {
+              "code": "NASK",
+              "display": "not asked",
+              "system": "http://terminology.hl7.org/CodeSystem/v3-NullFlavor"
+            },
+            {
+              "code": "becauseOfDisease",
+              "display": "Hospitalisiert aufgrund der gemeldeten Krankheit",
+              "system": "https://demis.rki.de/fhir/CodeSystem/hospitalizationReason"
+            },
+            {
+              "code": "forIsolation",
+              "display": "Hospitalisiert zur Isolierung",
+              "system": "https://demis.rki.de/fhir/CodeSystem/hospitalizationReason"
+            },
+            {
+              "code": "ASKU",
+              "display": "asked but unknown",
+              "system": "http://terminology.hl7.org/CodeSystem/v3-NullFlavor"
+            }
+          ],
+          "required": false,
+          "clearable": true,
+          "defaultCode": "NASK"
+        }
+      }
+    ]
+  },
+  {
+    "fieldGroup": [
+      {
+        "template": "<h4 class=\"question-title\">Welche Risikofaktoren liegen bei der betroffenen Person vor?</h4>"
+      },
+      {
+        "key": "infectionRiskKind.answer",
+        "type": "repeat-section",
+        "fieldGroupClassName": "REPEATED",
+        "props": {
+          "itemName": "Welche Risikofaktoren liegen bei der betroffenen Person vor?"
+        },
+        "fieldArray": {
+          "fieldGroup": [
+            {
+              "key": "valueCoding",
+              "type": "autocomplete-coding",
+              "props": {
+                "options": [
+                  {
+                    "code": "86569001",
+                    "display": "Postpartum (weniger als 6 Wochen)",
+                    "system": "http://snomed.info/sct"
+                  },
+                  {
+                    "code": "260413007",
+                    "display": "keine",
+                    "system": "http://snomed.info/sct"
+                  },
+                  {
+                    "code": "90708001",
+                    "display": "Nierenerkrankung",
+                    "system": "http://snomed.info/sct"
+                  },
+                  {
+                    "code": "NASK",
+                    "display": "not asked",
+                    "system": "http://terminology.hl7.org/CodeSystem/v3-NullFlavor"
+                  },
+                  {
+                    "code": "46635009",
+                    "display": "Diabetes Typ 1",
+                    "system": "http://snomed.info/sct"
+                  },
+                  {
+                    "code": "77386006",
+                    "display": "Schwangerschaft",
+                    "system": "http://snomed.info/sct"
+                  },
+                  {
+                    "code": "44054006",
+                    "display": "Diabetes Typ 2",
+                    "system": "http://snomed.info/sct"
+                  },
+                  {
+                    "code": "118940003",
+                    "display": "neurologische/neuromuskuläre Erkrankung",
+                    "system": "http://snomed.info/sct"
+                  },
+                  {
+                    "code": "413839001",
+                    "display": "Chronische Lungenerkrankung (z.B. COPD)",
+                    "system": "http://snomed.info/sct"
+                  },
+                  {
+                    "code": "235856003",
+                    "display": "Lebererkrankung",
+                    "system": "http://snomed.info/sct"
+                  },
+                  {
+                    "code": "ASKU",
+                    "display": "asked but unknown",
+                    "system": "http://terminology.hl7.org/CodeSystem/v3-NullFlavor"
+                  },
+                  {
+                    "code": "49601007",
+                    "display": "Herz-Kreislauf-Erkrankung (inkl. Bluthochdruck)",
+                    "system": "http://snomed.info/sct"
+                  },
+                  {
+                    "code": "234532001",
+                    "display": "Immundefizienz, inkl. HIV",
+                    "system": "http://snomed.info/sct"
+                  },
+                  {
+                    "code": "363346000",
+                    "display": "Krebserkrankung",
+                    "system": "http://snomed.info/sct"
+                  }
+                ],
+                "required": false,
+                "clearable": true,
+                "defaultCode": "NASK"
+              }
+            },
+            {
+              "key": "trimester.answer",
+              "fieldGroup": [
+                {
+                  "template": "<h4 class=\"question-title\">Trimester</h4>"
+                },
+                {
+                  "key": "valueCoding",
+                  "type": "autocomplete-coding",
+                  "props": {
+                    "options": [
+                      {
+                        "code": "255248002",
+                        "display": "3. Trimester",
+                        "system": "http://snomed.info/sct"
+                      },
+                      {
+                        "code": "255246003",
+                        "display": "1. Trimester",
+                        "system": "http://snomed.info/sct"
+                      },
+                      {
+                        "code": "NASK",
+                        "display": "not asked",
+                        "system": "http://terminology.hl7.org/CodeSystem/v3-NullFlavor"
+                      },
+                      {
+                        "code": "255247007",
+                        "display": "2. Trimester",
+                        "system": "http://snomed.info/sct"
+                      },
+                      {
+                        "code": "ASKU",
+                        "display": "asked but unknown",
+                        "system": "http://terminology.hl7.org/CodeSystem/v3-NullFlavor"
+                      }
+                    ],
+                    "required": false,
+                    "clearable": true,
+                    "defaultCode": "NASK"
+                  }
+                }
+              ],
+              "expressions": {
+                "hide": "!( field?.parent?.model?.valueCoding?.code === '77386006' )"
+              }
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "key": "outbreak.answer",
+    "fieldGroup": [
+      {
+        "template": "<h4 class=\"question-title\">Kann der gemeldete Fall einem Ausbruch zugeordnet werden?</h4>"
+      },
+      {
+        "key": "valueCoding",
+        "type": "autocomplete-coding",
+        "props": {
+          "options": [
+            {
+              "code": "yes",
+              "display": "Ja",
+              "system": "https://demis.rki.de/fhir/CodeSystem/yesOrNoAnswer"
+            },
+            {
+              "code": "NASK",
+              "display": "not asked",
+              "system": "http://terminology.hl7.org/CodeSystem/v3-NullFlavor"
+            },
+            {
+              "code": "no",
+              "display": "Nein",
+              "system": "https://demis.rki.de/fhir/CodeSystem/yesOrNoAnswer"
+            },
+            {
+              "code": "ASKU",
+              "display": "asked but unknown",
+              "system": "http://terminology.hl7.org/CodeSystem/v3-NullFlavor"
+            }
+          ],
+          "required": false,
+          "clearable": true,
+          "defaultCode": "NASK"
+        }
+      },
+      {
+        "key": "outbreakNote.answer",
+        "fieldGroup": [
+          {
+            "template": "<h4 class=\"question-title\">Fallbezogene Zusatzinformationen zum Ausbruch</h4>"
+          },
+          {
+            "type": "textarea",
+            "key": "valueString"
+          }
+        ],
+        "expressions": {
+          "hide": "!( field?.parent?.model?.valueCoding?.code === 'yes' )"
+        }
+      },
+      {
+        "key": "outbreakNotificationId.answer",
+        "fieldGroup": [
+          {
+            "template": "<h4 class=\"question-title\">Notification-Id der zugehörigen Ausbruchsmeldung</h4>"
+          },
+          {
+            "template": "<h1 class=\"compile-error\">RReference without extension: outbreakNotificationId</h1>"
+          }
+        ],
+        "expressions": {
+          "hide": "!( field?.parent?.model?.valueCoding?.code === 'yes' )"
+        }
+      }
+    ]
+  }
+]

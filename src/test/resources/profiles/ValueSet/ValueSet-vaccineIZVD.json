@@ -1,0 +1,72 @@
+{
+  "resourceType": "ValueSet",
+  "id": "vaccineIZVD",
+  "url": "https://demis.rki.de/fhir/ValueSet/vaccineIZVD",
+  "version": "1.1.0",
+  "name": "VaccineIZVD",
+  "title": "Zoonotische Influenza-Impfstoff als SNOMED-Code",
+  "status": "active",
+  "date": "2023-12-11",
+  "description": "Das ValueSet VaccineIZVD enthält die Codes der Zoonotische Influenza-Impfstoffe als SNOMED-Code.",
+  "compose": {
+    "include": [
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/900000000000207008/version/20230901",
+        "concept": [
+          {
+            "code": "74964007",
+            "display": "-andere/sonstige-",
+            "designation": [
+              {
+                "language": "en-US",
+                "use": {
+                  "system": "http://snomed.info/sct",
+                  "code": "900000000000003001"
+                },
+                "value": "Other (qualifier value)"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "system": "http://terminology.hl7.org/CodeSystem/v3-NullFlavor",
+        "version": "2.1.0",
+        "concept": [
+          {
+            "code": "ASKU",
+            "display": "asked but unknown"
+          },
+          {
+            "code": "NASK",
+            "display": "not asked"
+          }
+        ]
+      }
+    ]
+  },
+  "expansion": {
+    "timestamp": "2023-12-11T00:00:00+01:00",
+    "contains": [
+      {
+        "system": "http://terminology.hl7.org/CodeSystem/v3-NullFlavor",
+        "version": "2.1.0",
+        "code": "NASK",
+        "display": "not asked"
+      },
+      {
+        "system": "http://terminology.hl7.org/CodeSystem/v3-NullFlavor",
+        "version": "2.1.0",
+        "code": "ASKU",
+        "display": "asked but unknown"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/900000000000207008/version/20230901",
+        "code": "74964007",
+        "display": "-andere/sonstige-"
+      }
+    ]
+  }
+}

@@ -1,0 +1,158 @@
+{
+  "resourceType": "ValueSet",
+  "id": "materialGAPP",
+  "url": "https://demis.rki.de/fhir/ValueSet/materialGAPP",
+  "version": "1.9.0",
+  "name": "MaterialGAPP",
+  "title": "Material für Acinetobacter spp. bei Nachweis einer Carbapenemase-Determinante oder mit verminderter Empfindlichkeit gegenüber Carbapenemen außer bei natürlicher Resistenz; Meldepflicht nur bei Infektion oder Kolonisation",
+  "status": "active",
+  "experimental": false,
+  "date": "2023-11-09",
+  "publisher": "Robert Koch-Institut",
+  "description": "Das ValueSet MaterialGAPP enthält die Codes der Materialien für Acinetobacter spp. bei Nachweis einer Carbapenemase-Determinante oder mit verminderter Empfindlichkeit gegenüber Carbapenemen außer bei natürlicher Resistenz; Meldepflicht nur bei Infektion oder Kolonisation.",
+  "compose": {
+    "include": [
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/900000000000207008/version/20230901",
+        "concept": [
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 5
+              }
+            ],
+            "code": "5",
+            "display": "5",
+            "designation": [
+              {
+                "language": "en-US",
+                "value": "E-5"
+              },
+              {
+                "language": "de-DE",
+                "value": "D-5"
+              }
+            ]
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 4
+              }
+            ],
+            "code": "4",
+            "display": "4",
+            "designation": [
+              {
+                "language": "en-US",
+                "value": "E-4"
+              },
+              {
+                "language": "de-DE",
+                "value": "D-4"
+              }
+            ]
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 3
+              }
+            ],
+            "code": "3",
+            "display": "3",
+            "designation": [
+              {
+                "language": "en-US",
+                "value": "E-3"
+              },
+              {
+                "language": "de-DE",
+                "value": "D-3"
+              }
+            ]
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 2
+              }
+            ],
+            "code": "2",
+            "display": "2",
+            "designation": [
+              {
+                "language": "en-US",
+                "value": "E-2"
+              },
+              {
+                "language": "de-DE",
+                "value": "D-2"
+              }
+            ]
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 1
+              }
+            ],
+            "code": "1",
+            "display": "1",
+            "designation": [
+              {
+                "language": "en-US",
+                "value": "E-1"
+              },
+              {
+                "language": "de-DE",
+                "value": "D-1"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "expansion": {
+    "timestamp": "2023-11-09T00:00:00+01:00",
+    "contains": [
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/900000000000207008/version/20230901",
+        "code": "1",
+        "display": "1"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/900000000000207008/version/20230901",
+        "code": "2",
+        "display": "2"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/900000000000207008/version/20230901",
+        "code": "3",
+        "display": "3"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/900000000000207008/version/20230901",
+        "code": "4",
+        "display": "4"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/900000000000207008/version/20230901",
+        "code": "5",
+        "display": "5"
+      }
+    ]
+  }
+}

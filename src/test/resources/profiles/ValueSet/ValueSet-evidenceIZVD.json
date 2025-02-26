@@ -1,0 +1,186 @@
+{
+  "resourceType": "ValueSet",
+  "id": "evidenceIZVD",
+  "url": "https://demis.rki.de/fhir/ValueSet/evidenceIZVD",
+  "version": "1.2.0",
+  "name": "EvidenceIZVD",
+  "title": "Zoonotische Influenza-Symptom und -Manifestation",
+  "status": "active",
+  "date": "2023-12-11",
+  "description": "Das ValueSet EvidenceIZVD enthält die Codes der Zoonotische Influenza-Symptome und -Manifestationen.",
+  "compose": {
+    "include": [
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/900000000000207008/version/20230901",
+        "concept": [
+          {
+            "code": "67782005",
+            "display": "akutes schweres Atemnotsyndrom (ARDS)",
+            "designation": [
+              {
+                "language": "en-US",
+                "use": {
+                  "system": "http://snomed.info/sct",
+                  "code": "900000000000003001"
+                },
+                "value": "Acute respiratory distress syndrome (disorder)"
+              }
+            ]
+          },
+          {
+            "code": "409966000",
+            "display": "Durchfall, akut",
+            "designation": [
+              {
+                "language": "en-US",
+                "use": {
+                  "system": "http://snomed.info/sct",
+                  "code": "900000000000003001"
+                },
+                "value": "Acute diarrhea (disorder)"
+              }
+            ]
+          },
+          {
+            "code": "267036007",
+            "display": "Atemstörung (Dyspnoe)",
+            "designation": [
+              {
+                "language": "en-US",
+                "use": {
+                  "system": "http://snomed.info/sct",
+                  "code": "900000000000003001"
+                },
+                "value": "Dyspnea (finding)"
+              }
+            ]
+          },
+          {
+            "code": "45170000",
+            "display": "Gehirnentzündung (Enzephalitis)",
+            "designation": [
+              {
+                "language": "en-US",
+                "use": {
+                  "system": "http://snomed.info/sct",
+                  "code": "900000000000003001"
+                },
+                "value": "Encephalitis (disorder)"
+              }
+            ]
+          },
+          {
+            "code": "95891005",
+            "display": "grippetypische Symptomatik",
+            "designation": [
+              {
+                "language": "en-US",
+                "use": {
+                  "system": "http://snomed.info/sct",
+                  "code": "900000000000003001"
+                },
+                "value": "Influenza-like illness (finding)"
+              }
+            ]
+          },
+          {
+            "code": "9826008",
+            "display": "Bindehautentzündung (Konjunktivitis)",
+            "designation": [
+              {
+                "language": "en-US",
+                "use": {
+                  "system": "http://snomed.info/sct",
+                  "code": "900000000000003001"
+                },
+                "value": "Conjunctivitis (disorder)"
+              }
+            ]
+          },
+          {
+            "code": "50920009",
+            "display": "Herzmuskelentzündung (Myokarditis)",
+            "designation": [
+              {
+                "language": "en-US",
+                "use": {
+                  "system": "http://snomed.info/sct",
+                  "code": "900000000000003001"
+                },
+                "value": "Myocarditis (disorder)"
+              }
+            ]
+          },
+          {
+            "code": "233604007",
+            "display": "Lungenentzündung (Pneumonie)",
+            "designation": [
+              {
+                "language": "en-US",
+                "use": {
+                  "system": "http://snomed.info/sct",
+                  "code": "900000000000003001"
+                },
+                "value": "Pneumonia (disorder)"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "expansion": {
+    "timestamp": "2023-12-11T00:00:00+01:00",
+    "contains": [
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/900000000000207008/version/20230901",
+        "code": "267036007",
+        "display": "Atemstörung (Dyspnoe)"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/900000000000207008/version/20230901",
+        "code": "409966000",
+        "display": "Durchfall, akut"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/900000000000207008/version/20230901",
+        "code": "50920009",
+        "display": "Herzmuskelentzündung (Myokarditis)"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/900000000000207008/version/20230901",
+        "code": "67782005",
+        "display": "akutes schweres Atemnotsyndrom (ARDS)"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/900000000000207008/version/20230901",
+        "code": "9826008",
+        "display": "Bindehautentzündung (Konjunktivitis)"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/900000000000207008/version/20230901",
+        "code": "233604007",
+        "display": "Lungenentzündung (Pneumonie)"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/900000000000207008/version/20230901",
+        "code": "45170000",
+        "display": "Gehirnentzündung (Enzephalitis)"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/900000000000207008/version/20230901",
+        "code": "95891005",
+        "display": "grippetypische Symptomatik"
+      }
+    ]
+  }
+}

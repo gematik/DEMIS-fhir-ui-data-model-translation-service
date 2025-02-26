@@ -1,0 +1,41 @@
+{
+  "resourceType": "ConceptMap",
+  "id": "NotificationDiseaseCategoryToTransmissionCategory",
+  "url": "https://demis.rki.de/fhir/ConceptMap/foobar",
+  "version": "1.1.0",
+  "name": "foobar",
+  "title": "NotificationDiseaseCategoryToTransmissionCategory",
+  "status": "active",
+  "date": "2023-10-10",
+  "description": "Die ConceptMap NotificationDiseaseCategoryToTransmissionCategory ordnet die Meldetatbestände der Erkrankungsmeldung den 3-Buchstaben-Codes der Übermittlungskategorien aus SurvNet zu.",
+  "sourceUri": "https://demis.rki.de/fhir/CodeSystem/notificationDiseaseCategory",
+  "targetUri": "https://demis.rki.de/fhir/CodeSystem/transmissionCategory",
+  "group": [
+    {
+      "source": "https://demis.rki.de/fhir/CodeSystem/notificationDiseaseCategory",
+      "target": "https://demis.rki.de/fhir/CodeSystem/transmissionCategory",
+      "element": [
+        {
+          "code": "band",
+          "display": "Milzbrand",
+          "target": [
+            {
+              "code": "ban",
+              "equivalence": "relatedto"
+            }
+          ]
+        },
+        {
+          "code": "bpsd",
+          "display": "Keuchhusten",
+          "target": [
+            {
+              "code": "bps",
+              "equivalence": "relatedto"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

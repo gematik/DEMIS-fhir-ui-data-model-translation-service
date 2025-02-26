@@ -1,0 +1,6 @@
+apiVersion: v2
+name: futs-istio
+description: DEMIS fhir-ui-data-model-translation-service Istio Configuration
+type: application
+version: 2.0.8
+appVersion: "2.0.8"

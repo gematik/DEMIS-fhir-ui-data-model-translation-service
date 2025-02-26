@@ -1,0 +1,72 @@
+{
+  "resourceType": "ValueSet",
+  "id": "answerSetStadiumHCVD",
+  "url": "https://demis.rki.de/fhir/ValueSet/answerSetStadiumHCVD",
+  "version": "1.2.0",
+  "name": "AnswerSetStadiumHCVD",
+  "title": "Anwort Stadium der Infektion bei Hepatitis C",
+  "status": "active",
+  "date": "2023-12-11",
+  "description": "Das ValueSet AnswerSetStadiumHCVD enthält die Codes der Antwortmöglichkeiten für das Stadium der Infektion bei Hepatitis C.",
+  "compose": {
+    "include": [
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/900000000000207008/version/20230901",
+        "concept": [
+          {
+            "code": "773114002",
+            "display": "Verdacht auf akute Infektion",
+            "designation": [
+              {
+                "language": "en-US",
+                "use": {
+                  "system": "http://snomed.info/sct",
+                  "code": "900000000000003001"
+                },
+                "value": "Acute hepatitis caused by infection suspected (situation)"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "system": "http://terminology.hl7.org/CodeSystem/v3-NullFlavor",
+        "version": "2.1.0",
+        "concept": [
+          {
+            "code": "ASKU",
+            "display": "asked but unknown"
+          },
+          {
+            "code": "NASK",
+            "display": "not asked"
+          }
+        ]
+      }
+    ]
+  },
+  "expansion": {
+    "timestamp": "2023-12-11T00:00:00+01:00",
+    "contains": [
+      {
+        "system": "http://terminology.hl7.org/CodeSystem/v3-NullFlavor",
+        "version": "2.1.0",
+        "code": "NASK",
+        "display": "not asked"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/900000000000207008/version/20230901",
+        "code": "773114002",
+        "display": "Verdacht auf akute Infektion"
+      },
+      {
+        "system": "http://terminology.hl7.org/CodeSystem/v3-NullFlavor",
+        "version": "2.1.0",
+        "code": "ASKU",
+        "display": "asked but unknown"
+      }
+    ]
+  }
+}

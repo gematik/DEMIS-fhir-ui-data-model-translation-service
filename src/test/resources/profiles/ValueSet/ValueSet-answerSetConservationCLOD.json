@@ -1,0 +1,132 @@
+{
+  "resourceType": "ValueSet",
+  "id": "answerSetConservationCLOD",
+  "url": "https://demis.rki.de/fhir/ValueSet/answerSetConservationCLOD",
+  "version": "1.2.0",
+  "name": "AnswerSetConservationCLOD",
+  "title": "Antwort zur Art der Lebensmittelkonservierung bei Botulismus",
+  "status": "active",
+  "date": "2023-12-11",
+  "description": "Das ValueSet AnswerSetConservationCLOD enthält die Codes der Antwortmöglichkeiten für die Art der Lebensmittelkonservierung bei Botulismus.",
+  "compose": {
+    "include": [
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/900000000000207008/version/20230901",
+        "concept": [
+          {
+            "code": "227989005",
+            "display": "Konserve",
+            "designation": [
+              {
+                "language": "en-US",
+                "use": {
+                  "system": "http://snomed.info/sct",
+                  "code": "900000000000003001"
+                },
+                "value": "Canned food (substance)"
+              }
+            ]
+          },
+          {
+            "code": "229982008",
+            "display": "Sauer eingelegt",
+            "designation": [
+              {
+                "language": "en-US",
+                "use": {
+                  "system": "http://snomed.info/sct",
+                  "code": "900000000000003001"
+                },
+                "value": "Pickled food (substance)"
+              }
+            ]
+          },
+          {
+            "code": "423252004",
+            "display": "Eingekocht/eingeweckt",
+            "designation": [
+              {
+                "language": "en-US",
+                "use": {
+                  "system": "http://snomed.info/sct",
+                  "code": "900000000000003001"
+                },
+                "value": "Home-canned food (substance)"
+              }
+            ]
+          },
+          {
+            "code": "228008004",
+            "display": "getrocknet/gedarrt",
+            "designation": [
+              {
+                "language": "en-US",
+                "use": {
+                  "system": "http://snomed.info/sct",
+                  "code": "900000000000003001"
+                },
+                "value": "Dried food (substance)"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "system": "http://terminology.hl7.org/CodeSystem/v3-NullFlavor",
+        "version": "2.1.0",
+        "concept": [
+          {
+            "code": "ASKU",
+            "display": "asked but unknown"
+          },
+          {
+            "code": "NASK",
+            "display": "not asked"
+          }
+        ]
+      }
+    ]
+  },
+  "expansion": {
+    "timestamp": "2023-12-11T00:00:00+01:00",
+    "contains": [
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/900000000000207008/version/20230901",
+        "code": "227989005",
+        "display": "Konserve"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/900000000000207008/version/20230901",
+        "code": "229982008",
+        "display": "Sauer eingelegt"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/900000000000207008/version/20230901",
+        "code": "423252004",
+        "display": "Eingekocht/eingeweckt"
+      },
+      {
+        "system": "http://terminology.hl7.org/CodeSystem/v3-NullFlavor",
+        "version": "2.1.0",
+        "code": "NASK",
+        "display": "not asked"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/900000000000207008/version/20230901",
+        "code": "228008004",
+        "display": "getrocknet/gedarrt"
+      },
+      {
+        "system": "http://terminology.hl7.org/CodeSystem/v3-NullFlavor",
+        "version": "2.1.0",
+        "code": "ASKU",
+        "display": "asked but unknown"
+      }
+    ]
+  }
+}

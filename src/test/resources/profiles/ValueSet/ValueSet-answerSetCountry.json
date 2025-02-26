@@ -1,0 +1,62 @@
+{
+  "resourceType": "ValueSet",
+  "id": "answerSetCountry",
+  "url": "https://demis.rki.de/fhir/ValueSet/answerSetCountry",
+  "version": "1.4.0",
+  "name": "AnswerSetCountry",
+  "title": "Anwort Country mit staatenlos und Ausland",
+  "status": "active",
+  "date": "2024-06-17",
+  "description": "Das ValueSet answerSetCountry enthält die Codes der Antwortmöglichkeiten für Country mit staatenlos und Ausland.",
+  "compose": {
+    "include": [
+      {
+        "system": "urn:iso:std:iso:3166",
+        "concept": [
+          {
+            "code": "DE",
+            "display": "Germany"
+          },
+          {
+            "code": "CH",
+            "display": "Switzerland"
+          },
+          {
+            "code": "NZ",
+            "display": "New Zealand"
+          }
+        ]
+      },
+      {
+        "system": "https://demis.rki.de/fhir/CodeSystem/noCountry",
+        "version": "1.1.0"
+      },
+      {
+        "system": "http://terminology.hl7.org/CodeSystem/v3-NullFlavor",
+        "version": "2.1.0",
+        "concept": [
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 99
+              }
+            ],
+            "code": "ASKU",
+            "display": "asked but unknown"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 100
+              }
+            ],
+            "code": "NASK",
+            "display": "not asked"
+          }
+        ]
+      }
+    ]
+  }
+}

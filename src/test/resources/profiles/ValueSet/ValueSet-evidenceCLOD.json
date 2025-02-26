@@ -1,0 +1,226 @@
+{
+  "resourceType": "ValueSet",
+  "id": "evidenceCLOD",
+  "url": "https://demis.rki.de/fhir/ValueSet/evidenceCLOD",
+  "version": "1.3.0",
+  "name": "EvidenceCLOD",
+  "title": "Botulismus-Symptom und -Manifestation",
+  "status": "active",
+  "date": "2023-12-11",
+  "description": "Das ValueSet EvidenceCLOD enthält die Codes der Botulismus-Symptome und -Manifestationen.",
+  "compose": {
+    "include": [
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/900000000000207008/version/20230901",
+        "concept": [
+          {
+            "code": "267036007",
+            "display": "Atemstörung (Dyspnoe)",
+            "designation": [
+              {
+                "language": "en-US",
+                "use": {
+                  "system": "http://snomed.info/sct",
+                  "code": "900000000000003001"
+                },
+                "value": "Dyspnea (finding)"
+              }
+            ]
+          },
+          {
+            "code": "54840006",
+            "display": "Gedeihstörung",
+            "designation": [
+              {
+                "language": "en-US",
+                "use": {
+                  "system": "http://snomed.info/sct",
+                  "code": "900000000000003001"
+                },
+                "value": "Failure to thrive (disorder)"
+              }
+            ]
+          },
+          {
+            "code": "73013002:{263502005=424124008}",
+            "display": "Hirnnervenstörung, akut entstanden",
+            "designation": [
+              {
+                "language": "en-US",
+                "use": {
+                  "system": "http://snomed.info/sct",
+                  "code": "1119454002"
+                },
+                "value": "73013002 | Cranial nerve disorder (disorder) | : {263502005 | Clinical course (attribute) | = 424124008 | Sudden onset AND/OR short duration (qualifier value) |}"
+              }
+            ]
+          },
+          {
+            "code": "39157001",
+            "display": "Lähmung, schlaff",
+            "designation": [
+              {
+                "language": "en-US",
+                "use": {
+                  "system": "http://snomed.info/sct",
+                  "code": "900000000000003001"
+                },
+                "value": "Flaccid paralysis (finding)"
+              }
+            ]
+          },
+          {
+            "code": "26544005",
+            "display": "Muskelschwäche",
+            "designation": [
+              {
+                "language": "en-US",
+                "use": {
+                  "system": "http://snomed.info/sct",
+                  "code": "900000000000003001"
+                },
+                "value": "Muscle weakness (finding)"
+              }
+            ]
+          },
+          {
+            "code": "111360009",
+            "display": "Verstopfung (Obstipation)",
+            "designation": [
+              {
+                "language": "en-US",
+                "use": {
+                  "system": "http://snomed.info/sct",
+                  "code": "900000000000003001"
+                },
+                "value": "Obstipation (disorder)"
+              }
+            ]
+          },
+          {
+            "code": "11934000",
+            "display": "Herabhängen des Oberlids (Ptosis)",
+            "designation": [
+              {
+                "language": "en-US",
+                "use": {
+                  "system": "http://snomed.info/sct",
+                  "code": "900000000000003001"
+                },
+                "value": "Ptosis of eyelid (disorder)"
+              }
+            ]
+          },
+          {
+            "code": "40739000",
+            "display": "Schluckstörung",
+            "designation": [
+              {
+                "language": "en-US",
+                "use": {
+                  "system": "http://snomed.info/sct",
+                  "code": "900000000000003001"
+                },
+                "value": "Dysphagia (disorder)"
+              }
+            ]
+          },
+          {
+            "code": "397540003",
+            "display": "Sehstörung",
+            "designation": [
+              {
+                "language": "en-US",
+                "use": {
+                  "system": "http://snomed.info/sct",
+                  "code": "900000000000003001"
+                },
+                "value": "Visual impairment (disorder)"
+              }
+            ]
+          },
+          {
+            "code": "289155006",
+            "display": "Trinkschwäche",
+            "designation": [
+              {
+                "language": "en-US",
+                "use": {
+                  "system": "http://snomed.info/sct",
+                  "code": "900000000000003001"
+                },
+                "value": "Problem with drinking fluid (finding)"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "expansion": {
+    "timestamp": "2023-12-11T00:00:00+01:00",
+    "contains": [
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/900000000000207008/version/20230901",
+        "code": "11934000",
+        "display": "Herabhängen des Oberlids (Ptosis)"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/900000000000207008/version/20230901",
+        "code": "73013002:{263502005=424124008}",
+        "display": "Hirnnervenstörung, akut entstanden"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/900000000000207008/version/20230901",
+        "code": "267036007",
+        "display": "Atemstörung (Dyspnoe)"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/900000000000207008/version/20230901",
+        "code": "397540003",
+        "display": "Sehstörung"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/900000000000207008/version/20230901",
+        "code": "40739000",
+        "display": "Schluckstörung"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/900000000000207008/version/20230901",
+        "code": "289155006",
+        "display": "Trinkschwäche"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/900000000000207008/version/20230901",
+        "code": "54840006",
+        "display": "Gedeihstörung"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/900000000000207008/version/20230901",
+        "code": "26544005",
+        "display": "Muskelschwäche"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/900000000000207008/version/20230901",
+        "code": "39157001",
+        "display": "Lähmung, schlaff"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/900000000000207008/version/20230901",
+        "code": "111360009",
+        "display": "Verstopfung (Obstipation)"
+      }
+    ]
+  }
+}

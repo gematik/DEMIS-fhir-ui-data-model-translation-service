@@ -1,0 +1,32 @@
+fullName: futs
+service:
+  type: ClusterIP
+  ports:
+    http: 8080
+istio:
+  virtualService:
+    gateways: {}
+    http:
+      - match:
+          - uri:
+              prefix: /fhir-ui-data-model-translation
+            headers:
+              fhirProfile:
+                exact: "igs-profile-snapshots"
+        delegate:
+          name: "futs-igs"
+      - match:
+          - uri:
+              prefix: /fhir-ui-data-model-translation
+            headers:
+              fhirProfile:
+                exact: "fhir-profile-snapshots"
+        delegate:
+          name: "futs-core"
+      - match:
+          - uri:
+              prefix: /fhir-ui-data-model-translation
+        delegate:
+          name: "futs-core"
+    hosts: {}
+    externalHttp: {}

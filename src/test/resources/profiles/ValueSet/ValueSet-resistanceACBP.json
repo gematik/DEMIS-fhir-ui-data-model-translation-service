@@ -1,0 +1,171 @@
+{
+  "resourceType": "ValueSet",
+  "id": "resistanceACBP",
+  "url": "https://demis.rki.de/fhir/ValueSet/resistanceACBP",
+  "version": "1.0.0",
+  "name": "ResistanceACBP",
+  "title": "Resistenz für Acinetobacter spp. bei Nachweis einer Carbapenemase-Determinante oder mit verminderter Empfindlichkeit gegenüber Carbapenemen außer bei natürlicher Resistenz; Meldepflicht nur bei Infektion oder Kolonisation",
+  "status": "active",
+  "experimental": false,
+  "date": "2023-12-12",
+  "publisher": "Robert Koch-Institut",
+  "description": "Das ValueSet ResistanceACBP enthält die Codes der Resistenz für Acinetobacter spp. bei Nachweis einer Carbapenemase-Determinante oder mit verminderter Empfindlichkeit gegenüber Carbapenemen außer bei natürlicher Resistenz; Meldepflicht nur bei Infektion oder Kolonisation.",
+  "compose": {
+    "include": [
+      {
+        "valueSet": [
+          "https://demis.rki.de/fhir/ValueSet/resistanceEBCP"
+        ]
+      }
+    ]
+  },
+  "expansion": {
+    "timestamp": "2023-12-12T00:00:00+01:00",
+    "contains": [
+      {
+        "system": "http://loinc.org",
+        "version": "2.76",
+        "code": "18996-9",
+        "display": "Tobramycin [Susceptibility]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.76",
+        "code": "18943-1",
+        "display": "Meropenem [Susceptibility]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.76",
+        "code": "18998-5",
+        "display": "Trimethoprim+Sulfamethoxazole [Susceptibility]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.76",
+        "code": "73602-5",
+        "display": "Ceftolozane+Tazobactam [Susceptibility]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.76",
+        "code": "88892-5",
+        "display": "Meropenem+Vaborbactam [Susceptibility]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.76",
+        "code": "18932-4",
+        "display": "Imipenem [Susceptibility]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.76",
+        "code": "18972-0",
+        "display": "Polymyxin B [Susceptibility]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.76",
+        "code": "18970-4",
+        "display": "Piperacillin+Tazobactam [Susceptibility]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.76",
+        "code": "73603-3",
+        "display": "cefTAZidime+Avibactam [Susceptibility]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.76",
+        "code": "18879-7",
+        "display": "Cefepime [Susceptibility]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.76",
+        "code": "96372-8",
+        "display": "Imipenem+Relebactam [Susceptibility]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.76",
+        "code": "99280-0",
+        "display": "Cefiderocol [Susceptibility]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.76",
+        "code": "25596-8",
+        "display": "Fosfomycin [Susceptibility]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.76",
+        "code": "18893-8",
+        "display": "cefTAZidime [Susceptibility]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.76",
+        "code": "18860-7",
+        "display": "Amikacin [Susceptibility]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.76",
+        "code": "18886-2",
+        "display": "Cefotaxime [Susceptibility]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.76",
+        "code": "100049-6",
+        "display": "Eravacycline [Susceptibility]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.76",
+        "code": "20629-2",
+        "display": "levoFLOXacin [Susceptibility]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.76",
+        "code": "18912-6",
+        "display": "Colistin [Susceptibility]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.76",
+        "code": "18928-2",
+        "display": "Gentamicin [Susceptibility]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.76",
+        "code": "18906-8",
+        "display": "Ciprofloxacin [Susceptibility]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.76",
+        "code": "18969-6",
+        "display": "Piperacillin [Susceptibility]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.76",
+        "code": "35802-8",
+        "display": "Ertapenem [Susceptibility]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.76",
+        "code": "42357-4",
+        "display": "Tigecycline [Susceptibility]"
+      }
+    ]
+  }
+}
