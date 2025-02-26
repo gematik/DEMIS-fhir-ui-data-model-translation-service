@@ -1,0 +1,46 @@
+{
+  "resourceType": "ValueSet",
+  "id": "evidenceCVDD",
+  "url": "https://demis.rki.de/fhir/ValueSet/evidenceCVDD",
+  "version": "1.2.0",
+  "name": "EvidenceCVDD",
+  "title": "Covid-19-Symptom und -Manifestation",
+  "status": "active",
+  "date": "2023-09-21",
+  "description": "Das ValueSet EvidenceCVDD enthält die Codes der Covid-19-Symptome und -Manifestationen.",
+  "compose": {
+    "include": [
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/900000000000207008/version/20230331",
+        "concept": [
+          {
+            "code": "67782005",
+            "display": "akutes schweres Atemnotsyndrom (ARDS)",
+            "designation": [
+              {
+                "language": "en-US",
+                "use": {
+                  "system": "http://snomed.info/sct",
+                  "code": "900000000000003001"
+                },
+                "value": "Acute respiratory distress syndrome (disorder)"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "expansion": {
+    "timestamp": "2023-09-21T00:00:00+02:00",
+    "contains": [
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/900000000000207008/version/20230331",
+        "code": "409966000",
+        "display": "Durchfall, akut"
+      }
+    ]
+  }
+}

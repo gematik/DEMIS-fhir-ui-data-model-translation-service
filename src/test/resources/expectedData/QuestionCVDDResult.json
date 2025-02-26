@@ -1,0 +1,19 @@
+{
+  "title": "Coronavirus-Krankheit-2019 (COVID-19): spezifische klinische und epidemiologische Angaben",
+  "items": {
+    "infectionEnvironmentSettingBegin": "Beginn Infektionsumfeld",
+    "reason": "Grund der Hospitalisierung",
+    "infectionEnvironmentSettingEnd": "Ende Infektionsumfeld",
+    "infectionEnvironmentSetting": "Infektionsumfeld vorhanden",
+    "infectionRiskKind": "Welche Risikofaktoren liegen bei der betroffenen Person vor?",
+    "infectionEnvironmentSettingGroup": null,
+    "infectionSource": "Kontakt zu bestätigtem Fall",
+    "trimester": "Trimester",
+    "outbreakNote": "Fallbezogene Zusatzinformationen zum Ausbruch",
+    "immunization": "Wurde die betroffene Person jemals in Bezug auf die Krankheit geimpft?",
+    "outbreak": "Kann der gemeldete Fall einem Ausbruch zugeordnet werden?",
+    "immunizationRef": "Impfinformationen",
+    "infectionEnvironmentSettingKind": "Wahrscheinliches Infektionsumfeld",
+    "outbreakNotificationId": "Notification-Id der zugehörigen Ausbruchsmeldung"
+  }
+}

@@ -1,0 +1,2190 @@
+[
+  {
+    "template": "<h1>Covid-19-spezifische klinische und epidemiologische Angaben</h1>"
+  },
+  {
+    "key": "infectionSource",
+    "fieldGroup": [
+      {
+        "template": "<h4 class=\"question-title\">Kontakt zu bestätigtem Fall</h4>"
+      },
+      {
+        "type": "autocomplete-coding",
+        "props": {
+          "options": [
+            {
+              "code": "yes",
+              "display": "Ja",
+              "system": "https://demis.rki.de/fhir/CodeSystem/yesOrNoAnswer"
+            },
+            {
+              "code": "NASK",
+              "display": "not asked",
+              "system": "http://terminology.hl7.org/CodeSystem/v3-NullFlavor"
+            },
+            {
+              "code": "no",
+              "display": "Nein",
+              "system": "https://demis.rki.de/fhir/CodeSystem/yesOrNoAnswer"
+            },
+            {
+              "code": "ASKU",
+              "display": "asked but unknown",
+              "system": "http://terminology.hl7.org/CodeSystem/v3-NullFlavor"
+            }
+          ],
+          "required": true,
+          "clearable": true,
+          "defaultCode": "NASK"
+        },
+        "key": "VALUE"
+      }
+    ]
+  },
+  {
+    "key": "infectionEnvironmentSetting",
+    "fieldGroup": [
+      {
+        "template": "<h4 class=\"question-title\">Infektionsumfeld vorhanden</h4>"
+      },
+      {
+        "type": "autocomplete-coding",
+        "props": {
+          "options": [
+            {
+              "code": "yes",
+              "display": "Ja",
+              "system": "https://demis.rki.de/fhir/CodeSystem/yesOrNoAnswer"
+            },
+            {
+              "code": "NASK",
+              "display": "not asked",
+              "system": "http://terminology.hl7.org/CodeSystem/v3-NullFlavor"
+            },
+            {
+              "code": "no",
+              "display": "Nein",
+              "system": "https://demis.rki.de/fhir/CodeSystem/yesOrNoAnswer"
+            },
+            {
+              "code": "ASKU",
+              "display": "asked but unknown",
+              "system": "http://terminology.hl7.org/CodeSystem/v3-NullFlavor"
+            }
+          ],
+          "required": true,
+          "clearable": true,
+          "defaultCode": "NASK"
+        },
+        "key": "VALUE"
+      },
+      {
+        "key": "infectionEnvironmentSettingGroup",
+        "fieldGroupClassName": "ITEM_GROUP infectionEnvironmentSettingGroup",
+        "fieldGroup": [
+          {
+            "key": "infectionEnvironmentSettingKind",
+            "fieldGroup": [
+              {
+                "template": "<h4 class=\"question-title\">Wahrscheinliches Infektionsumfeld</h4>"
+              },
+              {
+                "type": "autocomplete-coding",
+                "props": {
+                  "options": [
+                    {
+                      "code": "321",
+                      "display": "Erzieher/-in, Ausbilder/-in, Betreuer/-in",
+                      "system": "https://demis.rki.de/fhir/CodeSystem/infectionEnvironmentSetting"
+                    },
+                    {
+                      "code": "200",
+                      "display": "Patient/-in",
+                      "system": "https://demis.rki.de/fhir/CodeSystem/infectionEnvironmentSetting"
+                    },
+                    {
+                      "code": "320",
+                      "display": "Betreute/-r",
+                      "system": "https://demis.rki.de/fhir/CodeSystem/infectionEnvironmentSetting"
+                    },
+                    {
+                      "code": "204",
+                      "display": "Besucher/-in",
+                      "system": "https://demis.rki.de/fhir/CodeSystem/infectionEnvironmentSetting"
+                    },
+                    {
+                      "code": "203",
+                      "display": "sonstiges Personal",
+                      "system": "https://demis.rki.de/fhir/CodeSystem/infectionEnvironmentSetting"
+                    },
+                    {
+                      "code": "324",
+                      "display": "Personal",
+                      "system": "https://demis.rki.de/fhir/CodeSystem/infectionEnvironmentSetting"
+                    },
+                    {
+                      "code": "202",
+                      "display": "Pflegepersonal",
+                      "system": "https://demis.rki.de/fhir/CodeSystem/infectionEnvironmentSetting"
+                    },
+                    {
+                      "code": "323",
+                      "display": "Passagier/-in",
+                      "system": "https://demis.rki.de/fhir/CodeSystem/infectionEnvironmentSetting"
+                    },
+                    {
+                      "code": "322",
+                      "display": "sonstiges Personal",
+                      "system": "https://demis.rki.de/fhir/CodeSystem/infectionEnvironmentSetting"
+                    },
+                    {
+                      "code": "201",
+                      "display": "medizinisches Personal",
+                      "system": "https://demis.rki.de/fhir/CodeSystem/infectionEnvironmentSetting"
+                    },
+                    {
+                      "code": "162",
+                      "display": "Verein",
+                      "system": "https://demis.rki.de/fhir/CodeSystem/infectionEnvironmentSetting"
+                    },
+                    {
+                      "code": "161",
+                      "display": "Chor",
+                      "system": "https://demis.rki.de/fhir/CodeSystem/infectionEnvironmentSetting"
+                    },
+                    {
+                      "code": "160",
+                      "display": "Sport",
+                      "system": "https://demis.rki.de/fhir/CodeSystem/infectionEnvironmentSetting"
+                    },
+                    {
+                      "code": "444107005+264362003+160481000",
+                      "display": "private Feier/Treffen",
+                      "system": "http://snomed.info/sct"
+                    },
+                    {
+                      "code": "444107005+224871002",
+                      "display": "Universität",
+                      "system": "http://snomed.info/sct"
+                    },
+                    {
+                      "code": "444107005+257629009",
+                      "display": "Hotel",
+                      "system": "http://snomed.info/sct"
+                    },
+                    {
+                      "code": "444107005+1348009",
+                      "display": "teilstationäre Einrichtung für älterer, behinderter oder pflegebedürftiger Menschen (z.B. Seniorentagesstätte)",
+                      "system": "http://snomed.info/sct"
+                    },
+                    {
+                      "code": "444107005+257701001",
+                      "display": "Einzelhandel",
+                      "system": "http://snomed.info/sct"
+                    },
+                    {
+                      "code": "444107005+257621007",
+                      "display": "Hafen",
+                      "system": "http://snomed.info/sct"
+                    },
+                    {
+                      "code": "310",
+                      "display": "Schüler/-in",
+                      "system": "https://demis.rki.de/fhir/CodeSystem/infectionEnvironmentSetting"
+                    },
+                    {
+                      "code": "444107005+257656006",
+                      "display": "Justizvollzugsanstalt",
+                      "system": "http://snomed.info/sct"
+                    },
+                    {
+                      "code": "313",
+                      "display": "sonstiges Personal",
+                      "system": "https://demis.rki.de/fhir/CodeSystem/infectionEnvironmentSetting"
+                    },
+                    {
+                      "code": "312",
+                      "display": "Eltern",
+                      "system": "https://demis.rki.de/fhir/CodeSystem/infectionEnvironmentSetting"
+                    },
+                    {
+                      "code": "444107005+394777002",
+                      "display": "Ambulante Behandlungseinrichtung (Praxis, andere)",
+                      "system": "http://snomed.info/sct"
+                    },
+                    {
+                      "code": "311",
+                      "display": "Lehrkraft",
+                      "system": "https://demis.rki.de/fhir/CodeSystem/infectionEnvironmentSetting"
+                    },
+                    {
+                      "code": "151",
+                      "display": "als Personal",
+                      "system": "https://demis.rki.de/fhir/CodeSystem/infectionEnvironmentSetting"
+                    },
+                    {
+                      "code": "150",
+                      "display": "als Kunde",
+                      "system": "https://demis.rki.de/fhir/CodeSystem/infectionEnvironmentSetting"
+                    },
+                    {
+                      "code": "444107005+702916001",
+                      "display": "Reha-Einrichtung",
+                      "system": "http://snomed.info/sct"
+                    },
+                    {
+                      "code": "444107005+257622000",
+                      "display": "medizinische Einrichtung (außer Krankenhaus)",
+                      "system": "http://snomed.info/sct"
+                    },
+                    {
+                      "code": "444107005+5549007",
+                      "display": "Gemeinschaftsunterkünfte (z.B. Flüchtlings-, Asylbewerberheim)",
+                      "system": "http://snomed.info/sct"
+                    },
+                    {
+                      "code": "143",
+                      "display": "Betreute/-r",
+                      "system": "https://demis.rki.de/fhir/CodeSystem/infectionEnvironmentSetting"
+                    },
+                    {
+                      "code": "263",
+                      "display": "Zeltplatz, Campingplatz",
+                      "system": "https://demis.rki.de/fhir/CodeSystem/infectionEnvironmentSetting"
+                    },
+                    {
+                      "code": "303",
+                      "display": "sonstiges Personal",
+                      "system": "https://demis.rki.de/fhir/CodeSystem/infectionEnvironmentSetting"
+                    },
+                    {
+                      "code": "302",
+                      "display": "Eltern",
+                      "system": "https://demis.rki.de/fhir/CodeSystem/infectionEnvironmentSetting"
+                    },
+                    {
+                      "code": "444107005+22674006",
+                      "display": "Fernbus",
+                      "system": "http://snomed.info/sct"
+                    },
+                    {
+                      "code": "301",
+                      "display": "Erzieher/-in, Betreuer/-in",
+                      "system": "https://demis.rki.de/fhir/CodeSystem/infectionEnvironmentSetting"
+                    },
+                    {
+                      "code": "300",
+                      "display": "Betreute/-r",
+                      "system": "https://demis.rki.de/fhir/CodeSystem/infectionEnvironmentSetting"
+                    },
+                    {
+                      "code": "444107005+62193008",
+                      "display": "Zug",
+                      "system": "http://snomed.info/sct"
+                    },
+                    {
+                      "code": "262",
+                      "display": "Kreuzfahrtschiff",
+                      "system": "https://demis.rki.de/fhir/CodeSystem/infectionEnvironmentSetting"
+                    },
+                    {
+                      "code": "261",
+                      "display": "Hotel, Pension, Herberge",
+                      "system": "https://demis.rki.de/fhir/CodeSystem/infectionEnvironmentSetting"
+                    },
+                    {
+                      "code": "260",
+                      "display": "Übernachtung",
+                      "system": "https://demis.rki.de/fhir/CodeSystem/infectionEnvironmentSetting"
+                    },
+                    {
+                      "code": "444107005+42665001",
+                      "display": "vollstationäre Einrichtung für älterer, behinderter oder pflegebedürftiger Menschen (z.B. Alten-/Pflegeheim)",
+                      "system": "http://snomed.info/sct"
+                    },
+                    {
+                      "code": "ASKU",
+                      "display": "asked but unknown",
+                      "system": "http://terminology.hl7.org/CodeSystem/v3-NullFlavor"
+                    },
+                    {
+                      "code": "444107005+262044003",
+                      "display": "Kreuzfahrtschiff",
+                      "system": "http://snomed.info/sct"
+                    },
+                    {
+                      "code": "444107005+310205006",
+                      "display": "privater Haushalt",
+                      "system": "http://snomed.info/sct"
+                    },
+                    {
+                      "code": "NASK",
+                      "display": "not asked",
+                      "system": "http://terminology.hl7.org/CodeSystem/v3-NullFlavor"
+                    },
+                    {
+                      "code": "255",
+                      "display": "Flüchtlings-, Asylbewerberheim",
+                      "system": "https://demis.rki.de/fhir/CodeSystem/infectionEnvironmentSetting"
+                    },
+                    {
+                      "code": "444107005+257658007",
+                      "display": "Musikveranstaltung/Konzert",
+                      "system": "http://snomed.info/sct"
+                    },
+                    {
+                      "code": "254",
+                      "display": "Justizvollzugsanstalt",
+                      "system": "https://demis.rki.de/fhir/CodeSystem/infectionEnvironmentSetting"
+                    },
+                    {
+                      "code": "444107005+257562009",
+                      "display": "Flughafen",
+                      "system": "http://snomed.info/sct"
+                    },
+                    {
+                      "code": "253",
+                      "display": "Kaserne",
+                      "system": "https://demis.rki.de/fhir/CodeSystem/infectionEnvironmentSetting"
+                    },
+                    {
+                      "code": "252",
+                      "display": "Wohnheim (Kinder-, Jugend-, Studierenden-)",
+                      "system": "https://demis.rki.de/fhir/CodeSystem/infectionEnvironmentSetting"
+                    },
+                    {
+                      "code": "444107005+257692005",
+                      "display": "Wohnheim (Kinder-, Jugend-, Studierenden-)",
+                      "system": "http://snomed.info/sct"
+                    },
+                    {
+                      "code": "251",
+                      "display": "Alten-/Pflegeheim",
+                      "system": "https://demis.rki.de/fhir/CodeSystem/infectionEnvironmentSetting"
+                    },
+                    {
+                      "code": "444107005+108344006",
+                      "display": "ambulanter Pflegedienst",
+                      "system": "http://snomed.info/sct"
+                    },
+                    {
+                      "code": "250",
+                      "display": "Wohnstätten",
+                      "system": "https://demis.rki.de/fhir/CodeSystem/infectionEnvironmentSetting"
+                    },
+                    {
+                      "code": "444107005+224683003",
+                      "display": "Kaserne",
+                      "system": "http://snomed.info/sct"
+                    },
+                    {
+                      "code": "444107005+257689006",
+                      "display": "Gastronomie (Speisegaststätte/Kantine/Imbiss/Restaurant)",
+                      "system": "http://snomed.info/sct"
+                    },
+                    {
+                      "code": "444107005+285141008",
+                      "display": "Arbeitsplatz",
+                      "system": "http://snomed.info/sct"
+                    },
+                    {
+                      "code": "9",
+                      "display": "Transportmittel",
+                      "system": "https://demis.rki.de/fhir/CodeSystem/infectionEnvironmentSetting"
+                    },
+                    {
+                      "code": "444107005+716367000",
+                      "display": "öffentlicher Nahverkehr",
+                      "system": "http://snomed.info/sct"
+                    },
+                    {
+                      "code": "8",
+                      "display": "Veranstaltung",
+                      "system": "https://demis.rki.de/fhir/CodeSystem/infectionEnvironmentSetting"
+                    },
+                    {
+                      "code": "7",
+                      "display": "Gastronomie",
+                      "system": "https://demis.rki.de/fhir/CodeSystem/infectionEnvironmentSetting"
+                    },
+                    {
+                      "code": "2",
+                      "display": "Bildungs-/Betreuungseinrichtung",
+                      "system": "https://demis.rki.de/fhir/CodeSystem/infectionEnvironmentSetting"
+                    },
+                    {
+                      "code": "365",
+                      "display": "Pflegepersonal",
+                      "system": "https://demis.rki.de/fhir/CodeSystem/infectionEnvironmentSetting"
+                    },
+                    {
+                      "code": "123",
+                      "display": "Labor",
+                      "system": "https://demis.rki.de/fhir/CodeSystem/infectionEnvironmentSetting"
+                    },
+                    {
+                      "code": "1",
+                      "display": "Arbeitsplatz, andere",
+                      "system": "https://demis.rki.de/fhir/CodeSystem/infectionEnvironmentSetting"
+                    },
+                    {
+                      "code": "122",
+                      "display": "ambulanter Pflegedienst",
+                      "system": "https://demis.rki.de/fhir/CodeSystem/infectionEnvironmentSetting"
+                    },
+                    {
+                      "code": "364",
+                      "display": "medizinisches Personal",
+                      "system": "https://demis.rki.de/fhir/CodeSystem/infectionEnvironmentSetting"
+                    },
+                    {
+                      "code": "121",
+                      "display": "Pflegeeinrichtung",
+                      "system": "https://demis.rki.de/fhir/CodeSystem/infectionEnvironmentSetting"
+                    },
+                    {
+                      "code": "363",
+                      "display": "Besucher/-in",
+                      "system": "https://demis.rki.de/fhir/CodeSystem/infectionEnvironmentSetting"
+                    },
+                    {
+                      "code": "120",
+                      "display": "medizinische Einrichtung",
+                      "system": "https://demis.rki.de/fhir/CodeSystem/infectionEnvironmentSetting"
+                    },
+                    {
+                      "code": "241",
+                      "display": "sonstiges Personal",
+                      "system": "https://demis.rki.de/fhir/CodeSystem/infectionEnvironmentSetting"
+                    },
+                    {
+                      "code": "362",
+                      "display": "Patient/-in",
+                      "system": "https://demis.rki.de/fhir/CodeSystem/infectionEnvironmentSetting"
+                    },
+                    {
+                      "code": "6",
+                      "display": "Freizeit",
+                      "system": "https://demis.rki.de/fhir/CodeSystem/infectionEnvironmentSetting"
+                    },
+                    {
+                      "code": "5",
+                      "display": "Einzelhandel",
+                      "system": "https://demis.rki.de/fhir/CodeSystem/infectionEnvironmentSetting"
+                    },
+                    {
+                      "code": "4",
+                      "display": "privater Haushalt",
+                      "system": "https://demis.rki.de/fhir/CodeSystem/infectionEnvironmentSetting"
+                    },
+                    {
+                      "code": "3",
+                      "display": "Gesundheitseinrichtung",
+                      "system": "https://demis.rki.de/fhir/CodeSystem/infectionEnvironmentSetting"
+                    },
+                    {
+                      "code": "124",
+                      "display": "Reha-Einrichtung",
+                      "system": "https://demis.rki.de/fhir/CodeSystem/infectionEnvironmentSetting"
+                    },
+                    {
+                      "code": "366",
+                      "display": "sonstiges Personal",
+                      "system": "https://demis.rki.de/fhir/CodeSystem/infectionEnvironmentSetting"
+                    },
+                    {
+                      "code": "444107005+413817003",
+                      "display": "Kita",
+                      "system": "http://snomed.info/sct"
+                    },
+                    {
+                      "code": "240",
+                      "display": "Pflegepersonal",
+                      "system": "https://demis.rki.de/fhir/CodeSystem/infectionEnvironmentSetting"
+                    },
+                    {
+                      "code": "361",
+                      "display": "Personal",
+                      "system": "https://demis.rki.de/fhir/CodeSystem/infectionEnvironmentSetting"
+                    },
+                    {
+                      "code": "444107005+161093007",
+                      "display": "Zeltplatz, Campingplatz",
+                      "system": "http://snomed.info/sct"
+                    },
+                    {
+                      "code": "360",
+                      "display": "Passagier/-in",
+                      "system": "https://demis.rki.de/fhir/CodeSystem/infectionEnvironmentSetting"
+                    },
+                    {
+                      "code": "10",
+                      "display": "sonstiges",
+                      "system": "https://demis.rki.de/fhir/CodeSystem/infectionEnvironmentSetting"
+                    },
+                    {
+                      "code": "112",
+                      "display": "Baugewerbe",
+                      "system": "https://demis.rki.de/fhir/CodeSystem/infectionEnvironmentSetting"
+                    },
+                    {
+                      "code": "111",
+                      "display": "Lebensmittelbereich",
+                      "system": "https://demis.rki.de/fhir/CodeSystem/infectionEnvironmentSetting"
+                    },
+                    {
+                      "code": "110",
+                      "display": "Großraumbüro",
+                      "system": "https://demis.rki.de/fhir/CodeSystem/infectionEnvironmentSetting"
+                    },
+                    {
+                      "code": "351",
+                      "display": "Personal",
+                      "system": "https://demis.rki.de/fhir/CodeSystem/infectionEnvironmentSetting"
+                    },
+                    {
+                      "code": "444107005+257698009",
+                      "display": "Schule",
+                      "system": "http://snomed.info/sct"
+                    },
+                    {
+                      "code": "113",
+                      "display": "Logistikzentrum",
+                      "system": "https://demis.rki.de/fhir/CodeSystem/infectionEnvironmentSetting"
+                    },
+                    {
+                      "code": "192",
+                      "display": "Zug/Bahnhof",
+                      "system": "https://demis.rki.de/fhir/CodeSystem/infectionEnvironmentSetting"
+                    },
+                    {
+                      "code": "191",
+                      "display": "Schiff/Hafen",
+                      "system": "https://demis.rki.de/fhir/CodeSystem/infectionEnvironmentSetting"
+                    },
+                    {
+                      "code": "190",
+                      "display": "Flugzeug/Flughafen",
+                      "system": "https://demis.rki.de/fhir/CodeSystem/infectionEnvironmentSetting"
+                    },
+                    {
+                      "code": "350",
+                      "display": "Passagier/-in",
+                      "system": "https://demis.rki.de/fhir/CodeSystem/infectionEnvironmentSetting"
+                    },
+                    {
+                      "code": "444107005+284555002",
+                      "display": "Tiergarten, Zoo, Tierpark",
+                      "system": "http://snomed.info/sct"
+                    },
+                    {
+                      "code": "194",
+                      "display": "öffentlicher Nahverkehr",
+                      "system": "https://demis.rki.de/fhir/CodeSystem/infectionEnvironmentSetting"
+                    },
+                    {
+                      "code": "193",
+                      "display": "Fernbus",
+                      "system": "https://demis.rki.de/fhir/CodeSystem/infectionEnvironmentSetting"
+                    },
+                    {
+                      "code": "444107005+257628001",
+                      "display": "Pension, Herberge",
+                      "system": "http://snomed.info/sct"
+                    },
+                    {
+                      "code": "444107005+257603009",
+                      "display": "sonstige Bildungs-/Betreuungseinrichtung",
+                      "system": "http://snomed.info/sct"
+                    },
+                    {
+                      "code": "444107005+261904005",
+                      "display": "Labor",
+                      "system": "http://snomed.info/sct"
+                    },
+                    {
+                      "code": "101",
+                      "display": "Kita",
+                      "system": "https://demis.rki.de/fhir/CodeSystem/infectionEnvironmentSetting"
+                    },
+                    {
+                      "code": "222",
+                      "display": "sonstiges Personal",
+                      "system": "https://demis.rki.de/fhir/CodeSystem/infectionEnvironmentSetting"
+                    },
+                    {
+                      "code": "221",
+                      "display": "Pflegepersonal",
+                      "system": "https://demis.rki.de/fhir/CodeSystem/infectionEnvironmentSetting"
+                    },
+                    {
+                      "code": "220",
+                      "display": "Betreute/-r",
+                      "system": "https://demis.rki.de/fhir/CodeSystem/infectionEnvironmentSetting"
+                    },
+                    {
+                      "code": "341",
+                      "display": "Personal",
+                      "system": "https://demis.rki.de/fhir/CodeSystem/infectionEnvironmentSetting"
+                    },
+                    {
+                      "code": "186",
+                      "display": "Messe",
+                      "system": "https://demis.rki.de/fhir/CodeSystem/infectionEnvironmentSetting"
+                    },
+                    {
+                      "code": "340",
+                      "display": "Passagier/-in",
+                      "system": "https://demis.rki.de/fhir/CodeSystem/infectionEnvironmentSetting"
+                    },
+                    {
+                      "code": "104",
+                      "display": "Universität",
+                      "system": "https://demis.rki.de/fhir/CodeSystem/infectionEnvironmentSetting"
+                    },
+                    {
+                      "code": "444107005+257659004",
+                      "display": "religiöse Veranstaltung (z.B. Gottesdienst)",
+                      "system": "http://snomed.info/sct"
+                    },
+                    {
+                      "code": "103",
+                      "display": "sonstige Bildungs-/Betreuungseinrichtung",
+                      "system": "https://demis.rki.de/fhir/CodeSystem/infectionEnvironmentSetting"
+                    },
+                    {
+                      "code": "74964007",
+                      "display": "-andere/sonstige-",
+                      "system": "http://snomed.info/sct"
+                    },
+                    {
+                      "code": "102",
+                      "display": "Schule",
+                      "system": "https://demis.rki.de/fhir/CodeSystem/infectionEnvironmentSetting"
+                    },
+                    {
+                      "code": "223",
+                      "display": "Besucher/-in",
+                      "system": "https://demis.rki.de/fhir/CodeSystem/infectionEnvironmentSetting"
+                    },
+                    {
+                      "code": "181",
+                      "display": "Sportveranstaltung",
+                      "system": "https://demis.rki.de/fhir/CodeSystem/infectionEnvironmentSetting"
+                    },
+                    {
+                      "code": "180",
+                      "display": "private Feier/Treffen",
+                      "system": "https://demis.rki.de/fhir/CodeSystem/infectionEnvironmentSetting"
+                    },
+                    {
+                      "code": "185",
+                      "display": "Karneval",
+                      "system": "https://demis.rki.de/fhir/CodeSystem/infectionEnvironmentSetting"
+                    },
+                    {
+                      "code": "184",
+                      "display": "Demonstration/Kundgebung",
+                      "system": "https://demis.rki.de/fhir/CodeSystem/infectionEnvironmentSetting"
+                    },
+                    {
+                      "code": "183",
+                      "display": "religiöse Veranstaltung (z.B. Gottesdienst)",
+                      "system": "https://demis.rki.de/fhir/CodeSystem/infectionEnvironmentSetting"
+                    },
+                    {
+                      "code": "182",
+                      "display": "Musikveranstaltung/Konzert",
+                      "system": "https://demis.rki.de/fhir/CodeSystem/infectionEnvironmentSetting"
+                    },
+                    {
+                      "code": "444107005+14468000",
+                      "display": "Sport",
+                      "system": "http://snomed.info/sct"
+                    },
+                    {
+                      "code": "444107005+702703009",
+                      "display": "Demonstration/Kundgebung",
+                      "system": "http://snomed.info/sct"
+                    },
+                    {
+                      "code": "331",
+                      "display": "Personal",
+                      "system": "https://demis.rki.de/fhir/CodeSystem/infectionEnvironmentSetting"
+                    },
+                    {
+                      "code": "330",
+                      "display": "Passagier/-in",
+                      "system": "https://demis.rki.de/fhir/CodeSystem/infectionEnvironmentSetting"
+                    },
+                    {
+                      "code": "444107005+272379006+14468000",
+                      "display": "Sportveranstaltung",
+                      "system": "http://snomed.info/sct"
+                    },
+                    {
+                      "code": "170",
+                      "display": "als Gast",
+                      "system": "https://demis.rki.de/fhir/CodeSystem/infectionEnvironmentSetting"
+                    },
+                    {
+                      "code": "444107005+22232009",
+                      "display": "Krankenhaus",
+                      "system": "http://snomed.info/sct"
+                    },
+                    {
+                      "code": "444107005+224673002",
+                      "display": "Schiff",
+                      "system": "http://snomed.info/sct"
+                    },
+                    {
+                      "code": "171",
+                      "display": "als Personal",
+                      "system": "https://demis.rki.de/fhir/CodeSystem/infectionEnvironmentSetting"
+                    },
+                    {
+                      "code": "444107005+21753002",
+                      "display": "Flugzeug",
+                      "system": "http://snomed.info/sct"
+                    },
+                    {
+                      "code": "444107005+405081003",
+                      "display": "Freizeitaktivitäten",
+                      "system": "http://snomed.info/sct"
+                    }
+                  ],
+                  "required": false,
+                  "clearable": true
+                },
+                "key": "VALUE"
+              }
+            ],
+            "expressions": {
+              "hide": "!( field?.parent?.parent?.model?.VALUE?.code === 'yes' )"
+            }
+          },
+          {
+            "key": "infectionEnvironmentSettingBegin",
+            "fieldGroup": [
+              {
+                "template": "<h4 class=\"question-title\">Beginn Infektionsumfeld</h4>"
+              },
+              {
+                "type": "input",
+                "props": {
+                  "placeholder": "TT.MM.JJJJ | MM.JJJJ | JJJJ"
+                },
+                "validators": {
+                  "validation": []
+                },
+                "key": "VALUE"
+              }
+            ],
+            "expressions": {
+              "hide": "!( field?.parent?.parent?.model?.VALUE?.code === 'yes' )"
+            }
+          },
+          {
+            "key": "infectionEnvironmentSettingEnd",
+            "fieldGroup": [
+              {
+                "template": "<h4 class=\"question-title\">Ende Infektionsumfeld</h4>"
+              },
+              {
+                "type": "input",
+                "props": {
+                  "placeholder": "TT.MM.JJJJ | MM.JJJJ | JJJJ"
+                },
+                "validators": {
+                  "validation": []
+                },
+                "key": "VALUE"
+              }
+            ],
+            "expressions": {
+              "hide": "!( field?.parent?.parent?.model?.VALUE?.code === 'yes' )"
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "key": "immunization",
+    "fieldGroup": [
+      {
+        "template": "<h4 class=\"question-title\">Wurde die betroffene Person jemals in Bezug auf die Krankheit geimpft?</h4>"
+      },
+      {
+        "type": "autocomplete-coding",
+        "props": {
+          "options": [
+            {
+              "code": "yes",
+              "display": "Ja",
+              "system": "https://demis.rki.de/fhir/CodeSystem/yesOrNoAnswer"
+            },
+            {
+              "code": "NASK",
+              "display": "not asked",
+              "system": "http://terminology.hl7.org/CodeSystem/v3-NullFlavor"
+            },
+            {
+              "code": "no",
+              "display": "Nein",
+              "system": "https://demis.rki.de/fhir/CodeSystem/yesOrNoAnswer"
+            },
+            {
+              "code": "ASKU",
+              "display": "asked but unknown",
+              "system": "http://terminology.hl7.org/CodeSystem/v3-NullFlavor"
+            }
+          ],
+          "required": true,
+          "clearable": true,
+          "defaultCode": "NASK"
+        },
+        "key": "VALUE"
+      },
+      {
+        "fieldGroup": [
+          {
+            "key": "immunizationRef",
+            "type": "repeat-section",
+            "props": {
+              "itemName": "Impfinformationen"
+            },
+            "fieldArray": {
+              "fieldGroup": [
+                {
+                  "template": "<h4 class=\"question-title\">Impfinformationen</h4>"
+                },
+                {
+                  "fieldGroupClassName": "ITEM_REFERENCE",
+                  "fieldGroup": [
+                    {
+                      "fieldGroupClassName": "INSIDE_REF",
+                      "fieldGroup": [
+                        {
+                          "template": "The base language in which the resource is written."
+                        },
+                        {
+                          "props": {
+                            "options": [
+                              {
+                                "code": "ar",
+                                "display": "Arabisk",
+                                "system": "http://hl7.org/fhir/ValueSet/languages"
+                              },
+                              {
+                                "code": "bn",
+                                "display": "Bengali",
+                                "system": "http://hl7.org/fhir/ValueSet/languages"
+                              },
+                              {
+                                "code": "cs",
+                                "display": "Czech",
+                                "system": "http://hl7.org/fhir/ValueSet/languages"
+                              },
+                              {
+                                "code": "da",
+                                "display": "Danish",
+                                "system": "http://hl7.org/fhir/ValueSet/languages"
+                              },
+                              {
+                                "code": "de",
+                                "display": "German",
+                                "system": "http://hl7.org/fhir/ValueSet/languages"
+                              },
+                              {
+                                "code": "de-AT",
+                                "display": "German (Austria)",
+                                "system": "http://hl7.org/fhir/ValueSet/languages"
+                              },
+                              {
+                                "code": "de-CH",
+                                "display": "German (Switzerland)",
+                                "system": "http://hl7.org/fhir/ValueSet/languages"
+                              },
+                              {
+                                "code": "de-DE",
+                                "display": "German (Germany)",
+                                "system": "http://hl7.org/fhir/ValueSet/languages"
+                              },
+                              {
+                                "code": "el",
+                                "display": "Greek",
+                                "system": "http://hl7.org/fhir/ValueSet/languages"
+                              },
+                              {
+                                "code": "en",
+                                "display": "English",
+                                "system": "http://hl7.org/fhir/ValueSet/languages"
+                              },
+                              {
+                                "code": "en-AU",
+                                "display": "English (Australia)",
+                                "system": "http://hl7.org/fhir/ValueSet/languages"
+                              },
+                              {
+                                "code": "en-CA",
+                                "display": "English (Canada)",
+                                "system": "http://hl7.org/fhir/ValueSet/languages"
+                              },
+                              {
+                                "code": "en-GB",
+                                "display": "English (Great Britain)",
+                                "system": "http://hl7.org/fhir/ValueSet/languages"
+                              },
+                              {
+                                "code": "en-IN",
+                                "display": "English (India)",
+                                "system": "http://hl7.org/fhir/ValueSet/languages"
+                              },
+                              {
+                                "code": "en-NZ",
+                                "display": "English (New Zeland)",
+                                "system": "http://hl7.org/fhir/ValueSet/languages"
+                              },
+                              {
+                                "code": "en-SG",
+                                "display": "English (Singapore)",
+                                "system": "http://hl7.org/fhir/ValueSet/languages"
+                              },
+                              {
+                                "code": "en-US",
+                                "display": "English (United States)",
+                                "system": "http://hl7.org/fhir/ValueSet/languages"
+                              },
+                              {
+                                "code": "es",
+                                "display": "Spanish",
+                                "system": "http://hl7.org/fhir/ValueSet/languages"
+                              },
+                              {
+                                "code": "es-AR",
+                                "display": "Spanish (Argentina)",
+                                "system": "http://hl7.org/fhir/ValueSet/languages"
+                              },
+                              {
+                                "code": "es-ES",
+                                "display": "Spanish (Spain)",
+                                "system": "http://hl7.org/fhir/ValueSet/languages"
+                              },
+                              {
+                                "code": "es-UY",
+                                "display": "Spanish (Uruguay)",
+                                "system": "http://hl7.org/fhir/ValueSet/languages"
+                              },
+                              {
+                                "code": "fi",
+                                "display": "Finnish",
+                                "system": "http://hl7.org/fhir/ValueSet/languages"
+                              },
+                              {
+                                "code": "fr",
+                                "display": "French",
+                                "system": "http://hl7.org/fhir/ValueSet/languages"
+                              },
+                              {
+                                "code": "fr-BE",
+                                "display": "French (Belgium)",
+                                "system": "http://hl7.org/fhir/ValueSet/languages"
+                              },
+                              {
+                                "code": "fr-CH",
+                                "display": "French (Switzerland)",
+                                "system": "http://hl7.org/fhir/ValueSet/languages"
+                              },
+                              {
+                                "code": "fr-FR",
+                                "display": "French (France)",
+                                "system": "http://hl7.org/fhir/ValueSet/languages"
+                              },
+                              {
+                                "code": "fy",
+                                "display": "Frysian",
+                                "system": "http://hl7.org/fhir/ValueSet/languages"
+                              },
+                              {
+                                "code": "fy-NL",
+                                "display": "Frysian (Netherlands)",
+                                "system": "http://hl7.org/fhir/ValueSet/languages"
+                              },
+                              {
+                                "code": "hi",
+                                "display": "Hindi",
+                                "system": "http://hl7.org/fhir/ValueSet/languages"
+                              },
+                              {
+                                "code": "hr",
+                                "display": "Croatian",
+                                "system": "http://hl7.org/fhir/ValueSet/languages"
+                              },
+                              {
+                                "code": "it",
+                                "display": "Italian",
+                                "system": "http://hl7.org/fhir/ValueSet/languages"
+                              },
+                              {
+                                "code": "it-CH",
+                                "display": "Italian (Switzerland)",
+                                "system": "http://hl7.org/fhir/ValueSet/languages"
+                              },
+                              {
+                                "code": "it-IT",
+                                "display": "Italian (Italy)",
+                                "system": "http://hl7.org/fhir/ValueSet/languages"
+                              },
+                              {
+                                "code": "ja",
+                                "display": "Japanese",
+                                "system": "http://hl7.org/fhir/ValueSet/languages"
+                              },
+                              {
+                                "code": "ko",
+                                "display": "Korean",
+                                "system": "http://hl7.org/fhir/ValueSet/languages"
+                              },
+                              {
+                                "code": "nl",
+                                "display": "Dutch",
+                                "system": "http://hl7.org/fhir/ValueSet/languages"
+                              },
+                              {
+                                "code": "nl-BE",
+                                "display": "Dutch (Belgium)",
+                                "system": "http://hl7.org/fhir/ValueSet/languages"
+                              },
+                              {
+                                "code": "nl-NL",
+                                "display": "Dutch (Netherlands)",
+                                "system": "http://hl7.org/fhir/ValueSet/languages"
+                              },
+                              {
+                                "code": "no",
+                                "display": "Norwegian",
+                                "system": "http://hl7.org/fhir/ValueSet/languages"
+                              },
+                              {
+                                "code": "no-NO",
+                                "display": "Norwegian (Norway)",
+                                "system": "http://hl7.org/fhir/ValueSet/languages"
+                              },
+                              {
+                                "code": "pa",
+                                "display": "Punjabi",
+                                "system": "http://hl7.org/fhir/ValueSet/languages"
+                              },
+                              {
+                                "code": "pl",
+                                "display": "Polskie",
+                                "system": "http://hl7.org/fhir/ValueSet/languages"
+                              },
+                              {
+                                "code": "pt",
+                                "display": "Portuguese",
+                                "system": "http://hl7.org/fhir/ValueSet/languages"
+                              },
+                              {
+                                "code": "pt-BR",
+                                "display": "Portuguese (Brazil)",
+                                "system": "http://hl7.org/fhir/ValueSet/languages"
+                              },
+                              {
+                                "code": "ru",
+                                "display": "Russian",
+                                "system": "http://hl7.org/fhir/ValueSet/languages"
+                              },
+                              {
+                                "code": "ru-RU",
+                                "display": "Russian (Russia)",
+                                "system": "http://hl7.org/fhir/ValueSet/languages"
+                              },
+                              {
+                                "code": "sr",
+                                "display": "Serbian",
+                                "system": "http://hl7.org/fhir/ValueSet/languages"
+                              },
+                              {
+                                "code": "sr-RS",
+                                "display": "Serbian (Serbia)",
+                                "system": "http://hl7.org/fhir/ValueSet/languages"
+                              },
+                              {
+                                "code": "sv",
+                                "display": "Swedish",
+                                "system": "http://hl7.org/fhir/ValueSet/languages"
+                              },
+                              {
+                                "code": "sv-SE",
+                                "display": "Swedish (Sweden)",
+                                "system": "http://hl7.org/fhir/ValueSet/languages"
+                              },
+                              {
+                                "code": "te",
+                                "display": "Telegu",
+                                "system": "http://hl7.org/fhir/ValueSet/languages"
+                              },
+                              {
+                                "code": "zh",
+                                "display": "Chinese",
+                                "system": "http://hl7.org/fhir/ValueSet/languages"
+                              },
+                              {
+                                "code": "zh-CN",
+                                "display": "Chinese (China)",
+                                "system": "http://hl7.org/fhir/ValueSet/languages"
+                              },
+                              {
+                                "code": "zh-HK",
+                                "display": "Chinese (Hong Kong)",
+                                "system": "http://hl7.org/fhir/ValueSet/languages"
+                              },
+                              {
+                                "code": "zh-SG",
+                                "display": "Chinese (Singapore)",
+                                "system": "http://hl7.org/fhir/ValueSet/languages"
+                              },
+                              {
+                                "code": "zh-TW",
+                                "display": "Chinese (Taiwan)",
+                                "system": "http://hl7.org/fhir/ValueSet/languages"
+                              }
+                            ]
+                          },
+                          "key": "VALUE",
+                          "type": "autocomplete-coding"
+                        }
+                      ],
+                      "key": "language"
+                    },
+                    {
+                      "fieldGroupClassName": "INSIDE_REF",
+                      "fieldGroup": [
+                        {
+                          "template": "Text summary of the resource, for human interpretation"
+                        },
+                        {
+                          "props": {},
+                          "type": "textarea",
+                          "key": "VALUE"
+                        }
+                      ],
+                      "key": "text"
+                    },
+                    {
+                      "fieldGroupClassName": "INSIDE_REF",
+                      "fieldGroup": [
+                        {
+                          "template": "Indicates the current status of the immunization event."
+                        },
+                        {
+                          "props": {
+                            "options": [
+                              {
+                                "code": "completed",
+                                "display": "Completed!",
+                                "system": "http://hl7.org/fhir/ValueSet/immunization-status|4.0.1"
+                              },
+                              {
+                                "code": "entered-in-error",
+                                "display": "Entered in Error!",
+                                "system": "http://hl7.org/fhir/ValueSet/immunization-status|4.0.1"
+                              },
+                              {
+                                "code": "not-done",
+                                "display": "Not done!",
+                                "system": "http://hl7.org/fhir/ValueSet/immunization-status|4.0.1"
+                              }
+                            ],
+                            "required": true
+                          },
+                          "key": "VALUE",
+                          "type": "autocomplete-coding"
+                        }
+                      ],
+                      "key": "status"
+                    },
+                    {
+                      "fieldGroupClassName": "INSIDE_REF",
+                      "fieldGroup": [
+                        {
+                          "template": "Indicates the reason the immunization event was not performed."
+                        },
+                        {
+                          "props": {
+                            "options": [
+                              {
+                                "code": "IMMUNE",
+                                "display": "ERROR: no designation for code IMMUNE",
+                                "system": "http://hl7.org/fhir/ValueSet/immunization-status-reason"
+                              },
+                              {
+                                "code": "MEDPREC",
+                                "display": "ERROR: no designation for code MEDPREC",
+                                "system": "http://hl7.org/fhir/ValueSet/immunization-status-reason"
+                              },
+                              {
+                                "code": "OSTOCK",
+                                "display": "ERROR: no designation for code OSTOCK",
+                                "system": "http://hl7.org/fhir/ValueSet/immunization-status-reason"
+                              },
+                              {
+                                "code": "PATOBJ",
+                                "display": "ERROR: no designation for code PATOBJ",
+                                "system": "http://hl7.org/fhir/ValueSet/immunization-status-reason"
+                              }
+                            ]
+                          },
+                          "key": "VALUE",
+                          "type": "autocomplete-coding"
+                        }
+                      ],
+                      "key": "statusReason"
+                    },
+                    {
+                      "fieldGroupClassName": "INSIDE_REF",
+                      "fieldGroup": [
+                        {
+                          "template": "Verabreichter Covid-19-Impfstoff"
+                        },
+                        {
+                          "props": {
+                            "options": [
+                              {
+                                "code": "1162643001",
+                                "display": "COVID-19-Impfstoff (Proteinbasierter Impfstoff, rekombinant, adjuvantiert) (Sanofi - GSK)",
+                                "system": "http://snomed.info/sct"
+                              },
+                              {
+                                "code": "1157024006",
+                                "display": "COVID-19-Impfstoff (Virusimpfstoff, inaktiviert, adjuvantiert) (Valneva)",
+                                "system": "http://snomed.info/sct"
+                              },
+                              {
+                                "code": "29061000087103",
+                                "display": "COVID-19-Impfstoff (Vektor-Impfstoff)  (Astra Zeneca, Johnson&Johnson bzw. Janssen-Cilag)",
+                                "system": "http://snomed.info/sct"
+                              },
+                              {
+                                "code": "1119349007",
+                                "display": "COVID-19-Impfstoff (mRNA) (BioNTech / Pfizer, Moderna)",
+                                "system": "http://snomed.info/sct"
+                              },
+                              {
+                                "code": "1187593009",
+                                "display": "COVID-19-Impfstoff (Proteinbasierter Impfstoff)  (Novavax)",
+                                "system": "http://snomed.info/sct"
+                              },
+                              {
+                                "code": "74964007",
+                                "display": "-andere/sonstige-",
+                                "system": "http://snomed.info/sct"
+                              },
+                              {
+                                "code": "NASK",
+                                "display": "not asked",
+                                "system": "http://terminology.hl7.org/CodeSystem/v3-NullFlavor"
+                              },
+                              {
+                                "code": "ASKU",
+                                "display": "asked but unknown",
+                                "system": "http://terminology.hl7.org/CodeSystem/v3-NullFlavor"
+                              }
+                            ],
+                            "required": true
+                          },
+                          "key": "VALUE",
+                          "type": "autocomplete-coding"
+                        }
+                      ],
+                      "key": "vaccineCode"
+                    },
+                    {
+                      "fieldGroupClassName": "INSIDE_REF",
+                      "fieldGroup": [
+                        {
+                          "template": "Datum der Impfung"
+                        },
+                        {
+                          "props": {
+                            "required": true
+                          },
+                          "key": "VALUE",
+                          "type": "input"
+                        }
+                      ],
+                      "key": "occurrence"
+                    },
+                    {
+                      "fieldGroupClassName": "INSIDE_REF",
+                      "fieldGroup": [
+                        {
+                          "template": "The date the occurrence of the immunization was first captured in the record - potentially significantly after the occurrence of the event."
+                        },
+                        {
+                          "props": {},
+                          "key": "VALUE",
+                          "type": "input"
+                        }
+                      ],
+                      "key": "recorded"
+                    },
+                    {
+                      "fieldGroupClassName": "INSIDE_REF",
+                      "fieldGroup": [
+                        {
+                          "template": "The source of the data when the report of the immunization event is not based on information from the person who administered the vaccine."
+                        },
+                        {
+                          "props": {
+                            "options": [
+                              {
+                                "code": "provider",
+                                "display": "Other Provider",
+                                "system": "http://hl7.org/fhir/ValueSet/immunization-origin"
+                              },
+                              {
+                                "code": "record",
+                                "display": "Written Record",
+                                "system": "http://hl7.org/fhir/ValueSet/immunization-origin"
+                              },
+                              {
+                                "code": "recall",
+                                "display": "Parent/Guardian/Patient Recall",
+                                "system": "http://hl7.org/fhir/ValueSet/immunization-origin"
+                              },
+                              {
+                                "code": "school",
+                                "display": "School Record",
+                                "system": "http://hl7.org/fhir/ValueSet/immunization-origin"
+                              }
+                            ]
+                          },
+                          "key": "VALUE",
+                          "type": "autocomplete-coding"
+                        }
+                      ],
+                      "key": "reportOrigin"
+                    },
+                    {
+                      "fieldGroupClassName": "INSIDE_REF",
+                      "fieldGroup": [
+                        {
+                          "template": "Name of vaccine manufacturer.  / reference to: http://hl7.org/fhir/StructureDefinition/Organization"
+                        },
+                        {
+                          "props": {},
+                          "key": "VALUE"
+                        }
+                      ],
+                      "key": "manufacturer"
+                    },
+                    {
+                      "fieldGroupClassName": "INSIDE_REF",
+                      "fieldGroup": [
+                        {
+                          "template": "Chargenbezeichnung"
+                        },
+                        {
+                          "props": {},
+                          "key": "VALUE",
+                          "type": "input"
+                        }
+                      ],
+                      "key": "lotNumber"
+                    },
+                    {
+                      "fieldGroupClassName": "INSIDE_REF",
+                      "fieldGroup": [
+                        {
+                          "template": "Date vaccine batch expires."
+                        },
+                        {
+                          "props": {},
+                          "key": "VALUE",
+                          "type": "datepicker"
+                        }
+                      ],
+                      "key": "expirationDate"
+                    },
+                    {
+                      "fieldGroupClassName": "INSIDE_REF",
+                      "fieldGroup": [
+                        {
+                          "template": "Body site where vaccine was administered."
+                        },
+                        {
+                          "props": {
+                            "options": [
+                              {
+                                "code": "LA",
+                                "display": "Left arm",
+                                "system": "http://hl7.org/fhir/ValueSet/immunization-site"
+                              },
+                              {
+                                "code": "RA",
+                                "display": "Right arm",
+                                "system": "http://hl7.org/fhir/ValueSet/immunization-site"
+                              }
+                            ]
+                          },
+                          "key": "VALUE",
+                          "type": "autocomplete-coding"
+                        }
+                      ],
+                      "key": "site"
+                    },
+                    {
+                      "fieldGroupClassName": "INSIDE_REF",
+                      "fieldGroup": [
+                        {
+                          "template": "The path by which the vaccine product is taken into the body."
+                        },
+                        {
+                          "props": {
+                            "options": [
+                              {
+                                "code": "IDINJ",
+                                "display": "Injection, intradermal",
+                                "system": "http://hl7.org/fhir/ValueSet/immunization-route"
+                              },
+                              {
+                                "code": "IM",
+                                "display": "Injection, intramuscular",
+                                "system": "http://hl7.org/fhir/ValueSet/immunization-route"
+                              },
+                              {
+                                "code": "IVINJ",
+                                "display": "Injection, intravenous",
+                                "system": "http://hl7.org/fhir/ValueSet/immunization-route"
+                              },
+                              {
+                                "code": "PO",
+                                "display": "Swallow, oral",
+                                "system": "http://hl7.org/fhir/ValueSet/immunization-route"
+                              },
+                              {
+                                "code": "SQ",
+                                "display": "Injection, subcutaneous",
+                                "system": "http://hl7.org/fhir/ValueSet/immunization-route"
+                              },
+                              {
+                                "code": "TRNSDERM",
+                                "display": "Transdermal",
+                                "system": "http://hl7.org/fhir/ValueSet/immunization-route"
+                              }
+                            ]
+                          },
+                          "key": "VALUE",
+                          "type": "autocomplete-coding"
+                        }
+                      ],
+                      "key": "route"
+                    },
+                    {
+                      "fieldGroupClassName": "INSIDE_REF",
+                      "fieldGroup": [
+                        {
+                          "template": "The quantity of vaccine product that was administered."
+                        },
+                        {
+                          "props": {
+                            "type": "number"
+                          },
+                          "key": "VALUE",
+                          "type": "input"
+                        }
+                      ],
+                      "key": "doseQuantity"
+                    },
+                    {
+                      "fieldGroupClassName": "INSIDE_REF",
+                      "fieldGroup": [
+                        {
+                          "template": "Hinweis zur Impfung"
+                        },
+                        {
+                          "props": {},
+                          "key": "VALUE",
+                          "type": "textarea"
+                        }
+                      ],
+                      "key": "note"
+                    },
+                    {
+                      "fieldGroupClassName": "INSIDE_REF",
+                      "fieldGroup": [
+                        {
+                          "template": "A human language representation of the concept as seen/selected/uttered by the user who entered the data and/or which represents the intended meaning of the user."
+                        },
+                        {
+                          "props": {
+                            "options": [
+                              {
+                                "code": "A",
+                                "display": "Auffrischimpfungen",
+                                "system": "https://demis.rki.de/fhir/CodeSystem/vaccinationIndication"
+                              },
+                              {
+                                "code": "S",
+                                "display": "Standardimpfungen mit allgemeiner Anwendung",
+                                "system": "https://demis.rki.de/fhir/CodeSystem/vaccinationIndication"
+                              },
+                              {
+                                "code": "B",
+                                "display": "Impfungen aufgrund eines erhöhten beruflichen bzw. arbeitsbedingten Risikos, z. B. nach Gefährdungsbeurteilung gemäß Arbeitsschutzgesetz (ArbSchG)/Biostoffverordnung (BioStoffV)/ Verordnung zur arbeitsmedizinischen Vorsorge (ArbMedVV) und/oder zum Schutz Dritter im Rahmen der beruflichen Tätigkeit",
+                                "system": "https://demis.rki.de/fhir/CodeSystem/vaccinationIndication"
+                              },
+                              {
+                                "code": "R",
+                                "display": "Impfungen aufgrund von Reisen",
+                                "system": "https://demis.rki.de/fhir/CodeSystem/vaccinationIndication"
+                              },
+                              {
+                                "code": "I",
+                                "display": "Indikationsimpfungen für Risikogruppen bei individuell (nicht arbeitsbedingt) erhöhtem Expositions-, Erkrankungs- oder Komplikationsrisiko sowie zum Schutz Dritter",
+                                "system": "https://demis.rki.de/fhir/CodeSystem/vaccinationIndication"
+                              }
+                            ],
+                            "required": true,
+                            "label": "Indicates that this coding was chosen by a user directly - e.g. off a pick list of available items (codes or displays)."
+                          },
+                          "key": "VALUE",
+                          "type": "input"
+                        }
+                      ],
+                      "key": "reasonCode"
+                    },
+                    {
+                      "fieldGroupClassName": "INSIDE_REF",
+                      "fieldGroup": [
+                        {
+                          "template": "Reason why a dose is considered to be subpotent."
+                        },
+                        {
+                          "props": {
+                            "options": [
+                              {
+                                "code": "partialdose",
+                                "display": "Partial Dose",
+                                "system": "http://hl7.org/fhir/ValueSet/immunization-subpotent-reason"
+                              },
+                              {
+                                "code": "coldchainbreak",
+                                "display": "Cold Chain Break",
+                                "system": "http://hl7.org/fhir/ValueSet/immunization-subpotent-reason"
+                              },
+                              {
+                                "code": "recall",
+                                "display": "Manufacturer Recall",
+                                "system": "http://hl7.org/fhir/ValueSet/immunization-subpotent-reason"
+                              },
+                              {
+                                "code": "adversestorage",
+                                "display": "Adverse Storage",
+                                "system": "http://hl7.org/fhir/ValueSet/immunization-subpotent-reason"
+                              },
+                              {
+                                "code": "expired",
+                                "display": "Expired Product",
+                                "system": "http://hl7.org/fhir/ValueSet/immunization-subpotent-reason"
+                              }
+                            ]
+                          },
+                          "key": "VALUE",
+                          "type": "autocomplete-coding"
+                        }
+                      ],
+                      "key": "subpotentReason"
+                    },
+                    {
+                      "fieldGroupClassName": "INSIDE_REF",
+                      "fieldGroup": [
+                        {
+                          "template": "Date the educational material was given to the patient."
+                        },
+                        {
+                          "props": {},
+                          "key": "VALUE",
+                          "type": "input"
+                        }
+                      ],
+                      "key": "education"
+                    },
+                    {
+                      "fieldGroupClassName": "INSIDE_REF",
+                      "fieldGroup": [
+                        {
+                          "template": "Indicates a patient's eligibility for a funding program."
+                        },
+                        {
+                          "props": {
+                            "options": [
+                              {
+                                "code": "ineligible",
+                                "display": "Not Eligible",
+                                "system": "http://hl7.org/fhir/ValueSet/immunization-program-eligibility"
+                              },
+                              {
+                                "code": "uninsured",
+                                "display": "Uninsured",
+                                "system": "http://hl7.org/fhir/ValueSet/immunization-program-eligibility"
+                              }
+                            ]
+                          },
+                          "key": "VALUE",
+                          "type": "autocomplete-coding"
+                        }
+                      ],
+                      "key": "programEligibility"
+                    },
+                    {
+                      "fieldGroupClassName": "INSIDE_REF",
+                      "fieldGroup": [
+                        {
+                          "template": "Indicates the source of the vaccine actually administered. This may be different than the patient eligibility (e.g. the patient may be eligible for a publically purchased vaccine but due to inventory issues, vaccine purchased with private funds was actually administered)."
+                        },
+                        {
+                          "props": {
+                            "options": [
+                              {
+                                "code": "private",
+                                "display": "Private",
+                                "system": "http://hl7.org/fhir/ValueSet/immunization-funding-source"
+                              },
+                              {
+                                "code": "public",
+                                "display": "Public",
+                                "system": "http://hl7.org/fhir/ValueSet/immunization-funding-source"
+                              }
+                            ]
+                          },
+                          "key": "VALUE",
+                          "type": "autocomplete-coding"
+                        }
+                      ],
+                      "key": "fundingSource"
+                    },
+                    {
+                      "fieldGroupClassName": "INSIDE_REF",
+                      "fieldGroup": [
+                        {
+                          "template": "Details of the reaction.  / reference to: http://hl7.org/fhir/StructureDefinition/Observation"
+                        },
+                        {
+                          "props": {
+                            "label": "Self-reported indicator."
+                          },
+                          "key": "VALUE",
+                          "type": "checkbox"
+                        }
+                      ],
+                      "key": "reaction"
+                    },
+                    {
+                      "fieldGroupClassName": "INSIDE_REF",
+                      "fieldGroup": [
+                        {
+                          "template": "The recommended number of doses to achieve immunity."
+                        },
+                        {
+                          "props": {
+                            "options": [
+                              {
+                                "code": "397428000",
+                                "display": "ERROR: no designation for code 397428000",
+                                "system": "http://hl7.org/fhir/ValueSet/immunization-target-disease"
+                              },
+                              {
+                                "code": "27836007",
+                                "display": "ERROR: no designation for code 27836007",
+                                "system": "http://hl7.org/fhir/ValueSet/immunization-target-disease"
+                              },
+                              {
+                                "code": "76902006",
+                                "display": "ERROR: no designation for code 76902006",
+                                "system": "http://hl7.org/fhir/ValueSet/immunization-target-disease"
+                              },
+                              {
+                                "code": "721764008",
+                                "display": "ERROR: no designation for code 721764008",
+                                "system": "http://hl7.org/fhir/ValueSet/immunization-target-disease"
+                              },
+                              {
+                                "code": "14189004",
+                                "display": "ERROR: no designation for code 14189004",
+                                "system": "http://hl7.org/fhir/ValueSet/immunization-target-disease"
+                              },
+                              {
+                                "code": "36989005",
+                                "display": "ERROR: no designation for code 36989005",
+                                "system": "http://hl7.org/fhir/ValueSet/immunization-target-disease"
+                              },
+                              {
+                                "code": "36653000",
+                                "display": "ERROR: no designation for code 36653000",
+                                "system": "http://hl7.org/fhir/ValueSet/immunization-target-disease"
+                              },
+                              {
+                                "code": "16814004",
+                                "display": "ERROR: no designation for code 16814004",
+                                "system": "http://hl7.org/fhir/ValueSet/immunization-target-disease"
+                              },
+                              {
+                                "code": "23511006",
+                                "display": "ERROR: no designation for code 23511006",
+                                "system": "http://hl7.org/fhir/ValueSet/immunization-target-disease"
+                              },
+                              {
+                                "code": "709410003",
+                                "display": "ERROR: no designation for code 709410003",
+                                "system": "http://hl7.org/fhir/ValueSet/immunization-target-disease"
+                              },
+                              {
+                                "code": "56717001",
+                                "display": "ERROR: no designation for code 56717001",
+                                "system": "http://hl7.org/fhir/ValueSet/immunization-target-disease"
+                              },
+                              {
+                                "code": "363354003",
+                                "display": "ERROR: no designation for code 363354003",
+                                "system": "http://hl7.org/fhir/ValueSet/immunization-target-disease"
+                              },
+                              {
+                                "code": "266113007",
+                                "display": "ERROR: no designation for code 266113007",
+                                "system": "http://hl7.org/fhir/ValueSet/immunization-target-disease"
+                              },
+                              {
+                                "code": "415822001",
+                                "display": "ERROR: no designation for code 415822001",
+                                "system": "http://hl7.org/fhir/ValueSet/immunization-target-disease"
+                              },
+                              {
+                                "code": "66071002",
+                                "display": "ERROR: no designation for code 66071002",
+                                "system": "http://hl7.org/fhir/ValueSet/immunization-target-disease"
+                              },
+                              {
+                                "code": "40468003",
+                                "display": "ERROR: no designation for code 40468003",
+                                "system": "http://hl7.org/fhir/ValueSet/immunization-target-disease"
+                              },
+                              {
+                                "code": "7111000119109",
+                                "display": "ERROR: no designation for code 7111000119109",
+                                "system": "http://hl7.org/fhir/ValueSet/immunization-target-disease"
+                              },
+                              {
+                                "code": "719590007",
+                                "display": "ERROR: no designation for code 719590007",
+                                "system": "http://hl7.org/fhir/ValueSet/immunization-target-disease"
+                              },
+                              {
+                                "code": "719865001",
+                                "display": "ERROR: no designation for code 719865001",
+                                "system": "http://hl7.org/fhir/ValueSet/immunization-target-disease"
+                              },
+                              {
+                                "code": "38907003",
+                                "display": "ERROR: no designation for code 38907003",
+                                "system": "http://hl7.org/fhir/ValueSet/immunization-target-disease"
+                              },
+                              {
+                                "code": "4740000",
+                                "display": "ERROR: no designation for code 4740000",
+                                "system": "http://hl7.org/fhir/ValueSet/immunization-target-disease"
+                              },
+                              {
+                                "code": "55735004",
+                                "display": "ERROR: no designation for code 55735004",
+                                "system": "http://hl7.org/fhir/ValueSet/immunization-target-disease"
+                              },
+                              {
+                                "code": "240613006",
+                                "display": "ERROR: no designation for code 240613006",
+                                "system": "http://hl7.org/fhir/ValueSet/immunization-target-disease"
+                              },
+                              {
+                                "code": "4834000",
+                                "display": "ERROR: no designation for code 4834000",
+                                "system": "http://hl7.org/fhir/ValueSet/immunization-target-disease"
+                              },
+                              {
+                                "code": "85904008",
+                                "display": "ERROR: no designation for code 85904008",
+                                "system": "http://hl7.org/fhir/ValueSet/immunization-target-disease"
+                              },
+                              {
+                                "code": "63650001",
+                                "display": "ERROR: no designation for code 63650001",
+                                "system": "http://hl7.org/fhir/ValueSet/immunization-target-disease"
+                              },
+                              {
+                                "code": "16541001",
+                                "display": "ERROR: no designation for code 16541001",
+                                "system": "http://hl7.org/fhir/ValueSet/immunization-target-disease"
+                              },
+                              {
+                                "code": "38362002",
+                                "display": "ERROR: no designation for code 38362002",
+                                "system": "http://hl7.org/fhir/ValueSet/immunization-target-disease"
+                              },
+                              {
+                                "code": "61462000",
+                                "display": "ERROR: no designation for code 61462000",
+                                "system": "http://hl7.org/fhir/ValueSet/immunization-target-disease"
+                              },
+                              {
+                                "code": "14168008",
+                                "display": "ERROR: no designation for code 14168008",
+                                "system": "http://hl7.org/fhir/ValueSet/immunization-target-disease"
+                              },
+                              {
+                                "code": "186772009",
+                                "display": "ERROR: no designation for code 186772009",
+                                "system": "http://hl7.org/fhir/ValueSet/immunization-target-disease"
+                              },
+                              {
+                                "code": "712986001",
+                                "display": "ERROR: no designation for code 712986001",
+                                "system": "http://hl7.org/fhir/ValueSet/immunization-target-disease"
+                              },
+                              {
+                                "code": "52947006",
+                                "display": "ERROR: no designation for code 52947006",
+                                "system": "http://hl7.org/fhir/ValueSet/immunization-target-disease"
+                              },
+                              {
+                                "code": "186788009",
+                                "display": "ERROR: no designation for code 186788009",
+                                "system": "http://hl7.org/fhir/ValueSet/immunization-target-disease"
+                              },
+                              {
+                                "code": "409498004",
+                                "display": "ERROR: no designation for code 409498004",
+                                "system": "http://hl7.org/fhir/ValueSet/immunization-target-disease"
+                              },
+                              {
+                                "code": "58750007",
+                                "display": "ERROR: no designation for code 58750007",
+                                "system": "http://hl7.org/fhir/ValueSet/immunization-target-disease"
+                              },
+                              {
+                                "code": "19265001",
+                                "display": "ERROR: no designation for code 19265001",
+                                "system": "http://hl7.org/fhir/ValueSet/immunization-target-disease"
+                              },
+                              {
+                                "code": "23502006",
+                                "display": "ERROR: no designation for code 23502006",
+                                "system": "http://hl7.org/fhir/ValueSet/immunization-target-disease"
+                              },
+                              {
+                                "code": "75702008",
+                                "display": "ERROR: no designation for code 75702008",
+                                "system": "http://hl7.org/fhir/ValueSet/immunization-target-disease"
+                              },
+                              {
+                                "code": "80612004",
+                                "display": "ERROR: no designation for code 80612004",
+                                "system": "http://hl7.org/fhir/ValueSet/immunization-target-disease"
+                              },
+                              {
+                                "code": "186747009",
+                                "display": "ERROR: no designation for code 186747009",
+                                "system": "http://hl7.org/fhir/ValueSet/immunization-target-disease"
+                              },
+                              {
+                                "code": "67924001",
+                                "display": "ERROR: no designation for code 67924001",
+                                "system": "http://hl7.org/fhir/ValueSet/immunization-target-disease"
+                              },
+                              {
+                                "code": "70090004",
+                                "display": "ERROR: no designation for code 70090004",
+                                "system": "http://hl7.org/fhir/ValueSet/immunization-target-disease"
+                              }
+                            ],
+                            "required": true
+                          },
+                          "key": "VALUE",
+                          "type": "input"
+                        }
+                      ],
+                      "key": "protocolApplied"
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        ],
+        "expressions": {
+          "hide": "!( field?.parent?.model?.VALUE?.code === 'yes' )"
+        }
+      }
+    ]
+  },
+  {
+    "key": "reason",
+    "fieldGroup": [
+      {
+        "template": "<h4 class=\"question-title\">Grund der Hospitalisierung</h4>"
+      },
+      {
+        "type": "autocomplete-coding",
+        "props": {
+          "options": [
+            {
+              "code": "becauseOfOtherReason",
+              "display": "Hospitalisiert aufgrund einer anderen Ursache als der gemeldeten Krankheit",
+              "system": "https://demis.rki.de/fhir/CodeSystem/hospitalizationReason"
+            },
+            {
+              "code": "NASK",
+              "display": "not asked",
+              "system": "http://terminology.hl7.org/CodeSystem/v3-NullFlavor"
+            },
+            {
+              "code": "becauseOfDisease",
+              "display": "Hospitalisiert aufgrund der gemeldeten Krankheit",
+              "system": "https://demis.rki.de/fhir/CodeSystem/hospitalizationReason"
+            },
+            {
+              "code": "forIsolation",
+              "display": "Hospitalisiert zur Isolierung",
+              "system": "https://demis.rki.de/fhir/CodeSystem/hospitalizationReason"
+            },
+            {
+              "code": "ASKU",
+              "display": "asked but unknown",
+              "system": "http://terminology.hl7.org/CodeSystem/v3-NullFlavor"
+            }
+          ],
+          "required": false,
+          "clearable": true,
+          "defaultCode": "NASK"
+        },
+        "key": "VALUE"
+      }
+    ]
+  },
+  {
+    "fieldGroup": [
+      {
+        "key": "infectionRiskKind",
+        "type": "repeat-section",
+        "props": {
+          "itemName": "Welche Risikofaktoren liegen bei der betroffenen Person vor?"
+        },
+        "fieldArray": {
+          "fieldGroup": [
+            {
+              "template": "<h4 class=\"question-title\">Welche Risikofaktoren liegen bei der betroffenen Person vor?</h4>"
+            },
+            {
+              "type": "autocomplete-coding",
+              "props": {
+                "options": [
+                  {
+                    "code": "86569001",
+                    "display": "Postpartum (weniger als 6 Wochen)",
+                    "system": "http://snomed.info/sct"
+                  },
+                  {
+                    "code": "260413007",
+                    "display": "keine",
+                    "system": "http://snomed.info/sct"
+                  },
+                  {
+                    "code": "90708001",
+                    "display": "Nierenerkrankung",
+                    "system": "http://snomed.info/sct"
+                  },
+                  {
+                    "code": "NASK",
+                    "display": "not asked",
+                    "system": "http://terminology.hl7.org/CodeSystem/v3-NullFlavor"
+                  },
+                  {
+                    "code": "46635009",
+                    "display": "Diabetes Typ 1",
+                    "system": "http://snomed.info/sct"
+                  },
+                  {
+                    "code": "77386006",
+                    "display": "Schwangerschaft",
+                    "system": "http://snomed.info/sct"
+                  },
+                  {
+                    "code": "44054006",
+                    "display": "Diabetes Typ 2",
+                    "system": "http://snomed.info/sct"
+                  },
+                  {
+                    "code": "118940003",
+                    "display": "neurologische/neuromuskuläre Erkrankung",
+                    "system": "http://snomed.info/sct"
+                  },
+                  {
+                    "code": "413839001",
+                    "display": "Chronische Lungenerkrankung (z.B. COPD)",
+                    "system": "http://snomed.info/sct"
+                  },
+                  {
+                    "code": "235856003",
+                    "display": "Lebererkrankung",
+                    "system": "http://snomed.info/sct"
+                  },
+                  {
+                    "code": "ASKU",
+                    "display": "asked but unknown",
+                    "system": "http://terminology.hl7.org/CodeSystem/v3-NullFlavor"
+                  },
+                  {
+                    "code": "49601007",
+                    "display": "Herz-Kreislauf-Erkrankung (inkl. Bluthochdruck)",
+                    "system": "http://snomed.info/sct"
+                  },
+                  {
+                    "code": "234532001",
+                    "display": "Immundefizienz, inkl. HIV",
+                    "system": "http://snomed.info/sct"
+                  },
+                  {
+                    "code": "363346000",
+                    "display": "Krebserkrankung",
+                    "system": "http://snomed.info/sct"
+                  }
+                ],
+                "required": false,
+                "clearable": true,
+                "defaultCode": "NASK"
+              },
+              "key": "VALUE"
+            },
+            {
+              "key": "trimester",
+              "fieldGroup": [
+                {
+                  "template": "<h4 class=\"question-title\">Trimester</h4>"
+                },
+                {
+                  "type": "autocomplete-coding",
+                  "props": {
+                    "options": [
+                      {
+                        "code": "255248002",
+                        "display": "3. Trimester",
+                        "system": "http://snomed.info/sct"
+                      },
+                      {
+                        "code": "255246003",
+                        "display": "1. Trimester",
+                        "system": "http://snomed.info/sct"
+                      },
+                      {
+                        "code": "NASK",
+                        "display": "not asked",
+                        "system": "http://terminology.hl7.org/CodeSystem/v3-NullFlavor"
+                      },
+                      {
+                        "code": "255247007",
+                        "display": "2. Trimester",
+                        "system": "http://snomed.info/sct"
+                      },
+                      {
+                        "code": "ASKU",
+                        "display": "asked but unknown",
+                        "system": "http://terminology.hl7.org/CodeSystem/v3-NullFlavor"
+                      }
+                    ],
+                    "required": false,
+                    "clearable": true,
+                    "defaultCode": "NASK"
+                  },
+                  "key": "VALUE"
+                }
+              ],
+              "expressions": {
+                "hide": "!( field?.parent?.model?.VALUE?.code === '77386006' )"
+              }
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "key": "outbreak",
+    "fieldGroup": [
+      {
+        "template": "<h4 class=\"question-title\">Kann der gemeldete Fall einem Ausbruch zugeordnet werden?</h4>"
+      },
+      {
+        "type": "autocomplete-coding",
+        "props": {
+          "options": [
+            {
+              "code": "yes",
+              "display": "Ja",
+              "system": "https://demis.rki.de/fhir/CodeSystem/yesOrNoAnswer"
+            },
+            {
+              "code": "NASK",
+              "display": "not asked",
+              "system": "http://terminology.hl7.org/CodeSystem/v3-NullFlavor"
+            },
+            {
+              "code": "no",
+              "display": "Nein",
+              "system": "https://demis.rki.de/fhir/CodeSystem/yesOrNoAnswer"
+            },
+            {
+              "code": "ASKU",
+              "display": "asked but unknown",
+              "system": "http://terminology.hl7.org/CodeSystem/v3-NullFlavor"
+            }
+          ],
+          "required": false,
+          "clearable": true,
+          "defaultCode": "NASK"
+        },
+        "key": "VALUE"
+      },
+      {
+        "key": "outbreakNote",
+        "fieldGroup": [
+          {
+            "template": "<h4 class=\"question-title\">Fallbezogene Zusatzinformationen zum Ausbruch</h4>"
+          },
+          {
+            "type": "textarea",
+            "key": "VALUE"
+          }
+        ],
+        "expressions": {
+          "hide": "!( field?.parent?.model?.VALUE?.code === 'yes' )"
+        }
+      },
+      {
+        "key": "outbreakNotificationId",
+        "fieldGroup": [
+          {
+            "template": "<h4 class=\"question-title\">Notification-Id der zugehörigen Ausbruchsmeldung</h4>"
+          },
+          {
+            "template": "<h1>Reference without extension: outbreakNotificationId</h1>"
+          }
+        ],
+        "expressions": {
+          "hide": "!( field?.parent?.model?.VALUE?.code === 'yes' )"
+        }
+      }
+    ]
+  }
+]
+        

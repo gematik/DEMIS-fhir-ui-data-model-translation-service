@@ -1,0 +1,117 @@
+{
+  "resourceType": "ValueSet",
+  "id": "answerSetInfectionEnvironmentSettingCVDD",
+  "url": "https://demis.rki.de/fhir/ValueSet/answerSetInfectionEnvironmentSettingCVDD",
+  "version": "1.0.0",
+  "name": "AnswerSetInfectionEnvironmentSettingCVDD",
+  "title": "Covid-19-Infektionsumfeld",
+  "status": "active",
+  "date": "2023-06-14",
+  "description": "Das ValueSet AnswerSetInfectionEnvironmentSettingCVDD enthält die Codes zur Angabe desCovid-19-Infektionsumfeldes.",
+  "compose": {
+    "include": [
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/900000000000207008/version/20230331",
+        "concept": [
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 1
+              }
+            ],
+            "code": "444107005+285141008",
+            "display": "Arbeitsplatz",
+            "designation": [
+              {
+                "language": "en-US",
+                "use": {
+                  "system": "http://snomed.info/sct",
+                  "code": "1119454002"
+                },
+                "value": "444107005 | Exposure to communicable disease (navigational concept) | + 285141008 | Work environment (environment) |"
+              }
+            ]
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 2
+              }
+            ],
+            "code": "444107005+413817003",
+            "display": "Kita",
+            "designation": [
+              {
+                "language": "en-US",
+                "use": {
+                  "system": "http://snomed.info/sct",
+                  "code": "1119454002"
+                },
+                "value": "444107005 | Exposure to communicable disease (navigational concept) | + 413817003 | Child day care center (environment) |"
+              }
+            ]
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 3
+              }
+            ],
+            "code": "444107005+257698009",
+            "display": "Schule",
+            "designation": [
+              {
+                "language": "en-US",
+                "use": {
+                  "system": "http://snomed.info/sct",
+                  "code": "1119454002"
+                },
+                "value": "444107005 | Exposure to communicable disease (navigational concept) | + 257698009 | School (environment) |"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "system": "http://terminology.hl7.org/CodeSystem/v3-NullFlavor",
+        "version": "2.1.0",
+        "concept": [
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 1
+              }
+            ],
+            "code": "ASKU",
+            "display": "asked but unknown"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 1
+              }
+            ],
+            "code": "NASK",
+            "display": "not asked"
+          }
+        ]
+      },
+      {
+        "valueSet": [
+          "https://demis.rki.de/fhir/ValueSet/infectionEnvironmentSettingCVDD"
+        ]
+      }
+    ]
+  },
+  "expansion": {
+    "timestamp": "2023-06-14T00:00:00+02:00",
+    "contains": [
+    ]
+  }
+}

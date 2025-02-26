@@ -1,0 +1,42 @@
+{
+  "resourceType": "CodeSystem",
+  "id": "translationIso3166",
+  "url": "https://demis.rki.de/fhir/CodeSystem/translationIso3166",
+  "version": "1.0.0",
+  "name": "TranslationIso3166",
+  "title": "Übersetzung der ISO 3166-1 Ländercodes",
+  "status": "active",
+  "date": "2024-02-14T13:00:10+01:00",
+  "description": "Dieses CodeSystem Supplement enthält die deutschsprachigen Übersetzungen der 166-1 Länder- und Gebietsnamen",
+  "content": "supplement",
+  "supplements": "urn:iso:std:iso:3166",
+  "concept": [
+    {
+      "code": "CH",
+      "designation": [
+        {
+          "language": "de-DE",
+          "value": "Schweiz"
+        }
+      ]
+    },
+    {
+      "code": "DE",
+      "designation": [
+        {
+          "language": "de-DE",
+          "value": "Deutschland"
+        }
+      ]
+    },
+    {
+      "code": "NZ",
+      "designation": [
+        {
+          "language": "de-DE",
+          "value": "Neuseeland"
+        }
+      ]
+    }
+  ]
+}

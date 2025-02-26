@@ -1,0 +1,352 @@
+{
+  "resourceType": "CodeSystem",
+  "id": "organizationType",
+  "url": "https://demis.rki.de/fhir/CodeSystem/organizationType",
+  "version": "1.2.0",
+  "name": "OrganizationType",
+  "title": "Einrichtungsart",
+  "status": "active",
+  "experimental": false,
+  "date": "2023-09-19",
+  "publisher": "Robert Koch-Institut",
+  "description": "Das CodeSystem OrganizationType enthält die Codes der Einrichtungsarten.",
+  "caseSensitive": false,
+  "valueSet": "https://demis.rki.de/fhir/ValueSet/organizationType",
+  "hierarchyMeaning": "is-a",
+  "content": "complete",
+  "count": 50,
+  "concept": [
+    {
+      "code": "medFacility",
+      "display": "Medizinische Einrichtung",
+      "designation": [
+        {
+          "language": "en-US",
+          "use": {
+            "system": "http://snomed.info/sct",
+            "code": "900000000000003001"
+          },
+          "value": "Medical facility"
+        },
+        {
+          "language": "de-DE",
+          "use": {
+            "system": "http://snomed.info/sct",
+            "code": "900000000000003001"
+          },
+          "value": "Medizinische Einrichtung"
+        }
+      ],
+      "concept": [
+        {
+          "code": "hospital",
+          "display": "Krankenhaus",
+          "designation": [
+            {
+              "language": "en-US",
+              "use": {
+                "system": "http://snomed.info/sct",
+                "code": "900000000000003001"
+              },
+              "value": "Hospital"
+            },
+            {
+              "language": "de-DE",
+              "use": {
+                "system": "http://snomed.info/sct",
+                "code": "900000000000003001"
+              },
+              "value": "Krankenhaus"
+            }
+          ]
+        },
+        {
+          "code": "outpatSurgery",
+          "display": "Einrichtung für ambulantes Operieren",
+          "designation": [
+            {
+              "language": "en-US",
+              "use": {
+                "system": "http://snomed.info/sct",
+                "code": "900000000000003001"
+              },
+              "value": "Facility for outpatient surgery"
+            },
+            {
+              "language": "de-DE",
+              "use": {
+                "system": "http://snomed.info/sct",
+                "code": "900000000000003001"
+              },
+              "value": "Einrichtung für ambulantes Operieren"
+            }
+          ]
+        },
+        {
+          "code": "prevCareRehab",
+          "display": "Vorsorge- oder Reha-Einrichtung",
+          "designation": [
+            {
+              "language": "en-US",
+              "use": {
+                "system": "http://snomed.info/sct",
+                "code": "900000000000003001"
+              },
+              "value": "Preventive care or rehab facility"
+            },
+            {
+              "language": "de-DE",
+              "use": {
+                "system": "http://snomed.info/sct",
+                "code": "900000000000003001"
+              },
+              "value": "Vorsorge- oder Reha-Einrichtung"
+            }
+          ]
+        },
+        {
+          "code": "dialysisFacility",
+          "display": "Dialyseeinrichtung",
+          "designation": [
+            {
+              "language": "en-US",
+              "use": {
+                "system": "http://snomed.info/sct",
+                "code": "900000000000003001"
+              },
+              "value": "Dialysis facility"
+            },
+            {
+              "language": "de-DE",
+              "use": {
+                "system": "http://snomed.info/sct",
+                "code": "900000000000003001"
+              },
+              "value": "Dialyseeinrichtung"
+            }
+          ]
+        },
+        {
+          "code": "dayHospital",
+          "display": "Tagesklinik",
+          "designation": [
+            {
+              "language": "en-US",
+              "use": {
+                "system": "http://snomed.info/sct",
+                "code": "900000000000003001"
+              },
+              "value": "Day hospital"
+            },
+            {
+              "language": "de-DE",
+              "use": {
+                "system": "http://snomed.info/sct",
+                "code": "900000000000003001"
+              },
+              "value": "Tagesklinik"
+            }
+          ]
+        },
+        {
+          "code": "maternity",
+          "display": "Entbindungseinrichtung",
+          "designation": [
+            {
+              "language": "en-US",
+              "use": {
+                "system": "http://snomed.info/sct",
+                "code": "900000000000003001"
+              },
+              "value": "Maternity"
+            },
+            {
+              "language": "de-DE",
+              "use": {
+                "system": "http://snomed.info/sct",
+                "code": "900000000000003001"
+              },
+              "value": "Entbindungseinrichtung"
+            }
+          ]
+        },
+        {
+          "code": "physicianOffice",
+          "display": "Arztpraxis",
+          "designation": [
+            {
+              "language": "en-US",
+              "use": {
+                "system": "http://snomed.info/sct",
+                "code": "900000000000003001"
+              },
+              "value": "Physician's office"
+            },
+            {
+              "language": "de-DE",
+              "use": {
+                "system": "http://snomed.info/sct",
+                "code": "900000000000003001"
+              },
+              "value": "Arztpraxis"
+            }
+          ]
+        },
+        {
+          "code": "dentalSurgery",
+          "display": "Zahnarztpraxis",
+          "designation": [
+            {
+              "language": "en-US",
+              "use": {
+                "system": "http://snomed.info/sct",
+                "code": "900000000000003001"
+              },
+              "value": "Dental surgery"
+            },
+            {
+              "language": "de-DE",
+              "use": {
+                "system": "http://snomed.info/sct",
+                "code": "900000000000003001"
+              },
+              "value": "Zahnarztpraxis"
+            }
+          ]
+        },
+        {
+          "code": "psycFacility",
+          "display": "Psychotherapeutische Praxis",
+          "designation": [
+            {
+              "language": "en-US",
+              "use": {
+                "system": "http://snomed.info/sct",
+                "code": "900000000000003001"
+              },
+              "value": "Psychotherapeutic facility"
+            },
+            {
+              "language": "de-DE",
+              "use": {
+                "system": "http://snomed.info/sct",
+                "code": "900000000000003001"
+              },
+              "value": "Psychotherapeutische Praxis"
+            }
+          ]
+        },
+        {
+          "code": "othMedPractice",
+          "display": "Sonstige Heilberufepraxis",
+          "designation": [
+            {
+              "language": "en-US",
+              "use": {
+                "system": "http://snomed.info/sct",
+                "code": "900000000000003001"
+              },
+              "value": "Other health professional practice"
+            },
+            {
+              "language": "de-DE",
+              "use": {
+                "system": "http://snomed.info/sct",
+                "code": "900000000000003001"
+              },
+              "value": "Sonstige Heilberufepraxis"
+            }
+          ]
+        },
+        {
+          "code": "medFacPHA",
+          "display": "Medizinische Einrichtung des ÖGDs",
+          "designation": [
+            {
+              "language": "en-US",
+              "use": {
+                "system": "http://snomed.info/sct",
+                "code": "900000000000003001"
+              },
+              "value": "Public health medical facility"
+            },
+            {
+              "language": "de-DE",
+              "use": {
+                "system": "http://snomed.info/sct",
+                "code": "900000000000003001"
+              },
+              "value": "Medizinische Einrichtung des ÖGDs"
+            }
+          ]
+        },
+        {
+          "code": "emResServ",
+          "display": "Rettungsdienst",
+          "designation": [
+            {
+              "language": "en-US",
+              "use": {
+                "system": "http://snomed.info/sct",
+                "code": "900000000000003001"
+              },
+              "value": "Emergency rescue service"
+            },
+            {
+              "language": "de-DE",
+              "use": {
+                "system": "http://snomed.info/sct",
+                "code": "900000000000003001"
+              },
+              "value": "Rettungsdienst"
+            }
+          ]
+        },
+        {
+          "code": "civDisFacility",
+          "display": "Einrichtungen des Zivil- und Katastrophenschutzes",
+          "designation": [
+            {
+              "language": "en-US",
+              "use": {
+                "system": "http://snomed.info/sct",
+                "code": "900000000000003001"
+              },
+              "value": "Facility for civil Protection and Disaster Assistance"
+            },
+            {
+              "language": "de-DE",
+              "use": {
+                "system": "http://snomed.info/sct",
+                "code": "900000000000003001"
+              },
+              "value": "Einrichtungen des Zivil- und Katastrophenschutzes"
+            }
+          ]
+        },
+        {
+          "code": "othMedFacility",
+          "display": "Sonstige medizinische Einrichtung",
+          "designation": [
+            {
+              "language": "en-US",
+              "use": {
+                "system": "http://snomed.info/sct",
+                "code": "900000000000003001"
+              },
+              "value": "Other medical facility"
+            },
+            {
+              "language": "de-DE",
+              "use": {
+                "system": "http://snomed.info/sct",
+                "code": "900000000000003001"
+              },
+              "value": "Sonstige medizinische Einrichtung"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

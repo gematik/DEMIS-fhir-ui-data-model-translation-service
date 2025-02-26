@@ -1,0 +1,287 @@
+{
+  "resourceType": "CodeSystem",
+  "id": "notificationCategory",
+  "url": "https://demis.rki.de/fhir/CodeSystem/notificationCategory",
+  "version": "2.0.0",
+  "name": "NotificationCategory",
+  "title": "Meldetatbestand",
+  "status": "active",
+  "experimental": false,
+  "date": "2025-01-29",
+  "publisher": "Robert Koch-Institut",
+  "description": "Das CodeSystem NotificationCategory enthält die Codes der Meldetatbestände.",
+  "caseSensitive": false,
+  "valueSet": "https://demis.rki.de/fhir/ValueSet/notificationCategory",
+  "content": "complete",
+  "count": 5,
+  "property": [
+    {
+      "code": "usage-status",
+      "description": "Nutzungsstatus",
+      "type": "code"
+    },
+    {
+      "code": "diagnosticReport-profile",
+      "description": "Verweis auf das zu verwendende Profil für den Laborbericht (DiagnosticReport)",
+      "type": "string"
+    },
+    {
+      "code": "national-notificationCategory",
+      "description": "Nationaler Meldetatbestand",
+      "type": "boolean"
+    },
+    {
+      "code": "federal-state-specific-notificationCategory",
+      "description": "Bundeslandspezifischer Meldetatbestand",
+      "type": "boolean"
+    },
+    {
+      "code": "federal-state",
+      "description": "Bundesland",
+      "type": "Coding"
+    },
+    {
+      "code": "ifsg-paragraph",
+      "description": "IfSG-Paragraph",
+      "type": "code"
+    }
+  ],
+  "concept": [
+    {
+      "code": "acbp",
+      "display": "Acinetobacter spp. bei Nachweis einer Carbapenemase-Determinante oder mit verminderter Empfindlichkeit gegenüber Carbapenemen außer bei natürlicher Resistenz; Meldepflicht nur bei Infektion oder Kolonisation",
+      "designation": [
+        {
+          "language": "de-DE",
+          "value": "Acinetobacter spp., Carbapenem"
+        }
+      ],
+      "property": [
+        {
+          "code": "usage-status",
+          "valueCode": "active"
+        },
+        {
+          "code": "diagnosticReport-profile",
+          "valueString": "https://demis.rki.de/fhir/StructureDefinition/LaboratoryReportACBP"
+        },
+        {
+          "code": "national-notificationCategory",
+          "valueBoolean": true
+        },
+        {
+          "code": "federal-state-specific-notificationCategory",
+          "valueBoolean": false
+        },
+        {
+          "code": "ifsg-paragraph",
+          "valueCode": "7.1"
+        }
+      ]
+    },
+    {
+      "code": "advp",
+      "display": "Adenoviren; Meldepflicht nur für den direkten Nachweis im Konjunktivalabstrich",
+      "designation": [
+        {
+          "language": "de-DE",
+          "value": "Adenoviren, Konjunktivalabstrich"
+        }
+      ],
+      "property": [
+        {
+          "code": "usage-status",
+          "valueCode": "active"
+        },
+        {
+          "code": "diagnosticReport-profile",
+          "valueString": "https://demis.rki.de/fhir/StructureDefinition/LaboratoryReportADVP"
+        },
+        {
+          "code": "national-notificationCategory",
+          "valueBoolean": true
+        },
+        {
+          "code": "federal-state-specific-notificationCategory",
+          "valueBoolean": false
+        },
+        {
+          "code": "ifsg-paragraph",
+          "valueCode": "7.1"
+        }
+      ]
+    },
+    {
+      "code": "adep",
+      "display": "Adenoviren; Meldepflicht bei akuter Infektion für Nachweise aus allen Körpermaterialien",
+      "designation": [
+        {
+          "language": "de-DE",
+          "value": "Adenoviren, alle Materialien"
+        }
+      ],
+      "property": [
+        {
+          "code": "usage-status",
+          "valueCode": "active"
+        },
+        {
+          "code": "diagnosticReport-profile",
+          "valueString": "https://demis.rki.de/fhir/StructureDefinition/LaboratoryReportADEP"
+        },
+        {
+          "code": "national-notificationCategory",
+          "valueBoolean": false
+        },
+        {
+          "code": "federal-state-specific-notificationCategory",
+          "valueBoolean": true
+        },
+        {
+          "code": "federal-state",
+          "valueCoding": {
+            "system": "urn:iso:std:iso:3166-2:de",
+            "code": "DE-SN"
+          }
+        }
+      ]
+    },
+    {
+      "code": "eahp",
+      "display": "Amoebiasis, Entamoeba histolytica",
+      "designation": [
+        {
+          "language": "de-DE",
+          "value": "Entamoeba histolytica"
+        }
+      ],
+      "property": [
+        {
+          "code": "usage-status",
+          "valueCode": "active"
+        },
+        {
+          "code": "diagnosticReport-profile",
+          "valueString": "https://demis.rki.de/fhir/StructureDefinition/LaboratoryReportEAHP"
+        },
+        {
+          "code": "national-notificationCategory",
+          "valueBoolean": false
+        },
+        {
+          "code": "federal-state-specific-notificationCategory",
+          "valueBoolean": true
+        },
+        {
+          "code": "federal-state",
+          "valueCoding": {
+            "system": "urn:iso:std:iso:3166-2:de",
+            "code": "DE-MV"
+          }
+        },
+        {
+          "code": "federal-state",
+          "valueCoding": {
+            "system": "urn:iso:std:iso:3166-2:de",
+            "code": "DE-SN"
+          }
+        },
+        {
+          "code": "federal-state",
+          "valueCoding": {
+            "system": "urn:iso:std:iso:3166-2:de",
+            "code": "DE-ST"
+          }
+        },
+        {
+          "code": "ifsg-paragraph",
+          "valueCode": "6.1"
+        }
+      ]
+    },{
+      "code": "hihi",
+      "display": "hahahaha",
+      "designation": [
+        {
+          "language": "de-DE",
+          "value": "hohoho"
+        }
+      ],
+      "property": [
+        {
+          "code": "usage-status",
+          "valueCode": "active"
+        },
+        {
+          "code": "diagnosticReport-profile",
+          "valueString": "https://demis.rki.de/fhir/StructureDefinition/LaboratoryReportEAHP"
+        },
+        {
+          "code": "national-notificationCategory",
+          "valueBoolean": false
+        },
+        {
+          "code": "federal-state-specific-notificationCategory",
+          "valueBoolean": true
+        },
+        {
+          "code": "federal-state",
+          "valueCoding": {
+            "system": "urn:iso:std:iso:3166-2:de",
+            "code": "DE-MV"
+          }
+        },
+        {
+          "code": "federal-state",
+          "valueCoding": {
+            "system": "urn:iso:std:iso:3166-2:de",
+            "code": "DE-SN"
+          }
+        },
+        {
+          "code": "federal-state",
+          "valueCoding": {
+            "system": "urn:iso:std:iso:3166-2:de",
+            "code": "DE-ST"
+          }
+        },
+        {
+          "code": "ifsg-paragraph",
+          "valueCode": ""
+        }
+      ]
+    },
+    {
+      "code": "abvp",
+      "display": "Arboviren (sonstige)",
+      "designation": [
+        {
+          "language": "de-DE",
+          "value": "Arboviren, sonstige"
+        }
+      ],
+      "property": [
+        {
+          "code": "usage-status",
+          "valueCode": "active"
+        },
+        {
+          "code": "diagnosticReport-profile",
+          "valueString": "https://demis.rki.de/fhir/StructureDefinition/LaboratoryReportABVP"
+        },
+        {
+          "code": "national-notificationCategory",
+          "valueBoolean": true
+        },
+        {
+          "code": "federal-state-specific-notificationCategory",
+          "valueBoolean": false
+        },
+        {
+          "code": "ifsg-paragraph",
+          "valueCode": "7.3"
+        }
+      ]
+    }
+  ]
+}

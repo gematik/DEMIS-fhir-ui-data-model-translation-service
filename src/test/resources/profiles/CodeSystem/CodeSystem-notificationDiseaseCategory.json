@@ -1,0 +1,1092 @@
+{
+  "resourceType": "CodeSystem",
+  "id": "notificationDiseaseCategory",
+  "url": "https://demis.rki.de/fhir/CodeSystem/notificationDiseaseCategory",
+  "version": "1.6.0",
+  "name": "NotificationDiseaseCategory",
+  "title": "Meldetatbestand",
+  "status": "active",
+  "date": "2024-05-03",
+  "description": "Das CodeSystem NotificationDiseaseCategory enthält die Codes der Meldetatbestände.",
+  "caseSensitive": false,
+  "valueSet": "https://demis.rki.de/fhir/ValueSet/notificationDiseaseCategory",
+  "content": "fragment",
+  "count": 43,
+  "property": [
+    {
+      "code": "usage-status",
+      "description": "Nutzungsstatus",
+      "type": "code"
+    },
+    {
+      "code": "national-notificationCategory",
+      "description": "Nationaler Meldetatbestand",
+      "type": "boolean"
+    },
+    {
+      "code": "federal-state-specific-notificationCategory",
+      "description": "Bundeslandspezifischer Meldetatbestand",
+      "type": "boolean"
+    },
+    {
+      "code": "federal-state",
+      "description": "Bundesland",
+      "type": "Coding"
+    }
+  ],
+  "concept": [
+    {
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/codesystem-conceptOrder",
+          "valueInteger": 18
+        }
+      ],
+      "code": "band",
+      "display": "Milzbrand",
+      "property": [
+        {
+          "code": "usage-status",
+          "valueCode": "active"
+        },
+        {
+          "code": "national-notificationCategory",
+          "valueBoolean": true
+        },
+        {
+          "code": "federal-state-specific-notificationCategory",
+          "valueBoolean": false
+        }
+      ]
+    },
+    {
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/codesystem-conceptOrder",
+          "valueInteger": 23
+        }
+      ],
+      "code": "bpsd",
+      "display": "Keuchhusten",
+      "property": [
+        {
+          "code": "usage-status",
+          "valueCode": "active"
+        },
+        {
+          "code": "national-notificationCategory",
+          "valueBoolean": true
+        },
+        {
+          "code": "federal-state-specific-notificationCategory",
+          "valueBoolean": false
+        }
+      ]
+    },
+    {
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/codesystem-conceptOrder",
+          "valueInteger": 38
+        }
+      ],
+      "code": "cdfd",
+      "display": "Clostridioides difficile",
+      "property": [
+        {
+          "code": "usage-status",
+          "valueCode": "active"
+        },
+        {
+          "code": "national-notificationCategory",
+          "valueBoolean": true
+        },
+        {
+          "code": "federal-state-specific-notificationCategory",
+          "valueBoolean": false
+        }
+      ]
+    },
+    {
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/codesystem-conceptOrder",
+          "valueInteger": 36
+        }
+      ],
+      "code": "cjkd",
+      "display": "Creutzfeldt-Jakob-Krankheit (CJK)",
+      "property": [
+        {
+          "code": "usage-status",
+          "valueCode": "active"
+        },
+        {
+          "code": "national-notificationCategory",
+          "valueBoolean": true
+        },
+        {
+          "code": "federal-state-specific-notificationCategory",
+          "valueBoolean": false
+        }
+      ]
+    },
+    {
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/codesystem-conceptOrder",
+          "valueInteger": 40
+        }
+      ],
+      "code": "clod",
+      "display": "Botulismus",
+      "property": [
+        {
+          "code": "usage-status",
+          "valueCode": "active"
+        },
+        {
+          "code": "national-notificationCategory",
+          "valueBoolean": true
+        },
+        {
+          "code": "federal-state-specific-notificationCategory",
+          "valueBoolean": false
+        }
+      ]
+    },
+    {
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/codesystem-conceptOrder",
+          "valueInteger": 34
+        }
+      ],
+      "code": "cord",
+      "display": "Diphtherie",
+      "property": [
+        {
+          "code": "usage-status",
+          "valueCode": "active"
+        },
+        {
+          "code": "national-notificationCategory",
+          "valueBoolean": true
+        },
+        {
+          "code": "federal-state-specific-notificationCategory",
+          "valueBoolean": false
+        }
+      ]
+    },
+    {
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/codesystem-conceptOrder",
+          "valueInteger": 37
+        }
+      ],
+      "code": "cvdd",
+      "display": "Coronavirus-Krankheit-2019 (COVID-19)",
+      "property": [
+        {
+          "code": "usage-status",
+          "valueCode": "active"
+        },
+        {
+          "code": "national-notificationCategory",
+          "valueBoolean": true
+        },
+        {
+          "code": "federal-state-specific-notificationCategory",
+          "valueBoolean": false
+        }
+      ]
+    },
+    {
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/codesystem-conceptOrder",
+          "valueInteger": 35
+        }
+      ],
+      "code": "dend",
+      "display": "Denguefieber",
+      "property": [
+        {
+          "code": "usage-status",
+          "valueCode": "active"
+        },
+        {
+          "code": "national-notificationCategory",
+          "valueBoolean": true
+        },
+        {
+          "code": "federal-state-specific-notificationCategory",
+          "valueBoolean": false
+        }
+      ]
+    },
+    {
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/codesystem-conceptOrder",
+          "valueInteger": 33
+        }
+      ],
+      "code": "ebvd",
+      "display": "Ebolafieber",
+      "property": [
+        {
+          "code": "usage-status",
+          "valueCode": "active"
+        },
+        {
+          "code": "national-notificationCategory",
+          "valueBoolean": true
+        },
+        {
+          "code": "federal-state-specific-notificationCategory",
+          "valueBoolean": false
+        }
+      ]
+    },
+    {
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/codesystem-conceptOrder",
+          "valueInteger": 32
+        }
+      ],
+      "code": "gfvd",
+      "display": "Gelbfieber",
+      "property": [
+        {
+          "code": "usage-status",
+          "valueCode": "active"
+        },
+        {
+          "code": "national-notificationCategory",
+          "valueBoolean": true
+        },
+        {
+          "code": "federal-state-specific-notificationCategory",
+          "valueBoolean": false
+        }
+      ]
+    },
+    {
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/codesystem-conceptOrder",
+          "valueInteger": 28
+        }
+      ],
+      "code": "havd",
+      "display": "Hepatitis A",
+      "property": [
+        {
+          "code": "usage-status",
+          "valueCode": "active"
+        },
+        {
+          "code": "national-notificationCategory",
+          "valueBoolean": true
+        },
+        {
+          "code": "federal-state-specific-notificationCategory",
+          "valueBoolean": false
+        }
+      ]
+    },
+    {
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/codesystem-conceptOrder",
+          "valueInteger": 27
+        }
+      ],
+      "code": "hbvd",
+      "display": "Hepatitis B",
+      "property": [
+        {
+          "code": "usage-status",
+          "valueCode": "active"
+        },
+        {
+          "code": "national-notificationCategory",
+          "valueBoolean": true
+        },
+        {
+          "code": "federal-state-specific-notificationCategory",
+          "valueBoolean": false
+        }
+      ]
+    },
+    {
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/codesystem-conceptOrder",
+          "valueInteger": 26
+        }
+      ],
+      "code": "hcvd",
+      "display": "Hepatitis C",
+      "property": [
+        {
+          "code": "usage-status",
+          "valueCode": "active"
+        },
+        {
+          "code": "national-notificationCategory",
+          "valueBoolean": true
+        },
+        {
+          "code": "federal-state-specific-notificationCategory",
+          "valueBoolean": false
+        }
+      ]
+    },
+    {
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/codesystem-conceptOrder",
+          "valueInteger": 25
+        }
+      ],
+      "code": "hdvd",
+      "display": "Hepatitis D",
+      "property": [
+        {
+          "code": "usage-status",
+          "valueCode": "active"
+        },
+        {
+          "code": "national-notificationCategory",
+          "valueBoolean": true
+        },
+        {
+          "code": "federal-state-specific-notificationCategory",
+          "valueBoolean": false
+        }
+      ]
+    },
+    {
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/codesystem-conceptOrder",
+          "valueInteger": 24
+        }
+      ],
+      "code": "hevd",
+      "display": "Hepatitis E",
+      "property": [
+        {
+          "code": "usage-status",
+          "valueCode": "active"
+        },
+        {
+          "code": "national-notificationCategory",
+          "valueBoolean": true
+        },
+        {
+          "code": "federal-state-specific-notificationCategory",
+          "valueBoolean": false
+        }
+      ]
+    },
+    {
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/codesystem-conceptOrder",
+          "valueInteger": 30
+        }
+      ],
+      "code": "hfad",
+      "display": "Hämorrhagisches Fieber",
+      "property": [
+        {
+          "code": "usage-status",
+          "valueCode": "active"
+        },
+        {
+          "code": "national-notificationCategory",
+          "valueBoolean": true
+        },
+        {
+          "code": "federal-state-specific-notificationCategory",
+          "valueBoolean": false
+        }
+      ]
+    },
+    {
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/codesystem-conceptOrder",
+          "valueInteger": 29
+        }
+      ],
+      "code": "htvd",
+      "display": "Hantavirus",
+      "property": [
+        {
+          "code": "usage-status",
+          "valueCode": "active"
+        },
+        {
+          "code": "national-notificationCategory",
+          "valueBoolean": true
+        },
+        {
+          "code": "federal-state-specific-notificationCategory",
+          "valueBoolean": false
+        }
+      ]
+    },
+    {
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/codesystem-conceptOrder",
+          "valueInteger": 31
+        }
+      ],
+      "code": "husd",
+      "display": "Hämolytisch-urämisches Syndrom (HUS)",
+      "property": [
+        {
+          "code": "usage-status",
+          "valueCode": "active"
+        },
+        {
+          "code": "national-notificationCategory",
+          "valueBoolean": true
+        },
+        {
+          "code": "federal-state-specific-notificationCategory",
+          "valueBoolean": false
+        }
+      ]
+    },
+    {
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/codesystem-conceptOrder",
+          "valueInteger": 43
+        }
+      ],
+      "code": "hxxd",
+      "display": "Akute Virushepatitis",
+      "property": [
+        {
+          "code": "usage-status",
+          "valueCode": "active"
+        },
+        {
+          "code": "national-notificationCategory",
+          "valueBoolean": true
+        },
+        {
+          "code": "federal-state-specific-notificationCategory",
+          "valueBoolean": false
+        }
+      ]
+    },
+    {
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/codesystem-conceptOrder",
+          "valueInteger": 2
+        }
+      ],
+      "code": "izvd",
+      "display": "Zoonotische Influenza",
+      "property": [
+        {
+          "code": "usage-status",
+          "valueCode": "active"
+        },
+        {
+          "code": "national-notificationCategory",
+          "valueBoolean": true
+        },
+        {
+          "code": "federal-state-specific-notificationCategory",
+          "valueBoolean": false
+        }
+      ]
+    },
+    {
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/codesystem-conceptOrder",
+          "valueInteger": 22
+        }
+      ],
+      "code": "lsvd",
+      "display": "Lassafieber",
+      "property": [
+        {
+          "code": "usage-status",
+          "valueCode": "active"
+        },
+        {
+          "code": "national-notificationCategory",
+          "valueBoolean": true
+        },
+        {
+          "code": "federal-state-specific-notificationCategory",
+          "valueBoolean": false
+        }
+      ]
+    },
+    {
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/codesystem-conceptOrder",
+          "valueInteger": 21
+        }
+      ],
+      "code": "mbvd",
+      "display": "Marburgfieber",
+      "property": [
+        {
+          "code": "usage-status",
+          "valueCode": "active"
+        },
+        {
+          "code": "national-notificationCategory",
+          "valueBoolean": true
+        },
+        {
+          "code": "federal-state-specific-notificationCategory",
+          "valueBoolean": false
+        }
+      ]
+    },
+    {
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/codesystem-conceptOrder",
+          "valueInteger": 16
+        }
+      ],
+      "code": "mpvd",
+      "display": "Mumps",
+      "property": [
+        {
+          "code": "usage-status",
+          "valueCode": "active"
+        },
+        {
+          "code": "national-notificationCategory",
+          "valueBoolean": true
+        },
+        {
+          "code": "federal-state-specific-notificationCategory",
+          "valueBoolean": false
+        }
+      ]
+    },
+    {
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/codesystem-conceptOrder",
+          "valueInteger": 17
+        }
+      ],
+      "code": "mpxd",
+      "display": "Mpox",
+      "property": [
+        {
+          "code": "usage-status",
+          "valueCode": "active"
+        },
+        {
+          "code": "national-notificationCategory",
+          "valueBoolean": true
+        },
+        {
+          "code": "federal-state-specific-notificationCategory",
+          "valueBoolean": false
+        }
+      ]
+    },
+    {
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/codesystem-conceptOrder",
+          "valueInteger": 20
+        }
+      ],
+      "code": "msvd",
+      "display": "Masern",
+      "property": [
+        {
+          "code": "usage-status",
+          "valueCode": "active"
+        },
+        {
+          "code": "national-notificationCategory",
+          "valueBoolean": true
+        },
+        {
+          "code": "federal-state-specific-notificationCategory",
+          "valueBoolean": false
+        }
+      ]
+    },
+    {
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/codesystem-conceptOrder",
+          "valueInteger": 41
+        }
+      ],
+      "code": "mybd",
+      "display": "Behandlungsabbruch Tuberkulose",
+      "property": [
+        {
+          "code": "usage-status",
+          "valueCode": "active"
+        },
+        {
+          "code": "national-notificationCategory",
+          "valueBoolean": true
+        },
+        {
+          "code": "federal-state-specific-notificationCategory",
+          "valueBoolean": false
+        }
+      ]
+    },
+    {
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/codesystem-conceptOrder",
+          "valueInteger": 6
+        }
+      ],
+      "code": "mytd",
+      "display": "Tuberkulose",
+      "property": [
+        {
+          "code": "usage-status",
+          "valueCode": "active"
+        },
+        {
+          "code": "national-notificationCategory",
+          "valueBoolean": true
+        },
+        {
+          "code": "federal-state-specific-notificationCategory",
+          "valueBoolean": false
+        }
+      ]
+    },
+    {
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/codesystem-conceptOrder",
+          "valueInteger": 19
+        }
+      ],
+      "code": "neid",
+      "display": "Meningokokken",
+      "property": [
+        {
+          "code": "usage-status",
+          "valueCode": "active"
+        },
+        {
+          "code": "national-notificationCategory",
+          "valueBoolean": true
+        },
+        {
+          "code": "federal-state-specific-notificationCategory",
+          "valueBoolean": false
+        }
+      ]
+    },
+    {
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/codesystem-conceptOrder",
+          "valueInteger": 42
+        }
+      ],
+      "code": "opxd",
+      "display": "Andere Orthopockenviren",
+      "property": [
+        {
+          "code": "usage-status",
+          "valueCode": "active"
+        },
+        {
+          "code": "national-notificationCategory",
+          "valueBoolean": true
+        },
+        {
+          "code": "federal-state-specific-notificationCategory",
+          "valueBoolean": false
+        }
+      ]
+    },
+    {
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/codesystem-conceptOrder",
+          "valueInteger": 13
+        }
+      ],
+      "code": "pkvd",
+      "display": "Pocken",
+      "property": [
+        {
+          "code": "usage-status",
+          "valueCode": "active"
+        },
+        {
+          "code": "national-notificationCategory",
+          "valueBoolean": true
+        },
+        {
+          "code": "federal-state-specific-notificationCategory",
+          "valueBoolean": false
+        }
+      ]
+    },
+    {
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/codesystem-conceptOrder",
+          "valueInteger": 12
+        }
+      ],
+      "code": "povd",
+      "display": "Poliomyelitis",
+      "property": [
+        {
+          "code": "usage-status",
+          "valueCode": "active"
+        },
+        {
+          "code": "national-notificationCategory",
+          "valueBoolean": true
+        },
+        {
+          "code": "federal-state-specific-notificationCategory",
+          "valueBoolean": false
+        }
+      ]
+    },
+    {
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/codesystem-conceptOrder",
+          "valueInteger": 8
+        }
+      ],
+      "code": "rbvd",
+      "display": "Tollwut",
+      "property": [
+        {
+          "code": "usage-status",
+          "valueCode": "active"
+        },
+        {
+          "code": "national-notificationCategory",
+          "valueBoolean": true
+        },
+        {
+          "code": "federal-state-specific-notificationCategory",
+          "valueBoolean": false
+        }
+      ]
+    },
+    {
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/codesystem-conceptOrder",
+          "valueInteger": 11
+        }
+      ],
+      "code": "rund",
+      "display": "Röteln konnatal",
+      "property": [
+        {
+          "code": "usage-status",
+          "valueCode": "active"
+        },
+        {
+          "code": "national-notificationCategory",
+          "valueBoolean": true
+        },
+        {
+          "code": "federal-state-specific-notificationCategory",
+          "valueBoolean": false
+        }
+      ]
+    },
+    {
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/codesystem-conceptOrder",
+          "valueInteger": 10
+        }
+      ],
+      "code": "ruvd",
+      "display": "Röteln postnatal",
+      "property": [
+        {
+          "code": "usage-status",
+          "valueCode": "active"
+        },
+        {
+          "code": "national-notificationCategory",
+          "valueBoolean": true
+        },
+        {
+          "code": "federal-state-specific-notificationCategory",
+          "valueBoolean": false
+        }
+      ]
+    },
+    {
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/codesystem-conceptOrder",
+          "valueInteger": 15
+        }
+      ],
+      "code": "spad",
+      "display": "Paratyphus",
+      "property": [
+        {
+          "code": "usage-status",
+          "valueCode": "active"
+        },
+        {
+          "code": "national-notificationCategory",
+          "valueBoolean": true
+        },
+        {
+          "code": "federal-state-specific-notificationCategory",
+          "valueBoolean": false
+        }
+      ]
+    },
+    {
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/codesystem-conceptOrder",
+          "valueInteger": 9
+        }
+      ],
+      "code": "sspd",
+      "display": "Subakute Sklerosierende Panenzephalitis (SSPE)",
+      "property": [
+        {
+          "code": "usage-status",
+          "valueCode": "active"
+        },
+        {
+          "code": "national-notificationCategory",
+          "valueBoolean": true
+        },
+        {
+          "code": "federal-state-specific-notificationCategory",
+          "valueBoolean": false
+        }
+      ]
+    },
+    {
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/codesystem-conceptOrder",
+          "valueInteger": 5
+        }
+      ],
+      "code": "styd",
+      "display": "Typhus",
+      "property": [
+        {
+          "code": "usage-status",
+          "valueCode": "active"
+        },
+        {
+          "code": "national-notificationCategory",
+          "valueBoolean": true
+        },
+        {
+          "code": "federal-state-specific-notificationCategory",
+          "valueBoolean": false
+        }
+      ]
+    },
+    {
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/codesystem-conceptOrder",
+          "valueInteger": 4
+        }
+      ],
+      "code": "sxxd",
+      "display": "Verdacht auf Paratyphus/Typhus",
+      "property": [
+        {
+          "code": "usage-status",
+          "valueCode": "active"
+        },
+        {
+          "code": "national-notificationCategory",
+          "valueBoolean": true
+        },
+        {
+          "code": "federal-state-specific-notificationCategory",
+          "valueBoolean": false
+        }
+      ]
+    },
+    {
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/codesystem-conceptOrder",
+          "valueInteger": 7
+        }
+      ],
+      "code": "ttvd",
+      "display": "Tollwutexpositionsverdacht",
+      "property": [
+        {
+          "code": "usage-status",
+          "valueCode": "active"
+        },
+        {
+          "code": "national-notificationCategory",
+          "valueBoolean": true
+        },
+        {
+          "code": "federal-state-specific-notificationCategory",
+          "valueBoolean": false
+        }
+      ]
+    },
+    {
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/codesystem-conceptOrder",
+          "valueInteger": 39
+        }
+      ],
+      "code": "vchd",
+      "display": "Cholera",
+      "property": [
+        {
+          "code": "usage-status",
+          "valueCode": "active"
+        },
+        {
+          "code": "national-notificationCategory",
+          "valueBoolean": true
+        },
+        {
+          "code": "federal-state-specific-notificationCategory",
+          "valueBoolean": false
+        }
+      ]
+    },
+    {
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/codesystem-conceptOrder",
+          "valueInteger": 3
+        }
+      ],
+      "code": "vzwd",
+      "display": "Windpocken",
+      "property": [
+        {
+          "code": "usage-status",
+          "valueCode": "active"
+        },
+        {
+          "code": "national-notificationCategory",
+          "valueBoolean": true
+        },
+        {
+          "code": "federal-state-specific-notificationCategory",
+          "valueBoolean": false
+        }
+      ]
+    },
+    {
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/codesystem-conceptOrder",
+          "valueInteger": 1
+        }
+      ],
+      "code": "vzzd",
+      "display": "Zoster",
+      "property": [
+        {
+          "code": "usage-status",
+          "valueCode": "active"
+        },
+        {
+          "code": "national-notificationCategory",
+          "valueBoolean": false
+        },
+        {
+          "code": "federal-state-specific-notificationCategory",
+          "valueBoolean": true
+        },
+        {
+          "code": "federal-state",
+          "valueCoding": {
+            "system": "urn:iso:std:iso:3166-2:de",
+            "code": "DE-BB"
+          }
+        },
+        {
+          "code": "federal-state",
+          "valueCoding": {
+            "system": "urn:iso:std:iso:3166-2:de",
+            "code": "DE-SN"
+          }
+        },
+        {
+          "code": "federal-state",
+          "valueCoding": {
+            "system": "urn:iso:std:iso:3166-2:de",
+            "code": "DE-ST"
+          }
+        }
+      ]
+    },
+    {
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/codesystem-conceptOrder",
+          "valueInteger": 14
+        }
+      ],
+      "code": "ypsd",
+      "display": "Pest",
+      "property": [
+        {
+          "code": "usage-status",
+          "valueCode": "active"
+        },
+        {
+          "code": "national-notificationCategory",
+          "valueBoolean": true
+        },
+        {
+          "code": "federal-state-specific-notificationCategory",
+          "valueBoolean": false
+        }
+      ]
+    }
+  ]
+}

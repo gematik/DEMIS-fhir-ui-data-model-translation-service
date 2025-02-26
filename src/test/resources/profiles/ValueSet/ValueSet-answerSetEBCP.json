@@ -1,0 +1,118 @@
+{
+  "resourceType": "ValueSet",
+  "id": "answerSetEBCP",
+  "url": "https://demis.rki.de/fhir/ValueSet/answerSetEBCP",
+  "version": "1.5.0",
+  "name": "AnswerSetEBCP",
+  "title": "AnswerSet für Enterobacterales bei Nachweis einer Carbapenemase-Determinante oder mit verminderter Empfindlichkeit gegenüber Carbapenemen außer bei natürlicher Resistenz; Meldepflicht nur bei Infektion oder Kolonisation",
+  "status": "active",
+  "experimental": false,
+  "date": "2023-11-09",
+  "publisher": "Robert Koch-Institut",
+  "description": "Das ValueSet AnswerSetEBCP enthält die Codes der Answer-Codes für Enterobacterales bei Nachweis einer Carbapenemase-Determinante oder mit verminderter Empfindlichkeit gegenüber Carbapenemen außer bei natürlicher Resistenz; Meldepflicht nur bei Infektion oder Kolonisation.",
+  "compose": {
+    "include": [
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/900000000000207008/version/20230901",
+        "concept": [
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 100
+              }
+            ],
+            "code": "56415008",
+            "display": "Klebsiella pneumoniae (organism)",
+            "designation": [
+              {
+                "language": "en-US",
+                "use": {
+                  "system": "http://snomed.info/sct",
+                  "code": "900000000000003001"
+                },
+                "value": "Klebsiella pneumoniae (organism)"
+              },
+              {
+                "language": "de-DE",
+                "value": "Klebsiella pneumoniae"
+              }
+            ]
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 100
+              }
+            ],
+            "code": "8455004",
+            "display": "Salmonella Kentucky (organism)",
+            "designation": [
+              {
+                "language": "en-US",
+                "use": {
+                  "system": "http://snomed.info/sct",
+                  "code": "900000000000003001"
+                },
+                "value": "Salmonella Kentucky (organism)"
+              },
+              {
+                "language": "de-DE",
+                "value": "Salmonella Kentucky"
+              }
+            ]
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 100
+              }
+            ],
+            "code": "76656001",
+            "display": "Serratia entomophila (organism)",
+            "designation": [
+              {
+                "language": "en-US",
+                "use": {
+                  "system": "http://snomed.info/sct",
+                  "code": "900000000000003001"
+                },
+                "value": "Serratia entomophila (organism)"
+              },
+              {
+                "language": "de-DE",
+                "value": "Serratia entomophila"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "expansion": {
+    "timestamp": "2023-11-09T00:00:00+01:00",
+    "contains": [
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/900000000000207008/version/20230901",
+        "code": "76656001",
+        "display": "Serratia entomophila (organism)"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/900000000000207008/version/20230901",
+        "code": "8455004",
+        "display": "Salmonella Kentucky (organism)"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/900000000000207008/version/20230901",
+        "code": "56415008",
+        "display": "Klebsiella pneumoniae (organism)"
+      }
+    ]
+  }
+}

@@ -1,0 +1,68 @@
+{
+  "resourceType": "ValueSet",
+  "id": "answerSetMilitaryAffiliation",
+  "url": "https://demis.rki.de/fhir/ValueSet/answerSetMilitaryAffiliation",
+  "version": "1.1.0",
+  "name": "AnswerSetMilitaryAffiliation",
+  "title": "Antwort Zugehörigkeit zur Bundeswehr",
+  "status": "active",
+  "date": "2023-03-03",
+  "description": "Das ValueSet AnswerSetMilitaryAffiliation enthält die Codes der Antwortenmöglichkeiten für die Zugehörigkeit zur Bundeswehr.",
+  "compose": {
+    "include": [
+      {
+        "system": "https://demis.rki.de/fhir/CodeSystem/militaryAffiliation",
+        "version": "1.0.0"
+      },
+      {
+        "system": "http://terminology.hl7.org/CodeSystem/v3-NullFlavor",
+        "version": "2.1.0",
+        "concept": [
+          {
+            "code": "ASKU",
+            "display": "asked but unknown"
+          },
+          {
+            "code": "NASK",
+            "display": "not asked"
+          }
+        ]
+      }
+    ]
+  },
+  "expansion": {
+    "timestamp": "2023-03-03T00:00:00+01:00",
+    "contains": [
+      {
+        "system": "https://demis.rki.de/fhir/CodeSystem/militaryAffiliation",
+        "version": "1.0.0",
+        "code": "civilPersonActiveInBundeswehr",
+        "display": "Zivilperson tätig/untergebracht in Einrichtung der BW"
+      },
+      {
+        "system": "http://terminology.hl7.org/CodeSystem/v3-NullFlavor",
+        "version": "2.1.0",
+        "code": "NASK",
+        "display": "not asked"
+      },
+      {
+        "system": "https://demis.rki.de/fhir/CodeSystem/militaryAffiliation",
+        "version": "1.0.0",
+        "code": "memberOfBundeswehr",
+        "display": "Soldat/BW-Angehöriger"
+      },
+      {
+        "system": "http://terminology.hl7.org/CodeSystem/v3-NullFlavor",
+        "version": "2.1.0",
+        "code": "ASKU",
+        "display": "asked but unknown"
+      },
+      {
+        "system": "https://demis.rki.de/fhir/CodeSystem/militaryAffiliation",
+        "version": "1.0.0",
+        "code": "noReferenceToBundeswehr",
+        "display": "Kein Bezug zur BW"
+      }
+    ]
+  }
+}

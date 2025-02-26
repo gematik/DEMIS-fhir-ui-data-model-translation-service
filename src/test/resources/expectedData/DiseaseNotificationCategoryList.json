@@ -1,0 +1,217 @@
+[
+  {
+    "code": "hxxd",
+    "display": "Akute Virushepatitis",
+    "designations": []
+  },
+  {
+    "code": "opxd",
+    "display": "Andere Orthopockenviren",
+    "designations": []
+  },
+  {
+    "code": "mybd",
+    "display": "Behandlungsabbruch Tuberkulose",
+    "designations": []
+  },
+  {
+    "code": "clod",
+    "display": "Botulismus",
+    "designations": []
+  },
+  {
+    "code": "vchd",
+    "display": "Cholera",
+    "designations": []
+  },
+  {
+    "code": "cdfd",
+    "display": "Clostridioides difficile",
+    "designations": []
+  },
+  {
+    "code": "cvdd",
+    "display": "Coronavirus-Krankheit-2019 (COVID-19)",
+    "designations": []
+  },
+  {
+    "code": "cjkd",
+    "display": "Creutzfeldt-Jakob-Krankheit (CJK)",
+    "designations": []
+  },
+  {
+    "code": "dend",
+    "display": "Denguefieber",
+    "designations": []
+  },
+  {
+    "code": "cord",
+    "display": "Diphtherie",
+    "designations": []
+  },
+  {
+    "code": "ebvd",
+    "display": "Ebolafieber",
+    "designations": []
+  },
+  {
+    "code": "gfvd",
+    "display": "Gelbfieber",
+    "designations": []
+  },
+  {
+    "code": "husd",
+    "display": "Hämolytisch-urämisches Syndrom (HUS)",
+    "designations": []
+  },
+  {
+    "code": "hfad",
+    "display": "Hämorrhagisches Fieber",
+    "designations": []
+  },
+  {
+    "code": "htvd",
+    "display": "Hantavirus",
+    "designations": []
+  },
+  {
+    "code": "havd",
+    "display": "Hepatitis A",
+    "designations": []
+  },
+  {
+    "code": "hbvd",
+    "display": "Hepatitis B",
+    "designations": []
+  },
+  {
+    "code": "hcvd",
+    "display": "Hepatitis C",
+    "designations": []
+  },
+  {
+    "code": "hdvd",
+    "display": "Hepatitis D",
+    "designations": []
+  },
+  {
+    "code": "hevd",
+    "display": "Hepatitis E",
+    "designations": []
+  },
+  {
+    "code": "bpsd",
+    "display": "Keuchhusten",
+    "designations": []
+  },
+  {
+    "code": "lsvd",
+    "display": "Lassafieber",
+    "designations": []
+  },
+  {
+    "code": "mbvd",
+    "display": "Marburgfieber",
+    "designations": []
+  },
+  {
+    "code": "msvd",
+    "display": "Masern",
+    "designations": []
+  },
+  {
+    "code": "neid",
+    "display": "Meningokokken",
+    "designations": []
+  },
+  {
+    "code": "band",
+    "display": "Milzbrand",
+    "designations": []
+  },
+  {
+    "code": "mpxd",
+    "display": "Mpox",
+    "designations": []
+  },
+  {
+    "code": "mpvd",
+    "display": "Mumps",
+    "designations": []
+  },
+  {
+    "code": "spad",
+    "display": "Paratyphus",
+    "designations": []
+  },
+  {
+    "code": "ypsd",
+    "display": "Pest",
+    "designations": []
+  },
+  {
+    "code": "pkvd",
+    "display": "Pocken",
+    "designations": []
+  },
+  {
+    "code": "povd",
+    "display": "Poliomyelitis",
+    "designations": []
+  },
+  {
+    "code": "rund",
+    "display": "Röteln konnatal",
+    "designations": []
+  },
+  {
+    "code": "ruvd",
+    "display": "Röteln postnatal",
+    "designations": []
+  },
+  {
+    "code": "sspd",
+    "display": "Subakute Sklerosierende Panenzephalitis (SSPE)",
+    "designations": []
+  },
+  {
+    "code": "rbvd",
+    "display": "Tollwut",
+    "designations": []
+  },
+  {
+    "code": "ttvd",
+    "display": "Tollwutexpositionsverdacht",
+    "designations": []
+  },
+  {
+    "code": "mytd",
+    "display": "Tuberkulose",
+    "designations": []
+  },
+  {
+    "code": "styd",
+    "display": "Typhus",
+    "designations": []
+  },
+  {
+    "code": "sxxd",
+    "display": "Verdacht auf Paratyphus/Typhus",
+    "designations": []
+  },
+  {
+    "code": "vzwd",
+    "display": "Windpocken",
+    "designations": []
+  },
+  {
+    "code": "izvd",
+    "display": "Zoonotische Influenza",
+    "designations": []
+  },
+  {
+    "code":"vzzd",
+    "display":"Zoster",
+    "designations":[]
+  }
+]

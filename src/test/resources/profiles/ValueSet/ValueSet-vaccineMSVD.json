@@ -1,0 +1,172 @@
+{
+  "resourceType": "ValueSet",
+  "id": "vaccineMSVD",
+  "url": "https://demis.rki.de/fhir/ValueSet/vaccineMSVD",
+  "version": "1.0.0",
+  "name": "VaccineMSVD",
+  "title": "Masern-Impfstoff als SNOMED-Code",
+  "status": "active",
+  "date": "2023-03-23",
+  "description": "Das ValueSet VaccineMSVD enthält die Codes der Masern-Impfstoffe als SNOMED-Code.",
+  "compose": {
+    "include": [
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/900000000000207008/version/20230331",
+        "concept": [
+          {
+            "code": "871766009",
+            "display": "monovalenter Masern-Impfstoff (Ma)",
+            "designation": [
+              {
+                "language": "en-US",
+                "use": {
+                  "system": "http://snomed.info/sct",
+                  "code": "900000000000003001"
+                },
+                "value": "Vaccine product containing only live attenuated Measles morbillivirus antigen (medicinal product)"
+              }
+            ]
+          },
+          {
+            "code": "836382004",
+            "display": "Masern-Totimpfstoff",
+            "designation": [
+              {
+                "language": "en-US",
+                "use": {
+                  "system": "http://snomed.info/sct",
+                  "code": "900000000000003001"
+                },
+                "value": "Vaccine product containing Measles morbillivirus antigen (medicinal product)"
+              }
+            ]
+          },
+          {
+            "code": "1252703004",
+            "display": "MM: Masern-Kombinationsimpfstoff mit Mumps",
+            "designation": [
+              {
+                "language": "en-US",
+                "use": {
+                  "system": "http://snomed.info/sct",
+                  "code": "900000000000003001"
+                },
+                "value": "Vaccine product containing only Measles morbillivirus and Mumps orthorubulavirus (medicinal product)"
+              }
+            ]
+          },
+          {
+            "code": "2241000221103",
+            "display": "Masern, Mumps, Röteln- Lebendvirusimpfstoff (Priorix,M-M-RVAXPRO)",
+            "designation": [
+              {
+                "language": "en-US",
+                "use": {
+                  "system": "http://snomed.info/sct",
+                  "code": "900000000000003001"
+                },
+                "value": "Vaccine product containing only live attenuated Measles morbillivirus and Mumps orthorubulavirus and Rubella virus antigens (medicinal product)"
+              }
+            ]
+          },
+          {
+            "code": "2251000221101",
+            "display": "Masern- Mumps-Röteln- Varizellen Lebendvirusimpfstoff (Priorix-Tetra, ProQuad)",
+            "designation": [
+              {
+                "language": "en-US",
+                "use": {
+                  "system": "http://snomed.info/sct",
+                  "code": "900000000000003001"
+                },
+                "value": "Vaccine product containing only live attenuated Measles morbillivirus and Mumps orthorubulavirus and Rubella virus and Human alphaherpesvirus 3 antigens (medicinal product)"
+              }
+            ]
+          },
+          {
+            "code": "74964007",
+            "display": "-andere/sonstige-",
+            "designation": [
+              {
+                "language": "en-US",
+                "use": {
+                  "system": "http://snomed.info/sct",
+                  "code": "900000000000003001"
+                },
+                "value": "Other (qualifier value)"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "system": "http://terminology.hl7.org/CodeSystem/v3-NullFlavor",
+        "version": "2.1.0",
+        "concept": [
+          {
+            "code": "ASKU",
+            "display": "asked but unknown"
+          },
+          {
+            "code": "NASK",
+            "display": "not asked"
+          }
+        ]
+      }
+    ]
+  },
+  "expansion": {
+    "timestamp": "2023-03-23T00:00:00+01:00",
+    "contains": [
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/900000000000207008/version/20230331",
+        "code": "1252703004",
+        "display": "MM: Mumps-Kombinationsimpfstoff mit Masern"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/900000000000207008/version/20230331",
+        "code": "871766009",
+        "display": "monovalenter Masern-Impfstoff (Ma)"
+      },
+      {
+        "system": "http://terminology.hl7.org/CodeSystem/v3-NullFlavor",
+        "version": "2.1.0",
+        "code": "NASK",
+        "display": "not asked"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/900000000000207008/version/20230331",
+        "code": "2241000221103",
+        "display": "Masern, Mumps, Röteln- Lebendvirusimpfstoff (Priorix,M-M-RVAXPRO)"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/900000000000207008/version/20230331",
+        "code": "836382004",
+        "display": "Masern-Totimpfstoff"
+      },
+      {
+        "system": "http://terminology.hl7.org/CodeSystem/v3-NullFlavor",
+        "version": "2.1.0",
+        "code": "ASKU",
+        "display": "asked but unknown"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/900000000000207008/version/20230331",
+        "code": "2251000221101",
+        "display": "Masern- Mumps-Röteln- Varizellen Lebendvirusimpfstoff (Priorix-Tetra, ProQuad)"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/900000000000207008/version/20230331",
+        "code": "74964007",
+        "display": "-andere/sonstige-"
+      }
+    ]
+  }
+}

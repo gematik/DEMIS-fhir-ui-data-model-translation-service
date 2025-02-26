@@ -1,0 +1,27 @@
+{
+  "resourceType": "CodeSystem",
+  "id": "iso-3166",
+  "url": "urn:iso:std:iso:3166",
+  "version": "1.0.0",
+  "name": "Iso-3166",
+  "title": "ISO-3166-1",
+  "status": "active",
+  "date": "2023-11-28",
+  "description": "THIS IS AN AUGMENTED VERSION, THAT INCLUDES KOSOVO",
+  "content": "complete",
+  "count": 500,
+  "concept": [
+    {
+      "code": "CH",
+      "display": "Switzerland"
+    },
+    {
+      "code": "DE",
+      "display": "Germany"
+    },
+    {
+      "code": "NZ",
+      "display": "New Zealand"
+    }
+  ]
+}

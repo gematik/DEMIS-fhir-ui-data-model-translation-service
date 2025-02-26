@@ -1,0 +1,261 @@
+{
+  "resourceType": "ValueSet",
+  "id": "materialINVP",
+  "url": "https://demis.rki.de/fhir/ValueSet/materialINVP",
+  "version": "1.5.0",
+  "name": "MaterialINVP",
+  "title": "Material für Influenzavirus; Meldepflicht nur für den direkten Nachweis",
+  "status": "active",
+  "date": "2023-05-30",
+  "description": "Das ValueSet MaterialINVP enthält die Codes der Materialien für Influenzavirus; Meldepflicht nur für den direkten Nachweis.",
+  "compose": {
+    "include": [
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/900000000000207008/version/20230331",
+        "concept": [
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 0
+              }
+            ],
+            "code": "258607008",
+            "display": "Bronchoalveolar lavage fluid specimen (specimen)",
+            "designation": [
+              {
+                "language": "en-US",
+                "use": {
+                  "system": "http://snomed.info/sct",
+                  "code": "900000000000003001"
+                },
+                "value": "Bronchoalveolar lavage fluid specimen (specimen)"
+              },
+              {
+                "language": "de-DE",
+                "value": "Bronchoalveoläre Lavage"
+              }
+            ]
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 15
+              }
+            ],
+            "code": "309174004",
+            "display": "Bronchial biopsy specimen (specimen)",
+            "designation": [
+              {
+                "language": "en-US",
+                "use": {
+                  "system": "http://snomed.info/sct",
+                  "code": "900000000000003001"
+                },
+                "value": "Bronchial biopsy specimen (specimen)"
+              },
+              {
+                "language": "de-DE",
+                "value": "Bronchialbiopsie"
+              }
+            ]
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 0
+              }
+            ],
+            "code": "258446004",
+            "display": "Bronchial fluid specimen (specimen)",
+            "designation": [
+              {
+                "language": "en-US",
+                "use": {
+                  "system": "http://snomed.info/sct",
+                  "code": "900000000000003001"
+                },
+                "value": "Bronchial fluid specimen (specimen)"
+              },
+              {
+                "language": "de-DE",
+                "value": "Bronchialsekret"
+              }
+            ]
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 79
+              }
+            ],
+            "code": "258498002",
+            "display": "Conjunctival swab (specimen)",
+            "designation": [
+              {
+                "language": "en-US",
+                "use": {
+                  "system": "http://snomed.info/sct",
+                  "code": "900000000000003001"
+                },
+                "value": "Conjunctival swab (specimen)"
+              },
+              {
+                "language": "de-DE",
+                "value": "Konjunktivalabstrich"
+              }
+            ]
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 0
+              }
+            ],
+            "code": "119401005",
+            "display": "Specimen from conjunctiva (specimen)",
+            "designation": [
+              {
+                "language": "en-US",
+                "use": {
+                  "system": "http://snomed.info/sct",
+                  "code": "900000000000003001"
+                },
+                "value": "Specimen from conjunctiva (specimen)"
+              },
+              {
+                "language": "de-DE",
+                "value": "Konjunktiva"
+              }
+            ]
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 0
+              }
+            ],
+            "code": "119400006",
+            "display": "Specimen from cornea (specimen)",
+            "designation": [
+              {
+                "language": "en-US",
+                "use": {
+                  "system": "http://snomed.info/sct",
+                  "code": "900000000000003001"
+                },
+                "value": "Specimen from cornea (specimen)"
+              },
+              {
+                "language": "de-DE",
+                "value": "Cornea"
+              }
+            ]
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 0
+              }
+            ],
+            "code": "472894002",
+            "display": "Swab from cornea (specimen)",
+            "designation": [
+              {
+                "language": "en-US",
+                "use": {
+                  "system": "http://snomed.info/sct",
+                  "code": "900000000000003001"
+                },
+                "value": "Swab from cornea (specimen)"
+              },
+              {
+                "language": "de-DE",
+                "value": "Kornealabstrich"
+              }
+            ]
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 70
+              }
+            ],
+            "code": "258450006",
+            "display": "Cerebrospinal fluid specimen (specimen)",
+            "designation": [
+              {
+                "language": "en-US",
+                "use": {
+                  "system": "http://snomed.info/sct",
+                  "code": "900000000000003001"
+                },
+                "value": "Cerebrospinal fluid specimen (specimen)"
+              },
+              {
+                "language": "de-DE",
+                "value": "Liquor"
+              }
+            ]
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 50
+              }
+            ],
+            "code": "119303007",
+            "display": "Microbial isolate specimen (specimen)",
+            "designation": [
+              {
+                "language": "en-US",
+                "use": {
+                  "system": "http://snomed.info/sct",
+                  "code": "900000000000003001"
+                },
+                "value": "Microbial isolate specimen (specimen)"
+              },
+              {
+                "language": "de-DE",
+                "value": "Isolat"
+              }
+            ]
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 80
+              }
+            ],
+            "code": "258500001",
+            "display": "Nasopharyngeal swab (specimen)",
+            "designation": [
+              {
+                "language": "en-US",
+                "use": {
+                  "system": "http://snomed.info/sct",
+                  "code": "900000000000003001"
+                },
+                "value": "Nasopharyngeal swab (specimen)"
+              },
+              {
+                "language": "de-DE",
+                "value": "Nasopharyngealer Abstrich"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

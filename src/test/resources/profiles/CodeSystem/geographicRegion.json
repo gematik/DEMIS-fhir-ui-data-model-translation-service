@@ -1,0 +1,107 @@
+{
+  "resourceType": "CodeSystem",
+  "id": "geographicRegion",
+  "url": "https://demis.rki.de/fhir/CodeSystem/geographicRegion",
+  "version": "1.0.0",
+  "name": "GeographicRegion",
+  "title": "Geografische Region",
+  "status": "active",
+  "date": "2022-01-18",
+  "description": "Das CodeSystem GeographicRegion enthält die Codes der geografischen Region.",
+  "caseSensitive": false,
+  "valueSet": "https://demis.rki.de/fhir/ValueSet/geographicRegion",
+  "content": "complete",
+  "count": 3849,
+  "concept": [
+    {
+      "code": "31000003",
+      "display": "Europa",
+      "concept": [
+        {
+          "code": "41000011",
+          "display": "Nordeuropa",
+          "concept": [
+            {
+              "code": "21000101",
+              "display": "Dänemark",
+              "concept": [
+                {
+                  "code": "41126001",
+                  "display": "Aarhus"
+                },
+                {
+                  "code": "41126002",
+                  "display": "Bornholm"
+                },
+                {
+                  "code": "41126013",
+                  "display": "Färöer"
+                },
+                {
+                  "code": "41126003",
+                  "display": "Frederiksberg"
+                },
+                {
+                  "code": "41126015",
+                  "display": "Frederiksborg"
+                },
+                {
+                  "code": "41126004",
+                  "display": "Fyn"
+                },
+                {
+                  "code": "41126014",
+                  "display": "Grönland"
+                },
+                {
+                  "code": "41126016",
+                  "display": "Koebenhavn"
+                },
+                {
+                  "code": "41126005",
+                  "display": "Nordjylland"
+                },
+                {
+                  "code": "41126006",
+                  "display": "Ribe"
+                },
+                {
+                  "code": "41126007",
+                  "display": "Ringkoebing"
+                },
+                {
+                  "code": "41126017",
+                  "display": "Roskilde"
+                },
+                {
+                  "code": "41126008",
+                  "display": "Soenderjylland"
+                },
+                {
+                  "code": "41126009",
+                  "display": "Storstroem"
+                },
+                {
+                  "code": "41126010",
+                  "display": "Vejle"
+                },
+                {
+                  "code": "41126011",
+                  "display": "Vestsjaelland"
+                },
+                {
+                  "code": "41126012",
+                  "display": "Viborg"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "31099999",
+      "display": "Ausland (Land unbekannt)"
+    }
+  ]
+}

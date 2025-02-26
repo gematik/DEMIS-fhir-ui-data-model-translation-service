@@ -1,0 +1,106 @@
+{
+  "resourceType": "ValueSet",
+  "id": "resistanceGeneEBCP",
+  "url": "https://demis.rki.de/fhir/ValueSet/resistanceGeneEBCP",
+  "version": "1.0.0",
+  "name": "ResistanceGeneEBCP",
+  "title": "Resistenzdeterminante für Enterobacterales bei Nachweis einer Carbapenemase-Determinante oder mit verminderter Empfindlichkeit gegenüber Carbapenemen außer bei natürlicher Resistenz; Meldepflicht nur bei Infektion oder Kolonisation",
+  "status": "active",
+  "experimental": false,
+  "date": "2023-11-15",
+  "publisher": "Robert Koch-Institut",
+  "description": "Das ValueSet ResistanceGeneEBCP enthält die Codes der Resistenzdeterminanten für Enterobacterales bei Nachweis einer Carbapenemase-Determinante oder mit verminderter Empfindlichkeit gegenüber Carbapenemen außer bei natürlicher Resistenz; Meldepflicht nur bei Infektion oder Kolonisation.",
+  "compose": {
+    "include": [
+      {
+        "system": "http://loinc.org",
+        "version": "2.76",
+        "concept": [
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 100
+              }
+            ],
+            "code": "49617-4",
+            "display": "Carbapenem resistance blaKPC gene [Presence] by Molecular method",
+            "designation": [
+              {
+                "language": "de-DE",
+                "use": {
+                  "system": "http://loinc.org",
+                  "code": "LONG_COMMON_NAME"
+                },
+                "value": "Carbapenem-Resistenz blaKPC-Gen [Nachweis], molekulargenetisch"
+              }
+            ]
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 100
+              }
+            ],
+            "code": "63368-5",
+            "display": "Carbapenem resistance genes [Identifier] by NAA with probe detection",
+            "designation": [
+              {
+                "language": "de-DE",
+                "use": {
+                  "system": "http://loinc.org",
+                  "code": "LONG_COMMON_NAME"
+                },
+                "value": "Carbapenem-Resistenzgene [Nachweis oder Identität] mit Nukleinsäureamplifikation mit Sondendetektion"
+              }
+            ]
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 100
+              }
+            ],
+            "code": "73982-1",
+            "display": "Carbapenem resistance blaNDM gene [Presence] by Molecular method",
+            "designation": [
+              {
+                "language": "de-DE",
+                "use": {
+                  "system": "http://loinc.org",
+                  "code": "LONG_COMMON_NAME"
+                },
+                "value": "Carbapenem-Resistenz blaNDM-Gen [Nachweis], molekulargenetisch"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "expansion": {
+    "timestamp": "2023-11-15T00:00:00+01:00",
+    "contains": [
+      {
+        "system": "http://loinc.org",
+        "version": "2.76",
+        "code": "73982-1",
+        "display": "Carbapenem resistance blaNDM gene [Presence] by Molecular method"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.76",
+        "code": "49617-4",
+        "display": "Carbapenem resistance blaKPC gene [Presence] by Molecular method"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.76",
+        "code": "63368-5",
+        "display": "Carbapenem resistance genes [Identifier] by NAA with probe detection"
+      }
+    ]
+  }
+}

@@ -1,0 +1,298 @@
+{
+  "resourceType": "ValueSet",
+  "id": "methodHBVP",
+  "url": "https://demis.rki.de/fhir/ValueSet/methodHBVP",
+  "version": "1.0.0",
+  "name": "MethodHBVP",
+  "title": "Nachweismethode für Hepatitis-B-Virus; Meldepflicht für alle Nachweise",
+  "status": "active",
+  "experimental": false,
+  "date": "2023-11-27",
+  "publisher": "Robert Koch-Institut",
+  "description": "Das ValueSet MethodHBVP enthält die Codes der Nachweismethoden für Hepatitis-B-Virus; Meldepflicht für alle Nachweise.",
+  "compose": {
+    "include": [
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/900000000000207008/version/20230901",
+        "concept": [
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 100
+              }
+            ],
+            "code": "118119003",
+            "display": "Measurement of microbial antibody (procedure)",
+            "designation": [
+              {
+                "language": "en-US",
+                "use": {
+                  "system": "http://snomed.info/sct",
+                  "code": "900000000000003001"
+                },
+                "value": "Measurement of microbial antibody (procedure)"
+              },
+              {
+                "language": "de-DE",
+                "value": "Antikörpernachweis"
+              }
+            ]
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 100
+              }
+            ],
+            "code": "45293001",
+            "display": "Immunoglobulin G measurement (procedure)",
+            "designation": [
+              {
+                "language": "en-US",
+                "use": {
+                  "system": "http://snomed.info/sct",
+                  "code": "900000000000003001"
+                },
+                "value": "Immunoglobulin G measurement (procedure)"
+              },
+              {
+                "language": "de-DE",
+                "value": "Immunglobulin-G (IgG)-Bestimmung"
+              }
+            ]
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 100
+              }
+            ],
+            "code": "45764000",
+            "display": "Immunoglobulin M measurement (procedure)",
+            "designation": [
+              {
+                "language": "en-US",
+                "use": {
+                  "system": "http://snomed.info/sct",
+                  "code": "900000000000003001"
+                },
+                "value": "Immunoglobulin M measurement (procedure)"
+              },
+              {
+                "language": "de-DE",
+                "value": "Immunglobulin-M (IgM)-Bestimmung"
+              }
+            ]
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 100
+              }
+            ],
+            "code": "59582004",
+            "display": "Hepatitis B core antibody measurement (procedure)",
+            "designation": [
+              {
+                "language": "en-US",
+                "use": {
+                  "system": "http://snomed.info/sct",
+                  "code": "900000000000003001"
+                },
+                "value": "Hepatitis B core antibody measurement (procedure)"
+              },
+              {
+                "language": "de-DE",
+                "value": "anti-HBc-Gesamtantikörper-Bestimmung"
+              }
+            ]
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 100
+              }
+            ],
+            "code": "50506008",
+            "display": "Hepatitis B core antibody measurement, immunoglobulin M type (procedure)",
+            "designation": [
+              {
+                "language": "en-US",
+                "use": {
+                  "system": "http://snomed.info/sct",
+                  "code": "900000000000003001"
+                },
+                "value": "Hepatitis B core antibody measurement, immunoglobulin M type (procedure)"
+              },
+              {
+                "language": "de-DE",
+                "value": "anti-HBc-IgM-Antikörper-Bestimmung"
+              }
+            ]
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 100
+              }
+            ],
+            "code": "121276004",
+            "display": "Antigen assay (procedure)",
+            "designation": [
+              {
+                "language": "en-US",
+                "use": {
+                  "system": "http://snomed.info/sct",
+                  "code": "900000000000003001"
+                },
+                "value": "Antigen assay (procedure)"
+              },
+              {
+                "language": "de-DE",
+                "value": "Antigennachweis"
+              }
+            ]
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 100
+              }
+            ],
+            "code": "47758006",
+            "display": "Hepatitis B surface antigen measurement (procedure)",
+            "designation": [
+              {
+                "language": "en-US",
+                "use": {
+                  "system": "http://snomed.info/sct",
+                  "code": "900000000000003001"
+                },
+                "value": "Hepatitis B surface antigen measurement (procedure)"
+              },
+              {
+                "language": "de-DE",
+                "value": "HBs-Antigennachweis"
+              }
+            ]
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 100
+              }
+            ],
+            "code": "313476009",
+            "display": "Hepatitis B e antigen test (procedure)",
+            "designation": [
+              {
+                "language": "en-US",
+                "use": {
+                  "system": "http://snomed.info/sct",
+                  "code": "900000000000003001"
+                },
+                "value": "Hepatitis B e antigen test (procedure)"
+              },
+              {
+                "language": "de-DE",
+                "value": "HBe-Antigennachweis"
+              }
+            ]
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 100
+              }
+            ],
+            "code": "398545005",
+            "display": "Nucleic acid assay (procedure)",
+            "designation": [
+              {
+                "language": "en-US",
+                "use": {
+                  "system": "http://snomed.info/sct",
+                  "code": "900000000000003001"
+                },
+                "value": "Nucleic acid assay (procedure)"
+              },
+              {
+                "language": "de-DE",
+                "value": "Nukleinsäurenachweis"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "expansion": {
+    "timestamp": "2023-11-27T00:00:00+01:00",
+    "contains": [
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/900000000000207008/version/20230901",
+        "code": "50506008",
+        "display": "Hepatitis B core antibody measurement, immunoglobulin M type (procedure)"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/900000000000207008/version/20230901",
+        "code": "45293001",
+        "display": "Immunoglobulin G measurement (procedure)"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/900000000000207008/version/20230901",
+        "code": "47758006",
+        "display": "Hepatitis B surface antigen measurement (procedure)"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/900000000000207008/version/20230901",
+        "code": "313476009",
+        "display": "Hepatitis B e antigen test (procedure)"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/900000000000207008/version/20230901",
+        "code": "45764000",
+        "display": "Immunoglobulin M measurement (procedure)"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/900000000000207008/version/20230901",
+        "code": "118119003",
+        "display": "Measurement of microbial antibody (procedure)"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/900000000000207008/version/20230901",
+        "code": "398545005",
+        "display": "Nucleic acid assay (procedure)"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/900000000000207008/version/20230901",
+        "code": "121276004",
+        "display": "Antigen assay (procedure)"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/900000000000207008/version/20230901",
+        "code": "59582004",
+        "display": "Hepatitis B core antibody measurement (procedure)"
+      }
+    ]
+  }
+}
