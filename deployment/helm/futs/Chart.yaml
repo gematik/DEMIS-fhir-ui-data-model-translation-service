@@ -2,5 +2,5 @@ apiVersion: v2
 name: futs
 description: FHIR UI Data Model Translation Service Helm Chart
 type: application
-version: 2.0.8
-appVersion: "2.0.8"
+version: 2.1.2
+appVersion: "2.1.2"

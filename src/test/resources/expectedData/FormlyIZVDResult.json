@@ -2506,7 +2506,7 @@
                                         "key": "copyNotifiedPersonCurrentAddress",
                                         "type": "checkbox",
                                         "props": {
-                                          "label": "Einrichtung aus \"Betroffene Person\" / \"Derzeitiger Aufenthaltsort\" übernehmen"
+                                          "label": "Einrichtung aus Formularbereich \"Betroffene Person\" übernehmen"
                                         },
                                         "defaultValue": false
                                       },
@@ -2685,7 +2685,7 @@
                                             "key": "copyNotifierContact",
                                             "type": "checkbox",
                                             "props": {
-                                              "label": "Ansprechperson von \"Meldende Person\" / \"Ansprechperson (Melder)\" übernehmen"
+                                              "label": "Ansprechperson aus Formularbereich \"Meldende Person\" übernehmen"
                                             },
                                             "defaultValue": false
                                           },

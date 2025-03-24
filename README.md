@@ -122,7 +122,6 @@ volume. This image is maintained in DockerHub: [demis-profile-snapshots](https:/
 | Property                                 | Description                                                         |
 |------------------------------------------|---------------------------------------------------------------------|
 | `feature.flag.notification7_3`           | activates §7.3 notification categories                              |
-| `feature.flag.diseaseGroupTitle`         | groups repeatable parts of a questionnaire under one title          | 
 | `feature.flag.moveHospitalizationReason` | moves question for hospitalization to the common questionnaire part | 
 
 ## Ops Flags

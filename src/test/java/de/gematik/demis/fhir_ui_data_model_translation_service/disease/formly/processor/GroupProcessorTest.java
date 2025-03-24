@@ -35,8 +35,7 @@ import org.junit.jupiter.api.Test;
 class GroupProcessorTest {
 
   private final GroupProcessor groupProcessor =
-      new GroupProcessor(
-          new EnableWhenProcessor(), FeatureFlags.builder().diseaseGroupTitle(true).build());
+      new GroupProcessor(new EnableWhenProcessor(), FeatureFlags.builder().build());
 
   @Test
   void createFieldGroup_withNullItem_shouldHandleCorrectly() {

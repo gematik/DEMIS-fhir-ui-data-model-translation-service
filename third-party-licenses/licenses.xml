@@ -14,7 +14,7 @@
     <dependency>
       <groupId>ca.uhn.hapi.fhir</groupId>
       <artifactId>hapi-fhir-base</artifactId>
-      <version>7.6.1</version>
+      <version>8.0.0</version>
       <licenses>
         <license>
           <name>Apache Software License 2.0</name>
@@ -26,7 +26,7 @@
     <dependency>
       <groupId>ca.uhn.hapi.fhir</groupId>
       <artifactId>hapi-fhir-caching-api</artifactId>
-      <version>7.6.1</version>
+      <version>8.0.0</version>
       <licenses>
         <license>
           <name>Apache Software License 2.0</name>
@@ -38,7 +38,7 @@
     <dependency>
       <groupId>ca.uhn.hapi.fhir</groupId>
       <artifactId>hapi-fhir-structures-r4</artifactId>
-      <version>7.6.1</version>
+      <version>8.0.0</version>
       <licenses>
         <license>
           <name>Apache Software License 2.0</name>
@@ -50,7 +50,7 @@
     <dependency>
       <groupId>ca.uhn.hapi.fhir</groupId>
       <artifactId>org.hl7.fhir.r4</artifactId>
-      <version>6.5.9</version>
+      <version>6.4.0</version>
       <licenses>
         <license>
           <name>Apache Software License 2.0</name>
@@ -62,7 +62,7 @@
     <dependency>
       <groupId>ca.uhn.hapi.fhir</groupId>
       <artifactId>org.hl7.fhir.utilities</artifactId>
-      <version>6.5.9</version>
+      <version>6.4.0</version>
       <licenses>
         <license>
           <name>Apache Software License 2.0</name>
@@ -354,7 +354,7 @@
     <dependency>
       <groupId>de.gematik.demis</groupId>
       <artifactId>fhir-parser-library</artifactId>
-      <version>2.3.0</version>
+      <version>2.4.1</version>
       <licenses>
         <license>
           <name>Licensed under the EUPL 1.2</name>
@@ -378,7 +378,7 @@
     <dependency>
       <groupId>de.gematik.demis</groupId>
       <artifactId>service-base</artifactId>
-      <version>2.3.3</version>
+      <version>2.4.1</version>
       <licenses>
         <license>
           <name>Licensed under the EUPL 1.2</name>
@@ -602,7 +602,7 @@
     <dependency>
       <groupId>io.opentelemetry.instrumentation</groupId>
       <artifactId>opentelemetry-instrumentation-annotations</artifactId>
-      <version>2.8.0</version>
+      <version>2.10.0</version>
       <licenses>
         <license>
           <name>The Apache License, Version 2.0</name>
@@ -614,7 +614,7 @@
     <dependency>
       <groupId>io.opentelemetry.instrumentation</groupId>
       <artifactId>opentelemetry-instrumentation-api</artifactId>
-      <version>2.8.0</version>
+      <version>2.10.0</version>
       <licenses>
         <license>
           <name>The Apache License, Version 2.0</name>
@@ -638,7 +638,7 @@
     <dependency>
       <groupId>io.opentelemetry.semconv</groupId>
       <artifactId>opentelemetry-semconv</artifactId>
-      <version>1.25.0-alpha</version>
+      <version>1.30.0</version>
       <licenses>
         <license>
           <name>The Apache License, Version 2.0</name>
@@ -728,7 +728,7 @@
     <dependency>
       <groupId>io.swagger.core.v3</groupId>
       <artifactId>swagger-annotations-jakarta</artifactId>
-      <version>2.2.22</version>
+      <version>2.2.25</version>
       <licenses>
         <license>
           <name>Apache License 2.0</name>
@@ -741,7 +741,7 @@
     <dependency>
       <groupId>io.swagger.core.v3</groupId>
       <artifactId>swagger-core-jakarta</artifactId>
-      <version>2.2.22</version>
+      <version>2.2.25</version>
       <licenses>
         <license>
           <name>Apache License 2.0</name>
@@ -754,7 +754,7 @@
     <dependency>
       <groupId>io.swagger.core.v3</groupId>
       <artifactId>swagger-models-jakarta</artifactId>
-      <version>2.2.22</version>
+      <version>2.2.25</version>
       <licenses>
         <license>
           <name>Apache License 2.0</name>
@@ -792,6 +792,7 @@
           <name>GPL2 w/ CPE</name>
           <url>https://www.gnu.org/software/classpath/license.html</url>
           <distribution>repo</distribution>
+          <file>gpl2 w_ cpe - license.html</file>
         </license>
       </licenses>
     </dependency>
@@ -1667,7 +1668,7 @@
     <dependency>
       <groupId>org.webjars</groupId>
       <artifactId>swagger-ui</artifactId>
-      <version>4.1.3</version>
+      <version>4.19.1</version>
       <licenses>
         <license>
           <name>Apache 2.0</name>
