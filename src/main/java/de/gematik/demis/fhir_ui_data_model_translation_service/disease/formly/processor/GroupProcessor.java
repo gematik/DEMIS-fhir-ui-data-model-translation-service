@@ -56,7 +56,7 @@ public class GroupProcessor implements ItemProcessor {
             .fieldGroupClassName("ITEM_GROUP " + fieldGroupClassName)
             .parent(parent);
 
-    if (featureFlags.isDiseaseGroupTitle() && !isEmpty(label)) {
+    if (!isEmpty(label)) {
       fieldGroupBuilder.props(Props.builder().label(label).build());
       fieldGroupBuilder.wrappers(List.of(PANEL));
     }

@@ -38,7 +38,6 @@ customEnvVars:
   DATA_PATH_PROFILE_ROOT: "/profiles/Fhir"
   DATA_PATH_HL7_DATA_ROOT: "/profiles/HL7/terminology/r4"
   DATA_PATH_GAPP_DATA: "/profiles/GAPP"
-  FEATURE_FLAG_DISEASE_GROUP_TITLE: "false"
   FEATURE_FLAG_HOSP_REASON_MOVE: "false"
   FEATURE_FLAG_HOSP_COPY_CHECKBOXES: "false"
 

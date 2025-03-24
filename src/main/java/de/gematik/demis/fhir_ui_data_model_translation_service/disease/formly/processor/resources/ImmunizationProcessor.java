@@ -22,11 +22,13 @@ package de.gematik.demis.fhir_ui_data_model_translation_service.disease.formly.p
  * #L%
  */
 
+import de.gematik.demis.fhir_ui_data_model_translation_service.FeatureFlags;
 import de.gematik.demis.fhir_ui_data_model_translation_service.disease.formly.model.FieldGroup;
 import de.gematik.demis.fhir_ui_data_model_translation_service.disease.formly.model.Props;
 import de.gematik.demis.fhir_ui_data_model_translation_service.disease.formly.processor.ChoiceProcessor;
 import de.gematik.demis.fhir_ui_data_model_translation_service.model.CodeDisplay;
 import de.gematik.demis.fhir_ui_data_model_translation_service.translation.DataLoaderSrv;
+import java.util.List;
 import lombok.RequiredArgsConstructor;
 import org.hl7.fhir.r4.model.Questionnaire;
 import org.springframework.stereotype.Component;
@@ -35,9 +37,10 @@ import org.springframework.stereotype.Component;
 @RequiredArgsConstructor
 public class ImmunizationProcessor {
 
+  public static final String CODE_SYSTEM_SNOMED = "http://snomed.info/sct";
   private static final String REF_ELEMENT = "REF_ELEMENT";
-
   private final DataLoaderSrv dataLoaderSrv;
+  private final FeatureFlags featureFlags;
 
   public FieldGroup createFieldGroup(
       Questionnaire.QuestionnaireItemComponent item, String diseaseCode, FieldGroup parent) {
@@ -61,11 +64,7 @@ public class ImmunizationProcessor {
             .fieldGroupClassName(REF_ELEMENT)
             .parent(parent)
             .build();
-    CodeDisplay[] options =
-        this.dataLoaderSrv
-            .getValueSetData(
-                "https://demis.rki.de/fhir/ValueSet/vaccine" + diseaseCode.toUpperCase())
-            .toArray(CodeDisplay[]::new);
+    CodeDisplay[] options = getVaccineCodes(diseaseCode);
     FieldGroup input =
         FieldGroup.builder()
             .type(FieldGroup.TYPE_CODING)
@@ -81,6 +80,19 @@ public class ImmunizationProcessor {
                     .build())
             .build();
     ChoiceProcessor.enableValidation(input);
+  }
+
+  private CodeDisplay[] getVaccineCodes(String diseaseCode) {
+    final String system = "https://demis.rki.de/fhir/ValueSet/vaccine" + diseaseCode.toUpperCase();
+    List<CodeDisplay> codes = this.dataLoaderSrv.getValueSetData(system);
+    if (featureFlags.isDiseaseVaccineSnomedCodes()
+        && codes.stream().map(CodeDisplay::getSystem).noneMatch(CODE_SYSTEM_SNOMED::equals)) {
+      final List<CodeDisplay> snomedCodes = this.dataLoaderSrv.getValueSetData(system + "-SNOMED");
+      if (!snomedCodes.isEmpty()) {
+        codes = snomedCodes;
+      }
+    }
+    return codes.toArray(CodeDisplay[]::new);
   }
 
   private void createOccurrence(FieldGroup parent) {

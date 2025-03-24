@@ -31,7 +31,7 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 @ConfigurationProperties(prefix = "feature.flag")
 public class FeatureFlags {
 
-  private boolean diseaseGroupTitle;
   private boolean moveHospitalizationReason;
   private boolean hospCopyCheckboxes;
+  private boolean diseaseVaccineSnomedCodes;
 }

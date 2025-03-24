@@ -44,10 +44,10 @@ public class HospitalizationProcessor {
 
   static final String ORGANIZATION_CHECKBOX_KEY = "copyNotifiedPersonCurrentAddress";
   static final String ORGANIZATION_CHECKBOX_LABEL =
-      "Einrichtung aus \"Betroffene Person\" / \"Derzeitiger Aufenthaltsort\" übernehmen";
+      "Einrichtung aus Formularbereich \"Betroffene Person\" übernehmen";
   static final String CONTACT_CHECKBOX_KEY = "copyNotifierContact";
   static final String CONTACT_CHECKBOX_LABEL =
-      "Ansprechperson von \"Meldende Person\" / \"Ansprechperson (Melder)\" übernehmen";
+      "Ansprechperson aus Formularbereich \"Meldende Person\" übernehmen";
   private static final Checkbox COPY_ORGANIZATION =
       new Checkbox(ORGANIZATION_CHECKBOX_KEY, ORGANIZATION_CHECKBOX_LABEL);
   private static final Checkbox COPY_CONTACT =

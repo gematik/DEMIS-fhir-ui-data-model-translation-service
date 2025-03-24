@@ -404,46 +404,92 @@
                                 "props": {
                                   "options": [
                                     {
-                                      "code": "EU/1/20/1507",
-                                      "display": "Spikevax (COVID-19 Vaccine Moderna)",
-                                      "designations": [],
-                                      "system": "https://ec.europa.eu/health/documents/community-register/html/"
+                                      "code": "1119349007",
+                                      "display": "COVID-19-Impfstoff (mRNA) (BioNTech / Pfizer, Moderna)",
+                                      "designations": [
+                                        {
+                                          "language": "en-US",
+                                          "value": "Vaccine product containing only severe acute respiratory syndrome coronavirus 2 messenger ribonucleic acid (medicinal product)"
+                                        }
+                                      ],
+                                      "system": "http://snomed.info/sct"
                                     },
                                     {
-                                      "code": "EU/1/20/1525",
-                                      "display": "COVID-19 Vaccine Janssen",
-                                      "designations": [],
-                                      "system": "https://ec.europa.eu/health/documents/community-register/html/"
+                                      "code": "1287596002",
+                                      "display": "COVID-19-Impfstoff (mRNA), bivalent (BioNTech / Pfizer, Moderna)",
+                                      "designations": [
+                                        {
+                                          "language": "en-US",
+                                          "value": "Adult vaccine product containing only severe acute respiratory syndrome coronavirus 2 encoding B lineage spike protein and BA.4/BA.5 lineage spike protein messenger ribonucleic acid (medicinal product)"
+                                        }
+                                      ],
+                                      "system": "http://snomed.info/sct"
                                     },
                                     {
-                                      "code": "EU/1/20/1528",
-                                      "display": "Comirnaty",
-                                      "designations": [],
-                                      "system": "https://ec.europa.eu/health/documents/community-register/html/"
+                                      "code": "1287595003",
+                                      "display": "COVID-19-Impfstoff (mRNA), bivalent, pädiatrisch (BioNTech / Pfizer, Moderna)",
+                                      "designations": [
+                                        {
+                                          "language": "en-US",
+                                          "value": "Pediatric vaccine product containing only severe acute respiratory syndrome coronavirus 2 encoding B lineage spike protein and BA.4/BA.5 lineage spike protein messenger ribonucleic acid (medicinal product)"
+                                        }
+                                      ],
+                                      "system": "http://snomed.info/sct"
                                     },
                                     {
-                                      "code": "EU/1/21/1529",
-                                      "display": "Vaxzevria (COVID-19 Vaccine AstraZeneca)",
-                                      "designations": [],
-                                      "system": "https://ec.europa.eu/health/documents/community-register/html/"
+                                      "code": "1187593009",
+                                      "display": "COVID-19-Impfstoff (Proteinbasierter Impfstoff)  (Novavax)",
+                                      "designations": [
+                                        {
+                                          "language": "en-US",
+                                          "value": "Vaccine product containing only severe acute respiratory syndrome coronavirus 2 deoxyribonucleic acid plasmid encoding spike protein (medicinal product)"
+                                        }
+                                      ],
+                                      "system": "http://snomed.info/sct"
                                     },
                                     {
-                                      "code": "EU/1/21/1618",
-                                      "display": "Nuvaxovid (NVX-CoV2373)",
-                                      "designations": [],
-                                      "system": "https://ec.europa.eu/health/documents/community-register/html/"
+                                      "code": "1162643001",
+                                      "display": "COVID-19-Impfstoff (Proteinbasierter Impfstoff, rekombinant, adjuvantiert) (Sanofi - GSK)",
+                                      "designations": [
+                                        {
+                                          "language": "en-US",
+                                          "value": "Vaccine product containing only severe acute respiratory syndrome coronavirus 2 recombinant spike protein antigen (medicinal product)"
+                                        }
+                                      ],
+                                      "system": "http://snomed.info/sct"
                                     },
                                     {
-                                      "code": "EU/1/21/1624",
-                                      "display": "Valneva",
-                                      "designations": [],
-                                      "system": "https://ec.europa.eu/health/documents/community-register/html/"
+                                      "code": "29061000087103",
+                                      "display": "COVID-19-Impfstoff (Vektor-Impfstoff)  (Astra Zeneca, Johnson&Johnson bzw. Janssen-Cilag)",
+                                      "designations": [
+                                        {
+                                          "language": "en-US",
+                                          "value": "Vaccine product containing only recombinant non-replicating viral vector encoding severe acute respiratory syndrome coronavirus 2 spike protein (medicinal product)"
+                                        }
+                                      ],
+                                      "system": "http://snomed.info/sct"
                                     },
                                     {
-                                      "code": "otherVaccine",
-                                      "display": "Anderer Impfstoff",
-                                      "designations": [],
-                                      "system": "https://demis.rki.de/fhir/CodeSystem/vaccine"
+                                      "code": "1157024006",
+                                      "display": "COVID-19-Impfstoff (Virusimpfstoff, inaktiviert, adjuvantiert) (Valneva)",
+                                      "designations": [
+                                        {
+                                          "language": "en-US",
+                                          "value": "Vaccine product containing only inactivated whole severe acute respiratory syndrome coronavirus 2 antigen (medicinal product)"
+                                        }
+                                      ],
+                                      "system": "http://snomed.info/sct"
+                                    },
+                                    {
+                                      "code": "74964007",
+                                      "display": "andere/sonstige",
+                                      "designations": [
+                                        {
+                                          "language": "en-US",
+                                          "value": "Other (qualifier value)"
+                                        }
+                                      ],
+                                      "system": "http://snomed.info/sct"
                                     }
                                   ],
                                   "required": true,
@@ -2477,7 +2523,7 @@
                                         "key": "copyNotifiedPersonCurrentAddress",
                                         "type": "checkbox",
                                         "props": {
-                                          "label": "Einrichtung aus \"Betroffene Person\" / \"Derzeitiger Aufenthaltsort\" übernehmen"
+                                          "label": "Einrichtung aus Formularbereich \"Betroffene Person\" übernehmen"
                                         },
                                         "defaultValue": false
                                       },
@@ -2656,7 +2702,7 @@
                                             "key": "copyNotifierContact",
                                             "type": "checkbox",
                                             "props": {
-                                              "label": "Ansprechperson von \"Meldende Person\" / \"Ansprechperson (Melder)\" übernehmen"
+                                              "label": "Ansprechperson aus Formularbereich \"Meldende Person\" übernehmen"
                                             },
                                             "defaultValue": false
                                           },
