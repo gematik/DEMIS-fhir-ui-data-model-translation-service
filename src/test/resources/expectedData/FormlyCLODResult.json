@@ -2529,7 +2529,7 @@
                                         "key": "copyNotifiedPersonCurrentAddress",
                                         "type": "checkbox",
                                         "props": {
-                                          "label": "Einrichtung aus Formularbereich \"Betroffene Person\" übernehmen"
+                                          "label": "Einrichtung aus Formularbereich \"Betroffene Person\" übernehmen (\"Derzeitiger Aufenthaltsort\")"
                                         },
                                         "defaultValue": false
                                       },

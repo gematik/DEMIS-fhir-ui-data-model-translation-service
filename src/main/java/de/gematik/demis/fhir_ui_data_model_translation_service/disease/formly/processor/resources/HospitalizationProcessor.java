@@ -19,6 +19,10 @@ package de.gematik.demis.fhir_ui_data_model_translation_service.disease.formly.p
  * In case of changes by gematik find details in the "Readme" file.
  *
  * See the Licence for the specific language governing permissions and limitations under the Licence.
+ *
+ * *******
+ *
+ * For additional notes and disclaimer from gematik and in case of changes by gematik find details in the "Readme" file.
  * #L%
  */
 
@@ -44,7 +48,7 @@ public class HospitalizationProcessor {
 
   static final String ORGANIZATION_CHECKBOX_KEY = "copyNotifiedPersonCurrentAddress";
   static final String ORGANIZATION_CHECKBOX_LABEL =
-      "Einrichtung aus Formularbereich \"Betroffene Person\" übernehmen";
+      "Einrichtung aus Formularbereich \"Betroffene Person\" übernehmen (\"Derzeitiger Aufenthaltsort\")";
   static final String CONTACT_CHECKBOX_KEY = "copyNotifierContact";
   static final String CONTACT_CHECKBOX_LABEL =
       "Ansprechperson aus Formularbereich \"Meldende Person\" übernehmen";
