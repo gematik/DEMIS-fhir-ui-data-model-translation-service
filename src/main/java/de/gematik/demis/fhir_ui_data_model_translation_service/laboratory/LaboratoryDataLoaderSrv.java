@@ -30,11 +30,10 @@ import de.gematik.demis.fhir_ui_data_model_translation_service.exception.DataNot
 import de.gematik.demis.fhir_ui_data_model_translation_service.model.CodeDisplay;
 import io.micrometer.observation.annotation.Observed;
 import java.util.*;
-import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
-@RequiredArgsConstructor
 @Service
 @Slf4j
 public class LaboratoryDataLoaderSrv {
@@ -45,6 +44,21 @@ public class LaboratoryDataLoaderSrv {
 
   private final LabDataPreparationSrv labDataPreparationSrv;
   private final FederalStateNotificationCategoryData federalStateNotificationCategoryData;
+  private final FederalStateNotificationCategoryDataRegression
+      federalStateNotificationCategoryDataRegression;
+  private boolean isNotifications7_3active;
+
+  public LaboratoryDataLoaderSrv(
+      LabDataPreparationSrv labDataPreparationSrv,
+      FederalStateNotificationCategoryData federalStateNotificationCategoryData,
+      FederalStateNotificationCategoryDataRegression federalStateNotificationCategoryDataRegression,
+      @Value("${feature.flag.notifications.7_3}") boolean isNotifications73active) {
+    this.labDataPreparationSrv = labDataPreparationSrv;
+    this.federalStateNotificationCategoryData = federalStateNotificationCategoryData;
+    this.federalStateNotificationCategoryDataRegression =
+        federalStateNotificationCategoryDataRegression;
+    isNotifications7_3active = isNotifications73active;
+  }
 
   private static void processNoData(String code, String errorMessage) {
     String message = String.format(errorMessage, code);
@@ -64,10 +78,18 @@ public class LaboratoryDataLoaderSrv {
       contextualName = "federal-state-codes",
       lowCardinalityKeyValues = {"laboratory", "fhir"})
   public List<CodeDisplay> getDataForPathogenCodesForFederalState(String federalState) {
-    List<CodeDisplay> codeDisplays =
-        federalStateNotificationCategoryData
-            .getFederalStateNotificationCategories()
-            .get(federalState);
+    List<CodeDisplay> codeDisplays;
+    if (isNotifications7_3active) {
+      codeDisplays =
+          federalStateNotificationCategoryData
+              .getFederalStateNotificationCategories()
+              .get(federalState);
+    } else {
+      codeDisplays =
+          federalStateNotificationCategoryDataRegression
+              .getFederalStateNotificationCategories()
+              .get(federalState);
+    }
     if (codeDisplays == null) {
       processNoData(federalState, THE_CODE_S_WAS_NOT_FOUND_IN_THE_STORED_DATA);
     }

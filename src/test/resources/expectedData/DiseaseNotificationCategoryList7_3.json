@@ -1,0 +1,72 @@
+[
+  {
+    "code": "chtd",
+    "display": "Chlamydia trachomatis, sofern es sich um einen der Serotypen L1 bis L3 handelt",
+    "designations": [
+      {
+        "language": "de-DE",
+        "value": "Chlamydia trachomatis (L1 bis L3)"
+      }
+    ]
+  },
+  {
+    "code": "echd",
+    "display": "Echinococcus sp.",
+    "designations": [
+      {
+        "language": "de-DE",
+        "value": "Echinococcus sp."
+      }
+    ]
+  },
+  {
+    "code": "hivd",
+    "display": "Humanes Immundefizienz-Virus (HIV)",
+    "designations": [
+      {
+        "language": "de-DE",
+        "value": "HIV"
+      }
+    ]
+  },
+  {
+    "code": "negd",
+    "display": "Neisseria gonorrhoeae",
+    "designations": [
+      {
+        "language": "de-DE",
+        "value": "Neisseria gonorrhoeae (Gonorrhö)"
+      }
+    ]
+  },
+  {
+    "code": "toxd",
+    "display": "Toxoplasma gondii; Meldepflicht nur bei konnatalen Infektionen",
+    "designations": [
+      {
+        "language": "de-DE",
+        "value": "Toxoplasma gondii, konnatal"
+      }
+    ]
+  },
+  {
+    "code": "trpd",
+    "display": "Treponema pallidum",
+    "designations": [
+      {
+        "language": "de-DE",
+        "value": "Treponema pallidum (Syphilis)"
+      }
+    ]
+  },
+  {
+    "code": "gapd",
+    "display": "Testdata Disease",
+    "designations": [
+      {
+        "language": "de-DE",
+        "value": "Testdata Disease"
+      }
+    ]
+  }
+]

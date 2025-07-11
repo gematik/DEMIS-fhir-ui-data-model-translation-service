@@ -48,7 +48,7 @@ import org.springframework.test.web.servlet.MvcResult;
 @AutoConfigureObservability
 @TestPropertySource(
     locations = "classpath:application-test.properties",
-    properties = "feature.flag.notification7_3=false")
+    properties = "feature.flag.notifications.7_3=false")
 class LaboratoryDataLoaderCtrRegressionIT {
   @Autowired private MockMvc mockMvc;
 

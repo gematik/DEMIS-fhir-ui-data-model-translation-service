@@ -39,8 +39,8 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
-import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.http.MediaType;
+import org.springframework.test.context.bean.override.mockito.MockitoBean;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 import org.springframework.test.web.servlet.MockMvc;
 
@@ -50,10 +50,10 @@ class ValueSetCtrTest {
 
   @Autowired private MockMvc mockMvc;
 
-  @MockBean private DataLoaderSrv dataLoaderSrv;
+  @MockitoBean private DataLoaderSrv dataLoaderSrv;
 
   @Test
-  void shouldReturDisplayValueForOneCode() throws Exception {
+  void shouldReturnDisplayValueForOneCode() throws Exception {
     String code = "6309-9";
     String system = "laboratoryTestABVP";
     CodeDisplay expectedCodeDisplay =
@@ -82,7 +82,7 @@ class ValueSetCtrTest {
   }
 
   @Test
-  void shouldReturDisplayValueForOneCodePathVariable() throws Exception {
+  void shouldReturnDisplayValueForOneCodePathVariable() throws Exception {
     String code = "6309-9";
     String system = "laboratoryTestABVP";
     CodeDisplay expectedCodeDisplay =
@@ -175,7 +175,7 @@ class ValueSetCtrTest {
   }
 
   @Test
-  void shouldReturnListOfAllRessourceNames() throws Exception {
+  void shouldReturnListOfAllResourceNames() throws Exception {
     List<String> fileNameList = asList("laboratoryTestABVP", "laboratoryTest");
 
     when(dataLoaderSrv.getValueSet()).thenReturn(fileNameList);

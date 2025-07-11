@@ -34,16 +34,22 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 import java.util.Set;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.io.IOUtils;
 import org.hl7.fhir.r4.model.CodeSystem;
 import org.hl7.fhir.r4.model.Extension;
 import org.hl7.fhir.r4.model.ValueSet;
 
+@Slf4j
 public final class Utils {
 
   private static final int DEFAULT_ORDER_VALUE = 100;
@@ -113,6 +119,22 @@ public final class Utils {
     return notificationCategory.getConcept().stream().map(Utils::createCodeDisplay).toList();
   }
 
+  public static List<CodeDisplay> extractNotificationCategories(ValueSet valueSet) {
+    return valueSet.getCompose().getInclude().stream()
+        .flatMap(include -> include.getConcept().stream())
+        .map(Utils::createCodeDisplay)
+        .toList();
+  }
+
+  public static CodeDisplay createDiseaseTestData() {
+    return CodeDisplay.builder()
+        .code("gapd")
+        .display("Testdata Disease")
+        .designations(Set.of(new Designation(GERMAN_DESIGNATION_ID, "Testdata Disease")))
+        .order(1)
+        .build();
+  }
+
   public static CodeDisplay createTestDataForErrorCase() {
     return CodeDisplay.builder()
         .code("abcd")
@@ -140,5 +162,44 @@ public final class Utils {
         .designations(getDesignations(category))
         .order(extractOrder(category))
         .build();
+  }
+
+  public static CodeDisplay createCodeDisplay(ValueSet.ConceptReferenceComponent category) {
+    return CodeDisplay.builder()
+        .code(category.getCode())
+        .display(category.getDisplay())
+        .designations(getDesignations(category))
+        .order(extractOrder(category))
+        .build();
+  }
+
+  public static <T> List<T> addToUnmodifiableList(List<T> original, T newElement) {
+    List<T> copy = new ArrayList<>(original);
+    copy.add(newElement);
+    return List.copyOf(copy); // oder Collections.unmodifiableList(copy)
+  }
+
+  public static List<File> collectAll(File[] files) {
+    List<File> resultList = new ArrayList<>();
+    // Sort files by name to ensure that the order is always the same
+    // This is especially important for the code system files
+    final List<File> sortedFiles = Arrays.stream(files).sorted().toList();
+    for (File file : sortedFiles) {
+      log.debug("read file {}", file.getAbsolutePath());
+      if (file.isDirectory()) {
+        log.debug("Found folder {}", file.getAbsolutePath());
+        resultList.addAll(collectAll(file.listFiles())); // Calls same method again.
+      } else {
+        log.debug("Found file: {}", file.getAbsolutePath());
+        resultList.add(file);
+      }
+    }
+    return resultList;
+  }
+
+  public static <K, V> Map<K, V> addToUnmodifiableMap(Map<K, V> original, K key, V value) {
+    Map<K, V> copy = new HashMap<>(original);
+    copy.put(key, value);
+    return Map.copyOf(copy); // oder Collections.unmodifiableMap(copy)
   }
 }

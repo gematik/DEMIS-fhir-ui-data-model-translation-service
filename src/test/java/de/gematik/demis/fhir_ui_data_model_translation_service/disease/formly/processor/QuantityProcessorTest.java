@@ -1,0 +1,149 @@
+package de.gematik.demis.fhir_ui_data_model_translation_service.disease.formly.processor;
+
+/*-
+ * #%L
+ * FHIR UI Data Model Translation Service
+ * %%
+ * Copyright (C) 2025 gematik GmbH
+ * %%
+ * Licensed under the EUPL, Version 1.2 or - as soon they will be approved by the
+ * European Commission – subsequent versions of the EUPL (the "Licence").
+ * You may not use this work except in compliance with the Licence.
+ *
+ * You find a copy of the Licence in the "Licence" file or at
+ * https://joinup.ec.europa.eu/collection/eupl/eupl-text-eupl-12
+ *
+ * Unless required by applicable law or agreed to in writing,
+ * software distributed under the Licence is distributed on an "AS IS" basis,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either expressed or implied.
+ * In case of changes by gematik find details in the "Readme" file.
+ *
+ * See the Licence for the specific language governing permissions and limitations under the Licence.
+ *
+ * *******
+ *
+ * For additional notes and disclaimer from gematik and in case of changes by gematik find details in the "Readme" file.
+ * #L%
+ */
+
+import static org.assertj.core.api.Assertions.assertThat;
+
+import ca.uhn.fhir.context.FhirContext;
+import ca.uhn.fhir.parser.IParser;
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import de.gematik.demis.fhir_ui_data_model_translation_service.disease.formly.model.FieldGroup;
+import de.gematik.demis.fhir_ui_data_model_translation_service.disease.formly.model.Props;
+import org.hl7.fhir.r4.model.Questionnaire;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+import org.mockito.Mockito;
+
+class QuantityProcessorTest {
+
+  private String fhirJson =
+"""
+{
+  "resourceType": "Questionnaire",
+  "id": "DiseaseQuestionsTOXD",
+  "url": "https://demis.rki.de/fhir/Questionnaire/DiseaseQuestionsTOXD",
+  "version": "1.0.0",
+  "name": "DiseaseQuestionsTOXD",
+  "title": "Toxoplasma gondii; Meldepflicht nur bei konnatalen Infektionen: spezifische klinische und epidemiologische Angaben",
+  "status": "draft",
+  "date": "2025-04-25",
+  "description": "Toxoplasma gondii (konnatal) spezifische Informationsbedarfe werden in diesem meldetatbestandsspezifischen Fragebogen zusammengestellt. Dieser manifestiert sich als entsprechende QuestionnaireResponse innerhalb der Meldung.",
+  "item": [
+    {
+      "extension": [
+        {
+          "valueCoding": {
+            "display": "week",
+            "system": "http://unitsofmeasure.org",
+            "code": [
+              "wk"
+            ]
+          },
+          "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-unitOption"
+        }
+      ],
+      "linkId": "pregnancyWeek",
+      "text": "In welcher Schwangerschaftswoche fand die Geburt statt?",
+      "type": "quantity",
+      "required": true,
+      "repeats": false
+    }
+  ]
+}
+       """;
+
+  private String expecetedFormlyJsonString =
+"""
+{
+  "key": "pregnancyWeek",
+  "type": "input",
+  "props": {
+    "required": true,
+    "label": "In welcher Schwangerschaftswoche fand die Geburt statt?",
+    "quantity": {
+      "system": "http://unitsofmeasure.org",
+      "unit": "week"
+    }
+  },
+  "validators": {
+    "validation": [
+      "numberValidator",
+      "nonBlankValidator"
+    ]
+  },
+  "wrappers": [
+    "form-field"
+  ],
+  "className": "LinkId_pregnancyWeek"
+}""";
+
+  private QuantityProcessor quantityProcessor;
+
+  @BeforeEach
+  void setUp() {
+    // Mocks für Abhängigkeiten
+    EnableWhenProcessor enableWhenProcessor = Mockito.mock(EnableWhenProcessor.class);
+    ClipboardProcessor clipboardProcessor = Mockito.mock(ClipboardProcessor.class);
+    quantityProcessor = new QuantityProcessor(enableWhenProcessor, clipboardProcessor);
+  }
+
+  @Test
+  void shouldCreateFieldGroupForQuantityItem() throws JsonProcessingException {
+    // FHIR QuestionnaireItemComponent parsen
+    FhirContext ctx = FhirContext.forR4Cached();
+    IParser parser = ctx.newJsonParser();
+    Questionnaire questionnaire = parser.parseResource(Questionnaire.class, fhirJson);
+    Questionnaire.QuestionnaireItemComponent item = questionnaire.getItemFirstRep();
+
+    // Prozessor aufrufen
+    FieldGroup[] result = quantityProcessor.createFieldGroup(item, null, null);
+
+    // Prüfen
+    assertThat(result).hasSize(1);
+    FieldGroup fg = result[0];
+    assertThat(fg.getKey()).isEqualTo("pregnancyWeek");
+    assertThat(fg.getType()).isEqualTo(FieldGroup.TYPE_INPUT);
+    assertThat(fg.getProps()).isNotNull();
+    Props.Quantity quantity = fg.getProps().getQuantity();
+    assertThat(quantity).isNotNull();
+    assertThat(quantity.getSystem()).isEqualTo("http://unitsofmeasure.org");
+    assertThat(quantity.getUnit()).isEqualTo("week");
+    assertThat(fg.getProps().getLabel())
+        .isEqualTo("In welcher Schwangerschaftswoche fand die Geburt statt?");
+    assertThat(fg.getProps().getRequired()).isTrue();
+    // Optional: Prüfe Validatoren, falls gewünscht
+    assertThat(fg.getValidators()).isNotNull();
+    assertThat(fg.getValidators().getValidation()).contains("numberValidator", "nonBlankValidator");
+
+    ObjectMapper objectMapper = new ObjectMapper();
+    String jsonResult = objectMapper.writeValueAsString(fg);
+    //    FieldGroup parsed = objectMapper.readValue(jsonResult, FieldGroup.class);
+
+    assertThat(jsonResult).isEqualToIgnoringWhitespace(expecetedFormlyJsonString);
+  }
+}

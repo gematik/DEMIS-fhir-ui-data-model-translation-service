@@ -26,6 +26,7 @@ package de.gematik.demis.fhir_ui_data_model_translation_service.disease;
  * #L%
  */
 
+import static java.util.Collections.emptyList;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.ArgumentMatchers.eq;
@@ -42,6 +43,7 @@ import java.nio.charset.StandardCharsets;
 import java.util.List;
 import org.apache.commons.io.IOUtils;
 import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
@@ -55,6 +57,9 @@ import org.mockito.junit.jupiter.MockitoExtension;
 class DiseaseNotificationCategoriesSrvTest {
 
   private static File notificationDiseaseCategoryFile;
+  private static File notificationDisease6_1ValueSetFile;
+  private static File notificationDisease7_3ValueSetFile;
+
   private static FhirContext fhirContext;
 
   @Mock private SnapshotFilesService snapshotFilesServiceMock;
@@ -65,6 +70,11 @@ class DiseaseNotificationCategoriesSrvTest {
     notificationDiseaseCategoryFile =
         new File(
             "src/test/resources/profiles/CodeSystem/CodeSystem-notificationDiseaseCategory.json");
+    notificationDisease6_1ValueSetFile =
+        new File("src/test/resources/profiles/ValueSet/ValueSet-notificationDiseaseCategory.json");
+    notificationDisease7_3ValueSetFile =
+        new File(
+            "src/test/resources/profiles/ValueSet/ValueSet-notificationDiseaseCategoryNonNominal.json");
     fhirContext = FhirContext.forR4();
   }
 
@@ -77,54 +87,67 @@ class DiseaseNotificationCategoriesSrvTest {
           .when(() -> IOUtils.toString(any(FileInputStream.class), eq(StandardCharsets.UTF_8)))
           .thenThrow(new IOException());
 
-      when(snapshotFilesServiceMock.getProfileDiseaseNotificationCategoryFile())
-          .thenReturn(notificationDiseaseCategoryFile);
+      when(snapshotFilesServiceMock.getProfileNotificationDiseaseCategoryValueSetFile())
+          .thenReturn(notificationDisease6_1ValueSetFile);
+      when(snapshotFilesServiceMock.getProfileNotificationDiseaseCategoryNonNominalValueSetFile())
+          .thenReturn(notificationDisease7_3ValueSetFile);
 
       DiseaseNotificationCategoriesSrv testobject =
-          new DiseaseNotificationCategoriesSrv(snapshotFilesServiceMock, fhirContext);
+          new DiseaseNotificationCategoriesSrv(
+              snapshotFilesServiceMock, fhirContext, false, emptyList(), false);
       testobject.createCategories();
 
       assertThat(testobject.getCategories()).isEmpty();
+      assertThat(testobject.getCategoriesNonNominal()).isEmpty();
     }
   }
 
   @Nested
-  @DisplayName("unfiltered laboratory notification category tests")
+  @DisplayName("unfiltered disease notification category tests")
   class UnfilteredLabNotCatTests {
+    @BeforeEach
+    void setUp() {
+
+      when(snapshotFilesServiceMock.getProfileNotificationDiseaseCategoryValueSetFile())
+          .thenReturn(notificationDisease6_1ValueSetFile);
+      when(snapshotFilesServiceMock.getProfileNotificationDiseaseCategoryNonNominalValueSetFile())
+          .thenReturn(notificationDisease7_3ValueSetFile);
+    }
+
     @Test
     @DisplayName("should return data from file for notification category with no filtering")
     void shouldReturnDataFromFileForNotificationCategoryWithNoFiltering() {
-
-      when(snapshotFilesServiceMock.getProfileDiseaseNotificationCategoryFile())
-          .thenReturn(notificationDiseaseCategoryFile);
-
       diseaseNotificationCategoriesSrv =
-          new DiseaseNotificationCategoriesSrv(snapshotFilesServiceMock, fhirContext);
+          new DiseaseNotificationCategoriesSrv(
+              snapshotFilesServiceMock, fhirContext, false, List.of("hivdd", "cvdd"), false);
       diseaseNotificationCategoriesSrv.createCategories();
 
-      List<CodeDisplay> filteredDiseaseNotificationCategoryList =
+      List<CodeDisplay> filteredDiseaseNotificationCategoryList6_1 =
           diseaseNotificationCategoriesSrv.getCategories();
+      List<CodeDisplay> filteredDiseaseNotificationCategoryList7_3 =
+          diseaseNotificationCategoriesSrv.getCategoriesNonNominal();
 
-      assertThat(filteredDiseaseNotificationCategoryList).hasSize(43);
+      assertThat(filteredDiseaseNotificationCategoryList6_1).hasSize(43);
+      assertThat(filteredDiseaseNotificationCategoryList7_3).hasSize(6);
     }
 
     @Test
     @DisplayName("should return data from file for notification category")
     void shouldReturnDataFromFileForNotificationCategory() {
 
-      when(snapshotFilesServiceMock.getProfileDiseaseNotificationCategoryFile())
-          .thenReturn(notificationDiseaseCategoryFile);
-
       diseaseNotificationCategoriesSrv =
-          new DiseaseNotificationCategoriesSrv(snapshotFilesServiceMock, fhirContext);
+          new DiseaseNotificationCategoriesSrv(
+              snapshotFilesServiceMock, fhirContext, false, List.of("hivdd", "cvdd"), false);
       diseaseNotificationCategoriesSrv.createCategories();
 
-      List<CodeDisplay> filteredDiseaseNotificationCategoryList =
+      List<CodeDisplay> filteredDiseaseNotificationCategoryList6_1 =
           diseaseNotificationCategoriesSrv.getCategories();
+      List<CodeDisplay> filteredDiseaseNotificationCategoryList7_3 =
+          diseaseNotificationCategoriesSrv.getCategoriesNonNominal();
 
       // Expected data in order: cvdd, hbvd, band
 
-      assertThat(filteredDiseaseNotificationCategoryList)
+      assertThat(filteredDiseaseNotificationCategoryList6_1)
           .hasSize(43)
           .extracting("code")
           .contains("cvdd", "hbvd", "band");
@@ -132,56 +155,62 @@ class DiseaseNotificationCategoriesSrvTest {
       assertThat(diseaseNotificationCategoriesSrv.getCategory("hbvd")).isNotNull();
       assertThat(diseaseNotificationCategoriesSrv.getCategory("band")).isNotNull();
       assertThat(diseaseNotificationCategoriesSrv.getCategory("foo")).isNull();
-    }
+      assertThat(diseaseNotificationCategoriesSrv.getCategory("hivd")).isNull();
 
-    @Test
-    @DisplayName("should return data from file for notification category")
-    void shouldReturnDataFromFileForNotificationCategoryRegression() {
+      // Expected data in order:
 
-      when(snapshotFilesServiceMock.getProfileDiseaseNotificationCategoryFile())
-          .thenReturn(notificationDiseaseCategoryFile);
-
-      diseaseNotificationCategoriesSrv =
-          new DiseaseNotificationCategoriesSrv(snapshotFilesServiceMock, fhirContext);
-      diseaseNotificationCategoriesSrv.createCategories();
-
-      List<CodeDisplay> filteredDiseaseNotificationCategoryList =
-          diseaseNotificationCategoriesSrv.getCategories();
-
-      assertThat(filteredDiseaseNotificationCategoryList)
-          .hasSize(43)
+      assertThat(filteredDiseaseNotificationCategoryList7_3)
+          .hasSize(6)
           .extracting("code")
-          .contains("band", "cvdd", "hbvd");
+          .contains("chtd", "echd", "hivd", "negd", "toxd", "trpd");
+      assertThat(diseaseNotificationCategoriesSrv.getCategoryNonNominal("hivd")).isNotNull();
+      assertThat(diseaseNotificationCategoriesSrv.getCategoryNonNominal("echd")).isNotNull();
+      assertThat(diseaseNotificationCategoriesSrv.getCategoryNonNominal("trpd")).isNotNull();
+      assertThat(diseaseNotificationCategoriesSrv.getCategoryNonNominal("foo")).isNull();
+      assertThat(diseaseNotificationCategoriesSrv.getCategoryNonNominal("cvdd")).isNull();
     }
 
     @Test
     @DisplayName("check designations and display values")
     void shouldReturnDataWithDesignationAndDisplay() {
 
-      when(snapshotFilesServiceMock.getProfileDiseaseNotificationCategoryFile())
-          .thenReturn(notificationDiseaseCategoryFile);
+      when(snapshotFilesServiceMock.getProfileNotificationDiseaseCategoryValueSetFile())
+          .thenReturn(notificationDisease6_1ValueSetFile);
+      when(snapshotFilesServiceMock.getProfileNotificationDiseaseCategoryNonNominalValueSetFile())
+          .thenReturn(notificationDisease7_3ValueSetFile);
 
       diseaseNotificationCategoriesSrv =
-          new DiseaseNotificationCategoriesSrv(snapshotFilesServiceMock, fhirContext);
+          new DiseaseNotificationCategoriesSrv(
+              snapshotFilesServiceMock, fhirContext, false, List.of("hivdd", "cvdd"), false);
       diseaseNotificationCategoriesSrv.createCategories();
 
-      List<CodeDisplay> filteredDiseaseNotificationCategoryList =
+      List<CodeDisplay> filteredDiseaseNotificationCategoryList6_1 =
           diseaseNotificationCategoriesSrv.getCategories();
 
-      assertThat(filteredDiseaseNotificationCategoryList)
+      assertThat(filteredDiseaseNotificationCategoryList6_1)
           .hasSize(43)
           .contains(TestObjects.codeDisplayWithDesignation().cvdd());
+
+      List<CodeDisplay> filteredDiseaseNotificationCategoryList7_3 =
+          diseaseNotificationCategoriesSrv.getCategoriesNonNominal();
+
+      assertThat(filteredDiseaseNotificationCategoryList7_3)
+          .hasSize(6)
+          .contains(TestObjects.codeDisplayWithDesignation().hivd());
     }
 
     @DisplayName(
         "DiseaseNotificationCategoryList should handle empty filter list through using an empty list and no filtering")
     @Test
     void shouldHandleEmptyFilterListGracefully() {
-      when(snapshotFilesServiceMock.getProfileDiseaseNotificationCategoryFile())
-          .thenReturn(notificationDiseaseCategoryFile);
+      when(snapshotFilesServiceMock.getProfileNotificationDiseaseCategoryValueSetFile())
+          .thenReturn(notificationDisease6_1ValueSetFile);
+      when(snapshotFilesServiceMock.getProfileNotificationDiseaseCategoryNonNominalValueSetFile())
+          .thenReturn(notificationDisease7_3ValueSetFile);
 
-      DiseaseNotificationCategoriesSrv diseaseNotificationCategoriesSrv =
-          new DiseaseNotificationCategoriesSrv(snapshotFilesServiceMock, fhirContext);
+      diseaseNotificationCategoriesSrv =
+          new DiseaseNotificationCategoriesSrv(
+              snapshotFilesServiceMock, fhirContext, false, List.of("hivdd", "cvdd"), false);
       diseaseNotificationCategoriesSrv.createCategories();
 
       List<CodeDisplay> filteredDiseaseNotificationCategoryList =
@@ -194,77 +223,104 @@ class DiseaseNotificationCategoriesSrvTest {
   @Nested
   @DisplayName("filtered disease notification category tests")
   class FilteredDiseaseNotCatTests {
+
+    @BeforeEach
+    void setUp() {
+
+      when(snapshotFilesServiceMock.getProfileNotificationDiseaseCategoryValueSetFile())
+          .thenReturn(notificationDisease6_1ValueSetFile);
+      when(snapshotFilesServiceMock.getProfileNotificationDiseaseCategoryNonNominalValueSetFile())
+          .thenReturn(notificationDisease7_3ValueSetFile);
+    }
+
     @Test
     @DisplayName("should return data from file for notification category with no filtering")
     void shouldReturnDataFromFileForNotificationCategoryWithNoFiltering() {
 
-      when(snapshotFilesServiceMock.getProfileDiseaseNotificationCategoryFile())
-          .thenReturn(notificationDiseaseCategoryFile);
-
       diseaseNotificationCategoriesSrv =
-          new DiseaseNotificationCategoriesSrv(snapshotFilesServiceMock, fhirContext);
+          new DiseaseNotificationCategoriesSrv(
+              snapshotFilesServiceMock, fhirContext, true, List.of("hivd", "cvdd"), false);
       diseaseNotificationCategoriesSrv.createCategories();
 
-      List<CodeDisplay> filteredDiseaseNotificationCategoryList =
+      List<CodeDisplay> filteredDiseaseNotificationCategoryList6_1 =
           diseaseNotificationCategoriesSrv.getCategories();
+      List<CodeDisplay> filteredDiseaseNotificationCategoryList7_3 =
+          diseaseNotificationCategoriesSrv.getCategoriesNonNominal();
 
-      assertThat(filteredDiseaseNotificationCategoryList).hasSize(43);
+      assertThat(filteredDiseaseNotificationCategoryList6_1).hasSize(42);
+      assertThat(filteredDiseaseNotificationCategoryList7_3).hasSize(5);
     }
 
     @Test
     @DisplayName("should return data from file for notification category")
     void shouldReturnDataFromFileForNotificationCategory() {
 
-      when(snapshotFilesServiceMock.getProfileDiseaseNotificationCategoryFile())
-          .thenReturn(notificationDiseaseCategoryFile);
-
       diseaseNotificationCategoriesSrv =
-          new DiseaseNotificationCategoriesSrv(snapshotFilesServiceMock, fhirContext);
+          new DiseaseNotificationCategoriesSrv(
+              snapshotFilesServiceMock, fhirContext, true, List.of("hivd", "cvdd"), false);
       diseaseNotificationCategoriesSrv.createCategories();
 
-      List<CodeDisplay> filteredDiseaseNotificationCategoryList =
+      List<CodeDisplay> filteredDiseaseNotificationCategoryList6_1 =
           diseaseNotificationCategoriesSrv.getCategories();
 
-      assertThat(filteredDiseaseNotificationCategoryList)
-          .hasSize(43)
+      assertThat(filteredDiseaseNotificationCategoryList6_1)
+          .hasSize(42)
           .extracting("code")
-          .contains("hbvd", "cvdd");
+          .contains("hbvd", "band")
+          .doesNotContain("cvdd");
+
+      List<CodeDisplay> filteredDiseaseNotificationCategoryList7_3 =
+          diseaseNotificationCategoriesSrv.getCategoriesNonNominal();
+
+      assertThat(filteredDiseaseNotificationCategoryList7_3)
+          .hasSize(5)
+          .extracting("code")
+          .contains("chtd", "echd")
+          .doesNotContain("hivd");
     }
 
     @Test
     @DisplayName("check designations and display values")
     void shouldReturnDataWithDesignationAndDisplay() {
 
-      when(snapshotFilesServiceMock.getProfileDiseaseNotificationCategoryFile())
-          .thenReturn(notificationDiseaseCategoryFile);
-
       diseaseNotificationCategoriesSrv =
-          new DiseaseNotificationCategoriesSrv(snapshotFilesServiceMock, fhirContext);
+          new DiseaseNotificationCategoriesSrv(
+              snapshotFilesServiceMock, fhirContext, true, List.of("hivd", "cvdd"), false);
       diseaseNotificationCategoriesSrv.createCategories();
 
-      List<CodeDisplay> filteredDiseaseNotificationCategoryList =
+      List<CodeDisplay> filteredDiseaseNotificationCategoryList6_1 =
           diseaseNotificationCategoriesSrv.getCategories();
 
-      assertThat(filteredDiseaseNotificationCategoryList)
-          .hasSize(43)
-          .contains(TestObjects.codeDisplayWithDesignation().cvdd());
+      assertThat(filteredDiseaseNotificationCategoryList6_1)
+          .hasSize(42)
+          .contains(TestObjects.codeDisplayWithDesignation().vchd());
+
+      List<CodeDisplay> filteredDiseaseNotificationCategoryList7_3 =
+          diseaseNotificationCategoriesSrv.getCategoriesNonNominal();
+
+      assertThat(filteredDiseaseNotificationCategoryList7_3)
+          .hasSize(5)
+          .contains(TestObjects.codeDisplayWithDesignation().chtd());
     }
 
     @DisplayName(
         "DiseaseNotificationCategoryList should handle empty filter list through using an empty list and no filtering")
     @Test
     void shouldHandleEmptyFilterListGracefully() {
-      when(snapshotFilesServiceMock.getProfileDiseaseNotificationCategoryFile())
-          .thenReturn(notificationDiseaseCategoryFile);
 
-      DiseaseNotificationCategoriesSrv diseaseNotificationCategoriesSrv =
-          new DiseaseNotificationCategoriesSrv(snapshotFilesServiceMock, fhirContext);
+      diseaseNotificationCategoriesSrv =
+          new DiseaseNotificationCategoriesSrv(
+              snapshotFilesServiceMock, fhirContext, true, List.of(), false);
       diseaseNotificationCategoriesSrv.createCategories();
 
-      List<CodeDisplay> filteredDiseaseNotificationCategoryList =
+      List<CodeDisplay> filteredDiseaseNotificationCategoryList6_1 =
           diseaseNotificationCategoriesSrv.getCategories();
 
-      assertThat(filteredDiseaseNotificationCategoryList).hasSize(43);
+      assertThat(filteredDiseaseNotificationCategoryList6_1).hasSize(43);
+      List<CodeDisplay> filteredDiseaseNotificationCategoryList7_3 =
+          diseaseNotificationCategoriesSrv.getCategoriesNonNominal();
+
+      assertThat(filteredDiseaseNotificationCategoryList7_3).hasSize(6);
     }
   }
 
@@ -272,15 +328,35 @@ class DiseaseNotificationCategoriesSrvTest {
       "DiseaseNotificationCategoryList should handle empty filter list through using an empty list and no filtering")
   @Test
   void shouldHandleEmptyFilterListGracefully() {
-    when(snapshotFilesServiceMock.getProfileDiseaseNotificationCategoryFile()).thenReturn(null);
+    when(snapshotFilesServiceMock.getProfileNotificationDiseaseCategoryValueSetFile())
+        .thenReturn(notificationDisease6_1ValueSetFile);
+    when(snapshotFilesServiceMock.getProfileNotificationDiseaseCategoryNonNominalValueSetFile())
+        .thenReturn(notificationDisease7_3ValueSetFile);
 
-    DiseaseNotificationCategoriesSrv diseaseNotificationCategoriesSrv =
-        new DiseaseNotificationCategoriesSrv(snapshotFilesServiceMock, fhirContext);
+    diseaseNotificationCategoriesSrv =
+        new DiseaseNotificationCategoriesSrv(
+            snapshotFilesServiceMock, fhirContext, false, List.of(), false);
     diseaseNotificationCategoriesSrv.createCategories();
 
     List<CodeDisplay> filteredDiseaseNotificationCategoryList =
         diseaseNotificationCategoriesSrv.getCategories();
 
-    assertThat(filteredDiseaseNotificationCategoryList).isEmpty();
+    assertThat(filteredDiseaseNotificationCategoryList).hasSize(43);
+  }
+
+  @Test
+  void shouldAddTestdata() {
+    when(snapshotFilesServiceMock.getProfileNotificationDiseaseCategoryValueSetFile())
+        .thenReturn(notificationDisease6_1ValueSetFile);
+    when(snapshotFilesServiceMock.getProfileNotificationDiseaseCategoryNonNominalValueSetFile())
+        .thenReturn(notificationDisease7_3ValueSetFile);
+
+    diseaseNotificationCategoriesSrv =
+        new DiseaseNotificationCategoriesSrv(
+            snapshotFilesServiceMock, fhirContext, false, List.of(), true);
+    diseaseNotificationCategoriesSrv.createCategories();
+
+    assertThat(diseaseNotificationCategoriesSrv.getCategories()).hasSize(44);
+    assertThat(diseaseNotificationCategoriesSrv.getCategoriesNonNominal()).hasSize(7);
   }
 }

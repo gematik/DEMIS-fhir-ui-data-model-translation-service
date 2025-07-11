@@ -62,7 +62,7 @@ class LaboratoryDataLoaderCtrIT {
 
   // There are a lot of methods, only the first two are evaluated
   private final String partialMethodList =
-      """
+"""
 "methods":[{"code":"121276004","display":"Antigen assay (procedure)","designations":[{"language":"en-US","value":"Antigen assay (procedure)"},{"language":"de-DE","value":"Antigennachweis"}]}""";
 
   // There are a lot of codes, only the first two are evaluated

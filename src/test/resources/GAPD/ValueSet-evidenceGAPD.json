@@ -1,0 +1,21 @@
+{
+  "resourceType": "ValueSet",
+  "id": "example-condition-evidence",
+  "url": "https://demis.rki.de/fhir/ValueSet/example-condition-evidence",
+  "version": "1.0.0",
+  "name": "ExampleConditionEvidence",
+  "title": "Beispiel Symptome/Manifestationen für Condition GAPD",
+  "status": "active",
+  "compose": {
+    "include": [
+      {
+        "system": "http://snomed.info/sct",
+        "concept": [
+          { "code": "386661006", "display": "Fieber" },
+          { "code": "49727002", "display": "Husten" },
+          { "code": "25064002", "display": "Kopfschmerzen" }
+        ]
+      }
+    ]
+  }
+}

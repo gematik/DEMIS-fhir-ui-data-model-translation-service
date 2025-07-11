@@ -34,16 +34,13 @@ import io.micrometer.observation.annotation.Observed;
 import jakarta.annotation.PostConstruct;
 import java.io.File;
 import java.io.IOException;
-import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Map;
-import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 /**
@@ -56,33 +53,30 @@ public class DataLoaderSrv {
 
   public static final String SYSTEM_S_IS_UNKNOWN = "the system %s is unknown";
   private final SnapshotFilesService snapshotFilesService;
-  private final String profileSourcePath;
   private final FhirContext fhirContext;
   private final List<File> codeSystemFiles = new ArrayList<>();
   private final List<File> valueSetFiles = new ArrayList<>();
   private final Hl7CodeSystemSrv hl7CodeSystemSrv;
   private static final List<String> excludedCodeSystems =
       List.of("http://terminology.hl7.org/CodeSystem/v3-NullFlavor");
+
   private CodeSystems codeSystems;
   private ValueSets valueSets;
 
   public DataLoaderSrv(
-      @Value("${data.path.profile.root}") String profileSourcePath,
       SnapshotFilesService snapshotFilesService,
       FhirContext fhirContext,
       Hl7CodeSystemSrv hl7CodeSystemSrv) {
     this.fhirContext = fhirContext;
     this.snapshotFilesService = snapshotFilesService;
-    this.profileSourcePath = Paths.get(profileSourcePath) + File.separator;
     this.hl7CodeSystemSrv = hl7CodeSystemSrv;
   }
 
   @PostConstruct
   protected void initialize() throws IOException {
-    List<File> rawFiles = snapshotFilesService.getRawFiles();
-    for (File file : rawFiles) {
-      createDataNew(file);
-    }
+    codeSystemFiles.addAll(snapshotFilesService.getCodeSystemFiles());
+    valueSetFiles.addAll(snapshotFilesService.getValueSetFiles());
+
     LinkedHashSet<File> sortedCodeSystems =
         codeSystemFiles.stream()
             .sorted(Comparator.comparing(File::getName))
@@ -94,19 +88,6 @@ public class DataLoaderSrv {
 
     codeSystems = new CodeSystems(sortedCodeSystems, fhirContext, excludedCodeSystems).build();
     valueSets = new ValueSets(sortedValueSets, fhirContext, codeSystems).build();
-  }
-
-  private void createDataNew(File file) {
-    log.info("Processing file {}", file.getName());
-    String filePath = file.getPath();
-    String reducedPath = filePath.replace(profileSourcePath, "");
-    String keywordKey = reducedPath.split(Pattern.quote(File.separator))[0];
-
-    if (keywordKey.equals("CodeSystem")) {
-      codeSystemFiles.add(file);
-    } else if (keywordKey.equals("ValueSet")) {
-      valueSetFiles.add(file);
-    }
   }
 
   private Map<String, CodeDisplay> getCodes(String system) {

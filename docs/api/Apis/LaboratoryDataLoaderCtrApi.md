@@ -7,9 +7,9 @@ All URIs are relative to *http://localhost*
 | [**get73NotificationCategories**](LaboratoryDataLoaderCtrApi.md#get73NotificationCategories) | **GET** /laboratory/7.3 |  |
 | [**getAvailableFederalStates**](LaboratoryDataLoaderCtrApi.md#getAvailableFederalStates) | **GET** /laboratory/federalStates |  |
 | [**getAvailableFederalStates1**](LaboratoryDataLoaderCtrApi.md#getAvailableFederalStates1) | **GET** /laboratory/7.1/federalStates |  |
-| [**getFederalStateLaboratoryDataForSpecificCode**](LaboratoryDataLoaderCtrApi.md#getFederalStateLaboratoryDataForSpecificCode) | **GET** /laboratory/7.3/pathogenData/{code} |  |
-| [**getFederalStateLaboratoryDataForSpecificCode1**](LaboratoryDataLoaderCtrApi.md#getFederalStateLaboratoryDataForSpecificCode1) | **GET** /laboratory/7.1/federalState/pathogenData/{code} |  |
-| [**getFederalStateLaboratoryDataForSpecificCode2**](LaboratoryDataLoaderCtrApi.md#getFederalStateLaboratoryDataForSpecificCode2) | **GET** /laboratory/federalState/pathogenData/{code} |  |
+| [**getLaboratoryDataForSpecificCode**](LaboratoryDataLoaderCtrApi.md#getLaboratoryDataForSpecificCode) | **GET** /laboratory/7.3/pathogenData/{code} |  |
+| [**getLaboratoryDataForSpecificCode1**](LaboratoryDataLoaderCtrApi.md#getLaboratoryDataForSpecificCode1) | **GET** /laboratory/7.1/federalState/pathogenData/{code} |  |
+| [**getLaboratoryDataForSpecificCode2**](LaboratoryDataLoaderCtrApi.md#getLaboratoryDataForSpecificCode2) | **GET** /laboratory/federalState/pathogenData/{code} |  |
 | [**getLaboratoryDataForSpecificCodeAndFederalState**](LaboratoryDataLoaderCtrApi.md#getLaboratoryDataForSpecificCodeAndFederalState) | **GET** /laboratory/federalState/{federalState} |  |
 | [**getLaboratoryDataForSpecificCodeAndFederalState1**](LaboratoryDataLoaderCtrApi.md#getLaboratoryDataForSpecificCodeAndFederalState1) | **GET** /laboratory/7.1/federalState/{federalState} |  |
 
@@ -80,9 +80,9 @@ No authorization required
 - **Content-Type**: Not defined
 - **Accept**: */*
 
-<a name="getFederalStateLaboratoryDataForSpecificCode"></a>
-# **getFederalStateLaboratoryDataForSpecificCode**
-> LabNotificationData getFederalStateLaboratoryDataForSpecificCode(code)
+<a name="getLaboratoryDataForSpecificCode"></a>
+# **getLaboratoryDataForSpecificCode**
+> LabNotificationData getLaboratoryDataForSpecificCode(code)
 
 
 
@@ -105,9 +105,9 @@ No authorization required
 - **Content-Type**: Not defined
 - **Accept**: */*
 
-<a name="getFederalStateLaboratoryDataForSpecificCode1"></a>
-# **getFederalStateLaboratoryDataForSpecificCode1**
-> LabNotificationData getFederalStateLaboratoryDataForSpecificCode1(code)
+<a name="getLaboratoryDataForSpecificCode1"></a>
+# **getLaboratoryDataForSpecificCode1**
+> LabNotificationData getLaboratoryDataForSpecificCode1(code)
 
 
 
@@ -130,9 +130,9 @@ No authorization required
 - **Content-Type**: Not defined
 - **Accept**: */*
 
-<a name="getFederalStateLaboratoryDataForSpecificCode2"></a>
-# **getFederalStateLaboratoryDataForSpecificCode2**
-> LabNotificationData getFederalStateLaboratoryDataForSpecificCode2(code)
+<a name="getLaboratoryDataForSpecificCode2"></a>
+# **getLaboratoryDataForSpecificCode2**
+> LabNotificationData getLaboratoryDataForSpecificCode2(code)
 
 
 

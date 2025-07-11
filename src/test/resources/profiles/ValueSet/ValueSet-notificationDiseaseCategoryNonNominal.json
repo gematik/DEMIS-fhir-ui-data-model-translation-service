@@ -1,0 +1,182 @@
+{
+  "resourceType": "ValueSet",
+  "id": "notificationDiseaseCategoryNonNominal",
+  "url": "https://demis.rki.de/fhir/ValueSet/notificationDiseaseCategoryNonNominal",
+  "version": "1.0.0",
+  "name": "NotificationDiseaseCategoryNonNominal",
+  "title": "Nichtnamentliche Meldetatbestände nach § 7 Abs. 3 IfSG",
+  "status": "draft",
+  "experimental": false,
+  "date": "2025-04-30",
+  "publisher": "Robert Koch-Institut",
+  "contact": [
+    {
+      "telecom": [
+        {
+          "system": "email",
+          "value": "demis-support@rki.de"
+        }
+      ]
+    }
+  ],
+  "description": "Das ValueSet NotificationDiseaseCategoryNonNominal enthält die Codes der nichtnamentlichen Meldetatbestände nach nach § 7 Abs. 3 IfSG.",
+  "jurisdiction": [
+    {
+      "coding": [
+        {
+          "system": "urn:iso:std:iso:3166",
+          "version": "ALPHA-2",
+          "code": "DE"
+        }
+      ]
+    }
+  ],
+  "copyright": "(C) 2021-2025 Robert Koch-Institut",
+  "compose": {
+    "include": [
+      {
+        "system": "https://demis.rki.de/fhir/CodeSystem/notificationDiseaseCategory",
+        "version": "2.0.1",
+        "concept": [
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 60
+              }
+            ],
+            "code": "chtd",
+            "display": "Chlamydia trachomatis, sofern es sich um einen der Serotypen L1 bis L3 handelt",
+            "designation": [
+              {
+                "language": "de-DE",
+                "value": "Chlamydia trachomatis (L1 bis L3)"
+              }
+            ]
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 50
+              }
+            ],
+            "code": "echd",
+            "display": "Echinococcus sp.",
+            "designation": [
+              {
+                "language": "de-DE",
+                "value": "Echinococcus sp."
+              }
+            ]
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 40
+              }
+            ],
+            "code": "hivd",
+            "display": "Humanes Immundefizienz-Virus (HIV)",
+            "designation": [
+              {
+                "language": "de-DE",
+                "value": "HIV"
+              }
+            ]
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 30
+              }
+            ],
+            "code": "negd",
+            "display": "Neisseria gonorrhoeae",
+            "designation": [
+              {
+                "language": "de-DE",
+                "value": "Neisseria gonorrhoeae (Gonorrhö)"
+              }
+            ]
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 20
+              }
+            ],
+            "code": "toxd",
+            "display": "Toxoplasma gondii; Meldepflicht nur bei konnatalen Infektionen",
+            "designation": [
+              {
+                "language": "de-DE",
+                "value": "Toxoplasma gondii, konnatal"
+              }
+            ]
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 10
+              }
+            ],
+            "code": "trpd",
+            "display": "Treponema pallidum",
+            "designation": [
+              {
+                "language": "de-DE",
+                "value": "Treponema pallidum (Syphilis)"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "expansion": {
+    "timestamp": "2025-04-30T00:00:00+02:00",
+    "contains": [
+      {
+        "system": "https://demis.rki.de/fhir/CodeSystem/notificationDiseaseCategory",
+        "version": "2.0.1",
+        "code": "negd",
+        "display": "Neisseria gonorrhoeae"
+      },
+      {
+        "system": "https://demis.rki.de/fhir/CodeSystem/notificationDiseaseCategory",
+        "version": "2.0.1",
+        "code": "hivd",
+        "display": "Humanes Immundefizienz-Virus (HIV)"
+      },
+      {
+        "system": "https://demis.rki.de/fhir/CodeSystem/notificationDiseaseCategory",
+        "version": "2.0.1",
+        "code": "toxd",
+        "display": "Toxoplasma gondii; Meldepflicht nur bei konnatalen Infektionen"
+      },
+      {
+        "system": "https://demis.rki.de/fhir/CodeSystem/notificationDiseaseCategory",
+        "version": "2.0.1",
+        "code": "echd",
+        "display": "Echinococcus sp."
+      },
+      {
+        "system": "https://demis.rki.de/fhir/CodeSystem/notificationDiseaseCategory",
+        "version": "2.0.1",
+        "code": "trpd",
+        "display": "Treponema pallidum"
+      },
+      {
+        "system": "https://demis.rki.de/fhir/CodeSystem/notificationDiseaseCategory",
+        "version": "2.0.1",
+        "code": "chtd",
+        "display": "Chlamydia trachomatis, sofern es sich um einen der Serotypen L1 bis L3 handelt"
+      }
+    ]
+  }
+}

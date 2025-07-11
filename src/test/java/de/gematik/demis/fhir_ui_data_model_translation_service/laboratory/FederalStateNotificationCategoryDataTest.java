@@ -27,7 +27,6 @@ package de.gematik.demis.fhir_ui_data_model_translation_service.laboratory;
  */
 
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.when;
 
 import ca.uhn.fhir.context.FhirContext;
@@ -53,6 +52,7 @@ class FederalStatePathogenNotificationCategoryDataTest {
           .order(100)
           .build();
   private static File notificationCategoryFile;
+  private static File notificationCategory7_1File;
   private static File federalStateFile;
   private static FhirContext fhirContext;
   @Mock private SnapshotFilesService snapshotFilesServiceMock;
@@ -61,6 +61,8 @@ class FederalStatePathogenNotificationCategoryDataTest {
   static void setUp() {
     notificationCategoryFile =
         new File("src/test/resources/profiles/CodeSystem/CodeSystem-notificationCategory.json");
+    notificationCategory7_1File =
+        new File("src/test/resources/profiles/ValueSet/ValueSet-notificationCategory.json");
     federalStateFile =
         new File("src/test/resources/profiles/CodeSystem/CodeSystem-CodeSystemISO31662DE.json");
     fhirContext = FhirContext.forR4Cached();
@@ -68,37 +70,40 @@ class FederalStatePathogenNotificationCategoryDataTest {
 
   @Test
   void shouldCreateDataAndFillMapAndList() {
-    when(snapshotFilesServiceMock.getProfileNotificationCategoryFile())
+    when(snapshotFilesServiceMock.getProfileNotificationCategoryCodeSystemFile())
         .thenReturn(notificationCategoryFile);
+    when(snapshotFilesServiceMock.getProfileNotificationCategoryValueSetFile())
+        .thenReturn(notificationCategory7_1File);
     when(snapshotFilesServiceMock.getFederalStateFile()).thenReturn(federalStateFile);
 
-    FederalStateNotificationCategoryData federalStateNotificationCategoryData =
+    FederalStateNotificationCategoryData FederalStateNotificationCategoryData =
         new FederalStateNotificationCategoryData(
             snapshotFilesServiceMock, fhirContext, false, "", false, false);
-    federalStateNotificationCategoryData.createData();
+    FederalStateNotificationCategoryData.createData();
 
-    assertThat(federalStateNotificationCategoryData.getFederalStateNotificationCategories())
+    assertThat(FederalStateNotificationCategoryData.getFederalStateNotificationCategories())
         .isNotEmpty();
-    assertThat(federalStateNotificationCategoryData.getFederalStates()).isNotEmpty();
+    assertThat(FederalStateNotificationCategoryData.getFederalStates()).isNotEmpty();
     assertThat(
-            federalStateNotificationCategoryData
-                .getFederalStateNotificationCategories()
+            FederalStateNotificationCategoryData.getFederalStateNotificationCategories()
                 .get("DE-BW"))
         .isNotEmpty();
   }
 
   @Test
   void shouldMakeAllFederalStatesAvailable() {
-    when(snapshotFilesServiceMock.getProfileNotificationCategoryFile())
+    when(snapshotFilesServiceMock.getProfileNotificationCategoryCodeSystemFile())
         .thenReturn(notificationCategoryFile);
+    when(snapshotFilesServiceMock.getProfileNotificationCategoryValueSetFile())
+        .thenReturn(notificationCategory7_1File);
     when(snapshotFilesServiceMock.getFederalStateFile()).thenReturn(federalStateFile);
 
-    FederalStateNotificationCategoryData federalStateNotificationCategoryData =
+    FederalStateNotificationCategoryData FederalStateNotificationCategoryData =
         new FederalStateNotificationCategoryData(
             snapshotFilesServiceMock, fhirContext, false, "", false, false);
-    federalStateNotificationCategoryData.createData();
+    FederalStateNotificationCategoryData.createData();
 
-    assertThat(federalStateNotificationCategoryData.getFederalStates())
+    assertThat(FederalStateNotificationCategoryData.getFederalStates())
         .isNotEmpty()
         .hasSize(16)
         .contains(CodeDisplay.builder().code("DE-BW").display("Baden-Württemberg").build())
@@ -120,66 +125,11 @@ class FederalStatePathogenNotificationCategoryDataTest {
   }
 
   @Test
-  void shouldFilterCodesIfActiveIsTrueAndListIsGiven() {
-    when(snapshotFilesServiceMock.getProfileNotificationCategoryFile())
+  void shouldOnlyAddNotificationCategoriesIfRelevant() {
+    when(snapshotFilesServiceMock.getProfileNotificationCategoryCodeSystemFile())
         .thenReturn(notificationCategoryFile);
-    when(snapshotFilesServiceMock.getFederalStateFile()).thenReturn(federalStateFile);
-
-    FederalStateNotificationCategoryData federalStateNotificationCategoryData =
-        new FederalStateNotificationCategoryData(
-            snapshotFilesServiceMock, fhirContext, true, "cvdp", false, false);
-    federalStateNotificationCategoryData.createData();
-
-    assertThat(federalStateNotificationCategoryData.getFederalStates()).isNotEmpty();
-    assertThat(
-            federalStateNotificationCategoryData
-                .getFederalStateNotificationCategories()
-                .get("DE-BW"))
-        .doesNotContain(CVDP);
-  }
-
-  @Test
-  void shouldNotFilterCodesIfActiveIsFalseAndListIsGiven() {
-    when(snapshotFilesServiceMock.getProfileNotificationCategoryFile())
-        .thenReturn(notificationCategoryFile);
-    when(snapshotFilesServiceMock.getFederalStateFile()).thenReturn(federalStateFile);
-
-    FederalStateNotificationCategoryData federalStateNotificationCategoryData =
-        new FederalStateNotificationCategoryData(
-            snapshotFilesServiceMock, fhirContext, false, "advp", false, false);
-    federalStateNotificationCategoryData.createData();
-
-    assertThat(federalStateNotificationCategoryData.getFederalStates()).isNotEmpty();
-    assertThat(
-            federalStateNotificationCategoryData
-                .getFederalStateNotificationCategories()
-                .get("DE-BW"))
-        .contains(CVDP);
-  }
-
-  @Test
-  void shouldNotFilterCodesIfActiveIsTrueAndListDoesNotContainCode() {
-    when(snapshotFilesServiceMock.getProfileNotificationCategoryFile())
-        .thenReturn(notificationCategoryFile);
-    when(snapshotFilesServiceMock.getFederalStateFile()).thenReturn(federalStateFile);
-
-    FederalStateNotificationCategoryData federalStateNotificationCategoryData =
-        new FederalStateNotificationCategoryData(
-            snapshotFilesServiceMock, fhirContext, true, "advp,hbvp", false, false);
-    federalStateNotificationCategoryData.createData();
-
-    assertThat(federalStateNotificationCategoryData.getFederalStates()).isNotEmpty();
-    assertThat(
-            federalStateNotificationCategoryData
-                .getFederalStateNotificationCategories()
-                .get("DE-BW"))
-        .contains(CVDP);
-  }
-
-  @Test
-  void shouldReturnCorrectOrderOfFile() {
-    when(snapshotFilesServiceMock.getProfileNotificationCategoryFile())
-        .thenReturn(notificationCategoryFile);
+    when(snapshotFilesServiceMock.getProfileNotificationCategoryValueSetFile())
+        .thenReturn(notificationCategory7_1File);
     when(snapshotFilesServiceMock.getFederalStateFile()).thenReturn(federalStateFile);
 
     FederalStateNotificationCategoryData federalStateNotificationCategoryData =
@@ -187,10 +137,97 @@ class FederalStatePathogenNotificationCategoryDataTest {
             snapshotFilesServiceMock, fhirContext, false, "", false, false);
     federalStateNotificationCategoryData.createData();
 
-    assertThat(federalStateNotificationCategoryData.getFederalStates()).isNotEmpty();
     assertThat(
             federalStateNotificationCategoryData
                 .getFederalStateNotificationCategories()
+                .get("DE-BE"))
+        .extracting("code")
+        .doesNotContain("spyp");
+
+    assertThat(
+            federalStateNotificationCategoryData
+                .getFederalStateNotificationCategories()
+                .get("DE-SN"))
+        .extracting("code")
+        .contains("spyp");
+  }
+
+  @Test
+  void shouldFilterCodesIfActiveIsTrueAndListIsGiven() {
+    when(snapshotFilesServiceMock.getProfileNotificationCategoryCodeSystemFile())
+        .thenReturn(notificationCategoryFile);
+    when(snapshotFilesServiceMock.getProfileNotificationCategoryValueSetFile())
+        .thenReturn(notificationCategory7_1File);
+    when(snapshotFilesServiceMock.getFederalStateFile()).thenReturn(federalStateFile);
+
+    FederalStateNotificationCategoryData FederalStateNotificationCategoryData =
+        new FederalStateNotificationCategoryData(
+            snapshotFilesServiceMock, fhirContext, true, "cvdp", false, false);
+    FederalStateNotificationCategoryData.createData();
+
+    assertThat(FederalStateNotificationCategoryData.getFederalStates()).isNotEmpty();
+    assertThat(
+            FederalStateNotificationCategoryData.getFederalStateNotificationCategories()
+                .get("DE-BW"))
+        .doesNotContain(CVDP);
+  }
+
+  @Test
+  void shouldNotFilterCodesIfActiveIsFalseAndListIsGiven() {
+    when(snapshotFilesServiceMock.getProfileNotificationCategoryCodeSystemFile())
+        .thenReturn(notificationCategoryFile);
+    when(snapshotFilesServiceMock.getProfileNotificationCategoryValueSetFile())
+        .thenReturn(notificationCategory7_1File);
+    when(snapshotFilesServiceMock.getFederalStateFile()).thenReturn(federalStateFile);
+
+    FederalStateNotificationCategoryData FederalStateNotificationCategoryData =
+        new FederalStateNotificationCategoryData(
+            snapshotFilesServiceMock, fhirContext, false, "advp", false, false);
+    FederalStateNotificationCategoryData.createData();
+
+    assertThat(FederalStateNotificationCategoryData.getFederalStates()).isNotEmpty();
+    assertThat(
+            FederalStateNotificationCategoryData.getFederalStateNotificationCategories()
+                .get("DE-BW"))
+        .contains(CVDP);
+  }
+
+  @Test
+  void shouldNotFilterCodesIfActiveIsTrueAndListDoesNotContainCode() {
+    when(snapshotFilesServiceMock.getProfileNotificationCategoryCodeSystemFile())
+        .thenReturn(notificationCategoryFile);
+    when(snapshotFilesServiceMock.getProfileNotificationCategoryValueSetFile())
+        .thenReturn(notificationCategory7_1File);
+    when(snapshotFilesServiceMock.getFederalStateFile()).thenReturn(federalStateFile);
+
+    FederalStateNotificationCategoryData FederalStateNotificationCategoryData =
+        new FederalStateNotificationCategoryData(
+            snapshotFilesServiceMock, fhirContext, true, "advp,hbvp", false, false);
+    FederalStateNotificationCategoryData.createData();
+
+    assertThat(FederalStateNotificationCategoryData.getFederalStates()).isNotEmpty();
+    assertThat(
+            FederalStateNotificationCategoryData.getFederalStateNotificationCategories()
+                .get("DE-BW"))
+        .contains(CVDP);
+  }
+
+  @Test
+  void shouldReturnCorrectOrderOfFile() {
+    when(snapshotFilesServiceMock.getProfileNotificationCategoryCodeSystemFile())
+        .thenReturn(notificationCategoryFile);
+    when(snapshotFilesServiceMock.getProfileNotificationCategoryValueSetFile())
+        .thenReturn(notificationCategory7_1File);
+    when(snapshotFilesServiceMock.getFederalStateFile()).thenReturn(federalStateFile);
+
+    FederalStateNotificationCategoryData FederalStateNotificationCategoryData =
+        new FederalStateNotificationCategoryData(
+            snapshotFilesServiceMock, fhirContext, false, "", false, false);
+    FederalStateNotificationCategoryData.createData();
+
+    assertThat(FederalStateNotificationCategoryData.getFederalStates()).isNotEmpty();
+    assertThat(
+            FederalStateNotificationCategoryData.getFederalStateNotificationCategories()
                 .get("DE-SN"))
         .extracting("code")
         .containsExactlyInAnyOrder(
@@ -206,19 +243,20 @@ class FederalStatePathogenNotificationCategoryDataTest {
 
   @Test
   void shouldReturnListWithTestData() {
-    when(snapshotFilesServiceMock.getProfileNotificationCategoryFile())
+    when(snapshotFilesServiceMock.getProfileNotificationCategoryCodeSystemFile())
         .thenReturn(notificationCategoryFile);
+    when(snapshotFilesServiceMock.getProfileNotificationCategoryValueSetFile())
+        .thenReturn(notificationCategory7_1File);
     when(snapshotFilesServiceMock.getFederalStateFile()).thenReturn(federalStateFile);
 
-    FederalStateNotificationCategoryData federalStateNotificationCategoryData =
+    FederalStateNotificationCategoryData FederalStateNotificationCategoryData =
         new FederalStateNotificationCategoryData(
             snapshotFilesServiceMock, fhirContext, false, "", true, false);
-    federalStateNotificationCategoryData.createData();
+    FederalStateNotificationCategoryData.createData();
 
-    assertThat(federalStateNotificationCategoryData.getFederalStates()).isNotEmpty();
+    assertThat(FederalStateNotificationCategoryData.getFederalStates()).isNotEmpty();
     assertThat(
-            federalStateNotificationCategoryData
-                .getFederalStateNotificationCategories()
+            FederalStateNotificationCategoryData.getFederalStateNotificationCategories()
                 .get("DE-SN"))
         .extracting("code")
         .containsExactlyInAnyOrder(
@@ -234,19 +272,20 @@ class FederalStatePathogenNotificationCategoryDataTest {
 
   @Test
   void shouldReturnListWithTestData2() {
-    when(snapshotFilesServiceMock.getProfileNotificationCategoryFile())
+    when(snapshotFilesServiceMock.getProfileNotificationCategoryCodeSystemFile())
         .thenReturn(notificationCategoryFile);
+    when(snapshotFilesServiceMock.getProfileNotificationCategoryValueSetFile())
+        .thenReturn(notificationCategory7_1File);
     when(snapshotFilesServiceMock.getFederalStateFile()).thenReturn(federalStateFile);
 
-    FederalStateNotificationCategoryData federalStateNotificationCategoryData =
+    FederalStateNotificationCategoryData FederalStateNotificationCategoryData =
         new FederalStateNotificationCategoryData(
             snapshotFilesServiceMock, fhirContext, false, "", true, true);
-    federalStateNotificationCategoryData.createData();
+    FederalStateNotificationCategoryData.createData();
 
-    assertThat(federalStateNotificationCategoryData.getFederalStates()).isNotEmpty();
+    assertThat(FederalStateNotificationCategoryData.getFederalStates()).isNotEmpty();
     assertThat(
-            federalStateNotificationCategoryData
-                .getFederalStateNotificationCategories()
+            FederalStateNotificationCategoryData.getFederalStateNotificationCategories()
                 .get("DE-SN"))
         .extracting("code")
         .containsExactlyInAnyOrder(
@@ -262,11 +301,13 @@ class FederalStatePathogenNotificationCategoryDataTest {
 
   @Test
   void shouldContainNoNotificationIfEverythingIsInDenyList() {
-    when(snapshotFilesServiceMock.getProfileNotificationCategoryFile())
+    when(snapshotFilesServiceMock.getProfileNotificationCategoryCodeSystemFile())
         .thenReturn(notificationCategoryFile);
+    when(snapshotFilesServiceMock.getProfileNotificationCategoryValueSetFile())
+        .thenReturn(notificationCategory7_1File);
     when(snapshotFilesServiceMock.getFederalStateFile()).thenReturn(federalStateFile);
 
-    FederalStateNotificationCategoryData federalStateNotificationCategoryData =
+    FederalStateNotificationCategoryData FederalStateNotificationCategoryData =
         new FederalStateNotificationCategoryData(
             snapshotFilesServiceMock,
             fhirContext,
@@ -274,12 +315,11 @@ class FederalStatePathogenNotificationCategoryDataTest {
             "advp,banp,bpsp,bovp,borp,brup,camp,ckvp,chlp,clop,corp,coxp,denp,cryp,ebvp,ehcp,ecop,frtp,fsvp,gfvp,gilp,hinp,havp,hbvp,hcvp,hdvp,hevp,htvp,invp,lsvp,legp,lepp,lisp,mbvp,msvp,mrsp,mpvp,mpxp,mylp,mytp,ncvp,neip,novp,opxp,povp,rbvp,ricp,rtvp,ruvp,spap,styp,salp,cvdp,cvsp,ship,spnp,trip,vzvp,vchp,wnvp,ypsp,yenp,zkvp,abvp,hfap,mrap,ebcp,acbp,wbkp,pkvp,rsvp,astp,bobp,cltp,cymp,eahp,etvp,gbsp,mpmp,pinp,pvbp,spyp,adep,caup,plap",
             false,
             false);
-    federalStateNotificationCategoryData.createData();
+    FederalStateNotificationCategoryData.createData();
 
-    assertThat(federalStateNotificationCategoryData.getFederalStates()).isNotEmpty();
+    assertThat(FederalStateNotificationCategoryData.getFederalStates()).isNotEmpty();
     assertThat(
-            federalStateNotificationCategoryData
-                .getFederalStateNotificationCategories()
+            FederalStateNotificationCategoryData.getFederalStateNotificationCategories()
                 .get("DE-SN"))
         .isEmpty();
   }

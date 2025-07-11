@@ -57,7 +57,7 @@ class CodeSystemsTest {
   private final File LOINCFile =
       new File("src/test/resources/profiles/CodeSystem/CodeSystem-loinc-2.74.json");
   private final File translationNullFlavorFile =
-      new File("src/test/resources/profiles/CodeSystem/translationNullFlavor.json");
+      new File("src/test/resources/profiles/CodeSystem/CodeSystem-translationNullFlavor.json");
   private final File v3FlavorFile =
       new File("src/test/resources/profiles/CodeSystem/CodeSystem-v3-NullFlavor.json");
   private final File v3FlavorFileReduced =

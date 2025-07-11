@@ -40,27 +40,55 @@ class SnapshotFilesServiceTest {
             "src/test/resources/profiles",
             "CodeSystem-loinc-2.74.json",
             "CodeSystem-notificationCategory.json",
+            "ValueSet-notificationCategory.json",
+            "ValueSet-notificationCategoryNonNominal.json",
+            "ValueSet-notificationDiseaseCategory.json",
+            "ValueSet-notificationDiseaseCategoryNonNominal.json",
             "CodeSystem-notificationDiseaseCategory.json",
             "CodeSystem-CodeSystemISO31662DE.json",
             false,
-            "someString");
+            false,
+            "someString",
+            "someStringAsPathForGAPDData");
 
     profileSnapshotFileService.init();
 
     assertThat(profileSnapshotFileService.getProfileLoincFile())
         .isEqualTo(new File("src/test/resources/profiles/CodeSystem/CodeSystem-loinc-2.74.json"));
-    assertThat(profileSnapshotFileService.getProfileNotificationCategoryFile())
+    assertThat(profileSnapshotFileService.getProfileNotificationCategoryCodeSystemFile())
         .isEqualTo(
             new File(
                 "src/test/resources/profiles/CodeSystem/CodeSystem-notificationCategory.json"));
-    assertThat(profileSnapshotFileService.getProfileDiseaseNotificationCategoryFile())
+
+    assertThat(profileSnapshotFileService.getProfileNotificationCategoryValueSetFile())
+        .isEqualTo(
+            new File("src/test/resources/profiles/ValueSet/ValueSet-notificationCategory.json"));
+
+    assertThat(profileSnapshotFileService.getProfileNotificationCategoryNonNomimalValueSetFile())
+        .isEqualTo(
+            new File(
+                "src/test/resources/profiles/ValueSet/ValueSet-notificationCategoryNonNominal.json"));
+
+    assertThat(profileSnapshotFileService.getProfileNotificationDiseaseCategoryValueSetFile())
+        .isEqualTo(
+            new File(
+                "src/test/resources/profiles/ValueSet/ValueSet-notificationDiseaseCategory.json"));
+
+    assertThat(
+            profileSnapshotFileService
+                .getProfileNotificationDiseaseCategoryNonNominalValueSetFile())
+        .isEqualTo(
+            new File(
+                "src/test/resources/profiles/ValueSet/ValueSet-notificationDiseaseCategoryNonNominal.json"));
+
+    assertThat(profileSnapshotFileService.getProfileDiseaseNotificationCategoryRegressionFile())
         .isEqualTo(
             new File(
                 "src/test/resources/profiles/CodeSystem/CodeSystem-notificationDiseaseCategory.json"));
 
     assertThat(profileSnapshotFileService.getMaterials()).hasSize(4);
-    assertThat(profileSnapshotFileService.getMethods()).hasSize(5);
-    assertThat(profileSnapshotFileService.getAnswerSets()).hasSize(26);
+    assertThat(profileSnapshotFileService.getMethods()).hasSize(4); // methodWrongGroup
+    assertThat(profileSnapshotFileService.getAnswerSets()).hasSize(4);
     assertThat(profileSnapshotFileService.getSubstances()).hasSize(1);
     assertThat(profileSnapshotFileService.getResistances()).hasSize(2);
     assertThat(profileSnapshotFileService.getResistanceGenes()).hasSize(2);
@@ -73,27 +101,33 @@ class SnapshotFilesServiceTest {
             "src/test/resources/profiles",
             "CodeSystem-loinc-2.74.json",
             "CodeSystem-notificationCategory.json",
+            "ValueSet-notificationCategory7.1.json",
+            "ValueSet-notificationCategory7.3.json",
+            "ValueSet-notificationDiseaseCategory6.1.json",
+            "ValueSet-notificationDiseaseCategory7.3.json",
             "CodeSystem-notificationDiseaseCategory.json",
             "CodeSystem-CodeSystemISO31662DE.json",
             true,
-            "src/test/resources/GAPP");
+            true,
+            "src/test/resources/GAPP",
+            "src/test/resources/GAPD");
 
     profileSnapshotFileService.init();
 
     assertThat(profileSnapshotFileService.getProfileLoincFile())
         .isEqualTo(new File("src/test/resources/profiles/CodeSystem/CodeSystem-loinc-2.74.json"));
-    assertThat(profileSnapshotFileService.getProfileNotificationCategoryFile())
+    assertThat(profileSnapshotFileService.getProfileNotificationCategoryCodeSystemFile())
         .isEqualTo(
             new File(
                 "src/test/resources/profiles/CodeSystem/CodeSystem-notificationCategory.json"));
-    assertThat(profileSnapshotFileService.getProfileDiseaseNotificationCategoryFile())
+    assertThat(profileSnapshotFileService.getProfileDiseaseNotificationCategoryRegressionFile())
         .isEqualTo(
             new File(
                 "src/test/resources/profiles/CodeSystem/CodeSystem-notificationDiseaseCategory.json"));
 
     assertThat(profileSnapshotFileService.getMaterials()).hasSize(5);
-    assertThat(profileSnapshotFileService.getMethods()).hasSize(6);
-    assertThat(profileSnapshotFileService.getAnswerSets()).hasSize(27);
+    assertThat(profileSnapshotFileService.getMethods()).hasSize(5);
+    assertThat(profileSnapshotFileService.getAnswerSets()).hasSize(5);
     assertThat(profileSnapshotFileService.getSubstances()).hasSize(2);
     assertThat(profileSnapshotFileService.getResistances()).hasSize(3);
     assertThat(profileSnapshotFileService.getResistanceGenes()).hasSize(3);
@@ -106,27 +140,33 @@ class SnapshotFilesServiceTest {
             "src/test/resources/profiles",
             "CodeSystem-loinc-2.74.json",
             "CodeSystem-notificationCategory.json",
+            "ValueSet-notificationCategory7.1.json",
+            "ValueSet-notificationCategory7.3.json",
+            "ValueSet-notificationDiseaseCategory6.1.json",
+            "ValueSet-notificationDiseaseCategory7.3.json",
             "CodeSystem-notificationDiseaseCategory.json",
             "CodeSystem-CodeSystemISO31662DE.json",
             true,
+            true,
+            null,
             null);
 
     profileSnapshotFileService.init();
 
     assertThat(profileSnapshotFileService.getProfileLoincFile())
         .isEqualTo(new File("src/test/resources/profiles/CodeSystem/CodeSystem-loinc-2.74.json"));
-    assertThat(profileSnapshotFileService.getProfileNotificationCategoryFile())
+    assertThat(profileSnapshotFileService.getProfileNotificationCategoryCodeSystemFile())
         .isEqualTo(
             new File(
                 "src/test/resources/profiles/CodeSystem/CodeSystem-notificationCategory.json"));
-    assertThat(profileSnapshotFileService.getProfileDiseaseNotificationCategoryFile())
+    assertThat(profileSnapshotFileService.getProfileDiseaseNotificationCategoryRegressionFile())
         .isEqualTo(
             new File(
                 "src/test/resources/profiles/CodeSystem/CodeSystem-notificationDiseaseCategory.json"));
 
     assertThat(profileSnapshotFileService.getMaterials()).hasSize(4);
-    assertThat(profileSnapshotFileService.getMethods()).hasSize(5);
-    assertThat(profileSnapshotFileService.getAnswerSets()).hasSize(26);
+    assertThat(profileSnapshotFileService.getMethods()).hasSize(4);
+    assertThat(profileSnapshotFileService.getAnswerSets()).hasSize(4);
     assertThat(profileSnapshotFileService.getSubstances()).hasSize(1);
     assertThat(profileSnapshotFileService.getResistances()).hasSize(2);
     assertThat(profileSnapshotFileService.getResistanceGenes()).hasSize(2);
@@ -139,27 +179,33 @@ class SnapshotFilesServiceTest {
             "src/test/resources/profiles",
             "CodeSystem-loinc-2.74.json",
             "CodeSystem-notificationCategory.json",
+            "ValueSet-notificationCategory7.1.json",
+            "ValueSet-notificationCategory7.3.json",
+            "ValueSet-notificationDiseaseCategory6.1.json",
+            "ValueSet-notificationDiseaseCategory7.3.json",
             "CodeSystem-notificationDiseaseCategory.json",
             "CodeSystem-CodeSystemISO31662DE.json",
             true,
-            "foobar");
+            true,
+            "foobar",
+            "foobar2");
 
     profileSnapshotFileService.init();
 
     assertThat(profileSnapshotFileService.getProfileLoincFile())
         .isEqualTo(new File("src/test/resources/profiles/CodeSystem/CodeSystem-loinc-2.74.json"));
-    assertThat(profileSnapshotFileService.getProfileNotificationCategoryFile())
+    assertThat(profileSnapshotFileService.getProfileNotificationCategoryCodeSystemFile())
         .isEqualTo(
             new File(
                 "src/test/resources/profiles/CodeSystem/CodeSystem-notificationCategory.json"));
-    assertThat(profileSnapshotFileService.getProfileDiseaseNotificationCategoryFile())
+    assertThat(profileSnapshotFileService.getProfileDiseaseNotificationCategoryRegressionFile())
         .isEqualTo(
             new File(
                 "src/test/resources/profiles/CodeSystem/CodeSystem-notificationDiseaseCategory.json"));
 
     assertThat(profileSnapshotFileService.getMaterials()).hasSize(4);
-    assertThat(profileSnapshotFileService.getMethods()).hasSize(5);
-    assertThat(profileSnapshotFileService.getAnswerSets()).hasSize(26);
+    assertThat(profileSnapshotFileService.getMethods()).hasSize(4);
+    assertThat(profileSnapshotFileService.getAnswerSets()).hasSize(4);
     assertThat(profileSnapshotFileService.getSubstances()).hasSize(1);
     assertThat(profileSnapshotFileService.getResistances()).hasSize(2);
     assertThat(profileSnapshotFileService.getResistanceGenes()).hasSize(2);

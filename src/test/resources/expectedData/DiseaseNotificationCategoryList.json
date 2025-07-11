@@ -1,217 +1,442 @@
 [
   {
-    "code": "hxxd",
-    "display": "Akute Virushepatitis",
-    "designations": []
-  },
-  {
-    "code": "opxd",
-    "display": "Andere Orthopockenviren",
-    "designations": []
-  },
-  {
-    "code": "mybd",
-    "display": "Behandlungsabbruch Tuberkulose",
-    "designations": []
-  },
-  {
     "code": "clod",
     "display": "Botulismus",
-    "designations": []
+    "designations": [
+      {
+        "language": "de-DE",
+        "value": "Botulismus"
+      }
+    ]
   },
   {
     "code": "vchd",
     "display": "Cholera",
-    "designations": []
+    "designations": [
+      {
+        "language": "de-DE",
+        "value": "Cholera"
+      }
+    ]
   },
   {
     "code": "cdfd",
-    "display": "Clostridioides difficile",
-    "designations": []
+    "display": "Clostridioides-difficile-Erkrankung, schwere Verlaufsform",
+    "designations": [
+      {
+        "language": "de-DE",
+        "value": "Clostridioides-difficile-Erkrankung, schwere Verlaufsform"
+      }
+    ]
   },
   {
     "code": "cvdd",
     "display": "Coronavirus-Krankheit-2019 (COVID-19)",
-    "designations": []
+    "designations": [
+      {
+        "language": "de-DE",
+        "value": "Coronavirus-Krankheit-2019 (COVID-19)"
+      }
+    ]
   },
   {
     "code": "cjkd",
     "display": "Creutzfeldt-Jakob-Krankheit (CJK)",
-    "designations": []
+    "designations": [
+      {
+        "language": "de-DE",
+        "value": "Creutzfeldt-Jakob-Krankheit (CJK)"
+      }
+    ]
   },
   {
     "code": "dend",
     "display": "Denguefieber",
-    "designations": []
+    "designations": [
+      {
+        "language": "de-DE",
+        "value": "Denguefieber"
+      }
+    ]
   },
   {
     "code": "cord",
     "display": "Diphtherie",
-    "designations": []
+    "designations": [
+      {
+        "language": "de-DE",
+        "value": "Diphtherie"
+      }
+    ]
   },
   {
     "code": "ebvd",
     "display": "Ebolafieber",
-    "designations": []
+    "designations": [
+      {
+        "language": "de-DE",
+        "value": "Ebolafieber"
+      }
+    ]
   },
   {
     "code": "gfvd",
     "display": "Gelbfieber",
-    "designations": []
+    "designations": [
+      {
+        "language": "de-DE",
+        "value": "Gelbfieber"
+      }
+    ]
   },
   {
     "code": "husd",
     "display": "Hämolytisch-urämisches Syndrom (HUS)",
-    "designations": []
+    "designations": [
+      {
+        "language": "de-DE",
+        "value": "Hämolytisch-urämisches Syndrom (HUS)"
+      }
+    ]
   },
   {
     "code": "hfad",
     "display": "Hämorrhagisches Fieber",
-    "designations": []
+    "designations": [
+      {
+        "language": "de-DE",
+        "value": "Hämorrhagisches Fieber"
+      }
+    ]
   },
   {
     "code": "htvd",
-    "display": "Hantavirus",
-    "designations": []
+    "display": "Hantavirus-Erkrankung, hämorrhagischer Verlauf",
+    "designations": [
+      {
+        "language": "de-DE",
+        "value": "Hantavirus-Erkrankung, hämorrhagischer Verlauf"
+      }
+    ]
+  },
+  {
+    "code": "hxxd",
+    "display": "Akute Virushepatitis",
+    "designations": [
+      {
+        "language": "de-DE",
+        "value": "Akute Virushepatitis"
+      }
+    ]
   },
   {
     "code": "havd",
     "display": "Hepatitis A",
-    "designations": []
+    "designations": [
+      {
+        "language": "de-DE",
+        "value": "Hepatitis A"
+      }
+    ]
   },
   {
     "code": "hbvd",
     "display": "Hepatitis B",
-    "designations": []
+    "designations": [
+      {
+        "language": "de-DE",
+        "value": "Hepatitis B"
+      }
+    ]
   },
   {
     "code": "hcvd",
     "display": "Hepatitis C",
-    "designations": []
+    "designations": [
+      {
+        "language": "de-DE",
+        "value": "Hepatitis C"
+      }
+    ]
   },
   {
     "code": "hdvd",
     "display": "Hepatitis D",
-    "designations": []
+    "designations": [
+      {
+        "language": "de-DE",
+        "value": "Hepatitis D"
+      }
+    ]
   },
   {
     "code": "hevd",
     "display": "Hepatitis E",
-    "designations": []
+    "designations": [
+      {
+        "language": "de-DE",
+        "value": "Hepatitis E"
+      }
+    ]
+  },
+  {
+    "code": "vzzd",
+    "display": "Herpes Zoster",
+    "designations": [
+      {
+        "language": "de-DE",
+        "value": "Herpes Zoster"
+      }
+    ]
   },
   {
     "code": "bpsd",
     "display": "Keuchhusten",
-    "designations": []
+    "designations": [
+      {
+        "language": "de-DE",
+        "value": "Keuchhusten"
+      }
+    ]
   },
   {
     "code": "lsvd",
     "display": "Lassafieber",
-    "designations": []
+    "designations": [
+      {
+        "language": "de-DE",
+        "value": "Lassafieber"
+      }
+    ]
   },
   {
     "code": "mbvd",
     "display": "Marburgfieber",
-    "designations": []
+    "designations": [
+      {
+        "language": "de-DE",
+        "value": "Marburgfieber"
+      }
+    ]
   },
   {
     "code": "msvd",
     "display": "Masern",
-    "designations": []
+    "designations": [
+      {
+        "language": "de-DE",
+        "value": "Masern"
+      }
+    ]
   },
   {
     "code": "neid",
-    "display": "Meningokokken",
-    "designations": []
+    "display": "Meningokokken, invasive Erkrankung",
+    "designations": [
+      {
+        "language": "de-DE",
+        "value": "Meningokokken, invasive Erkrankung"
+      }
+    ]
   },
   {
     "code": "band",
     "display": "Milzbrand",
-    "designations": []
+    "designations": [
+      {
+        "language": "de-DE",
+        "value": "Milzbrand"
+      }
+    ]
   },
   {
     "code": "mpxd",
     "display": "Mpox",
-    "designations": []
+    "designations": [
+      {
+        "language": "de-DE",
+        "value": "Mpox"
+      }
+    ]
   },
   {
     "code": "mpvd",
     "display": "Mumps",
-    "designations": []
+    "designations": [
+      {
+        "language": "de-DE",
+        "value": "Mumps"
+      }
+    ]
+  },
+  {
+    "code": "opxd",
+    "display": "Orthopocken, andere",
+    "designations": [
+      {
+        "language": "de-DE",
+        "value": "Orthopocken, andere"
+      }
+    ]
   },
   {
     "code": "spad",
     "display": "Paratyphus",
-    "designations": []
+    "designations": [
+      {
+        "language": "de-DE",
+        "value": "Paratyphus"
+      }
+    ]
+  },
+  {
+    "code": "sxxd",
+    "display": "Paratyphus/Typhus, nicht differenziert",
+    "designations": [
+      {
+        "language": "de-DE",
+        "value": "Paratyphus/Typhus, nicht differenziert"
+      }
+    ]
   },
   {
     "code": "ypsd",
     "display": "Pest",
-    "designations": []
+    "designations": [
+      {
+        "language": "de-DE",
+        "value": "Pest"
+      }
+    ]
   },
   {
     "code": "pkvd",
     "display": "Pocken",
-    "designations": []
+    "designations": [
+      {
+        "language": "de-DE",
+        "value": "Pocken"
+      }
+    ]
   },
   {
     "code": "povd",
     "display": "Poliomyelitis",
-    "designations": []
+    "designations": [
+      {
+        "language": "de-DE",
+        "value": "Poliomyelitis"
+      }
+    ]
   },
   {
     "code": "rund",
-    "display": "Röteln konnatal",
-    "designations": []
+    "display": "Röteln, konnatal",
+    "designations": [
+      {
+        "language": "de-DE",
+        "value": "Röteln, konnatal"
+      }
+    ]
   },
   {
     "code": "ruvd",
-    "display": "Röteln postnatal",
-    "designations": []
+    "display": "Röteln, postnatal",
+    "designations": [
+      {
+        "language": "de-DE",
+        "value": "Röteln, postnatal"
+      }
+    ]
   },
   {
     "code": "sspd",
-    "display": "Subakute Sklerosierende Panenzephalitis (SSPE)",
-    "designations": []
+    "display": "Subakute sklerosierende Panenzephalitis (SSPE)",
+    "designations": [
+      {
+        "language": "de-DE",
+        "value": "Subakute sklerosierende Panenzephalitis (SSPE)"
+      }
+    ]
   },
   {
     "code": "rbvd",
     "display": "Tollwut",
-    "designations": []
+    "designations": [
+      {
+        "language": "de-DE",
+        "value": "Tollwut"
+      }
+    ]
   },
   {
     "code": "ttvd",
     "display": "Tollwutexpositionsverdacht",
-    "designations": []
+    "designations": [
+      {
+        "language": "de-DE",
+        "value": "Tollwutexpositionsverdacht"
+      }
+    ]
   },
   {
     "code": "mytd",
     "display": "Tuberkulose",
-    "designations": []
+    "designations": [
+      {
+        "language": "de-DE",
+        "value": "Tuberkulose"
+      }
+    ]
+  },
+  {
+    "code": "mybd",
+    "display": "Tuberkulose, bei Behandlungsabbruch",
+    "designations": [
+      {
+        "language": "de-DE",
+        "value": "Tuberkulose, bei Behandlungsabbruch"
+      }
+    ]
   },
   {
     "code": "styd",
     "display": "Typhus",
-    "designations": []
-  },
-  {
-    "code": "sxxd",
-    "display": "Verdacht auf Paratyphus/Typhus",
-    "designations": []
+    "designations": [
+      {
+        "language": "de-DE",
+        "value": "Typhus"
+      }
+    ]
   },
   {
     "code": "vzwd",
     "display": "Windpocken",
-    "designations": []
+    "designations": [
+      {
+        "language": "de-DE",
+        "value": "Windpocken"
+      }
+    ]
   },
   {
     "code": "izvd",
     "display": "Zoonotische Influenza",
-    "designations": []
+    "designations": [
+      {
+        "language": "de-DE",
+        "value": "Zoonotische Influenza"
+      }
+    ]
   },
   {
-    "code":"vzzd",
-    "display":"Zoster",
-    "designations":[]
+    "code": "gapd",
+    "display": "Testdata Disease",
+    "designations": [
+      {
+        "language": "de-DE",
+        "value": "Testdata Disease"
+      }
+    ]
   }
 ]

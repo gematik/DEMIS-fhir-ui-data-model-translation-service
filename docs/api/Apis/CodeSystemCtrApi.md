@@ -34,7 +34,7 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: */*, application/json
+- **Accept**: application/json, */*
 
 <a name="getCode2"></a>
 # **getCode2**
@@ -61,7 +61,7 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: */*, application/json
+- **Accept**: application/json, */*
 
 <a name="getSystemContent"></a>
 # **getSystemContent**
@@ -87,5 +87,5 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: */*, application/json
+- **Accept**: application/json, */*
 
