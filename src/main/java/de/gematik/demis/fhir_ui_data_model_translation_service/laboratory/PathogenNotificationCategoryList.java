@@ -26,7 +26,6 @@ package de.gematik.demis.fhir_ui_data_model_translation_service.laboratory;
  * #L%
  */
 
-import static de.gematik.demis.fhir_ui_data_model_translation_service.utils.Utils.NOTIFICATION_CATEGORY_PROPERTY;
 import static de.gematik.demis.fhir_ui_data_model_translation_service.utils.Utils.extractNotificationCategories;
 import static de.gematik.demis.fhir_ui_data_model_translation_service.utils.Utils.getFileString;
 
@@ -40,17 +39,18 @@ import java.util.*;
 import java.util.stream.Collectors;
 import lombok.extern.slf4j.Slf4j;
 import org.hl7.fhir.r4.model.CodeSystem;
+import org.hl7.fhir.r4.model.ValueSet;
 import org.springframework.stereotype.Component;
 
 /** This component provides the notification category list. */
 @Component
 @Slf4j
-public class NotificationCategoryList {
+public class PathogenNotificationCategoryList {
 
   private final SnapshotFilesService snapshotFilesService;
   private final FhirContext fhirContext;
 
-  public NotificationCategoryList(
+  public PathogenNotificationCategoryList(
       SnapshotFilesService snapshotFilesService, FhirContext fhirContext) {
     this.snapshotFilesService = snapshotFilesService;
     this.fhirContext = fhirContext;
@@ -60,42 +60,28 @@ public class NotificationCategoryList {
       getPathogenNotificationCategories() {
     final Map<PathogenNotificationCategory, SequencedCollection<CodeDisplay>> result =
         new EnumMap<>(PathogenNotificationCategory.class);
-    final File profileNotificationCategoryFile =
-        this.snapshotFilesService.getProfileNotificationCategoryFile();
-    final String fileString;
-    try {
-      fileString = getFileString(profileNotificationCategoryFile);
-    } catch (IOException e) {
-      log.error(
-          "Error while reading notification category file '{}'",
-          profileNotificationCategoryFile.getName());
-      return Collections.emptyMap();
+
+    ValueSet notificationCategory =
+        parseValueSetFromFile(
+            this.snapshotFilesService.getProfileNotificationCategoryValueSetFile());
+    if (notificationCategory != null) {
+      result.put(
+          PathogenNotificationCategory.P_7_1,
+          Utils.extractNotificationCategories(notificationCategory));
     }
 
-    final CodeSystem notificationCategory =
-        fhirContext.newJsonParser().parseResource(CodeSystem.class, fileString);
-    for (final CodeSystem.ConceptDefinitionComponent component :
-        notificationCategory.getConcept()) {
-      final CodeDisplay display = Utils.createCodeDisplay(component);
-      final Optional<CodeSystem.ConceptPropertyComponent> ifsgParagraph =
-          component.getProperty().stream()
-              .filter(p -> p.getCode().equals(NOTIFICATION_CATEGORY_PROPERTY))
-              .findFirst();
-      final Optional<PathogenNotificationCategory> target =
-          ifsgParagraph.map(
-              concept -> PathogenNotificationCategory.from(concept.getValue().toString()));
-      if (target.isPresent()) {
-        result.computeIfAbsent(target.get(), k -> new ArrayList<>()).add(display);
-      } else {
-        log.warn(
-            "Notification category '{}' has no known property '{}'.",
-            component.getCode(),
-            NOTIFICATION_CATEGORY_PROPERTY);
+    File profileNotificationCategoryNonNomimalValueSetFile =
+        this.snapshotFilesService.getProfileNotificationCategoryNonNomimalValueSetFile();
+    if (profileNotificationCategoryNonNomimalValueSetFile != null) {
+      ValueSet notificationCategoryNonNominal =
+          parseValueSetFromFile(profileNotificationCategoryNonNomimalValueSetFile);
+      if (notificationCategoryNonNominal != null) {
+        List<CodeDisplay> codeDisplaysFromValueSet =
+            extractNotificationCategories(notificationCategoryNonNominal);
+        result.put(PathogenNotificationCategory.P_7_3, codeDisplaysFromValueSet);
       }
     }
-    // to simplify insertion we don't look at the category,
-    // but we still want to avoid leaking unknown categories to a client
-    result.remove(PathogenNotificationCategory.UNKNOWN);
+
     return Collections.unmodifiableMap(result);
   }
 
@@ -103,7 +89,7 @@ public class NotificationCategoryList {
 
     try {
       String fileString =
-          getFileString(this.snapshotFilesService.getProfileNotificationCategoryFile());
+          getFileString(this.snapshotFilesService.getProfileNotificationCategoryCodeSystemFile());
       CodeSystem notificationCategory =
           fhirContext.newJsonParser().parseResource(CodeSystem.class, fileString);
 
@@ -130,6 +116,16 @@ public class NotificationCategoryList {
     } catch (IOException e) {
       log.error("Error while reading notification category file");
       return Collections.emptyList();
+    }
+  }
+
+  private ValueSet parseValueSetFromFile(File file) {
+    try {
+      String fileString = Utils.getFileString(file);
+      return fhirContext.newJsonParser().parseResource(ValueSet.class, fileString);
+    } catch (IOException e) {
+      log.error("Error while reading notification category file: '{}'", file.getName());
+      return null;
     }
   }
 }

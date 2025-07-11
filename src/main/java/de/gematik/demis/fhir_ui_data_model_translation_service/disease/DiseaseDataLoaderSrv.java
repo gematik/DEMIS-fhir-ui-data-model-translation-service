@@ -30,6 +30,7 @@ import de.gematik.demis.fhir_ui_data_model_translation_service.disease.formly.Di
 import de.gematik.demis.fhir_ui_data_model_translation_service.disease.formly.model.FormlyFieldConfigs;
 import de.gematik.demis.fhir_ui_data_model_translation_service.disease.formly.model.QuestionnaireTranslation;
 import de.gematik.demis.fhir_ui_data_model_translation_service.model.CodeDisplay;
+import de.gematik.demis.notification.builder.demis.fhir.notification.types.NotificationCategory;
 import io.micrometer.observation.annotation.Observed;
 import jakarta.annotation.PostConstruct;
 import java.util.List;
@@ -37,6 +38,7 @@ import java.util.Map;
 import java.util.Optional;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -45,11 +47,18 @@ import org.springframework.stereotype.Service;
 public class DiseaseDataLoaderSrv {
 
   private final QuestionnairePreparation questionnairePreparation;
+  private final DiseaseNotificationCategoriesSrvRegression categoriesSrvRegression;
   private final DiseaseNotificationCategoriesSrv categoriesSrv;
   private final DiseaseDataPreparationSrv diseaseDataPreparationSrv;
 
+  @Value("${feature.flag.notifications.7_3}")
+  private boolean isNotification73Active;
+
   private Map<String, QuestionnaireTranslation> translations;
+  private List<CodeDisplay>
+      possibleDiseaseCodesRegresssion; // TODO Delete with notification7_3 flag
   private List<CodeDisplay> possibleDiseaseCodes;
+  private List<CodeDisplay> possibleDiseaseCodesNonNominal;
 
   @Observed(
       name = "question-list",
@@ -62,7 +71,9 @@ public class DiseaseDataLoaderSrv {
   @PostConstruct
   void init() {
     translations = questionnairePreparation.build();
+    possibleDiseaseCodesRegresssion = categoriesSrvRegression.getCategories();
     possibleDiseaseCodes = categoriesSrv.getCategories();
+    possibleDiseaseCodesNonNominal = categoriesSrv.getCategoriesNonNominal();
   }
 
   @Observed(
@@ -70,7 +81,23 @@ public class DiseaseDataLoaderSrv {
       contextualName = "all-codes",
       lowCardinalityKeyValues = {"disease", "fhir"})
   public List<CodeDisplay> getAllPossibleDiseaseCodes() {
-    return possibleDiseaseCodes;
+    if (isNotification73Active) {
+      return possibleDiseaseCodes;
+    } else {
+      return possibleDiseaseCodesRegresssion;
+    }
+  }
+
+  @Observed(
+      name = "all-codes",
+      contextualName = "all-codes",
+      lowCardinalityKeyValues = {"disease", "fhir"})
+  public List<CodeDisplay> getPossibleDiseaseCodesNonNominal() {
+    if (isNotification73Active) {
+      return possibleDiseaseCodesNonNominal;
+    } else {
+      throw new UnsupportedOperationException("Feature flag for §7.3 is not active");
+    }
   }
 
   @Observed(
@@ -81,6 +108,15 @@ public class DiseaseDataLoaderSrv {
     return diseaseDataPreparationSrv.getQuestionnaire(code);
   }
 
+  @Observed(
+      name = "questionnaire",
+      contextualName = "questionnaire",
+      lowCardinalityKeyValues = {"disease", "fhir"})
+  public Map<String, FormlyFieldConfigs[]> getData(
+      String code, NotificationCategory notificationCategory) {
+    return diseaseDataPreparationSrv.getQuestionnaire(code, notificationCategory);
+  }
+
   /**
    * Get the category by code
    *
@@ -88,6 +124,8 @@ public class DiseaseDataLoaderSrv {
    * @return category
    */
   public Optional<CodeDisplay> getCategory(String code) {
-    return possibleDiseaseCodes.stream().filter(c -> c.getCode().equals(code)).findFirst();
+    return possibleDiseaseCodesRegresssion.stream()
+        .filter(c -> c.getCode().equals(code))
+        .findFirst();
   }
 }

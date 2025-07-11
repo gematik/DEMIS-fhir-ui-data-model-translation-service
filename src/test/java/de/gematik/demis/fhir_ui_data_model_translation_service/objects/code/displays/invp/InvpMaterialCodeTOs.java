@@ -32,7 +32,21 @@ import java.util.Set;
 
 public class InvpMaterialCodeTOs {
 
-  public CodeDisplay loinc_258607008() {
+  public CodeDisplay snomed_258607008() {
+    return CodeDisplay.builder()
+        .code("258607008")
+        .display("Bronchoalveolar lavage fluid specimen (specimen)")
+        .designations(
+            Set.of(
+                new Designation("en-US", "Bronchoalveolar lavage fluid specimen (specimen)"),
+                new Designation("de-DE", "Bronchoalveoläre Lavage")))
+        .order(100)
+        .system("http://snomed.info/sct|http://snomed.info/sct/900000000000207008/version/20230331")
+        .build();
+  }
+
+  /** Todo Remove with feature.flag.notifications.7_3 */
+  public CodeDisplay snomed_258607008Reg() {
     return CodeDisplay.builder()
         .code("258607008")
         .display("Bronchoalveolar lavage fluid specimen (specimen)")
@@ -44,7 +58,7 @@ public class InvpMaterialCodeTOs {
         .build();
   }
 
-  public CodeDisplay loinc_309174004() {
+  public CodeDisplay snomed_309174004() {
     return CodeDisplay.builder()
         .code("309174004")
         .display("Bronchial biopsy specimen (specimen)")
@@ -56,7 +70,21 @@ public class InvpMaterialCodeTOs {
         .build();
   }
 
-  public CodeDisplay loinc_309174004R() {
+  public CodeDisplay snomed_309174004R() {
+    return CodeDisplay.builder()
+        .code("309174004")
+        .display("Bronchial biopsy specimen (specimen)")
+        .designations(
+            Set.of(
+                new Designation("en-US", "Bronchial biopsy specimen (specimen)"),
+                new Designation("de-DE", "Bronchialbiopsie")))
+        .order(15)
+        .system("http://snomed.info/sct|http://snomed.info/sct/900000000000207008/version/20230331")
+        .build();
+  }
+
+  /** Todo Remove with feature.flag.notifications.7_3 */
+  public CodeDisplay snomed_309174004RReg() {
     return CodeDisplay.builder()
         .code("309174004")
         .display("Bronchial biopsy specimen (specimen)")
@@ -68,7 +96,7 @@ public class InvpMaterialCodeTOs {
         .build();
   }
 
-  public CodeDisplay loinc_258498002() {
+  public CodeDisplay snomed_258498002() {
     return CodeDisplay.builder()
         .code("258498002")
         .display("Conjunctival swab (specimen)")

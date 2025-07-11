@@ -43,7 +43,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.actuate.observability.AutoConfigureObservability;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.test.context.TestPropertySource;
+import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.MvcResult;
 
@@ -51,7 +51,7 @@ import org.springframework.test.web.servlet.MvcResult;
 @AutoConfigureMockMvc
 @SpringBootTest
 @AutoConfigureObservability
-@TestPropertySource(locations = "classpath:application-test.properties")
+@ActiveProfiles("test")
 class DiseaseDataLoaderCtrIT {
   private final ObjectMapper mapper = new ObjectMapper();
 
@@ -64,7 +64,10 @@ class DiseaseDataLoaderCtrIT {
     "/disease/questionnaire/CVDD/formly, src/test/resources/expectedData/FormlyCVDDResult.json",
     "/disease/questionnaire/HCVD/formly, src/test/resources/expectedData/FormlyHCVDResult.json",
     "/disease/questionnaire/IZVD/formly, src/test/resources/expectedData/FormlyIZVDResult.json",
-    "/disease, src/test/resources/expectedData/DiseaseNotificationCategoryList.json"
+    "/disease, src/test/resources/expectedData/DiseaseNotificationCategoryList.json",
+    "/disease/6.1, src/test/resources/expectedData/DiseaseNotificationCategoryList.json",
+    "/disease/7.3, src/test/resources/expectedData/DiseaseNotificationCategoryList7_3.json",
+    "/disease/7.3/questionnaire/toxd/formly, src/test/resources/expectedData/FormlyTOXDResult.json"
   })
   @DisplayName("test result for specific endpoints")
   void getResultsForSpecificEndpoints(String endpoint, String expectedDataPath) throws Exception {

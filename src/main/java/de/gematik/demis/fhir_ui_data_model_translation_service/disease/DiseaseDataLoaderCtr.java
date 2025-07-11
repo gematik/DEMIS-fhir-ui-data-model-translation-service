@@ -26,14 +26,14 @@ package de.gematik.demis.fhir_ui_data_model_translation_service.disease;
  * #L%
  */
 
-import com.fasterxml.jackson.core.JsonProcessingException;
 import de.gematik.demis.fhir_ui_data_model_translation_service.disease.formly.model.FormlyFieldConfigs;
 import de.gematik.demis.fhir_ui_data_model_translation_service.disease.formly.model.QuestionnaireTranslation;
 import de.gematik.demis.fhir_ui_data_model_translation_service.model.CodeDisplay;
+import de.gematik.demis.notification.builder.demis.fhir.notification.types.NotificationCategory;
 import java.util.List;
 import java.util.Map;
-import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -42,10 +42,17 @@ import org.springframework.web.server.ResponseStatusException;
 
 @RestController
 @Slf4j
-@RequiredArgsConstructor
 public class DiseaseDataLoaderCtr {
 
   private final DiseaseDataLoaderSrv diseaseDataLoaderSrv;
+  private final boolean isNotification73Active;
+
+  public DiseaseDataLoaderCtr(
+      DiseaseDataLoaderSrv diseaseDataLoaderSrv,
+      @Value("${feature.flag.notifications.7_3}") boolean isNotification73Active) {
+    this.diseaseDataLoaderSrv = diseaseDataLoaderSrv;
+    this.isNotification73Active = isNotification73Active;
+  }
 
   @GetMapping("/disease/questionnaire/{code}/items")
   public QuestionnaireTranslation getQuestionsForSpecificCode(@PathVariable String code) {
@@ -58,16 +65,40 @@ public class DiseaseDataLoaderCtr {
     return translation;
   }
 
-  @GetMapping("/disease")
+  @GetMapping({"/disease", "/disease/6.1"})
   public List<CodeDisplay> getAllAvailableCodes() {
-    log.info("Get call for all codes list");
     return diseaseDataLoaderSrv.getAllPossibleDiseaseCodes();
   }
 
-  @GetMapping("/disease/questionnaire/{code}/formly")
+  @GetMapping({"/disease/7.3"})
+  public List<CodeDisplay> getAllAvailableCodesNonNominal() {
+    if (isNotification73Active) {
+      return diseaseDataLoaderSrv.getPossibleDiseaseCodesNonNominal();
+    } else {
+      throw new UnsupportedOperationException("Feature flag for §7.3 is not active");
+    }
+  }
+
+  @GetMapping({
+    "/disease/questionnaire/{code}/formly",
+    "/disease/6.1/questionnaire/{code}/formly",
+  })
   public Map<String, FormlyFieldConfigs[]> getFormlyRepresentationOfQuestionnaire(
-      @PathVariable String code) throws JsonProcessingException {
-    log.info("Get call for specific questionnaire as fhir representation for {}", code);
-    return diseaseDataLoaderSrv.getData(code);
+      @PathVariable String code) {
+    if (isNotification73Active) {
+      return diseaseDataLoaderSrv.getData(code, NotificationCategory.P_6_1);
+    } else {
+      return diseaseDataLoaderSrv.getData(code);
+    }
+  }
+
+  @GetMapping("/disease/7.3/questionnaire/{code}/formly")
+  public Map<String, FormlyFieldConfigs[]> getFormlyRepresentationOfQuestionnaireNonNominal(
+      @PathVariable String code) {
+    if (isNotification73Active) {
+      return diseaseDataLoaderSrv.getData(code, NotificationCategory.P_7_3);
+    } else {
+      throw new UnsupportedOperationException("Feature flag for §7.3 is not active");
+    }
   }
 }

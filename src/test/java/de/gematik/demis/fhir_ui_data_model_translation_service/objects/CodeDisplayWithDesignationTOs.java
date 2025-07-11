@@ -92,6 +92,21 @@ public class CodeDisplayWithDesignationTOs {
         .code("invp")
         .display("Influenzavirus; Meldepflicht nur für den direkten Nachweis")
         .designations(Set.of(new Designation("de-DE", "Influenzavirus")))
+        .order(590)
+        .build();
+  }
+
+  /**
+   * this is used for regression tests with pre §7.3 processing where order was not set in the
+   * notification disease catergory code system.
+   *
+   * @return CodeDisplay for invp with order set to 100
+   */
+  public CodeDisplay invpRegression() {
+    return CodeDisplay.builder()
+        .code("invp")
+        .display("Influenzavirus; Meldepflicht nur für den direkten Nachweis")
+        .designations(Set.of(new Designation("de-DE", "Influenzavirus")))
         .order(100)
         .build();
   }
@@ -100,7 +115,49 @@ public class CodeDisplayWithDesignationTOs {
     return CodeDisplay.builder()
         .code("cvdd")
         .display("Coronavirus-Krankheit-2019 (COVID-19)")
+        .order(400)
+        .designations(Set.of(new Designation("de-DE", "Coronavirus-Krankheit-2019 (COVID-19)")))
+        .build();
+  }
+
+  /**
+   * this is used for regression tests with pre §7.3 processing where order was not set in the
+   * notification disease catergory code system.
+   *
+   * @return CodeDisplay for invp with order set to 100
+   */
+  public CodeDisplay cvddRegression() {
+    return CodeDisplay.builder()
+        .code("cvdd")
+        .display("Coronavirus-Krankheit-2019 (COVID-19)")
         .order(37)
+        .build();
+  }
+
+  public CodeDisplay vchd() {
+    return CodeDisplay.builder()
+        .code("vchd")
+        .display("Cholera")
+        .designations(Set.of(new Designation("de-DE", "Cholera")))
+        .order(420)
+        .build();
+  }
+
+  public CodeDisplay chtd() {
+    return CodeDisplay.builder()
+        .code("chtd")
+        .display("Chlamydia trachomatis, sofern es sich um einen der Serotypen L1 bis L3 handelt")
+        .order(60)
+        .designations(Set.of(new Designation("de-DE", "Chlamydia trachomatis (L1 bis L3)")))
+        .build();
+  }
+
+  public CodeDisplay hivd() {
+    return CodeDisplay.builder()
+        .code("hivd")
+        .display("Humanes Immundefizienz-Virus (HIV)")
+        .order(40)
+        .designations(Set.of(new Designation("de-DE", "HIV")))
         .build();
   }
 }

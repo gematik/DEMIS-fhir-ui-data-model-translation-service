@@ -29,6 +29,7 @@ package de.gematik.demis.fhir_ui_data_model_translation_service.model;
 import java.util.Set;
 import java.util.stream.Collectors;
 import org.hl7.fhir.r4.model.CodeSystem;
+import org.hl7.fhir.r4.model.ValueSet;
 
 /**
  * The designation contains the values for the German translation of code display pairs from
@@ -42,6 +43,13 @@ public record Designation(String language, String value) {
   public static Set<Designation> getDesignations(
       CodeSystem.ConceptDefinitionComponent stringConceptDefinitionComponentMap) {
     return stringConceptDefinitionComponentMap.getDesignation().stream()
+        .map(designation -> new Designation(designation.getLanguage(), designation.getValue()))
+        .collect(Collectors.toSet());
+  }
+
+  public static Set<Designation> getDesignations(
+      ValueSet.ConceptReferenceComponent conceptSetComponent) {
+    return conceptSetComponent.getDesignation().stream()
         .map(designation -> new Designation(designation.getLanguage(), designation.getValue()))
         .collect(Collectors.toSet());
   }

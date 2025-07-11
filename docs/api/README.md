@@ -13,15 +13,19 @@ All URIs are relative to *http://localhost*
 | *ConceptMapsCtrApi* | [**getAllConceptMaps**](Apis/ConceptMapsCtrApi.md#getallconceptmaps) | **GET** /conceptmap |  |
 *ConceptMapsCtrApi* | [**getCode**](Apis/ConceptMapsCtrApi.md#getcode) | **GET** /conceptmap/{name}/{code} |  |
 *ConceptMapsCtrApi* | [**getConceptMap**](Apis/ConceptMapsCtrApi.md#getconceptmap) | **GET** /conceptmap/{name} |  |
-| *DiseaseDataLoaderCtrApi* | [**getAllAvailableCodes**](Apis/DiseaseDataLoaderCtrApi.md#getallavailablecodes) | **GET** /disease |  |
-*DiseaseDataLoaderCtrApi* | [**getFormlyRepresentationOfQuestionnaire**](Apis/DiseaseDataLoaderCtrApi.md#getformlyrepresentationofquestionnaire) | **GET** /disease/questionnaire/{code}/formly |  |
+| *DiseaseDataLoaderCtrApi* | [**getAllAvailableCodes**](Apis/DiseaseDataLoaderCtrApi.md#getallavailablecodes) | **GET** /disease/6.1 |  |
+*DiseaseDataLoaderCtrApi* | [**getAllAvailableCodes1**](Apis/DiseaseDataLoaderCtrApi.md#getallavailablecodes1) | **GET** /disease |  |
+*DiseaseDataLoaderCtrApi* | [**getAllAvailableCodesNonNominal**](Apis/DiseaseDataLoaderCtrApi.md#getallavailablecodesnonnominal) | **GET** /disease/7.3 |  |
+*DiseaseDataLoaderCtrApi* | [**getFormlyRepresentationOfQuestionnaire**](Apis/DiseaseDataLoaderCtrApi.md#getformlyrepresentationofquestionnaire) | **GET** /disease/6.1/questionnaire/{code}/formly |  |
+*DiseaseDataLoaderCtrApi* | [**getFormlyRepresentationOfQuestionnaire1**](Apis/DiseaseDataLoaderCtrApi.md#getformlyrepresentationofquestionnaire1) | **GET** /disease/questionnaire/{code}/formly |  |
+*DiseaseDataLoaderCtrApi* | [**getFormlyRepresentationOfQuestionnaireNonNominal**](Apis/DiseaseDataLoaderCtrApi.md#getformlyrepresentationofquestionnairenonnominal) | **GET** /disease/7.3/questionnaire/{code}/formly |  |
 *DiseaseDataLoaderCtrApi* | [**getQuestionsForSpecificCode**](Apis/DiseaseDataLoaderCtrApi.md#getquestionsforspecificcode) | **GET** /disease/questionnaire/{code}/items |  |
 | *LaboratoryDataLoaderCtrApi* | [**get73NotificationCategories**](Apis/LaboratoryDataLoaderCtrApi.md#get73notificationcategories) | **GET** /laboratory/7.3 |  |
 *LaboratoryDataLoaderCtrApi* | [**getAvailableFederalStates**](Apis/LaboratoryDataLoaderCtrApi.md#getavailablefederalstates) | **GET** /laboratory/federalStates |  |
 *LaboratoryDataLoaderCtrApi* | [**getAvailableFederalStates1**](Apis/LaboratoryDataLoaderCtrApi.md#getavailablefederalstates1) | **GET** /laboratory/7.1/federalStates |  |
-*LaboratoryDataLoaderCtrApi* | [**getFederalStateLaboratoryDataForSpecificCode**](Apis/LaboratoryDataLoaderCtrApi.md#getfederalstatelaboratorydataforspecificcode) | **GET** /laboratory/7.3/pathogenData/{code} |  |
-*LaboratoryDataLoaderCtrApi* | [**getFederalStateLaboratoryDataForSpecificCode1**](Apis/LaboratoryDataLoaderCtrApi.md#getfederalstatelaboratorydataforspecificcode1) | **GET** /laboratory/7.1/federalState/pathogenData/{code} |  |
-*LaboratoryDataLoaderCtrApi* | [**getFederalStateLaboratoryDataForSpecificCode2**](Apis/LaboratoryDataLoaderCtrApi.md#getfederalstatelaboratorydataforspecificcode2) | **GET** /laboratory/federalState/pathogenData/{code} |  |
+*LaboratoryDataLoaderCtrApi* | [**getLaboratoryDataForSpecificCode**](Apis/LaboratoryDataLoaderCtrApi.md#getlaboratorydataforspecificcode) | **GET** /laboratory/7.3/pathogenData/{code} |  |
+*LaboratoryDataLoaderCtrApi* | [**getLaboratoryDataForSpecificCode1**](Apis/LaboratoryDataLoaderCtrApi.md#getlaboratorydataforspecificcode1) | **GET** /laboratory/7.1/federalState/pathogenData/{code} |  |
+*LaboratoryDataLoaderCtrApi* | [**getLaboratoryDataForSpecificCode2**](Apis/LaboratoryDataLoaderCtrApi.md#getlaboratorydataforspecificcode2) | **GET** /laboratory/federalState/pathogenData/{code} |  |
 *LaboratoryDataLoaderCtrApi* | [**getLaboratoryDataForSpecificCodeAndFederalState**](Apis/LaboratoryDataLoaderCtrApi.md#getlaboratorydataforspecificcodeandfederalstate) | **GET** /laboratory/federalState/{federalState} |  |
 *LaboratoryDataLoaderCtrApi* | [**getLaboratoryDataForSpecificCodeAndFederalState1**](Apis/LaboratoryDataLoaderCtrApi.md#getlaboratorydataforspecificcodeandfederalstate1) | **GET** /laboratory/7.1/federalState/{federalState} |  |
 | *UtilsCtrApi* | [**getDoubleCharacterCountryCode**](Apis/UtilsCtrApi.md#getdoublecharactercountrycode) | **GET** /utils/countryCodes |  |
@@ -41,6 +45,7 @@ All URIs are relative to *http://localhost*
  - [ImportSpec](./Models/ImportSpec.md)
  - [LabNotificationData](./Models/LabNotificationData.md)
  - [Props](./Models/Props.md)
+ - [Quantity](./Models/Quantity.md)
  - [QuestionnaireTranslation](./Models/QuestionnaireTranslation.md)
  - [Validator](./Models/Validator.md)
 

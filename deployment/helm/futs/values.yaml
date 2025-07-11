@@ -38,8 +38,10 @@ customEnvVars:
   DATA_PATH_PROFILE_ROOT: "/profiles/Fhir"
   DATA_PATH_HL7_DATA_ROOT: "/profiles/HL7/terminology/r4"
   DATA_PATH_GAPP_DATA: "/profiles/GAPP"
+  DATA_PATH_GAPD_DATA: "/profiles/GAPD"
   FEATURE_FLAG_HOSP_REASON_MOVE: "false"
   FEATURE_FLAG_HOSP_COPY_CHECKBOXES: "false"
+  FEATURE_FLAG_NOTIFICATIONS_7_3: "false"
 
 # Define custom Container Entrypoint and Arguments (e.g. JVM Tuning)
 # If not given, the Entrypoint defined in Dockerfile will be used
@@ -113,11 +115,10 @@ service:
 # Resources
 resources:
   limits:
-    cpu: "1000m"
-    memory: "1Gi"
+    memory: "500Mi"
   requests:
-    cpu: "200m"
-    memory: "1Gi"
+    cpu: "50m"
+    memory: "500Mi"
 
 autoscaling:
   enabled: false

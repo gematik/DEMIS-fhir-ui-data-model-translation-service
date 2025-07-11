@@ -1,0 +1,20 @@
+{
+  "resourceType": "ValueSet",
+  "id": "example-temperature-unit",
+  "url": "https://demis.rki.de/fhir/ValueSet/example-temperature-unit",
+  "version": "1.0.0",
+  "name": "ExampleTemperatureUnit",
+  "title": "Beispiel-Einheiten Temperatur",
+  "status": "active",
+  "compose": {
+    "include": [
+      {
+        "system": "http://unitsofmeasure.org",
+        "concept": [
+          { "code": "Cel", "display": "°C" },
+          { "code": "K", "display": "Kelvin" }
+        ]
+      }
+    ]
+  }
+}

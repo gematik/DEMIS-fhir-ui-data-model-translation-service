@@ -47,4 +47,12 @@ public class Props {
   private Questionnaire.EnableWhenBehavior enableBehavior;
   private ImportSpec importSpec;
   private Boolean disabled;
+  private Quantity quantity;
+
+  @Data
+  @Builder
+  public static class Quantity {
+    private String system;
+    private String unit;
+  }
 }

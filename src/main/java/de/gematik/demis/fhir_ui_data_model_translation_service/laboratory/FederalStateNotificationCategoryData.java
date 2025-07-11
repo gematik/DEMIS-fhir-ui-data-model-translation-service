@@ -27,7 +27,6 @@ package de.gematik.demis.fhir_ui_data_model_translation_service.laboratory;
  */
 
 import static de.gematik.demis.fhir_ui_data_model_translation_service.model.Designation.getDesignations;
-import static de.gematik.demis.fhir_ui_data_model_translation_service.utils.Utils.NOTIFICATION_CATEGORY_PROPERTY;
 import static de.gematik.demis.fhir_ui_data_model_translation_service.utils.Utils.createTestDataForErrorCase;
 import static de.gematik.demis.fhir_ui_data_model_translation_service.utils.Utils.createTestDataForSorting;
 import static de.gematik.demis.fhir_ui_data_model_translation_service.utils.Utils.extractOrder;
@@ -45,11 +44,11 @@ import java.util.Comparator;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.Optional;
-import java.util.stream.Collectors;
 import lombok.Getter;
 import lombok.extern.slf4j.Slf4j;
 import org.hl7.fhir.r4.model.CodeSystem;
+import org.hl7.fhir.r4.model.Coding;
+import org.hl7.fhir.r4.model.ValueSet;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
@@ -57,6 +56,7 @@ import org.springframework.stereotype.Component;
 @Slf4j
 public class FederalStateNotificationCategoryData {
 
+  public static final String FEDERAL_STATE = "federal-state";
   private final SnapshotFilesService snapshotFilesService;
   private final FhirContext fhirContext;
   private final boolean filterCodesActive;
@@ -64,6 +64,7 @@ public class FederalStateNotificationCategoryData {
   private final boolean addTestData;
   private final boolean addTestDataSortingCase;
   private List<String> denyListNotificationCategory;
+  private List<String> notificationCategoryForNonNominal;
   @Getter private Map<String, List<CodeDisplay>> federalStateNotificationCategories;
   @Getter private List<CodeDisplay> federalStates;
 
@@ -82,22 +83,6 @@ public class FederalStateNotificationCategoryData {
     this.addTestDataSortingCase = addTestDataSortingCase;
   }
 
-  private boolean isIfsg71Paragraph(CodeSystem.ConceptDefinitionComponent notificationCategory) {
-    final Optional<CodeSystem.ConceptPropertyComponent> ifsgParagraph =
-        notificationCategory.getProperty().stream()
-            .filter(p -> p.getCode().equals(NOTIFICATION_CATEGORY_PROPERTY))
-            .findFirst();
-    if (ifsgParagraph.isPresent()) {
-      final Optional<PathogenNotificationCategory> target =
-          ifsgParagraph.map(
-              ifsgParagraphConcept ->
-                  PathogenNotificationCategory.from(ifsgParagraphConcept.getValue().toString()));
-      return target.isPresent() && target.get().equals(PathogenNotificationCategory.P_7_1);
-    } else {
-      return true;
-    }
-  }
-
   @PostConstruct
   protected void createData() {
     federalStateNotificationCategories = new LinkedHashMap<>();
@@ -105,105 +90,143 @@ public class FederalStateNotificationCategoryData {
     denyListNotificationCategory = new ArrayList<>(Arrays.asList(denyList.split(",")));
 
     File federalStateNotificationCategoryFile = snapshotFilesService.getFederalStateFile();
-    File noticationCategoryFile = snapshotFilesService.getProfileNotificationCategoryFile();
+    File notificationCategoryCodeSystemFile =
+        snapshotFilesService.getProfileNotificationCategoryCodeSystemFile();
+    File notificationCategoryValueSetFile =
+        snapshotFilesService.getProfileNotificationCategoryValueSetFile();
 
+    CodeSystem federalStateCodeSystem;
+    CodeSystem notificationCategoryCodeSystem;
+    ValueSet notificationCategoryValueSet;
     try {
-      String federalStateFile = Utils.getFileString(federalStateNotificationCategoryFile);
-      String notificationCategoryString = Utils.getFileString(noticationCategoryFile);
-
-      CodeSystem federalStateCodeSystems =
-          fhirContext.newJsonParser().parseResource(CodeSystem.class, federalStateFile);
-      CodeSystem notificationCategory =
-          fhirContext.newJsonParser().parseResource(CodeSystem.class, notificationCategoryString);
-
-      federalStateCodeSystems
-          .getConcept()
-          .forEach(concept -> addCategoryList(concept, notificationCategory));
+      federalStateCodeSystem =
+          fhirContext
+              .newJsonParser()
+              .parseResource(
+                  CodeSystem.class, Utils.getFileString(federalStateNotificationCategoryFile));
 
     } catch (IOException e) {
-      log.error("Error in pathogen data creation while reading files: {}", e.getMessage());
+      log.error(
+          "Error parsing federal state file: {}",
+          federalStateNotificationCategoryFile.getAbsolutePath(),
+          e);
+      return;
     }
-  }
 
-  private void addCategoryList(
-      CodeSystem.ConceptDefinitionComponent concept, CodeSystem notificationCategoryList) {
+    try {
+      notificationCategoryCodeSystem =
+          fhirContext
+              .newJsonParser()
+              .parseResource(
+                  CodeSystem.class, Utils.getFileString(notificationCategoryCodeSystemFile));
+    } catch (IOException e) {
+      log.error(
+          "Error parsing notification category file: {}",
+          notificationCategoryCodeSystemFile.getAbsolutePath(),
+          e);
+      return;
+    }
 
-    // get federal state data and add to list
-    String federalState = concept.getCode();
-    CodeDisplay federalStateCodeDisplay =
-        CodeDisplay.builder().code(federalState).display(concept.getDisplay()).build();
-    federalStates.add(federalStateCodeDisplay);
+    try {
+      notificationCategoryValueSet =
+          fhirContext
+              .newJsonParser()
+              .parseResource(ValueSet.class, Utils.getFileString(notificationCategoryValueSetFile));
+    } catch (IOException e) {
+      log.error(
+          "Error parsing notification category 7.1 file: {}",
+          notificationCategoryValueSetFile.getAbsolutePath(),
+          e);
+      return;
+    }
 
-    // filter for relevant notification categories for the federal state
-    List<CodeSystem.ConceptDefinitionComponent> relevantNotifications =
-        notificationCategoryList.getConcept().stream()
-            .filter(
-                notificationCategory ->
-                    !filterCodesActive
-                        || !denyListNotificationCategory.contains(notificationCategory.getCode()))
-            .filter(
-                notificationCategory ->
-                    isRelevantForFederalState(notificationCategory, federalState))
-            .filter(this::isIfsg71Paragraph)
+    federalStateCodeSystem.getConcept().forEach(this::addFederalStateDataToMapAndList);
+
+    notificationCategoryForNonNominal =
+        notificationCategoryValueSet.getCompose().getInclude().stream()
+            .flatMap(include -> include.getConcept().stream())
+            .map(concept -> concept.getCode())
             .toList();
 
-    List<CodeDisplay> relevantCodeDisplays = new ArrayList<>();
-
-    // create code display for each relevant notification category
-    relevantNotifications.forEach(
-        relevantNotification ->
-            relevantCodeDisplays.add(
-                CodeDisplay.builder()
-                    .code(relevantNotification.getCode())
-                    .display(relevantNotification.getDisplay())
-                    .designations(getDesignations(relevantNotification))
-                    .order(extractOrder(relevantNotification))
-                    .build()));
+    notificationCategoryCodeSystem.getConcept().forEach(this::processNotificationCategoryConcept);
 
     if (addTestData) {
       log.info("adding test data for error case");
       CodeDisplay testDataCodeDisplay = createTestDataForErrorCase();
-      relevantCodeDisplays.add(testDataCodeDisplay);
+      federalStateNotificationCategories.forEach((key, value) -> value.add(testDataCodeDisplay));
     }
 
     if (addTestDataSortingCase) {
       log.info("adding test data for sorting case");
       CodeDisplay testDataGAPP = createTestDataForSorting();
-      relevantCodeDisplays.add(testDataGAPP);
+      federalStateNotificationCategories.forEach((key, value) -> value.add(testDataGAPP));
     }
 
-    // sort relevant notification categories for concept order
-    List<CodeDisplay> sortedList =
-        relevantCodeDisplays.stream()
-            .sorted(
-                Comparator.comparing(CodeDisplay::getOrder)
-                    .reversed()) // reversed so descending order is active
-            .toList();
-    federalStateNotificationCategories.put(federalState, sortedList);
-    log.info(
-        "added federal state {}|{} with size {}: {}",
-        federalState,
-        federalStateCodeDisplay.getDisplay(),
-        sortedList.size(),
-        sortedList.stream()
-            .map(CodeDisplay::getCode)
-            .sorted()
-            .collect(Collectors.joining(", ", "[", "]")));
+    federalStateNotificationCategories.replaceAll(
+        (key, value) ->
+            value.stream()
+                .sorted(
+                    Comparator.comparing(CodeDisplay::getOrder)
+                        .reversed()) // reversed so descending order is active;
+                .toList());
   }
 
-  private boolean isRelevantForFederalState(
-      CodeSystem.ConceptDefinitionComponent notificationCategory, String federalState) {
-    List<CodeSystem.ConceptPropertyComponent> property = notificationCategory.getProperty();
-    List<CodeSystem.ConceptPropertyComponent> federalStateList =
-        property.stream().filter(p -> p.getCode().equals("federal-state")).toList();
-    if (federalStateList.isEmpty()) {
-      return true;
+  private void processNotificationCategoryConcept(
+      CodeSystem.ConceptDefinitionComponent conceptDefinitionComponent) {
+    String code = conceptDefinitionComponent.getCode();
+
+    // check if code is part of the 7.1 notification categories and not in the deny list
+    if (!notificationCategoryForNonNominal.contains(code)
+        || (filterCodesActive && denyListNotificationCategory.contains(code))) {
+      return;
     }
-    log.info(
-        "checking federal state {} with notification category {}",
-        federalState,
-        notificationCategory.getCode());
-    return federalStateList.stream()
-        .anyMatch(p -> p.getValueCoding().getCode().equals(federalState));
+
+    // check for federal state specific notification category
+    List<CodeSystem.ConceptPropertyComponent> relevantFederalStatesForNotificationCategory =
+        conceptDefinitionComponent.getProperty().stream()
+            .filter(property -> property.getCode().equals(FEDERAL_STATE))
+            .toList();
+
+    if (relevantFederalStatesForNotificationCategory.isEmpty()) {
+      // is not federal state specific, add to all federal states
+      federalStates.forEach(
+          federalStateCodeDisplay ->
+              federalStateNotificationCategories
+                  .get(federalStateCodeDisplay.getCode())
+                  .add(
+                      CodeDisplay.builder()
+                          .code(code)
+                          .display(conceptDefinitionComponent.getDisplay())
+                          .designations(getDesignations(conceptDefinitionComponent))
+                          .order(extractOrder(conceptDefinitionComponent))
+                          .build()));
+    } else {
+      // is federal state specific, add to the specific federal state
+      relevantFederalStatesForNotificationCategory.forEach(
+          property -> {
+            String federalStateCode = ((Coding) property.getValue()).getCode();
+            if (federalStateNotificationCategories.containsKey(federalStateCode)) {
+              federalStateNotificationCategories
+                  .get(federalStateCode)
+                  .add(
+                      CodeDisplay.builder()
+                          .code(code)
+                          .display(conceptDefinitionComponent.getDisplay())
+                          .designations(getDesignations(conceptDefinitionComponent))
+                          .order(extractOrder(conceptDefinitionComponent))
+                          .build());
+            } else {
+              log.error(
+                  "Fatal: Federal state code {} not found in federal state notification categories",
+                  federalStateCode);
+            }
+          });
+    }
+  }
+
+  private void addFederalStateDataToMapAndList(CodeSystem.ConceptDefinitionComponent entry) {
+    federalStateNotificationCategories.put(entry.getCode(), new ArrayList<>());
+    federalStates.add(
+        CodeDisplay.builder().code(entry.getCode()).display(entry.getDisplay()).build());
   }
 }

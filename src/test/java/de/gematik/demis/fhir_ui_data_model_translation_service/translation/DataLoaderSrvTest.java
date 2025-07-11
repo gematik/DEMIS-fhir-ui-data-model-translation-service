@@ -26,8 +26,6 @@ package de.gematik.demis.fhir_ui_data_model_translation_service.translation;
  * #L%
  */
 
-import static java.util.Arrays.asList;
-import static java.util.Collections.emptyList;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 import static org.mockito.Mockito.when;
@@ -40,7 +38,6 @@ import de.gematik.demis.fhir_ui_data_model_translation_service.objects.code.disp
 import de.gematik.demis.fhir_ui_data_model_translation_service.utils.SnapshotFilesService;
 import java.io.File;
 import java.io.IOException;
-import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -55,70 +52,71 @@ import org.mockito.junit.jupiter.MockitoExtension;
 @ExtendWith(MockitoExtension.class)
 class DataLoaderSrvTest {
 
-  private static File addressUseFile;
-  private static File LOINCFile;
-  private static File emptyLOINCFile;
-  private static File notificationCategoryFile;
-  private static File geographicRegion;
-  private static File laboratoryTestINVPFile;
-  private static File methodInvpFile;
-  private static File materialInvpFile;
-  private static File methodFalseGroup;
-  private static File addressUseFalseGroup;
-  private static File fileForTestCoverage;
-  private static File supplementFile;
-  private static File codeSystemWithSupplementedData;
-  private static File snomedCodes;
+  private static File addressUseFileCS;
+  private static File LOINCFileCS;
+  private static File emptyLOINCFileCS;
+  private static File notificationCategoryFileCS;
+  private static File geographicRegionVS;
+  private static File laboratoryTestINVPFileVS;
+  private static File methodInvpFileVS;
+  private static File materialInvpFileVS;
+  private static File methodFalseGroupCS;
+  private static File addressUseFalseGroupVS;
+  private static File fileForTestCoverageVS;
+  private static File supplementFileCS;
+  private static File codeSystemWithSupplementedDataCS;
+  private static File snomedCodesCS;
   @Mock private SnapshotFilesService snapshotFilesServiceMock;
   @Mock private Hl7CodeSystemSrv hl7CodeSystemSrvMock;
 
   @BeforeAll
   static void setup() {
-    addressUseFile = new File("src/test/resources/profiles/CodeSystem/CodeSystem-addressUse.json");
-    LOINCFile = new File("src/test/resources/profiles/CodeSystem/CodeSystem-loinc-2.74.json");
-    emptyLOINCFile = new File("src/test/resources/profiles/CodeSystem/emptyLOINC.json");
-    notificationCategoryFile =
+    addressUseFileCS =
+        new File("src/test/resources/profiles/CodeSystem/CodeSystem-addressUse.json");
+    LOINCFileCS = new File("src/test/resources/profiles/CodeSystem/CodeSystem-loinc-2.74.json");
+    emptyLOINCFileCS =
+        new File("src/test/resources/profiles/CodeSystem/CodeSystem-emptyLOINC.json");
+    notificationCategoryFileCS =
         new File("src/test/resources/profiles/CodeSystem/CodeSystem-notificationCategory.json");
-    methodFalseGroup = new File("src/test/resources/profiles/CodeSystem/method_FalseGroup.json");
-    geographicRegion = new File("src/test/resources/profiles/ValueSet/geographicRegion.json");
-    laboratoryTestINVPFile =
+    methodFalseGroupCS =
+        new File("src/test/resources/profiles/CodeSystem/CodeSystem-method_FalseGroup.json");
+    geographicRegionVS =
+        new File("src/test/resources/profiles/ValueSet/ValueSet-geographicRegion.json");
+    laboratoryTestINVPFileVS =
         new File("src/test/resources/profiles/ValueSet/ValueSet-laboratoryTestINVP.json");
-    materialInvpFile = new File("src/test/resources/profiles/ValueSet/ValueSet-materialINVP.json");
-    methodInvpFile = new File("src/test/resources/profiles/ValueSet/ValueSet-methodINVP.json");
-    addressUseFalseGroup =
-        new File("src/test/resources/profiles/ValueSet/addressUse_FalseGroup.json");
-    codeSystemWithSupplementedData =
+    materialInvpFileVS =
+        new File("src/test/resources/profiles/ValueSet/ValueSet-materialINVP.json");
+    methodInvpFileVS = new File("src/test/resources/profiles/ValueSet/ValueSet-methodINVP.json");
+    addressUseFalseGroupVS =
+        new File("src/test/resources/profiles/ValueSet/ValueSet-addressUse_FalseGroup.json");
+    codeSystemWithSupplementedDataCS =
         new File("src/test/resources/profiles/CodeSystem/CodeSystem-v3-NullFlavor.json");
-    supplementFile = new File("src/test/resources/profiles/CodeSystem/translationNullFlavor.json");
+    supplementFileCS =
+        new File("src/test/resources/profiles/CodeSystem/CodeSystem-translationNullFlavor.json");
 
-    fileForTestCoverage =
-        new File("src/test/resources/profiles/ValueSet/addressUse_FalseGroup.json");
+    fileForTestCoverageVS =
+        new File("src/test/resources/profiles/ValueSet/ValueSet-addressUse_FalseGroup.json");
 
-    snomedCodes =
+    snomedCodesCS =
         new File("src/test/resources/profiles/CodeSystem/CodeSystem-snomedct-20230331.json");
   }
 
   @Test
   void testConstructorAndInit_shouldAddCodeSystemAndValueSetData() throws IOException {
 
-    when(snapshotFilesServiceMock.getRawFiles())
+    when(snapshotFilesServiceMock.getCodeSystemFiles())
+        .thenReturn(List.of(addressUseFileCS, LOINCFileCS, notificationCategoryFileCS));
+    when(snapshotFilesServiceMock.getValueSetFiles())
         .thenReturn(
-            asList(
-                addressUseFile,
-                LOINCFile,
-                notificationCategoryFile,
-                geographicRegion,
-                laboratoryTestINVPFile,
-                methodInvpFile,
-                materialInvpFile,
-                fileForTestCoverage));
+            List.of(
+                geographicRegionVS,
+                laboratoryTestINVPFileVS,
+                methodInvpFileVS,
+                materialInvpFileVS,
+                fileForTestCoverageVS));
 
     DataLoaderSrv dataLoaderSrv =
-        new DataLoaderSrv(
-            "src/test/resources/profiles".replace("/", File.separator),
-            snapshotFilesServiceMock,
-            FhirContext.forR4(),
-            hl7CodeSystemSrvMock);
+        new DataLoaderSrv(snapshotFilesServiceMock, FhirContext.forR4(), hl7CodeSystemSrvMock);
     dataLoaderSrv.initialize();
 
     assertThat(dataLoaderSrv.getCodeSystems())
@@ -153,16 +151,13 @@ class DataLoaderSrvTest {
   @Test
   void testConstructorAndInit_NoExceptionForWronglyPutFiles() throws IOException {
 
-    when(snapshotFilesServiceMock.getRawFiles())
-        .thenReturn(
-            asList(addressUseFile, methodFalseGroup, addressUseFalseGroup, materialInvpFile));
+    when(snapshotFilesServiceMock.getCodeSystemFiles())
+        .thenReturn(List.of(addressUseFileCS, methodFalseGroupCS));
+    when(snapshotFilesServiceMock.getValueSetFiles())
+        .thenReturn(List.of(addressUseFalseGroupVS, materialInvpFileVS));
 
     DataLoaderSrv dataLoaderSrv =
-        new DataLoaderSrv(
-            "src/test/resources/profiles".replace("/", File.separator),
-            snapshotFilesServiceMock,
-            FhirContext.forR4(),
-            hl7CodeSystemSrvMock);
+        new DataLoaderSrv(snapshotFilesServiceMock, FhirContext.forR4(), hl7CodeSystemSrvMock);
     dataLoaderSrv.initialize();
 
     assertThat(dataLoaderSrv.getCodeSystems()).hasSize(2);
@@ -173,23 +168,18 @@ class DataLoaderSrvTest {
   void testConstructorAndInit_shouldAddCodeSystemAndValueSetDataExtraPathSeperatorAtSourcePath()
       throws IOException {
 
-    when(snapshotFilesServiceMock.getRawFiles())
+    when(snapshotFilesServiceMock.getCodeSystemFiles())
+        .thenReturn(List.of(addressUseFileCS, LOINCFileCS, notificationCategoryFileCS));
+    when(snapshotFilesServiceMock.getValueSetFiles())
         .thenReturn(
-            asList(
-                addressUseFile,
-                LOINCFile,
-                notificationCategoryFile,
-                geographicRegion,
-                laboratoryTestINVPFile,
-                methodInvpFile,
-                materialInvpFile));
+            List.of(
+                geographicRegionVS,
+                laboratoryTestINVPFileVS,
+                methodInvpFileVS,
+                materialInvpFileVS));
 
     DataLoaderSrv dataLoaderSrv =
-        new DataLoaderSrv(
-            "src/test/resources/profiles/".replace("/", File.separator),
-            snapshotFilesServiceMock,
-            FhirContext.forR4(),
-            hl7CodeSystemSrvMock);
+        new DataLoaderSrv(snapshotFilesServiceMock, FhirContext.forR4(), hl7CodeSystemSrvMock);
     dataLoaderSrv.initialize();
 
     assertThat(dataLoaderSrv.getCodeSystems())
@@ -218,35 +208,27 @@ class DataLoaderSrvTest {
   @Test
   void testGroupGetters_shouldReturnDataForOneCodeSystem() throws IOException {
 
-    when(snapshotFilesServiceMock.getRawFiles())
-        .thenReturn(Collections.singletonList(addressUseFile));
+    when(snapshotFilesServiceMock.getCodeSystemFiles()).thenReturn(List.of(addressUseFileCS));
+    when(snapshotFilesServiceMock.getValueSetFiles()).thenReturn(List.of());
 
     DataLoaderSrv dataLoaderSrv =
-        new DataLoaderSrv(
-            "src/test/resources/profiles".replace("/", File.separator),
-            snapshotFilesServiceMock,
-            FhirContext.forR4(),
-            hl7CodeSystemSrvMock);
+        new DataLoaderSrv(snapshotFilesServiceMock, FhirContext.forR4(), hl7CodeSystemSrvMock);
     dataLoaderSrv.initialize();
 
     assertThat(dataLoaderSrv.getCodeSystemData("https://demis.rki.de/fhir/CodeSystem/addressUse"))
         .hasSize(3)
         .containsExactlyInAnyOrderElementsOf(
-            asList(AddressUseTOs.current(), AddressUseTOs.ordinary(), AddressUseTOs.primary()));
+            List.of(AddressUseTOs.current(), AddressUseTOs.ordinary(), AddressUseTOs.primary()));
   }
 
   @Test
   void shouldThrowExceptionIfCodeIsNotContainedByValueSet() throws IOException {
 
-    when(snapshotFilesServiceMock.getRawFiles())
-        .thenReturn(Collections.singletonList(methodInvpFile));
+    when(snapshotFilesServiceMock.getCodeSystemFiles()).thenReturn(List.of());
+    when(snapshotFilesServiceMock.getValueSetFiles()).thenReturn(List.of(methodInvpFileVS));
 
     DataLoaderSrv dataLoaderSrv =
-        new DataLoaderSrv(
-            "src/test/resources/profiles".replace("/", File.separator),
-            snapshotFilesServiceMock,
-            FhirContext.forR4(),
-            hl7CodeSystemSrvMock);
+        new DataLoaderSrv(snapshotFilesServiceMock, FhirContext.forR4(), hl7CodeSystemSrvMock);
     dataLoaderSrv.initialize();
 
     assertThatThrownBy(
@@ -260,14 +242,11 @@ class DataLoaderSrvTest {
   @Test
   void testExceptionForMissingData() throws IOException {
 
-    when(snapshotFilesServiceMock.getRawFiles()).thenReturn(emptyList());
+    when(snapshotFilesServiceMock.getCodeSystemFiles()).thenReturn(List.of());
+    when(snapshotFilesServiceMock.getValueSetFiles()).thenReturn(List.of());
 
     DataLoaderSrv dataLoaderSrv =
-        new DataLoaderSrv(
-            "src/test/resources/profiles".replace("/", File.separator),
-            snapshotFilesServiceMock,
-            FhirContext.forR4(),
-            hl7CodeSystemSrvMock);
+        new DataLoaderSrv(snapshotFilesServiceMock, FhirContext.forR4(), hl7CodeSystemSrvMock);
     dataLoaderSrv.initialize();
 
     assertThatThrownBy(() -> dataLoaderSrv.getCodeSystemData("foobar"))
@@ -285,15 +264,11 @@ class DataLoaderSrvTest {
   @Test
   void testExceptionForNoData() throws IOException {
 
-    when(snapshotFilesServiceMock.getRawFiles())
-        .thenReturn(asList(emptyLOINCFile, geographicRegion));
+    when(snapshotFilesServiceMock.getCodeSystemFiles()).thenReturn(List.of(emptyLOINCFileCS));
+    when(snapshotFilesServiceMock.getValueSetFiles()).thenReturn(List.of(geographicRegionVS));
 
     DataLoaderSrv dataLoaderSrv =
-        new DataLoaderSrv(
-            "src/test/resources/profiles".replace("/", File.separator),
-            snapshotFilesServiceMock,
-            FhirContext.forR4(),
-            hl7CodeSystemSrvMock);
+        new DataLoaderSrv(snapshotFilesServiceMock, FhirContext.forR4(), hl7CodeSystemSrvMock);
     dataLoaderSrv.initialize();
 
     assertThatThrownBy(() -> dataLoaderSrv.getCodeSystemData("foobar"))
@@ -311,15 +286,11 @@ class DataLoaderSrvTest {
   @Test
   void testGroupGetters_shouldReturnDataForOneValueSet() throws IOException {
 
-    when(snapshotFilesServiceMock.getRawFiles())
-        .thenReturn(Collections.singletonList(materialInvpFile));
+    when(snapshotFilesServiceMock.getCodeSystemFiles()).thenReturn(List.of());
+    when(snapshotFilesServiceMock.getValueSetFiles()).thenReturn(List.of(materialInvpFileVS));
 
     DataLoaderSrv dataLoaderSrv =
-        new DataLoaderSrv(
-            "src/test/resources/profiles".replace("/", File.separator),
-            snapshotFilesServiceMock,
-            FhirContext.forR4(),
-            hl7CodeSystemSrvMock);
+        new DataLoaderSrv(snapshotFilesServiceMock, FhirContext.forR4(), hl7CodeSystemSrvMock);
     dataLoaderSrv.initialize();
 
     assertThat(dataLoaderSrv.getValueSetData("https://demis.rki.de/fhir/ValueSet/materialINVP"))
@@ -345,15 +316,12 @@ class DataLoaderSrvTest {
   @Test
   void testConstructorAndInit_shouldAddCodeSystemData() throws IOException {
 
-    when(snapshotFilesServiceMock.getRawFiles())
-        .thenReturn(asList(addressUseFile, LOINCFile, notificationCategoryFile));
+    when(snapshotFilesServiceMock.getCodeSystemFiles())
+        .thenReturn(List.of(addressUseFileCS, LOINCFileCS, notificationCategoryFileCS));
+    when(snapshotFilesServiceMock.getValueSetFiles()).thenReturn(List.of());
 
     DataLoaderSrv dataLoaderSrv =
-        new DataLoaderSrv(
-            "src/test/resources/profiles".replace("/", File.separator),
-            snapshotFilesServiceMock,
-            FhirContext.forR4(),
-            hl7CodeSystemSrvMock);
+        new DataLoaderSrv(snapshotFilesServiceMock, FhirContext.forR4(), hl7CodeSystemSrvMock);
     dataLoaderSrv.initialize();
 
     assertThat(
@@ -406,16 +374,17 @@ class DataLoaderSrvTest {
   @Test
   void testConstructorAndInit_shouldAddValueSetData() throws IOException {
 
-    when(snapshotFilesServiceMock.getRawFiles())
+    when(snapshotFilesServiceMock.getCodeSystemFiles()).thenReturn(List.of());
+    when(snapshotFilesServiceMock.getValueSetFiles())
         .thenReturn(
-            asList(geographicRegion, laboratoryTestINVPFile, methodInvpFile, materialInvpFile));
+            List.of(
+                geographicRegionVS,
+                laboratoryTestINVPFileVS,
+                methodInvpFileVS,
+                materialInvpFileVS));
 
     DataLoaderSrv dataLoaderSrv =
-        new DataLoaderSrv(
-            "src/test/resources/profiles".replace("/", File.separator),
-            snapshotFilesServiceMock,
-            FhirContext.forR4(),
-            hl7CodeSystemSrvMock);
+        new DataLoaderSrv(snapshotFilesServiceMock, FhirContext.forR4(), hl7CodeSystemSrvMock);
     dataLoaderSrv.initialize();
 
     List<CodeDisplay> valueSetDataWithoutUrl =
@@ -482,15 +451,11 @@ class DataLoaderSrvTest {
             new CodeDisplayMapWithVersion(
                 "http://hl7.org/fhir/CodeSystem/condition-ver-status", Map.of("actual", expected)));
 
-    when(snapshotFilesServiceMock.getRawFiles())
-        .thenReturn(Collections.singletonList(materialInvpFile));
+    when(snapshotFilesServiceMock.getCodeSystemFiles()).thenReturn(List.of(materialInvpFileVS));
+    when(snapshotFilesServiceMock.getValueSetFiles()).thenReturn(List.of());
 
     DataLoaderSrv dataLoaderSrv =
-        new DataLoaderSrv(
-            "src/test/resources/profiles".replace("/", File.separator),
-            snapshotFilesServiceMock,
-            FhirContext.forR4(),
-            hl7CodeSystemSrvMock);
+        new DataLoaderSrv(snapshotFilesServiceMock, FhirContext.forR4(), hl7CodeSystemSrvMock);
     dataLoaderSrv.initialize();
 
     CodeDisplay actual =
@@ -515,15 +480,11 @@ class DataLoaderSrvTest {
     when(hl7CodeSystemSrvMock.getFileContent("http://hl7.org/fhir/CodeSystem/condition-ver-status"))
         .thenThrow(new IOException());
 
-    when(snapshotFilesServiceMock.getRawFiles())
-        .thenReturn(Collections.singletonList(materialInvpFile));
+    when(snapshotFilesServiceMock.getCodeSystemFiles()).thenReturn(List.of(materialInvpFileVS));
+    when(snapshotFilesServiceMock.getValueSetFiles()).thenReturn(List.of());
 
     DataLoaderSrv dataLoaderSrv =
-        new DataLoaderSrv(
-            "src/test/resources/profiles".replace("/", File.separator),
-            snapshotFilesServiceMock,
-            FhirContext.forR4(),
-            hl7CodeSystemSrvMock);
+        new DataLoaderSrv(snapshotFilesServiceMock, FhirContext.forR4(), hl7CodeSystemSrvMock);
     dataLoaderSrv.initialize();
 
     assertThatThrownBy(
@@ -553,15 +514,11 @@ class DataLoaderSrvTest {
             new CodeDisplayMapWithVersion(
                 "http://hl7.org/fhir/CodeSystem/condition-ver-status", expectedMap));
 
-    when(snapshotFilesServiceMock.getRawFiles())
-        .thenReturn(Collections.singletonList(materialInvpFile));
+    when(snapshotFilesServiceMock.getCodeSystemFiles()).thenReturn(List.of());
+    when(snapshotFilesServiceMock.getValueSetFiles()).thenReturn(List.of(materialInvpFileVS));
 
     DataLoaderSrv dataLoaderSrv =
-        new DataLoaderSrv(
-            "src/test/resources/profiles".replace("/", File.separator),
-            snapshotFilesServiceMock,
-            FhirContext.forR4(),
-            hl7CodeSystemSrvMock);
+        new DataLoaderSrv(snapshotFilesServiceMock, FhirContext.forR4(), hl7CodeSystemSrvMock);
     dataLoaderSrv.initialize();
 
     List<CodeDisplay> actual =
@@ -578,15 +535,12 @@ class DataLoaderSrvTest {
     @DisplayName("should add supplementary data to code system")
     void shouldAddSupplementaryDataToCodeSystem() throws IOException {
 
-      when(snapshotFilesServiceMock.getRawFiles())
-          .thenReturn(asList(codeSystemWithSupplementedData, supplementFile));
+      when(snapshotFilesServiceMock.getCodeSystemFiles())
+          .thenReturn(List.of(codeSystemWithSupplementedDataCS, supplementFileCS));
+      when(snapshotFilesServiceMock.getValueSetFiles()).thenReturn(List.of());
 
       DataLoaderSrv dataLoaderSrv =
-          new DataLoaderSrv(
-              "src/test/resources/profiles".replace("/", File.separator),
-              snapshotFilesServiceMock,
-              FhirContext.forR4(),
-              hl7CodeSystemSrvMock);
+          new DataLoaderSrv(snapshotFilesServiceMock, FhirContext.forR4(), hl7CodeSystemSrvMock);
       dataLoaderSrv.initialize();
 
       assertThat(
@@ -601,15 +555,12 @@ class DataLoaderSrvTest {
     @DisplayName("should not add supplementary data to code system")
     void shouldNotAddSupplementaryDataToCodeSystem() throws IOException {
 
-      when(snapshotFilesServiceMock.getRawFiles())
-          .thenReturn(Collections.singletonList(codeSystemWithSupplementedData));
+      when(snapshotFilesServiceMock.getCodeSystemFiles())
+          .thenReturn(List.of(codeSystemWithSupplementedDataCS));
+      when(snapshotFilesServiceMock.getValueSetFiles()).thenReturn(List.of());
 
       DataLoaderSrv dataLoaderSrv =
-          new DataLoaderSrv(
-              "src/test/resources/profiles".replace("/", File.separator),
-              snapshotFilesServiceMock,
-              FhirContext.forR4(),
-              hl7CodeSystemSrvMock);
+          new DataLoaderSrv(snapshotFilesServiceMock, FhirContext.forR4(), hl7CodeSystemSrvMock);
       dataLoaderSrv.initialize();
 
       assertThat(
@@ -624,15 +575,12 @@ class DataLoaderSrvTest {
     @DisplayName("should add supplementary data to single code call")
     void shouldAddSupplementaryDataToSingleCodeCall() throws IOException {
 
-      when(snapshotFilesServiceMock.getRawFiles())
-          .thenReturn(asList(codeSystemWithSupplementedData, supplementFile));
+      when(snapshotFilesServiceMock.getCodeSystemFiles())
+          .thenReturn(List.of(codeSystemWithSupplementedDataCS, supplementFileCS));
+      when(snapshotFilesServiceMock.getValueSetFiles()).thenReturn(List.of());
 
       DataLoaderSrv dataLoaderSrv =
-          new DataLoaderSrv(
-              "src/test/resources/profiles".replace("/", File.separator),
-              snapshotFilesServiceMock,
-              FhirContext.forR4(),
-              hl7CodeSystemSrvMock);
+          new DataLoaderSrv(snapshotFilesServiceMock, FhirContext.forR4(), hl7CodeSystemSrvMock);
       dataLoaderSrv.initialize();
 
       assertThat(
@@ -652,15 +600,12 @@ class DataLoaderSrvTest {
     @DisplayName("should not add supplementary data to single code call")
     void shouldNotAddSupplementaryDataToSingleCodeCall() throws IOException {
 
-      when(snapshotFilesServiceMock.getRawFiles())
-          .thenReturn(Collections.singletonList(codeSystemWithSupplementedData));
+      when(snapshotFilesServiceMock.getCodeSystemFiles())
+          .thenReturn(List.of(codeSystemWithSupplementedDataCS));
+      when(snapshotFilesServiceMock.getValueSetFiles()).thenReturn(List.of());
 
       DataLoaderSrv dataLoaderSrv =
-          new DataLoaderSrv(
-              "src/test/resources/profiles".replace("/", File.separator),
-              snapshotFilesServiceMock,
-              FhirContext.forR4(),
-              hl7CodeSystemSrvMock);
+          new DataLoaderSrv(snapshotFilesServiceMock, FhirContext.forR4(), hl7CodeSystemSrvMock);
       dataLoaderSrv.initialize();
 
       assertThat(
@@ -683,15 +628,11 @@ class DataLoaderSrvTest {
     @Test
     void shouldAddDesignationFromValueSetIfGiven() throws IOException {
 
-      when(snapshotFilesServiceMock.getRawFiles())
-          .thenReturn(asList(snomedCodes, materialInvpFile));
+      when(snapshotFilesServiceMock.getCodeSystemFiles()).thenReturn(List.of(snomedCodesCS));
+      when(snapshotFilesServiceMock.getValueSetFiles()).thenReturn(List.of(materialInvpFileVS));
 
       DataLoaderSrv dataLoaderSrv =
-          new DataLoaderSrv(
-              "src/test/resources/profiles".replace("/", File.separator),
-              snapshotFilesServiceMock,
-              FhirContext.forR4(),
-              hl7CodeSystemSrvMock);
+          new DataLoaderSrv(snapshotFilesServiceMock, FhirContext.forR4(), hl7CodeSystemSrvMock);
       dataLoaderSrv.initialize();
 
       assertThat(
@@ -718,15 +659,11 @@ class DataLoaderSrvTest {
     @Test
     void shouldHandleNoCodeSystemForValueSet() throws IOException {
 
-      when(snapshotFilesServiceMock.getRawFiles())
-          .thenReturn(Collections.singletonList(materialInvpFile));
+      when(snapshotFilesServiceMock.getCodeSystemFiles()).thenReturn(List.of());
+      when(snapshotFilesServiceMock.getValueSetFiles()).thenReturn(List.of(materialInvpFileVS));
 
       DataLoaderSrv dataLoaderSrv =
-          new DataLoaderSrv(
-              "src/test/resources/profiles".replace("/", File.separator),
-              snapshotFilesServiceMock,
-              FhirContext.forR4(),
-              hl7CodeSystemSrvMock);
+          new DataLoaderSrv(snapshotFilesServiceMock, FhirContext.forR4(), hl7CodeSystemSrvMock);
       dataLoaderSrv.initialize();
 
       assertThat(dataLoaderSrv.getValueSet())
@@ -739,15 +676,11 @@ class DataLoaderSrvTest {
       var emptySnomedCodes =
           new File("src/test/resources/profiles/CodeSystem/CodeSystem-snomedct-empty.json");
 
-      when(snapshotFilesServiceMock.getRawFiles())
-          .thenReturn(asList(emptySnomedCodes, materialInvpFile));
+      when(snapshotFilesServiceMock.getCodeSystemFiles()).thenReturn(List.of(emptySnomedCodes));
+      when(snapshotFilesServiceMock.getValueSetFiles()).thenReturn(List.of(materialInvpFileVS));
 
       DataLoaderSrv dataLoaderSrv =
-          new DataLoaderSrv(
-              "src/test/resources/profiles".replace("/", File.separator),
-              snapshotFilesServiceMock,
-              FhirContext.forR4(),
-              hl7CodeSystemSrvMock);
+          new DataLoaderSrv(snapshotFilesServiceMock, FhirContext.forR4(), hl7CodeSystemSrvMock);
       dataLoaderSrv.initialize();
 
       assertThat(dataLoaderSrv.getValueSet())

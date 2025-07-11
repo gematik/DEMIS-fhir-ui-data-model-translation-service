@@ -29,8 +29,29 @@ package de.gematik.demis.fhir_ui_data_model_translation_service.disease.formly.p
 import de.gematik.demis.fhir_ui_data_model_translation_service.disease.formly.model.FieldGroup;
 import org.hl7.fhir.r4.model.Questionnaire;
 
+/**
+ * The {@code ItemProcessor} interface defines the contract for processing FHIR Questionnaire items
+ * into internal {@link FieldGroup} structures.
+ *
+ * <p>Implementations of this interface enable the flexible and extensible transformation of
+ * individual {@link org.hl7.fhir.r4.model.Questionnaire.QuestionnaireItemComponent} objects into
+ * one or more {@link FieldGroup} instances, which can be used for further processing or rendering
+ * in UI components.
+ *
+ * <p>Typical use cases include the dynamic generation of UI form fields based on FHIR-compliant
+ * questionnaires and disease-specific customization of field groups.
+ */
 public interface ItemProcessor {
 
+  /**
+   * Converts a FHIR Questionnaire item into one or more {@link FieldGroup} objects.
+   *
+   * @param item the {@link org.hl7.fhir.r4.model.Questionnaire.QuestionnaireItemComponent} to be
+   *     processed
+   * @param parent the parent {@link FieldGroup} object (optional, may be {@code null})
+   * @param diseaseCode the context code for disease-specific customization (optional)
+   * @return an array of {@link FieldGroup} objects representing the item
+   */
   FieldGroup[] createFieldGroup(
       Questionnaire.QuestionnaireItemComponent item, FieldGroup parent, String diseaseCode);
 }

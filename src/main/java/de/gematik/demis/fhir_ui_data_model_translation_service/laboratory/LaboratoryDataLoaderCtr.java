@@ -44,7 +44,7 @@ public class LaboratoryDataLoaderCtr {
 
   public LaboratoryDataLoaderCtr(
       LaboratoryDataLoaderSrv laboratoryDataLoaderSrv,
-      @Value("${feature.flag.notification7_3}") boolean isNotification73Active) {
+      @Value("${feature.flag.notifications.7_3}") boolean isNotification73Active) {
     this.laboratoryDataLoaderSrv = laboratoryDataLoaderSrv;
     this.isNotification73Active = isNotification73Active;
   }
@@ -70,8 +70,7 @@ public class LaboratoryDataLoaderCtr {
     "/laboratory/7.1/federalState/pathogenData/{code}",
     "/laboratory/7.3/pathogenData/{code}"
   })
-  public LabNotificationData getFederalStateLaboratoryDataForSpecificCode(
-      @PathVariable String code) {
+  public LabNotificationData getLaboratoryDataForSpecificCode(@PathVariable String code) {
     log.info("Get call for federal state pathogen data: {}", code);
     return laboratoryDataLoaderSrv.getDataForFederalPathogenCode(code);
   }

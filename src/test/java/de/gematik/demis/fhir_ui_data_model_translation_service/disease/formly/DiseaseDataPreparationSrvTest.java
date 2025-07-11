@@ -34,7 +34,7 @@ import static org.mockito.Mockito.when;
 import ca.uhn.fhir.context.FhirContext;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import de.gematik.demis.fhir_ui_data_model_translation_service.FeatureFlags;
-import de.gematik.demis.fhir_ui_data_model_translation_service.disease.DiseaseNotificationCategoriesSrv;
+import de.gematik.demis.fhir_ui_data_model_translation_service.disease.DiseaseNotificationCategoriesSrvRegression;
 import de.gematik.demis.fhir_ui_data_model_translation_service.disease.Questionnaires;
 import de.gematik.demis.fhir_ui_data_model_translation_service.disease.formly.model.FieldGroup;
 import de.gematik.demis.fhir_ui_data_model_translation_service.disease.formly.model.FormlyFieldConfigs;
@@ -42,6 +42,7 @@ import de.gematik.demis.fhir_ui_data_model_translation_service.disease.formly.pr
 import de.gematik.demis.fhir_ui_data_model_translation_service.disease.formly.processor.DateProcessor;
 import de.gematik.demis.fhir_ui_data_model_translation_service.disease.formly.processor.EnableWhenProcessor;
 import de.gematik.demis.fhir_ui_data_model_translation_service.disease.formly.processor.GroupProcessor;
+import de.gematik.demis.fhir_ui_data_model_translation_service.disease.formly.processor.QuantityProcessor;
 import de.gematik.demis.fhir_ui_data_model_translation_service.disease.formly.processor.ReferenceProcessor;
 import de.gematik.demis.fhir_ui_data_model_translation_service.disease.formly.processor.TextProcessor;
 import de.gematik.demis.fhir_ui_data_model_translation_service.disease.formly.processor.resources.DiseaseProcessor;
@@ -58,7 +59,7 @@ import org.mockito.junit.jupiter.MockitoExtension;
 class DiseaseDataPreparationSrvTest {
 
   private final FhirContext fhirContext = FhirContext.forR4Cached();
-  @Mock private DiseaseNotificationCategoriesSrv categoriesSrvMock;
+  @Mock private DiseaseNotificationCategoriesSrvRegression categoriesSrvRegressionMock;
   @Mock private Questionnaires questionnairesMock;
   @Mock private ChoiceProcessor choiceProcessorMock;
   @Mock private DateProcessor dateProcessorMock;
@@ -66,13 +67,14 @@ class DiseaseDataPreparationSrvTest {
   @Mock private GroupProcessor groupProcessorMock;
   @Mock private ReferenceProcessor referenceProcessorMock;
   @Mock private DiseaseProcessor diseaseProcessorMock;
+  @Mock private QuantityProcessor quantityProcessorMock;
   @Mock private FeatureFlags featureFlags;
 
   private DiseaseDataPreparationSrv diseaseDataPreparationSrv;
 
   @Test
   void shouldCreateQuestionnairesByCallingSupportingProcessors() throws JsonProcessingException {
-    when(categoriesSrvMock.getCategory(anyString()))
+    when(categoriesSrvRegressionMock.getCategory(anyString()))
         .thenReturn(CodeDisplay.builder().code("cvdd").display("Covid").build());
     when(choiceProcessorMock.createFieldGroup(any(), any(), anyString()))
         .thenReturn(new FieldGroup[0]);
@@ -87,7 +89,8 @@ class DiseaseDataPreparationSrvTest {
 
     diseaseDataPreparationSrv =
         new DiseaseDataPreparationSrv(
-            categoriesSrvMock,
+            null,
+            categoriesSrvRegressionMock,
             questionnairesMock,
             fhirContext,
             choiceProcessorMock,
@@ -97,6 +100,7 @@ class DiseaseDataPreparationSrvTest {
             referenceProcessorMock,
             diseaseProcessorMock,
             new EnableWhenProcessor(),
+            quantityProcessorMock,
             featureFlags);
     Map<String, File> someMap = new HashMap<>();
     someMap.put(

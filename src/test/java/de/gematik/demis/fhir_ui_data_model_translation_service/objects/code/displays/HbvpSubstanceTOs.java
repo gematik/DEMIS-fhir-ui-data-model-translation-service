@@ -38,6 +38,7 @@ public class HbvpSubstanceTOs {
         .display("Antigen of Hepatitis B virus surface protein (substance)")
         .designations(Set.of(new Designation("de-DE", "HBs-Antigen")))
         .order(100)
+        .system("http://snomed.info/sct|http://snomed.info/sct/900000000000207008/version/20230331")
         .build();
   }
 
@@ -47,10 +48,42 @@ public class HbvpSubstanceTOs {
         .display("Antigen of Hepatitis B virus e protein (substance)")
         .designations(Set.of(new Designation("de-DE", "HBe-Antigen")))
         .order(100)
+        .system("http://snomed.info/sct|http://snomed.info/sct/900000000000207008/version/20230331")
         .build();
   }
 
   public CodeDisplay snomed_39082004() {
+    return CodeDisplay.builder()
+        .code("39082004")
+        .display("Antigen of Hepatitis B virus core protein (substance)")
+        .designations(Set.of(new Designation("de-DE", "HBc-Antigen")))
+        .order(100)
+        .system("http://snomed.info/sct|http://snomed.info/sct/900000000000207008/version/20230331")
+        .build();
+  }
+
+  /** Todo Remove with feature.flag.notifications.7_3 */
+  public CodeDisplay snomed_22290004Reg() {
+    return CodeDisplay.builder()
+        .code("22290004")
+        .display("Antigen of Hepatitis B virus surface protein (substance)")
+        .designations(Set.of(new Designation("de-DE", "HBs-Antigen")))
+        .order(100)
+        .build();
+  }
+
+  /** Todo Remove with feature.flag.notifications.7_3 */
+  public CodeDisplay snomed_60605004Reg() {
+    return CodeDisplay.builder()
+        .code("60605004")
+        .display("Antigen of Hepatitis B virus e protein (substance)")
+        .designations(Set.of(new Designation("de-DE", "HBe-Antigen")))
+        .order(100)
+        .build();
+  }
+
+  /** Todo Remove with feature.flag.notifications.7_3 */
+  public CodeDisplay snomed_39082004Reg() {
     return CodeDisplay.builder()
         .code("39082004")
         .display("Antigen of Hepatitis B virus core protein (substance)")

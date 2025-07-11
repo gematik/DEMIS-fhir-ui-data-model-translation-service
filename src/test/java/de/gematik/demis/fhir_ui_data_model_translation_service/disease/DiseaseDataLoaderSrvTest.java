@@ -45,6 +45,10 @@ class DiseaseDataLoaderSrvTest {
 
   @Mock private QuestionnairePreparation questionnairePreparationMock;
   private DiseaseDataLoaderSrv diseaseDataLoaderSrv;
+
+  @Mock
+  private DiseaseNotificationCategoriesSrvRegression diseaseNotificationCategoriesSrvRegressionMock;
+
   @Mock private DiseaseNotificationCategoriesSrv diseaseNotificationCategoriesSrvMock;
   @Mock private DiseaseDataPreparationSrv diseaseDataPreparationSrvMock;
 
@@ -61,6 +65,7 @@ class DiseaseDataLoaderSrvTest {
     diseaseDataLoaderSrv =
         new DiseaseDataLoaderSrv(
             questionnairePreparationMock,
+            diseaseNotificationCategoriesSrvRegressionMock,
             diseaseNotificationCategoriesSrvMock,
             diseaseDataPreparationSrvMock);
     diseaseDataLoaderSrv.init();

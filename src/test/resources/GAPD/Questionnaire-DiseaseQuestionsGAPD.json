@@ -1,0 +1,55 @@
+{
+  "resourceType": "Questionnaire",
+  "id": "GAPD-Example",
+  "url": "https://demis.rki.de/fhir/Questionnaire/GAPD-Example",
+  "version": "1.0.0",
+  "name": "GAPDExample",
+  "title": "GAPD Beispiel-Fragebogen für Frontend-Tests",
+  "status": "draft",
+  "date": "2025-06-12",
+  "description": "Beispiel-Fragebogen GAPD für automatisierte Frontend-Tests. Enthält Choice- und Quantity-Fragen.",
+  "item": [
+    {
+      "linkId": "age",
+      "text": "Wie alt ist die Testperson? (Beispiel für Quantity)",
+      "type": "quantity",
+      "required": true,
+      "repeats": false,
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-unitOption",
+          "valueCoding": {
+            "system": "http://unitsofmeasure.org",
+            "code": "a",
+            "display": "Jahr(e)"
+          }
+        }
+      ]
+    },
+    {
+      "linkId": "gender",
+      "text": "Welches Geschlecht hat die Testperson? (Beispiel für Choice)",
+      "type": "choice",
+      "required": true,
+      "repeats": false,
+      "answerValueSet": "https://demis.rki.de/fhir/ValueSet/example-gender"
+    },
+    {
+      "linkId": "temperature",
+      "text": "Wie hoch ist die aktuelle Körpertemperatur? (Beispiel für Quantity)",
+      "type": "quantity",
+      "required": false,
+      "repeats": false,
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-unitOption",
+          "valueCoding": {
+            "system": "http://unitsofmeasure.org",
+            "code": "Cel",
+            "display": "°C"
+          }
+        }
+      ]
+    }
+  ]
+}

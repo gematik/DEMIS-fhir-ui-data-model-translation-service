@@ -52,7 +52,7 @@ class FhirUiDataModelTranslationServiceApplicationTests {
     assertThat(labDataPreparationSrv.getLaboratoryDataMap()).isNotNull();
 
     assertThat(snapshotFilesService).isNotNull();
-    assertThat(snapshotFilesService.getProfileNotificationCategoryFile()).isNotNull();
+    assertThat(snapshotFilesService.getProfileNotificationCategoryCodeSystemFile()).isNotNull();
     assertThat(snapshotFilesService.getMaterials()).isNotNull();
     assertThat(snapshotFilesService.getProfileLoincFile()).isNotNull();
     assertThat(snapshotFilesService.getMethods()).isNotNull();

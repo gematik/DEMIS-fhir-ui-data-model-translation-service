@@ -70,7 +70,7 @@ class LabDataPreparationSrvTest {
   private static File gappMaterialFile;
   private static File gappAnswerSetFile;
   @Mock private SnapshotFilesService snapshotFilesServiceMock;
-  @Mock private NotificationCategoryList notificationCategoryListMock;
+  @Mock private PathogenNotificationCategoryList pathogenNotificationCategoryListMock;
 
   @BeforeAll
   static void setUp() {
@@ -122,6 +122,7 @@ class LabDataPreparationSrvTest {
                 .build());
   }
 
+  /** Regression test, remove with feature.flag.notifications.7_3 */
   @Test
   void shouldReturnSortedNotificationCategoryList() {
     materialFiles = asList(materialFile1, materialFile2, materialFile3);
@@ -132,14 +133,14 @@ class LabDataPreparationSrvTest {
     when(snapshotFilesServiceMock.getMethods()).thenReturn(methodFiles);
     when(snapshotFilesServiceMock.getAnswerSets()).thenReturn(answerSetFiles);
     when(snapshotFilesServiceMock.getSubstances()).thenReturn(substanceFiles);
-    when(notificationCategoryListMock.getPathogenNotificationCategoryList())
+    when(pathogenNotificationCategoryListMock.getPathogenNotificationCategoryList())
         .thenReturn(NotificationCategoryListTO.unsortedList());
 
     LabDataPreparationSrv labDataPreparationSrv =
         new LabDataPreparationSrv(
             FhirContext.forR4(),
             snapshotFilesServiceMock,
-            notificationCategoryListMock,
+            pathogenNotificationCategoryListMock,
             false,
             false,
             false);
@@ -156,7 +157,7 @@ class LabDataPreparationSrvTest {
         new LabDataPreparationSrv(
             FhirContext.forR4(),
             snapshotFilesServiceMock,
-            notificationCategoryListMock,
+            pathogenNotificationCategoryListMock,
             true,
             false,
             false);
@@ -177,7 +178,7 @@ class LabDataPreparationSrvTest {
       when(snapshotFilesServiceMock.getMethods()).thenReturn(methodFiles);
       when(snapshotFilesServiceMock.getAnswerSets()).thenReturn(answerSetFiles);
       when(snapshotFilesServiceMock.getSubstances()).thenReturn(substanceFiles);
-      when(notificationCategoryListMock.getPathogenNotificationCategoryList())
+      when(pathogenNotificationCategoryListMock.getPathogenNotificationCategoryList())
           .thenReturn(
               asList(
                   TestObjects.notificationCategoryCodeDisplay().invp(),
@@ -214,23 +215,24 @@ class LabDataPreparationSrvTest {
           .as(
               "the material list should contain the set of 9 codes that are saved in the test data info model with order != 0.")
           .hasSize(9)
-          .containsAll(List.of(TestObjects.codeDisplay().invpMaterialCodes().loinc_258607008()));
+          .containsAll(
+              List.of(TestObjects.codeDisplay().invpMaterialCodes().snomed_258607008Reg()));
 
       assertThat(laboratoryJsonDataMap.get("invp").answerSet())
           .as(
               "the answerset list should contain the set of 23 codes that are saved in the test data info model")
           .hasSize(22)
-          .contains(TestObjects.codeDisplay().invpAnswerSetCodeTOs().loinc_715350001R())
-          .doesNotContain(TestObjects.codeDisplay().invpAnswerSetCodeTOs().loinc_407479009());
+          .contains(TestObjects.codeDisplay().invpAnswerSetCodeTOs().snomed_715350001R())
+          .doesNotContain(TestObjects.codeDisplay().invpAnswerSetCodeTOs().snomed_407479009());
 
       assertThat(laboratoryJsonDataMap.get("hbvp").substances())
           .as(
               "the substance list should contain the set of 3 codes that are saved in the test data info model")
           .hasSize(3)
           .containsExactlyInAnyOrder(
-              TestObjects.codeDisplay().hbvpSubstanceCodeTOs().snomed_22290004(),
-              TestObjects.codeDisplay().hbvpSubstanceCodeTOs().snomed_60605004(),
-              TestObjects.codeDisplay().hbvpSubstanceCodeTOs().snomed_39082004());
+              TestObjects.codeDisplay().hbvpSubstanceCodeTOs().snomed_22290004Reg(),
+              TestObjects.codeDisplay().hbvpSubstanceCodeTOs().snomed_60605004Reg(),
+              TestObjects.codeDisplay().hbvpSubstanceCodeTOs().snomed_39082004Reg());
     }
 
     @Test
@@ -276,7 +278,7 @@ class LabDataPreparationSrvTest {
       when(snapshotFilesServiceMock.getMethods()).thenReturn(methodFiles);
       when(snapshotFilesServiceMock.getAnswerSets()).thenReturn(answerSetFiles);
       when(snapshotFilesServiceMock.getSubstances()).thenReturn(substanceFiles);
-      when(notificationCategoryListMock.getPathogenNotificationCategoryList())
+      when(pathogenNotificationCategoryListMock.getPathogenNotificationCategoryList())
           .thenReturn(
               asList(
                   TestObjects.notificationCategoryCodeDisplay().invp(),
@@ -286,7 +288,7 @@ class LabDataPreparationSrvTest {
           new LabDataPreparationSrv(
               FhirContext.forR4(),
               snapshotFilesServiceMock,
-              notificationCategoryListMock,
+              pathogenNotificationCategoryListMock,
               true,
               false,
               false);
@@ -303,7 +305,7 @@ class LabDataPreparationSrvTest {
           new LabDataPreparationSrv(
               FhirContext.forR4(),
               snapshotFilesServiceMock,
-              notificationCategoryListMock,
+              pathogenNotificationCategoryListMock,
               false,
               false,
               false);
@@ -327,7 +329,7 @@ class LabDataPreparationSrvTest {
       when(snapshotFilesServiceMock.getMethods()).thenReturn(methodFiles);
       when(snapshotFilesServiceMock.getAnswerSets()).thenReturn(answerSetFiles);
       when(snapshotFilesServiceMock.getSubstances()).thenReturn(substanceFiles);
-      when(notificationCategoryListMock.getPathogenNotificationCategoryList())
+      when(pathogenNotificationCategoryListMock.getPathogenNotificationCategoryList())
           .thenReturn(
               asList(
                   TestObjects.notificationCategoryCodeDisplay().invp(),
@@ -364,8 +366,8 @@ class LabDataPreparationSrvTest {
           .as(
               "the material list should contain the set of 5 codes that are saved in the test data info model.")
           .hasSize(5)
-          .doesNotContain(TestObjects.codeDisplay().invpMaterialCodes().loinc_258607008())
-          .contains(TestObjects.codeDisplay().invpMaterialCodes().loinc_309174004R());
+          .doesNotContain(TestObjects.codeDisplay().invpMaterialCodes().snomed_258607008())
+          .contains(TestObjects.codeDisplay().invpMaterialCodes().snomed_309174004RReg());
 
       assertThat(laboratoryJsonDataMap.get("invp").answerSet())
           .as(
@@ -373,17 +375,17 @@ class LabDataPreparationSrvTest {
           .hasSize(4)
           .containsAll(
               List.of(
-                  TestObjects.codeDisplay().invpAnswerSetCodeTOs().loinc_407479009(),
-                  TestObjects.codeDisplay().invpAnswerSetCodeTOs().loinc_715350001()));
+                  TestObjects.codeDisplay().invpAnswerSetCodeTOs().snomed_407479009Reg(),
+                  TestObjects.codeDisplay().invpAnswerSetCodeTOs().snomed_715350001Reg()));
 
       assertThat(laboratoryJsonDataMap.get("hbvp").substances())
           .as(
               "the substance list should contain the set of 3 codes that are saved in the test data info model")
           .hasSize(3)
           .containsExactlyInAnyOrder(
-              TestObjects.codeDisplay().hbvpSubstanceCodeTOs().snomed_22290004(),
-              TestObjects.codeDisplay().hbvpSubstanceCodeTOs().snomed_60605004(),
-              TestObjects.codeDisplay().hbvpSubstanceCodeTOs().snomed_39082004());
+              TestObjects.codeDisplay().hbvpSubstanceCodeTOs().snomed_22290004Reg(),
+              TestObjects.codeDisplay().hbvpSubstanceCodeTOs().snomed_60605004Reg(),
+              TestObjects.codeDisplay().hbvpSubstanceCodeTOs().snomed_39082004Reg());
     }
 
     @Test
@@ -429,7 +431,7 @@ class LabDataPreparationSrvTest {
       when(snapshotFilesServiceMock.getMethods()).thenReturn(methodFiles);
       when(snapshotFilesServiceMock.getAnswerSets()).thenReturn(answerSetFiles);
       when(snapshotFilesServiceMock.getSubstances()).thenReturn(substanceFiles);
-      when(notificationCategoryListMock.getPathogenNotificationCategoryList())
+      when(pathogenNotificationCategoryListMock.getPathogenNotificationCategoryList())
           .thenReturn(
               asList(
                   TestObjects.notificationCategoryCodeDisplay().invp(),
@@ -439,7 +441,7 @@ class LabDataPreparationSrvTest {
           new LabDataPreparationSrv(
               FhirContext.forR4(),
               snapshotFilesServiceMock,
-              notificationCategoryListMock,
+              pathogenNotificationCategoryListMock,
               true,
               false,
               false);
@@ -456,7 +458,7 @@ class LabDataPreparationSrvTest {
           new LabDataPreparationSrv(
               FhirContext.forR4(),
               snapshotFilesServiceMock,
-              notificationCategoryListMock,
+              pathogenNotificationCategoryListMock,
               false,
               false,
               false);
@@ -480,7 +482,7 @@ class LabDataPreparationSrvTest {
       when(snapshotFilesServiceMock.getMethods()).thenReturn(methodFiles);
       when(snapshotFilesServiceMock.getAnswerSets()).thenReturn(answerSetFiles);
       when(snapshotFilesServiceMock.getSubstances()).thenReturn(substanceFiles);
-      when(notificationCategoryListMock.getPathogenNotificationCategoryList())
+      when(pathogenNotificationCategoryListMock.getPathogenNotificationCategoryList())
           .thenReturn(
               asList(
                   TestObjects.notificationCategoryCodeDisplay().invp(),
@@ -526,19 +528,19 @@ class LabDataPreparationSrvTest {
               "the answerset list should contain the set of 5 codes that are saved in the test data info model")
           .hasSize(4)
           .containsExactly(
-              TestObjects.codeDisplay().invpAnswerSetCodeTOs().loinc_700350009(),
-              TestObjects.codeDisplay().invpAnswerSetCodeTOs().loinc_442352004(),
-              TestObjects.codeDisplay().invpAnswerSetCodeTOs().loinc_407479009(),
-              TestObjects.codeDisplay().invpAnswerSetCodeTOs().loinc_715350001());
+              TestObjects.codeDisplay().invpAnswerSetCodeTOs().snomed_700350009Reg(),
+              TestObjects.codeDisplay().invpAnswerSetCodeTOs().snomed_442352004Reg(),
+              TestObjects.codeDisplay().invpAnswerSetCodeTOs().snomed_407479009Reg(),
+              TestObjects.codeDisplay().invpAnswerSetCodeTOs().snomed_715350001Reg());
 
       assertThat(laboratoryJsonDataMap.get("hbvp").substances())
           .as(
               "the substance list should contain the set of 3 codes that are saved in the test data info model")
           .hasSize(3)
           .containsExactlyInAnyOrder(
-              TestObjects.codeDisplay().hbvpSubstanceCodeTOs().snomed_39082004(),
-              TestObjects.codeDisplay().hbvpSubstanceCodeTOs().snomed_60605004(),
-              TestObjects.codeDisplay().hbvpSubstanceCodeTOs().snomed_22290004());
+              TestObjects.codeDisplay().hbvpSubstanceCodeTOs().snomed_39082004Reg(),
+              TestObjects.codeDisplay().hbvpSubstanceCodeTOs().snomed_60605004Reg(),
+              TestObjects.codeDisplay().hbvpSubstanceCodeTOs().snomed_22290004Reg());
     }
 
     @Test
@@ -584,7 +586,7 @@ class LabDataPreparationSrvTest {
       when(snapshotFilesServiceMock.getMethods()).thenReturn(methodFiles);
       when(snapshotFilesServiceMock.getAnswerSets()).thenReturn(answerSetFiles);
       when(snapshotFilesServiceMock.getSubstances()).thenReturn(substanceFiles);
-      when(notificationCategoryListMock.getPathogenNotificationCategoryList())
+      when(pathogenNotificationCategoryListMock.getPathogenNotificationCategoryList())
           .thenReturn(
               asList(
                   TestObjects.notificationCategoryCodeDisplay().invp(),
@@ -594,7 +596,7 @@ class LabDataPreparationSrvTest {
           new LabDataPreparationSrv(
               FhirContext.forR4(),
               snapshotFilesServiceMock,
-              notificationCategoryListMock,
+              pathogenNotificationCategoryListMock,
               true,
               false,
               false);
@@ -616,7 +618,7 @@ class LabDataPreparationSrvTest {
       when(snapshotFilesServiceMock.getMethods()).thenReturn(methodFiles);
       when(snapshotFilesServiceMock.getAnswerSets()).thenReturn(answerSetFiles);
       when(snapshotFilesServiceMock.getSubstances()).thenReturn(substanceFiles);
-      when(notificationCategoryListMock.getPathogenNotificationCategoryList())
+      when(pathogenNotificationCategoryListMock.getPathogenNotificationCategoryList())
           .thenReturn(
               asList(
                   TestObjects.notificationCategoryCodeDisplay().invp(),
@@ -626,7 +628,7 @@ class LabDataPreparationSrvTest {
           new LabDataPreparationSrv(
               FhirContext.forR4(),
               snapshotFilesServiceMock,
-              notificationCategoryListMock,
+              pathogenNotificationCategoryListMock,
               true,
               true,
               false);
@@ -640,14 +642,14 @@ class LabDataPreparationSrvTest {
 
     @Test
     void shouldReturnEmptyList() {
-      when(notificationCategoryListMock.getPathogenNotificationCategories())
+      when(pathogenNotificationCategoryListMock.getPathogenNotificationCategories())
           .thenReturn(Collections.emptyMap());
 
       LabDataPreparationSrv labDataPreparationSrv =
           new LabDataPreparationSrv(
               FhirContext.forR4(),
               snapshotFilesServiceMock,
-              notificationCategoryListMock,
+              pathogenNotificationCategoryListMock,
               true,
               true,
               true);
@@ -663,7 +665,7 @@ class LabDataPreparationSrvTest {
           new LabDataPreparationSrv(
               FhirContext.forR4(),
               snapshotFilesServiceMock,
-              notificationCategoryListMock,
+              pathogenNotificationCategoryListMock,
               false,
               false,
               false);

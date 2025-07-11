@@ -26,6 +26,9 @@ package de.gematik.demis.fhir_ui_data_model_translation_service.disease;
  * #L%
  */
 
+import static de.gematik.demis.fhir_ui_data_model_translation_service.utils.Utils.addToUnmodifiableList;
+import static de.gematik.demis.fhir_ui_data_model_translation_service.utils.Utils.addToUnmodifiableMap;
+import static de.gematik.demis.fhir_ui_data_model_translation_service.utils.Utils.createDiseaseTestData;
 import static de.gematik.demis.fhir_ui_data_model_translation_service.utils.Utils.extractNotificationCategories;
 import static de.gematik.demis.fhir_ui_data_model_translation_service.utils.Utils.getFileString;
 
@@ -38,7 +41,8 @@ import java.io.IOException;
 import java.util.*;
 import java.util.stream.Collectors;
 import lombok.extern.slf4j.Slf4j;
-import org.hl7.fhir.r4.model.CodeSystem;
+import org.hl7.fhir.r4.model.ValueSet;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -47,14 +51,26 @@ public class DiseaseNotificationCategoriesSrv {
 
   private final SnapshotFilesService snapshotFilesService;
   private final FhirContext fhirContext;
+  private final boolean filterCodesActive;
+  private final List<String> denyList;
+  private final boolean addTestData;
 
   private List<CodeDisplay> categoriesList;
+  private List<CodeDisplay> categoriesListNonNominal;
   private Map<String, CodeDisplay> categoriesMap;
+  private Map<String, CodeDisplay> categoriesMapNonNominal;
 
-  DiseaseNotificationCategoriesSrv(
-      SnapshotFilesService snapshotFilesService, FhirContext fhirContext) {
+  public DiseaseNotificationCategoriesSrv(
+      SnapshotFilesService snapshotFilesService,
+      FhirContext fhirContext,
+      @Value("${data.disease.notification.category.deny.active}") boolean filterCodesActive,
+      @Value("${data.disease.notification.category.deny.list}") List<String> denyList,
+      @Value("${add.test.data.disease}") boolean addTestData) {
+    this.filterCodesActive = filterCodesActive;
+    this.denyList = denyList;
     this.snapshotFilesService = snapshotFilesService;
     this.fhirContext = fhirContext;
+    this.addTestData = addTestData;
   }
 
   private static String normalizeCode(String code) {
@@ -63,13 +79,36 @@ public class DiseaseNotificationCategoriesSrv {
 
   @PostConstruct
   void createCategories() {
-    createList();
-    createMap();
+    createLists();
+    createMaps();
+    if (addTestData) {
+      log.info("adding test data for error case");
+      CodeDisplay testDataCodeDisplay = createDiseaseTestData();
+      categoriesList = addToUnmodifiableList(categoriesList, testDataCodeDisplay);
+      categoriesListNonNominal =
+          addToUnmodifiableList(categoriesListNonNominal, testDataCodeDisplay);
+      categoriesMap =
+          addToUnmodifiableMap(
+              categoriesMap, normalizeCode(testDataCodeDisplay.getCode()), testDataCodeDisplay);
+      categoriesMapNonNominal =
+          addToUnmodifiableMap(
+              categoriesMapNonNominal,
+              normalizeCode(testDataCodeDisplay.getCode()),
+              testDataCodeDisplay);
+    }
   }
 
-  private void createList() {
-    List<CodeDisplay> codeDisplays = readCodeSystemFile();
+  private void createLists() {
+    List<CodeDisplay> codeDisplays =
+        readValueSetFile(
+            this.snapshotFilesService.getProfileNotificationDiseaseCategoryValueSetFile());
     this.categoriesList = Collections.unmodifiableList(sort(codeDisplays));
+    if (filterCodesActive) {
+      this.categoriesList =
+          this.categoriesList.stream()
+              .filter(codeDisplay -> !denyList.contains(normalizeCode(codeDisplay.getCode())))
+              .toList();
+    }
     if (log.isInfoEnabled()) {
       log.info(
           "Loaded disease notification categories. Size: {} Codes: {}",
@@ -79,27 +118,52 @@ public class DiseaseNotificationCategoriesSrv {
               .sorted()
               .collect(Collectors.joining(", ", "[", "]")));
     }
+
+    List<CodeDisplay> codeDisplaysNonNominal =
+        readValueSetFile(
+            this.snapshotFilesService
+                .getProfileNotificationDiseaseCategoryNonNominalValueSetFile());
+    this.categoriesListNonNominal = Collections.unmodifiableList(sort(codeDisplaysNonNominal));
+    if (filterCodesActive) {
+      this.categoriesListNonNominal =
+          this.categoriesListNonNominal.stream()
+              .filter(codeDisplay -> !denyList.contains(normalizeCode(codeDisplay.getCode())))
+              .toList();
+    }
+    if (log.isInfoEnabled()) {
+      log.info(
+          "Loaded disease notification categories. Size: {} Codes: {}",
+          categoriesListNonNominal.size(),
+          categoriesListNonNominal.stream()
+              .map(CodeDisplay::getCode)
+              .sorted()
+              .collect(Collectors.joining(", ", "[", "]")));
+    }
   }
 
-  private void createMap() {
+  private void createMaps() {
     this.categoriesMap =
         Collections.unmodifiableMap(
             this.categoriesList.stream()
                 .collect(Collectors.toMap(c -> normalizeCode(c.getCode()), c -> c)));
+    this.categoriesMapNonNominal =
+        Collections.unmodifiableMap(
+            this.categoriesListNonNominal.stream()
+                .collect(Collectors.toMap(c -> normalizeCode(c.getCode()), c -> c)));
   }
 
-  private List<CodeDisplay> readCodeSystemFile() {
-    File profileDiseaseNotificationCategoryFile =
-        this.snapshotFilesService.getProfileDiseaseNotificationCategoryFile();
-    if (profileDiseaseNotificationCategoryFile == null) {
-      log.warn("No disease notification category file found. Returning empty list");
+  private List<CodeDisplay> readValueSetFile(File file) {
+    if (file == null) {
+      log.warn("No disease notification category file found. file was null. Returning empty list");
       return Collections.emptyList();
     }
     try {
-      String fileString = getFileString(profileDiseaseNotificationCategoryFile);
-      CodeSystem notificationCategory =
-          fhirContext.newJsonParser().parseResource(CodeSystem.class, fileString);
-      return extractNotificationCategories(notificationCategory);
+      final String notificationCategoryCodeSystemString = getFileString(file);
+      ValueSet notificationCategoryValueSet =
+          fhirContext
+              .newJsonParser()
+              .parseResource(ValueSet.class, notificationCategoryCodeSystemString);
+      return extractNotificationCategories(notificationCategoryValueSet);
     } catch (IOException e) {
       log.error("Error while reading notification category file", e);
       return Collections.emptyList();
@@ -114,7 +178,7 @@ public class DiseaseNotificationCategoriesSrv {
   }
 
   /**
-   * Get category by code
+   * Get category by code from §6.1 notification categories
    *
    * @param code code
    * @return category or <code>null</code>
@@ -124,11 +188,30 @@ public class DiseaseNotificationCategoriesSrv {
   }
 
   /**
-   * Get categories
+   * Get category by code from §7.3 notification categories
+   *
+   * @param code code
+   * @return category or <code>null</code>
+   */
+  public CodeDisplay getCategoryNonNominal(String code) {
+    return categoriesMapNonNominal.get(normalizeCode(code));
+  }
+
+  /**
+   * Get categories for §6.1
    *
    * @return categories
    */
   public List<CodeDisplay> getCategories() {
     return categoriesList;
+  }
+
+  /**
+   * Get categories for §7.3 disease
+   *
+   * @return categories
+   */
+  public List<CodeDisplay> getCategoriesNonNominal() {
+    return categoriesListNonNominal;
   }
 }

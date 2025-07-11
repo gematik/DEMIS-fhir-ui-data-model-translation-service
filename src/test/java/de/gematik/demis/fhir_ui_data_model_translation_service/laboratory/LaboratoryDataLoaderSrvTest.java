@@ -29,6 +29,8 @@ package de.gematik.demis.fhir_ui_data_model_translation_service.laboratory;
 import static java.util.Collections.emptyList;
 import static java.util.Collections.singletonList;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
+import static org.mockito.Mockito.verify;
+import static org.mockito.Mockito.verifyNoInteractions;
 import static org.mockito.Mockito.when;
 
 import de.gematik.demis.fhir_ui_data_model_translation_service.exception.DataNotFoundExcp;
@@ -48,6 +50,11 @@ class LaboratoryDataLoaderSrvTest {
 
   @Mock private LabDataPreparationSrv labDataPreparationSrvMock;
   @Mock private FederalStateNotificationCategoryData federalStateNotificationCategoryDataMock;
+
+  @Mock
+  private FederalStateNotificationCategoryDataRegression
+      federalStateNotificationCategoryDataRegressionMock;
+
   private LaboratoryDataLoaderSrv laboratoryDataLoaderSrv;
 
   @Test
@@ -64,7 +71,10 @@ class LaboratoryDataLoaderSrvTest {
   private void initTestObject() {
     this.laboratoryDataLoaderSrv =
         new LaboratoryDataLoaderSrv(
-            this.labDataPreparationSrvMock, this.federalStateNotificationCategoryDataMock);
+            this.labDataPreparationSrvMock,
+            this.federalStateNotificationCategoryDataMock,
+            this.federalStateNotificationCategoryDataRegressionMock,
+            true);
   }
 
   @Test
@@ -94,5 +104,45 @@ class LaboratoryDataLoaderSrvTest {
                     PathogenNotificationCategory.P_7_3))
         .isInstanceOf(DataNotFoundExcp.class)
         .hasMessageContaining("No data found for code 7.3");
+  }
+
+  @Test
+  void shouldUseServiceDependingOnFeatureFlagEqualsFalse() {
+    var regressionService =
+        new LaboratoryDataLoaderSrv(
+            this.labDataPreparationSrvMock,
+            this.federalStateNotificationCategoryDataMock,
+            this.federalStateNotificationCategoryDataRegressionMock,
+            false);
+    Map<String, List<CodeDisplay>> map = new HashMap<>();
+    map.put("code", List.of(CodeDisplay.builder().code("foobar").build()));
+    when(federalStateNotificationCategoryDataRegressionMock.getFederalStateNotificationCategories())
+        .thenReturn(map);
+
+    regressionService.getDataForPathogenCodesForFederalState("code");
+
+    verify(federalStateNotificationCategoryDataRegressionMock)
+        .getFederalStateNotificationCategories();
+    verifyNoInteractions(federalStateNotificationCategoryDataMock);
+  }
+
+  @Test
+  void shouldUseServiceDependingOnFeatureFlagEqualsTrue() {
+    var service =
+        new LaboratoryDataLoaderSrv(
+            this.labDataPreparationSrvMock,
+            this.federalStateNotificationCategoryDataMock,
+            this.federalStateNotificationCategoryDataRegressionMock,
+            true);
+
+    Map<String, List<CodeDisplay>> map = new HashMap<>();
+    map.put("code", List.of(CodeDisplay.builder().code("foobar").build()));
+    when(federalStateNotificationCategoryDataMock.getFederalStateNotificationCategories())
+        .thenReturn(map);
+
+    service.getDataForPathogenCodesForFederalState("code");
+
+    verify(federalStateNotificationCategoryDataMock).getFederalStateNotificationCategories();
+    verifyNoInteractions(federalStateNotificationCategoryDataRegressionMock);
   }
 }

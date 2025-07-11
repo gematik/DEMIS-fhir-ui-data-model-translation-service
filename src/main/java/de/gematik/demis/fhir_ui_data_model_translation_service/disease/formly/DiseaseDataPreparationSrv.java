@@ -29,11 +29,13 @@ package de.gematik.demis.fhir_ui_data_model_translation_service.disease.formly;
 import ca.uhn.fhir.context.FhirContext;
 import de.gematik.demis.fhir_ui_data_model_translation_service.FeatureFlags;
 import de.gematik.demis.fhir_ui_data_model_translation_service.disease.DiseaseNotificationCategoriesSrv;
+import de.gematik.demis.fhir_ui_data_model_translation_service.disease.DiseaseNotificationCategoriesSrvRegression;
 import de.gematik.demis.fhir_ui_data_model_translation_service.disease.Questionnaires;
 import de.gematik.demis.fhir_ui_data_model_translation_service.disease.formly.model.*;
 import de.gematik.demis.fhir_ui_data_model_translation_service.disease.formly.processor.*;
 import de.gematik.demis.fhir_ui_data_model_translation_service.disease.formly.processor.resources.DiseaseProcessor;
 import de.gematik.demis.fhir_ui_data_model_translation_service.utils.Utils;
+import de.gematik.demis.notification.builder.demis.fhir.notification.types.NotificationCategory;
 import jakarta.annotation.PostConstruct;
 import java.io.File;
 import java.io.IOException;
@@ -44,6 +46,7 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
 import org.hl7.fhir.r4.model.Questionnaire;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 @RequiredArgsConstructor
@@ -55,6 +58,7 @@ public class DiseaseDataPreparationSrv {
   private static final String LINK_ID_HOSPITALIZATION_REASON = "reason";
 
   private final DiseaseNotificationCategoriesSrv categoriesSrv;
+  private final DiseaseNotificationCategoriesSrvRegression categoriesSrvRegression;
   private final Questionnaires questionnaires;
   private final FhirContext fhirContext;
   private final ChoiceProcessor choiceProcessor;
@@ -65,8 +69,12 @@ public class DiseaseDataPreparationSrv {
   private final ReferenceProcessor referenceProcessor;
   private final DiseaseProcessor diseaseProcessor;
   private final EnableWhenProcessor enableWhenProcessor;
+  private final QuantityProcessor quantityProcessor;
 
   private final FeatureFlags featureFlags;
+
+  @Value("${feature.flag.notifications.7_3}")
+  private boolean isNotification73Active;
 
   @Getter private final Map<String, FormlyFieldConfigs[]> questionnaireMap = new HashMap<>();
 
@@ -84,9 +92,23 @@ public class DiseaseDataPreparationSrv {
   }
 
   public Map<String, FormlyFieldConfigs[]> getQuestionnaire(String code) {
+    return getQuestionnaire(code, NotificationCategory.P_6_1);
+  }
+
+  public Map<String, FormlyFieldConfigs[]> getQuestionnaire(
+      String code, NotificationCategory notificationCategory) {
     Map<String, FormlyFieldConfigs[]> returnMap = new HashMap<>();
     // add condition
-    String title = this.categoriesSrv.getCategory(code).getDisplay();
+    String title;
+    if (isNotification73Active) {
+      if (NotificationCategory.P_6_1.equals(notificationCategory)) {
+        title = this.categoriesSrv.getCategory(code).getDisplay();
+      } else {
+        title = this.categoriesSrv.getCategoryNonNominal(code).getDisplay();
+      }
+    } else {
+      title = this.categoriesSrvRegression.getCategory(code).getDisplay();
+    }
     FormlyFieldConfigs conditionHeader =
         FormlyFieldConfigs.builder().template(title).className("QUESTIONNAIRE-TITLE").build();
     FormlyFieldConfigs conditionFormlyFieldConfig =
@@ -98,7 +120,9 @@ public class DiseaseDataPreparationSrv {
         "conditionConfigs", new FormlyFieldConfigs[] {conditionHeader, conditionFormlyFieldConfig});
 
     // add common and specific questionnaires
-    returnMap.put("commonConfig", questionnaireMap.get("common"));
+    if (NotificationCategory.P_6_1.equals(notificationCategory)) {
+      returnMap.put("commonConfig", questionnaireMap.get("common"));
+    }
     returnMap.put("questionnaireConfigs", questionnaireMap.get(code.toLowerCase()));
 
     return returnMap;
@@ -175,7 +199,7 @@ public class DiseaseDataPreparationSrv {
     if (item.getRepeats()) {
       return switch (item.getType()) {
         case Questionnaire.QuestionnaireItemType.GROUP,
-                Questionnaire.QuestionnaireItemType.REFERENCE ->
+            Questionnaire.QuestionnaireItemType.REFERENCE ->
             true;
         case Questionnaire.QuestionnaireItemType.CHOICE -> {
           final List<Questionnaire.QuestionnaireItemComponent> subitems = item.getItem();
@@ -277,6 +301,9 @@ public class DiseaseDataPreparationSrv {
         break;
       case TEXT:
         textProcessor.createFieldGroup(item, parent, diseaseCode);
+        break;
+      case QUANTITY:
+        quantityProcessor.createFieldGroup(item, parent, diseaseCode);
         break;
       case GROUP:
         throw new IllegalStateException("group processing is not allowed here");

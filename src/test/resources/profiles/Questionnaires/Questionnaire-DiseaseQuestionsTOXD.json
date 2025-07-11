@@ -1,0 +1,181 @@
+{
+  "resourceType": "Questionnaire",
+  "id": "DiseaseQuestionsTOXD",
+  "url": "https://demis.rki.de/fhir/Questionnaire/DiseaseQuestionsTOXD",
+  "version": "1.0.0",
+  "name": "DiseaseQuestionsTOXD",
+  "title": "Toxoplasma gondii; Meldepflicht nur bei konnatalen Infektionen: spezifische klinische und epidemiologische Angaben",
+  "status": "draft",
+  "date": "2025-04-25",
+  "description": "Toxoplasma gondii (konnatal) spezifische Informationsbedarfe werden in diesem meldetatbestandsspezifischen Fragebogen zusammengestellt. Dieser manifestiert sich als entsprechende QuestionnaireResponse innerhalb der Meldung.",
+  "item": [
+    {
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+          "valueCodeableConcept": {
+            "coding": [
+              {
+                "system": "http://hl7.org/fhir/questionnaire-item-control",
+                "code": "drop-down",
+                "display": "Drop down"
+              }
+            ]
+          }
+        }
+      ],
+      "linkId": "motherEvidence",
+      "text": "Lag bei der Mutter eine klinische Symptomatik vor?",
+      "type": "choice",
+      "required": true,
+      "repeats": false,
+      "answerValueSet": "https://demis.rki.de/fhir/ValueSet/yesOrNoOrNoInformation-SNOMED"
+    },
+    {
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+          "valueCodeableConcept": {
+            "coding": [
+              {
+                "system": "http://hl7.org/fhir/questionnaire-item-control",
+                "code": "drop-down",
+                "display": "Drop down"
+              }
+            ]
+          }
+        }
+      ],
+      "linkId": "newbornEvidence",
+      "text": "Welche Symptomatik liegt bzw. lag beim Neugeborenen vor?",
+      "type": "choice",
+      "required": true,
+      "repeats": true,
+      "answerValueSet": "https://demis.rki.de/fhir/ValueSet/answerSetNewbornEvidenceTOXD"
+    },
+    {
+      "linkId": "pregnancyWeek",
+      "text": "In welcher Schwangerschaftswoche fand die Geburt statt?",
+      "type": "quantity",
+      "required": true,
+      "repeats": false
+    },
+    {
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-unitOption",
+          "valueCoding": {
+            "system": "http://unitsofmeasure.org",
+            "code": "g",
+            "display": "gram"
+          }
+        }
+      ],
+      "linkId": "newbornWeight",
+      "text": "Welches Gewicht hatte das Neugeborene bei der Geburt (Angabe in Gramm)?",
+      "type": "quantity",
+      "required": true,
+      "repeats": false
+    },
+    {
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+          "valueCodeableConcept": {
+            "coding": [
+              {
+                "system": "http://hl7.org/fhir/questionnaire-item-control",
+                "code": "drop-down",
+                "display": "Drop down"
+              }
+            ]
+          }
+        }
+      ],
+      "linkId": "newbornStatus",
+      "text": "Wie ist der Gesundheitszustand des Neugeborenen jetzt bzw. zum Zeitpunkt der Geburt?",
+      "type": "choice",
+      "required": true,
+      "repeats": false,
+      "answerValueSet": "https://demis.rki.de/fhir/ValueSet/answerSetNewbornStatusTOXD"
+    },
+    {
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+          "valueCodeableConcept": {
+            "coding": [
+              {
+                "system": "http://hl7.org/fhir/questionnaire-item-control",
+                "code": "drop-down",
+                "display": "Drop down"
+              }
+            ]
+          }
+        }
+      ],
+      "linkId": "infectionRiscDuringPregnancy",
+      "text": "Lag während der Schwangerschaft eines der folgenden Infektionsrisiken vor?",
+      "type": "choice",
+      "required": true,
+      "repeats": false,
+      "answerValueSet": "https://demis.rki.de/fhir/ValueSet/answerSetInfectionPathTOXD",
+      "item": [
+        {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+              "valueCodeableConcept": {
+                "coding": [
+                  {
+                    "system": "http://hl7.org/fhir/questionnaire-item-control",
+                    "code": "drop-down",
+                    "display": "Drop down"
+                  }
+                ]
+              }
+            }
+          ],
+          "linkId": "infectionRiscCountry",
+          "text": "Welches Land wurde während der Schwangerschaft besucht?",
+          "type": "choice",
+          "enableWhen": [
+            {
+              "question": "infectionRiscDuringPregnancy",
+              "operator": "=",
+              "answerCoding": {
+                "system": "http://snomed.info/sct",
+                "code": "184082004+77386006"
+              }
+            }
+          ],
+          "required": true,
+          "repeats": false,
+          "answerValueSet": "https://demis.rki.de/fhir/ValueSet/answerSetCountry-ISO-SNOMED"
+        }
+      ]
+    },
+    {
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+          "valueCodeableConcept": {
+            "coding": [
+              {
+                "system": "http://hl7.org/fhir/questionnaire-item-control",
+                "code": "drop-down",
+                "display": "Drop down"
+              }
+            ]
+          }
+        }
+      ],
+      "linkId": "countryOriginMother",
+      "text": "Welches ist das Herkunftsland der Mutter?",
+      "type": "choice",
+      "required": true,
+      "repeats": false,
+      "answerValueSet": "https://demis.rki.de/fhir/ValueSet/answerSetCountry-ISO-SNOMED"
+    }
+  ]
+}

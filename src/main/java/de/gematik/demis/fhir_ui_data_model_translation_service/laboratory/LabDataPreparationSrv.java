@@ -67,7 +67,7 @@ public class LabDataPreparationSrv {
       Pattern.compile("ValueSet-resistanceGene(.{4})\\.json");
 
   private final SnapshotFilesService snapshotFilesService;
-  private final NotificationCategoryList notificationCategoryList;
+  private final PathogenNotificationCategoryList pathogenNotificationCategoryList;
   private final FhirContext fhirContext;
   private final boolean addTestDataErrorCase;
   private final boolean addTestDataSortingCase;
@@ -80,13 +80,13 @@ public class LabDataPreparationSrv {
   public LabDataPreparationSrv(
       FhirContext fhirContext,
       SnapshotFilesService snapshotFilesService,
-      NotificationCategoryList notificationCategoryList,
+      PathogenNotificationCategoryList pathogenNotificationCategoryList,
       @Value("${add.test.data.error.case.for.lab}") boolean addTestDataErrorCase,
       @Value("${add.test.data.laboratory.sorting}") boolean addTestDataSortingCase,
-      @Value("${feature.flag.notification7_3}") boolean isNotification73ProcessingActive) {
+      @Value("${feature.flag.notifications.7_3}") boolean isNotification73ProcessingActive) {
     this.fhirContext = fhirContext;
     this.snapshotFilesService = snapshotFilesService;
-    this.notificationCategoryList = notificationCategoryList;
+    this.pathogenNotificationCategoryList = pathogenNotificationCategoryList;
     this.addTestDataErrorCase = addTestDataErrorCase;
     this.addTestDataSortingCase = addTestDataSortingCase;
     this.isNotification73ProcessingActive = isNotification73ProcessingActive;
@@ -97,9 +97,9 @@ public class LabDataPreparationSrv {
     this.laboratoryDataMap = new HashMap<>();
     this.notificationCategories = new ArrayList<>();
 
-    this.pathogenNotificationCategories =
-        notificationCategoryList.getPathogenNotificationCategories();
     if (isNotification73ProcessingActive) {
+      this.pathogenNotificationCategories =
+          pathogenNotificationCategoryList.getPathogenNotificationCategories();
       this.notificationCategories =
           pathogenNotificationCategories.values().stream()
               .flatMap(SequencedCollection::stream)
@@ -108,7 +108,8 @@ public class LabDataPreparationSrv {
 
     // remove this block with feature.flag.notification7_3
     if ((!this.isNotification73ProcessingActive) || notificationCategories.isEmpty()) {
-      this.notificationCategories = notificationCategoryList.getPathogenNotificationCategoryList();
+      this.notificationCategories =
+          pathogenNotificationCategoryList.getPathogenNotificationCategoryList();
     }
 
     Map<String, List<CodeDisplay>> methodMap = createCodeToMethodMap();
@@ -204,7 +205,7 @@ public class LabDataPreparationSrv {
   }
 
   /**
-   * @deprecated use {@link NotificationCategoryList#getNotificationCategories()}
+   * @deprecated use {@link PathogenNotificationCategoryList#getNotificationCategories()}
    */
   @Deprecated(forRemoval = true)
   public List<CodeDisplay> getNotificationCategories() {
@@ -281,18 +282,39 @@ public class LabDataPreparationSrv {
       String json = FileUtils.readFileToString(file, StandardCharsets.UTF_8);
       ValueSet valueSet = fhirContext.newJsonParser().parseResource(ValueSet.class, json);
 
-      List<CodeDisplay> codeDisplays =
-          valueSet.getCompose().getInclude().get(0).getConcept().stream()
-              .map(
-                  component ->
-                      CodeDisplay.builder()
-                          .code(component.getCode())
-                          .display(component.getDisplay())
-                          .designations(extractDesignations(component.getDesignation()))
-                          .order(extractOrder(component))
-                          .build())
-              .toList();
-      return filterAndSortList(codeDisplays);
+      if (isNotification73ProcessingActive) {
+        ValueSet.ConceptSetComponent include = valueSet.getCompose().getInclude().get(0);
+        String system = include.getSystem();
+        String version = include.hasVersion() ? include.getVersion() : null;
+        String systemWithVersion = version != null ? system + "|" + version : system;
+
+        List<CodeDisplay> codeDisplays =
+            include.getConcept().stream()
+                .map(
+                    component ->
+                        CodeDisplay.builder()
+                            .code(component.getCode())
+                            .display(component.getDisplay())
+                            .designations(extractDesignations(component.getDesignation()))
+                            .order(extractOrder(component))
+                            .system(systemWithVersion)
+                            .build())
+                .toList();
+        return filterAndSortList(codeDisplays);
+      } else {
+        List<CodeDisplay> codeDisplays =
+            valueSet.getCompose().getInclude().get(0).getConcept().stream()
+                .map(
+                    component ->
+                        CodeDisplay.builder()
+                            .code(component.getCode())
+                            .display(component.getDisplay())
+                            .designations(extractDesignations(component.getDesignation()))
+                            .order(extractOrder(component))
+                            .build())
+                .toList();
+        return filterAndSortList(codeDisplays);
+      }
     } catch (IOException e) {
       log.error("error while reading file {}", file.getName());
       return emptyList();
