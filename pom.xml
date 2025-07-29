@@ -4,11 +4,11 @@
   <parent>
     <groupId>de.gematik.demis</groupId>
     <artifactId>spring-parent</artifactId>
-    <version>2.12.2</version>
+    <version>2.12.7</version>
     <relativePath></relativePath><!-- lookup parent from repository -->
   </parent>
   <artifactId>fhir-ui-data-model-translation-service</artifactId>
-  <version>2.2.0-SNAPSHOT</version>
+  <version>2.2.1-SNAPSHOT</version>
   <name>FHIR UI Data Model Translation Service</name>
   <packaging>jar</packaging>
   <description>This service translates data from the DEMIS profile snapshot into processable data for

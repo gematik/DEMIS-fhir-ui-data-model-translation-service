@@ -62,7 +62,7 @@
     <dependency>
       <groupId>ca.uhn.hapi.fhir</groupId>
       <artifactId>org.hl7.fhir.r4</artifactId>
-      <version>6.5.18</version>
+      <version>6.5.27</version>
       <licenses>
         <license>
           <name>Apache Software License 2.0</name>
@@ -74,7 +74,7 @@
     <dependency>
       <groupId>ca.uhn.hapi.fhir</groupId>
       <artifactId>org.hl7.fhir.utilities</artifactId>
-      <version>6.5.18</version>
+      <version>6.5.27</version>
       <licenses>
         <license>
           <name>Apache Software License 2.0</name>
@@ -454,7 +454,7 @@
     <dependency>
       <groupId>de.gematik.demis</groupId>
       <artifactId>notification-builder-library</artifactId>
-      <version>6.3.1</version>
+      <version>6.3.5</version>
       <licenses>
         <license>
           <name>Licensed under the EUPL 1.2</name>
@@ -478,7 +478,7 @@
     <dependency>
       <groupId>de.gematik.demis</groupId>
       <artifactId>spring-parent</artifactId>
-      <version>2.12.2</version>
+      <version>2.12.7</version>
       <licenses>
         <license>
           <name>Licensed under the EUPL 1.2</name>
@@ -974,6 +974,19 @@
       </licenses>
     </dependency>
     <dependency>
+      <groupId>net.sf.saxon</groupId>
+      <artifactId>Saxon-HE</artifactId>
+      <version>11.6</version>
+      <licenses>
+        <license>
+          <name>Mozilla Public License Version 2.0</name>
+          <url>http://www.mozilla.org/MPL/2.0/</url>
+          <distribution>repo</distribution>
+          <file>mozilla public license version 2.0 - 2.0.html</file>
+        </license>
+      </licenses>
+    </dependency>
+    <dependency>
       <groupId>org.apache.commons</groupId>
       <artifactId>commons-collections4</artifactId>
       <version>4.4</version>
@@ -1015,7 +1028,7 @@
     <dependency>
       <groupId>org.apache.commons</groupId>
       <artifactId>commons-lang3</artifactId>
-      <version>3.17.0</version>
+      <version>3.18.0</version>
       <licenses>
         <license>
           <name>Apache-2.0</name>
@@ -1029,6 +1042,45 @@
       <groupId>org.apache.commons</groupId>
       <artifactId>commons-text</artifactId>
       <version>1.10.0</version>
+      <licenses>
+        <license>
+          <name>Apache License, Version 2.0</name>
+          <url>https://www.apache.org/licenses/LICENSE-2.0.txt</url>
+          <distribution>repo</distribution>
+          <file>apache software license 2.0 - license-2.0.txt</file>
+        </license>
+      </licenses>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.httpcomponents.client5</groupId>
+      <artifactId>httpclient5</artifactId>
+      <version>5.5</version>
+      <licenses>
+        <license>
+          <name>Apache License, Version 2.0</name>
+          <url>https://www.apache.org/licenses/LICENSE-2.0.txt</url>
+          <distribution>repo</distribution>
+          <file>apache software license 2.0 - license-2.0.txt</file>
+        </license>
+      </licenses>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.httpcomponents.core5</groupId>
+      <artifactId>httpcore5</artifactId>
+      <version>5.3.4</version>
+      <licenses>
+        <license>
+          <name>Apache License, Version 2.0</name>
+          <url>https://www.apache.org/licenses/LICENSE-2.0.txt</url>
+          <distribution>repo</distribution>
+          <file>apache software license 2.0 - license-2.0.txt</file>
+        </license>
+      </licenses>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.httpcomponents.core5</groupId>
+      <artifactId>httpcore5-h2</artifactId>
+      <version>5.3.4</version>
       <licenses>
         <license>
           <name>Apache License, Version 2.0</name>
@@ -1913,7 +1965,7 @@
     <dependency>
       <groupId>org.webjars</groupId>
       <artifactId>swagger-ui</artifactId>
-      <version>5.25.2</version>
+      <version>5.26.2</version>
       <licenses>
         <license>
           <name>Apache-2.0</name>
@@ -1931,6 +1983,19 @@
           <url>https://github.com/webjars/webjars-locator-lite/blob/main/LICENSE.md</url>
           <distribution>repo</distribution>
           <file>mit - license.html</file>
+        </license>
+      </licenses>
+    </dependency>
+    <dependency>
+      <groupId>org.xmlresolver</groupId>
+      <artifactId>xmlresolver</artifactId>
+      <version>5.2.1</version>
+      <licenses>
+        <license>
+          <name>Apache License version 2.0</name>
+          <url>https://www.apache.org/licenses/LICENSE-2.0</url>
+          <distribution>repo</distribution>
+          <file>apache license, version 2.0 - license-2.0.txt</file>
         </license>
       </licenses>
     </dependency>

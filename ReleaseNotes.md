@@ -2,6 +2,11 @@
  
 # Release notes
 
+## Release 2.2.1
+### changed
+- add default feature flag FEATURE_FLAG_FUTS_VALUESETS_SNOMED to values.yaml
+- upgrade spring parent to 2.12.3
+
 ## Release 2.2.0
 ### changed
 - Updated ospo-resources for adding additional notes and disclaimer
