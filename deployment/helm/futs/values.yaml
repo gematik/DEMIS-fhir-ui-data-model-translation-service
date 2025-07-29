@@ -1,7 +1,7 @@
 # Default values for fhir-ui-data-model-translation-service.
 
 # Number of Pod Replicas desired
-replicaCount: 1
+replicaCount: 2
 
 # Enables debug mode
 debug:
@@ -42,6 +42,7 @@ customEnvVars:
   FEATURE_FLAG_HOSP_REASON_MOVE: "false"
   FEATURE_FLAG_HOSP_COPY_CHECKBOXES: "false"
   FEATURE_FLAG_NOTIFICATIONS_7_3: "false"
+  FEATURE_FLAG_FUTS_VALUESETS_SNOMED: "false"
 
 # Define custom Container Entrypoint and Arguments (e.g. JVM Tuning)
 # If not given, the Entrypoint defined in Dockerfile will be used
