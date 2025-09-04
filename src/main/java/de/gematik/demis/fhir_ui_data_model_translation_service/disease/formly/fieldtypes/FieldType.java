@@ -1,4 +1,4 @@
-package de.gematik.demis.fhir_ui_data_model_translation_service.disease.formly.model;
+package de.gematik.demis.fhir_ui_data_model_translation_service.disease.formly.fieldtypes;
 
 /*-
  * #%L
@@ -26,38 +26,15 @@ package de.gematik.demis.fhir_ui_data_model_translation_service.disease.formly.m
  * #L%
  */
 
-import com.fasterxml.jackson.annotation.JsonInclude;
-import de.gematik.demis.fhir_ui_data_model_translation_service.model.CodeDisplay;
-import lombok.Builder;
-import lombok.Data;
-import org.hl7.fhir.r4.model.Questionnaire;
+import de.gematik.demis.fhir_ui_data_model_translation_service.disease.formly.model.FieldGroup;
 
-@Builder
-@Data
-@JsonInclude(JsonInclude.Include.NON_NULL)
-public class Props {
+/** UI component responsible to collect input from a user */
+public interface FieldType {
 
-  private CodeDisplay[] options;
-  private Boolean required;
-  private Boolean clearable;
-  private String defaultCode;
-  private String placeholder;
-  private String itemName;
-  private String label;
-  private EnableWhen[] enableWhen;
-  private Questionnaire.EnableWhenBehavior enableBehavior;
-  private ImportSpec importSpec;
-  private Boolean disabled;
-  private Quantity quantity;
-  private String[] allowedPrecisions;
-  private String minDate;
-  private String maxDate;
-  private Boolean multiYear;
-
-  @Data
-  @Builder
-  public static class Quantity {
-    private String system;
-    private String unit;
-  }
+  /**
+   * Create formly field group from the given domain parameters.
+   *
+   * @return field group that can be used in the formly form
+   */
+  FieldGroup createFieldGroup();
 }

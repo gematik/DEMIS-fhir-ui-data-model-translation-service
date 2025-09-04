@@ -2,10 +2,20 @@
  
 # Release notes
 
-## Release 2.2.1
+## 2.2.2
+### changed
+- disease frontend date inputs changed to date picker component
+- set test data creation for disease notification category to false
+- remove feature flag FEATURE_FLAG_HOSP_COPY_CHECKBOXES
+
+## 2.2.1
 ### changed
 - add default feature flag FEATURE_FLAG_FUTS_VALUESETS_SNOMED to values.yaml
 - upgrade spring parent to 2.12.3
+
+## 2.2.0
+### changed
+- fix: set required attribute for text-based FieldGroups
 
 ## Release 2.2.0
 ### changed
@@ -16,7 +26,7 @@
 - new endpoints and logic to process nonnominal notifications for IfsG §7.3
 - add version to system for strict laboratory notification
 
-## Release 2.1.0
+## 2.1.0
 ### changed
 - First official GitHub-Release
 - Sorting of ValueSet and CodeSytem
@@ -31,29 +41,29 @@
 - Dependency-Updates (CVEs et al.)
 - Update Base-Image to OSADL
 
-## Release 1.2.3 (2024-04-15)
+## 1.2.3 (2024-04-15)
 ### changed
 - Using Spring-Parent
 - Fix CVEs
 - Extended Helm Chart for Kubernetes
 
-## Release 1.2.1 (2023-12-20)
+## 1.2.1 (2023-12-20)
 ### changed
 - Using Spring-Parent
 - Fix CVEs 
 
-## Release 1.2.0 (2023-12-01)
+## 1.2.0 (2023-12-01)
 ### changed
 - SpringBoot 3.2.0
 
-## Release 1.1.5 (2023-11-01)
+## 1.1.5 (2023-11-01)
 ### added
 - Observability features
 
 ### changed
 - SpringBoot 3.1.4
 
-## Release 1.0.0 (2023-01-04)
+## 1.0.0 (2023-01-04)
 ### added
 - SpringBoot 3.0.1
 

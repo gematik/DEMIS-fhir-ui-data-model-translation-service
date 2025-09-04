@@ -27,6 +27,7 @@ package de.gematik.demis.fhir_ui_data_model_translation_service.disease.formly.p
  */
 
 import de.gematik.demis.fhir_ui_data_model_translation_service.FeatureFlags;
+import de.gematik.demis.fhir_ui_data_model_translation_service.disease.formly.fieldtypes.DatePicker;
 import de.gematik.demis.fhir_ui_data_model_translation_service.disease.formly.model.FieldGroup;
 import de.gematik.demis.fhir_ui_data_model_translation_service.disease.formly.model.Props;
 import de.gematik.demis.fhir_ui_data_model_translation_service.disease.formly.processor.ChoiceProcessor;
@@ -106,18 +107,30 @@ public class ImmunizationProcessor {
             .fieldGroupClassName(REF_ELEMENT)
             .parent(parent)
             .build();
-    FieldGroup.builder()
-        .key("answer.valueDate")
-        .className("vaccinationDate")
-        .type(FieldGroup.TYPE_INPUT)
-        .parent(occurrence)
-        .props(
-            Props.builder()
-                .required(true)
-                .label("Datum der Impfung")
-                .placeholder("TT.MM.JJJJ | MM.JJJJ | JJJJ")
-                .build())
-        .build();
+    if (featureFlags.isDiseaseDatePicker()) {
+      DatePicker.builder()
+          .label("Datum der Impfung")
+          .required(true)
+          .maxDateNotInFuture(true)
+          .key(DiseaseProcessor.DATE_PICKER_KEY_ANSWER)
+          .parent(occurrence)
+          .className("vaccinationDate")
+          .build()
+          .createFieldGroup();
+    } else {
+      FieldGroup.builder()
+          .key("answer.valueDate")
+          .className("vaccinationDate")
+          .type(FieldGroup.TYPE_INPUT)
+          .parent(occurrence)
+          .props(
+              Props.builder()
+                  .required(true)
+                  .label("Datum der Impfung")
+                  .placeholder("TT.MM.JJJJ | MM.JJJJ | JJJJ")
+                  .build())
+          .build();
+    }
   }
 
   private void createNote(FieldGroup parent) {

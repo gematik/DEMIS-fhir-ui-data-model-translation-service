@@ -151,11 +151,13 @@
                             "fieldGroup": [
                               {
                                 "key": "answer.valueDate",
-                                "type": "input",
+                                "type": "datepicker",
                                 "props": {
                                   "required": true,
                                   "placeholder": "TT.MM.JJJJ | MM.JJJJ | JJJJ",
-                                  "label": "Datum der Impfung"
+                                  "label": "Datum der Impfung",
+                                  "minDate": "1900-01-01",
+                                  "maxDate": "${LOCAL_DATE_NOW}"
                                 },
                                 "className": "vaccinationDate"
                               }
@@ -690,8 +692,9 @@
               "fieldGroup": [
                 {
                   "key": "valueDate",
-                  "type": "input",
+                  "type": "datepicker",
                   "props": {
+                    "required": false,
                     "placeholder": "TT.MM.JJJJ | MM.JJJJ | JJJJ",
                     "label": "Beginn Therapie",
                     "enableWhen": [
@@ -700,11 +703,9 @@
                         "op": "=",
                         "value": "yes"
                       }
-                    ]
+                    ],
+                    "minDate": "1900-01-01"
                   },
-                  "wrappers": [
-                    "form-field"
-                  ],
                   "className": "LinkId_therapyBegin"
                 }
               ]
@@ -776,6 +777,7 @@
                   "key": "valueString",
                   "type": "textarea",
                   "props": {
+                    "required": false,
                     "label": "Fallbezogene Zusatzinformationen zum Ausbruch",
                     "enableWhen": [
                       {
@@ -888,7 +890,7 @@
               "fieldGroup": [
                 {
                   "key": "valueDate",
-                  "type": "input",
+                  "type": "datepicker",
                   "props": {
                     "placeholder": "TT.MM.JJJJ | MM.JJJJ | JJJJ",
                     "label": "Sterbedatum",
@@ -902,11 +904,9 @@
                     "importSpec": {
                       "importKey": "C.deathDate",
                       "multi": false
-                    }
+                    },
+                    "minDate": "1900-01-01"
                   },
-                  "wrappers": [
-                    "form-field"
-                  ],
                   "className": "LinkId_deathDate"
                 }
               ]
@@ -2384,15 +2384,21 @@
                                     "fieldGroup": [
                                       {
                                         "key": "answer.valueDate",
-                                        "type": "input",
+                                        "type": "datepicker",
                                         "props": {
                                           "required": true,
-                                          "placeholder": "TT.MM.JJJJ | MM.JJJJ | JJJJ",
+                                          "placeholder": "TT.MM.JJJJ | MM.JJJJ",
                                           "label": "Aufnahmedatum",
                                           "importSpec": {
                                             "importKey": "C.hospitalized.start",
                                             "multi": false
-                                          }
+                                          },
+                                          "allowedPrecisions": [
+                                            "day",
+                                            "month"
+                                          ],
+                                          "minDate": "1900-01-01",
+                                          "maxDate": "${LOCAL_DATE_NOW}"
                                         },
                                         "className": "hospitalizationStartDate"
                                       }
@@ -2404,15 +2410,20 @@
                                     "fieldGroup": [
                                       {
                                         "key": "answer.valueDate",
-                                        "type": "input",
+                                        "type": "datepicker",
                                         "props": {
                                           "required": false,
-                                          "placeholder": "TT.MM.JJJJ | MM.JJJJ | JJJJ",
+                                          "placeholder": "TT.MM.JJJJ | MM.JJJJ",
                                           "label": "Entlassdatum",
                                           "importSpec": {
                                             "importKey": "C.hospitalized.end",
                                             "multi": false
-                                          }
+                                          },
+                                          "allowedPrecisions": [
+                                            "day",
+                                            "month"
+                                          ],
+                                          "minDate": "1900-01-01"
                                         },
                                         "className": "hospitalizationEndDate"
                                       }
@@ -3149,7 +3160,7 @@
                         "fieldGroup": [
                           {
                             "key": "valueDate",
-                            "type": "input",
+                            "type": "datepicker",
                             "props": {
                               "placeholder": "TT.MM.JJJJ | MM.JJJJ | JJJJ",
                               "label": "Beginn",
@@ -3163,11 +3174,9 @@
                               "importSpec": {
                                 "importKey": "C.IPF.startDate",
                                 "multi": false
-                              }
+                              },
+                              "minDate": "1900-01-01"
                             },
-                            "wrappers": [
-                              "form-field"
-                            ],
                             "className": "LinkId_infectProtectFacilityBegin"
                           }
                         ]
@@ -3177,7 +3186,7 @@
                         "fieldGroup": [
                           {
                             "key": "valueDate",
-                            "type": "input",
+                            "type": "datepicker",
                             "props": {
                               "placeholder": "TT.MM.JJJJ | MM.JJJJ | JJJJ",
                               "label": "Ende",
@@ -3191,11 +3200,9 @@
                               "importSpec": {
                                 "importKey": "C.IPF.endDate",
                                 "multi": false
-                              }
+                              },
+                              "minDate": "1900-01-01"
                             },
-                            "wrappers": [
-                              "form-field"
-                            ],
                             "className": "LinkId_infectProtectFacilityEnd"
                           }
                         ]
@@ -3621,7 +3628,7 @@
                         "fieldGroup": [
                           {
                             "key": "valueDate",
-                            "type": "input",
+                            "type": "datepicker",
                             "props": {
                               "placeholder": "TT.MM.JJJJ | MM.JJJJ | JJJJ",
                               "label": "Beginn",
@@ -3635,11 +3642,9 @@
                               "importSpec": {
                                 "importKey": "C.exposure.startDate",
                                 "multi": false
-                              }
+                              },
+                              "minDate": "1900-01-01"
                             },
-                            "wrappers": [
-                              "form-field"
-                            ],
                             "className": "LinkId_placeExposureBegin"
                           }
                         ]
@@ -3649,7 +3654,7 @@
                         "fieldGroup": [
                           {
                             "key": "valueDate",
-                            "type": "input",
+                            "type": "datepicker",
                             "props": {
                               "placeholder": "TT.MM.JJJJ | MM.JJJJ | JJJJ",
                               "label": "Ende",
@@ -3663,11 +3668,9 @@
                               "importSpec": {
                                 "importKey": "C.exposure.endDate",
                                 "multi": false
-                              }
+                              },
+                              "minDate": "1900-01-01"
                             },
-                            "wrappers": [
-                              "form-field"
-                            ],
                             "className": "LinkId_placeExposureEnd"
                           }
                         ]
@@ -3883,6 +3886,7 @@
                             "key": "valueString",
                             "type": "textarea",
                             "props": {
+                              "required": false,
                               "label": "Anmerkungen zum Expositionsort",
                               "enableWhen": [
                                 {
@@ -3977,6 +3981,7 @@
               "key": "valueString",
               "type": "textarea",
               "props": {
+                "required": false,
                 "label": "Wichtige Zusatzinformationen",
                 "importSpec": {
                   "importKey": "C.importantInfo",
@@ -4006,18 +4011,21 @@
           "fieldGroup": [
             {
               "key": "answer.valueDate",
-              "type": "input",
+              "type": "datepicker",
               "props": {
-                "placeholder": "TT.MM.JJJJ | MM.JJJJ | JJJJ",
+                "placeholder": "TT.MM.JJJJ | MM.JJJJ",
                 "label": "Datum Diagnosestellung",
                 "importSpec": {
                   "importKey": "D.diagnosis",
                   "multi": false
-                }
+                },
+                "allowedPrecisions": [
+                  "day",
+                  "month"
+                ],
+                "minDate": "1900-01-01",
+                "maxDate": "${LOCAL_DATE_NOW}"
               },
-              "wrappers": [
-                "form-field"
-              ],
               "className": "LinkId_recordedDate"
             }
           ]
@@ -4027,18 +4035,21 @@
           "fieldGroup": [
             {
               "key": "answer.valueDate",
-              "type": "input",
+              "type": "datepicker",
               "props": {
-                "placeholder": "TT.MM.JJJJ | MM.JJJJ | JJJJ",
+                "placeholder": "TT.MM.JJJJ | MM.JJJJ",
                 "label": "Erkrankungsbeginn",
                 "importSpec": {
                   "importKey": "D.start",
                   "multi": false
-                }
+                },
+                "allowedPrecisions": [
+                  "day",
+                  "month"
+                ],
+                "minDate": "1900-01-01",
+                "maxDate": "${LOCAL_DATE_NOW}"
               },
-              "wrappers": [
-                "form-field"
-              ],
               "className": "LinkId_onset"
             }
           ]

@@ -34,6 +34,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.time.LocalDate;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -71,7 +72,9 @@ class DiseaseDataLoaderCtrIT {
   })
   @DisplayName("test result for specific endpoints")
   void getResultsForSpecificEndpoints(String endpoint, String expectedDataPath) throws Exception {
-    String expected = Files.readString(Paths.get(expectedDataPath));
+    String expected =
+        Files.readString(Paths.get(expectedDataPath))
+            .replace("${LOCAL_DATE_NOW}", LocalDate.now().toString());
     MvcResult result = mockMvc.perform(get(endpoint)).andExpect(status().isOk()).andReturn();
     String actual = result.getResponse().getContentAsString(StandardCharsets.UTF_8);
     checkExpectedAndActualContentAsJsonNodes(actual, expected, mapper);

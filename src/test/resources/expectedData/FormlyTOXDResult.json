@@ -3528,18 +3528,21 @@
           "fieldGroup": [
             {
               "key": "answer.valueDate",
-              "type": "input",
+              "type": "datepicker",
               "props": {
-                "placeholder": "TT.MM.JJJJ | MM.JJJJ | JJJJ",
+                "placeholder": "TT.MM.JJJJ | MM.JJJJ",
                 "label": "Datum Diagnosestellung",
                 "importSpec": {
                   "importKey": "D.diagnosis",
                   "multi": false
-                }
+                },
+                "allowedPrecisions": [
+                  "day",
+                  "month"
+                ],
+                "minDate": "1900-01-01",
+                "maxDate": "${LOCAL_DATE_NOW}"
               },
-              "wrappers": [
-                "form-field"
-              ],
               "className": "LinkId_recordedDate"
             }
           ]
@@ -3549,18 +3552,21 @@
           "fieldGroup": [
             {
               "key": "answer.valueDate",
-              "type": "input",
+              "type": "datepicker",
               "props": {
-                "placeholder": "TT.MM.JJJJ | MM.JJJJ | JJJJ",
+                "placeholder": "TT.MM.JJJJ | MM.JJJJ",
                 "label": "Erkrankungsbeginn",
                 "importSpec": {
                   "importKey": "D.start",
                   "multi": false
-                }
+                },
+                "allowedPrecisions": [
+                  "day",
+                  "month"
+                ],
+                "minDate": "1900-01-01",
+                "maxDate": "${LOCAL_DATE_NOW}"
               },
-              "wrappers": [
-                "form-field"
-              ],
               "className": "LinkId_onset"
             }
           ]

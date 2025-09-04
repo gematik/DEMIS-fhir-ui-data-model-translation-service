@@ -40,9 +40,9 @@ customEnvVars:
   DATA_PATH_GAPP_DATA: "/profiles/GAPP"
   DATA_PATH_GAPD_DATA: "/profiles/GAPD"
   FEATURE_FLAG_HOSP_REASON_MOVE: "false"
-  FEATURE_FLAG_HOSP_COPY_CHECKBOXES: "false"
   FEATURE_FLAG_NOTIFICATIONS_7_3: "false"
   FEATURE_FLAG_FUTS_VALUESETS_SNOMED: "false"
+  FEATURE_FLAG_DISEASE_DATEPICKER: "false"
 
 # Define custom Container Entrypoint and Arguments (e.g. JVM Tuning)
 # If not given, the Entrypoint defined in Dockerfile will be used

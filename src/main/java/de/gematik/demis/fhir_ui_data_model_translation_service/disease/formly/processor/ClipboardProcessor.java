@@ -46,7 +46,8 @@ public class ClipboardProcessor {
           FieldGroup.TYPE_CODING,
           FieldGroup.TYPE_CODING_RADIO,
           FieldGroup.TYPE_INPUT,
-          FieldGroup.TYPE_TEXT_AREA);
+          FieldGroup.TYPE_TEXT_AREA,
+          FieldGroup.TYPE_DATEPICKER);
 
   private final DiseaseClipboardProps diseaseClipboardProps;
 

@@ -26,37 +26,32 @@ package de.gematik.demis.fhir_ui_data_model_translation_service.disease.formly.p
  * #L%
  */
 
-import static de.gematik.demis.fhir_ui_data_model_translation_service.disease.formly.model.Wrapper.FORM_FIELD;
+import static org.assertj.core.api.Assertions.assertThat;
+import static org.mockito.Mockito.mock;
 
 import de.gematik.demis.fhir_ui_data_model_translation_service.disease.formly.model.FieldGroup;
-import de.gematik.demis.fhir_ui_data_model_translation_service.disease.formly.model.Props;
-import java.util.List;
-import lombok.RequiredArgsConstructor;
 import org.hl7.fhir.r4.model.Questionnaire;
-import org.springframework.stereotype.Service;
+import org.junit.jupiter.api.Test;
 
-@RequiredArgsConstructor
-@Service
-public class TextProcessor implements ItemProcessor {
+class TextProcessorTest {
 
-  private final EnableWhenProcessor enableWhenProcessor;
-  private final ClipboardProcessor clipboardProcessor;
+  // Regression for DEMIS-3960
+  @Test
+  void thatRequiredAttributeIsInheritedFromItem() {
+    final TextProcessor textProcessor =
+        new TextProcessor(mock(EnableWhenProcessor.class), mock(ClipboardProcessor.class));
 
-  @Override
-  public FieldGroup[] createFieldGroup(
-      Questionnaire.QuestionnaireItemComponent item, FieldGroup parent, String diseaseCode) {
-    final Props props = Props.builder().required(item.getRequired()).label(item.getText()).build();
-    final var fieldGroup =
-        FieldGroup.builder()
-            .type(FieldGroup.TYPE_TEXT_AREA)
-            .key("valueString")
-            .wrappers(List.of(FORM_FIELD))
-            .className("LinkId_" + item.getLinkId())
-            .props(props)
-            .parent(parent)
-            .build();
-    this.enableWhenProcessor.createEnableWhens(item, fieldGroup);
-    this.clipboardProcessor.createClipboard(item, fieldGroup);
-    return new FieldGroup[] {fieldGroup};
+    final Questionnaire.QuestionnaireItemComponent item =
+        new Questionnaire.QuestionnaireItemComponent();
+    item.setRequired(true);
+    final FieldGroup[] groups =
+        textProcessor.createFieldGroup(item, FieldGroup.builder().build(), "any");
+
+    assertThat(groups)
+        .hasSize(1)
+        .allSatisfy(
+            fieldGroup -> {
+              assertThat(fieldGroup.getProps().getRequired()).isTrue();
+            });
   }
 }

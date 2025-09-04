@@ -48,6 +48,7 @@ public class FieldGroup {
   public static final String TYPE_CODING_MULTI = "autocomplete-multi-coding";
   public static final String TYPE_CODING_RADIO = "radio-button-coding";
   public static final String TYPE_TEXT_AREA = "textarea";
+  public static final String TYPE_DATEPICKER = "datepicker";
 
   /**
    * Component to let the user choose one option of many. This could be a radio-button component or

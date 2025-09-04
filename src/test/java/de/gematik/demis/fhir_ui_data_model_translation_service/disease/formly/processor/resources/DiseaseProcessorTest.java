@@ -32,6 +32,7 @@ import static org.mockito.Mockito.when;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import de.gematik.demis.fhir_ui_data_model_translation_service.FeatureFlags;
 import de.gematik.demis.fhir_ui_data_model_translation_service.disease.formly.DiseaseClipboardProps;
 import de.gematik.demis.fhir_ui_data_model_translation_service.disease.formly.model.FieldGroup;
 import de.gematik.demis.fhir_ui_data_model_translation_service.exception.DataNotFoundExcp;
@@ -50,6 +51,7 @@ class DiseaseProcessorTest {
 
   @Mock DataLoaderSrv dataLoaderSrvMock;
   @Mock DiseaseClipboardProps diseaseClipboardProps;
+  @Mock FeatureFlags featureFlags;
 
   @Test
   void shouldReturnFieldGroupsWithEvidenceOptions() throws JsonProcessingException {
@@ -82,7 +84,7 @@ class DiseaseProcessorTest {
     when(this.diseaseClipboardProps.condition()).thenReturn(Collections.emptyMap());
 
     DiseaseProcessor diseaseProcessor =
-        new DiseaseProcessor(this.dataLoaderSrvMock, this.diseaseClipboardProps);
+        new DiseaseProcessor(this.dataLoaderSrvMock, this.diseaseClipboardProps, this.featureFlags);
     FieldGroup[] cvdd = diseaseProcessor.createFieldGroup("cvdd");
 
     // pars cvdd to string with objectMapper
@@ -120,7 +122,7 @@ class DiseaseProcessorTest {
     when(this.diseaseClipboardProps.condition()).thenReturn(Collections.emptyMap());
 
     DiseaseProcessor diseaseProcessor =
-        new DiseaseProcessor(this.dataLoaderSrvMock, this.diseaseClipboardProps);
+        new DiseaseProcessor(this.dataLoaderSrvMock, this.diseaseClipboardProps, this.featureFlags);
     FieldGroup[] cvdd = diseaseProcessor.createFieldGroup("cvdd");
 
     // pars cvdd to string with objectMapper

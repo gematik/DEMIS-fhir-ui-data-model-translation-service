@@ -28,6 +28,8 @@ package de.gematik.demis.fhir_ui_data_model_translation_service.disease.formly.p
 
 import static de.gematik.demis.fhir_ui_data_model_translation_service.disease.formly.model.Wrapper.FORM_FIELD;
 
+import de.gematik.demis.fhir_ui_data_model_translation_service.FeatureFlags;
+import de.gematik.demis.fhir_ui_data_model_translation_service.disease.formly.fieldtypes.DatePicker;
 import de.gematik.demis.fhir_ui_data_model_translation_service.disease.formly.model.FieldGroup;
 import de.gematik.demis.fhir_ui_data_model_translation_service.disease.formly.model.Props;
 import java.util.List;
@@ -41,19 +43,32 @@ public class DateProcessor implements ItemProcessor {
 
   private final EnableWhenProcessor enableWhenProcessor;
   private final ClipboardProcessor clipboardProcessor;
+  private final FeatureFlags featureFlags;
 
   @Override
   public FieldGroup[] createFieldGroup(
       Questionnaire.QuestionnaireItemComponent item, FieldGroup parent, String diseaseCode) {
-    final var fieldGroup =
-        FieldGroup.builder()
-            .type(FieldGroup.TYPE_INPUT)
-            .props(createProperties(item))
-            .key("valueDate")
-            .parent(parent)
-            .wrappers(List.of(FORM_FIELD))
-            .className("LinkId_" + item.getLinkId())
-            .build();
+    final FieldGroup fieldGroup;
+    if (featureFlags.isDiseaseDatePicker()) {
+      fieldGroup =
+          DatePicker.builder()
+              .label(item.getText())
+              .required(item.hasRequired() ? item.getRequired() : null)
+              .parent(parent)
+              .className("LinkId_" + item.getLinkId())
+              .build()
+              .createFieldGroup();
+    } else {
+      fieldGroup =
+          FieldGroup.builder()
+              .type(FieldGroup.TYPE_INPUT)
+              .props(createProperties(item))
+              .key("valueDate")
+              .parent(parent)
+              .wrappers(List.of(FORM_FIELD))
+              .className("LinkId_" + item.getLinkId())
+              .build();
+    }
     this.enableWhenProcessor.createEnableWhens(item, fieldGroup);
     this.clipboardProcessor.createClipboard(item, fieldGroup);
     return new FieldGroup[] {fieldGroup};
