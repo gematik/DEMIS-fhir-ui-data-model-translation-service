@@ -1,4 +1,9 @@
-package de.gematik.demis.fhir_ui_data_model_translation_service;
+/**
+ * This package contains classes that implement the Formly field types for the disease module. It
+ * has been founded for complex UI components like the date picker. You don't need to use the
+ * classes here. But if you have to work with complex UI components, please come to us.
+ */
+package de.gematik.demis.fhir_ui_data_model_translation_service.disease.formly.fieldtypes;
 
 /*-
  * #%L
@@ -25,17 +30,3 @@ package de.gematik.demis.fhir_ui_data_model_translation_service;
  * For additional notes and disclaimer from gematik and in case of changes by gematik find details in the "Readme" file.
  * #L%
  */
-
-import lombok.Builder;
-import lombok.Data;
-import org.springframework.boot.context.properties.ConfigurationProperties;
-
-@Data
-@Builder
-@ConfigurationProperties(prefix = "feature.flag")
-public class FeatureFlags {
-
-  private boolean moveHospitalizationReason;
-  private boolean diseaseVaccineSnomedCodes;
-  private boolean diseaseDatePicker;
-}

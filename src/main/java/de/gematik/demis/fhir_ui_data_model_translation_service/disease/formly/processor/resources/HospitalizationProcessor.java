@@ -26,16 +26,20 @@ package de.gematik.demis.fhir_ui_data_model_translation_service.disease.formly.p
  * #L%
  */
 
+import static de.gematik.demis.fhir_ui_data_model_translation_service.disease.formly.fieldtypes.DatePicker.Precision.DAY;
+import static de.gematik.demis.fhir_ui_data_model_translation_service.disease.formly.fieldtypes.DatePicker.Precision.MONTH;
 import static de.gematik.demis.fhir_ui_data_model_translation_service.disease.formly.processor.ClipboardProcessor.createClipboard;
 
 import de.gematik.demis.fhir_ui_data_model_translation_service.FeatureFlags;
 import de.gematik.demis.fhir_ui_data_model_translation_service.disease.formly.DiseaseClipboardProps;
+import de.gematik.demis.fhir_ui_data_model_translation_service.disease.formly.fieldtypes.DatePicker;
 import de.gematik.demis.fhir_ui_data_model_translation_service.disease.formly.model.FieldGroup;
 import de.gematik.demis.fhir_ui_data_model_translation_service.disease.formly.model.Props;
 import de.gematik.demis.fhir_ui_data_model_translation_service.disease.formly.processor.ChoiceProcessor;
 import de.gematik.demis.fhir_ui_data_model_translation_service.model.CodeDisplay;
 import de.gematik.demis.fhir_ui_data_model_translation_service.translation.DataLoaderSrv;
 import java.util.Collections;
+import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 import lombok.RequiredArgsConstructor;
@@ -123,48 +127,77 @@ public class HospitalizationProcessor {
   }
 
   private void createPeriodStart(Questionnaire.QuestionnaireItemComponent item, FieldGroup parent) {
-    FieldGroup start =
+    final FieldGroup start =
         FieldGroup.builder()
             .key(LINK_ID_PERIOD_START)
             .fieldGroupClassName(REF_ELEMENT)
             .parent(parent)
             .build();
-    FieldGroup input =
-        FieldGroup.builder()
-            .key("answer.valueDate")
-            .className("hospitalizationStartDate")
-            .type(FieldGroup.TYPE_INPUT)
-            .parent(start)
-            .props(
-                Props.builder()
-                    .required(true)
-                    .label("Aufnahmedatum")
-                    .placeholder("TT.MM.JJJJ | MM.JJJJ | JJJJ")
-                    .build())
-            .build();
+    final FieldGroup input;
+    if (featureFlags.isDiseaseDatePicker()) {
+      input =
+          DatePicker.builder()
+              .label("Aufnahmedatum")
+              .required(true)
+              .allowedPrecisions(List.of(DAY, MONTH))
+              .maxDateNotInFuture(true)
+              .key(DiseaseProcessor.DATE_PICKER_KEY_ANSWER)
+              .parent(start)
+              .className("hospitalizationStartDate")
+              .build()
+              .createFieldGroup();
+    } else {
+      input =
+          FieldGroup.builder()
+              .key("answer.valueDate")
+              .className("hospitalizationStartDate")
+              .type(FieldGroup.TYPE_INPUT)
+              .parent(start)
+              .props(
+                  Props.builder()
+                      .required(true)
+                      .label("Aufnahmedatum")
+                      .placeholder("TT.MM.JJJJ | MM.JJJJ | JJJJ")
+                      .build())
+              .build();
+    }
     clipboardKey(item, LINK_ID_PERIOD_START).ifPresent(key -> createClipboard(key, false, input));
   }
 
   private void createPeriodEnd(Questionnaire.QuestionnaireItemComponent item, FieldGroup parent) {
-    FieldGroup end =
+    final FieldGroup end =
         FieldGroup.builder()
             .key(LINK_ID_PERIOD_END)
             .fieldGroupClassName(REF_ELEMENT)
             .parent(parent)
             .build();
-    FieldGroup input =
-        FieldGroup.builder()
-            .key("answer.valueDate")
-            .className("hospitalizationEndDate")
-            .type(FieldGroup.TYPE_INPUT)
-            .parent(end)
-            .props(
-                Props.builder()
-                    .required(false)
-                    .label("Entlassdatum")
-                    .placeholder("TT.MM.JJJJ | MM.JJJJ | JJJJ")
-                    .build())
-            .build();
+    final FieldGroup input;
+    if (featureFlags.isDiseaseDatePicker()) {
+      input =
+          DatePicker.builder()
+              .label("Entlassdatum")
+              .required(false)
+              .allowedPrecisions(List.of(DAY, MONTH))
+              .key(DiseaseProcessor.DATE_PICKER_KEY_ANSWER)
+              .parent(end)
+              .className("hospitalizationEndDate")
+              .build()
+              .createFieldGroup();
+    } else {
+      input =
+          FieldGroup.builder()
+              .key("answer.valueDate")
+              .className("hospitalizationEndDate")
+              .type(FieldGroup.TYPE_INPUT)
+              .parent(end)
+              .props(
+                  Props.builder()
+                      .required(false)
+                      .label("Entlassdatum")
+                      .placeholder("TT.MM.JJJJ | MM.JJJJ | JJJJ")
+                      .build())
+              .build();
+    }
     clipboardKey(item, LINK_ID_PERIOD_END).ifPresent(key -> createClipboard(key, false, input));
   }
 
@@ -209,12 +242,8 @@ public class HospitalizationProcessor {
             .build();
     final var enableWhen = item.getEnableWhen();
     item.setEnableWhen(Collections.emptyList());
-    if (featureFlags.isHospCopyCheckboxes()) {
-      this.organizationProcessor.createFieldGroup(
-          item, serviceProvider, COPY_ORGANIZATION, COPY_CONTACT);
-    } else {
-      this.organizationProcessor.createFieldGroup(item, serviceProvider);
-    }
+    this.organizationProcessor.createFieldGroup(
+        item, serviceProvider, COPY_ORGANIZATION, COPY_CONTACT);
     item.setEnableWhen(enableWhen);
   }
 
