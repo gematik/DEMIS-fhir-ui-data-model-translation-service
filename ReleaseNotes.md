@@ -2,6 +2,10 @@
  
 # Release notes
 
+## 2.2.3
+- Upgrade dependencies
+- parse questionnaire items referencing Quantity types
+
 ## 2.2.2
 ### changed
 - disease frontend date inputs changed to date picker component

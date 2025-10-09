@@ -30,12 +30,13 @@ import static de.gematik.demis.fhir_ui_data_model_translation_service.disease.fo
 
 import de.gematik.demis.fhir_ui_data_model_translation_service.disease.formly.model.FieldGroup;
 import de.gematik.demis.fhir_ui_data_model_translation_service.disease.formly.model.Props;
+import java.math.BigDecimal;
 import java.util.List;
-import lombok.AccessLevel;
-import lombok.RequiredArgsConstructor;
+import java.util.Optional;
 import org.hl7.fhir.r4.model.Coding;
 import org.hl7.fhir.r4.model.Extension;
 import org.hl7.fhir.r4.model.Questionnaire;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 /**
@@ -44,12 +45,24 @@ import org.springframework.stereotype.Service;
  * information from questionnaire items.
  */
 @Service
-@RequiredArgsConstructor(access = AccessLevel.PACKAGE)
 public class QuantityProcessor implements ItemProcessor {
 
   // Dependencies for processing enableWhen conditions and clipboard functionality.
   private final EnableWhenProcessor enableWhenProcessor;
   private final ClipboardProcessor clipboardProcessor;
+  private final QuantityBoundProcessor quantityBoundProcessor;
+  private final boolean is73Enabled;
+
+  QuantityProcessor(
+      final EnableWhenProcessor enableWhenProcessor,
+      final ClipboardProcessor clipboardProcessor,
+      final QuantityBoundProcessor quantityBoundProcessor,
+      @Value("${feature.flag.notifications.7_3}") final boolean is73Enabled) {
+    this.enableWhenProcessor = enableWhenProcessor;
+    this.clipboardProcessor = clipboardProcessor;
+    this.quantityBoundProcessor = quantityBoundProcessor;
+    this.is73Enabled = is73Enabled;
+  }
 
   // URL for the unit extension in FHIR Questionnaire items.
   private static final String UNIT_EXTENSION_URL =
@@ -77,9 +90,13 @@ public class QuantityProcessor implements ItemProcessor {
             .className("LinkId_" + item.getLinkId()) // Sets a CSS class name based on the link ID.
             .build();
 
-    // Add validators to ensure valid input.
-    fieldGroup.addValidator("numberValidator");
-    fieldGroup.addValidator("nonBlankValidator");
+    // Frontend will automatically take care of number format and nonBlank for input type=number,
+    // all others
+    // use the legacy mechanism of hardcoded validators
+    if (!"number".equals(fieldGroup.getProps().getType())) {
+      fieldGroup.addValidator("numberValidator");
+      fieldGroup.addValidator("nonBlankValidator");
+    }
 
     // Process enableWhen conditions for dynamic field visibility.
     enableWhenProcessor.createEnableWhens(item, fieldGroup);
@@ -98,11 +115,29 @@ public class QuantityProcessor implements ItemProcessor {
    * @return A Props object containing the item's properties.
    */
   private Props createProps(Questionnaire.QuestionnaireItemComponent item) {
-    return Props.builder()
-        .label(item.getText()) // Sets the label for the field group.
-        .required(item.getRequired()) // Indicates whether the field is required.
-        .quantity(extractQuantity(item)) // Extracts quantity information from the item.
-        .build();
+    final Props.PropsBuilder propsBuilder =
+        Props.builder()
+            .label(item.getText()) // Sets the label for the field group.
+            .required(item.getRequired()) // Indicates whether the field is required.
+            .quantity(extractQuantity(item)); // Extracts quantity information from the item.
+
+    if (is73Enabled) {
+      final Optional<BigDecimal> min = quantityBoundProcessor.findMin(item);
+      min.ifPresent(propsBuilder::min);
+      final Optional<BigDecimal> max = quantityBoundProcessor.findMax(item);
+      max.ifPresent(propsBuilder::max);
+      final Optional<BigDecimal> scale = quantityBoundProcessor.findStepValue(item);
+      scale.ifPresent(propsBuilder::step);
+      if (min.isPresent() || max.isPresent()) {
+        propsBuilder.quantity(
+            Props.Quantity.builder()
+                .system(quantityBoundProcessor.findUnitSystem(item))
+                .unit(quantityBoundProcessor.findUnitCode(item))
+                .build());
+        propsBuilder.type("number");
+      }
+    }
+    return propsBuilder.build();
   }
 
   /**
