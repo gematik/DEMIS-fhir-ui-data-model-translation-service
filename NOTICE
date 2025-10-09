@@ -30,6 +30,7 @@ This project includes:
   Apache Jena - Core under The Apache Software License, Version 2.0
   Apache Jena - IRI under The Apache Software License, Version 2.0
   Apache Jena - IRI3986 under The Apache Software License, Version 2.0
+  Apache Jena - Language tags under The Apache Software License, Version 2.0
   Apache Jena - ShEx under The Apache Software License, Version 2.0
   Apache Log4j API under Apache-2.0
   Apache Thrift under The Apache Software License, Version 2.0
@@ -157,7 +158,10 @@ This project includes:
   swagger-annotations-jakarta under Apache License 2.0
   swagger-core-jakarta under Apache License 2.0
   swagger-models-jakarta under Apache License 2.0
+  Titanium JCS under Apache License, Version 2.0
   Titanium JSON-LD 1.1 (JRE11) under Apache License, Version 2.0
+  Titanium RDF API under Apache License, Version 2.0
+  Titanium RDF N-QUADS under Apache License, Version 2.0
   tomcat-embed-core under Apache License, Version 2.0
   tomcat-embed-el under Apache License, Version 2.0
   tomcat-embed-websocket under Apache License, Version 2.0

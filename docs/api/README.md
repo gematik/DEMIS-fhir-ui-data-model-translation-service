@@ -7,31 +7,31 @@ All URIs are relative to *http://localhost*
 
 | Class | Method | HTTP request | Description |
 |------------ | ------------- | ------------- | -------------|
-| *CodeSystemCtrApi* | [**getAvailableCodeSystems1**](Apis/CodeSystemCtrApi.md#getavailablecodesystems1) | **GET** /CodeSystem |  |
-*CodeSystemCtrApi* | [**getCode2**](Apis/CodeSystemCtrApi.md#getcode2) | **GET** /CodeSystem/{system}/{code} |  |
-*CodeSystemCtrApi* | [**getSystemContent**](Apis/CodeSystemCtrApi.md#getsystemcontent) | **GET** /CodeSystem/{system} |  |
-| *ConceptMapsCtrApi* | [**getAllConceptMaps**](Apis/ConceptMapsCtrApi.md#getallconceptmaps) | **GET** /conceptmap |  |
-*ConceptMapsCtrApi* | [**getCode**](Apis/ConceptMapsCtrApi.md#getcode) | **GET** /conceptmap/{name}/{code} |  |
-*ConceptMapsCtrApi* | [**getConceptMap**](Apis/ConceptMapsCtrApi.md#getconceptmap) | **GET** /conceptmap/{name} |  |
-| *DiseaseDataLoaderCtrApi* | [**getAllAvailableCodes**](Apis/DiseaseDataLoaderCtrApi.md#getallavailablecodes) | **GET** /disease/6.1 |  |
-*DiseaseDataLoaderCtrApi* | [**getAllAvailableCodes1**](Apis/DiseaseDataLoaderCtrApi.md#getallavailablecodes1) | **GET** /disease |  |
-*DiseaseDataLoaderCtrApi* | [**getAllAvailableCodesNonNominal**](Apis/DiseaseDataLoaderCtrApi.md#getallavailablecodesnonnominal) | **GET** /disease/7.3 |  |
-*DiseaseDataLoaderCtrApi* | [**getFormlyRepresentationOfQuestionnaire**](Apis/DiseaseDataLoaderCtrApi.md#getformlyrepresentationofquestionnaire) | **GET** /disease/6.1/questionnaire/{code}/formly |  |
-*DiseaseDataLoaderCtrApi* | [**getFormlyRepresentationOfQuestionnaire1**](Apis/DiseaseDataLoaderCtrApi.md#getformlyrepresentationofquestionnaire1) | **GET** /disease/questionnaire/{code}/formly |  |
-*DiseaseDataLoaderCtrApi* | [**getFormlyRepresentationOfQuestionnaireNonNominal**](Apis/DiseaseDataLoaderCtrApi.md#getformlyrepresentationofquestionnairenonnominal) | **GET** /disease/7.3/questionnaire/{code}/formly |  |
-*DiseaseDataLoaderCtrApi* | [**getQuestionsForSpecificCode**](Apis/DiseaseDataLoaderCtrApi.md#getquestionsforspecificcode) | **GET** /disease/questionnaire/{code}/items |  |
-| *LaboratoryDataLoaderCtrApi* | [**get73NotificationCategories**](Apis/LaboratoryDataLoaderCtrApi.md#get73notificationcategories) | **GET** /laboratory/7.3 |  |
-*LaboratoryDataLoaderCtrApi* | [**getAvailableFederalStates**](Apis/LaboratoryDataLoaderCtrApi.md#getavailablefederalstates) | **GET** /laboratory/federalStates |  |
-*LaboratoryDataLoaderCtrApi* | [**getAvailableFederalStates1**](Apis/LaboratoryDataLoaderCtrApi.md#getavailablefederalstates1) | **GET** /laboratory/7.1/federalStates |  |
-*LaboratoryDataLoaderCtrApi* | [**getLaboratoryDataForSpecificCode**](Apis/LaboratoryDataLoaderCtrApi.md#getlaboratorydataforspecificcode) | **GET** /laboratory/7.3/pathogenData/{code} |  |
-*LaboratoryDataLoaderCtrApi* | [**getLaboratoryDataForSpecificCode1**](Apis/LaboratoryDataLoaderCtrApi.md#getlaboratorydataforspecificcode1) | **GET** /laboratory/7.1/federalState/pathogenData/{code} |  |
-*LaboratoryDataLoaderCtrApi* | [**getLaboratoryDataForSpecificCode2**](Apis/LaboratoryDataLoaderCtrApi.md#getlaboratorydataforspecificcode2) | **GET** /laboratory/federalState/pathogenData/{code} |  |
-*LaboratoryDataLoaderCtrApi* | [**getLaboratoryDataForSpecificCodeAndFederalState**](Apis/LaboratoryDataLoaderCtrApi.md#getlaboratorydataforspecificcodeandfederalstate) | **GET** /laboratory/federalState/{federalState} |  |
-*LaboratoryDataLoaderCtrApi* | [**getLaboratoryDataForSpecificCodeAndFederalState1**](Apis/LaboratoryDataLoaderCtrApi.md#getlaboratorydataforspecificcodeandfederalstate1) | **GET** /laboratory/7.1/federalState/{federalState} |  |
-| *UtilsCtrApi* | [**getDoubleCharacterCountryCode**](Apis/UtilsCtrApi.md#getdoublecharactercountrycode) | **GET** /utils/countryCodes |  |
-| *ValueSetCtrApi* | [**getAvailableCodeSystems**](Apis/ValueSetCtrApi.md#getavailablecodesystems) | **GET** /ValueSet |  |
-*ValueSetCtrApi* | [**getCode1**](Apis/ValueSetCtrApi.md#getcode1) | **GET** /ValueSet/{system}/{code} |  |
-*ValueSetCtrApi* | [**getValueSetContent**](Apis/ValueSetCtrApi.md#getvaluesetcontent) | **GET** /ValueSet/{system} |  |
+| *CodeSystemCtrApi* | [**getAvailableCodeSystems1**](Apis/CodeSystemCtrApi.md#getAvailableCodeSystems1) | **GET** /CodeSystem |  |
+*CodeSystemCtrApi* | [**getCode2**](Apis/CodeSystemCtrApi.md#getCode2) | **GET** /CodeSystem/{system}/{code} |  |
+*CodeSystemCtrApi* | [**getSystemContent**](Apis/CodeSystemCtrApi.md#getSystemContent) | **GET** /CodeSystem/{system} |  |
+| *ConceptMapsCtrApi* | [**getAllConceptMaps**](Apis/ConceptMapsCtrApi.md#getAllConceptMaps) | **GET** /conceptmap |  |
+*ConceptMapsCtrApi* | [**getCode**](Apis/ConceptMapsCtrApi.md#getCode) | **GET** /conceptmap/{name}/{code} |  |
+*ConceptMapsCtrApi* | [**getConceptMap**](Apis/ConceptMapsCtrApi.md#getConceptMap) | **GET** /conceptmap/{name} |  |
+| *DiseaseDataLoaderCtrApi* | [**getAllAvailableCodes**](Apis/DiseaseDataLoaderCtrApi.md#getAllAvailableCodes) | **GET** /disease/6.1 |  |
+*DiseaseDataLoaderCtrApi* | [**getAllAvailableCodes1**](Apis/DiseaseDataLoaderCtrApi.md#getAllAvailableCodes1) | **GET** /disease |  |
+*DiseaseDataLoaderCtrApi* | [**getAllAvailableCodesNonNominal**](Apis/DiseaseDataLoaderCtrApi.md#getAllAvailableCodesNonNominal) | **GET** /disease/7.3 |  |
+*DiseaseDataLoaderCtrApi* | [**getFormlyRepresentationOfQuestionnaire**](Apis/DiseaseDataLoaderCtrApi.md#getFormlyRepresentationOfQuestionnaire) | **GET** /disease/6.1/questionnaire/{code}/formly |  |
+*DiseaseDataLoaderCtrApi* | [**getFormlyRepresentationOfQuestionnaire1**](Apis/DiseaseDataLoaderCtrApi.md#getFormlyRepresentationOfQuestionnaire1) | **GET** /disease/questionnaire/{code}/formly |  |
+*DiseaseDataLoaderCtrApi* | [**getFormlyRepresentationOfQuestionnaireNonNominal**](Apis/DiseaseDataLoaderCtrApi.md#getFormlyRepresentationOfQuestionnaireNonNominal) | **GET** /disease/7.3/questionnaire/{code}/formly |  |
+*DiseaseDataLoaderCtrApi* | [**getQuestionsForSpecificCode**](Apis/DiseaseDataLoaderCtrApi.md#getQuestionsForSpecificCode) | **GET** /disease/questionnaire/{code}/items |  |
+| *LaboratoryDataLoaderCtrApi* | [**get73NotificationCategories**](Apis/LaboratoryDataLoaderCtrApi.md#get73NotificationCategories) | **GET** /laboratory/7.3 |  |
+*LaboratoryDataLoaderCtrApi* | [**getAvailableFederalStates**](Apis/LaboratoryDataLoaderCtrApi.md#getAvailableFederalStates) | **GET** /laboratory/federalStates |  |
+*LaboratoryDataLoaderCtrApi* | [**getAvailableFederalStates1**](Apis/LaboratoryDataLoaderCtrApi.md#getAvailableFederalStates1) | **GET** /laboratory/7.1/federalStates |  |
+*LaboratoryDataLoaderCtrApi* | [**getLaboratoryDataForSpecificCode**](Apis/LaboratoryDataLoaderCtrApi.md#getLaboratoryDataForSpecificCode) | **GET** /laboratory/7.3/pathogenData/{code} |  |
+*LaboratoryDataLoaderCtrApi* | [**getLaboratoryDataForSpecificCode1**](Apis/LaboratoryDataLoaderCtrApi.md#getLaboratoryDataForSpecificCode1) | **GET** /laboratory/7.1/federalState/pathogenData/{code} |  |
+*LaboratoryDataLoaderCtrApi* | [**getLaboratoryDataForSpecificCode2**](Apis/LaboratoryDataLoaderCtrApi.md#getLaboratoryDataForSpecificCode2) | **GET** /laboratory/federalState/pathogenData/{code} |  |
+*LaboratoryDataLoaderCtrApi* | [**getLaboratoryDataForSpecificCodeAndFederalState**](Apis/LaboratoryDataLoaderCtrApi.md#getLaboratoryDataForSpecificCodeAndFederalState) | **GET** /laboratory/federalState/{federalState} |  |
+*LaboratoryDataLoaderCtrApi* | [**getLaboratoryDataForSpecificCodeAndFederalState1**](Apis/LaboratoryDataLoaderCtrApi.md#getLaboratoryDataForSpecificCodeAndFederalState1) | **GET** /laboratory/7.1/federalState/{federalState} |  |
+| *UtilsCtrApi* | [**getDoubleCharacterCountryCode**](Apis/UtilsCtrApi.md#getDoubleCharacterCountryCode) | **GET** /utils/countryCodes |  |
+| *ValueSetCtrApi* | [**getAvailableCodeSystems**](Apis/ValueSetCtrApi.md#getAvailableCodeSystems) | **GET** /ValueSet |  |
+*ValueSetCtrApi* | [**getCode1**](Apis/ValueSetCtrApi.md#getCode1) | **GET** /ValueSet/{system}/{code} |  |
+*ValueSetCtrApi* | [**getValueSetContent**](Apis/ValueSetCtrApi.md#getValueSetContent) | **GET** /ValueSet/{system} |  |
 
 
 <a name="documentation-for-models"></a>

@@ -41,7 +41,49 @@ import org.mockito.Mockito;
 
 class QuantityProcessorTest {
 
-  private String fhirJson =
+  private static final String FHIR_JSON_WITH_QUANTITY_BOUNDS =
+"""
+{
+  "resourceType": "Questionnaire",
+  "id": "DiseaseQuestionsTOXD",
+  "url": "https://demis.rki.de/fhir/Questionnaire/DiseaseQuestionsTOXD",
+  "version": "1.1.0",
+  "name": "DiseaseQuestionsTOXD",
+  "title": "Toxoplasma gondii; Meldepflicht nur bei konnatalen Infektionen: spezifische klinische und epidemiologische Angaben",
+  "status": "active",
+  "date": "2025-08-12",
+  "description": "Toxoplasma gondii (konnatal) spezifische Informationsbedarfe werden in diesem meldetatbestandsspezifischen Fragebogen zusammengestellt. Dieser manifestiert sich als entsprechende QuestionnaireResponse innerhalb der Meldung.",
+  "item": [
+    {
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-minQuantity",
+          "valueQuantity": {
+            "value": 500,
+            "system": "http://unitsofmeasure.org",
+            "code": "wk"
+          }
+        },
+        {
+          "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-maxQuantity",
+          "valueQuantity": {
+            "value": 5000,
+            "system": "http://unitsofmeasure.org",
+            "code": "wk"
+          }
+        }
+      ],
+      "linkId": "newbornWeight",
+      "text": "Welches Gewicht hatte das Neugeborene bei der Geburt (Angabe in Gramm)?",
+      "type": "quantity",
+      "required": true,
+      "repeats": false
+    }
+    ]
+    }\
+""";
+
+  private static final String FHIR_JSON =
 """
 {
   "resourceType": "Questionnaire",
@@ -75,9 +117,9 @@ class QuantityProcessorTest {
     }
   ]
 }
-       """;
+""";
 
-  private String expecetedFormlyJsonString =
+  private static final String EXPECTED_FORMLY_JSON =
 """
 {
   "key": "pregnancyWeek",
@@ -100,7 +142,8 @@ class QuantityProcessorTest {
     "form-field"
   ],
   "className": "LinkId_pregnancyWeek"
-}""";
+}\
+""";
 
   private QuantityProcessor quantityProcessor;
 
@@ -109,7 +152,10 @@ class QuantityProcessorTest {
     // Mocks für Abhängigkeiten
     EnableWhenProcessor enableWhenProcessor = Mockito.mock(EnableWhenProcessor.class);
     ClipboardProcessor clipboardProcessor = Mockito.mock(ClipboardProcessor.class);
-    quantityProcessor = new QuantityProcessor(enableWhenProcessor, clipboardProcessor);
+    final QuantityBoundProcessor quantityBoundProcessor = new QuantityBoundProcessor();
+    quantityProcessor =
+        new QuantityProcessor(
+            enableWhenProcessor, clipboardProcessor, quantityBoundProcessor, true);
   }
 
   @Test
@@ -117,7 +163,7 @@ class QuantityProcessorTest {
     // FHIR QuestionnaireItemComponent parsen
     FhirContext ctx = FhirContext.forR4Cached();
     IParser parser = ctx.newJsonParser();
-    Questionnaire questionnaire = parser.parseResource(Questionnaire.class, fhirJson);
+    Questionnaire questionnaire = parser.parseResource(Questionnaire.class, FHIR_JSON);
     Questionnaire.QuestionnaireItemComponent item = questionnaire.getItemFirstRep();
 
     // Prozessor aufrufen
@@ -142,8 +188,61 @@ class QuantityProcessorTest {
 
     ObjectMapper objectMapper = new ObjectMapper();
     String jsonResult = objectMapper.writeValueAsString(fg);
-    //    FieldGroup parsed = objectMapper.readValue(jsonResult, FieldGroup.class);
 
-    assertThat(jsonResult).isEqualToIgnoringWhitespace(expecetedFormlyJsonString);
+    assertThat(jsonResult).isEqualToIgnoringWhitespace(EXPECTED_FORMLY_JSON);
+  }
+
+  @Test
+  void thatUpperAndLowerBoundAreExtracted() {
+    final FhirContext ctx = FhirContext.forR4Cached();
+    final IParser parser = ctx.newJsonParser();
+    final Questionnaire questionnaire =
+        parser.parseResource(Questionnaire.class, FHIR_JSON_WITH_QUANTITY_BOUNDS);
+    final Questionnaire.QuestionnaireItemComponent item = questionnaire.getItemFirstRep();
+
+    final FieldGroup[] result = quantityProcessor.createFieldGroup(item, null, null);
+
+    assertThat(result).hasSize(1);
+    final FieldGroup fg = result[0];
+    assertThat(fg.getProps())
+        .satisfies(
+            p -> {
+              assertThat(p.getMin()).isEqualByComparingTo("500");
+              assertThat(p.getMax()).isEqualByComparingTo("5000");
+              assertThat(p.getStep()).isEqualByComparingTo("1");
+              assertThat(p.getQuantity().getSystem()).isEqualTo("http://unitsofmeasure.org");
+              assertThat(p.getQuantity().getUnit()).isEqualTo("wk");
+            });
+    assertThat(fg.getValidators()).isNull();
+  }
+
+  // Can be removed with FEATURE_FLAG_NOTIFICATIONS_7_3
+  @Test
+  void thatUpperAndLowerBoundAreNotExtractedWithDisabledFeatureFlag() {
+    final EnableWhenProcessor enableWhenProcessor = Mockito.mock(EnableWhenProcessor.class);
+    final ClipboardProcessor clipboardProcessor = Mockito.mock(ClipboardProcessor.class);
+    final QuantityBoundProcessor quantityBoundProcessor = new QuantityBoundProcessor();
+    quantityProcessor =
+        new QuantityProcessor(
+            enableWhenProcessor, clipboardProcessor, quantityBoundProcessor, false);
+
+    final FhirContext ctx = FhirContext.forR4Cached();
+    final IParser parser = ctx.newJsonParser();
+    final Questionnaire questionnaire =
+        parser.parseResource(Questionnaire.class, FHIR_JSON_WITH_QUANTITY_BOUNDS);
+    final Questionnaire.QuestionnaireItemComponent item = questionnaire.getItemFirstRep();
+
+    final FieldGroup[] result = quantityProcessor.createFieldGroup(item, null, null);
+
+    assertThat(result).hasSize(1);
+    final FieldGroup fg = result[0];
+    assertThat(fg.getProps())
+        .satisfies(
+            p -> {
+              assertThat(p.getMin()).isNull();
+              assertThat(p.getMax()).isNull();
+              assertThat(p.getStep()).isNull();
+            });
+    assertThat(fg.getValidators().getValidation()).contains("numberValidator", "nonBlankValidator");
   }
 }

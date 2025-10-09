@@ -28,6 +28,7 @@ package de.gematik.demis.fhir_ui_data_model_translation_service.disease.formly.m
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import de.gematik.demis.fhir_ui_data_model_translation_service.model.CodeDisplay;
+import java.math.BigDecimal;
 import lombok.Builder;
 import lombok.Data;
 import org.hl7.fhir.r4.model.Questionnaire;
@@ -49,6 +50,29 @@ public class Props {
   private ImportSpec importSpec;
   private Boolean disabled;
   private Quantity quantity;
+  private String type;
+
+  /** The minimum value allowed for this input */
+  private BigDecimal min; // BigDecimal can be null; float/double can't be
+
+  /** The maximum value allowed for this input */
+  private BigDecimal max; // BigDecimal can be null; float/double can't be
+
+  /**
+   * The smallest step a value can be changed for this input. In other words: the desired precision.
+   *
+   * <p>Example:
+   *
+   * <pre>
+   * min = 0.200
+   * max = 0.300
+   * step = 0.001
+   * </pre>
+   *
+   * So that (0.200, 0.300)
+   */
+  private BigDecimal step; // BigDecimal can be null; float/double can't be
+
   private String[] allowedPrecisions;
   private String minDate;
   private String maxDate;
