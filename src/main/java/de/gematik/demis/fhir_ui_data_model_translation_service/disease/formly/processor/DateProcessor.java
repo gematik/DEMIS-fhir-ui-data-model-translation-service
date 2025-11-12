@@ -33,14 +33,17 @@ import de.gematik.demis.fhir_ui_data_model_translation_service.disease.formly.fi
 import de.gematik.demis.fhir_ui_data_model_translation_service.disease.formly.model.FieldGroup;
 import de.gematik.demis.fhir_ui_data_model_translation_service.disease.formly.model.Props;
 import java.util.List;
+import java.util.Optional;
 import lombok.RequiredArgsConstructor;
 import org.hl7.fhir.r4.model.Questionnaire;
 import org.springframework.stereotype.Service;
 
+/** Processor for questionnaire items expecting an answer of type date */
 @Service
 @RequiredArgsConstructor
 public class DateProcessor implements ItemProcessor {
 
+  private static final String REGEX_EXTENSION_URL = "http://hl7.org/fhir/StructureDefinition/regex";
   private final EnableWhenProcessor enableWhenProcessor;
   private final ClipboardProcessor clipboardProcessor;
   private final FeatureFlags featureFlags;
@@ -49,11 +52,13 @@ public class DateProcessor implements ItemProcessor {
   public FieldGroup[] createFieldGroup(
       Questionnaire.QuestionnaireItemComponent item, FieldGroup parent, String diseaseCode) {
     final FieldGroup fieldGroup;
+
     if (featureFlags.isDiseaseDatePicker()) {
       fieldGroup =
           DatePicker.builder()
               .label(item.getText())
               .required(item.hasRequired() ? item.getRequired() : null)
+              .allowedPrecisionsFromRegex(getPrecisionRegexFromExtension(item))
               .parent(parent)
               .className("LinkId_" + item.getLinkId())
               .build()
@@ -76,5 +81,13 @@ public class DateProcessor implements ItemProcessor {
 
   private Props createProperties(Questionnaire.QuestionnaireItemComponent item) {
     return Props.builder().placeholder("TT.MM.JJJJ | MM.JJJJ | JJJJ").label(item.getText()).build();
+  }
+
+  private String getPrecisionRegexFromExtension(Questionnaire.QuestionnaireItemComponent item) {
+    return Optional.ofNullable(item.getExtension()).orElse(List.of()).stream()
+        .filter(ext -> REGEX_EXTENSION_URL.equals(ext.getUrl()))
+        .map(ext -> ext.getValue().toString())
+        .findFirst()
+        .orElse(null);
   }
 }

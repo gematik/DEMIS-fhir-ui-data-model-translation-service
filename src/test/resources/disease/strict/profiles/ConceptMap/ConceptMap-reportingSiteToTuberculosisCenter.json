@@ -1,0 +1,201 @@
+{
+  "resourceType": "ConceptMap",
+  "id": "reportingSiteToTuberculosisCenter",
+  "url": "https://demis.rki.de/fhir/ConceptMap/reportingSiteToTuberculosisCenter",
+  "version": "1.0.0",
+  "name": "ReportingSiteToTuberculosisCenter",
+  "title": "Mapping ReportingSite zu Tuberkulosezentrum",
+  "status": "active",
+  "date": "2025-07-31",
+  "description": "Die ConceptMap ReportingSiteToTuberculosisCenter ordnet die Übermittlungsstellen den Tuberkulosezentren zu.",
+  "sourceUri": "https://demis.rki.de/fhir/CodeSystem/reportingSite",
+  "targetUri": "https://demis.rki.de/fhir/CodeSystem/tuberculosisCenter",
+  "group": [
+    {
+      "source": "https://demis.rki.de/fhir/CodeSystem/reportingSite",
+      "target": "https://example.org/fhir/CodeSystem/tuberculosisCenter",
+      "element": [
+        {
+          "code": "1.02.0.01.",
+          "target": [
+            {
+              "code": "1.02.0.04.09.",
+              "equivalence": "relatedto"
+            }
+          ]
+        },
+        {
+          "code": "1.02.0.02.",
+          "target": [
+            {
+              "code": "1.02.0.04.09.",
+              "equivalence": "relatedto"
+            }
+          ]
+        },
+        {
+          "code": "1.02.0.03.",
+          "target": [
+            {
+              "code": "1.02.0.04.09.",
+              "equivalence": "relatedto"
+            }
+          ]
+        },
+        {
+          "code": "1.02.0.04.",
+          "target": [
+            {
+              "code": "1.02.0.04.09.",
+              "equivalence": "relatedto"
+            }
+          ]
+        },
+        {
+          "code": "1.02.0.05.",
+          "target": [
+            {
+              "code": "1.02.0.04.09.",
+              "equivalence": "relatedto"
+            }
+          ]
+        },
+        {
+          "code": "1.02.0.06.",
+          "target": [
+            {
+              "code": "1.02.0.04.09.",
+              "equivalence": "relatedto"
+            }
+          ]
+        },
+        {
+          "code": "1.02.0.07.",
+          "target": [
+            {
+              "code": "1.02.0.04.09.",
+              "equivalence": "relatedto"
+            }
+          ]
+        },
+        {
+          "code": "1.05.3.15.",
+          "target": [
+            {
+              "code": "1.05.3.15.09.",
+              "equivalence": "relatedto"
+            }
+          ]
+        },
+        {
+          "code": "1.11.0.01.01.",
+          "target": [
+            {
+              "code": "1.11.0.11.09.",
+              "equivalence": "relatedto"
+            }
+          ]
+        },
+        {
+          "code": "1.11.0.02.01.",
+          "target": [
+            {
+              "code": "1.11.0.11.09.",
+              "equivalence": "relatedto"
+            }
+          ]
+        },
+        {
+          "code": "1.11.0.03.01.",
+          "target": [
+            {
+              "code": "1.11.0.11.09.",
+              "equivalence": "relatedto"
+            }
+          ]
+        },
+        {
+          "code": "1.11.0.04.01.",
+          "target": [
+            {
+              "code": "1.11.0.11.09.",
+              "equivalence": "relatedto"
+            }
+          ]
+        },
+        {
+          "code": "1.11.0.05.01.",
+          "target": [
+            {
+              "code": "1.11.0.11.09.",
+              "equivalence": "relatedto"
+            }
+          ]
+        },
+        {
+          "code": "1.11.0.06.01.",
+          "target": [
+            {
+              "code": "1.11.0.11.09.",
+              "equivalence": "relatedto"
+            }
+          ]
+        },
+        {
+          "code": "1.11.0.07.01.",
+          "target": [
+            {
+              "code": "1.11.0.11.09.",
+              "equivalence": "relatedto"
+            }
+          ]
+        },
+        {
+          "code": "1.11.0.08.01.",
+          "target": [
+            {
+              "code": "1.11.0.11.09.",
+              "equivalence": "relatedto"
+            }
+          ]
+        },
+        {
+          "code": "1.11.0.09.01.",
+          "target": [
+            {
+              "code": "1.11.0.11.09.",
+              "equivalence": "relatedto"
+            }
+          ]
+        },
+        {
+          "code": "1.11.0.10.01.",
+          "target": [
+            {
+              "code": "1.11.0.11.09.",
+              "equivalence": "relatedto"
+            }
+          ]
+        },
+        {
+          "code": "1.11.0.11.01.",
+          "target": [
+            {
+              "code": "1.11.0.11.09.",
+              "equivalence": "relatedto"
+            }
+          ]
+        },
+        {
+          "code": "1.11.0.12.01.",
+          "target": [
+            {
+              "code": "1.11.0.11.09.",
+              "equivalence": "relatedto"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

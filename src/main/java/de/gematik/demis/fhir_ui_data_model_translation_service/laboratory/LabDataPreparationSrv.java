@@ -155,8 +155,10 @@ public class LabDataPreparationSrv {
               resistanceGeneList);
 
       if (laboratoryJsonDataModel.isUseable()) {
-        log.warn("Notification category {} is not useable", code);
+        log.debug("Integrating notification category: {}", code);
         laboratoryDataMap.put(code, laboratoryJsonDataModel);
+      } else {
+        log.warn("Notification category is not useable: {}", code);
       }
     }
   }
@@ -316,7 +318,7 @@ public class LabDataPreparationSrv {
         return filterAndSortList(codeDisplays);
       }
     } catch (IOException e) {
-      log.error("error while reading file {}", file.getName());
+      log.error("error while reading file {}", file.getName(), e);
       return emptyList();
     }
   }

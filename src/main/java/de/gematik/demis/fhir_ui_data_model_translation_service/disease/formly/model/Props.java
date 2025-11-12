@@ -83,5 +83,6 @@ public class Props {
   public static class Quantity {
     private String system;
     private String unit;
+    private String code;
   }
 }

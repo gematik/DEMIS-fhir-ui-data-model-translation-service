@@ -1,0 +1,27 @@
+{
+  "resourceType": "NamingSystem",
+  "id": "ClusterID",
+  "name": "ClusterID",
+  "status": "active",
+  "kind": "identifier",
+  "date": "2025-02-20",
+  "publisher": "Robert Koch-Institut",
+  "contact": [
+    {
+      "telecom": [
+        {
+          "system": "email",
+          "value": "demis-support@rki.de"
+        }
+      ]
+    }
+  ],
+  "description": "Die ClusterID ist das NamingSystem zur Angabe der ClusterID.",
+  "uniqueId": [
+    {
+      "type": "uri",
+      "value": "https://demis.rki.de/fhir/sid/ClusterID",
+      "preferred": true
+    }
+  ]
+}

@@ -2,6 +2,16 @@
  
 # Release notes
 
+## 2.3.0
+- updaded version of Notification Builder to 8.0.0
+- derived datepicker precision from regex in strict disease profile (only for the dynamically built part of the form)
+- added support of FHIR packages through new Docker base image (FHIR package initializer)
+- integrated FHIR profile files of R4 terminology and DEMIS test notification category GAPP
+- add new endpoint to retrieve all notification categories for §7.1 notifications
+- add code to quantity formly representation
+- replace FEATURE_FLAG_FUTS_VALUESETS_SNOMED with FEATURE_FLAG_DISEASE_STRICT
+- replace FEATURE_FLAG_HOSP_REASON_MOVE with FEATURE_FLAG_DISEASE_STRICT
+
 ## 2.2.3
 - Upgrade dependencies
 - parse questionnaire items referencing Quantity types

@@ -3,6 +3,7 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
+| **code** | **String** |  | [optional] [default to null] |
 | **system** | **String** |  | [optional] [default to null] |
 | **unit** | **String** |  | [optional] [default to null] |
 

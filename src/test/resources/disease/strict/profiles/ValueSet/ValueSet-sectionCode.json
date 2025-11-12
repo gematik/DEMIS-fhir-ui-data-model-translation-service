@@ -1,0 +1,66 @@
+{
+  "resourceType": "ValueSet",
+  "id": "sectionCode",
+  "url": "https://demis.rki.de/fhir/ValueSet/sectionCode",
+  "version": "1.1.2",
+  "name": "SectionCode",
+  "title": "Section-Code",
+  "status": "active",
+  "experimental": false,
+  "date": "2025-09-03",
+  "publisher": "Robert Koch-Institut",
+  "contact": [
+    {
+      "telecom": [
+        {
+          "system": "email",
+          "value": "demis-support@rki.de"
+        }
+      ]
+    }
+  ],
+  "description": "Das ValueSet SectionCode enthält die Codes der document sections.",
+  "jurisdiction": [
+    {
+      "coding": [
+        {
+          "system": "urn:iso:std:iso:3166",
+          "version": "ALPHA-2",
+          "code": "DE"
+        }
+      ]
+    }
+  ],
+  "copyright": "(C) 2021-2025 Robert Koch-Institut",
+  "compose": {
+    "include": [
+      {
+        "system": "https://demis.rki.de/fhir/CodeSystem/sectionCode",
+        "version": "1.0.1"
+      }
+    ]
+  },
+  "expansion": {
+    "timestamp": "2025-09-03T00:00:00+02:00",
+    "contains": [
+      {
+        "system": "https://demis.rki.de/fhir/CodeSystem/sectionCode",
+        "version": "1.0.1",
+        "code": "specificClinAndEpiInformation",
+        "display": "Meldetatbestandsspezifische klinische und epidemiologische Angaben"
+      },
+      {
+        "system": "https://demis.rki.de/fhir/CodeSystem/sectionCode",
+        "version": "1.0.1",
+        "code": "diagnosis",
+        "display": "Diagnose"
+      },
+      {
+        "system": "https://demis.rki.de/fhir/CodeSystem/sectionCode",
+        "version": "1.0.1",
+        "code": "generalClinAndEpiInformation",
+        "display": "Meldetatbestandsübergreifende klinische und epidemiologische Angaben"
+      }
+    ]
+  }
+}

@@ -4,6 +4,7 @@ All URIs are relative to *http://localhost*
 
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
+| [**get71NotificationCategories**](LaboratoryDataLoaderCtrApi.md#get71NotificationCategories) | **GET** /laboratory/7.1 |  |
 | [**get73NotificationCategories**](LaboratoryDataLoaderCtrApi.md#get73NotificationCategories) | **GET** /laboratory/7.3 |  |
 | [**getAvailableFederalStates**](LaboratoryDataLoaderCtrApi.md#getAvailableFederalStates) | **GET** /laboratory/federalStates |  |
 | [**getAvailableFederalStates1**](LaboratoryDataLoaderCtrApi.md#getAvailableFederalStates1) | **GET** /laboratory/7.1/federalStates |  |
@@ -13,6 +14,28 @@ All URIs are relative to *http://localhost*
 | [**getLaboratoryDataForSpecificCodeAndFederalState**](LaboratoryDataLoaderCtrApi.md#getLaboratoryDataForSpecificCodeAndFederalState) | **GET** /laboratory/federalState/{federalState} |  |
 | [**getLaboratoryDataForSpecificCodeAndFederalState1**](LaboratoryDataLoaderCtrApi.md#getLaboratoryDataForSpecificCodeAndFederalState1) | **GET** /laboratory/7.1/federalState/{federalState} |  |
 
+
+<a name="get71NotificationCategories"></a>
+# **get71NotificationCategories**
+> List get71NotificationCategories()
+
+
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+[**List**](../Models/CodeDisplay.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: */*
 
 <a name="get73NotificationCategories"></a>
 # **get73NotificationCategories**

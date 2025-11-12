@@ -231,7 +231,8 @@
                 "label": "Welches Gewicht hatte das Neugeborene bei der Geburt (Angabe in Gramm)?",
                 "quantity": {
                   "system": "http://unitsofmeasure.org",
-                  "unit": "gram"
+                  "unit": "gram",
+                  "code": "g"
                 }
               },
               "validators": {

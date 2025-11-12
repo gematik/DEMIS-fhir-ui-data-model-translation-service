@@ -38,13 +38,7 @@ import de.gematik.demis.fhir_ui_data_model_translation_service.disease.DiseaseNo
 import de.gematik.demis.fhir_ui_data_model_translation_service.disease.Questionnaires;
 import de.gematik.demis.fhir_ui_data_model_translation_service.disease.formly.model.FieldGroup;
 import de.gematik.demis.fhir_ui_data_model_translation_service.disease.formly.model.FormlyFieldConfigs;
-import de.gematik.demis.fhir_ui_data_model_translation_service.disease.formly.processor.ChoiceProcessor;
-import de.gematik.demis.fhir_ui_data_model_translation_service.disease.formly.processor.DateProcessor;
-import de.gematik.demis.fhir_ui_data_model_translation_service.disease.formly.processor.EnableWhenProcessor;
-import de.gematik.demis.fhir_ui_data_model_translation_service.disease.formly.processor.GroupProcessor;
-import de.gematik.demis.fhir_ui_data_model_translation_service.disease.formly.processor.QuantityProcessor;
-import de.gematik.demis.fhir_ui_data_model_translation_service.disease.formly.processor.ReferenceProcessor;
-import de.gematik.demis.fhir_ui_data_model_translation_service.disease.formly.processor.TextProcessor;
+import de.gematik.demis.fhir_ui_data_model_translation_service.disease.formly.processor.*;
 import de.gematik.demis.fhir_ui_data_model_translation_service.disease.formly.processor.resources.DiseaseProcessor;
 import de.gematik.demis.fhir_ui_data_model_translation_service.model.CodeDisplay;
 import java.io.File;
@@ -85,7 +79,7 @@ class DiseaseDataPreparationSrvTest {
     when(referenceProcessorMock.createFieldGroup(any(), any(), anyString()))
         .thenReturn(new FieldGroup[0]);
     when(diseaseProcessorMock.createFieldGroup(anyString())).thenReturn(new FieldGroup[0]);
-    when(featureFlags.isMoveHospitalizationReason()).thenReturn(true);
+    when(featureFlags.isDiseaseStrict()).thenReturn(false);
 
     diseaseDataPreparationSrv =
         new DiseaseDataPreparationSrv(

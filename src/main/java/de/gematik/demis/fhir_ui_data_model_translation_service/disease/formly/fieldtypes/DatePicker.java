@@ -125,6 +125,50 @@ public class DatePicker extends TextInput {
     }
   }
 
+  /**
+   * Parses a regex and infers which date precisions are allowed. It assumes that the regex contains
+   * only valid ISO date formats, separated by '|' if multiple formats are allowed.
+   */
+  static List<Precision> detectPrecisionsFromRegex(String regex) {
+    if (regex == null || regex.isBlank()) return List.of();
+    EnumSet<Precision> result = EnumSet.noneOf(Precision.class);
+
+    for (String alternative : regex.split("\\|")) {
+      // Normalize by removing possible dash within brackets (e.g. [0-9]) to not interfere with
+      // dash as separator between date parts (year, month, day)
+      String normalized = alternative.trim().replaceAll("\\[[^]]*+]", "[X]");
+
+      long dashCount = normalized.chars().filter(ch -> ch == '-').count();
+      if (dashCount == 2) {
+        result.add(Precision.DAY);
+      } else if (dashCount == 1) {
+        result.add(Precision.MONTH);
+      } else if (dashCount == 0) {
+        result.add(Precision.YEAR);
+      }
+    }
+    return new ArrayList<>(result);
+  }
+
+  /**
+   * Extend the builder with a custom method to set allowed precisions from a regex.
+   *
+   * @param <C>
+   * @param <B>
+   */
+  public abstract static class DatePickerBuilder<
+          C extends DatePicker, B extends DatePickerBuilder<C, B>>
+      extends TextInputBuilder<C, B> {
+
+    public B allowedPrecisionsFromRegex(String regex) {
+      var precisionFromRegex = detectPrecisionsFromRegex(regex);
+      if (!precisionFromRegex.isEmpty()) {
+        this.allowedPrecisions = precisionFromRegex;
+      }
+      return self();
+    }
+  }
+
   @Getter
   public enum Precision {
 

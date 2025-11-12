@@ -26,15 +26,22 @@ package de.gematik.demis.fhir_ui_data_model_translation_service.disease.formly.f
  * #L%
  */
 
+import static de.gematik.demis.fhir_ui_data_model_translation_service.disease.formly.fieldtypes.DatePicker.Precision;
+import static de.gematik.demis.fhir_ui_data_model_translation_service.disease.formly.fieldtypes.DatePicker.Precision.MONTH;
+import static de.gematik.demis.fhir_ui_data_model_translation_service.disease.formly.fieldtypes.DatePicker.Precision.YEAR;
+import static de.gematik.demis.fhir_ui_data_model_translation_service.disease.formly.fieldtypes.DatePicker.detectPrecisionsFromRegex;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatException;
 import static org.assertj.core.api.Assertions.assertThatNoException;
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import de.gematik.demis.fhir_ui_data_model_translation_service.disease.formly.model.FieldGroup;
 import de.gematik.demis.fhir_ui_data_model_translation_service.disease.formly.model.Props;
 import java.time.LocalDate;
+import java.util.EnumSet;
 import java.util.List;
+import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
 
 class DatePickerTest {
@@ -51,7 +58,7 @@ class DatePickerTest {
     FieldGroup datePicker =
         DatePicker.builder()
             .label(LABEL)
-            .allowedPrecisions(List.of(DatePicker.Precision.YEAR, DatePicker.Precision.DAY))
+            .allowedPrecisions(List.of(YEAR, DatePicker.Precision.DAY))
             .minDate(minDate)
             .maxDate(maxDate)
             .startWithYearSelection(true)
@@ -152,5 +159,58 @@ class DatePickerTest {
             .createFieldGroup();
 
     assertThat(datePicker.getKey()).isEqualTo(customKey);
+  }
+
+  @Nested
+  class PrecisionDetection {
+
+    @Test
+    void returnsEmptyList_whenRegexIsNull() {
+      assertTrue(detectPrecisionsFromRegex(null).isEmpty());
+    }
+
+    @Test
+    void returnsEmptyList_whenRegexIsBlank() {
+      assertTrue(detectPrecisionsFromRegex("   ").isEmpty());
+    }
+
+    @Test
+    void detectsYearPrecision_whenNoDashInRegex() {
+      List<Precision> result = detectPrecisionsFromRegex("\\d{4}");
+      assertEquals(List.of(YEAR), result);
+    }
+
+    @Test
+    void detectsMonthPrecision_whenOneDashInRegex() {
+      List<Precision> result = detectPrecisionsFromRegex("\\d{4}-\\d{2}");
+      assertEquals(List.of(MONTH), result);
+    }
+
+    @Test
+    void detectsDayPrecision_whenTwoDashesInRegex() {
+      List<Precision> result = detectPrecisionsFromRegex("\\d{4}-\\d{2}-\\d{2}");
+      assertEquals(List.of(Precision.DAY), result);
+    }
+
+    @Test
+    void detectsMultiplePrecisions_whenAlternativesGiven() {
+      List<Precision> result = detectPrecisionsFromRegex("\\d{4}-\\d{2}-\\d{2}|\\d{4}");
+      assertEquals(EnumSet.of(Precision.YEAR, Precision.DAY), EnumSet.copyOf(result));
+    }
+
+    @Test
+    void ignoresDashesInsideCharacterClasses() {
+      List<Precision> result = detectPrecisionsFromRegex("\\d{4}-[0-9]{2}");
+      // dash in [0-9] should be ignored — one real dash remains → MONTH
+      assertEquals(List.of(Precision.MONTH), result);
+    }
+
+    @Test
+    void detectsAllPrecisions_whenAllFormatsGiven() {
+      List<Precision> result =
+          detectPrecisionsFromRegex("\\d{4}|\\d{4}-\\d{2}|\\d{4}-\\d{2}-\\d{2}");
+      assertEquals(
+          EnumSet.of(Precision.YEAR, Precision.MONTH, Precision.DAY), EnumSet.copyOf(result));
+    }
   }
 }

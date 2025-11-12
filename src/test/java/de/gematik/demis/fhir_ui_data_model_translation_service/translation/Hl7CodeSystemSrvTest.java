@@ -27,11 +27,11 @@ package de.gematik.demis.fhir_ui_data_model_translation_service.translation;
  */
 
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.assertThatException;
 
 import ca.uhn.fhir.context.FhirContext;
 import de.gematik.demis.fhir_ui_data_model_translation_service.model.CodeDisplay;
 import java.io.IOException;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -40,34 +40,38 @@ import org.mockito.junit.jupiter.MockitoExtension;
 @ExtendWith(MockitoExtension.class)
 class Hl7CodeSystemSrvTest {
 
+  public static final String VALUE_SET_URL =
+      "http://terminology.hl7.org/ValueSet/condition-ver-status";
+  private static final String CODE_SYSTEM_URL =
+      "http://terminology.hl7.org/CodeSystem/condition-ver-status";
   private final FhirContext fhirContext = FhirContext.forR4Cached();
-
-  private final String hl7DataPath = "src/test/resources/HL7/terminology/r4";
 
   private Hl7CodeSystemSrv hl7CodeSystemSrv;
 
-  @BeforeEach
-  void setUp() {
-    hl7CodeSystemSrv = new Hl7CodeSystemSrv(hl7DataPath, fhirContext);
+  @DisplayName("init from file system")
+  @Test
+  void initFromFileSystem() throws IOException {
+    hl7CodeSystemSrv =
+        new Hl7CodeSystemSrv("src/main/resources/fhir-profile-snapshots/r4", fhirContext);
+    verify();
   }
 
-  @DisplayName("initialization test")
+  @DisplayName("init from classpath")
   @Test
-  void shouldInitializeService() throws IOException {
+  void initFromClasspath() throws IOException {
+    hl7CodeSystemSrv = new Hl7CodeSystemSrv("classpath:/fhir-profile-snapshots/r4", fhirContext);
+    verify();
+  }
+
+  private void verify() throws IOException {
     hl7CodeSystemSrv.init();
+    assertThat(hl7CodeSystemSrv.containsContent(VALUE_SET_URL)).isFalse();
+    verifyCodeSystem();
+  }
 
-    assertThat(
-            hl7CodeSystemSrv.containsContent(
-                "http://terminology.hl7.org/CodeSystem/condition-ver-status"))
-        .isTrue();
-    assertThat(
-            hl7CodeSystemSrv.containsContent(
-                "http://terminology.hl7.org/ValueSet/condition-ver-status"))
-        .isFalse();
-
-    CodeDisplayMapWithVersion fileContent =
-        hl7CodeSystemSrv.getFileContent(
-            "http://terminology.hl7.org/CodeSystem/condition-ver-status");
+  private void verifyCodeSystem() throws IOException {
+    assertThat(hl7CodeSystemSrv.containsContent(CODE_SYSTEM_URL)).as(CODE_SYSTEM_URL).isTrue();
+    CodeDisplayMapWithVersion fileContent = hl7CodeSystemSrv.getFileContent(CODE_SYSTEM_URL);
     assertThat(fileContent).isNotNull();
     assertThat(fileContent.codeDisplayMap())
         .hasSize(6)
@@ -84,5 +88,12 @@ class Hl7CodeSystemSrvTest {
         .containsEntry(
             "entered-in-error",
             CodeDisplay.builder().code("entered-in-error").display("Entered in Error").build());
+  }
+
+  @DisplayName("path is null")
+  @Test
+  void givenNullPathWhenContainsContentThenThrowException() {
+    hl7CodeSystemSrv = new Hl7CodeSystemSrv(null, fhirContext);
+    assertThatException().isThrownBy(hl7CodeSystemSrv::init);
   }
 }

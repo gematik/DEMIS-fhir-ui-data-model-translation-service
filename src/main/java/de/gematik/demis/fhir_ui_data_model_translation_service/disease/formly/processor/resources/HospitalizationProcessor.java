@@ -69,6 +69,8 @@ public class HospitalizationProcessor {
       "https://demis.rki.de/fhir/ValueSet/answerSetHospitalizationReason";
   private static final String SERVICE_TYPE_VALUE_SET =
       "https://demis.rki.de/fhir/ValueSet/hospitalizationServiceType";
+  private static final String SERVICE_TYPE_VALUE_SET_STRICT =
+      "http://fhir.de/ValueSet/dkgev/Fachabteilungsschluessel-erweitert";
   private static final String LINK_ID_SERVICE_TYPE = "serviceType";
   private static final String CLIPBOARD_MARKER_ENCOUNTER = "enc.";
 
@@ -101,7 +103,12 @@ public class HospitalizationProcessor {
             .parent(parent)
             .build();
     CodeDisplay[] options =
-        this.dataLoaderSrv.getValueSetData(SERVICE_TYPE_VALUE_SET).toArray(CodeDisplay[]::new);
+        this.dataLoaderSrv
+            .getValueSetData(
+                featureFlags.isDiseaseStrict()
+                    ? SERVICE_TYPE_VALUE_SET_STRICT
+                    : SERVICE_TYPE_VALUE_SET)
+            .toArray(CodeDisplay[]::new);
     FieldGroup input =
         FieldGroup.builder()
             .type(FieldGroup.TYPE_CODING)
@@ -202,9 +209,6 @@ public class HospitalizationProcessor {
   }
 
   private void createReason(Questionnaire.QuestionnaireItemComponent item, FieldGroup parent) {
-    if (!this.featureFlags.isMoveHospitalizationReason()) {
-      return;
-    }
     FieldGroup reason =
         FieldGroup.builder()
             .key(LINK_ID_REASON)
@@ -223,8 +227,8 @@ public class HospitalizationProcessor {
                 Props.builder()
                     .label("Grund")
                     .clearable(true)
-                    .required(false)
-                    .defaultCode("NASK")
+                    .required(featureFlags.isDiseaseStrict())
+                    .defaultCode(featureFlags.isDiseaseStrict() ? "1631000175102" : "NASK")
                     .options(options)
                     .build())
             .build();

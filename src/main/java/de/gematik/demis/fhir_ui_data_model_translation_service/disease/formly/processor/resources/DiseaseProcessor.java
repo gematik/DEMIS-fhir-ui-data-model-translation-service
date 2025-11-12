@@ -44,6 +44,10 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 
+/**
+ * Processor in charge of building the part of the form matching the Condition Resource within the
+ * notification. In the UI this part is to be found under the page "Angaben zu Symptomen"
+ */
 @Component
 @RequiredArgsConstructor
 @Slf4j

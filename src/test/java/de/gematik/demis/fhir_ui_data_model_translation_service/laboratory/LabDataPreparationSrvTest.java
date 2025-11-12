@@ -88,9 +88,12 @@ class LabDataPreparationSrvTest {
     methodFile2 = new File("src/test/resources/profiles/ValueSet/ValueSet-methodLEGP.json");
     methodFile3 = new File("src/test/resources/profiles/ValueSet/ValueSet-methodHBVP.json");
 
-    gappMethodFile = new File("src/test/resources/GAPP/ValueSet-methodGAPP.json");
-    gappMaterialFile = new File("src/test/resources/GAPP/ValueSet-materialGAPP.json");
-    gappAnswerSetFile = new File("src/test/resources/GAPP/ValueSet-answerSetGAPP.json");
+    gappMethodFile =
+        new File("src/main/resources/fhir-profile-snapshots/GAPP/ValueSet-methodGAPP.json");
+    gappMaterialFile =
+        new File("src/main/resources/fhir-profile-snapshots/GAPP/ValueSet-materialGAPP.json");
+    gappAnswerSetFile =
+        new File("src/main/resources/fhir-profile-snapshots/GAPP/ValueSet-answerSetGAPP.json");
   }
 
   private static void verifyInvpMethods(Map<String, LabNotificationData> laboratoryJsonDataMap) {

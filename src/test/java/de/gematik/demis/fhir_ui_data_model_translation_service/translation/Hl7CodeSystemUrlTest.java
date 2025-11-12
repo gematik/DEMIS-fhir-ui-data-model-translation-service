@@ -27,30 +27,36 @@ package de.gematik.demis.fhir_ui_data_model_translation_service.translation;
  */
 
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.junit.jupiter.api.Assertions.*;
 
 import de.gematik.demis.fhir_ui_data_model_translation_service.utils.Utils;
 import java.io.IOException;
+import java.util.Optional;
 import org.junit.jupiter.api.Test;
 
 class Hl7CodeSystemUrlTest {
 
   @Test
   void testConditionVerStatus() throws IOException {
-    String json =
-        Utils.getFileString(
-            "src/test/resources/HL7/terminology/r4/CodeSystem-condition-ver-status.json");
-    String url = new Hl7CodeSystemUrl(json).get().get();
-    assertThat(url)
+    final String file =
+        "src/main/resources/fhir-profile-snapshots/r4/CodeSystem-condition-ver-status.json";
+    final String json = Utils.getFileString(file);
+    final Optional<String> url = new Hl7CodeSystemUrl(json).get();
+    assertThat(url.get())
         .as("root level url")
         .isEqualTo("http://terminology.hl7.org/CodeSystem/condition-ver-status");
   }
 
+  /**
+   * Test for a CodeSystem that does not have a url at the root level.
+   *
+   * @throws IOException if file cannot be read
+   */
   @Test
   void testConditionVerStatusReturnsOptionalEmpty() throws IOException {
-    String json =
-        Utils.getFileString(
-            "src/test/resources/HL7/terminology/artificial/CodeSystem-condition-ver-status.json");
-    assertThat(new Hl7CodeSystemUrl(json).get()).isEmpty();
+    final String file =
+        "src/test/resources/HL7/terminology/artificial/CodeSystem-condition-ver-status.json";
+    final String json = Utils.getFileString(file);
+    final Optional<String> url = new Hl7CodeSystemUrl(json).get();
+    assertThat(url).isEmpty();
   }
 }

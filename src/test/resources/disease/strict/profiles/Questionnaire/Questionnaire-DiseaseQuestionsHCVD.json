@@ -1,0 +1,645 @@
+{
+  "resourceType": "Questionnaire",
+  "id": "DiseaseQuestionsHCVD",
+  "url": "https://demis.rki.de/fhir/Questionnaire/DiseaseQuestionsHCVD",
+  "version": "1.4.1",
+  "name": "DiseaseQuestionsHCVD",
+  "title": "Hepatitis C: spezifische klinische und epidemiologische Angaben",
+  "status": "active",
+  "date": "2025-09-01",
+  "publisher": "Robert Koch-Institut",
+  "contact": [
+    {
+      "telecom": [
+        {
+          "system": "email",
+          "value": "demis-support@rki.de"
+        }
+      ]
+    }
+  ],
+  "description": "Hepatitis C spezifische Informationsbedarfe werden in diesem meldetatbestandsspezifischen Fragebogen zusammengestellt. Dieser manifestiert sich als entsprechende QuestionnaireResponse innerhalb der Meldung.",
+  "jurisdiction": [
+    {
+      "coding": [
+        {
+          "system": "urn:iso:std:iso:3166",
+          "version": "ALPHA-2",
+          "code": "DE"
+        }
+      ]
+    }
+  ],
+  "copyright": "Copyright (C) 2021-2025 Robert Koch-Institut",
+  "item": [
+    {
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+          "valueCodeableConcept": {
+            "coding": [
+              {
+                "system": "http://hl7.org/fhir/questionnaire-item-control",
+                "code": "gtable",
+                "display": "Group Table"
+              }
+            ]
+          }
+        }
+      ],
+      "linkId": "nationalityGroup",
+      "type": "group",
+      "required": true,
+      "repeats": false,
+      "item": [
+        {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+              "valueCodeableConcept": {
+                "coding": [
+                  {
+                    "system": "http://hl7.org/fhir/questionnaire-item-control",
+                    "code": "drop-down",
+                    "display": "Drop down"
+                  }
+                ]
+              }
+            }
+          ],
+          "linkId": "nationality",
+          "text": "Welche Staatsangehörigkeit hat die betroffene Person?",
+          "type": "choice",
+          "required": true,
+          "repeats": false,
+          "answerValueSet": "https://demis.rki.de/fhir/ValueSet/answerSetCountry",
+          "initial": [
+            {
+              "valueCoding": {
+                "system": "http://snomed.info/sct",
+                "code": "1631000175102",
+                "display": "Patient not asked (contextual qualifier) (qualifier value)"
+              }
+            }
+          ]
+        },
+        {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+              "valueCodeableConcept": {
+                "coding": [
+                  {
+                    "system": "http://hl7.org/fhir/questionnaire-item-control",
+                    "code": "drop-down",
+                    "display": "Drop down"
+                  }
+                ]
+              }
+            }
+          ],
+          "linkId": "countryOfBirth",
+          "text": "Welcher ist der Geburtsstaat der betroffenen Person?",
+          "type": "choice",
+          "required": true,
+          "repeats": false,
+          "answerValueSet": "https://demis.rki.de/fhir/ValueSet/answerSetCountry",
+          "initial": [
+            {
+              "valueCoding": {
+                "system": "http://snomed.info/sct",
+                "code": "1631000175102",
+                "display": "Patient not asked (contextual qualifier) (qualifier value)"
+              }
+            }
+          ]
+        },
+        {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/regex",
+              "valueString": "^19[0-9]{2}$|^20[0-9]{2}$"
+            }
+          ],
+          "linkId": "yearOfEntry",
+          "text": "Jahr der Einreise in Deutschland",
+          "type": "date",
+          "enableWhen": [
+            {
+              "question": "countryOfBirth",
+              "operator": "!=",
+              "answerCoding": {
+                "system": "urn:iso:std:iso:3166",
+                "code": "DE"
+              }
+            },
+            {
+              "question": "countryOfBirth",
+              "operator": "!=",
+              "answerCoding": {
+                "system": "http://snomed.info/sct",
+                "code": "261665006"
+              }
+            },
+            {
+              "question": "countryOfBirth",
+              "operator": "!=",
+              "answerCoding": {
+                "system": "http://snomed.info/sct",
+                "code": "1631000175102"
+              }
+            }
+          ],
+          "enableBehavior": "all",
+          "required": false,
+          "repeats": false
+        }
+      ]
+    },
+    {
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+          "valueCodeableConcept": {
+            "coding": [
+              {
+                "system": "http://hl7.org/fhir/questionnaire-item-control",
+                "code": "drop-down",
+                "display": "Drop down"
+              }
+            ]
+          }
+        }
+      ],
+      "linkId": "stadium",
+      "text": "Welches Stadium der Infektion liegt vor?",
+      "type": "choice",
+      "required": true,
+      "repeats": false,
+      "answerValueSet": "https://demis.rki.de/fhir/ValueSet/answerSetStadiumHCVD",
+      "initial": [
+        {
+          "valueCoding": {
+            "system": "http://snomed.info/sct",
+            "code": "1631000175102",
+            "display": "Patient not asked (contextual qualifier) (qualifier value)"
+          }
+        }
+      ],
+      "item": [
+        {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+              "valueCodeableConcept": {
+                "coding": [
+                  {
+                    "system": "http://hl7.org/fhir/questionnaire-item-control",
+                    "code": "drop-down",
+                    "display": "Drop down"
+                  }
+                ]
+              }
+            }
+          ],
+          "linkId": "acute",
+          "text": "Akute Infektion aufgrund",
+          "type": "choice",
+          "enableWhen": [
+            {
+              "question": "stadium",
+              "operator": "=",
+              "answerCoding": {
+                "system": "http://snomed.info/sct",
+                "code": "773114002"
+              }
+            }
+          ],
+          "required": true,
+          "repeats": false,
+          "answerValueSet": "https://demis.rki.de/fhir/ValueSet/answerSetAcute",
+          "initial": [
+            {
+              "valueCoding": {
+                "system": "http://snomed.info/sct",
+                "code": "1631000175102",
+                "display": "Patient not asked (contextual qualifier) (qualifier value)"
+              }
+            }
+          ],
+          "item": [
+            {
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                  "valueCodeableConcept": {
+                    "coding": [
+                      {
+                        "system": "http://hl7.org/fhir/questionnaire-item-control",
+                        "code": "drop-down",
+                        "display": "Drop down"
+                      }
+                    ]
+                  }
+                }
+              ],
+              "linkId": "seroconversion",
+              "text": "Liegt die Serokonversion innerhalb der letzten 6 Monate?",
+              "type": "choice",
+              "enableWhen": [
+                {
+                  "question": "acute",
+                  "operator": "=",
+                  "answerCoding": {
+                    "system": "http://snomed.info/sct",
+                    "code": "1290194006"
+                  }
+                }
+              ],
+              "required": true,
+              "repeats": false,
+              "answerValueSet": "https://demis.rki.de/fhir/ValueSet/yesOrNoOrNoInformation",
+              "initial": [
+                {
+                  "valueCoding": {
+                    "system": "http://snomed.info/sct",
+                    "code": "1631000175102",
+                    "display": "Patient not asked (contextual qualifier) (qualifier value)"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+          "valueCodeableConcept": {
+            "coding": [
+              {
+                "system": "http://hl7.org/fhir/questionnaire-item-control",
+                "code": "drop-down",
+                "display": "Drop down"
+              }
+            ]
+          }
+        }
+      ],
+      "linkId": "liverCirrhosis",
+      "text": "Hat der Fall eine Leberzirrhose (Befund liegt dem Meldenden vor)?",
+      "type": "choice",
+      "required": true,
+      "repeats": false,
+      "answerValueSet": "https://demis.rki.de/fhir/ValueSet/yesOrNoOrNoInformation",
+      "initial": [
+        {
+          "valueCoding": {
+            "system": "http://snomed.info/sct",
+            "code": "1631000175102",
+            "display": "Patient not asked (contextual qualifier) (qualifier value)"
+          }
+        }
+      ]
+    },
+    {
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+          "valueCodeableConcept": {
+            "coding": [
+              {
+                "system": "http://hl7.org/fhir/questionnaire-item-control",
+                "code": "drop-down",
+                "display": "Drop down"
+              }
+            ]
+          }
+        }
+      ],
+      "linkId": "diagnosisKnown",
+      "text": "Ist eine Hepatitis-C-Diagnose aktenkundig?",
+      "type": "choice",
+      "required": true,
+      "repeats": false,
+      "answerValueSet": "https://demis.rki.de/fhir/ValueSet/yesOrNoOrNoInformation",
+      "initial": [
+        {
+          "valueCoding": {
+            "system": "http://snomed.info/sct",
+            "code": "1631000175102",
+            "display": "Patient not asked (contextual qualifier) (qualifier value)"
+          }
+        }
+      ]
+    },
+    {
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+          "valueCodeableConcept": {
+            "coding": [
+              {
+                "system": "http://hl7.org/fhir/questionnaire-item-control",
+                "code": "drop-down",
+                "display": "Drop down"
+              }
+            ]
+          }
+        }
+      ],
+      "linkId": "infectionPathKind",
+      "text": "Auf welchem Weg hat sich die betroffene Person wahrscheinlich infiziert?",
+      "type": "choice",
+      "required": true,
+      "repeats": true,
+      "answerValueSet": "https://demis.rki.de/fhir/ValueSet/answerSetInfectionPathHCVD",
+      "initial": [
+        {
+          "valueCoding": {
+            "system": "http://snomed.info/sct",
+            "code": "1631000175102",
+            "display": "Patient not asked (contextual qualifier) (qualifier value)"
+          }
+        }
+      ],
+      "item": [
+        {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+              "valueCodeableConcept": {
+                "coding": [
+                  {
+                    "system": "http://hl7.org/fhir/questionnaire-item-control",
+                    "code": "drop-down",
+                    "display": "Drop down"
+                  }
+                ]
+              }
+            }
+          ],
+          "linkId": "inPrison",
+          "text": "Während eines Haftaufenthaltes?",
+          "type": "choice",
+          "enableWhen": [
+            {
+              "question": "infectionPathKind",
+              "operator": "=",
+              "answerCoding": {
+                "system": "http://snomed.info/sct",
+                "code": "365984004"
+              }
+            }
+          ],
+          "required": true,
+          "repeats": false,
+          "answerValueSet": "https://demis.rki.de/fhir/ValueSet/yesOrNoOrNoInformation",
+          "initial": [
+            {
+              "valueCoding": {
+                "system": "http://snomed.info/sct",
+                "code": "1631000175102",
+                "display": "Patient not asked (contextual qualifier) (qualifier value)"
+              }
+            }
+          ]
+        },
+        {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+              "valueCodeableConcept": {
+                "coding": [
+                  {
+                    "system": "http://hl7.org/fhir/questionnaire-item-control",
+                    "code": "drop-down",
+                    "display": "Drop down"
+                  }
+                ]
+              }
+            }
+          ],
+          "linkId": "sexualContact",
+          "text": "War der Sexualpartner/die Sexualpartnerin bekanntermaßen Hepatitis C infiziert?",
+          "type": "choice",
+          "enableWhen": [
+            {
+              "question": "infectionPathKind",
+              "operator": "=",
+              "answerCoding": {
+                "system": "http://snomed.info/sct",
+                "code": "472986005"
+              }
+            },
+            {
+              "question": "infectionPathKind",
+              "operator": "=",
+              "answerCoding": {
+                "system": "http://snomed.info/sct",
+                "code": "472987001"
+              }
+            },
+            {
+              "question": "infectionPathKind",
+              "operator": "=",
+              "answerCoding": {
+                "system": "http://snomed.info/sct",
+                "code": "472988006"
+              }
+            }
+          ],
+          "enableBehavior": "any",
+          "required": true,
+          "repeats": false,
+          "answerValueSet": "https://demis.rki.de/fhir/ValueSet/yesOrNoOrNoInformation",
+          "initial": [
+            {
+              "valueCoding": {
+                "system": "http://snomed.info/sct",
+                "code": "1631000175102",
+                "display": "Patient not asked (contextual qualifier) (qualifier value)"
+              }
+            }
+          ]
+        },
+        {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+              "valueCodeableConcept": {
+                "coding": [
+                  {
+                    "system": "http://hl7.org/fhir/questionnaire-item-control",
+                    "code": "drop-down",
+                    "display": "Drop down"
+                  }
+                ]
+              }
+            }
+          ],
+          "linkId": "transmissionKind",
+          "text": "Welche Form der nosokomialen Übertragung ist der wahrscheinliche Infektionsweg?",
+          "type": "choice",
+          "enableWhen": [
+            {
+              "question": "infectionPathKind",
+              "operator": "=",
+              "answerCoding": {
+                "system": "http://snomed.info/sct",
+                "code": "409496000:{704326004=408678008}"
+              }
+            }
+          ],
+          "required": true,
+          "repeats": true,
+          "answerValueSet": "https://demis.rki.de/fhir/ValueSet/answerSetTransmissionKindHCVD",
+          "initial": [
+            {
+              "valueCoding": {
+                "system": "http://snomed.info/sct",
+                "code": "1631000175102",
+                "display": "Patient not asked (contextual qualifier) (qualifier value)"
+              }
+            }
+          ],
+          "item": [
+            {
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/regex",
+                  "valueString": "^19[0-9]{2}-[0-9]{2}$|^20[0-9]{2}-[0-9]{2}$|^19[0-9]{2}$|^20[0-9]{2}$"
+                }
+              ],
+              "linkId": "receiptBloodProductsDate",
+              "text": "Jahr und Monat des Erhalts von Blutprodukten",
+              "type": "date",
+              "enableWhen": [
+                {
+                  "question": "transmissionKind",
+                  "operator": "=",
+                  "answerCoding": {
+                    "system": "http://snomed.info/sct",
+                    "code": "409496000:{704326004=5447007}"
+                  }
+                }
+              ],
+              "required": false,
+              "repeats": false
+            },
+            {
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                  "valueCodeableConcept": {
+                    "coding": [
+                      {
+                        "system": "http://hl7.org/fhir/questionnaire-item-control",
+                        "code": "drop-down",
+                        "display": "Drop down"
+                      }
+                    ]
+                  }
+                }
+              ],
+              "linkId": "receiptBloodProductsUnknownDate",
+              "text": "Falls genaues Datum unbekannt",
+              "type": "choice",
+              "enableWhen": [
+                {
+                  "question": "transmissionKind",
+                  "operator": "=",
+                  "answerCoding": {
+                    "system": "http://snomed.info/sct",
+                    "code": "409496000:{704326004=5447007}"
+                  }
+                }
+              ],
+              "required": true,
+              "repeats": false,
+              "answerValueSet": "https://demis.rki.de/fhir/ValueSet/answerSetBeforeOrAfter1991",
+              "initial": [
+                {
+                  "valueCoding": {
+                    "system": "http://snomed.info/sct",
+                    "code": "1631000175102",
+                    "display": "Patient not asked (contextual qualifier) (qualifier value)"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+          "valueCodeableConcept": {
+            "coding": [
+              {
+                "system": "http://hl7.org/fhir/questionnaire-item-control",
+                "code": "drop-down",
+                "display": "Drop down"
+              }
+            ]
+          }
+        }
+      ],
+      "linkId": "outbreak",
+      "text": "Kann der gemeldete Fall einem Ausbruch zugeordnet werden?",
+      "type": "choice",
+      "required": true,
+      "repeats": false,
+      "answerValueSet": "https://demis.rki.de/fhir/ValueSet/yesOrNoOrNoInformation",
+      "initial": [
+        {
+          "valueCoding": {
+            "system": "http://snomed.info/sct",
+            "code": "1631000175102",
+            "display": "Patient not asked (contextual qualifier) (qualifier value)"
+          }
+        }
+      ],
+      "item": [
+        {
+          "linkId": "outbreakNote",
+          "text": "Fallbezogene Zusatzinformationen zum Ausbruch",
+          "type": "text",
+          "enableWhen": [
+            {
+              "question": "outbreak",
+              "operator": "=",
+              "answerCoding": {
+                "system": "https://demis.rki.de/fhir/CodeSystem/yesOrNoAnswer",
+                "code": "yes"
+              }
+            }
+          ],
+          "required": false,
+          "repeats": false
+        },
+        {
+          "linkId": "outbreakNotificationId",
+          "text": "Notification-Id der zugehörigen Ausbruchsmeldung",
+          "type": "reference",
+          "enableWhen": [
+            {
+              "question": "outbreak",
+              "operator": "=",
+              "answerCoding": {
+                "system": "https://demis.rki.de/fhir/CodeSystem/yesOrNoAnswer",
+                "code": "yes"
+              }
+            }
+          ],
+          "required": false,
+          "repeats": false
+        }
+      ]
+    }
+  ]
+}

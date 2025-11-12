@@ -90,7 +90,7 @@ public class ImmunizationProcessor {
   private CodeDisplay[] getVaccineCodes(String diseaseCode) {
     final String system = "https://demis.rki.de/fhir/ValueSet/vaccine" + diseaseCode.toUpperCase();
     List<CodeDisplay> codes = this.dataLoaderSrv.getValueSetData(system);
-    if (featureFlags.isDiseaseVaccineSnomedCodes()
+    if (!featureFlags.isDiseaseStrict()
         && codes.stream().map(CodeDisplay::getSystem).noneMatch(CODE_SYSTEM_SNOMED::equals)) {
       final List<CodeDisplay> snomedCodes = this.dataLoaderSrv.getValueSetData(system + "-SNOMED");
       if (!snomedCodes.isEmpty()) {

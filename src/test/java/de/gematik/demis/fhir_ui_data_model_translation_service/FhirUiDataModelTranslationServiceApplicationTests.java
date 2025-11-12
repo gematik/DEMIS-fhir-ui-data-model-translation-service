@@ -63,5 +63,9 @@ class FhirUiDataModelTranslationServiceApplicationTests {
             laboratoryDataLoaderSrv.getAvailableNotificationCategories(
                 PathogenNotificationCategory.P_7_3))
         .hasSize(6);
+    assertThat(
+            laboratoryDataLoaderSrv.getAvailableNotificationCategories(
+                PathogenNotificationCategory.P_7_1))
+        .hasSize(85);
   }
 }
