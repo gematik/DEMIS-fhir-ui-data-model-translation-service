@@ -109,7 +109,7 @@ class SnapshotFilesServiceTest {
             "CodeSystem-CodeSystemISO31662DE.json",
             true,
             true,
-            "src/test/resources/GAPP",
+            "src/main/resources/fhir-profile-snapshots/GAPP",
             "src/test/resources/GAPD");
 
     profileSnapshotFileService.init();
@@ -134,7 +134,7 @@ class SnapshotFilesServiceTest {
   }
 
   @Test
-  void shouldHandlNullGAPPPath() {
+  void shouldHandleNullGappPath() {
     SnapshotFilesService profileSnapshotFileService =
         new SnapshotFilesService(
             "src/test/resources/profiles",

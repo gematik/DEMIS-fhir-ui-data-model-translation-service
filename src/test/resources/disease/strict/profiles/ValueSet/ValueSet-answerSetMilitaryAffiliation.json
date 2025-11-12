@@ -1,0 +1,110 @@
+{
+  "resourceType": "ValueSet",
+  "id": "answerSetMilitaryAffiliation",
+  "url": "https://demis.rki.de/fhir/ValueSet/answerSetMilitaryAffiliation",
+  "version": "2.0.0",
+  "name": "AnswerSetMilitaryAffiliation",
+  "title": "Antwort Zugehörigkeit zur Bundeswehr",
+  "status": "active",
+  "experimental": false,
+  "date": "2025-09-03",
+  "publisher": "Robert Koch-Institut",
+  "contact": [
+    {
+      "telecom": [
+        {
+          "system": "email",
+          "value": "demis-support@rki.de"
+        }
+      ]
+    }
+  ],
+  "description": "Das ValueSet AnswerSetMilitaryAffiliation enthält die Codes der Antwortenmöglichkeiten für die Zugehörigkeit zur Bundeswehr.",
+  "jurisdiction": [
+    {
+      "coding": [
+        {
+          "system": "urn:iso:std:iso:3166",
+          "version": "ALPHA-2",
+          "code": "DE"
+        }
+      ]
+    }
+  ],
+  "copyright": "(C) 2021-2025 Robert Koch-Institut",
+  "compose": {
+    "include": [
+      {
+        "system": "https://demis.rki.de/fhir/CodeSystem/militaryAffiliation",
+        "version": "1.0.1"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20241115",
+        "concept": [
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 999
+              }
+            ],
+            "code": "1631000175102",
+            "display": "Patient not asked (contextual qualifier) (qualifier value)",
+            "designation": [
+              {
+                "language": "de-DE",
+                "value": "Patient/Patientin nicht gefragt"
+              }
+            ]
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 1000
+              }
+            ],
+            "code": "261665006",
+            "display": "Unbekannt"
+          }
+        ]
+      }
+    ]
+  },
+  "expansion": {
+    "timestamp": "2025-09-03T00:00:00+02:00",
+    "contains": [
+      {
+        "system": "https://demis.rki.de/fhir/CodeSystem/militaryAffiliation",
+        "version": "1.0.1",
+        "code": "civilPersonActiveInBundeswehr",
+        "display": "Zivilperson tätig/untergebracht in Einrichtung der BW"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20241115",
+        "code": "1631000175102",
+        "display": "Patient not asked (contextual qualifier) (qualifier value)"
+      },
+      {
+        "system": "https://demis.rki.de/fhir/CodeSystem/militaryAffiliation",
+        "version": "1.0.1",
+        "code": "memberOfBundeswehr",
+        "display": "Soldat/BW-Angehöriger"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20241115",
+        "code": "261665006",
+        "display": "Unbekannt"
+      },
+      {
+        "system": "https://demis.rki.de/fhir/CodeSystem/militaryAffiliation",
+        "version": "1.0.1",
+        "code": "noReferenceToBundeswehr",
+        "display": "Kein Bezug zur BW"
+      }
+    ]
+  }
+}

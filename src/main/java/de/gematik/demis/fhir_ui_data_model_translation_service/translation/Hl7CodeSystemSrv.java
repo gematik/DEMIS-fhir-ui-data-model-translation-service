@@ -28,6 +28,7 @@ package de.gematik.demis.fhir_ui_data_model_translation_service.translation;
 
 import ca.uhn.fhir.context.FhirContext;
 import de.gematik.demis.fhir_ui_data_model_translation_service.model.CodeDisplay;
+import de.gematik.demis.fhir_ui_data_model_translation_service.utils.ClasspathFhirJsonFiles;
 import de.gematik.demis.fhir_ui_data_model_translation_service.utils.Utils;
 import jakarta.annotation.PostConstruct;
 import java.io.File;
@@ -48,23 +49,30 @@ class Hl7CodeSystemSrv {
 
   private final String hl7DataPath;
   private final FhirContext fhirContext;
+
   private Map<String, String> urlToPathMap;
 
   Hl7CodeSystemSrv(
       @Value("${data.path.hl7.data.root}") String hl7DataPath, FhirContext fhirContext) {
-
     this.hl7DataPath = hl7DataPath;
     this.fhirContext = fhirContext;
   }
 
   @PostConstruct
   void init() {
-    log.info("Initializing Hl7CodeSystemSrv");
+    log.info("Initializing Hl7CodeSystemSrv. Path: {}", hl7DataPath);
+    if (hl7DataPath == null || hl7DataPath.isEmpty()) {
+      throw new IllegalArgumentException("HL7 data path is not configured properly.");
+    }
     urlToPathMap = new HashMap<>();
-    var rawFiles = new File(Paths.get(hl7DataPath) + File.separator).listFiles();
-    if (rawFiles != null) {
-      for (File file : rawFiles) {
-        processFile(file);
+    if (ClasspathFhirJsonFiles.isClasspath(hl7DataPath)) {
+      new ClasspathFhirJsonFiles(hl7DataPath).createTempFiles().forEach(this::processFile);
+    } else {
+      var rawFiles = new File(Paths.get(hl7DataPath) + File.separator).listFiles();
+      if (rawFiles != null) {
+        for (File file : rawFiles) {
+          processFile(file);
+        }
       }
     }
     log.info("Initializing Hl7CodeSystemSrv finished");

@@ -1,0 +1,442 @@
+[
+  {
+    "code": "clod",
+    "display": "Botulismus",
+    "designations": [
+      {
+        "language": "de-DE",
+        "value": "Botulismus"
+      }
+    ]
+  },
+  {
+    "code": "vchd",
+    "display": "Cholera",
+    "designations": [
+      {
+        "language": "de-DE",
+        "value": "Cholera"
+      }
+    ]
+  },
+  {
+    "code": "cdfd",
+    "display": "Clostridioides-difficile-Erkrankung, schwere Verlaufsform",
+    "designations": [
+      {
+        "language": "de-DE",
+        "value": "Clostridioides-difficile-Erkrankung, schwere Verlaufsform"
+      }
+    ]
+  },
+  {
+    "code": "cvdd",
+    "display": "Coronavirus-Krankheit-2019 (COVID-19)",
+    "designations": [
+      {
+        "language": "de-DE",
+        "value": "Coronavirus-Krankheit-2019 (COVID-19)"
+      }
+    ]
+  },
+  {
+    "code": "cjkd",
+    "display": "Creutzfeldt-Jakob-Krankheit (CJK)",
+    "designations": [
+      {
+        "language": "de-DE",
+        "value": "Creutzfeldt-Jakob-Krankheit (CJK)"
+      }
+    ]
+  },
+  {
+    "code": "dend",
+    "display": "Denguefieber",
+    "designations": [
+      {
+        "language": "de-DE",
+        "value": "Denguefieber"
+      }
+    ]
+  },
+  {
+    "code": "cord",
+    "display": "Diphtherie",
+    "designations": [
+      {
+        "language": "de-DE",
+        "value": "Diphtherie"
+      }
+    ]
+  },
+  {
+    "code": "ebvd",
+    "display": "Ebolafieber",
+    "designations": [
+      {
+        "language": "de-DE",
+        "value": "Ebolafieber"
+      }
+    ]
+  },
+  {
+    "code": "gfvd",
+    "display": "Gelbfieber",
+    "designations": [
+      {
+        "language": "de-DE",
+        "value": "Gelbfieber"
+      }
+    ]
+  },
+  {
+    "code": "husd",
+    "display": "Hämolytisch-urämisches Syndrom (HUS)",
+    "designations": [
+      {
+        "language": "de-DE",
+        "value": "Hämolytisch-urämisches Syndrom (HUS)"
+      }
+    ]
+  },
+  {
+    "code": "hfad",
+    "display": "Hämorrhagisches Fieber",
+    "designations": [
+      {
+        "language": "de-DE",
+        "value": "Hämorrhagisches Fieber"
+      }
+    ]
+  },
+  {
+    "code": "htvd",
+    "display": "Hantavirus-Erkrankung, hämorrhagischer Verlauf",
+    "designations": [
+      {
+        "language": "de-DE",
+        "value": "Hantavirus-Erkrankung, hämorrhagischer Verlauf"
+      }
+    ]
+  },
+  {
+    "code": "hxxd",
+    "display": "Akute Virushepatitis",
+    "designations": [
+      {
+        "language": "de-DE",
+        "value": "Akute Virushepatitis"
+      }
+    ]
+  },
+  {
+    "code": "havd",
+    "display": "Hepatitis A",
+    "designations": [
+      {
+        "language": "de-DE",
+        "value": "Hepatitis A"
+      }
+    ]
+  },
+  {
+    "code": "hbvd",
+    "display": "Hepatitis B",
+    "designations": [
+      {
+        "language": "de-DE",
+        "value": "Hepatitis B"
+      }
+    ]
+  },
+  {
+    "code": "hcvd",
+    "display": "Hepatitis C",
+    "designations": [
+      {
+        "language": "de-DE",
+        "value": "Hepatitis C"
+      }
+    ]
+  },
+  {
+    "code": "hdvd",
+    "display": "Hepatitis D",
+    "designations": [
+      {
+        "language": "de-DE",
+        "value": "Hepatitis D"
+      }
+    ]
+  },
+  {
+    "code": "hevd",
+    "display": "Hepatitis E",
+    "designations": [
+      {
+        "language": "de-DE",
+        "value": "Hepatitis E"
+      }
+    ]
+  },
+  {
+    "code": "vzzd",
+    "display": "Herpes Zoster",
+    "designations": [
+      {
+        "language": "de-DE",
+        "value": "Herpes Zoster"
+      }
+    ]
+  },
+  {
+    "code": "bpsd",
+    "display": "Keuchhusten",
+    "designations": [
+      {
+        "language": "de-DE",
+        "value": "Keuchhusten"
+      }
+    ]
+  },
+  {
+    "code": "lsvd",
+    "display": "Lassafieber",
+    "designations": [
+      {
+        "language": "de-DE",
+        "value": "Lassafieber"
+      }
+    ]
+  },
+  {
+    "code": "mbvd",
+    "display": "Marburgfieber",
+    "designations": [
+      {
+        "language": "de-DE",
+        "value": "Marburgfieber"
+      }
+    ]
+  },
+  {
+    "code": "msvd",
+    "display": "Masern",
+    "designations": [
+      {
+        "language": "de-DE",
+        "value": "Masern"
+      }
+    ]
+  },
+  {
+    "code": "neid",
+    "display": "Meningokokken, invasive Erkrankung",
+    "designations": [
+      {
+        "language": "de-DE",
+        "value": "Meningokokken, invasive Erkrankung"
+      }
+    ]
+  },
+  {
+    "code": "band",
+    "display": "Milzbrand",
+    "designations": [
+      {
+        "language": "de-DE",
+        "value": "Milzbrand"
+      }
+    ]
+  },
+  {
+    "code": "mpxd",
+    "display": "Mpox",
+    "designations": [
+      {
+        "language": "de-DE",
+        "value": "Mpox"
+      }
+    ]
+  },
+  {
+    "code": "mpvd",
+    "display": "Mumps",
+    "designations": [
+      {
+        "language": "de-DE",
+        "value": "Mumps"
+      }
+    ]
+  },
+  {
+    "code": "opxd",
+    "display": "Orthopocken, andere",
+    "designations": [
+      {
+        "language": "de-DE",
+        "value": "Orthopocken, andere"
+      }
+    ]
+  },
+  {
+    "code": "spad",
+    "display": "Paratyphus",
+    "designations": [
+      {
+        "language": "de-DE",
+        "value": "Paratyphus"
+      }
+    ]
+  },
+  {
+    "code": "sxxd",
+    "display": "Paratyphus/Typhus, nicht differenziert",
+    "designations": [
+      {
+        "language": "de-DE",
+        "value": "Paratyphus/Typhus, nicht differenziert"
+      }
+    ]
+  },
+  {
+    "code": "ypsd",
+    "display": "Pest",
+    "designations": [
+      {
+        "language": "de-DE",
+        "value": "Pest"
+      }
+    ]
+  },
+  {
+    "code": "pkvd",
+    "display": "Pocken",
+    "designations": [
+      {
+        "language": "de-DE",
+        "value": "Pocken"
+      }
+    ]
+  },
+  {
+    "code": "povd",
+    "display": "Poliomyelitis",
+    "designations": [
+      {
+        "language": "de-DE",
+        "value": "Poliomyelitis"
+      }
+    ]
+  },
+  {
+    "code": "rund",
+    "display": "Röteln, konnatal",
+    "designations": [
+      {
+        "language": "de-DE",
+        "value": "Röteln, konnatal"
+      }
+    ]
+  },
+  {
+    "code": "ruvd",
+    "display": "Röteln, postnatal",
+    "designations": [
+      {
+        "language": "de-DE",
+        "value": "Röteln, postnatal"
+      }
+    ]
+  },
+  {
+    "code": "sspd",
+    "display": "Subakute sklerosierende Panenzephalitis (SSPE)",
+    "designations": [
+      {
+        "language": "de-DE",
+        "value": "Subakute sklerosierende Panenzephalitis (SSPE)"
+      }
+    ]
+  },
+  {
+    "code": "rbvd",
+    "display": "Tollwut",
+    "designations": [
+      {
+        "language": "de-DE",
+        "value": "Tollwut"
+      }
+    ]
+  },
+  {
+    "code": "ttvd",
+    "display": "Tollwutexpositionsverdacht",
+    "designations": [
+      {
+        "language": "de-DE",
+        "value": "Tollwutexpositionsverdacht"
+      }
+    ]
+  },
+  {
+    "code": "mytd",
+    "display": "Tuberkulose",
+    "designations": [
+      {
+        "language": "de-DE",
+        "value": "Tuberkulose"
+      }
+    ]
+  },
+  {
+    "code": "mybd",
+    "display": "Tuberkulose, bei Behandlungsabbruch",
+    "designations": [
+      {
+        "language": "de-DE",
+        "value": "Tuberkulose, bei Behandlungsabbruch"
+      }
+    ]
+  },
+  {
+    "code": "styd",
+    "display": "Typhus",
+    "designations": [
+      {
+        "language": "de-DE",
+        "value": "Typhus"
+      }
+    ]
+  },
+  {
+    "code": "vzwd",
+    "display": "Windpocken",
+    "designations": [
+      {
+        "language": "de-DE",
+        "value": "Windpocken"
+      }
+    ]
+  },
+  {
+    "code": "izvd",
+    "display": "Zoonotische Influenza",
+    "designations": [
+      {
+        "language": "de-DE",
+        "value": "Zoonotische Influenza"
+      }
+    ]
+  },
+  {
+    "code": "gapd",
+    "display": "Testdata Disease",
+    "designations": [
+      {
+        "language": "de-DE",
+        "value": "Testdata Disease"
+      }
+    ]
+  }
+]

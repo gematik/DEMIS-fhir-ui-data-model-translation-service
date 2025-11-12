@@ -132,7 +132,7 @@ public class QuantityProcessor implements ItemProcessor {
         propsBuilder.quantity(
             Props.Quantity.builder()
                 .system(quantityBoundProcessor.findUnitSystem(item))
-                .unit(quantityBoundProcessor.findUnitCode(item))
+                .code(quantityBoundProcessor.findUnitCode(item))
                 .build());
         propsBuilder.type("number");
       }
@@ -155,6 +155,7 @@ public class QuantityProcessor implements ItemProcessor {
         return Props.Quantity.builder()
             .system(coding.getSystem()) // Sets the system for the quantity.
             .unit(coding.getDisplay()) // Sets the unit display name.
+            .code(coding.getCode()) // Sets the code for the quantity
             .build();
       }
     }

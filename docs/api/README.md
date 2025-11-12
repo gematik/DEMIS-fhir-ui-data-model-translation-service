@@ -20,7 +20,8 @@ All URIs are relative to *http://localhost*
 *DiseaseDataLoaderCtrApi* | [**getFormlyRepresentationOfQuestionnaire1**](Apis/DiseaseDataLoaderCtrApi.md#getFormlyRepresentationOfQuestionnaire1) | **GET** /disease/questionnaire/{code}/formly |  |
 *DiseaseDataLoaderCtrApi* | [**getFormlyRepresentationOfQuestionnaireNonNominal**](Apis/DiseaseDataLoaderCtrApi.md#getFormlyRepresentationOfQuestionnaireNonNominal) | **GET** /disease/7.3/questionnaire/{code}/formly |  |
 *DiseaseDataLoaderCtrApi* | [**getQuestionsForSpecificCode**](Apis/DiseaseDataLoaderCtrApi.md#getQuestionsForSpecificCode) | **GET** /disease/questionnaire/{code}/items |  |
-| *LaboratoryDataLoaderCtrApi* | [**get73NotificationCategories**](Apis/LaboratoryDataLoaderCtrApi.md#get73NotificationCategories) | **GET** /laboratory/7.3 |  |
+| *LaboratoryDataLoaderCtrApi* | [**get71NotificationCategories**](Apis/LaboratoryDataLoaderCtrApi.md#get71NotificationCategories) | **GET** /laboratory/7.1 |  |
+*LaboratoryDataLoaderCtrApi* | [**get73NotificationCategories**](Apis/LaboratoryDataLoaderCtrApi.md#get73NotificationCategories) | **GET** /laboratory/7.3 |  |
 *LaboratoryDataLoaderCtrApi* | [**getAvailableFederalStates**](Apis/LaboratoryDataLoaderCtrApi.md#getAvailableFederalStates) | **GET** /laboratory/federalStates |  |
 *LaboratoryDataLoaderCtrApi* | [**getAvailableFederalStates1**](Apis/LaboratoryDataLoaderCtrApi.md#getAvailableFederalStates1) | **GET** /laboratory/7.1/federalStates |  |
 *LaboratoryDataLoaderCtrApi* | [**getLaboratoryDataForSpecificCode**](Apis/LaboratoryDataLoaderCtrApi.md#getLaboratoryDataForSpecificCode) | **GET** /laboratory/7.3/pathogenData/{code} |  |

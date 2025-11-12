@@ -1,0 +1,258 @@
+{
+  "resourceType": "ValueSet",
+  "id": "vaccineBPSD",
+  "url": "https://demis.rki.de/fhir/ValueSet/vaccineBPSD",
+  "version": "2.0.0",
+  "name": "VaccineBPSD",
+  "title": "Antwortmöglichkeiten für die Angabe des Impfstoffs in Bezug auf den Meldetatbestand \"Keuchhusten\"",
+  "status": "active",
+  "experimental": false,
+  "date": "2025-09-03",
+  "publisher": "Robert Koch-Institut",
+  "contact": [
+    {
+      "telecom": [
+        {
+          "system": "email",
+          "value": "demis-support@rki.de"
+        }
+      ]
+    }
+  ],
+  "description": "Das ValueSet VaccineBPSD enthält die kodierten Antwortmöglichkeiten für die Angabe des Impfstoffs in Bezug auf den Meldetatbestand \"Keuchhusten\".",
+  "jurisdiction": [
+    {
+      "coding": [
+        {
+          "system": "urn:iso:std:iso:3166",
+          "version": "ALPHA-2",
+          "code": "DE"
+        }
+      ]
+    }
+  ],
+  "copyright": "This material includes SNOMED Clinical Terms® (SNOMED CT®) which is used by permission of the International Health Terminology Standards Development Organisation (IHTSDO). All rights reserved. SNOMED CT®, was originally created by The College of American Pathologists. “SNOMED” and “SNOMED CT” are registered trademarks of the IHTSDO.\r\n\r\nDieses Material enthält SNOMED Clinical Terms® (SNOMED CT®), die mit Genehmigung der International Health Terminology Standards Development Organisation (IHTSDO) verwendet werden. Alle Rechte vorbehalten. SNOMED CT® wurde ursprünglich vom College of American Pathologists entwickelt. \"SNOMED\" und \"SNOMED CT\" sind eingetragene Warenzeichen der IHTSDO.\r\n\r\nDownloadbedingungen für SNOMED-CT\r\n\r\nEnthält durch SNOMED International urheberrechtlich geschützte Information. Jede Verwendung von SNOMED CT in Deutschland erfordert eine vollgültige Affiliate Lizenz oder eine Sublizenz. Die entsprechende Lizenz ist kostenlos, vorausgesetzt die Verwendung findet nur in Deutschland statt und erfüllt die Bedingungen des Affiliate License Agreements. Affiliate Lizenzen können über das Mitglieder-Lizenzierungs- und Distributions-Service (MLDS) direkt beim jeweiligen NRC beantragt werden. https://mlds.ihtsdotools.org/#/landing/DE?lang=de\r\n\r\nContains information protected by copyright of SNOMED International. Any use of SNOMED CT in Austria requires a valid affiliate license or sublicense. The corresponding license is free of charge, provided that the use only takes place in Austria and fulfills the conditions of the Affiliate License Agreement. Affiliate licenses can be requested directly from the respective NRC via the Member Licensing and Distribution Service (MLDS). ttps://mlds.ihtsdotools.org/#/landing/DE?lang=de",
+  "compose": {
+    "include": [
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20241115",
+        "concept": [
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 11
+              }
+            ],
+            "code": "1162634005",
+            "display": "Impfstoff gegen Diphtherie, Haemophilus influenzae b, Hepatitis B, Pertussis, Poliomyelitis und Tetanus, Kinder",
+            "designation": [
+              {
+                "language": "de-DE",
+                "value": "Impfstoffprodukt nur mit Bordetella-pertussis- und Clostridium-tetani- und Corynebacterium-diphtheriae- und Haemophilus-influenzae-b- und Hepatitis-B-Virus- und Humanes-Poliovirus-Antigenen (Hexyon, Hexacima, Infanrix hexa, Vaxelis, Hexavac)"
+              }
+            ]
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 13
+              }
+            ],
+            "code": "1297217008",
+            "display": "Pediatric vaccine product containing only acellular Bordetella pertussis and Clostridium tetani toxoid and Corynebacterium diphtheriae toxoid antigens (medicinal product)",
+            "designation": [
+              {
+                "language": "de-DE",
+                "value": "Diphtherie-Tetanus-Pertussis (azellulär, aus Komponenten)-Adsorbat-Impfstoff (Infanrix)"
+              }
+            ]
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 1
+              }
+            ],
+            "code": "74964007",
+            "display": "Andere"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 10
+              }
+            ],
+            "code": "871758000",
+            "display": "Impfstoff gegen Pertussis",
+            "designation": [
+              {
+                "language": "de-DE",
+                "value": "Monovalenter Ganzkeim-Pertussis-Impfstoff (Pac Mérieux)"
+              }
+            ]
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 14
+              }
+            ],
+            "code": "871876003",
+            "display": "Impfstoff mit Diphtherie-, azellulärem Pertussis- und Tetanus-Antigen",
+            "designation": [
+              {
+                "language": "de-DE",
+                "value": "Diphtherie-Tetanus-Pertussis (azellulär, aus Komponenten)-Adsorbat-Impfstoff (Boostrix, Covaxis, Tdap-Immun)"
+              }
+            ]
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 15
+              }
+            ],
+            "code": "871883005",
+            "display": "Impfstoff gegen Diphterie, Pertussis, Poliomyelitis und Tetanus, Kinder",
+            "designation": [
+              {
+                "language": "de-DE",
+                "value": "Diphtherie-Tetanus-Pertussis (azellulär)-Poliomyelitis (inaktiviert)-Adsorbat-Impfstoff, reduzierte Antigenmenge (Tetravac)"
+              }
+            ]
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 16
+              }
+            ],
+            "code": "871888001",
+            "display": "Impfstoff gegen azelluläre Bordetella pertussis, Clostridium tetani, Corynebacterium diphtheriae, Haemophilus influenzae Typ b und inaktiviertes ganzes humanes Poliovirus",
+            "designation": [
+              {
+                "language": "de-DE",
+                "value": "Diphtherie-Tetanus-azellulärer Pertussis-inaktivierter Poliomyelitis (adsorbiert) und Haemophilus-Typ b-Konjugat-Impfstoff (Pentavac, Infanrix-IPV-Hib)"
+              }
+            ]
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 12
+              }
+            ],
+            "code": "871893003",
+            "display": "Impfstoff mit Diphtherie-, azellulärem Pertussis-, inaktiviertem Poliomyelitis- und Tetanus-Antigen",
+            "designation": [
+              {
+                "language": "de-DE",
+                "value": "Diphtherie-Tetanus-Pertussis (azellulär, aus Komponenten)-Poliomyelitis (inaktiviert)-Adsorbat-Impfstoff (Boostrix-Polio, Repevax)"
+              }
+            ]
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 999
+              }
+            ],
+            "code": "1631000175102",
+            "display": "Patient not asked (contextual qualifier) (qualifier value)",
+            "designation": [
+              {
+                "language": "de-DE",
+                "value": "Patient/Patientin nicht gefragt"
+              }
+            ]
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 1000
+              }
+            ],
+            "code": "261665006",
+            "display": "Unbekannt"
+          }
+        ]
+      }
+    ]
+  },
+  "expansion": {
+    "timestamp": "2025-09-03T00:00:00+02:00",
+    "contains": [
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20241115",
+        "code": "1631000175102",
+        "display": "Patient not asked (contextual qualifier) (qualifier value)"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20241115",
+        "code": "871758000",
+        "display": "Impfstoff gegen Pertussis"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20241115",
+        "code": "871888001",
+        "display": "Impfstoff gegen azelluläre Bordetella pertussis, Clostridium tetani, Corynebacterium diphtheriae, Haemophilus influenzae Typ b und inaktiviertes ganzes humanes Poliovirus"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20241115",
+        "code": "871883005",
+        "display": "Impfstoff gegen Diphterie, Pertussis, Poliomyelitis und Tetanus, Kinder"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20241115",
+        "code": "261665006",
+        "display": "Unbekannt"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20241115",
+        "code": "1297217008",
+        "display": "Pediatric vaccine product containing only acellular Bordetella pertussis and Clostridium tetani toxoid and Corynebacterium diphtheriae toxoid antigens (medicinal product)"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20241115",
+        "code": "871876003",
+        "display": "Impfstoff mit Diphtherie-, azellulärem Pertussis- und Tetanus-Antigen"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20241115",
+        "code": "1162634005",
+        "display": "Impfstoff gegen Diphtherie, Haemophilus influenzae b, Hepatitis B, Pertussis, Poliomyelitis und Tetanus, Kinder"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20241115",
+        "code": "871893003",
+        "display": "Impfstoff mit Diphtherie-, azellulärem Pertussis-, inaktiviertem Poliomyelitis- und Tetanus-Antigen"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20241115",
+        "code": "74964007",
+        "display": "Andere"
+      }
+    ]
+  }
+}

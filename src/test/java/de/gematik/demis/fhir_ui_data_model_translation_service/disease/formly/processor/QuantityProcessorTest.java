@@ -129,7 +129,8 @@ class QuantityProcessorTest {
     "label": "In welcher Schwangerschaftswoche fand die Geburt statt?",
     "quantity": {
       "system": "http://unitsofmeasure.org",
-      "unit": "week"
+      "unit": "week",
+      "code": "wk"
     }
   },
   "validators": {
@@ -179,6 +180,7 @@ class QuantityProcessorTest {
     assertThat(quantity).isNotNull();
     assertThat(quantity.getSystem()).isEqualTo("http://unitsofmeasure.org");
     assertThat(quantity.getUnit()).isEqualTo("week");
+    assertThat(quantity.getCode()).isEqualTo("wk");
     assertThat(fg.getProps().getLabel())
         .isEqualTo("In welcher Schwangerschaftswoche fand die Geburt statt?");
     assertThat(fg.getProps().getRequired()).isTrue();
@@ -211,7 +213,7 @@ class QuantityProcessorTest {
               assertThat(p.getMax()).isEqualByComparingTo("5000");
               assertThat(p.getStep()).isEqualByComparingTo("1");
               assertThat(p.getQuantity().getSystem()).isEqualTo("http://unitsofmeasure.org");
-              assertThat(p.getQuantity().getUnit()).isEqualTo("wk");
+              assertThat(p.getQuantity().getCode()).isEqualTo("wk");
             });
     assertThat(fg.getValidators()).isNull();
   }

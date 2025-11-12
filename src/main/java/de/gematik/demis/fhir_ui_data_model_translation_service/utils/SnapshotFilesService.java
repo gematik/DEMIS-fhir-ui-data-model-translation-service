@@ -164,7 +164,10 @@ public class SnapshotFilesService {
   @PostConstruct
   void init() {
     File rootDir = new File(profileSourcePath);
-    rawFiles = collectAll(Objects.requireNonNull(rootDir.listFiles()));
+    rawFiles =
+        collectAll(
+            Objects.requireNonNull(
+                rootDir.listFiles(), "Profile source path is invalid: " + profileSourcePath));
     ValueSetFileCategorizer valueSetFileCategorizer = new ValueSetFileCategorizer();
 
     addLaboratoryTestData();
@@ -212,25 +215,15 @@ public class SnapshotFilesService {
 
   /** Adds disease test data to the raw files list if enabled. */
   private void addDiseaseTestData() {
-    if (addDiseaseTestData && gapdTestDataSourcePath != null) {
-      File gapdRoute = new File(gapdTestDataSourcePath);
-      if (gapdRoute.exists()) {
-        rawFiles.addAll(collectAll(Objects.requireNonNull(gapdRoute.listFiles())));
-      } else {
-        log.warn("No test data found at {}", gapdTestDataSourcePath);
-      }
+    if (addDiseaseTestData && (gapdTestDataSourcePath != null)) {
+      log.error("Disease test data is no longer supported!");
     }
   }
 
   /** Adds laboratory test data to the raw files list if enabled. */
   private void addLaboratoryTestData() {
-    if (addTestData && gappTestDataSourcePath != null) {
-      File gappRoute = new File(gappTestDataSourcePath);
-      if (gappRoute.exists()) {
-        rawFiles.addAll(collectAll(Objects.requireNonNull(gappRoute.listFiles())));
-      } else {
-        log.warn("No test data found at {}", gappTestDataSourcePath);
-      }
+    if (addTestData) {
+      rawFiles.addAll(new LaboratoryTestData(gappTestDataSourcePath).getFiles());
     }
   }
 

@@ -52,14 +52,13 @@ import org.springframework.stereotype.Service;
 public class DataLoaderSrv {
 
   public static final String SYSTEM_S_IS_UNKNOWN = "the system %s is unknown";
+  private static final List<String> excludedCodeSystems =
+      List.of("http://terminology.hl7.org/CodeSystem/v3-NullFlavor");
   private final SnapshotFilesService snapshotFilesService;
   private final FhirContext fhirContext;
   private final List<File> codeSystemFiles = new ArrayList<>();
   private final List<File> valueSetFiles = new ArrayList<>();
   private final Hl7CodeSystemSrv hl7CodeSystemSrv;
-  private static final List<String> excludedCodeSystems =
-      List.of("http://terminology.hl7.org/CodeSystem/v3-NullFlavor");
-
   private CodeSystems codeSystems;
   private ValueSets valueSets;
 
@@ -100,6 +99,7 @@ public class DataLoaderSrv {
           codeSystems.addCodeSystem(tmpSystem, standardCodeSystem);
           codes = codeSystems.getCodeSystemData().get(tmpSystem);
         } catch (IOException e) {
+          log.error("Error loading HL7 code system for system {}", tmpSystem, e);
           throw new DataNotFoundExcp(String.format(SYSTEM_S_IS_UNKNOWN, system));
         }
       } else {

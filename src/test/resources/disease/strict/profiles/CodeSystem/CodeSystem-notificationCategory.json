@@ -1,0 +1,3349 @@
+{
+  "resourceType": "CodeSystem",
+  "id": "notificationCategory",
+  "url": "https://demis.rki.de/fhir/CodeSystem/notificationCategory",
+  "version": "2.3.0",
+  "name": "NotificationCategory",
+  "title": "Meldetatbestände nach § 7 IfSG",
+  "status": "active",
+  "experimental": false,
+  "date": "2025-08-11",
+  "publisher": "Robert Koch-Institut",
+  "contact": [
+    {
+      "telecom": [
+        {
+          "system": "email",
+          "value": "demis-support@rki.de"
+        }
+      ]
+    }
+  ],
+  "description": "Das CodeSystem NotificationCategory enthält die Codes der Meldetatbestände nach § 7 IfSG.",
+  "jurisdiction": [
+    {
+      "coding": [
+        {
+          "system": "urn:iso:std:iso:3166",
+          "version": "ALPHA-2",
+          "code": "DE"
+        }
+      ]
+    }
+  ],
+  "copyright": "(C) 2021-2025 Robert Koch-Institut",
+  "caseSensitive": false,
+  "content": "complete",
+  "count": 91,
+  "property": [
+    {
+      "code": "inactive",
+      "type": "boolean"
+    },
+    {
+      "code": "diagnosticReport-profile",
+      "description": "Verweis auf das zu verwendende Profil für den Laborbericht (DiagnosticReport)",
+      "type": "string"
+    },
+    {
+      "code": "federal-state-specific-notificationCategory",
+      "description": "Bundeslandspezifischer Meldetatbestand",
+      "type": "boolean"
+    },
+    {
+      "code": "federal-state",
+      "description": "Bundesland",
+      "type": "Coding"
+    },
+    {
+      "code": "ifsg-paragraph",
+      "description": "IfSG-Paragraph",
+      "type": "code"
+    }
+  ],
+  "concept": [
+    {
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/codesystem-conceptOrder",
+          "valueInteger": 1000
+        }
+      ],
+      "code": "acbp",
+      "display": "Acinetobacter spp. bei Nachweis einer Carbapenemase-Determinante oder mit verminderter Empfindlichkeit gegenüber Carbapenemen außer bei natürlicher Resistenz; Meldepflicht nur bei Infektion oder Kolonisation",
+      "designation": [
+        {
+          "language": "de-DE",
+          "value": "Acinetobacter spp., Carbapenem"
+        }
+      ],
+      "property": [
+        {
+          "code": "inactive",
+          "valueBoolean": false
+        },
+        {
+          "code": "diagnosticReport-profile",
+          "valueString": "https://demis.rki.de/fhir/StructureDefinition/LaboratoryReportACBP"
+        },
+        {
+          "code": "federal-state-specific-notificationCategory",
+          "valueBoolean": false
+        },
+        {
+          "code": "ifsg-paragraph",
+          "valueCode": "7.1"
+        }
+      ]
+    },
+    {
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/codesystem-conceptOrder",
+          "valueInteger": 990
+        }
+      ],
+      "code": "advp",
+      "display": "Adenoviren; Meldepflicht nur für den direkten Nachweis im Konjunktivalabstrich",
+      "designation": [
+        {
+          "language": "de-DE",
+          "value": "Adenoviren, Konjunktivalabstrich"
+        }
+      ],
+      "property": [
+        {
+          "code": "inactive",
+          "valueBoolean": false
+        },
+        {
+          "code": "diagnosticReport-profile",
+          "valueString": "https://demis.rki.de/fhir/StructureDefinition/LaboratoryReportADVP"
+        },
+        {
+          "code": "federal-state-specific-notificationCategory",
+          "valueBoolean": false
+        },
+        {
+          "code": "ifsg-paragraph",
+          "valueCode": "7.1"
+        }
+      ]
+    },
+    {
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/codesystem-conceptOrder",
+          "valueInteger": 980
+        }
+      ],
+      "code": "adep",
+      "display": "Adenoviren; Meldepflicht bei akuter Infektion für Nachweise aus allen Körpermaterialien",
+      "designation": [
+        {
+          "language": "de-DE",
+          "value": "Adenoviren, alle Materialien"
+        }
+      ],
+      "property": [
+        {
+          "code": "inactive",
+          "valueBoolean": false
+        },
+        {
+          "code": "diagnosticReport-profile",
+          "valueString": "https://demis.rki.de/fhir/StructureDefinition/LaboratoryReportADEP"
+        },
+        {
+          "code": "federal-state-specific-notificationCategory",
+          "valueBoolean": true
+        },
+        {
+          "code": "federal-state",
+          "valueCoding": {
+            "system": "urn:iso:std:iso:3166-2:de",
+            "code": "DE-SN"
+          }
+        },
+        {
+          "code": "ifsg-paragraph",
+          "valueCode": "7.1"
+        }
+      ]
+    },
+    {
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/codesystem-conceptOrder",
+          "valueInteger": 960
+        }
+      ],
+      "code": "abvp",
+      "display": "Arboviren (sonstige)",
+      "designation": [
+        {
+          "language": "de-DE",
+          "value": "Arboviren, sonstige"
+        }
+      ],
+      "property": [
+        {
+          "code": "inactive",
+          "valueBoolean": false
+        },
+        {
+          "code": "diagnosticReport-profile",
+          "valueString": "https://demis.rki.de/fhir/StructureDefinition/LaboratoryReportABVP"
+        },
+        {
+          "code": "federal-state-specific-notificationCategory",
+          "valueBoolean": false
+        },
+        {
+          "code": "ifsg-paragraph",
+          "valueCode": "7.1"
+        }
+      ]
+    },
+    {
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/codesystem-conceptOrder",
+          "valueInteger": 950
+        }
+      ],
+      "code": "astp",
+      "display": "Astroviren",
+      "designation": [
+        {
+          "language": "de-DE",
+          "value": "Astroviren"
+        }
+      ],
+      "property": [
+        {
+          "code": "inactive",
+          "valueBoolean": false
+        },
+        {
+          "code": "diagnosticReport-profile",
+          "valueString": "https://demis.rki.de/fhir/StructureDefinition/LaboratoryReportASTP"
+        },
+        {
+          "code": "federal-state-specific-notificationCategory",
+          "valueBoolean": true
+        },
+        {
+          "code": "federal-state",
+          "valueCoding": {
+            "system": "urn:iso:std:iso:3166-2:de",
+            "code": "DE-SN"
+          }
+        },
+        {
+          "code": "ifsg-paragraph",
+          "valueCode": "7.1"
+        }
+      ]
+    },
+    {
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/codesystem-conceptOrder",
+          "valueInteger": 940
+        }
+      ],
+      "code": "banp",
+      "display": "Bacillus anthracis",
+      "designation": [
+        {
+          "language": "de-DE",
+          "value": "Bacillus anthracis"
+        }
+      ],
+      "property": [
+        {
+          "code": "inactive",
+          "valueBoolean": false
+        },
+        {
+          "code": "diagnosticReport-profile",
+          "valueString": "https://demis.rki.de/fhir/StructureDefinition/LaboratoryReportBANP"
+        },
+        {
+          "code": "federal-state-specific-notificationCategory",
+          "valueBoolean": false
+        },
+        {
+          "code": "ifsg-paragraph",
+          "valueCode": "7.1"
+        }
+      ]
+    },
+    {
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/codesystem-conceptOrder",
+          "valueInteger": 930
+        }
+      ],
+      "code": "bpsp",
+      "display": "Bordetella pertussis, Bordetella parapertussis",
+      "designation": [
+        {
+          "language": "de-DE",
+          "value": "Bordetella pertussis/parapertussis"
+        }
+      ],
+      "property": [
+        {
+          "code": "inactive",
+          "valueBoolean": false
+        },
+        {
+          "code": "diagnosticReport-profile",
+          "valueString": "https://demis.rki.de/fhir/StructureDefinition/LaboratoryReportBPSP"
+        },
+        {
+          "code": "federal-state-specific-notificationCategory",
+          "valueBoolean": false
+        },
+        {
+          "code": "ifsg-paragraph",
+          "valueCode": "7.1"
+        }
+      ]
+    },
+    {
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/codesystem-conceptOrder",
+          "valueInteger": 920
+        }
+      ],
+      "code": "bovp",
+      "display": "humanpathogene Bornaviren; Meldepflicht nur für den direkten Nachweis",
+      "designation": [
+        {
+          "language": "de-DE",
+          "value": "Bornaviren"
+        }
+      ],
+      "property": [
+        {
+          "code": "inactive",
+          "valueBoolean": false
+        },
+        {
+          "code": "diagnosticReport-profile",
+          "valueString": "https://demis.rki.de/fhir/StructureDefinition/LaboratoryReportBOVP"
+        },
+        {
+          "code": "federal-state-specific-notificationCategory",
+          "valueBoolean": false
+        },
+        {
+          "code": "ifsg-paragraph",
+          "valueCode": "7.1"
+        }
+      ]
+    },
+    {
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/codesystem-conceptOrder",
+          "valueInteger": 910
+        }
+      ],
+      "code": "borp",
+      "display": "Borrelia recurrentis",
+      "designation": [
+        {
+          "language": "de-DE",
+          "value": "Borrelia recurrentis"
+        }
+      ],
+      "property": [
+        {
+          "code": "inactive",
+          "valueBoolean": false
+        },
+        {
+          "code": "diagnosticReport-profile",
+          "valueString": "https://demis.rki.de/fhir/StructureDefinition/LaboratoryReportBORP"
+        },
+        {
+          "code": "federal-state-specific-notificationCategory",
+          "valueBoolean": false
+        },
+        {
+          "code": "ifsg-paragraph",
+          "valueCode": "7.1"
+        }
+      ]
+    },
+    {
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/codesystem-conceptOrder",
+          "valueInteger": 900
+        }
+      ],
+      "code": "bobp",
+      "display": "(Lyme-) Borreliose, Borrelia burgdorferi",
+      "designation": [
+        {
+          "language": "de-DE",
+          "value": "Borrelia burgdorferi"
+        }
+      ],
+      "property": [
+        {
+          "code": "inactive",
+          "valueBoolean": false
+        },
+        {
+          "code": "diagnosticReport-profile",
+          "valueString": "https://demis.rki.de/fhir/StructureDefinition/LaboratoryReportBOBP"
+        },
+        {
+          "code": "federal-state-specific-notificationCategory",
+          "valueBoolean": true
+        },
+        {
+          "code": "federal-state",
+          "valueCoding": {
+            "system": "urn:iso:std:iso:3166-2:de",
+            "code": "DE-RP"
+          }
+        },
+        {
+          "code": "federal-state",
+          "valueCoding": {
+            "system": "urn:iso:std:iso:3166-2:de",
+            "code": "DE-BY"
+          }
+        },
+        {
+          "code": "federal-state",
+          "valueCoding": {
+            "system": "urn:iso:std:iso:3166-2:de",
+            "code": "DE-SL"
+          }
+        },
+        {
+          "code": "federal-state",
+          "valueCoding": {
+            "system": "urn:iso:std:iso:3166-2:de",
+            "code": "DE-BE"
+          }
+        },
+        {
+          "code": "federal-state",
+          "valueCoding": {
+            "system": "urn:iso:std:iso:3166-2:de",
+            "code": "DE-BB"
+          }
+        },
+        {
+          "code": "federal-state",
+          "valueCoding": {
+            "system": "urn:iso:std:iso:3166-2:de",
+            "code": "DE-MV"
+          }
+        },
+        {
+          "code": "federal-state",
+          "valueCoding": {
+            "system": "urn:iso:std:iso:3166-2:de",
+            "code": "DE-SN"
+          }
+        },
+        {
+          "code": "federal-state",
+          "valueCoding": {
+            "system": "urn:iso:std:iso:3166-2:de",
+            "code": "DE-ST"
+          }
+        },
+        {
+          "code": "federal-state",
+          "valueCoding": {
+            "system": "urn:iso:std:iso:3166-2:de",
+            "code": "DE-TH"
+          }
+        },
+        {
+          "code": "ifsg-paragraph",
+          "valueCode": "7.1"
+        }
+      ]
+    },
+    {
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/codesystem-conceptOrder",
+          "valueInteger": 890
+        }
+      ],
+      "code": "brup",
+      "display": "Brucella sp.",
+      "designation": [
+        {
+          "language": "de-DE",
+          "value": "Brucella sp."
+        }
+      ],
+      "property": [
+        {
+          "code": "inactive",
+          "valueBoolean": false
+        },
+        {
+          "code": "diagnosticReport-profile",
+          "valueString": "https://demis.rki.de/fhir/StructureDefinition/LaboratoryReportBRUP"
+        },
+        {
+          "code": "federal-state-specific-notificationCategory",
+          "valueBoolean": false
+        },
+        {
+          "code": "ifsg-paragraph",
+          "valueCode": "7.1"
+        }
+      ]
+    },
+    {
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/codesystem-conceptOrder",
+          "valueInteger": 880
+        }
+      ],
+      "code": "camp",
+      "display": "Campylobacter spp. (darmpathogen)",
+      "designation": [
+        {
+          "language": "de-DE",
+          "value": "Campylobacter spp., darmpathogen"
+        }
+      ],
+      "property": [
+        {
+          "code": "inactive",
+          "valueBoolean": false
+        },
+        {
+          "code": "diagnosticReport-profile",
+          "valueString": "https://demis.rki.de/fhir/StructureDefinition/LaboratoryReportCAMP"
+        },
+        {
+          "code": "federal-state-specific-notificationCategory",
+          "valueBoolean": false
+        },
+        {
+          "code": "ifsg-paragraph",
+          "valueCode": "7.1"
+        }
+      ]
+    },
+    {
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/codesystem-conceptOrder",
+          "valueInteger": 870
+        }
+      ],
+      "code": "caup",
+      "display": "Candida auris; Meldepflicht nur für den direkten Nachweis",
+      "designation": [
+        {
+          "language": "de-DE",
+          "value": "Candida auris"
+        }
+      ],
+      "property": [
+        {
+          "code": "inactive",
+          "valueBoolean": false
+        },
+        {
+          "code": "diagnosticReport-profile",
+          "valueString": "https://demis.rki.de/fhir/StructureDefinition/LaboratoryReportCAUP"
+        },
+        {
+          "code": "federal-state-specific-notificationCategory",
+          "valueBoolean": false
+        },
+        {
+          "code": "ifsg-paragraph",
+          "valueCode": "7.1"
+        }
+      ]
+    },
+    {
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/codesystem-conceptOrder",
+          "valueInteger": 860
+        }
+      ],
+      "code": "ckvp",
+      "display": "Chikungunya-Virus",
+      "designation": [
+        {
+          "language": "de-DE",
+          "value": "Chikungunya-Virus"
+        }
+      ],
+      "property": [
+        {
+          "code": "inactive",
+          "valueBoolean": false
+        },
+        {
+          "code": "diagnosticReport-profile",
+          "valueString": "https://demis.rki.de/fhir/StructureDefinition/LaboratoryReportCKVP"
+        },
+        {
+          "code": "federal-state-specific-notificationCategory",
+          "valueBoolean": false
+        },
+        {
+          "code": "ifsg-paragraph",
+          "valueCode": "7.1"
+        }
+      ]
+    },
+    {
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/codesystem-conceptOrder",
+          "valueInteger": 850
+        }
+      ],
+      "code": "chlp",
+      "display": "Chlamydia psittaci",
+      "designation": [
+        {
+          "language": "de-DE",
+          "value": "Chlamydia psittaci"
+        }
+      ],
+      "property": [
+        {
+          "code": "inactive",
+          "valueBoolean": false
+        },
+        {
+          "code": "diagnosticReport-profile",
+          "valueString": "https://demis.rki.de/fhir/StructureDefinition/LaboratoryReportCHLP"
+        },
+        {
+          "code": "federal-state-specific-notificationCategory",
+          "valueBoolean": false
+        },
+        {
+          "code": "ifsg-paragraph",
+          "valueCode": "7.1"
+        }
+      ]
+    },
+    {
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/codesystem-conceptOrder",
+          "valueInteger": 840
+        }
+      ],
+      "code": "clop",
+      "display": "Clostridium botulinum oder Toxinnachweis",
+      "designation": [
+        {
+          "language": "de-DE",
+          "value": "Clostridium botulinum"
+        }
+      ],
+      "property": [
+        {
+          "code": "inactive",
+          "valueBoolean": false
+        },
+        {
+          "code": "diagnosticReport-profile",
+          "valueString": "https://demis.rki.de/fhir/StructureDefinition/LaboratoryReportCLOP"
+        },
+        {
+          "code": "federal-state-specific-notificationCategory",
+          "valueBoolean": false
+        },
+        {
+          "code": "ifsg-paragraph",
+          "valueCode": "7.1"
+        }
+      ]
+    },
+    {
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/codesystem-conceptOrder",
+          "valueInteger": 835
+        }
+      ],
+      "code": "cltp",
+      "display": "Tetanus, Clostridium tetani",
+      "designation": [
+        {
+          "language": "de-DE",
+          "value": "Clostridium tetani"
+        }
+      ],
+      "property": [
+        {
+          "code": "inactive",
+          "valueBoolean": false
+        },
+        {
+          "code": "diagnosticReport-profile",
+          "valueString": "https://demis.rki.de/fhir/StructureDefinition/LaboratoryReportCLTP"
+        },
+        {
+          "code": "federal-state-specific-notificationCategory",
+          "valueBoolean": true
+        },
+        {
+          "code": "federal-state",
+          "valueCoding": {
+            "system": "urn:iso:std:iso:3166-2:de",
+            "code": "DE-MV"
+          }
+        },
+        {
+          "code": "federal-state",
+          "valueCoding": {
+            "system": "urn:iso:std:iso:3166-2:de",
+            "code": "DE-SN"
+          }
+        },
+        {
+          "code": "federal-state",
+          "valueCoding": {
+            "system": "urn:iso:std:iso:3166-2:de",
+            "code": "DE-ST"
+          }
+        },
+        {
+          "code": "ifsg-paragraph",
+          "valueCode": "7.1"
+        }
+      ]
+    },
+    {
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/codesystem-conceptOrder",
+          "valueInteger": 830
+        }
+      ],
+      "code": "corp",
+      "display": "Corynebacterium spp. (Toxin bildend)",
+      "designation": [
+        {
+          "language": "de-DE",
+          "value": "Corynebacterium spp., Toxin bildend"
+        }
+      ],
+      "property": [
+        {
+          "code": "inactive",
+          "valueBoolean": false
+        },
+        {
+          "code": "diagnosticReport-profile",
+          "valueString": "https://demis.rki.de/fhir/StructureDefinition/LaboratoryReportCORP"
+        },
+        {
+          "code": "federal-state-specific-notificationCategory",
+          "valueBoolean": false
+        },
+        {
+          "code": "ifsg-paragraph",
+          "valueCode": "7.1"
+        }
+      ]
+    },
+    {
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/codesystem-conceptOrder",
+          "valueInteger": 820
+        }
+      ],
+      "code": "coxp",
+      "display": "Coxiella burnetii",
+      "designation": [
+        {
+          "language": "de-DE",
+          "value": "Coxiella burnetii"
+        }
+      ],
+      "property": [
+        {
+          "code": "inactive",
+          "valueBoolean": false
+        },
+        {
+          "code": "diagnosticReport-profile",
+          "valueString": "https://demis.rki.de/fhir/StructureDefinition/LaboratoryReportCOXP"
+        },
+        {
+          "code": "federal-state-specific-notificationCategory",
+          "valueBoolean": false
+        },
+        {
+          "code": "ifsg-paragraph",
+          "valueCode": "7.1"
+        }
+      ]
+    },
+    {
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/codesystem-conceptOrder",
+          "valueInteger": 810
+        }
+      ],
+      "code": "cryp",
+      "display": "humanpathogene Cryptosporidium sp.",
+      "designation": [
+        {
+          "language": "de-DE",
+          "value": "Cryptosporidium sp., humanpathogen"
+        }
+      ],
+      "property": [
+        {
+          "code": "inactive",
+          "valueBoolean": false
+        },
+        {
+          "code": "diagnosticReport-profile",
+          "valueString": "https://demis.rki.de/fhir/StructureDefinition/LaboratoryReportCRYP"
+        },
+        {
+          "code": "federal-state-specific-notificationCategory",
+          "valueBoolean": false
+        },
+        {
+          "code": "ifsg-paragraph",
+          "valueCode": "7.1"
+        }
+      ]
+    },
+    {
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/codesystem-conceptOrder",
+          "valueInteger": 800
+        }
+      ],
+      "code": "cymp",
+      "display": "Cytomegalie, Cytomegalievirus",
+      "designation": [
+        {
+          "language": "de-DE",
+          "value": "Cytomegalievirus (CMV)"
+        }
+      ],
+      "property": [
+        {
+          "code": "inactive",
+          "valueBoolean": false
+        },
+        {
+          "code": "diagnosticReport-profile",
+          "valueString": "https://demis.rki.de/fhir/StructureDefinition/LaboratoryReportCYMP"
+        },
+        {
+          "code": "federal-state-specific-notificationCategory",
+          "valueBoolean": true
+        },
+        {
+          "code": "federal-state",
+          "valueCoding": {
+            "system": "urn:iso:std:iso:3166-2:de",
+            "code": "DE-SN"
+          }
+        },
+        {
+          "code": "ifsg-paragraph",
+          "valueCode": "7.1"
+        }
+      ]
+    },
+    {
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/codesystem-conceptOrder",
+          "valueInteger": 790
+        }
+      ],
+      "code": "denp",
+      "display": "Denguevirus",
+      "designation": [
+        {
+          "language": "de-DE",
+          "value": "Denguevirus"
+        }
+      ],
+      "property": [
+        {
+          "code": "inactive",
+          "valueBoolean": false
+        },
+        {
+          "code": "diagnosticReport-profile",
+          "valueString": "https://demis.rki.de/fhir/StructureDefinition/LaboratoryReportDENP"
+        },
+        {
+          "code": "federal-state-specific-notificationCategory",
+          "valueBoolean": false
+        },
+        {
+          "code": "ifsg-paragraph",
+          "valueCode": "7.1"
+        }
+      ]
+    },
+    {
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/codesystem-conceptOrder",
+          "valueInteger": 780
+        }
+      ],
+      "code": "ecop",
+      "display": "Escherichia coli (sonstige darmpathogene Stämme)",
+      "designation": [
+        {
+          "language": "de-DE",
+          "value": "E. coli, sonstige"
+        }
+      ],
+      "property": [
+        {
+          "code": "inactive",
+          "valueBoolean": false
+        },
+        {
+          "code": "diagnosticReport-profile",
+          "valueString": "https://demis.rki.de/fhir/StructureDefinition/LaboratoryReportECOP"
+        },
+        {
+          "code": "federal-state-specific-notificationCategory",
+          "valueBoolean": false
+        },
+        {
+          "code": "ifsg-paragraph",
+          "valueCode": "7.1"
+        }
+      ]
+    },
+    {
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/codesystem-conceptOrder",
+          "valueInteger": 775
+        }
+      ],
+      "code": "ehcp",
+      "display": "Escherichia coli (enterohämorrhagische Stämme) (EHEC)",
+      "designation": [
+        {
+          "language": "de-DE",
+          "value": "E. coli, enterohämorrhagisch"
+        }
+      ],
+      "property": [
+        {
+          "code": "inactive",
+          "valueBoolean": false
+        },
+        {
+          "code": "diagnosticReport-profile",
+          "valueString": "https://demis.rki.de/fhir/StructureDefinition/LaboratoryReportEHCP"
+        },
+        {
+          "code": "federal-state-specific-notificationCategory",
+          "valueBoolean": false
+        },
+        {
+          "code": "ifsg-paragraph",
+          "valueCode": "7.1"
+        }
+      ]
+    },
+    {
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/codesystem-conceptOrder",
+          "valueInteger": 770
+        }
+      ],
+      "code": "ebvp",
+      "display": "Ebolavirus",
+      "designation": [
+        {
+          "language": "de-DE",
+          "value": "Ebolavirus"
+        }
+      ],
+      "property": [
+        {
+          "code": "inactive",
+          "valueBoolean": false
+        },
+        {
+          "code": "diagnosticReport-profile",
+          "valueString": "https://demis.rki.de/fhir/StructureDefinition/LaboratoryReportEBVP"
+        },
+        {
+          "code": "federal-state-specific-notificationCategory",
+          "valueBoolean": false
+        },
+        {
+          "code": "ifsg-paragraph",
+          "valueCode": "7.1"
+        }
+      ]
+    },
+    {
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/codesystem-conceptOrder",
+          "valueInteger": 765
+        }
+      ],
+      "code": "eahp",
+      "display": "Amoebiasis, Entamoeba histolytica",
+      "designation": [
+        {
+          "language": "de-DE",
+          "value": "Entamoeba histolytica"
+        }
+      ],
+      "property": [
+        {
+          "code": "inactive",
+          "valueBoolean": false
+        },
+        {
+          "code": "diagnosticReport-profile",
+          "valueString": "https://demis.rki.de/fhir/StructureDefinition/LaboratoryReportEAHP"
+        },
+        {
+          "code": "federal-state-specific-notificationCategory",
+          "valueBoolean": true
+        },
+        {
+          "code": "federal-state",
+          "valueCoding": {
+            "system": "urn:iso:std:iso:3166-2:de",
+            "code": "DE-MV"
+          }
+        },
+        {
+          "code": "federal-state",
+          "valueCoding": {
+            "system": "urn:iso:std:iso:3166-2:de",
+            "code": "DE-SN"
+          }
+        },
+        {
+          "code": "federal-state",
+          "valueCoding": {
+            "system": "urn:iso:std:iso:3166-2:de",
+            "code": "DE-ST"
+          }
+        },
+        {
+          "code": "ifsg-paragraph",
+          "valueCode": "7.1"
+        }
+      ]
+    },
+    {
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/codesystem-conceptOrder",
+          "valueInteger": 760
+        }
+      ],
+      "code": "ebcp",
+      "display": "Enterobacterales bei Nachweis einer Carbapenemase-Determinante oder mit verminderter Empfindlichkeit gegenüber Carbapenemen außer bei natürlicher Resistenz; Meldepflicht nur bei Infektion oder Kolonisation",
+      "designation": [
+        {
+          "language": "de-DE",
+          "value": "Enterobacterales, Carbapenem"
+        }
+      ],
+      "property": [
+        {
+          "code": "inactive",
+          "valueBoolean": false
+        },
+        {
+          "code": "diagnosticReport-profile",
+          "valueString": "https://demis.rki.de/fhir/StructureDefinition/LaboratoryReportEBCP"
+        },
+        {
+          "code": "federal-state-specific-notificationCategory",
+          "valueBoolean": false
+        },
+        {
+          "code": "ifsg-paragraph",
+          "valueCode": "7.1"
+        }
+      ]
+    },
+    {
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/codesystem-conceptOrder",
+          "valueInteger": 750
+        }
+      ],
+      "code": "etvp",
+      "display": "Enteroviren",
+      "designation": [
+        {
+          "language": "de-DE",
+          "value": "Enteroviren"
+        }
+      ],
+      "property": [
+        {
+          "code": "inactive",
+          "valueBoolean": false
+        },
+        {
+          "code": "diagnosticReport-profile",
+          "valueString": "https://demis.rki.de/fhir/StructureDefinition/LaboratoryReportETVP"
+        },
+        {
+          "code": "federal-state-specific-notificationCategory",
+          "valueBoolean": true
+        },
+        {
+          "code": "federal-state",
+          "valueCoding": {
+            "system": "urn:iso:std:iso:3166-2:de",
+            "code": "DE-SN"
+          }
+        },
+        {
+          "code": "federal-state",
+          "valueCoding": {
+            "system": "urn:iso:std:iso:3166-2:de",
+            "code": "DE-ST"
+          }
+        },
+        {
+          "code": "federal-state",
+          "valueCoding": {
+            "system": "urn:iso:std:iso:3166-2:de",
+            "code": "DE-TH"
+          }
+        },
+        {
+          "code": "ifsg-paragraph",
+          "valueCode": "7.1"
+        }
+      ]
+    },
+    {
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/codesystem-conceptOrder",
+          "valueInteger": 740
+        }
+      ],
+      "code": "hfap",
+      "display": "Andere Erreger hämorrhagischer Fieber",
+      "designation": [
+        {
+          "language": "de-DE",
+          "value": "Erreger hämorrhagischer Fieber"
+        }
+      ],
+      "property": [
+        {
+          "code": "inactive",
+          "valueBoolean": false
+        },
+        {
+          "code": "diagnosticReport-profile",
+          "valueString": "https://demis.rki.de/fhir/StructureDefinition/LaboratoryReportHFAP"
+        },
+        {
+          "code": "federal-state-specific-notificationCategory",
+          "valueBoolean": false
+        },
+        {
+          "code": "ifsg-paragraph",
+          "valueCode": "7.1"
+        }
+      ]
+    },
+    {
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/codesystem-conceptOrder",
+          "valueInteger": 720
+        }
+      ],
+      "code": "frtp",
+      "display": "Francisella tularensis",
+      "designation": [
+        {
+          "language": "de-DE",
+          "value": "Francisella tularensis"
+        }
+      ],
+      "property": [
+        {
+          "code": "inactive",
+          "valueBoolean": false
+        },
+        {
+          "code": "diagnosticReport-profile",
+          "valueString": "https://demis.rki.de/fhir/StructureDefinition/LaboratoryReportFRTP"
+        },
+        {
+          "code": "federal-state-specific-notificationCategory",
+          "valueBoolean": false
+        },
+        {
+          "code": "ifsg-paragraph",
+          "valueCode": "7.1"
+        }
+      ]
+    },
+    {
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/codesystem-conceptOrder",
+          "valueInteger": 710
+        }
+      ],
+      "code": "fsvp",
+      "display": "FSME-Virus",
+      "designation": [
+        {
+          "language": "de-DE",
+          "value": "FSME-Virus"
+        }
+      ],
+      "property": [
+        {
+          "code": "inactive",
+          "valueBoolean": false
+        },
+        {
+          "code": "diagnosticReport-profile",
+          "valueString": "https://demis.rki.de/fhir/StructureDefinition/LaboratoryReportFSVP"
+        },
+        {
+          "code": "federal-state-specific-notificationCategory",
+          "valueBoolean": false
+        },
+        {
+          "code": "ifsg-paragraph",
+          "valueCode": "7.1"
+        }
+      ]
+    },
+    {
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/codesystem-conceptOrder",
+          "valueInteger": 700
+        }
+      ],
+      "code": "gbsp",
+      "display": "Gruppe-B-Streptokokken (GBS); Meldepflicht nur für den direkten Nachweis bei Schwangeren und Neugeborenen",
+      "designation": [
+        {
+          "language": "de-DE",
+          "value": "Gruppe-B-Streptokokken (GBS)"
+        }
+      ],
+      "property": [
+        {
+          "code": "inactive",
+          "valueBoolean": false
+        },
+        {
+          "code": "diagnosticReport-profile",
+          "valueString": "https://demis.rki.de/fhir/StructureDefinition/LaboratoryReportGBSP"
+        },
+        {
+          "code": "federal-state-specific-notificationCategory",
+          "valueBoolean": true
+        },
+        {
+          "code": "federal-state",
+          "valueCoding": {
+            "system": "urn:iso:std:iso:3166-2:de",
+            "code": "DE-SN"
+          }
+        },
+        {
+          "code": "ifsg-paragraph",
+          "valueCode": "7.1"
+        }
+      ]
+    },
+    {
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/codesystem-conceptOrder",
+          "valueInteger": 690
+        }
+      ],
+      "code": "gfvp",
+      "display": "Gelbfiebervirus",
+      "designation": [
+        {
+          "language": "de-DE",
+          "value": "Gelbfiebervirus"
+        }
+      ],
+      "property": [
+        {
+          "code": "inactive",
+          "valueBoolean": false
+        },
+        {
+          "code": "diagnosticReport-profile",
+          "valueString": "https://demis.rki.de/fhir/StructureDefinition/LaboratoryReportGFVP"
+        },
+        {
+          "code": "federal-state-specific-notificationCategory",
+          "valueBoolean": false
+        },
+        {
+          "code": "ifsg-paragraph",
+          "valueCode": "7.1"
+        }
+      ]
+    },
+    {
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/codesystem-conceptOrder",
+          "valueInteger": 680
+        }
+      ],
+      "code": "gilp",
+      "display": "Giardia lamblia",
+      "designation": [
+        {
+          "language": "de-DE",
+          "value": "Giardia lamblia"
+        }
+      ],
+      "property": [
+        {
+          "code": "inactive",
+          "valueBoolean": false
+        },
+        {
+          "code": "diagnosticReport-profile",
+          "valueString": "https://demis.rki.de/fhir/StructureDefinition/LaboratoryReportGILP"
+        },
+        {
+          "code": "federal-state-specific-notificationCategory",
+          "valueBoolean": false
+        },
+        {
+          "code": "ifsg-paragraph",
+          "valueCode": "7.1"
+        }
+      ]
+    },
+    {
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/codesystem-conceptOrder",
+          "valueInteger": 670
+        }
+      ],
+      "code": "hinp",
+      "display": "Haemophilus influenzae; Meldepflicht nur für den direkten Nachweis aus Liquor oder Blut",
+      "designation": [
+        {
+          "language": "de-DE",
+          "value": "Haemophilus influenzae"
+        }
+      ],
+      "property": [
+        {
+          "code": "inactive",
+          "valueBoolean": false
+        },
+        {
+          "code": "diagnosticReport-profile",
+          "valueString": "https://demis.rki.de/fhir/StructureDefinition/LaboratoryReportHINP"
+        },
+        {
+          "code": "federal-state-specific-notificationCategory",
+          "valueBoolean": false
+        },
+        {
+          "code": "ifsg-paragraph",
+          "valueCode": "7.1"
+        }
+      ]
+    },
+    {
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/codesystem-conceptOrder",
+          "valueInteger": 650
+        }
+      ],
+      "code": "htvp",
+      "display": "Hantavirus",
+      "designation": [
+        {
+          "language": "de-DE",
+          "value": "Hantavirus"
+        }
+      ],
+      "property": [
+        {
+          "code": "inactive",
+          "valueBoolean": false
+        },
+        {
+          "code": "diagnosticReport-profile",
+          "valueString": "https://demis.rki.de/fhir/StructureDefinition/LaboratoryReportHTVP"
+        },
+        {
+          "code": "federal-state-specific-notificationCategory",
+          "valueBoolean": false
+        },
+        {
+          "code": "ifsg-paragraph",
+          "valueCode": "7.1"
+        }
+      ]
+    },
+    {
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/codesystem-conceptOrder",
+          "valueInteger": 640
+        }
+      ],
+      "code": "havp",
+      "display": "Hepatitis-A-Virus",
+      "designation": [
+        {
+          "language": "de-DE",
+          "value": "Hepatitis-A-Virus"
+        }
+      ],
+      "property": [
+        {
+          "code": "inactive",
+          "valueBoolean": false
+        },
+        {
+          "code": "diagnosticReport-profile",
+          "valueString": "https://demis.rki.de/fhir/StructureDefinition/LaboratoryReportHAVP"
+        },
+        {
+          "code": "federal-state-specific-notificationCategory",
+          "valueBoolean": false
+        },
+        {
+          "code": "ifsg-paragraph",
+          "valueCode": "7.1"
+        }
+      ]
+    },
+    {
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/codesystem-conceptOrder",
+          "valueInteger": 630
+        }
+      ],
+      "code": "hbvp",
+      "display": "Hepatitis-B-Virus; Meldepflicht für alle Nachweise",
+      "designation": [
+        {
+          "language": "de-DE",
+          "value": "Hepatitis-B-Virus"
+        }
+      ],
+      "property": [
+        {
+          "code": "inactive",
+          "valueBoolean": false
+        },
+        {
+          "code": "diagnosticReport-profile",
+          "valueString": "https://demis.rki.de/fhir/StructureDefinition/LaboratoryReportHBVP"
+        },
+        {
+          "code": "federal-state-specific-notificationCategory",
+          "valueBoolean": false
+        },
+        {
+          "code": "ifsg-paragraph",
+          "valueCode": "7.1"
+        }
+      ]
+    },
+    {
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/codesystem-conceptOrder",
+          "valueInteger": 620
+        }
+      ],
+      "code": "hcvp",
+      "display": "Hepatitis-C-Virus; Meldepflicht für alle Nachweise",
+      "designation": [
+        {
+          "language": "de-DE",
+          "value": "Hepatitis-C-Virus"
+        }
+      ],
+      "property": [
+        {
+          "code": "inactive",
+          "valueBoolean": false
+        },
+        {
+          "code": "diagnosticReport-profile",
+          "valueString": "https://demis.rki.de/fhir/StructureDefinition/LaboratoryReportHCVP"
+        },
+        {
+          "code": "federal-state-specific-notificationCategory",
+          "valueBoolean": false
+        },
+        {
+          "code": "ifsg-paragraph",
+          "valueCode": "7.1"
+        }
+      ]
+    },
+    {
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/codesystem-conceptOrder",
+          "valueInteger": 610
+        }
+      ],
+      "code": "hdvp",
+      "display": "Hepatitis-D-Virus; Meldepflicht für alle Nachweise",
+      "designation": [
+        {
+          "language": "de-DE",
+          "value": "Hepatitis-D-Virus"
+        }
+      ],
+      "property": [
+        {
+          "code": "inactive",
+          "valueBoolean": false
+        },
+        {
+          "code": "diagnosticReport-profile",
+          "valueString": "https://demis.rki.de/fhir/StructureDefinition/LaboratoryReportHDVP"
+        },
+        {
+          "code": "federal-state-specific-notificationCategory",
+          "valueBoolean": false
+        },
+        {
+          "code": "ifsg-paragraph",
+          "valueCode": "7.1"
+        }
+      ]
+    },
+    {
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/codesystem-conceptOrder",
+          "valueInteger": 600
+        }
+      ],
+      "code": "hevp",
+      "display": "Hepatitis-E-Virus",
+      "designation": [
+        {
+          "language": "de-DE",
+          "value": "Hepatitis-E-Virus"
+        }
+      ],
+      "property": [
+        {
+          "code": "inactive",
+          "valueBoolean": false
+        },
+        {
+          "code": "diagnosticReport-profile",
+          "valueString": "https://demis.rki.de/fhir/StructureDefinition/LaboratoryReportHEVP"
+        },
+        {
+          "code": "federal-state-specific-notificationCategory",
+          "valueBoolean": false
+        },
+        {
+          "code": "ifsg-paragraph",
+          "valueCode": "7.1"
+        }
+      ]
+    },
+    {
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/codesystem-conceptOrder",
+          "valueInteger": 590
+        }
+      ],
+      "code": "invp",
+      "display": "Influenzavirus; Meldepflicht nur für den direkten Nachweis",
+      "designation": [
+        {
+          "language": "de-DE",
+          "value": "Influenzavirus"
+        }
+      ],
+      "property": [
+        {
+          "code": "inactive",
+          "valueBoolean": false
+        },
+        {
+          "code": "diagnosticReport-profile",
+          "valueString": "https://demis.rki.de/fhir/StructureDefinition/LaboratoryReportINVP"
+        },
+        {
+          "code": "federal-state-specific-notificationCategory",
+          "valueBoolean": false
+        },
+        {
+          "code": "ifsg-paragraph",
+          "valueCode": "7.1"
+        }
+      ]
+    },
+    {
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/codesystem-conceptOrder",
+          "valueInteger": 580
+        }
+      ],
+      "code": "lsvp",
+      "display": "Lassavirus",
+      "designation": [
+        {
+          "language": "de-DE",
+          "value": "Lassavirus"
+        }
+      ],
+      "property": [
+        {
+          "code": "inactive",
+          "valueBoolean": false
+        },
+        {
+          "code": "diagnosticReport-profile",
+          "valueString": "https://demis.rki.de/fhir/StructureDefinition/LaboratoryReportLSVP"
+        },
+        {
+          "code": "federal-state-specific-notificationCategory",
+          "valueBoolean": false
+        },
+        {
+          "code": "ifsg-paragraph",
+          "valueCode": "7.1"
+        }
+      ]
+    },
+    {
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/codesystem-conceptOrder",
+          "valueInteger": 570
+        }
+      ],
+      "code": "legp",
+      "display": "Legionella sp.",
+      "designation": [
+        {
+          "language": "de-DE",
+          "value": "Legionella sp."
+        }
+      ],
+      "property": [
+        {
+          "code": "inactive",
+          "valueBoolean": false
+        },
+        {
+          "code": "diagnosticReport-profile",
+          "valueString": "https://demis.rki.de/fhir/StructureDefinition/LaboratoryReportLEGP"
+        },
+        {
+          "code": "federal-state-specific-notificationCategory",
+          "valueBoolean": false
+        },
+        {
+          "code": "ifsg-paragraph",
+          "valueCode": "7.1"
+        }
+      ]
+    },
+    {
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/codesystem-conceptOrder",
+          "valueInteger": 560
+        }
+      ],
+      "code": "lepp",
+      "display": "humanpathogene Leptospira sp.",
+      "designation": [
+        {
+          "language": "de-DE",
+          "value": "Leptospira sp., humanpathogen"
+        }
+      ],
+      "property": [
+        {
+          "code": "inactive",
+          "valueBoolean": false
+        },
+        {
+          "code": "diagnosticReport-profile",
+          "valueString": "https://demis.rki.de/fhir/StructureDefinition/LaboratoryReportLEPP"
+        },
+        {
+          "code": "federal-state-specific-notificationCategory",
+          "valueBoolean": false
+        },
+        {
+          "code": "ifsg-paragraph",
+          "valueCode": "7.1"
+        }
+      ]
+    },
+    {
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/codesystem-conceptOrder",
+          "valueInteger": 550
+        }
+      ],
+      "code": "lisp",
+      "display": "Listeria monocytogenes; Meldepflicht nur für den direkten Nachweis aus Blut, Liquor oder anderen normalerweise sterilen Substraten sowie aus Abstrichen von Neugeborenen",
+      "designation": [
+        {
+          "language": "de-DE",
+          "value": "Listeria monocytogenes"
+        }
+      ],
+      "property": [
+        {
+          "code": "inactive",
+          "valueBoolean": false
+        },
+        {
+          "code": "diagnosticReport-profile",
+          "valueString": "https://demis.rki.de/fhir/StructureDefinition/LaboratoryReportLISP"
+        },
+        {
+          "code": "federal-state-specific-notificationCategory",
+          "valueBoolean": false
+        },
+        {
+          "code": "ifsg-paragraph",
+          "valueCode": "7.1"
+        }
+      ]
+    },
+    {
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/codesystem-conceptOrder",
+          "valueInteger": 540
+        }
+      ],
+      "code": "plap",
+      "display": "Plasmodium spp. (Malaria)",
+      "designation": [
+        {
+          "language": "de-DE",
+          "value": "Malaria"
+        }
+      ],
+      "property": [
+        {
+          "code": "inactive",
+          "valueBoolean": false
+        },
+        {
+          "code": "diagnosticReport-profile",
+          "valueString": "https://demis.rki.de/fhir/StructureDefinition/LaboratoryReportPLAP"
+        },
+        {
+          "code": "federal-state-specific-notificationCategory",
+          "valueBoolean": false
+        },
+        {
+          "code": "ifsg-paragraph",
+          "valueCode": "7.1"
+        }
+      ]
+    },
+    {
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/codesystem-conceptOrder",
+          "valueInteger": 530
+        }
+      ],
+      "code": "mbvp",
+      "display": "Marburgvirus",
+      "designation": [
+        {
+          "language": "de-DE",
+          "value": "Marburgvirus"
+        }
+      ],
+      "property": [
+        {
+          "code": "inactive",
+          "valueBoolean": false
+        },
+        {
+          "code": "diagnosticReport-profile",
+          "valueString": "https://demis.rki.de/fhir/StructureDefinition/LaboratoryReportMBVP"
+        },
+        {
+          "code": "federal-state-specific-notificationCategory",
+          "valueBoolean": false
+        },
+        {
+          "code": "ifsg-paragraph",
+          "valueCode": "7.1"
+        }
+      ]
+    },
+    {
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/codesystem-conceptOrder",
+          "valueInteger": 520
+        }
+      ],
+      "code": "msvp",
+      "display": "Masernvirus",
+      "designation": [
+        {
+          "language": "de-DE",
+          "value": "Masernvirus"
+        }
+      ],
+      "property": [
+        {
+          "code": "inactive",
+          "valueBoolean": false
+        },
+        {
+          "code": "diagnosticReport-profile",
+          "valueString": "https://demis.rki.de/fhir/StructureDefinition/LaboratoryReportMSVP"
+        },
+        {
+          "code": "federal-state-specific-notificationCategory",
+          "valueBoolean": false
+        },
+        {
+          "code": "ifsg-paragraph",
+          "valueCode": "7.1"
+        }
+      ]
+    },
+    {
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/codesystem-conceptOrder",
+          "valueInteger": 510
+        }
+      ],
+      "code": "mrsp",
+      "display": "Middle-East-Respiratory-Syndrome-Coronavirus (MERS-CoV)",
+      "designation": [
+        {
+          "language": "de-DE",
+          "value": "MERS-CoV"
+        }
+      ],
+      "property": [
+        {
+          "code": "inactive",
+          "valueBoolean": false
+        },
+        {
+          "code": "diagnosticReport-profile",
+          "valueString": "https://demis.rki.de/fhir/StructureDefinition/LaboratoryReportMRSP"
+        },
+        {
+          "code": "federal-state-specific-notificationCategory",
+          "valueBoolean": false
+        },
+        {
+          "code": "ifsg-paragraph",
+          "valueCode": "7.1"
+        }
+      ]
+    },
+    {
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/codesystem-conceptOrder",
+          "valueInteger": 500
+        }
+      ],
+      "code": "mpxp",
+      "display": "Orthopockenviren (Mpoxvirus)",
+      "designation": [
+        {
+          "language": "de-DE",
+          "value": "Mpoxvirus"
+        }
+      ],
+      "property": [
+        {
+          "code": "inactive",
+          "valueBoolean": false
+        },
+        {
+          "code": "diagnosticReport-profile",
+          "valueString": "https://demis.rki.de/fhir/StructureDefinition/LaboratoryReportMPXP"
+        },
+        {
+          "code": "federal-state-specific-notificationCategory",
+          "valueBoolean": false
+        },
+        {
+          "code": "ifsg-paragraph",
+          "valueCode": "7.1"
+        }
+      ]
+    },
+    {
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/codesystem-conceptOrder",
+          "valueInteger": 490
+        }
+      ],
+      "code": "mrap",
+      "display": "Staphylococcus aureus (Methicillin-resistente Stämme); Meldepflicht nur für den Nachweis aus Blut oder Liquor",
+      "designation": [
+        {
+          "language": "de-DE",
+          "value": "MRSA"
+        }
+      ],
+      "property": [
+        {
+          "code": "inactive",
+          "valueBoolean": false
+        },
+        {
+          "code": "diagnosticReport-profile",
+          "valueString": "https://demis.rki.de/fhir/StructureDefinition/LaboratoryReportMRAP"
+        },
+        {
+          "code": "federal-state-specific-notificationCategory",
+          "valueBoolean": false
+        },
+        {
+          "code": "ifsg-paragraph",
+          "valueCode": "7.1"
+        }
+      ]
+    },
+    {
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/codesystem-conceptOrder",
+          "valueInteger": 480
+        }
+      ],
+      "code": "mpvp",
+      "display": "Mumpsvirus",
+      "designation": [
+        {
+          "language": "de-DE",
+          "value": "Mumpsvirus"
+        }
+      ],
+      "property": [
+        {
+          "code": "inactive",
+          "valueBoolean": false
+        },
+        {
+          "code": "diagnosticReport-profile",
+          "valueString": "https://demis.rki.de/fhir/StructureDefinition/LaboratoryReportMPVP"
+        },
+        {
+          "code": "federal-state-specific-notificationCategory",
+          "valueBoolean": false
+        },
+        {
+          "code": "ifsg-paragraph",
+          "valueCode": "7.1"
+        }
+      ]
+    },
+    {
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/codesystem-conceptOrder",
+          "valueInteger": 470
+        }
+      ],
+      "code": "mylp",
+      "display": "Mycobacterium leprae",
+      "designation": [
+        {
+          "language": "de-DE",
+          "value": "Mycobacterium leprae"
+        }
+      ],
+      "property": [
+        {
+          "code": "inactive",
+          "valueBoolean": false
+        },
+        {
+          "code": "diagnosticReport-profile",
+          "valueString": "https://demis.rki.de/fhir/StructureDefinition/LaboratoryReportMYLP"
+        },
+        {
+          "code": "federal-state-specific-notificationCategory",
+          "valueBoolean": false
+        },
+        {
+          "code": "ifsg-paragraph",
+          "valueCode": "7.1"
+        }
+      ]
+    },
+    {
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/codesystem-conceptOrder",
+          "valueInteger": 460
+        }
+      ],
+      "code": "mytp",
+      "display": "Mycobacterium tuberculosis, Mycobacterium africanum, Mycobacterium bovis; Meldepflicht für den direkten Erregernachweis sowie nachfolgend für das Ergebnis der Resistenzbestimmung; vorab auch für den Nachweis säurefester Stäbchen im Sputum",
+      "designation": [
+        {
+          "language": "de-DE",
+          "value": "Mycobacterium tuberculosis"
+        }
+      ],
+      "property": [
+        {
+          "code": "inactive",
+          "valueBoolean": false
+        },
+        {
+          "code": "diagnosticReport-profile",
+          "valueString": "https://demis.rki.de/fhir/StructureDefinition/LaboratoryReportMYTP"
+        },
+        {
+          "code": "federal-state-specific-notificationCategory",
+          "valueBoolean": false
+        },
+        {
+          "code": "ifsg-paragraph",
+          "valueCode": "7.1"
+        }
+      ]
+    },
+    {
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/codesystem-conceptOrder",
+          "valueInteger": 450
+        }
+      ],
+      "code": "mpmp",
+      "display": "Mycoplasmen",
+      "designation": [
+        {
+          "language": "de-DE",
+          "value": "Mycoplasmen"
+        }
+      ],
+      "property": [
+        {
+          "code": "inactive",
+          "valueBoolean": false
+        },
+        {
+          "code": "diagnosticReport-profile",
+          "valueString": "https://demis.rki.de/fhir/StructureDefinition/LaboratoryReportMPMP"
+        },
+        {
+          "code": "federal-state-specific-notificationCategory",
+          "valueBoolean": true
+        },
+        {
+          "code": "federal-state",
+          "valueCoding": {
+            "system": "urn:iso:std:iso:3166-2:de",
+            "code": "DE-SN"
+          }
+        },
+        {
+          "code": "ifsg-paragraph",
+          "valueCode": "7.1"
+        }
+      ]
+    },
+    {
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/codesystem-conceptOrder",
+          "valueInteger": 440
+        }
+      ],
+      "code": "neip",
+      "display": "Neisseria meningitidis; Meldepflicht nur für den direkten Nachweis aus Liquor, Blut, hämorrhagischen Hautinfiltraten oder anderen normalerweise sterilen Substraten",
+      "designation": [
+        {
+          "language": "de-DE",
+          "value": "Neisseria meningitidis"
+        }
+      ],
+      "property": [
+        {
+          "code": "inactive",
+          "valueBoolean": false
+        },
+        {
+          "code": "diagnosticReport-profile",
+          "valueString": "https://demis.rki.de/fhir/StructureDefinition/LaboratoryReportNEIP"
+        },
+        {
+          "code": "federal-state-specific-notificationCategory",
+          "valueBoolean": false
+        },
+        {
+          "code": "ifsg-paragraph",
+          "valueCode": "7.1"
+        }
+      ]
+    },
+    {
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/codesystem-conceptOrder",
+          "valueInteger": 430
+        }
+      ],
+      "code": "novp",
+      "display": "Norovirus",
+      "designation": [
+        {
+          "language": "de-DE",
+          "value": "Norovirus"
+        }
+      ],
+      "property": [
+        {
+          "code": "inactive",
+          "valueBoolean": false
+        },
+        {
+          "code": "diagnosticReport-profile",
+          "valueString": "https://demis.rki.de/fhir/StructureDefinition/LaboratoryReportNOVP"
+        },
+        {
+          "code": "federal-state-specific-notificationCategory",
+          "valueBoolean": false
+        },
+        {
+          "code": "ifsg-paragraph",
+          "valueCode": "7.1"
+        }
+      ]
+    },
+    {
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/codesystem-conceptOrder",
+          "valueInteger": 420
+        }
+      ],
+      "code": "opxp",
+      "display": "Orthopockenviren (sonstige Orthopockenviren)",
+      "designation": [
+        {
+          "language": "de-DE",
+          "value": "Orthopockenvirus, sonstige"
+        }
+      ],
+      "property": [
+        {
+          "code": "inactive",
+          "valueBoolean": false
+        },
+        {
+          "code": "diagnosticReport-profile",
+          "valueString": "https://demis.rki.de/fhir/StructureDefinition/LaboratoryReportOPXP"
+        },
+        {
+          "code": "federal-state-specific-notificationCategory",
+          "valueBoolean": false
+        },
+        {
+          "code": "ifsg-paragraph",
+          "valueCode": "7.1"
+        }
+      ]
+    },
+    {
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/codesystem-conceptOrder",
+          "valueInteger": 410
+        }
+      ],
+      "code": "pinp",
+      "display": "Parainfluenzavirus",
+      "designation": [
+        {
+          "language": "de-DE",
+          "value": "Parainfluenza"
+        }
+      ],
+      "property": [
+        {
+          "code": "inactive",
+          "valueBoolean": false
+        },
+        {
+          "code": "diagnosticReport-profile",
+          "valueString": "https://demis.rki.de/fhir/StructureDefinition/LaboratoryReportPINP"
+        },
+        {
+          "code": "federal-state-specific-notificationCategory",
+          "valueBoolean": true
+        },
+        {
+          "code": "federal-state",
+          "valueCoding": {
+            "system": "urn:iso:std:iso:3166-2:de",
+            "code": "DE-SN"
+          }
+        },
+        {
+          "code": "ifsg-paragraph",
+          "valueCode": "7.1"
+        }
+      ]
+    },
+    {
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/codesystem-conceptOrder",
+          "valueInteger": 400
+        }
+      ],
+      "code": "povp",
+      "display": "Poliovirus",
+      "designation": [
+        {
+          "language": "de-DE",
+          "value": "Poliovirus"
+        }
+      ],
+      "property": [
+        {
+          "code": "inactive",
+          "valueBoolean": false
+        },
+        {
+          "code": "diagnosticReport-profile",
+          "valueString": "https://demis.rki.de/fhir/StructureDefinition/LaboratoryReportPOVP"
+        },
+        {
+          "code": "federal-state-specific-notificationCategory",
+          "valueBoolean": false
+        },
+        {
+          "code": "ifsg-paragraph",
+          "valueCode": "7.1"
+        }
+      ]
+    },
+    {
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/codesystem-conceptOrder",
+          "valueInteger": 390
+        }
+      ],
+      "code": "rbvp",
+      "display": "Rabiesvirus",
+      "designation": [
+        {
+          "language": "de-DE",
+          "value": "Rabiesvirus"
+        }
+      ],
+      "property": [
+        {
+          "code": "inactive",
+          "valueBoolean": false
+        },
+        {
+          "code": "diagnosticReport-profile",
+          "valueString": "https://demis.rki.de/fhir/StructureDefinition/LaboratoryReportRBVP"
+        },
+        {
+          "code": "federal-state-specific-notificationCategory",
+          "valueBoolean": false
+        },
+        {
+          "code": "ifsg-paragraph",
+          "valueCode": "7.1"
+        }
+      ]
+    },
+    {
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/codesystem-conceptOrder",
+          "valueInteger": 380
+        }
+      ],
+      "code": "ricp",
+      "display": "Rickettsia prowazekii",
+      "designation": [
+        {
+          "language": "de-DE",
+          "value": "Rickettsia prowazekii"
+        }
+      ],
+      "property": [
+        {
+          "code": "inactive",
+          "valueBoolean": false
+        },
+        {
+          "code": "diagnosticReport-profile",
+          "valueString": "https://demis.rki.de/fhir/StructureDefinition/LaboratoryReportRICP"
+        },
+        {
+          "code": "federal-state-specific-notificationCategory",
+          "valueBoolean": false
+        },
+        {
+          "code": "ifsg-paragraph",
+          "valueCode": "7.1"
+        }
+      ]
+    },
+    {
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/codesystem-conceptOrder",
+          "valueInteger": 370
+        }
+      ],
+      "code": "pvbp",
+      "display": "Ringelröteln, Parvovirus B 19",
+      "designation": [
+        {
+          "language": "de-DE",
+          "value": "Parvovirus B 19"
+        }
+      ],
+      "property": [
+        {
+          "code": "inactive",
+          "valueBoolean": false
+        },
+        {
+          "code": "diagnosticReport-profile",
+          "valueString": "https://demis.rki.de/fhir/StructureDefinition/LaboratoryReportPVBP"
+        },
+        {
+          "code": "federal-state-specific-notificationCategory",
+          "valueBoolean": true
+        },
+        {
+          "code": "federal-state",
+          "valueCoding": {
+            "system": "urn:iso:std:iso:3166-2:de",
+            "code": "DE-SN"
+          }
+        },
+        {
+          "code": "ifsg-paragraph",
+          "valueCode": "7.1"
+        }
+      ]
+    },
+    {
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/codesystem-conceptOrder",
+          "valueInteger": 360
+        }
+      ],
+      "code": "rtvp",
+      "display": "Rotavirus",
+      "designation": [
+        {
+          "language": "de-DE",
+          "value": "Rotavirus"
+        }
+      ],
+      "property": [
+        {
+          "code": "inactive",
+          "valueBoolean": false
+        },
+        {
+          "code": "diagnosticReport-profile",
+          "valueString": "https://demis.rki.de/fhir/StructureDefinition/LaboratoryReportRTVP"
+        },
+        {
+          "code": "federal-state-specific-notificationCategory",
+          "valueBoolean": false
+        },
+        {
+          "code": "ifsg-paragraph",
+          "valueCode": "7.1"
+        }
+      ]
+    },
+    {
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/codesystem-conceptOrder",
+          "valueInteger": 350
+        }
+      ],
+      "code": "rsvp",
+      "display": "Respiratorisches-Synzytial-Virus",
+      "designation": [
+        {
+          "language": "de-DE",
+          "value": "RSV"
+        }
+      ],
+      "property": [
+        {
+          "code": "inactive",
+          "valueBoolean": false
+        },
+        {
+          "code": "diagnosticReport-profile",
+          "valueString": "https://demis.rki.de/fhir/StructureDefinition/LaboratoryReportRSVP"
+        },
+        {
+          "code": "federal-state-specific-notificationCategory",
+          "valueBoolean": false
+        },
+        {
+          "code": "ifsg-paragraph",
+          "valueCode": "7.1"
+        }
+      ]
+    },
+    {
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/codesystem-conceptOrder",
+          "valueInteger": 340
+        }
+      ],
+      "code": "ruvp",
+      "display": "Rubellavirus",
+      "designation": [
+        {
+          "language": "de-DE",
+          "value": "Rubellavirus"
+        }
+      ],
+      "property": [
+        {
+          "code": "inactive",
+          "valueBoolean": false
+        },
+        {
+          "code": "diagnosticReport-profile",
+          "valueString": "https://demis.rki.de/fhir/StructureDefinition/LaboratoryReportRUVP"
+        },
+        {
+          "code": "federal-state-specific-notificationCategory",
+          "valueBoolean": false
+        },
+        {
+          "code": "ifsg-paragraph",
+          "valueCode": "7.1"
+        }
+      ]
+    },
+    {
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/codesystem-conceptOrder",
+          "valueInteger": 330
+        }
+      ],
+      "code": "spap",
+      "display": "Salmonella Paratyphi; Meldepflicht für alle direkten Nachweise",
+      "designation": [
+        {
+          "language": "de-DE",
+          "value": "Salmonella Paratyphi"
+        }
+      ],
+      "property": [
+        {
+          "code": "inactive",
+          "valueBoolean": false
+        },
+        {
+          "code": "diagnosticReport-profile",
+          "valueString": "https://demis.rki.de/fhir/StructureDefinition/LaboratoryReportSPAP"
+        },
+        {
+          "code": "federal-state-specific-notificationCategory",
+          "valueBoolean": false
+        },
+        {
+          "code": "ifsg-paragraph",
+          "valueCode": "7.1"
+        }
+      ]
+    },
+    {
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/codesystem-conceptOrder",
+          "valueInteger": 320
+        }
+      ],
+      "code": "styp",
+      "display": "Salmonella Typhi; Meldepflicht für alle direkten Nachweise",
+      "designation": [
+        {
+          "language": "de-DE",
+          "value": "Salmonella Typhi"
+        }
+      ],
+      "property": [
+        {
+          "code": "inactive",
+          "valueBoolean": false
+        },
+        {
+          "code": "diagnosticReport-profile",
+          "valueString": "https://demis.rki.de/fhir/StructureDefinition/LaboratoryReportSTYP"
+        },
+        {
+          "code": "federal-state-specific-notificationCategory",
+          "valueBoolean": false
+        },
+        {
+          "code": "ifsg-paragraph",
+          "valueCode": "7.1"
+        }
+      ]
+    },
+    {
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/codesystem-conceptOrder",
+          "valueInteger": 310
+        }
+      ],
+      "code": "salp",
+      "display": "Salmonella (sonstige)",
+      "designation": [
+        {
+          "language": "de-DE",
+          "value": "Salmonella, sonstige"
+        }
+      ],
+      "property": [
+        {
+          "code": "inactive",
+          "valueBoolean": false
+        },
+        {
+          "code": "diagnosticReport-profile",
+          "valueString": "https://demis.rki.de/fhir/StructureDefinition/LaboratoryReportSALP"
+        },
+        {
+          "code": "federal-state-specific-notificationCategory",
+          "valueBoolean": false
+        },
+        {
+          "code": "ifsg-paragraph",
+          "valueCode": "7.1"
+        }
+      ]
+    },
+    {
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/codesystem-conceptOrder",
+          "valueInteger": 300
+        }
+      ],
+      "code": "cvdp",
+      "display": "Severe-Acute-Respiratory-Syndrome-Coronavirus-2 (SARS-CoV-2)",
+      "designation": [
+        {
+          "language": "de-DE",
+          "value": "SARS-CoV-2"
+        }
+      ],
+      "property": [
+        {
+          "code": "inactive",
+          "valueBoolean": false
+        },
+        {
+          "code": "diagnosticReport-profile",
+          "valueString": "https://demis.rki.de/fhir/StructureDefinition/LaboratoryReportCVDP"
+        },
+        {
+          "code": "federal-state-specific-notificationCategory",
+          "valueBoolean": false
+        },
+        {
+          "code": "ifsg-paragraph",
+          "valueCode": "7.1"
+        }
+      ]
+    },
+    {
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/codesystem-conceptOrder",
+          "valueInteger": 290
+        }
+      ],
+      "code": "cvsp",
+      "display": "Severe-Acute-Respiratory-Syndrome-Coronavirus-1 (SARS-CoV-1) (2003)",
+      "designation": [
+        {
+          "language": "de-DE",
+          "value": "SARS-CoV-1 (2003)"
+        }
+      ],
+      "property": [
+        {
+          "code": "inactive",
+          "valueBoolean": false
+        },
+        {
+          "code": "diagnosticReport-profile",
+          "valueString": "https://demis.rki.de/fhir/StructureDefinition/LaboratoryReportCVSP"
+        },
+        {
+          "code": "federal-state-specific-notificationCategory",
+          "valueBoolean": false
+        },
+        {
+          "code": "ifsg-paragraph",
+          "valueCode": "7.1"
+        }
+      ]
+    },
+    {
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/codesystem-conceptOrder",
+          "valueInteger": 280
+        }
+      ],
+      "code": "spyp",
+      "display": "Scharlach, Beta-hämolysierenden Streptokokken der Gruppe A",
+      "designation": [
+        {
+          "language": "de-DE",
+          "value": "Streptokokken der Gruppe A (GAS)"
+        }
+      ],
+      "property": [
+        {
+          "code": "inactive",
+          "valueBoolean": false
+        },
+        {
+          "code": "diagnosticReport-profile",
+          "valueString": "https://demis.rki.de/fhir/StructureDefinition/LaboratoryReportSPYP"
+        },
+        {
+          "code": "federal-state-specific-notificationCategory",
+          "valueBoolean": true
+        },
+        {
+          "code": "federal-state",
+          "valueCoding": {
+            "system": "urn:iso:std:iso:3166-2:de",
+            "code": "DE-ST"
+          }
+        },
+        {
+          "code": "federal-state",
+          "valueCoding": {
+            "system": "urn:iso:std:iso:3166-2:de",
+            "code": "DE-TH"
+          }
+        },
+        {
+          "code": "ifsg-paragraph",
+          "valueCode": "7.1"
+        }
+      ]
+    },
+    {
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/codesystem-conceptOrder",
+          "valueInteger": 270
+        }
+      ],
+      "code": "ship",
+      "display": "Shigella sp.",
+      "designation": [
+        {
+          "language": "de-DE",
+          "value": "Shigella sp."
+        }
+      ],
+      "property": [
+        {
+          "code": "inactive",
+          "valueBoolean": false
+        },
+        {
+          "code": "diagnosticReport-profile",
+          "valueString": "https://demis.rki.de/fhir/StructureDefinition/LaboratoryReportSHIP"
+        },
+        {
+          "code": "federal-state-specific-notificationCategory",
+          "valueBoolean": false
+        },
+        {
+          "code": "ifsg-paragraph",
+          "valueCode": "7.1"
+        }
+      ]
+    },
+    {
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/codesystem-conceptOrder",
+          "valueInteger": 260
+        }
+      ],
+      "code": "spnp",
+      "display": "Streptococcus pneumoniae; Meldepflicht nur für den direkten Nachweis aus Liquor, Blut, Gelenkpunktat oder anderen normalerweise sterilen Substraten",
+      "designation": [
+        {
+          "language": "de-DE",
+          "value": "Streptococcus pneumoniae"
+        }
+      ],
+      "property": [
+        {
+          "code": "inactive",
+          "valueBoolean": false
+        },
+        {
+          "code": "diagnosticReport-profile",
+          "valueString": "https://demis.rki.de/fhir/StructureDefinition/LaboratoryReportSPNP"
+        },
+        {
+          "code": "federal-state-specific-notificationCategory",
+          "valueBoolean": false
+        },
+        {
+          "code": "ifsg-paragraph",
+          "valueCode": "7.1"
+        }
+      ]
+    },
+    {
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/codesystem-conceptOrder",
+          "valueInteger": 240
+        }
+      ],
+      "code": "trip",
+      "display": "Trichinella spiralis",
+      "designation": [
+        {
+          "language": "de-DE",
+          "value": "Trichinella spiralis"
+        }
+      ],
+      "property": [
+        {
+          "code": "inactive",
+          "valueBoolean": false
+        },
+        {
+          "code": "diagnosticReport-profile",
+          "valueString": "https://demis.rki.de/fhir/StructureDefinition/LaboratoryReportTRIP"
+        },
+        {
+          "code": "federal-state-specific-notificationCategory",
+          "valueBoolean": false
+        },
+        {
+          "code": "ifsg-paragraph",
+          "valueCode": "7.1"
+        }
+      ]
+    },
+    {
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/codesystem-conceptOrder",
+          "valueInteger": 230
+        }
+      ],
+      "code": "pkvp",
+      "display": "Orthopockenviren (Variolavirus)",
+      "designation": [
+        {
+          "language": "de-DE",
+          "value": "Variolavirus"
+        }
+      ],
+      "property": [
+        {
+          "code": "inactive",
+          "valueBoolean": false
+        },
+        {
+          "code": "diagnosticReport-profile",
+          "valueString": "https://demis.rki.de/fhir/StructureDefinition/LaboratoryReportPKVP"
+        },
+        {
+          "code": "federal-state-specific-notificationCategory",
+          "valueBoolean": false
+        },
+        {
+          "code": "ifsg-paragraph",
+          "valueCode": "7.1"
+        }
+      ]
+    },
+    {
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/codesystem-conceptOrder",
+          "valueInteger": 220
+        }
+      ],
+      "code": "vzvp",
+      "display": "Varizella-Zoster-Virus",
+      "designation": [
+        {
+          "language": "de-DE",
+          "value": "Varizella-Zoster-Virus"
+        }
+      ],
+      "property": [
+        {
+          "code": "inactive",
+          "valueBoolean": false
+        },
+        {
+          "code": "diagnosticReport-profile",
+          "valueString": "https://demis.rki.de/fhir/StructureDefinition/LaboratoryReportVZVP"
+        },
+        {
+          "code": "federal-state-specific-notificationCategory",
+          "valueBoolean": false
+        },
+        {
+          "code": "ifsg-paragraph",
+          "valueCode": "7.1"
+        }
+      ]
+    },
+    {
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/codesystem-conceptOrder",
+          "valueInteger": 215
+        }
+      ],
+      "code": "ncvp",
+      "display": "Vibrio spp., humanpathogen (außer Erreger der Cholera); soweit ausschließlich eine Ohrinfektion vorliegt, nur bei Vibrio cholerae non O1/non-O139",
+      "designation": [
+        {
+          "language": "de-DE",
+          "value": "Vibrio spp. (außer Erreger der Cholera)"
+        }
+      ],
+      "property": [
+        {
+          "code": "inactive",
+          "valueBoolean": false
+        },
+        {
+          "code": "diagnosticReport-profile",
+          "valueString": "https://demis.rki.de/fhir/StructureDefinition/LaboratoryReportNCVP"
+        },
+        {
+          "code": "federal-state-specific-notificationCategory",
+          "valueBoolean": false
+        },
+        {
+          "code": "ifsg-paragraph",
+          "valueCode": "7.1"
+        }
+      ]
+    },
+    {
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/codesystem-conceptOrder",
+          "valueInteger": 210
+        }
+      ],
+      "code": "vchp",
+      "display": "Vibrio cholerae",
+      "designation": [
+        {
+          "language": "de-DE",
+          "value": "Vibrio cholerae"
+        }
+      ],
+      "property": [
+        {
+          "code": "inactive",
+          "valueBoolean": false
+        },
+        {
+          "code": "diagnosticReport-profile",
+          "valueString": "https://demis.rki.de/fhir/StructureDefinition/LaboratoryReportVCHP"
+        },
+        {
+          "code": "federal-state-specific-notificationCategory",
+          "valueBoolean": false
+        },
+        {
+          "code": "ifsg-paragraph",
+          "valueCode": "7.1"
+        }
+      ]
+    },
+    {
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/codesystem-conceptOrder",
+          "valueInteger": 190
+        }
+      ],
+      "code": "wbkp",
+      "display": "Krankheitserreger unter Berücksichtigung der Art der Krankheitserreger und der Häufigkeit ihres Nachweises wenn Hinweise auf eine schwerwiegende Gefahr für die Allgemeinheit bestehen",
+      "designation": [
+        {
+          "language": "de-DE",
+          "value": "Weitere bedrohliche Erreger"
+        }
+      ],
+      "property": [
+        {
+          "code": "inactive",
+          "valueBoolean": false
+        },
+        {
+          "code": "diagnosticReport-profile",
+          "valueString": "https://demis.rki.de/fhir/StructureDefinition/LaboratoryReportWBKP"
+        },
+        {
+          "code": "federal-state-specific-notificationCategory",
+          "valueBoolean": false
+        },
+        {
+          "code": "ifsg-paragraph",
+          "valueCode": "7.1"
+        }
+      ]
+    },
+    {
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/codesystem-conceptOrder",
+          "valueInteger": 180
+        }
+      ],
+      "code": "wnvp",
+      "display": "West-Nil-Virus",
+      "designation": [
+        {
+          "language": "de-DE",
+          "value": "West-Nil-Virus"
+        }
+      ],
+      "property": [
+        {
+          "code": "inactive",
+          "valueBoolean": false
+        },
+        {
+          "code": "diagnosticReport-profile",
+          "valueString": "https://demis.rki.de/fhir/StructureDefinition/LaboratoryReportWNVP"
+        },
+        {
+          "code": "federal-state-specific-notificationCategory",
+          "valueBoolean": false
+        },
+        {
+          "code": "ifsg-paragraph",
+          "valueCode": "7.1"
+        }
+      ]
+    },
+    {
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/codesystem-conceptOrder",
+          "valueInteger": 170
+        }
+      ],
+      "code": "ypsp",
+      "display": "Yersinia pestis",
+      "designation": [
+        {
+          "language": "de-DE",
+          "value": "Yersinia pestis"
+        }
+      ],
+      "property": [
+        {
+          "code": "inactive",
+          "valueBoolean": false
+        },
+        {
+          "code": "diagnosticReport-profile",
+          "valueString": "https://demis.rki.de/fhir/StructureDefinition/LaboratoryReportYPSP"
+        },
+        {
+          "code": "federal-state-specific-notificationCategory",
+          "valueBoolean": false
+        },
+        {
+          "code": "ifsg-paragraph",
+          "valueCode": "7.1"
+        }
+      ]
+    },
+    {
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/codesystem-conceptOrder",
+          "valueInteger": 160
+        }
+      ],
+      "code": "yenp",
+      "display": "Yersinia spp. (darmpathogen)",
+      "designation": [
+        {
+          "language": "de-DE",
+          "value": "Yersinia spp., darmpathogen"
+        }
+      ],
+      "property": [
+        {
+          "code": "inactive",
+          "valueBoolean": false
+        },
+        {
+          "code": "diagnosticReport-profile",
+          "valueString": "https://demis.rki.de/fhir/StructureDefinition/LaboratoryReportYENP"
+        },
+        {
+          "code": "federal-state-specific-notificationCategory",
+          "valueBoolean": false
+        },
+        {
+          "code": "ifsg-paragraph",
+          "valueCode": "7.1"
+        }
+      ]
+    },
+    {
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/codesystem-conceptOrder",
+          "valueInteger": 150
+        }
+      ],
+      "code": "zkvp",
+      "display": "Zika-Virus",
+      "designation": [
+        {
+          "language": "de-DE",
+          "value": "Zika-Virus"
+        }
+      ],
+      "property": [
+        {
+          "code": "inactive",
+          "valueBoolean": false
+        },
+        {
+          "code": "diagnosticReport-profile",
+          "valueString": "https://demis.rki.de/fhir/StructureDefinition/LaboratoryReportZKVP"
+        },
+        {
+          "code": "federal-state-specific-notificationCategory",
+          "valueBoolean": false
+        },
+        {
+          "code": "ifsg-paragraph",
+          "valueCode": "7.1"
+        }
+      ]
+    },
+    {
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/codesystem-conceptOrder",
+          "valueInteger": 60
+        }
+      ],
+      "code": "chtp",
+      "display": "Chlamydia trachomatis, sofern es sich um einen der Serotypen L1 bis L3 handelt",
+      "designation": [
+        {
+          "language": "de-DE",
+          "value": "Chlamydia trachomatis"
+        }
+      ],
+      "property": [
+        {
+          "code": "inactive",
+          "valueBoolean": true
+        },
+        {
+          "code": "diagnosticReport-profile",
+          "valueString": "https://demis.rki.de/fhir/StructureDefinition/LaboratoryReportCHTP"
+        },
+        {
+          "code": "federal-state-specific-notificationCategory",
+          "valueBoolean": false
+        },
+        {
+          "code": "ifsg-paragraph",
+          "valueCode": "7.3"
+        }
+      ]
+    },
+    {
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/codesystem-conceptOrder",
+          "valueInteger": 50
+        }
+      ],
+      "code": "echp",
+      "display": "Echinococcus sp.",
+      "designation": [
+        {
+          "language": "de-DE",
+          "value": "Echinococcus sp."
+        }
+      ],
+      "property": [
+        {
+          "code": "inactive",
+          "valueBoolean": true
+        },
+        {
+          "code": "diagnosticReport-profile",
+          "valueString": "https://demis.rki.de/fhir/StructureDefinition/LaboratoryReportECHP"
+        },
+        {
+          "code": "federal-state-specific-notificationCategory",
+          "valueBoolean": false
+        },
+        {
+          "code": "ifsg-paragraph",
+          "valueCode": "7.3"
+        }
+      ]
+    },
+    {
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/codesystem-conceptOrder",
+          "valueInteger": 40
+        }
+      ],
+      "code": "hivp",
+      "display": "Humanes Immundefizienz-Virus (HIV)",
+      "designation": [
+        {
+          "language": "de-DE",
+          "value": "HIV"
+        }
+      ],
+      "property": [
+        {
+          "code": "inactive",
+          "valueBoolean": true
+        },
+        {
+          "code": "diagnosticReport-profile",
+          "valueString": "https://demis.rki.de/fhir/StructureDefinition/LaboratoryReportHIVP"
+        },
+        {
+          "code": "federal-state-specific-notificationCategory",
+          "valueBoolean": false
+        },
+        {
+          "code": "ifsg-paragraph",
+          "valueCode": "7.3"
+        }
+      ]
+    },
+    {
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/codesystem-conceptOrder",
+          "valueInteger": 30
+        }
+      ],
+      "code": "negp",
+      "display": "Neisseria gonorrhoeae",
+      "designation": [
+        {
+          "language": "de-DE",
+          "value": "Neisseria gonorrhoeae (Gonorrhö)"
+        }
+      ],
+      "property": [
+        {
+          "code": "inactive",
+          "valueBoolean": true
+        },
+        {
+          "code": "diagnosticReport-profile",
+          "valueString": "https://demis.rki.de/fhir/StructureDefinition/LaboratoryReportNEGP"
+        },
+        {
+          "code": "federal-state-specific-notificationCategory",
+          "valueBoolean": false
+        },
+        {
+          "code": "ifsg-paragraph",
+          "valueCode": "7.3"
+        }
+      ]
+    },
+    {
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/codesystem-conceptOrder",
+          "valueInteger": 20
+        }
+      ],
+      "code": "toxp",
+      "display": "Toxoplasma gondii; Meldepflicht nur bei konnatalen Infektionen",
+      "designation": [
+        {
+          "language": "de-DE",
+          "value": "Toxoplasma gondii, konnatal"
+        }
+      ],
+      "property": [
+        {
+          "code": "inactive",
+          "valueBoolean": true
+        },
+        {
+          "code": "diagnosticReport-profile",
+          "valueString": "https://demis.rki.de/fhir/StructureDefinition/LaboratoryReportTOXP"
+        },
+        {
+          "code": "federal-state-specific-notificationCategory",
+          "valueBoolean": false
+        },
+        {
+          "code": "ifsg-paragraph",
+          "valueCode": "7.3"
+        }
+      ]
+    },
+    {
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/codesystem-conceptOrder",
+          "valueInteger": 10
+        }
+      ],
+      "code": "trpp",
+      "display": "Treponema pallidum",
+      "designation": [
+        {
+          "language": "de-DE",
+          "value": "Treponema pallidum (Syphilis)"
+        }
+      ],
+      "property": [
+        {
+          "code": "inactive",
+          "valueBoolean": true
+        },
+        {
+          "code": "diagnosticReport-profile",
+          "valueString": "https://demis.rki.de/fhir/StructureDefinition/LaboratoryReportTRPP"
+        },
+        {
+          "code": "federal-state-specific-notificationCategory",
+          "valueBoolean": false
+        },
+        {
+          "code": "ifsg-paragraph",
+          "valueCode": "7.3"
+        }
+      ]
+    }
+  ]
+}

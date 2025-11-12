@@ -75,6 +75,12 @@ public class LaboratoryDataLoaderCtr {
     return laboratoryDataLoaderSrv.getDataForFederalPathogenCode(code);
   }
 
+  @GetMapping("/laboratory/7.1")
+  public SequencedCollection<CodeDisplay> get71NotificationCategories() {
+    return laboratoryDataLoaderSrv.getAvailableNotificationCategories(
+        PathogenNotificationCategory.P_7_1);
+  }
+
   @GetMapping("/laboratory/7.3")
   public SequencedCollection<CodeDisplay> get73NotificationCategories() {
     if (isNotification73Active) {

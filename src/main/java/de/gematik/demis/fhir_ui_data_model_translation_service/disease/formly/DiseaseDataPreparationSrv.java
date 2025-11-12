@@ -31,7 +31,10 @@ import de.gematik.demis.fhir_ui_data_model_translation_service.FeatureFlags;
 import de.gematik.demis.fhir_ui_data_model_translation_service.disease.DiseaseNotificationCategoriesSrv;
 import de.gematik.demis.fhir_ui_data_model_translation_service.disease.DiseaseNotificationCategoriesSrvRegression;
 import de.gematik.demis.fhir_ui_data_model_translation_service.disease.Questionnaires;
-import de.gematik.demis.fhir_ui_data_model_translation_service.disease.formly.model.*;
+import de.gematik.demis.fhir_ui_data_model_translation_service.disease.formly.model.FieldArray;
+import de.gematik.demis.fhir_ui_data_model_translation_service.disease.formly.model.FieldGroup;
+import de.gematik.demis.fhir_ui_data_model_translation_service.disease.formly.model.FormlyFieldConfigs;
+import de.gematik.demis.fhir_ui_data_model_translation_service.disease.formly.model.Props;
 import de.gematik.demis.fhir_ui_data_model_translation_service.disease.formly.processor.*;
 import de.gematik.demis.fhir_ui_data_model_translation_service.disease.formly.processor.resources.DiseaseProcessor;
 import de.gematik.demis.fhir_ui_data_model_translation_service.utils.Utils;
@@ -39,7 +42,10 @@ import de.gematik.demis.notification.builder.demis.fhir.notification.types.Notif
 import jakarta.annotation.PostConstruct;
 import java.io.File;
 import java.io.IOException;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 import java.util.concurrent.atomic.AtomicInteger;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
@@ -314,7 +320,7 @@ public class DiseaseDataPreparationSrv {
   }
 
   private boolean ignoreItem(Questionnaire.QuestionnaireItemComponent item, String diseaseCode) {
-    if (featureFlags.isMoveHospitalizationReason()
+    if (!featureFlags.isDiseaseStrict()
         && StringUtils.equalsIgnoreCase(diseaseCode, COVID)
         && StringUtils.equalsIgnoreCase(item.getLinkId(), LINK_ID_HOSPITALIZATION_REASON)) {
       log.info(

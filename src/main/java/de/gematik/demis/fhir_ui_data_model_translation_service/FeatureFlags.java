@@ -27,15 +27,15 @@ package de.gematik.demis.fhir_ui_data_model_translation_service;
  */
 
 import lombok.Builder;
-import lombok.Data;
+import lombok.Value;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 
-@Data
+@Value
 @Builder
 @ConfigurationProperties(prefix = "feature.flag")
 public class FeatureFlags {
 
   private boolean moveHospitalizationReason;
-  private boolean diseaseVaccineSnomedCodes;
+  private boolean diseaseStrict;
   private boolean diseaseDatePicker;
 }

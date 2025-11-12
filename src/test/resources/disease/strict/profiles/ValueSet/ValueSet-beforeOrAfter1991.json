@@ -1,0 +1,60 @@
+{
+  "resourceType": "ValueSet",
+  "id": "beforeOrAfter1991",
+  "url": "https://demis.rki.de/fhir/ValueSet/beforeOrAfter1991",
+  "version": "1.0.2",
+  "name": "BeforeOrAfter1991",
+  "title": "Vor oder nach 1991",
+  "status": "active",
+  "experimental": false,
+  "date": "2025-09-03",
+  "publisher": "Robert Koch-Institut",
+  "contact": [
+    {
+      "telecom": [
+        {
+          "system": "email",
+          "value": "demis-support@rki.de"
+        }
+      ]
+    }
+  ],
+  "description": "Das ValueSet BeforeOrAfter1991 enthält die Codes für vor 1991 und für 1991 und später.",
+  "jurisdiction": [
+    {
+      "coding": [
+        {
+          "system": "urn:iso:std:iso:3166",
+          "version": "ALPHA-2",
+          "code": "DE"
+        }
+      ]
+    }
+  ],
+  "copyright": "(C) 2021-2025 Robert Koch-Institut",
+  "compose": {
+    "include": [
+      {
+        "system": "https://demis.rki.de/fhir/CodeSystem/beforeOrAfter1991",
+        "version": "1.0.1"
+      }
+    ]
+  },
+  "expansion": {
+    "timestamp": "2025-09-03T00:00:00+02:00",
+    "contains": [
+      {
+        "system": "https://demis.rki.de/fhir/CodeSystem/beforeOrAfter1991",
+        "version": "1.0.1",
+        "code": "128523",
+        "display": "1991 und später"
+      },
+      {
+        "system": "https://demis.rki.de/fhir/CodeSystem/beforeOrAfter1991",
+        "version": "1.0.1",
+        "code": "128522",
+        "display": "vor 1991"
+      }
+    ]
+  }
+}
