@@ -2,6 +2,9 @@
  
 # Release notes
 
+## 2.3.2
+- add feature flag feature.flag.snapshot.6.active to additional service
+
 ## 2.3.1
 - add feature flag feature.flag.snapshot.6.active
 
