@@ -2,6 +2,9 @@
  
 # Release notes
 
+## 2.3.1
+- add feature flag feature.flag.snapshot.6.active
+
 ## 2.3.0
 - updaded version of Notification Builder to 8.0.0
 - derived datepicker precision from regex in strict disease profile (only for the dynamically built part of the form)

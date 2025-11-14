@@ -54,6 +54,9 @@ public class DiseaseDataLoaderSrv {
   @Value("${feature.flag.notifications.7_3}")
   private boolean isNotification73Active;
 
+  @Value("${feature.flag.snapshot.6.active}")
+  private boolean isSnapshot6Active;
+
   private Map<String, QuestionnaireTranslation> translations;
   private List<CodeDisplay>
       possibleDiseaseCodesRegresssion; // TODO Delete with notification7_3 flag
@@ -81,7 +84,7 @@ public class DiseaseDataLoaderSrv {
       contextualName = "all-codes",
       lowCardinalityKeyValues = {"disease", "fhir"})
   public List<CodeDisplay> getAllPossibleDiseaseCodes() {
-    if (isNotification73Active) {
+    if (isNotification73Active || isSnapshot6Active) {
       return possibleDiseaseCodes;
     } else {
       return possibleDiseaseCodesRegresssion;
