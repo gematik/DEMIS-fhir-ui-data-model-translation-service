@@ -72,6 +72,7 @@ public class LabDataPreparationSrv {
   private final boolean addTestDataErrorCase;
   private final boolean addTestDataSortingCase;
   private final boolean isNotification73ProcessingActive;
+  private final boolean isSnapshot6Active;
   @Getter private Map<String, LabNotificationData> laboratoryDataMap; // 7.3, 7.1
   private Map<PathogenNotificationCategory, SequencedCollection<CodeDisplay>>
       pathogenNotificationCategories;
@@ -83,13 +84,15 @@ public class LabDataPreparationSrv {
       PathogenNotificationCategoryList pathogenNotificationCategoryList,
       @Value("${add.test.data.error.case.for.lab}") boolean addTestDataErrorCase,
       @Value("${add.test.data.laboratory.sorting}") boolean addTestDataSortingCase,
-      @Value("${feature.flag.notifications.7_3}") boolean isNotification73ProcessingActive) {
+      @Value("${feature.flag.notifications.7_3}") boolean isNotification73ProcessingActive,
+      @Value("${feature.flag.snapshot.6.active}") boolean isSnapshot6Active) {
     this.fhirContext = fhirContext;
     this.snapshotFilesService = snapshotFilesService;
     this.pathogenNotificationCategoryList = pathogenNotificationCategoryList;
     this.addTestDataErrorCase = addTestDataErrorCase;
     this.addTestDataSortingCase = addTestDataSortingCase;
     this.isNotification73ProcessingActive = isNotification73ProcessingActive;
+    this.isSnapshot6Active = isSnapshot6Active;
   }
 
   @PostConstruct
@@ -284,7 +287,7 @@ public class LabDataPreparationSrv {
       String json = FileUtils.readFileToString(file, StandardCharsets.UTF_8);
       ValueSet valueSet = fhirContext.newJsonParser().parseResource(ValueSet.class, json);
 
-      if (isNotification73ProcessingActive) {
+      if (isNotification73ProcessingActive || isSnapshot6Active) {
         ValueSet.ConceptSetComponent include = valueSet.getCompose().getInclude().get(0);
         String system = include.getSystem();
         String version = include.hasVersion() ? include.getVersion() : null;

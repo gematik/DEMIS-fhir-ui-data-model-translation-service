@@ -146,6 +146,7 @@ class LabDataPreparationSrvTest {
             pathogenNotificationCategoryListMock,
             false,
             false,
+            false,
             false);
 
     labDataPreparationSrv.initializeData();
@@ -162,6 +163,7 @@ class LabDataPreparationSrvTest {
             snapshotFilesServiceMock,
             pathogenNotificationCategoryListMock,
             true,
+            false,
             false,
             false);
     labDataPreparationSrv.initializeData();
@@ -294,6 +296,7 @@ class LabDataPreparationSrvTest {
               pathogenNotificationCategoryListMock,
               true,
               false,
+              false,
               false);
       labDataPreparationSrv.initializeData();
 
@@ -309,6 +312,7 @@ class LabDataPreparationSrvTest {
               FhirContext.forR4(),
               snapshotFilesServiceMock,
               pathogenNotificationCategoryListMock,
+              false,
               false,
               false,
               false);
@@ -447,6 +451,7 @@ class LabDataPreparationSrvTest {
               pathogenNotificationCategoryListMock,
               true,
               false,
+              false,
               false);
       labDataPreparationSrv.initializeData();
 
@@ -462,6 +467,7 @@ class LabDataPreparationSrvTest {
               FhirContext.forR4(),
               snapshotFilesServiceMock,
               pathogenNotificationCategoryListMock,
+              false,
               false,
               false,
               false);
@@ -602,6 +608,7 @@ class LabDataPreparationSrvTest {
               pathogenNotificationCategoryListMock,
               true,
               false,
+              false,
               false);
       labDataPreparationSrv.initializeData();
 
@@ -634,6 +641,7 @@ class LabDataPreparationSrvTest {
               pathogenNotificationCategoryListMock,
               true,
               true,
+              false,
               false);
       labDataPreparationSrv.initializeData();
 
@@ -655,7 +663,8 @@ class LabDataPreparationSrvTest {
               pathogenNotificationCategoryListMock,
               true,
               true,
-              true);
+              true,
+              false);
       labDataPreparationSrv.initializeData();
 
       SequencedCollection<CodeDisplay> notificationCategories =
@@ -669,6 +678,7 @@ class LabDataPreparationSrvTest {
               FhirContext.forR4(),
               snapshotFilesServiceMock,
               pathogenNotificationCategoryListMock,
+              false,
               false,
               false,
               false);
