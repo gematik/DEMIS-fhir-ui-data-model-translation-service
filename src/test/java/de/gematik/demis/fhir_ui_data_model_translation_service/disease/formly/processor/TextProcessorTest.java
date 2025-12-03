@@ -29,6 +29,7 @@ package de.gematik.demis.fhir_ui_data_model_translation_service.disease.formly.p
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.Mockito.mock;
 
+import de.gematik.demis.fhir_ui_data_model_translation_service.disease.formly.fhir.TooltipExtension;
 import de.gematik.demis.fhir_ui_data_model_translation_service.disease.formly.model.FieldGroup;
 import org.hl7.fhir.r4.model.Questionnaire;
 import org.junit.jupiter.api.Test;
@@ -39,7 +40,10 @@ class TextProcessorTest {
   @Test
   void thatRequiredAttributeIsInheritedFromItem() {
     final TextProcessor textProcessor =
-        new TextProcessor(mock(EnableWhenProcessor.class), mock(ClipboardProcessor.class));
+        new TextProcessor(
+            mock(EnableWhenProcessor.class),
+            mock(ClipboardProcessor.class),
+            new TooltipExtension());
 
     final Questionnaire.QuestionnaireItemComponent item =
         new Questionnaire.QuestionnaireItemComponent();

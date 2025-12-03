@@ -49,6 +49,7 @@ public abstract class DefaultFieldType implements FieldType {
   private String type;
   private FieldGroup parent;
   private String label;
+  private String tooltip;
   private Boolean required;
 
   @Override
@@ -98,6 +99,9 @@ public abstract class DefaultFieldType implements FieldType {
     applyTo(properties);
     if (label != null) {
       properties.label(label);
+    }
+    if (tooltip != null) {
+      properties.tooltip(tooltip);
     }
     if (required != null) {
       properties.required(required);

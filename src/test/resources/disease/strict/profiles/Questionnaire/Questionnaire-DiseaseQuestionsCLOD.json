@@ -2,11 +2,11 @@
   "resourceType": "Questionnaire",
   "id": "DiseaseQuestionsCLOD",
   "url": "https://demis.rki.de/fhir/Questionnaire/DiseaseQuestionsCLOD",
-  "version": "1.2.2",
+  "version": "1.2.3",
   "name": "DiseaseQuestionsCLOD",
   "title": "Botulismus: spezifische klinische und epidemiologische Angaben",
   "status": "active",
-  "date": "2025-09-01",
+  "date": "2025-10-18",
   "publisher": "Robert Koch-Institut",
   "contact": [
     {

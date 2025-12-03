@@ -28,6 +28,7 @@ package de.gematik.demis.fhir_ui_data_model_translation_service.disease.formly.p
 
 import static de.gematik.demis.fhir_ui_data_model_translation_service.disease.formly.model.Wrapper.FORM_FIELD;
 
+import de.gematik.demis.fhir_ui_data_model_translation_service.disease.formly.fhir.TooltipExtension;
 import de.gematik.demis.fhir_ui_data_model_translation_service.disease.formly.model.FieldGroup;
 import de.gematik.demis.fhir_ui_data_model_translation_service.disease.formly.model.Props;
 import java.util.List;
@@ -41,11 +42,17 @@ public class TextProcessor implements ItemProcessor {
 
   private final EnableWhenProcessor enableWhenProcessor;
   private final ClipboardProcessor clipboardProcessor;
+  private final TooltipExtension tooltipExtension;
 
   @Override
   public FieldGroup[] createFieldGroup(
       Questionnaire.QuestionnaireItemComponent item, FieldGroup parent, String diseaseCode) {
-    final Props props = Props.builder().required(item.getRequired()).label(item.getText()).build();
+    final Props props =
+        Props.builder()
+            .required(item.getRequired())
+            .label(item.getText())
+            .tooltip(tooltipExtension.getStringValueOrNull(item))
+            .build();
     final var fieldGroup =
         FieldGroup.builder()
             .type(FieldGroup.TYPE_TEXT_AREA)

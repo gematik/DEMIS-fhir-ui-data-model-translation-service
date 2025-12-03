@@ -2,6 +2,9 @@
  
 # Release notes
 
+## 2.3.3
+- upgrade fhir-package-initializer to 1.0.5 for faster package loading
+
 ## 2.3.2
 - add feature flag feature.flag.snapshot.6.active to additional service
 
@@ -12,6 +15,7 @@
 - updaded version of Notification Builder to 8.0.0
 - derived datepicker precision from regex in strict disease profile (only for the dynamically built part of the form)
 - added support of FHIR packages through new Docker base image (FHIR package initializer)
+- added tooltip integration from FHIR structure definitions to disease formly forms
 - integrated FHIR profile files of R4 terminology and DEMIS test notification category GAPP
 - add new endpoint to retrieve all notification categories for §7.1 notifications
 - add code to quantity formly representation

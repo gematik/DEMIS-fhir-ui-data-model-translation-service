@@ -2,11 +2,11 @@
   "resourceType": "Questionnaire",
   "id": "DiseaseQuestionsMSVD",
   "url": "https://demis.rki.de/fhir/Questionnaire/DiseaseQuestionsMSVD",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "name": "DiseaseQuestionsMSVD",
   "title": "Masern: spezifische klinische und epidemiologische Angaben",
   "status": "active",
-  "date": "2025-09-01",
+  "date": "2025-10-18",
   "publisher": "Robert Koch-Institut",
   "contact": [
     {

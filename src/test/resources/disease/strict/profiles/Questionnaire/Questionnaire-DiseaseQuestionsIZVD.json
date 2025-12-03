@@ -2,11 +2,11 @@
   "resourceType": "Questionnaire",
   "id": "DiseaseQuestionsIZVD",
   "url": "https://demis.rki.de/fhir/Questionnaire/DiseaseQuestionsIZVD",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "name": "DiseaseQuestionsIZVD",
   "title": "Zoonotische Influenza: spezifische klinische und epidemiologische Angaben",
   "status": "active",
-  "date": "2025-09-01",
+  "date": "2025-10-18",
   "publisher": "Robert Koch-Institut",
   "contact": [
     {
@@ -78,8 +78,8 @@
               "question": "immunization",
               "operator": "=",
               "answerCoding": {
-                "system": "https://demis.rki.de/fhir/CodeSystem/yesOrNoAnswer",
-                "code": "yes"
+                "system": "http://snomed.info/sct",
+                "code": "373066001"
               }
             }
           ],
@@ -142,8 +142,8 @@
               "question": "pregnancy",
               "operator": "=",
               "answerCoding": {
-                "system": "https://demis.rki.de/fhir/CodeSystem/yesOrNoAnswer",
-                "code": "yes"
+                "system": "http://snomed.info/sct",
+                "code": "373066001"
               }
             }
           ],
@@ -264,8 +264,8 @@
               "question": "therapy",
               "operator": "=",
               "answerCoding": {
-                "system": "https://demis.rki.de/fhir/CodeSystem/yesOrNoAnswer",
-                "code": "yes"
+                "system": "http://snomed.info/sct",
+                "code": "373066001"
               }
             }
           ],
@@ -314,8 +314,8 @@
               "question": "outbreak",
               "operator": "=",
               "answerCoding": {
-                "system": "https://demis.rki.de/fhir/CodeSystem/yesOrNoAnswer",
-                "code": "yes"
+                "system": "http://snomed.info/sct",
+                "code": "373066001"
               }
             }
           ],
@@ -331,8 +331,8 @@
               "question": "outbreak",
               "operator": "=",
               "answerCoding": {
-                "system": "https://demis.rki.de/fhir/CodeSystem/yesOrNoAnswer",
-                "code": "yes"
+                "system": "http://snomed.info/sct",
+                "code": "373066001"
               }
             }
           ],

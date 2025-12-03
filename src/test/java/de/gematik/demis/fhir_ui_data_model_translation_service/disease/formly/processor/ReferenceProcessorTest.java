@@ -30,6 +30,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.verifyNoInteractions;
 
+import de.gematik.demis.fhir_ui_data_model_translation_service.disease.formly.fhir.TooltipExtension;
 import de.gematik.demis.fhir_ui_data_model_translation_service.disease.formly.model.FieldGroup;
 import de.gematik.demis.fhir_ui_data_model_translation_service.disease.formly.processor.resources.HospitalizationProcessor;
 import de.gematik.demis.fhir_ui_data_model_translation_service.disease.formly.processor.resources.ImmunizationProcessor;
@@ -52,6 +53,7 @@ class ReferenceProcessorTest {
   @Mock private HospitalizationProcessor hospitalizationProcessorMock;
   @Mock private OrganizationProcessor organizationProcessorMock;
   @Mock private EnableWhenProcessor enableWhenProcessor;
+  @Mock private TooltipExtension tooltipExtension;
 
   @InjectMocks private ReferenceProcessor referenceProcessor;
 

@@ -26,6 +26,7 @@ package de.gematik.demis.fhir_ui_data_model_translation_service.disease.formly.p
  * #L%
  */
 
+import de.gematik.demis.fhir_ui_data_model_translation_service.disease.formly.fhir.TooltipExtension;
 import de.gematik.demis.fhir_ui_data_model_translation_service.disease.formly.model.FieldGroup;
 import de.gematik.demis.fhir_ui_data_model_translation_service.disease.formly.model.Props;
 import de.gematik.demis.fhir_ui_data_model_translation_service.disease.formly.processor.resources.HospitalizationProcessor;
@@ -54,6 +55,7 @@ public class ReferenceProcessor implements ItemProcessor {
   private final HospitalizationProcessor hospitalizationProcessor;
   private final OrganizationProcessor organizationProcessor;
   private final EnableWhenProcessor enableWhenProcessor;
+  private final TooltipExtension tooltipExtension;
 
   private static String extractReferenceType(Extension extension) {
     Type value = extension.getValue();
@@ -113,7 +115,12 @@ public class ReferenceProcessor implements ItemProcessor {
             .key("valueReference")
             .type(FieldGroup.TYPE_INPUT)
             .parent(parent)
-            .props(Props.builder().required(item.getRequired()).label(item.getText()).build())
+            .props(
+                Props.builder()
+                    .required(item.getRequired())
+                    .label(item.getText())
+                    .tooltip(tooltipExtension.getStringValueOrNull(item))
+                    .build())
             .className("LinkId_" + item.getLinkId())
             .build();
     this.enableWhenProcessor.createEnableWhens(item, fieldGroupValueString);

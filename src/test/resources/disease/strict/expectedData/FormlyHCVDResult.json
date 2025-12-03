@@ -6479,7 +6479,7 @@
                       {
                         "path": "parent.parent",
                         "op": "=",
-                        "value": "yes"
+                        "value": "373066001"
                       }
                     ]
                   },
@@ -6503,7 +6503,7 @@
                       {
                         "path": "parent.parent",
                         "op": "=",
-                        "value": "yes"
+                        "value": "373066001"
                       }
                     ]
                   },
@@ -13913,7 +13913,8 @@
                 "required": true,
                 "clearable": true,
                 "defaultCode": "1631000175102",
-                "label": "Ist die betroffene Person in einer für den Infektionsschutz relevanten Einrichtung tätig, betreut oder untergebracht? (Die für den Infektionsschutz relevanten Einrichtungen sind im Infektionsschutzgesetz definiert. Dazu zählen u.a. Einrichtungen gemäß § 23 IfSG (z.B. Krankenhäuser, ärztliche Praxen, Dialyseeinrichtungen und Rettungsdienste), gemäß § 33 IfSG (z.B. Kitas, Kinderhorte, Schulen, Heime und Ferienlager) und gemäß §§ 35-36 IfSG (Pflegeeinrichtungen, Obdachlosunterkünfte, Einrichtungen zur gemeinschaftlichen Unterbringung von Asylsuchenden, sonstige Massenunterkünfte, Justizvollzugsanstalten).)",
+                "label": "Ist die betroffene Person in einer für den Infektionsschutz relevanten Einrichtung tätig, betreut oder untergebracht?",
+                "tooltip": "Die für den Infektionsschutz relevanten Einrichtungen sind im Infektionsschutzgesetz definiert. Dazu zählen u.a. Einrichtungen gemäß § 23 IfSG (z.B. Krankenhäuser, ärztliche Praxen, Dialyseeinrichtungen und Rettungsdienste), gemäß § 33 IfSG (z.B. Kitas, Kinderhorte, Schulen, Heime und Ferienlager) und gemäß §§ 35-36 IfSG (Pflegeeinrichtungen, Obdachlosunterkünfte, Einrichtungen zur gemeinschaftlichen Unterbringung von Asylsuchenden, sonstige Massenunterkünfte, Justizvollzugsanstalten).",
                 "importSpec": {
                   "importKey": "C.IPF",
                   "multi": false
