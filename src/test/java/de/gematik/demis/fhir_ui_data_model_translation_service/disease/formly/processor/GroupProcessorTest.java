@@ -28,7 +28,7 @@ package de.gematik.demis.fhir_ui_data_model_translation_service.disease.formly.p
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-import de.gematik.demis.fhir_ui_data_model_translation_service.FeatureFlags;
+import de.gematik.demis.fhir_ui_data_model_translation_service.disease.formly.fhir.TooltipExtension;
 import de.gematik.demis.fhir_ui_data_model_translation_service.disease.formly.model.EnableWhen;
 import de.gematik.demis.fhir_ui_data_model_translation_service.disease.formly.model.FieldGroup;
 import java.util.Collections;
@@ -39,7 +39,7 @@ import org.junit.jupiter.api.Test;
 class GroupProcessorTest {
 
   private final GroupProcessor groupProcessor =
-      new GroupProcessor(new EnableWhenProcessor(), FeatureFlags.builder().build());
+      new GroupProcessor(new EnableWhenProcessor(), new TooltipExtension());
 
   @Test
   void createFieldGroup_withNullItem_shouldHandleCorrectly() {

@@ -45,6 +45,7 @@ public class Props {
   private String placeholder;
   private String itemName;
   private String label;
+  private String tooltip;
   private EnableWhen[] enableWhen;
   private Questionnaire.EnableWhenBehavior enableBehavior;
   private ImportSpec importSpec;
@@ -69,7 +70,7 @@ public class Props {
    * step = 0.001
    * </pre>
    *
-   * So that (0.200, 0.300)
+   * <p>So that (0.200, 0.300)
    */
   private BigDecimal step; // BigDecimal can be null; float/double can't be
 

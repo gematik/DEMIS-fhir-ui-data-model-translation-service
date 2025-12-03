@@ -29,7 +29,7 @@ package de.gematik.demis.fhir_ui_data_model_translation_service.disease.formly.p
 import static de.gematik.demis.fhir_ui_data_model_translation_service.disease.formly.model.Wrapper.PANEL;
 import static org.springframework.util.ObjectUtils.isEmpty;
 
-import de.gematik.demis.fhir_ui_data_model_translation_service.FeatureFlags;
+import de.gematik.demis.fhir_ui_data_model_translation_service.disease.formly.fhir.TooltipExtension;
 import de.gematik.demis.fhir_ui_data_model_translation_service.disease.formly.model.FieldGroup;
 import de.gematik.demis.fhir_ui_data_model_translation_service.disease.formly.model.Props;
 import java.util.List;
@@ -42,7 +42,7 @@ import org.springframework.stereotype.Component;
 public class GroupProcessor implements ItemProcessor {
 
   private final EnableWhenProcessor enableWhenProcessor;
-  private final FeatureFlags featureFlags;
+  private final TooltipExtension tooltipExtension;
 
   @Override
   public FieldGroup[] createFieldGroup(
@@ -61,7 +61,11 @@ public class GroupProcessor implements ItemProcessor {
             .parent(parent);
 
     if (!isEmpty(label)) {
-      fieldGroupBuilder.props(Props.builder().label(label).build());
+      fieldGroupBuilder.props(
+          Props.builder()
+              .label(label)
+              .tooltip(tooltipExtension.getStringValueOrNull(item))
+              .build());
       fieldGroupBuilder.wrappers(List.of(PANEL));
     }
     FieldGroup fieldGroupForGroupComponent = fieldGroupBuilder.build();

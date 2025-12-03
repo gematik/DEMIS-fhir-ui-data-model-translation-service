@@ -2,11 +2,11 @@
   "resourceType": "Questionnaire",
   "id": "DiseaseQuestionsCommon",
   "url": "https://demis.rki.de/fhir/Questionnaire/DiseaseQuestionsCommon",
-  "version": "1.4.1",
+  "version": "1.4.2",
   "name": "DiseaseQuestionsCommon",
   "title": "Fragebogen für meldetatbestandsübergreifende klinische und epidemiologische Angaben",
   "status": "active",
-  "date": "2025-09-01",
+  "date": "2025-10-18",
   "publisher": "Robert Koch-Institut",
   "contact": [
     {
@@ -269,11 +269,11 @@
         },
         {
           "url": "http://hl7.org/fhir/StructureDefinition/entryFormat",
-          "valueString": "(Die für den Infektionsschutz relevanten Einrichtungen sind im Infektionsschutzgesetz definiert. Dazu zählen u.a. Einrichtungen gemäß § 23 IfSG (z.B. Krankenhäuser, ärztliche Praxen, Dialyseeinrichtungen und Rettungsdienste), gemäß § 33 IfSG (z.B. Kitas, Kinderhorte, Schulen, Heime und Ferienlager) und gemäß §§ 35-36 IfSG (Pflegeeinrichtungen, Obdachlosunterkünfte, Einrichtungen zur gemeinschaftlichen Unterbringung von Asylsuchenden, sonstige Massenunterkünfte, Justizvollzugsanstalten).)"
+          "valueString": "Die für den Infektionsschutz relevanten Einrichtungen sind im Infektionsschutzgesetz definiert. Dazu zählen u.a. Einrichtungen gemäß § 23 IfSG (z.B. Krankenhäuser, ärztliche Praxen, Dialyseeinrichtungen und Rettungsdienste), gemäß § 33 IfSG (z.B. Kitas, Kinderhorte, Schulen, Heime und Ferienlager) und gemäß §§ 35-36 IfSG (Pflegeeinrichtungen, Obdachlosunterkünfte, Einrichtungen zur gemeinschaftlichen Unterbringung von Asylsuchenden, sonstige Massenunterkünfte, Justizvollzugsanstalten)."
         }
       ],
       "linkId": "infectProtectFacility",
-      "text": "Ist die betroffene Person in einer für den Infektionsschutz relevanten Einrichtung tätig, betreut oder untergebracht? (Die für den Infektionsschutz relevanten Einrichtungen sind im Infektionsschutzgesetz definiert. Dazu zählen u.a. Einrichtungen gemäß § 23 IfSG (z.B. Krankenhäuser, ärztliche Praxen, Dialyseeinrichtungen und Rettungsdienste), gemäß § 33 IfSG (z.B. Kitas, Kinderhorte, Schulen, Heime und Ferienlager) und gemäß §§ 35-36 IfSG (Pflegeeinrichtungen, Obdachlosunterkünfte, Einrichtungen zur gemeinschaftlichen Unterbringung von Asylsuchenden, sonstige Massenunterkünfte, Justizvollzugsanstalten).)",
+      "text": "Ist die betroffene Person in einer für den Infektionsschutz relevanten Einrichtung tätig, betreut oder untergebracht?",
       "type": "choice",
       "required": true,
       "answerValueSet": "https://demis.rki.de/fhir/ValueSet/yesOrNoOrNoInformation",

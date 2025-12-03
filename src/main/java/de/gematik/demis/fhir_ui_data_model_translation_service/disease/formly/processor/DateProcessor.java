@@ -29,11 +29,12 @@ package de.gematik.demis.fhir_ui_data_model_translation_service.disease.formly.p
 import static de.gematik.demis.fhir_ui_data_model_translation_service.disease.formly.model.Wrapper.FORM_FIELD;
 
 import de.gematik.demis.fhir_ui_data_model_translation_service.FeatureFlags;
+import de.gematik.demis.fhir_ui_data_model_translation_service.disease.formly.fhir.RegexExtension;
+import de.gematik.demis.fhir_ui_data_model_translation_service.disease.formly.fhir.TooltipExtension;
 import de.gematik.demis.fhir_ui_data_model_translation_service.disease.formly.fieldtypes.DatePicker;
 import de.gematik.demis.fhir_ui_data_model_translation_service.disease.formly.model.FieldGroup;
 import de.gematik.demis.fhir_ui_data_model_translation_service.disease.formly.model.Props;
 import java.util.List;
-import java.util.Optional;
 import lombok.RequiredArgsConstructor;
 import org.hl7.fhir.r4.model.Questionnaire;
 import org.springframework.stereotype.Service;
@@ -43,10 +44,11 @@ import org.springframework.stereotype.Service;
 @RequiredArgsConstructor
 public class DateProcessor implements ItemProcessor {
 
-  private static final String REGEX_EXTENSION_URL = "http://hl7.org/fhir/StructureDefinition/regex";
   private final EnableWhenProcessor enableWhenProcessor;
   private final ClipboardProcessor clipboardProcessor;
   private final FeatureFlags featureFlags;
+  private final RegexExtension regexExtension;
+  private final TooltipExtension tooltipExtension;
 
   @Override
   public FieldGroup[] createFieldGroup(
@@ -57,8 +59,9 @@ public class DateProcessor implements ItemProcessor {
       fieldGroup =
           DatePicker.builder()
               .label(item.getText())
+              .tooltip(tooltipExtension.getStringValueOrNull(item))
               .required(item.hasRequired() ? item.getRequired() : null)
-              .allowedPrecisionsFromRegex(getPrecisionRegexFromExtension(item))
+              .allowedPrecisionsFromRegex(regexExtension.getStringValueOrNull(item))
               .parent(parent)
               .className("LinkId_" + item.getLinkId())
               .build()
@@ -81,13 +84,5 @@ public class DateProcessor implements ItemProcessor {
 
   private Props createProperties(Questionnaire.QuestionnaireItemComponent item) {
     return Props.builder().placeholder("TT.MM.JJJJ | MM.JJJJ | JJJJ").label(item.getText()).build();
-  }
-
-  private String getPrecisionRegexFromExtension(Questionnaire.QuestionnaireItemComponent item) {
-    return Optional.ofNullable(item.getExtension()).orElse(List.of()).stream()
-        .filter(ext -> REGEX_EXTENSION_URL.equals(ext.getUrl()))
-        .map(ext -> ext.getValue().toString())
-        .findFirst()
-        .orElse(null);
   }
 }

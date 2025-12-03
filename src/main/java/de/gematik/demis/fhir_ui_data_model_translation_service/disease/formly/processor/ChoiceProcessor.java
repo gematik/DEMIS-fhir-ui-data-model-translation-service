@@ -28,6 +28,7 @@ package de.gematik.demis.fhir_ui_data_model_translation_service.disease.formly.p
 
 import static de.gematik.demis.fhir_ui_data_model_translation_service.disease.formly.model.Wrapper.FORM_FIELD;
 
+import de.gematik.demis.fhir_ui_data_model_translation_service.disease.formly.fhir.TooltipExtension;
 import de.gematik.demis.fhir_ui_data_model_translation_service.disease.formly.model.FieldGroup;
 import de.gematik.demis.fhir_ui_data_model_translation_service.disease.formly.model.Props;
 import de.gematik.demis.fhir_ui_data_model_translation_service.model.CodeDisplay;
@@ -53,6 +54,7 @@ public class ChoiceProcessor implements ItemProcessor {
   private final EnableWhenProcessor enableWhenProcessor;
   private final DataLoaderSrv dataLoaderSrv;
   private final ClipboardProcessor clipboardProcessor;
+  private final TooltipExtension tooltipExtension;
 
   /**
    * Enables value coding validation if key and type of field group describe an autocomplete-coding
@@ -112,6 +114,7 @@ public class ChoiceProcessor implements ItemProcessor {
         .clearable(true)
         .defaultCode(getInitialValue(item))
         .label(item.getText())
+        .tooltip(tooltipExtension.getStringValueOrNull(item))
         .build();
   }
 

@@ -28,6 +28,7 @@ package de.gematik.demis.fhir_ui_data_model_translation_service.disease.formly.p
 
 import static de.gematik.demis.fhir_ui_data_model_translation_service.disease.formly.model.Wrapper.FORM_FIELD;
 
+import de.gematik.demis.fhir_ui_data_model_translation_service.disease.formly.fhir.TooltipExtension;
 import de.gematik.demis.fhir_ui_data_model_translation_service.disease.formly.model.FieldGroup;
 import de.gematik.demis.fhir_ui_data_model_translation_service.disease.formly.model.Props;
 import java.math.BigDecimal;
@@ -52,16 +53,19 @@ public class QuantityProcessor implements ItemProcessor {
   private final ClipboardProcessor clipboardProcessor;
   private final QuantityBoundProcessor quantityBoundProcessor;
   private final boolean is73Enabled;
+  private final TooltipExtension tooltipExtension;
 
   QuantityProcessor(
       final EnableWhenProcessor enableWhenProcessor,
       final ClipboardProcessor clipboardProcessor,
       final QuantityBoundProcessor quantityBoundProcessor,
-      @Value("${feature.flag.notifications.7_3}") final boolean is73Enabled) {
+      @Value("${feature.flag.notifications.7_3}") final boolean is73Enabled,
+      final TooltipExtension tooltipExtension) {
     this.enableWhenProcessor = enableWhenProcessor;
     this.clipboardProcessor = clipboardProcessor;
     this.quantityBoundProcessor = quantityBoundProcessor;
     this.is73Enabled = is73Enabled;
+    this.tooltipExtension = tooltipExtension;
   }
 
   // URL for the unit extension in FHIR Questionnaire items.
@@ -118,6 +122,7 @@ public class QuantityProcessor implements ItemProcessor {
     final Props.PropsBuilder propsBuilder =
         Props.builder()
             .label(item.getText()) // Sets the label for the field group.
+            .tooltip(tooltipExtension.getStringValueOrNull(item))
             .required(item.getRequired()) // Indicates whether the field is required.
             .quantity(extractQuantity(item)); // Extracts quantity information from the item.
 

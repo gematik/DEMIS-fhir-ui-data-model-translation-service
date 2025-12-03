@@ -2,11 +2,11 @@
   "resourceType": "Questionnaire",
   "id": "DiseaseQuestionsHCVD",
   "url": "https://demis.rki.de/fhir/Questionnaire/DiseaseQuestionsHCVD",
-  "version": "1.4.1",
+  "version": "1.4.2",
   "name": "DiseaseQuestionsHCVD",
   "title": "Hepatitis C: spezifische klinische und epidemiologische Angaben",
   "status": "active",
-  "date": "2025-09-01",
+  "date": "2025-10-18",
   "publisher": "Robert Koch-Institut",
   "contact": [
     {
@@ -614,8 +614,8 @@
               "question": "outbreak",
               "operator": "=",
               "answerCoding": {
-                "system": "https://demis.rki.de/fhir/CodeSystem/yesOrNoAnswer",
-                "code": "yes"
+                "system": "http://snomed.info/sct",
+                "code": "373066001"
               }
             }
           ],
@@ -631,8 +631,8 @@
               "question": "outbreak",
               "operator": "=",
               "answerCoding": {
-                "system": "https://demis.rki.de/fhir/CodeSystem/yesOrNoAnswer",
-                "code": "yes"
+                "system": "http://snomed.info/sct",
+                "code": "373066001"
               }
             }
           ],
