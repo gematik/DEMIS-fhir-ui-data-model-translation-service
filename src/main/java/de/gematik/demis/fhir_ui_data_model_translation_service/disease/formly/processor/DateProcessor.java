@@ -22,19 +22,15 @@ package de.gematik.demis.fhir_ui_data_model_translation_service.disease.formly.p
  *
  * *******
  *
- * For additional notes and disclaimer from gematik and in case of changes by gematik find details in the "Readme" file.
+ * For additional notes and disclaimer from gematik and in case of changes by gematik,
+ * find details in the "Readme" file.
  * #L%
  */
 
-import static de.gematik.demis.fhir_ui_data_model_translation_service.disease.formly.model.Wrapper.FORM_FIELD;
-
-import de.gematik.demis.fhir_ui_data_model_translation_service.FeatureFlags;
 import de.gematik.demis.fhir_ui_data_model_translation_service.disease.formly.fhir.RegexExtension;
 import de.gematik.demis.fhir_ui_data_model_translation_service.disease.formly.fhir.TooltipExtension;
 import de.gematik.demis.fhir_ui_data_model_translation_service.disease.formly.fieldtypes.DatePicker;
 import de.gematik.demis.fhir_ui_data_model_translation_service.disease.formly.model.FieldGroup;
-import de.gematik.demis.fhir_ui_data_model_translation_service.disease.formly.model.Props;
-import java.util.List;
 import lombok.RequiredArgsConstructor;
 import org.hl7.fhir.r4.model.Questionnaire;
 import org.springframework.stereotype.Service;
@@ -46,43 +42,25 @@ public class DateProcessor implements ItemProcessor {
 
   private final EnableWhenProcessor enableWhenProcessor;
   private final ClipboardProcessor clipboardProcessor;
-  private final FeatureFlags featureFlags;
   private final RegexExtension regexExtension;
   private final TooltipExtension tooltipExtension;
 
   @Override
   public FieldGroup[] createFieldGroup(
       Questionnaire.QuestionnaireItemComponent item, FieldGroup parent, String diseaseCode) {
-    final FieldGroup fieldGroup;
+    final FieldGroup fieldGroup =
+        DatePicker.builder()
+            .label(item.getText())
+            .tooltip(tooltipExtension.getStringValueOrNull(item))
+            .required(item.hasRequired() ? item.getRequired() : null)
+            .allowedPrecisionsFromRegex(regexExtension.getStringValueOrNull(item))
+            .parent(parent)
+            .className("LinkId_" + item.getLinkId())
+            .build()
+            .createFieldGroup();
 
-    if (featureFlags.isDiseaseDatePicker()) {
-      fieldGroup =
-          DatePicker.builder()
-              .label(item.getText())
-              .tooltip(tooltipExtension.getStringValueOrNull(item))
-              .required(item.hasRequired() ? item.getRequired() : null)
-              .allowedPrecisionsFromRegex(regexExtension.getStringValueOrNull(item))
-              .parent(parent)
-              .className("LinkId_" + item.getLinkId())
-              .build()
-              .createFieldGroup();
-    } else {
-      fieldGroup =
-          FieldGroup.builder()
-              .type(FieldGroup.TYPE_INPUT)
-              .props(createProperties(item))
-              .key("valueDate")
-              .parent(parent)
-              .wrappers(List.of(FORM_FIELD))
-              .className("LinkId_" + item.getLinkId())
-              .build();
-    }
     this.enableWhenProcessor.createEnableWhens(item, fieldGroup);
     this.clipboardProcessor.createClipboard(item, fieldGroup);
     return new FieldGroup[] {fieldGroup};
-  }
-
-  private Props createProperties(Questionnaire.QuestionnaireItemComponent item) {
-    return Props.builder().placeholder("TT.MM.JJJJ | MM.JJJJ | JJJJ").label(item.getText()).build();
   }
 }

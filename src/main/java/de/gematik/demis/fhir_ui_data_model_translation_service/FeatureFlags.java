@@ -22,7 +22,8 @@ package de.gematik.demis.fhir_ui_data_model_translation_service;
  *
  * *******
  *
- * For additional notes and disclaimer from gematik and in case of changes by gematik find details in the "Readme" file.
+ * For additional notes and disclaimer from gematik and in case of changes by gematik,
+ * find details in the "Readme" file.
  * #L%
  */
 
@@ -37,5 +38,4 @@ public class FeatureFlags {
 
   private boolean moveHospitalizationReason;
   private boolean diseaseStrict;
-  private boolean diseaseDatePicker;
 }

@@ -277,10 +277,10 @@
         },
         {
           "code": "mybd",
-          "display": "Behandlungsabbruch Tuberkulose",
+          "display": "Tuberkulose, bei Behandlungsabbruch",
           "target": [
             {
-              "code": "myb",
+              "code": "myt",
               "equivalence": "relatedto"
             }
           ]

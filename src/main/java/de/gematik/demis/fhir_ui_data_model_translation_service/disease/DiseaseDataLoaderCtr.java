@@ -22,7 +22,8 @@ package de.gematik.demis.fhir_ui_data_model_translation_service.disease;
  *
  * *******
  *
- * For additional notes and disclaimer from gematik and in case of changes by gematik find details in the "Readme" file.
+ * For additional notes and disclaimer from gematik and in case of changes by gematik,
+ * find details in the "Readme" file.
  * #L%
  */
 
@@ -32,6 +33,7 @@ import de.gematik.demis.fhir_ui_data_model_translation_service.model.CodeDisplay
 import de.gematik.demis.notification.builder.demis.fhir.notification.types.NotificationCategory;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpStatus;
@@ -45,13 +47,16 @@ import org.springframework.web.server.ResponseStatusException;
 public class DiseaseDataLoaderCtr {
 
   private final DiseaseDataLoaderSrv diseaseDataLoaderSrv;
+  private final DiseaseFollowupSrv diseaseFollowupSrv;
   private final boolean isNotification73Active;
 
   public DiseaseDataLoaderCtr(
       DiseaseDataLoaderSrv diseaseDataLoaderSrv,
+      DiseaseFollowupSrv diseaseFollowupSrv,
       @Value("${feature.flag.notifications.7_3}") boolean isNotification73Active) {
     this.diseaseDataLoaderSrv = diseaseDataLoaderSrv;
     this.isNotification73Active = isNotification73Active;
+    this.diseaseFollowupSrv = diseaseFollowupSrv;
   }
 
   @GetMapping("/disease/questionnaire/{code}/items")
@@ -68,6 +73,11 @@ public class DiseaseDataLoaderCtr {
   @GetMapping({"/disease", "/disease/6.1"})
   public List<CodeDisplay> getAllAvailableCodes() {
     return diseaseDataLoaderSrv.getAllPossibleDiseaseCodes();
+  }
+
+  @GetMapping({"/disease/6.1/followup/{code}"})
+  public Set<CodeDisplay> getPossibleDiseaseCodesForFollowUp(@PathVariable String code) {
+    return diseaseFollowupSrv.getPossibleDiseaseCodesForFollowUp(code);
   }
 
   @GetMapping({"/disease/7.3"})

@@ -22,7 +22,8 @@ package de.gematik.demis.fhir_ui_data_model_translation_service.disease.formly.p
  *
  * *******
  *
- * For additional notes and disclaimer from gematik and in case of changes by gematik find details in the "Readme" file.
+ * For additional notes and disclaimer from gematik and in case of changes by gematik,
+ * find details in the "Readme" file.
  * #L%
  */
 
@@ -107,30 +108,15 @@ public class ImmunizationProcessor {
             .fieldGroupClassName(REF_ELEMENT)
             .parent(parent)
             .build();
-    if (featureFlags.isDiseaseDatePicker()) {
-      DatePicker.builder()
-          .label("Datum der Impfung")
-          .required(true)
-          .maxDateNotInFuture(true)
-          .key(DiseaseProcessor.DATE_PICKER_KEY_ANSWER)
-          .parent(occurrence)
-          .className("vaccinationDate")
-          .build()
-          .createFieldGroup();
-    } else {
-      FieldGroup.builder()
-          .key("answer.valueDate")
-          .className("vaccinationDate")
-          .type(FieldGroup.TYPE_INPUT)
-          .parent(occurrence)
-          .props(
-              Props.builder()
-                  .required(true)
-                  .label("Datum der Impfung")
-                  .placeholder("TT.MM.JJJJ | MM.JJJJ | JJJJ")
-                  .build())
-          .build();
-    }
+    DatePicker.builder()
+        .label("Datum der Impfung")
+        .required(true)
+        .maxDateNotInFuture(true)
+        .key(DiseaseProcessor.DATE_PICKER_KEY_ANSWER)
+        .parent(occurrence)
+        .className("vaccinationDate")
+        .build()
+        .createFieldGroup();
   }
 
   private void createNote(FieldGroup parent) {

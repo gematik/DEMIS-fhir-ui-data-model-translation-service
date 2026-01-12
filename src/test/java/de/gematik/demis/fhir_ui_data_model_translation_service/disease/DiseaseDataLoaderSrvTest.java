@@ -22,7 +22,8 @@ package de.gematik.demis.fhir_ui_data_model_translation_service.disease;
  *
  * *******
  *
- * For additional notes and disclaimer from gematik and in case of changes by gematik find details in the "Readme" file.
+ * For additional notes and disclaimer from gematik and in case of changes by gematik,
+ * find details in the "Readme" file.
  * #L%
  */
 
@@ -32,7 +33,9 @@ import static org.mockito.Mockito.when;
 
 import de.gematik.demis.fhir_ui_data_model_translation_service.disease.formly.DiseaseDataPreparationSrv;
 import de.gematik.demis.fhir_ui_data_model_translation_service.disease.formly.model.QuestionnaireTranslation;
+import de.gematik.demis.fhir_ui_data_model_translation_service.model.CodeDisplay;
 import de.gematik.demis.fhir_ui_data_model_translation_service.objects.QuestionTextMap;
+import java.util.List;
 import java.util.Map;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -75,5 +78,49 @@ class DiseaseDataLoaderSrvTest {
     QuestionnaireTranslation questions =
         diseaseDataLoaderSrv.getQuestionnaireTranslations("testCode");
     assertThat(questions).isEqualTo(expecetedMap);
+  }
+
+  @Test
+  void shouldReturnCodeDisplayIfCodeExists() {
+    CodeDisplay cd1 = CodeDisplay.builder().code("msvd").display("Masern").build();
+    CodeDisplay cd2 =
+        CodeDisplay.builder().code("neid").display("Meningokokken, invasive Erkrankung").build();
+    CodeDisplay cd3 = CodeDisplay.builder().code("pkvd").display("Pocken").build();
+
+    initDiseaseDataLoaderSrvWithCategories(List.of(cd1, cd2, cd3));
+
+    var result = diseaseDataLoaderSrv.getCodeDisplay("msvd");
+
+    assertThat(result).contains(cd1);
+  }
+
+  @Test
+  void shouldReturnEmptyIfCategoriesAreEmpty() {
+    initDiseaseDataLoaderSrvWithCategories(List.of());
+    var result = diseaseDataLoaderSrv.getCodeDisplay("msvd");
+    assertThat(result).isEmpty();
+  }
+
+  @Test
+  void shouldReturnEmptyIfNotificationCategoryCodeDoesNotExist() {
+    CodeDisplay cd1 = CodeDisplay.builder().code("msvd").display("Masern").build();
+    CodeDisplay cd2 =
+        CodeDisplay.builder().code("neid").display("Meningokokken, invasive Erkrankung").build();
+    initDiseaseDataLoaderSrvWithCategories(List.of(cd1, cd2));
+
+    var result = diseaseDataLoaderSrv.getCodeDisplay("invp");
+    assertThat(result).isEmpty();
+  }
+
+  private void initDiseaseDataLoaderSrvWithCategories(List<CodeDisplay> categories) {
+    when(diseaseNotificationCategoriesSrvMock.getCategories()).thenReturn(categories);
+    when(diseaseNotificationCategoriesSrvRegressionMock.getCategories()).thenReturn(categories);
+    diseaseDataLoaderSrv =
+        new DiseaseDataLoaderSrv(
+            questionnairePreparationMock,
+            diseaseNotificationCategoriesSrvRegressionMock,
+            diseaseNotificationCategoriesSrvMock,
+            diseaseDataPreparationSrvMock);
+    diseaseDataLoaderSrv.init();
   }
 }

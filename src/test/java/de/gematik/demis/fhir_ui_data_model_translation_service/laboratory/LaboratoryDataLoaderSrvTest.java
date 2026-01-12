@@ -22,12 +22,14 @@ package de.gematik.demis.fhir_ui_data_model_translation_service.laboratory;
  *
  * *******
  *
- * For additional notes and disclaimer from gematik and in case of changes by gematik find details in the "Readme" file.
+ * For additional notes and disclaimer from gematik and in case of changes by gematik,
+ * find details in the "Readme" file.
  * #L%
  */
 
 import static java.util.Collections.emptyList;
 import static java.util.Collections.singletonList;
+import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.verifyNoInteractions;
@@ -144,5 +146,51 @@ class LaboratoryDataLoaderSrvTest {
 
     verify(federalStateNotificationCategoryDataMock).getFederalStateNotificationCategories();
     verifyNoInteractions(federalStateNotificationCategoryDataRegressionMock);
+  }
+
+  @Test
+  void shouldReturnNotificationCategoryIfCodeExists() {
+    CodeDisplay cd1 = CodeDisplay.builder().code("invp").display("Influenzavirus").build();
+    CodeDisplay cd2 = CodeDisplay.builder().code("gfvp").display("Gelbfiebervirus").build();
+
+    initTestObject();
+    when(labDataPreparationSrvMock.getNotificationCategories(PathogenNotificationCategory.P_7_1))
+        .thenReturn(List.of(cd1, cd2));
+
+    var result =
+        laboratoryDataLoaderSrv.getAvailableNotificationCategory(
+            "invp", PathogenNotificationCategory.P_7_1);
+
+    assertThat(result).contains(cd1);
+  }
+
+  @Test
+  void shouldThrowExceptionIfNotificationCategoriesAreEmpty() {
+    initTestObject();
+    when(labDataPreparationSrvMock.getNotificationCategories(PathogenNotificationCategory.P_7_1))
+        .thenReturn(List.of());
+
+    assertThatThrownBy(
+            () ->
+                laboratoryDataLoaderSrv.getAvailableNotificationCategory(
+                    "invp", PathogenNotificationCategory.P_7_1))
+        .isInstanceOf(DataNotFoundExcp.class)
+        .hasMessageContaining("No data found for code 7.1");
+  }
+
+  @Test
+  void shouldReturnEmptyIfNotificationCategoryCodeDoesNotExist() {
+    CodeDisplay cd1 = CodeDisplay.builder().code("invp").display("Influenzavirus").build();
+    CodeDisplay cd2 = CodeDisplay.builder().code("gfvp").display("Gelbfiebervirus").build();
+
+    initTestObject();
+    when(labDataPreparationSrvMock.getNotificationCategories(PathogenNotificationCategory.P_7_1))
+        .thenReturn(List.of(cd1, cd2));
+
+    var result =
+        laboratoryDataLoaderSrv.getAvailableNotificationCategory(
+            "msvd", PathogenNotificationCategory.P_7_1);
+
+    assertThat(result).isEmpty();
   }
 }

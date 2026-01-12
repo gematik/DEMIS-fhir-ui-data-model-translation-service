@@ -22,7 +22,8 @@ package de.gematik.demis.fhir_ui_data_model_translation_service.disease;
  *
  * *******
  *
- * For additional notes and disclaimer from gematik and in case of changes by gematik find details in the "Readme" file.
+ * For additional notes and disclaimer from gematik and in case of changes by gematik,
+ * find details in the "Readme" file.
  * #L%
  */
 
@@ -40,6 +41,7 @@ import org.mockito.junit.jupiter.MockitoExtension;
 class DiseaseDataLoaderCtrTest {
 
   @Mock private DiseaseDataLoaderSrv diseaseDataLoaderSrv;
+  @Mock private DiseaseFollowupSrv diseaseFollowupSrv;
 
   private DiseaseDataLoaderCtr diseaseDataLoaderCtr;
 
@@ -49,7 +51,8 @@ class DiseaseDataLoaderCtrTest {
 
     QuestionnaireTranslation exptectedData = QuestionnaireTranslation.builder().build();
     when(diseaseDataLoaderSrv.getQuestionnaireTranslations(code)).thenReturn(exptectedData);
-    diseaseDataLoaderCtr = new DiseaseDataLoaderCtr(diseaseDataLoaderSrv, false);
+    diseaseDataLoaderCtr =
+        new DiseaseDataLoaderCtr(diseaseDataLoaderSrv, diseaseFollowupSrv, false);
 
     QuestionnaireTranslation actualData = diseaseDataLoaderCtr.getQuestionsForSpecificCode(code);
 
@@ -59,7 +62,8 @@ class DiseaseDataLoaderCtrTest {
   @Test
   void shouldThrowExceptionForNotActive7_3Processing() {
 
-    diseaseDataLoaderCtr = new DiseaseDataLoaderCtr(diseaseDataLoaderSrv, false);
+    diseaseDataLoaderCtr =
+        new DiseaseDataLoaderCtr(diseaseDataLoaderSrv, diseaseFollowupSrv, false);
 
     assertThatThrownBy(() -> diseaseDataLoaderCtr.getAllAvailableCodesNonNominal())
         .isInstanceOf(UnsupportedOperationException.class)

@@ -22,13 +22,15 @@ package de.gematik.demis.fhir_ui_data_model_translation_service.laboratory;
  *
  * *******
  *
- * For additional notes and disclaimer from gematik and in case of changes by gematik find details in the "Readme" file.
+ * For additional notes and disclaimer from gematik and in case of changes by gematik,
+ * find details in the "Readme" file.
  * #L%
  */
 
 import de.gematik.demis.fhir_ui_data_model_translation_service.model.CodeDisplay;
 import java.util.List;
 import java.util.SequencedCollection;
+import java.util.Set;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -40,12 +42,15 @@ import org.springframework.web.bind.annotation.RestController;
 public class LaboratoryDataLoaderCtr {
 
   private final LaboratoryDataLoaderSrv laboratoryDataLoaderSrv;
+  private final LaboratoryFollowupSrv laboratoryFollowupSrv;
   private final boolean isNotification73Active;
 
   public LaboratoryDataLoaderCtr(
       LaboratoryDataLoaderSrv laboratoryDataLoaderSrv,
+      LaboratoryFollowupSrv laboratoryFollowupSrv,
       @Value("${feature.flag.notifications.7_3}") boolean isNotification73Active) {
     this.laboratoryDataLoaderSrv = laboratoryDataLoaderSrv;
+    this.laboratoryFollowupSrv = laboratoryFollowupSrv;
     this.isNotification73Active = isNotification73Active;
   }
 
@@ -73,6 +78,12 @@ public class LaboratoryDataLoaderCtr {
   public LabNotificationData getLaboratoryDataForSpecificCode(@PathVariable String code) {
     log.info("Get call for federal state pathogen data: {}", code);
     return laboratoryDataLoaderSrv.getDataForFederalPathogenCode(code);
+  }
+
+  @GetMapping({"/laboratory/7.1/followup/{code}"})
+  public Set<CodeDisplay> getPossibleLaboratoryCodesForFollowUp(@PathVariable String code) {
+    return laboratoryFollowupSrv.getPossibleLaboratoryCodesForFollowUp(
+        code, PathogenNotificationCategory.P_7_1);
   }
 
   @GetMapping("/laboratory/7.1")
