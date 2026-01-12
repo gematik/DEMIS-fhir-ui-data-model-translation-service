@@ -22,7 +22,8 @@ package de.gematik.demis.fhir_ui_data_model_translation_service.disease.formly.p
  *
  * *******
  *
- * For additional notes and disclaimer from gematik and in case of changes by gematik find details in the "Readme" file.
+ * For additional notes and disclaimer from gematik and in case of changes by gematik,
+ * find details in the "Readme" file.
  * #L%
  */
 
@@ -31,7 +32,6 @@ import static de.gematik.demis.fhir_ui_data_model_translation_service.disease.fo
 import static de.gematik.demis.fhir_ui_data_model_translation_service.disease.formly.model.Wrapper.FORM_FIELD;
 import static de.gematik.demis.fhir_ui_data_model_translation_service.disease.formly.processor.ClipboardProcessor.createClipboard;
 
-import de.gematik.demis.fhir_ui_data_model_translation_service.FeatureFlags;
 import de.gematik.demis.fhir_ui_data_model_translation_service.disease.formly.DiseaseClipboardProps;
 import de.gematik.demis.fhir_ui_data_model_translation_service.disease.formly.fieldtypes.DatePicker;
 import de.gematik.demis.fhir_ui_data_model_translation_service.disease.formly.model.*;
@@ -62,7 +62,6 @@ public class DiseaseProcessor {
 
   private final DataLoaderSrv dataLoaderSrv;
   private final DiseaseClipboardProps diseaseClipboardProps;
-  private final FeatureFlags featureFlags;
 
   public FieldGroup[] createFieldGroup(String diseaseCode) {
     List<FieldGroup> fieldGroups = new ArrayList<>();
@@ -82,66 +81,34 @@ public class DiseaseProcessor {
 
   private FieldGroup createDateOfDiagnosesFieldGroup() {
     FieldGroup diagnosisDate = FieldGroup.builder().key(LINK_ID_RECORDED_DATE).build();
-    final FieldGroup input;
-    if (featureFlags.isDiseaseDatePicker()) {
-      input =
-          DatePicker.builder()
-              .label("Datum Diagnosestellung")
-              .allowedPrecisions(List.of(DAY, MONTH))
-              .maxDateNotInFuture(true)
-              .key(DATE_PICKER_KEY_ANSWER)
-              .parent(diagnosisDate)
-              .className("LinkId_recordedDate")
-              .build()
-              .createFieldGroup();
-    } else {
-      input =
-          FieldGroup.builder()
-              .key("answer.valueDate")
-              .type(FieldGroup.TYPE_INPUT)
-              .parent(diagnosisDate)
-              .props(
-                  Props.builder()
-                      .label("Datum Diagnosestellung")
-                      .placeholder("TT.MM.JJJJ | MM.JJJJ | JJJJ")
-                      .build())
-              .wrappers(List.of(FORM_FIELD))
-              .className("LinkId_recordedDate")
-              .build();
-    }
+    final FieldGroup input =
+        DatePicker.builder()
+            .label("Datum Diagnosestellung")
+            .allowedPrecisions(List.of(DAY, MONTH))
+            .maxDateNotInFuture(true)
+            .key(DATE_PICKER_KEY_ANSWER)
+            .parent(diagnosisDate)
+            .className("LinkId_recordedDate")
+            .build()
+            .createFieldGroup();
+
     clipboardKey(LINK_ID_RECORDED_DATE).ifPresent(key -> createClipboard(key, false, input));
     return diagnosisDate;
   }
 
   private FieldGroup createDiseaseBeginnFieldGroup() {
     FieldGroup diseaseBegin = FieldGroup.builder().key(LINK_ID_ONSET).build();
-    final FieldGroup input;
-    if (featureFlags.isDiseaseDatePicker()) {
-      input =
-          DatePicker.builder()
-              .label("Erkrankungsbeginn")
-              .allowedPrecisions(List.of(DAY, MONTH))
-              .maxDateNotInFuture(true)
-              .key(DATE_PICKER_KEY_ANSWER)
-              .parent(diseaseBegin)
-              .className("LinkId_onset")
-              .build()
-              .createFieldGroup();
-    } else {
-      input =
-          FieldGroup.builder()
-              .key("answer.valueDate")
-              .type(FieldGroup.TYPE_INPUT)
-              .parent(diseaseBegin)
-              .props(
-                  Props.builder()
-                      .label("Erkrankungsbeginn")
-                      .placeholder("TT.MM.JJJJ | MM.JJJJ | JJJJ")
-                      .build())
-              .wrappers(List.of(FORM_FIELD))
-              .className("LinkId_onset")
-              .build();
-    }
+    final FieldGroup input =
+        DatePicker.builder()
+            .label("Erkrankungsbeginn")
+            .allowedPrecisions(List.of(DAY, MONTH))
+            .maxDateNotInFuture(true)
+            .key(DATE_PICKER_KEY_ANSWER)
+            .parent(diseaseBegin)
+            .className("LinkId_onset")
+            .build()
+            .createFieldGroup();
+
     this.diseaseClipboardProps.condition().keySet().stream()
         .filter(k -> k.endsWith(LINK_ID_ONSET))
         .findFirst()

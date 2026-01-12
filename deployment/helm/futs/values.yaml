@@ -39,7 +39,6 @@ customEnvVars:
   DATA_PATH_HL7_DATA_ROOT: "classpath:/fhir-profile-snapshots/r4"
   DATA_PATH_GAPP_DATA: "classpath:/fhir-profile-snapshots/GAPP"
   FEATURE_FLAG_NOTIFICATIONS_7_3: "false"
-  FEATURE_FLAG_DISEASE_DATEPICKER: "false"
   FEATURE_FLAG_DISEASE_STRICT: "false"
   FEATURE_FLAG_SNAPSHOT_6_ACTIVE: "false"
 

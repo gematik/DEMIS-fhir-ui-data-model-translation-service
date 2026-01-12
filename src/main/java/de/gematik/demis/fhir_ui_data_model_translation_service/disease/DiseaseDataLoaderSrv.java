@@ -22,7 +22,8 @@ package de.gematik.demis.fhir_ui_data_model_translation_service.disease;
  *
  * *******
  *
- * For additional notes and disclaimer from gematik and in case of changes by gematik find details in the "Readme" file.
+ * For additional notes and disclaimer from gematik and in case of changes by gematik,
+ * find details in the "Readme" file.
  * #L%
  */
 
@@ -121,14 +122,14 @@ public class DiseaseDataLoaderSrv {
   }
 
   /**
-   * Get the category by code
+   * get code and display value for given code
    *
    * @param code category code
-   * @return category
+   * @return Optional of CodeDisplay aka code and display value
    */
-  public Optional<CodeDisplay> getCategory(String code) {
-    return possibleDiseaseCodesRegresssion.stream()
-        .filter(c -> c.getCode().equals(code))
+  public Optional<CodeDisplay> getCodeDisplay(String code) {
+    return this.getAllPossibleDiseaseCodes().stream()
+        .filter(cd -> code.equals(cd.getCode()))
         .findFirst();
   }
 }

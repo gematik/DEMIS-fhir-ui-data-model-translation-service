@@ -22,7 +22,8 @@ package de.gematik.demis.fhir_ui_data_model_translation_service.disease.formly.p
  *
  * *******
  *
- * For additional notes and disclaimer from gematik and in case of changes by gematik find details in the "Readme" file.
+ * For additional notes and disclaimer from gematik and in case of changes by gematik,
+ * find details in the "Readme" file.
  * #L%
  */
 
@@ -140,34 +141,17 @@ public class HospitalizationProcessor {
             .fieldGroupClassName(REF_ELEMENT)
             .parent(parent)
             .build();
-    final FieldGroup input;
-    if (featureFlags.isDiseaseDatePicker()) {
-      input =
-          DatePicker.builder()
-              .label("Aufnahmedatum")
-              .required(true)
-              .allowedPrecisions(List.of(DAY, MONTH))
-              .maxDateNotInFuture(true)
-              .key(DiseaseProcessor.DATE_PICKER_KEY_ANSWER)
-              .parent(start)
-              .className("hospitalizationStartDate")
-              .build()
-              .createFieldGroup();
-    } else {
-      input =
-          FieldGroup.builder()
-              .key("answer.valueDate")
-              .className("hospitalizationStartDate")
-              .type(FieldGroup.TYPE_INPUT)
-              .parent(start)
-              .props(
-                  Props.builder()
-                      .required(true)
-                      .label("Aufnahmedatum")
-                      .placeholder("TT.MM.JJJJ | MM.JJJJ | JJJJ")
-                      .build())
-              .build();
-    }
+    final FieldGroup input =
+        DatePicker.builder()
+            .label("Aufnahmedatum")
+            .required(true)
+            .allowedPrecisions(List.of(DAY, MONTH))
+            .maxDateNotInFuture(true)
+            .key(DiseaseProcessor.DATE_PICKER_KEY_ANSWER)
+            .parent(start)
+            .className("hospitalizationStartDate")
+            .build()
+            .createFieldGroup();
     clipboardKey(item, LINK_ID_PERIOD_START).ifPresent(key -> createClipboard(key, false, input));
   }
 
@@ -178,33 +162,17 @@ public class HospitalizationProcessor {
             .fieldGroupClassName(REF_ELEMENT)
             .parent(parent)
             .build();
-    final FieldGroup input;
-    if (featureFlags.isDiseaseDatePicker()) {
-      input =
-          DatePicker.builder()
-              .label("Entlassdatum")
-              .required(false)
-              .allowedPrecisions(List.of(DAY, MONTH))
-              .key(DiseaseProcessor.DATE_PICKER_KEY_ANSWER)
-              .parent(end)
-              .className("hospitalizationEndDate")
-              .build()
-              .createFieldGroup();
-    } else {
-      input =
-          FieldGroup.builder()
-              .key("answer.valueDate")
-              .className("hospitalizationEndDate")
-              .type(FieldGroup.TYPE_INPUT)
-              .parent(end)
-              .props(
-                  Props.builder()
-                      .required(false)
-                      .label("Entlassdatum")
-                      .placeholder("TT.MM.JJJJ | MM.JJJJ | JJJJ")
-                      .build())
-              .build();
-    }
+    final FieldGroup input =
+        DatePicker.builder()
+            .label("Entlassdatum")
+            .required(false)
+            .allowedPrecisions(List.of(DAY, MONTH))
+            .key(DiseaseProcessor.DATE_PICKER_KEY_ANSWER)
+            .parent(end)
+            .className("hospitalizationEndDate")
+            .build()
+            .createFieldGroup();
+
     clipboardKey(item, LINK_ID_PERIOD_END).ifPresent(key -> createClipboard(key, false, input));
   }
 

@@ -22,7 +22,8 @@ package de.gematik.demis.fhir_ui_data_model_translation_service.conceptmaps;
  *
  * *******
  *
- * For additional notes and disclaimer from gematik and in case of changes by gematik find details in the "Readme" file.
+ * For additional notes and disclaimer from gematik and in case of changes by gematik,
+ * find details in the "Readme" file.
  * #L%
  */
 
@@ -40,10 +41,12 @@ import java.io.File;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
+import org.springframework.web.server.ResponseStatusException;
 
 @ExtendWith(MockitoExtension.class)
 class ConceptMapPreparationSrvTest {
@@ -187,5 +190,36 @@ class ConceptMapPreparationSrvTest {
         () ->
             conceptMapPreparationSrv.getCode(
                 "https://demis.rki.de/fhir/ConceptMap/foobar", "asdf"));
+  }
+
+  @Test
+  void testGetPossibleCodesFromConceptMap() {
+    when(snapshotFilesServiceMock.getConceptMaps()).thenReturn(files);
+    when(fhirContextMock.newJsonParser()).thenReturn(FhirContext.forR4Cached().newJsonParser());
+    ConceptMapPreparationSrv conceptMapPreparationSrv =
+        new ConceptMapPreparationSrv(snapshotFilesServiceMock, fhirContextMock);
+    conceptMapPreparationSrv.init();
+    Set<String> possibleCodesFromConceptMap =
+        conceptMapPreparationSrv.getPossibleCodesFromConceptMap(
+            "mytp",
+            "NotificationCategoryToTransmissionCategory",
+            "NotificationDiseaseCategoryToTransmissionCategory");
+    assertThat(possibleCodesFromConceptMap).hasSize(2);
+  }
+
+  @Test
+  void testGetPossibleCodesFromConceptMapWithNoResult() {
+    when(snapshotFilesServiceMock.getConceptMaps()).thenReturn(files);
+    when(fhirContextMock.newJsonParser()).thenReturn(FhirContext.forR4Cached().newJsonParser());
+    ConceptMapPreparationSrv srv =
+        new ConceptMapPreparationSrv(snapshotFilesServiceMock, fhirContextMock);
+    srv.init();
+    assertThrows(
+        ResponseStatusException.class,
+        () ->
+            srv.getPossibleCodesFromConceptMap(
+                "mytp",
+                "NotificationCategoryToTransmissionCategory",
+                "LOINCMaterialToSNOMEDMaterial"));
   }
 }

@@ -22,7 +22,8 @@ package de.gematik.demis.fhir_ui_data_model_translation_service.conceptmaps;
  *
  * *******
  *
- * For additional notes and disclaimer from gematik and in case of changes by gematik find details in the "Readme" file.
+ * For additional notes and disclaimer from gematik and in case of changes by gematik,
+ * find details in the "Readme" file.
  * #L%
  */
 
@@ -34,11 +35,15 @@ import jakarta.annotation.PostConstruct;
 import java.io.File;
 import java.io.IOException;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 import lombok.extern.slf4j.Slf4j;
 import org.hl7.fhir.r4.model.ConceptMap;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
+import org.springframework.web.server.ResponseStatusException;
 
 @Service
 @Slf4j
@@ -123,5 +128,28 @@ public class ConceptMapPreparationSrv {
       throw new DataNotFoundExcp(errorMessage);
     }
     return mappedCode;
+  }
+
+  public Set<String> getPossibleCodesFromConceptMap(
+      String code, String mapNameFrom, String mapNameTo) {
+    String codeNotFoundError = "code " + code + " cannot be found in profiles";
+    String mappedCode = getMap(mapNameFrom).get(code);
+    if (mappedCode == null) {
+      throw new ResponseStatusException(HttpStatus.NOT_FOUND, codeNotFoundError);
+    }
+
+    Set<String> result = new HashSet<>();
+    getMap(mapNameTo)
+        .forEach(
+            (key, value) -> {
+              if (mappedCode.equals(value)) {
+                result.add(key);
+              }
+            });
+
+    if (result.isEmpty()) {
+      throw new ResponseStatusException(HttpStatus.NOT_FOUND, codeNotFoundError);
+    }
+    return result;
   }
 }
