@@ -18,7 +18,8 @@
                     "code": "261665006",
                     "display": "Unbekannt",
                     "designations": [],
-                    "system": "http://snomed.info/sct"
+                    "system": "http://snomed.info/sct",
+                    "version": "http://snomed.info/sct/11000274103/version/20241115"
                   },
                   {
                     "code": "1631000175102",
@@ -29,7 +30,8 @@
                         "value": "Patient/Patientin nicht gefragt"
                       }
                     ],
-                    "system": "http://snomed.info/sct"
+                    "system": "http://snomed.info/sct",
+                    "version": "http://snomed.info/sct/11000274103/version/20241115"
                   },
                   {
                     "code": "373066001",
@@ -40,7 +42,8 @@
                         "value": "Ja"
                       }
                     ],
-                    "system": "http://snomed.info/sct"
+                    "system": "http://snomed.info/sct",
+                    "version": "http://snomed.info/sct/11000274103/version/20241115"
                   },
                   {
                     "code": "373067005",
@@ -51,7 +54,8 @@
                         "value": "Nein"
                       }
                     ],
-                    "system": "http://snomed.info/sct"
+                    "system": "http://snomed.info/sct",
+                    "version": "http://snomed.info/sct/11000274103/version/20241115"
                   }
                 ],
                 "required": true,
@@ -82,13 +86,15 @@
                     "code": "261665006",
                     "display": "Unbekannt",
                     "designations": [],
-                    "system": "http://snomed.info/sct"
+                    "system": "http://snomed.info/sct",
+                    "version": "http://snomed.info/sct/11000274103/version/20241115"
                   },
                   {
                     "code": "276654001",
                     "display": "Angeborene Fehlbildung",
                     "designations": [],
-                    "system": "http://snomed.info/sct"
+                    "system": "http://snomed.info/sct",
+                    "version": "http://snomed.info/sct/11000274103/version/20241115"
                   },
                   {
                     "code": "276550000",
@@ -99,7 +105,8 @@
                         "value": "Anhaltende Gelbsucht (Ikterus) bei Neugeborenem"
                       }
                     ],
-                    "system": "http://snomed.info/sct"
+                    "system": "http://snomed.info/sct",
+                    "version": "http://snomed.info/sct/11000274103/version/20241115"
                   },
                   {
                     "code": "271737000",
@@ -110,7 +117,8 @@
                         "value": "Blutarmut (Anämie)"
                       }
                     ],
-                    "system": "http://snomed.info/sct"
+                    "system": "http://snomed.info/sct",
+                    "version": "http://snomed.info/sct/11000274103/version/20241115"
                   },
                   {
                     "code": "46627006",
@@ -121,13 +129,15 @@
                         "value": "Chorioretinale Entzündung"
                       }
                     ],
-                    "system": "http://snomed.info/sct"
+                    "system": "http://snomed.info/sct",
+                    "version": "http://snomed.info/sct/11000274103/version/20241115"
                   },
                   {
                     "code": "386661006",
                     "display": "Fieber",
                     "designations": [],
-                    "system": "http://snomed.info/sct"
+                    "system": "http://snomed.info/sct",
+                    "version": "http://snomed.info/sct/11000274103/version/20241115"
                   },
                   {
                     "code": "230745008",
@@ -138,13 +148,15 @@
                         "value": "Hydrocephalus"
                       }
                     ],
-                    "system": "http://snomed.info/sct"
+                    "system": "http://snomed.info/sct",
+                    "version": "http://snomed.info/sct/11000274103/version/20241115"
                   },
                   {
                     "code": "91175000",
                     "display": "Krampfanfall",
                     "designations": [],
-                    "system": "http://snomed.info/sct"
+                    "system": "http://snomed.info/sct",
+                    "version": "http://snomed.info/sct/11000274103/version/20241115"
                   },
                   {
                     "code": "36760000",
@@ -155,7 +167,8 @@
                         "value": "Leber- und Milzvergrößerung (Hepatosplenomegalie)"
                       }
                     ],
-                    "system": "http://snomed.info/sct"
+                    "system": "http://snomed.info/sct",
+                    "version": "http://snomed.info/sct/11000274103/version/20241115"
                   },
                   {
                     "code": "1148757008",
@@ -166,19 +179,22 @@
                         "value": "Mikrozephalus"
                       }
                     ],
-                    "system": "http://snomed.info/sct"
+                    "system": "http://snomed.info/sct",
+                    "version": "http://snomed.info/sct/11000274103/version/20241115"
                   },
                   {
                     "code": "125369001:733928003=128319008",
                     "display": "Verkalkungen, intrakraniell",
                     "designations": [],
-                    "system": "http://snomed.info/sct"
+                    "system": "http://snomed.info/sct",
+                    "version": "http://snomed.info/sct/11000274103/version/20241115"
                   },
                   {
                     "code": "74964007",
                     "display": "Andere",
                     "designations": [],
-                    "system": "http://snomed.info/sct"
+                    "system": "http://snomed.info/sct",
+                    "version": "http://snomed.info/sct/11000274103/version/20241115"
                   }
                 ],
                 "required": true,
@@ -261,25 +277,29 @@
                     "code": "261665006",
                     "display": "Unbekannt",
                     "designations": [],
-                    "system": "http://snomed.info/sct"
+                    "system": "http://snomed.info/sct",
+                    "version": "http://snomed.info/sct/11000274103/version/20241115"
                   },
                   {
                     "code": "281050002",
                     "display": "Lebendgeburt",
                     "designations": [],
-                    "system": "http://snomed.info/sct"
+                    "system": "http://snomed.info/sct",
+                    "version": "http://snomed.info/sct/11000274103/version/20241115"
                   },
                   {
                     "code": "276506001",
                     "display": "Tod von Neugeborenem",
                     "designations": [],
-                    "system": "http://snomed.info/sct"
+                    "system": "http://snomed.info/sct",
+                    "version": "http://snomed.info/sct/11000274103/version/20241115"
                   },
                   {
                     "code": "237364002",
                     "display": "Totgeburt",
                     "designations": [],
-                    "system": "http://snomed.info/sct"
+                    "system": "http://snomed.info/sct",
+                    "version": "http://snomed.info/sct/11000274103/version/20241115"
                   }
                 ],
                 "required": true,
@@ -310,7 +330,8 @@
                     "code": "261665006",
                     "display": "Unbekannt",
                     "designations": [],
-                    "system": "http://snomed.info/sct"
+                    "system": "http://snomed.info/sct",
+                    "version": "http://snomed.info/sct/11000274103/version/20241115"
                   },
                   {
                     "code": "1631000175102",
@@ -321,13 +342,15 @@
                         "value": "Patient/Patientin nicht gefragt"
                       }
                     ],
-                    "system": "http://snomed.info/sct"
+                    "system": "http://snomed.info/sct",
+                    "version": "http://snomed.info/sct/11000274103/version/20241115"
                   },
                   {
                     "code": "184082004+77386006",
                     "display": "Auslandsaufenthalt während der Schwangerschaft",
                     "designations": [],
-                    "system": "http://snomed.info/sct"
+                    "system": "http://snomed.info/sct",
+                    "version": "http://snomed.info/sct/11000274103/version/20241115"
                   },
                   {
                     "code": "102432000",
@@ -338,43 +361,50 @@
                         "value": "Kontakt mit kontaminierter Erde"
                       }
                     ],
-                    "system": "http://snomed.info/sct"
+                    "system": "http://snomed.info/sct",
+                    "version": "http://snomed.info/sct/11000274103/version/20241115"
                   },
                   {
                     "code": "102432000:{47429007=260787004}",
                     "display": "Kontakt zu mit Erde kontaminierten Gegenständen",
                     "designations": [],
-                    "system": "http://snomed.info/sct"
+                    "system": "http://snomed.info/sct",
+                    "version": "http://snomed.info/sct/11000274103/version/20241115"
                   },
                   {
                     "code": "444071008:{47429007=448169003}",
                     "display": "Körperlicher Kontakt mit Katzen",
                     "designations": [],
-                    "system": "http://snomed.info/sct"
+                    "system": "http://snomed.info/sct",
+                    "version": "http://snomed.info/sct/11000274103/version/20241115"
                   },
                   {
                     "code": "133261000119105:{47429007=39477002,47429007=448169003}",
                     "display": "Körperlicher Kontakt mit Katzenkot",
                     "designations": [],
-                    "system": "http://snomed.info/sct"
+                    "system": "http://snomed.info/sct",
+                    "version": "http://snomed.info/sct/11000274103/version/20241115"
                   },
                   {
                     "code": "781249001:{47429007=415555003}",
                     "display": "Verzehr von mit Erde kontaminierter Produkte (z.B. rohes Gemüse)",
                     "designations": [],
-                    "system": "http://snomed.info/sct"
+                    "system": "http://snomed.info/sct",
+                    "version": "http://snomed.info/sct/11000274103/version/20241115"
                   },
                   {
                     "code": "781249001:{47429007=(228067006+28647000)}",
                     "display": "Verzehr von nicht durchgegartem Fleisch",
                     "designations": [],
-                    "system": "http://snomed.info/sct"
+                    "system": "http://snomed.info/sct",
+                    "version": "http://snomed.info/sct/11000274103/version/20241115"
                   },
                   {
                     "code": "74964007",
                     "display": "Andere",
                     "designations": [],
-                    "system": "http://snomed.info/sct"
+                    "system": "http://snomed.info/sct",
+                    "version": "http://snomed.info/sct/11000274103/version/20241115"
                   }
                 ],
                 "required": true,
@@ -403,7 +433,8 @@
                         "code": "261665006",
                         "display": "Unbekannt",
                         "designations": [],
-                        "system": "http://snomed.info/sct"
+                        "system": "http://snomed.info/sct",
+                        "version": "http://snomed.info/sct/11000274103/version/20241115"
                       },
                       {
                         "code": "1631000175102",
@@ -414,13 +445,15 @@
                             "value": "Patient/Patientin nicht gefragt"
                           }
                         ],
-                        "system": "http://snomed.info/sct"
+                        "system": "http://snomed.info/sct",
+                        "version": "http://snomed.info/sct/11000274103/version/20241115"
                       },
                       {
                         "code": "34051000087100:{370130000=41277001}",
                         "display": "Staatenlos",
                         "designations": [],
-                        "system": "http://snomed.info/sct"
+                        "system": "http://snomed.info/sct",
+                        "version": "http://snomed.info/sct/11000274103/version/20241115"
                       },
                       {
                         "code": "DE",
@@ -3194,7 +3227,8 @@
                     "code": "261665006",
                     "display": "Unbekannt",
                     "designations": [],
-                    "system": "http://snomed.info/sct"
+                    "system": "http://snomed.info/sct",
+                    "version": "http://snomed.info/sct/11000274103/version/20241115"
                   },
                   {
                     "code": "1631000175102",
@@ -3205,13 +3239,15 @@
                         "value": "Patient/Patientin nicht gefragt"
                       }
                     ],
-                    "system": "http://snomed.info/sct"
+                    "system": "http://snomed.info/sct",
+                    "version": "http://snomed.info/sct/11000274103/version/20241115"
                   },
                   {
                     "code": "34051000087100:{370130000=41277001}",
                     "display": "Staatenlos",
                     "designations": [],
-                    "system": "http://snomed.info/sct"
+                    "system": "http://snomed.info/sct",
+                    "version": "http://snomed.info/sct/11000274103/version/20241115"
                   },
                   {
                     "code": "DE",

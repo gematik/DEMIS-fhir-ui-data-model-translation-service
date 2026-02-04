@@ -50,6 +50,8 @@ All URIs are relative to *http://localhost*
  - [Props](./Models/Props.md)
  - [Quantity](./Models/Quantity.md)
  - [QuestionnaireTranslation](./Models/QuestionnaireTranslation.md)
+ - [StaticSystemVersion](./Models/StaticSystemVersion.md)
+ - [Use](./Models/Use.md)
  - [Validator](./Models/Validator.md)
 
 

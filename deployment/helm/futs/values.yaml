@@ -40,7 +40,9 @@ customEnvVars:
   DATA_PATH_GAPP_DATA: "classpath:/fhir-profile-snapshots/GAPP"
   FEATURE_FLAG_NOTIFICATIONS_7_3: "false"
   FEATURE_FLAG_DISEASE_STRICT: "false"
-  FEATURE_FLAG_SNAPSHOT_6_ACTIVE: "false"
+  FEATURE_FLAG_ADD_DESIGNATION_USE: "false"
+  FEATURE_FLAG_CODE_DISPLAY_VERSION: "false"
+  FEATURE_FLAG_SNOMED_VERSION_FROM_FUTS: "false"
 
 # Define custom Container Entrypoint and Arguments (e.g. JVM Tuning)
 # If not given, the Entrypoint defined in Dockerfile will be used

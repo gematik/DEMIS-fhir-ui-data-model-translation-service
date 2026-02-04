@@ -18,7 +18,8 @@
                     "code": "261665006",
                     "display": "Unbekannt",
                     "designations": [],
-                    "system": "http://snomed.info/sct"
+                    "system": "http://snomed.info/sct",
+                    "version": "http://snomed.info/sct/11000274103/version/20241115"
                   },
                   {
                     "code": "1631000175102",
@@ -29,7 +30,8 @@
                         "value": "Patient/Patientin nicht gefragt"
                       }
                     ],
-                    "system": "http://snomed.info/sct"
+                    "system": "http://snomed.info/sct",
+                    "version": "http://snomed.info/sct/11000274103/version/20241115"
                   },
                   {
                     "code": "1156829005",
@@ -40,7 +42,8 @@
                         "value": "Iatrogener Botulismus"
                       }
                     ],
-                    "system": "http://snomed.info/sct"
+                    "system": "http://snomed.info/sct",
+                    "version": "http://snomed.info/sct/11000274103/version/20241115"
                   },
                   {
                     "code": "409562009",
@@ -51,7 +54,8 @@
                         "value": "Inhalationsbotulismus"
                       }
                     ],
-                    "system": "http://snomed.info/sct"
+                    "system": "http://snomed.info/sct",
+                    "version": "http://snomed.info/sct/11000274103/version/20241115"
                   },
                   {
                     "code": "398523009",
@@ -62,19 +66,22 @@
                         "value": "Lebensmittelbotulismus"
                       }
                     ],
-                    "system": "http://snomed.info/sct"
+                    "system": "http://snomed.info/sct",
+                    "version": "http://snomed.info/sct/11000274103/version/20241115"
                   },
                   {
                     "code": "414488002",
                     "display": "Säuglingsbotulismus",
                     "designations": [],
-                    "system": "http://snomed.info/sct"
+                    "system": "http://snomed.info/sct",
+                    "version": "http://snomed.info/sct/11000274103/version/20241115"
                   },
                   {
                     "code": "398530003",
                     "display": "Wundbotulismus",
                     "designations": [],
-                    "system": "http://snomed.info/sct"
+                    "system": "http://snomed.info/sct",
+                    "version": "http://snomed.info/sct/11000274103/version/20241115"
                   }
                 ],
                 "required": true,
@@ -134,7 +141,8 @@
                         "code": "261665006",
                         "display": "Unbekannt",
                         "designations": [],
-                        "system": "http://snomed.info/sct"
+                        "system": "http://snomed.info/sct",
+                        "version": "http://snomed.info/sct/11000274103/version/20241115"
                       },
                       {
                         "code": "1631000175102",
@@ -145,7 +153,8 @@
                             "value": "Patient/Patientin nicht gefragt"
                           }
                         ],
-                        "system": "http://snomed.info/sct"
+                        "system": "http://snomed.info/sct",
+                        "version": "http://snomed.info/sct/11000274103/version/20241115"
                       },
                       {
                         "code": "373066001",
@@ -156,7 +165,8 @@
                             "value": "Ja"
                           }
                         ],
-                        "system": "http://snomed.info/sct"
+                        "system": "http://snomed.info/sct",
+                        "version": "http://snomed.info/sct/11000274103/version/20241115"
                       },
                       {
                         "code": "373067005",
@@ -167,7 +177,8 @@
                             "value": "Nein"
                           }
                         ],
-                        "system": "http://snomed.info/sct"
+                        "system": "http://snomed.info/sct",
+                        "version": "http://snomed.info/sct/11000274103/version/20241115"
                       }
                     ],
                     "required": true,
@@ -206,7 +217,8 @@
                         "code": "261665006",
                         "display": "Unbekannt",
                         "designations": [],
-                        "system": "http://snomed.info/sct"
+                        "system": "http://snomed.info/sct",
+                        "version": "http://snomed.info/sct/11000274103/version/20241115"
                       },
                       {
                         "code": "1631000175102",
@@ -217,7 +229,8 @@
                             "value": "Patient/Patientin nicht gefragt"
                           }
                         ],
-                        "system": "http://snomed.info/sct"
+                        "system": "http://snomed.info/sct",
+                        "version": "http://snomed.info/sct/11000274103/version/20241115"
                       },
                       {
                         "code": "373066001",
@@ -228,7 +241,8 @@
                             "value": "Ja"
                           }
                         ],
-                        "system": "http://snomed.info/sct"
+                        "system": "http://snomed.info/sct",
+                        "version": "http://snomed.info/sct/11000274103/version/20241115"
                       },
                       {
                         "code": "373067005",
@@ -239,7 +253,8 @@
                             "value": "Nein"
                           }
                         ],
-                        "system": "http://snomed.info/sct"
+                        "system": "http://snomed.info/sct",
+                        "version": "http://snomed.info/sct/11000274103/version/20241115"
                       }
                     ],
                     "required": true,
@@ -291,7 +306,8 @@
                             "code": "261665006",
                             "display": "Unbekannt",
                             "designations": [],
-                            "system": "http://snomed.info/sct"
+                            "system": "http://snomed.info/sct",
+                            "version": "http://snomed.info/sct/11000274103/version/20241115"
                           },
                           {
                             "code": "1631000175102",
@@ -302,7 +318,8 @@
                                 "value": "Patient/Patientin nicht gefragt"
                               }
                             ],
-                            "system": "http://snomed.info/sct"
+                            "system": "http://snomed.info/sct",
+                            "version": "http://snomed.info/sct/11000274103/version/20241115"
                           },
                           {
                             "code": "346602001",
@@ -313,7 +330,8 @@
                                 "value": "Andere Lebensmittel"
                               }
                             ],
-                            "system": "http://snomed.info/sct"
+                            "system": "http://snomed.info/sct",
+                            "version": "http://snomed.info/sct/11000274103/version/20241115"
                           },
                           {
                             "code": "256354006",
@@ -324,25 +342,29 @@
                                 "value": "Bohnen"
                               }
                             ],
-                            "system": "http://snomed.info/sct"
+                            "system": "http://snomed.info/sct",
+                            "version": "http://snomed.info/sct/11000274103/version/20241115"
                           },
                           {
                             "code": "735971005",
                             "display": "Fisch",
                             "designations": [],
-                            "system": "http://snomed.info/sct"
+                            "system": "http://snomed.info/sct",
+                            "version": "http://snomed.info/sct/11000274103/version/20241115"
                           },
                           {
                             "code": "226932004",
                             "display": "Schinken",
                             "designations": [],
-                            "system": "http://snomed.info/sct"
+                            "system": "http://snomed.info/sct",
+                            "version": "http://snomed.info/sct/11000274103/version/20241115"
                           },
                           {
                             "code": "227020009",
                             "display": "Wurst",
                             "designations": [],
-                            "system": "http://snomed.info/sct"
+                            "system": "http://snomed.info/sct",
+                            "version": "http://snomed.info/sct/11000274103/version/20241115"
                           }
                         ],
                         "required": true,
@@ -414,7 +436,8 @@
                             "code": "261665006",
                             "display": "Unbekannt",
                             "designations": [],
-                            "system": "http://snomed.info/sct"
+                            "system": "http://snomed.info/sct",
+                            "version": "http://snomed.info/sct/11000274103/version/20241115"
                           },
                           {
                             "code": "1631000175102",
@@ -425,7 +448,8 @@
                                 "value": "Patient/Patientin nicht gefragt"
                               }
                             ],
-                            "system": "http://snomed.info/sct"
+                            "system": "http://snomed.info/sct",
+                            "version": "http://snomed.info/sct/11000274103/version/20241115"
                           },
                           {
                             "code": "264362003",
@@ -436,19 +460,22 @@
                                 "value": "Haushalt"
                               }
                             ],
-                            "system": "http://snomed.info/sct"
+                            "system": "http://snomed.info/sct",
+                            "version": "http://snomed.info/sct/11000274103/version/20241115"
                           },
                           {
                             "code": "257689006",
                             "display": "Restaurant",
                             "designations": [],
-                            "system": "http://snomed.info/sct"
+                            "system": "http://snomed.info/sct",
+                            "version": "http://snomed.info/sct/11000274103/version/20241115"
                           },
                           {
                             "code": "74964007",
                             "display": "Andere",
                             "designations": [],
-                            "system": "http://snomed.info/sct"
+                            "system": "http://snomed.info/sct",
+                            "version": "http://snomed.info/sct/11000274103/version/20241115"
                           }
                         ],
                         "required": true,
@@ -480,7 +507,8 @@
                             "code": "261665006",
                             "display": "Unbekannt",
                             "designations": [],
-                            "system": "http://snomed.info/sct"
+                            "system": "http://snomed.info/sct",
+                            "version": "http://snomed.info/sct/11000274103/version/20241115"
                           },
                           {
                             "code": "1631000175102",
@@ -491,31 +519,36 @@
                                 "value": "Patient/Patientin nicht gefragt"
                               }
                             ],
-                            "system": "http://snomed.info/sct"
+                            "system": "http://snomed.info/sct",
+                            "version": "http://snomed.info/sct/11000274103/version/20241115"
                           },
                           {
                             "code": "423252004",
                             "display": "Eingekochtes Nahrungsmittel",
                             "designations": [],
-                            "system": "http://snomed.info/sct"
+                            "system": "http://snomed.info/sct",
+                            "version": "http://snomed.info/sct/11000274103/version/20241115"
                           },
                           {
                             "code": "1290253007",
                             "display": "Geräuchertes Nahrungsmittel",
                             "designations": [],
-                            "system": "http://snomed.info/sct"
+                            "system": "http://snomed.info/sct",
+                            "version": "http://snomed.info/sct/11000274103/version/20241115"
                           },
                           {
                             "code": "228008004",
                             "display": "Getrocknetes Nahrungsmittel",
                             "designations": [],
-                            "system": "http://snomed.info/sct"
+                            "system": "http://snomed.info/sct",
+                            "version": "http://snomed.info/sct/11000274103/version/20241115"
                           },
                           {
                             "code": "227989005",
                             "display": "Konserve",
                             "designations": [],
-                            "system": "http://snomed.info/sct"
+                            "system": "http://snomed.info/sct",
+                            "version": "http://snomed.info/sct/11000274103/version/20241115"
                           },
                           {
                             "code": "229982008",
@@ -526,13 +559,15 @@
                                 "value": "Sauer eingelegt"
                               }
                             ],
-                            "system": "http://snomed.info/sct"
+                            "system": "http://snomed.info/sct",
+                            "version": "http://snomed.info/sct/11000274103/version/20241115"
                           },
                           {
                             "code": "1290254001",
                             "display": "Vakuumverpacktes Nahrungsmittel",
                             "designations": [],
-                            "system": "http://snomed.info/sct"
+                            "system": "http://snomed.info/sct",
+                            "version": "http://snomed.info/sct/11000274103/version/20241115"
                           }
                         ],
                         "required": true,
@@ -564,7 +599,8 @@
                             "code": "261665006",
                             "display": "Unbekannt",
                             "designations": [],
-                            "system": "http://snomed.info/sct"
+                            "system": "http://snomed.info/sct",
+                            "version": "http://snomed.info/sct/11000274103/version/20241115"
                           },
                           {
                             "code": "1631000175102",
@@ -575,7 +611,8 @@
                                 "value": "Patient/Patientin nicht gefragt"
                               }
                             ],
-                            "system": "http://snomed.info/sct"
+                            "system": "http://snomed.info/sct",
+                            "version": "http://snomed.info/sct/11000274103/version/20241115"
                           },
                           {
                             "code": "271551002",
@@ -586,19 +623,22 @@
                                 "value": "Industrielle"
                               }
                             ],
-                            "system": "http://snomed.info/sct"
+                            "system": "http://snomed.info/sct",
+                            "version": "http://snomed.info/sct/11000274103/version/20241115"
                           },
                           {
                             "code": "162542007",
                             "display": "Kocht für sich selbst",
                             "designations": [],
-                            "system": "http://snomed.info/sct"
+                            "system": "http://snomed.info/sct",
+                            "version": "http://snomed.info/sct/11000274103/version/20241115"
                           },
                           {
                             "code": "74964007",
                             "display": "Andere",
                             "designations": [],
-                            "system": "http://snomed.info/sct"
+                            "system": "http://snomed.info/sct",
+                            "version": "http://snomed.info/sct/11000274103/version/20241115"
                           }
                         ],
                         "required": true,
@@ -630,7 +670,8 @@
                             "code": "261665006",
                             "display": "Unbekannt",
                             "designations": [],
-                            "system": "http://snomed.info/sct"
+                            "system": "http://snomed.info/sct",
+                            "version": "http://snomed.info/sct/11000274103/version/20241115"
                           },
                           {
                             "code": "1631000175102",
@@ -641,7 +682,8 @@
                                 "value": "Patient/Patientin nicht gefragt"
                               }
                             ],
-                            "system": "http://snomed.info/sct"
+                            "system": "http://snomed.info/sct",
+                            "version": "http://snomed.info/sct/11000274103/version/20241115"
                           },
                           {
                             "code": "373066001",
@@ -652,7 +694,8 @@
                                 "value": "Ja"
                               }
                             ],
-                            "system": "http://snomed.info/sct"
+                            "system": "http://snomed.info/sct",
+                            "version": "http://snomed.info/sct/11000274103/version/20241115"
                           },
                           {
                             "code": "373067005",
@@ -663,7 +706,8 @@
                                 "value": "Nein"
                               }
                             ],
-                            "system": "http://snomed.info/sct"
+                            "system": "http://snomed.info/sct",
+                            "version": "http://snomed.info/sct/11000274103/version/20241115"
                           }
                         ],
                         "required": true,
@@ -699,7 +743,8 @@
                     "code": "261665006",
                     "display": "Unbekannt",
                     "designations": [],
-                    "system": "http://snomed.info/sct"
+                    "system": "http://snomed.info/sct",
+                    "version": "http://snomed.info/sct/11000274103/version/20241115"
                   },
                   {
                     "code": "1631000175102",
@@ -710,7 +755,8 @@
                         "value": "Patient/Patientin nicht gefragt"
                       }
                     ],
-                    "system": "http://snomed.info/sct"
+                    "system": "http://snomed.info/sct",
+                    "version": "http://snomed.info/sct/11000274103/version/20241115"
                   },
                   {
                     "code": "373066001",
@@ -721,7 +767,8 @@
                         "value": "Ja"
                       }
                     ],
-                    "system": "http://snomed.info/sct"
+                    "system": "http://snomed.info/sct",
+                    "version": "http://snomed.info/sct/11000274103/version/20241115"
                   },
                   {
                     "code": "373067005",
@@ -732,7 +779,8 @@
                         "value": "Nein"
                       }
                     ],
-                    "system": "http://snomed.info/sct"
+                    "system": "http://snomed.info/sct",
+                    "version": "http://snomed.info/sct/11000274103/version/20241115"
                   }
                 ],
                 "required": true,
@@ -820,7 +868,8 @@
                     "code": "261665006",
                     "display": "Unbekannt",
                     "designations": [],
-                    "system": "http://snomed.info/sct"
+                    "system": "http://snomed.info/sct",
+                    "version": "http://snomed.info/sct/11000274103/version/20241115"
                   },
                   {
                     "code": "1631000175102",
@@ -831,7 +880,8 @@
                         "value": "Patient/Patientin nicht gefragt"
                       }
                     ],
-                    "system": "http://snomed.info/sct"
+                    "system": "http://snomed.info/sct",
+                    "version": "http://snomed.info/sct/11000274103/version/20241115"
                   },
                   {
                     "code": "373066001",
@@ -842,7 +892,8 @@
                         "value": "Ja"
                       }
                     ],
-                    "system": "http://snomed.info/sct"
+                    "system": "http://snomed.info/sct",
+                    "version": "http://snomed.info/sct/11000274103/version/20241115"
                   },
                   {
                     "code": "373067005",
@@ -853,7 +904,8 @@
                         "value": "Nein"
                       }
                     ],
-                    "system": "http://snomed.info/sct"
+                    "system": "http://snomed.info/sct",
+                    "version": "http://snomed.info/sct/11000274103/version/20241115"
                   }
                 ],
                 "required": true,
@@ -914,7 +966,8 @@
                     "code": "261665006",
                     "display": "Unbekannt",
                     "designations": [],
-                    "system": "http://snomed.info/sct"
+                    "system": "http://snomed.info/sct",
+                    "version": "http://snomed.info/sct/11000274103/version/20241115"
                   },
                   {
                     "code": "1631000175102",
@@ -925,25 +978,29 @@
                         "value": "Patient/Patientin nicht gefragt"
                       }
                     ],
-                    "system": "http://snomed.info/sct"
+                    "system": "http://snomed.info/sct",
+                    "version": "http://snomed.info/sct/11000274103/version/20241115"
                   },
                   {
                     "code": "noReferenceToBundeswehr",
                     "display": "Kein Bezug zur BW",
                     "designations": [],
-                    "system": "https://demis.rki.de/fhir/CodeSystem/militaryAffiliation"
+                    "system": "https://demis.rki.de/fhir/CodeSystem/militaryAffiliation",
+                    "version": "1.0.1"
                   },
                   {
                     "code": "memberOfBundeswehr",
                     "display": "Soldat/BW-Angehöriger",
                     "designations": [],
-                    "system": "https://demis.rki.de/fhir/CodeSystem/militaryAffiliation"
+                    "system": "https://demis.rki.de/fhir/CodeSystem/militaryAffiliation",
+                    "version": "1.0.1"
                   },
                   {
                     "code": "civilPersonActiveInBundeswehr",
                     "display": "Zivilperson tätig/untergebracht in Einrichtung der BW",
                     "designations": [],
-                    "system": "https://demis.rki.de/fhir/CodeSystem/militaryAffiliation"
+                    "system": "https://demis.rki.de/fhir/CodeSystem/militaryAffiliation",
+                    "version": "1.0.1"
                   }
                 ],
                 "required": true,
@@ -979,7 +1036,8 @@
                     "code": "261665006",
                     "display": "Unbekannt",
                     "designations": [],
-                    "system": "http://snomed.info/sct"
+                    "system": "http://snomed.info/sct",
+                    "version": "http://snomed.info/sct/11000274103/version/20241115"
                   },
                   {
                     "code": "1631000175102",
@@ -990,7 +1048,8 @@
                         "value": "Patient/Patientin nicht gefragt"
                       }
                     ],
-                    "system": "http://snomed.info/sct"
+                    "system": "http://snomed.info/sct",
+                    "version": "http://snomed.info/sct/11000274103/version/20241115"
                   },
                   {
                     "code": "373066001",
@@ -1001,7 +1060,8 @@
                         "value": "Ja"
                       }
                     ],
-                    "system": "http://snomed.info/sct"
+                    "system": "http://snomed.info/sct",
+                    "version": "http://snomed.info/sct/11000274103/version/20241115"
                   },
                   {
                     "code": "373067005",
@@ -1012,7 +1072,8 @@
                         "value": "Nein"
                       }
                     ],
-                    "system": "http://snomed.info/sct"
+                    "system": "http://snomed.info/sct",
+                    "version": "http://snomed.info/sct/11000274103/version/20241115"
                   }
                 ],
                 "required": true,
@@ -1143,7 +1204,8 @@
                                 "code": "261665006",
                                 "display": "Unbekannt",
                                 "designations": [],
-                                "system": "http://snomed.info/sct"
+                                "system": "http://snomed.info/sct",
+                                "version": "http://snomed.info/sct/11000274103/version/20241115"
                               },
                               {
                                 "code": "1631000175102",
@@ -1154,13 +1216,15 @@
                                     "value": "Patient/Patientin nicht gefragt"
                                   }
                                 ],
-                                "system": "http://snomed.info/sct"
+                                "system": "http://snomed.info/sct",
+                                "version": "http://snomed.info/sct/11000274103/version/20241115"
                               },
                               {
                                 "code": "34051000087100:{370130000=41277001}",
                                 "display": "Staatenlos",
                                 "designations": [],
-                                "system": "http://snomed.info/sct"
+                                "system": "http://snomed.info/sct",
+                                "version": "http://snomed.info/sct/11000274103/version/20241115"
                               },
                               {
                                 "code": "DE",
@@ -4028,7 +4092,8 @@
                     "code": "261665006",
                     "display": "Unbekannt",
                     "designations": [],
-                    "system": "http://snomed.info/sct"
+                    "system": "http://snomed.info/sct",
+                    "version": "http://snomed.info/sct/11000274103/version/20241115"
                   },
                   {
                     "code": "1631000175102",
@@ -4039,7 +4104,8 @@
                         "value": "Patient/Patientin nicht gefragt"
                       }
                     ],
-                    "system": "http://snomed.info/sct"
+                    "system": "http://snomed.info/sct",
+                    "version": "http://snomed.info/sct/11000274103/version/20241115"
                   },
                   {
                     "code": "373066001",
@@ -4050,7 +4116,8 @@
                         "value": "Ja"
                       }
                     ],
-                    "system": "http://snomed.info/sct"
+                    "system": "http://snomed.info/sct",
+                    "version": "http://snomed.info/sct/11000274103/version/20241115"
                   },
                   {
                     "code": "373067005",
@@ -4061,7 +4128,8 @@
                         "value": "Nein"
                       }
                     ],
-                    "system": "http://snomed.info/sct"
+                    "system": "http://snomed.info/sct",
+                    "version": "http://snomed.info/sct/11000274103/version/20241115"
                   }
                 ],
                 "required": true,
@@ -4118,889 +4186,1037 @@
                                           "code": "0100",
                                           "display": "Innere Medizin",
                                           "designations": [],
-                                          "system": "http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel-erweitert"
+                                          "system": "http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel-erweitert",
+                                          "version": "1.4.0"
                                         },
                                         {
                                           "code": "0200",
                                           "display": "Geriatrie",
                                           "designations": [],
-                                          "system": "http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel-erweitert"
+                                          "system": "http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel-erweitert",
+                                          "version": "1.4.0"
                                         },
                                         {
                                           "code": "0300",
                                           "display": "Kardiologie",
                                           "designations": [],
-                                          "system": "http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel-erweitert"
+                                          "system": "http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel-erweitert",
+                                          "version": "1.4.0"
                                         },
                                         {
                                           "code": "0400",
                                           "display": "Nephrologie",
                                           "designations": [],
-                                          "system": "http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel-erweitert"
+                                          "system": "http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel-erweitert",
+                                          "version": "1.4.0"
                                         },
                                         {
                                           "code": "0500",
                                           "display": "Hämatologie und internistische Onkologie",
                                           "designations": [],
-                                          "system": "http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel-erweitert"
+                                          "system": "http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel-erweitert",
+                                          "version": "1.4.0"
                                         },
                                         {
                                           "code": "0600",
                                           "display": "Endokrinologie",
                                           "designations": [],
-                                          "system": "http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel-erweitert"
+                                          "system": "http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel-erweitert",
+                                          "version": "1.4.0"
                                         },
                                         {
                                           "code": "0700",
                                           "display": "Gastroenterologie",
                                           "designations": [],
-                                          "system": "http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel-erweitert"
+                                          "system": "http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel-erweitert",
+                                          "version": "1.4.0"
                                         },
                                         {
                                           "code": "0800",
                                           "display": "Pneumologie",
                                           "designations": [],
-                                          "system": "http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel-erweitert"
+                                          "system": "http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel-erweitert",
+                                          "version": "1.4.0"
                                         },
                                         {
                                           "code": "0900",
                                           "display": "Rheumatologie",
                                           "designations": [],
-                                          "system": "http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel-erweitert"
+                                          "system": "http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel-erweitert",
+                                          "version": "1.4.0"
                                         },
                                         {
                                           "code": "1000",
                                           "display": "Pädiatrie",
                                           "designations": [],
-                                          "system": "http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel-erweitert"
+                                          "system": "http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel-erweitert",
+                                          "version": "1.4.0"
                                         },
                                         {
                                           "code": "1100",
                                           "display": "Kinderkardiologie",
                                           "designations": [],
-                                          "system": "http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel-erweitert"
+                                          "system": "http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel-erweitert",
+                                          "version": "1.4.0"
                                         },
                                         {
                                           "code": "1200",
                                           "display": "Neonatologie",
                                           "designations": [],
-                                          "system": "http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel-erweitert"
+                                          "system": "http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel-erweitert",
+                                          "version": "1.4.0"
                                         },
                                         {
                                           "code": "1300",
                                           "display": "Kinderchirurgie",
                                           "designations": [],
-                                          "system": "http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel-erweitert"
+                                          "system": "http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel-erweitert",
+                                          "version": "1.4.0"
                                         },
                                         {
                                           "code": "1400",
                                           "display": "Lungen- und Bronchialheilkunde",
                                           "designations": [],
-                                          "system": "http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel-erweitert"
+                                          "system": "http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel-erweitert",
+                                          "version": "1.4.0"
                                         },
                                         {
                                           "code": "1500",
                                           "display": "Allgemeine Chirurgie",
                                           "designations": [],
-                                          "system": "http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel-erweitert"
+                                          "system": "http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel-erweitert",
+                                          "version": "1.4.0"
                                         },
                                         {
                                           "code": "1600",
                                           "display": "Unfallchirurgie",
                                           "designations": [],
-                                          "system": "http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel-erweitert"
+                                          "system": "http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel-erweitert",
+                                          "version": "1.4.0"
                                         },
                                         {
                                           "code": "1700",
                                           "display": "Neurochirurgie",
                                           "designations": [],
-                                          "system": "http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel-erweitert"
+                                          "system": "http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel-erweitert",
+                                          "version": "1.4.0"
                                         },
                                         {
                                           "code": "1800",
                                           "display": "Gefäßchirurgie",
                                           "designations": [],
-                                          "system": "http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel-erweitert"
+                                          "system": "http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel-erweitert",
+                                          "version": "1.4.0"
                                         },
                                         {
                                           "code": "1900",
                                           "display": "Plastische Chirurgie",
                                           "designations": [],
-                                          "system": "http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel-erweitert"
+                                          "system": "http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel-erweitert",
+                                          "version": "1.4.0"
                                         },
                                         {
                                           "code": "2000",
                                           "display": "Thoraxchirurgie",
                                           "designations": [],
-                                          "system": "http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel-erweitert"
+                                          "system": "http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel-erweitert",
+                                          "version": "1.4.0"
                                         },
                                         {
                                           "code": "2100",
                                           "display": "Herzchirurgie",
                                           "designations": [],
-                                          "system": "http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel-erweitert"
+                                          "system": "http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel-erweitert",
+                                          "version": "1.4.0"
                                         },
                                         {
                                           "code": "2200",
                                           "display": "Urologie",
                                           "designations": [],
-                                          "system": "http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel-erweitert"
+                                          "system": "http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel-erweitert",
+                                          "version": "1.4.0"
                                         },
                                         {
                                           "code": "2300",
                                           "display": "Orthopädie",
                                           "designations": [],
-                                          "system": "http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel-erweitert"
+                                          "system": "http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel-erweitert",
+                                          "version": "1.4.0"
                                         },
                                         {
                                           "code": "2400",
                                           "display": "Frauenheilkunde und Geburtshilfe",
                                           "designations": [],
-                                          "system": "http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel-erweitert"
+                                          "system": "http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel-erweitert",
+                                          "version": "1.4.0"
                                         },
                                         {
                                           "code": "2500",
                                           "display": "Geburtshilfe",
                                           "designations": [],
-                                          "system": "http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel-erweitert"
+                                          "system": "http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel-erweitert",
+                                          "version": "1.4.0"
                                         },
                                         {
                                           "code": "2600",
                                           "display": "Hals-, Nasen-, Ohrenheilkunde",
                                           "designations": [],
-                                          "system": "http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel-erweitert"
+                                          "system": "http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel-erweitert",
+                                          "version": "1.4.0"
                                         },
                                         {
                                           "code": "2700",
                                           "display": "Augenheilkunde",
                                           "designations": [],
-                                          "system": "http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel-erweitert"
+                                          "system": "http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel-erweitert",
+                                          "version": "1.4.0"
                                         },
                                         {
                                           "code": "2800",
                                           "display": "Neurologie",
                                           "designations": [],
-                                          "system": "http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel-erweitert"
+                                          "system": "http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel-erweitert",
+                                          "version": "1.4.0"
                                         },
                                         {
                                           "code": "2900",
                                           "display": "Allgemeine Psychiatrie",
                                           "designations": [],
-                                          "system": "http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel-erweitert"
+                                          "system": "http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel-erweitert",
+                                          "version": "1.4.0"
                                         },
                                         {
                                           "code": "3000",
                                           "display": "Kinder- und Jugendpsychiatrie",
                                           "designations": [],
-                                          "system": "http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel-erweitert"
+                                          "system": "http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel-erweitert",
+                                          "version": "1.4.0"
                                         },
                                         {
                                           "code": "3100",
                                           "display": "Psychosomatik/Psychotherapie",
                                           "designations": [],
-                                          "system": "http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel-erweitert"
+                                          "system": "http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel-erweitert",
+                                          "version": "1.4.0"
                                         },
                                         {
                                           "code": "3200",
                                           "display": "Nuklearmedizin",
                                           "designations": [],
-                                          "system": "http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel-erweitert"
+                                          "system": "http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel-erweitert",
+                                          "version": "1.4.0"
                                         },
                                         {
                                           "code": "3300",
                                           "display": "Strahlenheilkunde",
                                           "designations": [],
-                                          "system": "http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel-erweitert"
+                                          "system": "http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel-erweitert",
+                                          "version": "1.4.0"
                                         },
                                         {
                                           "code": "3400",
                                           "display": "Dermatologie",
                                           "designations": [],
-                                          "system": "http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel-erweitert"
+                                          "system": "http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel-erweitert",
+                                          "version": "1.4.0"
                                         },
                                         {
                                           "code": "3500",
                                           "display": "Zahn- und Kieferheilkunde, Mund- und Kieferchirurgie",
                                           "designations": [],
-                                          "system": "http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel-erweitert"
+                                          "system": "http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel-erweitert",
+                                          "version": "1.4.0"
                                         },
                                         {
                                           "code": "3600",
                                           "display": "Intensivmedizin",
                                           "designations": [],
-                                          "system": "http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel-erweitert"
+                                          "system": "http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel-erweitert",
+                                          "version": "1.4.0"
                                         },
                                         {
                                           "code": "2316",
                                           "display": "Orthopädie und Unfallchirurgie",
                                           "designations": [],
-                                          "system": "http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel-erweitert"
+                                          "system": "http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel-erweitert",
+                                          "version": "1.4.0"
                                         },
                                         {
                                           "code": "2425",
                                           "display": "Frauenheilkunde",
                                           "designations": [],
-                                          "system": "http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel-erweitert"
+                                          "system": "http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel-erweitert",
+                                          "version": "1.4.0"
                                         },
                                         {
                                           "code": "3700",
                                           "display": "Sonstige Fachabteilung",
                                           "designations": [],
-                                          "system": "http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel-erweitert"
+                                          "system": "http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel-erweitert",
+                                          "version": "1.4.0"
                                         },
                                         {
                                           "code": "0102",
                                           "display": "Innere Medizin/Schwerpunkt Geriatrie",
                                           "designations": [],
-                                          "system": "http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel-erweitert"
+                                          "system": "http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel-erweitert",
+                                          "version": "1.4.0"
                                         },
                                         {
                                           "code": "0103",
                                           "display": "Innere Medizin/Schwerpunkt Kardiologie",
                                           "designations": [],
-                                          "system": "http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel-erweitert"
+                                          "system": "http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel-erweitert",
+                                          "version": "1.4.0"
                                         },
                                         {
                                           "code": "0104",
                                           "display": "Innere Medizin/Schwerpunkt Nephrologie",
                                           "designations": [],
-                                          "system": "http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel-erweitert"
+                                          "system": "http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel-erweitert",
+                                          "version": "1.4.0"
                                         },
                                         {
                                           "code": "0105",
                                           "display": "Innere Medizin/Schwerpunkt Hämatologie und internistische Onkologie",
                                           "designations": [],
-                                          "system": "http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel-erweitert"
+                                          "system": "http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel-erweitert",
+                                          "version": "1.4.0"
                                         },
                                         {
                                           "code": "0106",
                                           "display": "Innere Medizin/Schwerpunkt Endokrinologie",
                                           "designations": [],
-                                          "system": "http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel-erweitert"
+                                          "system": "http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel-erweitert",
+                                          "version": "1.4.0"
                                         },
                                         {
                                           "code": "0107",
                                           "display": "Innere Medizin/Schwerpunkt Gastroenterologie",
                                           "designations": [],
-                                          "system": "http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel-erweitert"
+                                          "system": "http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel-erweitert",
+                                          "version": "1.4.0"
                                         },
                                         {
                                           "code": "0108",
                                           "display": "Innere Medizin/Schwerpunkt Pneumologie",
                                           "designations": [],
-                                          "system": "http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel-erweitert"
+                                          "system": "http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel-erweitert",
+                                          "version": "1.4.0"
                                         },
                                         {
                                           "code": "0109",
                                           "display": "Innere Medizin/Schwerpunkt Rheumatologie",
                                           "designations": [],
-                                          "system": "http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel-erweitert"
+                                          "system": "http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel-erweitert",
+                                          "version": "1.4.0"
                                         },
                                         {
                                           "code": "0114",
                                           "display": "Innere Medizin/Schwerpunkt Lungen- und Bronchialheilkunde",
                                           "designations": [],
-                                          "system": "http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel-erweitert"
+                                          "system": "http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel-erweitert",
+                                          "version": "1.4.0"
                                         },
                                         {
                                           "code": "0150",
                                           "display": "Innere Medizin/Tumorforschung",
                                           "designations": [],
-                                          "system": "http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel-erweitert"
+                                          "system": "http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel-erweitert",
+                                          "version": "1.4.0"
                                         },
                                         {
                                           "code": "0151",
                                           "display": "Innere Medizin/Schwerpunkt Coloproktologie",
                                           "designations": [],
-                                          "system": "http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel-erweitert"
+                                          "system": "http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel-erweitert",
+                                          "version": "1.4.0"
                                         },
                                         {
                                           "code": "0152",
                                           "display": "Innere Medizin/Schwerpunkt Infektionskrankheiten",
                                           "designations": [],
-                                          "system": "http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel-erweitert"
+                                          "system": "http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel-erweitert",
+                                          "version": "1.4.0"
                                         },
                                         {
                                           "code": "0153",
                                           "display": "Innere Medizin/Schwerpunkt Diabetes",
                                           "designations": [],
-                                          "system": "http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel-erweitert"
+                                          "system": "http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel-erweitert",
+                                          "version": "1.4.0"
                                         },
                                         {
                                           "code": "0154",
                                           "display": "Innere Medizin/Schwerpunkt Naturheilkunde",
                                           "designations": [],
-                                          "system": "http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel-erweitert"
+                                          "system": "http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel-erweitert",
+                                          "version": "1.4.0"
                                         },
                                         {
                                           "code": "0156",
                                           "display": "Innere Medizin/Schwerpunkt Schlaganfallpatienten",
                                           "designations": [],
-                                          "system": "http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel-erweitert"
+                                          "system": "http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel-erweitert",
+                                          "version": "1.4.0"
                                         },
                                         {
                                           "code": "0224",
                                           "display": "Geriatrie/Schwerpunkt Frauenheilkunde",
                                           "designations": [],
-                                          "system": "http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel-erweitert"
+                                          "system": "http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel-erweitert",
+                                          "version": "1.4.0"
                                         },
                                         {
                                           "code": "0260",
                                           "display": "Geriatrie/Tagesklinik (für teilstationäre Pflegesätze)",
                                           "designations": [],
-                                          "system": "http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel-erweitert"
+                                          "system": "http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel-erweitert",
+                                          "version": "1.4.0"
                                         },
                                         {
                                           "code": "0261",
                                           "display": "Geriatrie/Nachtklinik (für teilstationäre Pflegesätze)",
                                           "designations": [],
-                                          "system": "http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel-erweitert"
+                                          "system": "http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel-erweitert",
+                                          "version": "1.4.0"
                                         },
                                         {
                                           "code": "0410",
                                           "display": "Nephrologie/Schwerpunkt Pädiatrie",
                                           "designations": [],
-                                          "system": "http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel-erweitert"
+                                          "system": "http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel-erweitert",
+                                          "version": "1.4.0"
                                         },
                                         {
                                           "code": "0436",
                                           "display": "Nephrologie/Intensivmedizin",
                                           "designations": [],
-                                          "system": "http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel-erweitert"
+                                          "system": "http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel-erweitert",
+                                          "version": "1.4.0"
                                         },
                                         {
                                           "code": "0510",
                                           "display": "Hämatologie und internistische Onkologie/Schwerpunkt Pädiatrie",
                                           "designations": [],
-                                          "system": "http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel-erweitert"
+                                          "system": "http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel-erweitert",
+                                          "version": "1.4.0"
                                         },
                                         {
                                           "code": "0524",
                                           "display": "Hämatologie und internistische Onkologie/Schwerpunkt Frauenheilkunde",
                                           "designations": [],
-                                          "system": "http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel-erweitert"
+                                          "system": "http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel-erweitert",
+                                          "version": "1.4.0"
                                         },
                                         {
                                           "code": "0533",
                                           "display": "Hämatologie und internistische Onkologie/Schwerpunkt Strahlenheilkunde",
                                           "designations": [],
-                                          "system": "http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel-erweitert"
+                                          "system": "http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel-erweitert",
+                                          "version": "1.4.0"
                                         },
                                         {
                                           "code": "0607",
                                           "display": "Endokrinologie/Schwerpunkt Gastroenterologie",
                                           "designations": [],
-                                          "system": "http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel-erweitert"
+                                          "system": "http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel-erweitert",
+                                          "version": "1.4.0"
                                         },
                                         {
                                           "code": "0610",
                                           "display": "Endokrinologie/Schwerpunkt Pädiatrie",
                                           "designations": [],
-                                          "system": "http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel-erweitert"
+                                          "system": "http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel-erweitert",
+                                          "version": "1.4.0"
                                         },
                                         {
                                           "code": "0706",
                                           "display": "Gastroenterologie/Schwerpunkt Endokrinologie",
                                           "designations": [],
-                                          "system": "http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel-erweitert"
+                                          "system": "http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel-erweitert",
+                                          "version": "1.4.0"
                                         },
                                         {
                                           "code": "0710",
                                           "display": "Gastroenterologie/Schwerpunkt Pädiatrie",
                                           "designations": [],
-                                          "system": "http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel-erweitert"
+                                          "system": "http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel-erweitert",
+                                          "version": "1.4.0"
                                         },
                                         {
                                           "code": "0910",
                                           "display": "Rheumatologie/Schwerpunkt Pädiatrie",
                                           "designations": [],
-                                          "system": "http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel-erweitert"
+                                          "system": "http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel-erweitert",
+                                          "version": "1.4.0"
                                         },
                                         {
                                           "code": "1004",
                                           "display": "Pädiatrie/Schwerpunkt Nephrologie",
                                           "designations": [],
-                                          "system": "http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel-erweitert"
+                                          "system": "http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel-erweitert",
+                                          "version": "1.4.0"
                                         },
                                         {
                                           "code": "1005",
                                           "display": "Pädiatrie/Schwerpunkt Hämatologie und internistische Onkologie",
                                           "designations": [],
-                                          "system": "http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel-erweitert"
+                                          "system": "http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel-erweitert",
+                                          "version": "1.4.0"
                                         },
                                         {
                                           "code": "1006",
                                           "display": "Pädiatrie/Schwerpunkt Endokrinologie",
                                           "designations": [],
-                                          "system": "http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel-erweitert"
+                                          "system": "http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel-erweitert",
+                                          "version": "1.4.0"
                                         },
                                         {
                                           "code": "1007",
                                           "display": "Pädiatrie/Schwerpunkt Gastroenterologie",
                                           "designations": [],
-                                          "system": "http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel-erweitert"
+                                          "system": "http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel-erweitert",
+                                          "version": "1.4.0"
                                         },
                                         {
                                           "code": "1009",
                                           "display": "Pädiatrie/Schwerpunkt Rheumatologie",
                                           "designations": [],
-                                          "system": "http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel-erweitert"
+                                          "system": "http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel-erweitert",
+                                          "version": "1.4.0"
                                         },
                                         {
                                           "code": "1011",
                                           "display": "Pädiatrie/Schwerpunkt Kinderkardiologie",
                                           "designations": [],
-                                          "system": "http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel-erweitert"
+                                          "system": "http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel-erweitert",
+                                          "version": "1.4.0"
                                         },
                                         {
                                           "code": "1012",
                                           "display": "Pädiatrie/Schwerpunkt Neonatologie",
                                           "designations": [],
-                                          "system": "http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel-erweitert"
+                                          "system": "http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel-erweitert",
+                                          "version": "1.4.0"
                                         },
                                         {
                                           "code": "1014",
                                           "display": "Pädiatrie/Schwerpunkt Lungen- und Bronchialheilkunde",
                                           "designations": [],
-                                          "system": "http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel-erweitert"
+                                          "system": "http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel-erweitert",
+                                          "version": "1.4.0"
                                         },
                                         {
                                           "code": "1028",
                                           "display": "Pädiatrie/Schwerpunkt Kinderneurologie",
                                           "designations": [],
-                                          "system": "http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel-erweitert"
+                                          "system": "http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel-erweitert",
+                                          "version": "1.4.0"
                                         },
                                         {
                                           "code": "1050",
                                           "display": "Pädiatrie/Schwerpunkt Perinatalmedizin",
                                           "designations": [],
-                                          "system": "http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel-erweitert"
+                                          "system": "http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel-erweitert",
+                                          "version": "1.4.0"
                                         },
                                         {
                                           "code": "1051",
                                           "display": "Langzeitbereich Kinder",
                                           "designations": [],
-                                          "system": "http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel-erweitert"
+                                          "system": "http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel-erweitert",
+                                          "version": "1.4.0"
                                         },
                                         {
                                           "code": "1136",
                                           "display": "Kinderkardiologie/Schwerpunkt Intensivmedizin",
                                           "designations": [],
-                                          "system": "http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel-erweitert"
+                                          "system": "http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel-erweitert",
+                                          "version": "1.4.0"
                                         },
                                         {
                                           "code": "1410",
                                           "display": "Lungen- und Bronchialheilkunde/Schwerpunkt Pädiatrie",
                                           "designations": [],
-                                          "system": "http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel-erweitert"
+                                          "system": "http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel-erweitert",
+                                          "version": "1.4.0"
                                         },
                                         {
                                           "code": "1513",
                                           "display": "Allgemeine Chirurgie/Schwerpunkt Kinderchirurgie",
                                           "designations": [],
-                                          "system": "http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel-erweitert"
+                                          "system": "http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel-erweitert",
+                                          "version": "1.4.0"
                                         },
                                         {
                                           "code": "1516",
                                           "display": "Allgemeine Chirurgie/Schwerpunkt Unfallchirurgie",
                                           "designations": [],
-                                          "system": "http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel-erweitert"
+                                          "system": "http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel-erweitert",
+                                          "version": "1.4.0"
                                         },
                                         {
                                           "code": "1518",
                                           "display": "Allgemeine Chirurgie/Schwerpunkt Gefäßchirurgie",
                                           "designations": [],
-                                          "system": "http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel-erweitert"
+                                          "system": "http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel-erweitert",
+                                          "version": "1.4.0"
                                         },
                                         {
                                           "code": "1519",
                                           "display": "Allgemeine Chirurgie/Schwerpunkt Plastische Chirurgie",
                                           "designations": [],
-                                          "system": "http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel-erweitert"
+                                          "system": "http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel-erweitert",
+                                          "version": "1.4.0"
                                         },
                                         {
                                           "code": "1520",
                                           "display": "Allgemeine Chirurgie/Schwerpunkt Thoraxchirurgie",
                                           "designations": [],
-                                          "system": "http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel-erweitert"
+                                          "system": "http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel-erweitert",
+                                          "version": "1.4.0"
                                         },
                                         {
                                           "code": "1523",
                                           "display": "Chirurgie/Schwerpunkt Orthopädie",
                                           "designations": [],
-                                          "system": "http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel-erweitert"
+                                          "system": "http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel-erweitert",
+                                          "version": "1.4.0"
                                         },
                                         {
                                           "code": "1536",
                                           "display": "Allgemeine Chirurgie/Intensivmedizin (§ 13 Abs. 2 Satz 3, 2. Halbs. BPflV in der am 31.12.2003 geltenden Fassung)",
                                           "designations": [],
-                                          "system": "http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel-erweitert"
+                                          "system": "http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel-erweitert",
+                                          "version": "1.4.0"
                                         },
                                         {
                                           "code": "1550",
                                           "display": "Allgemeine Chirurgie/Schwerpunkt Abdominal- und Gefäßchirurgie",
                                           "designations": [],
-                                          "system": "http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel-erweitert"
+                                          "system": "http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel-erweitert",
+                                          "version": "1.4.0"
                                         },
                                         {
                                           "code": "1551",
                                           "display": "Allgemeine Chirurgie/Schwerpunkt Handchirurgie",
                                           "designations": [],
-                                          "system": "http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel-erweitert"
+                                          "system": "http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel-erweitert",
+                                          "version": "1.4.0"
                                         },
                                         {
                                           "code": "2021",
                                           "display": "Thoraxchirurgie/Schwerpunkt Herzchirurgie",
                                           "designations": [],
-                                          "system": "http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel-erweitert"
+                                          "system": "http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel-erweitert",
+                                          "version": "1.4.0"
                                         },
                                         {
                                           "code": "2036",
                                           "display": "Thoraxchirurgie/Intensivmedizin",
                                           "designations": [],
-                                          "system": "http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel-erweitert"
+                                          "system": "http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel-erweitert",
+                                          "version": "1.4.0"
                                         },
                                         {
                                           "code": "2050",
                                           "display": "Thoraxchirurgie/Schwerpunkt Herzchirurgie Intensivmedizin",
                                           "designations": [],
-                                          "system": "http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel-erweitert"
+                                          "system": "http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel-erweitert",
+                                          "version": "1.4.0"
                                         },
                                         {
                                           "code": "2118",
                                           "display": "Herzchirurgie/Schwerpunkt Gefäßchirurgie",
                                           "designations": [],
-                                          "system": "http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel-erweitert"
+                                          "system": "http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel-erweitert",
+                                          "version": "1.4.0"
                                         },
                                         {
                                           "code": "2120",
                                           "display": "Herzchirurgie/Schwerpunkt Thoraxchirurgie",
                                           "designations": [],
-                                          "system": "http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel-erweitert"
+                                          "system": "http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel-erweitert",
+                                          "version": "1.4.0"
                                         },
                                         {
                                           "code": "2136",
                                           "display": "Herzchirurgie/Intensivmedizin (§ 13 Abs. 2 Satz 3 2. Halbsatz BPflV in der am 31.12.2003 geltenden Fassung)",
                                           "designations": [],
-                                          "system": "http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel-erweitert"
+                                          "system": "http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel-erweitert",
+                                          "version": "1.4.0"
                                         },
                                         {
                                           "code": "2150",
                                           "display": "Herzchirurgie/Schwerpunkt Thoraxchirurgie Intensivmedizin",
                                           "designations": [],
-                                          "system": "http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel-erweitert"
+                                          "system": "http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel-erweitert",
+                                          "version": "1.4.0"
                                         },
                                         {
                                           "code": "2309",
                                           "display": "Orthopädie/Schwerpunkt Rheumatologie",
                                           "designations": [],
-                                          "system": "http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel-erweitert"
+                                          "system": "http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel-erweitert",
+                                          "version": "1.4.0"
                                         },
                                         {
                                           "code": "2315",
                                           "display": "Orthopädie/Schwerpunkt Chirurgie",
                                           "designations": [],
-                                          "system": "http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel-erweitert"
+                                          "system": "http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel-erweitert",
+                                          "version": "1.4.0"
                                         },
                                         {
                                           "code": "2402",
                                           "display": "Frauenheilkunde/Schwerpunkt Geriatrie",
                                           "designations": [],
-                                          "system": "http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel-erweitert"
+                                          "system": "http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel-erweitert",
+                                          "version": "1.4.0"
                                         },
                                         {
                                           "code": "2405",
                                           "display": "Frauenheilkunde/Schwerpunkt Hämatologie und internistische Onkologie",
                                           "designations": [],
-                                          "system": "http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel-erweitert"
+                                          "system": "http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel-erweitert",
+                                          "version": "1.4.0"
                                         },
                                         {
                                           "code": "2406",
                                           "display": "Frauenheilkunde/Schwerpunkt Endokrinologie",
                                           "designations": [],
-                                          "system": "http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel-erweitert"
+                                          "system": "http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel-erweitert",
+                                          "version": "1.4.0"
                                         },
                                         {
                                           "code": "2810",
                                           "display": "Neurologie/Schwerpunkt Pädiatrie",
                                           "designations": [],
-                                          "system": "http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel-erweitert"
+                                          "system": "http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel-erweitert",
+                                          "version": "1.4.0"
                                         },
                                         {
                                           "code": "2851",
                                           "display": "Neurologie/Schwerpunkt Gerontologie",
                                           "designations": [],
-                                          "system": "http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel-erweitert"
+                                          "system": "http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel-erweitert",
+                                          "version": "1.4.0"
                                         },
                                         {
                                           "code": "2852",
                                           "display": "Neurologie/Schwerpunkt Neurologische Frührehabilitation",
                                           "designations": [],
-                                          "system": "http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel-erweitert"
+                                          "system": "http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel-erweitert",
+                                          "version": "1.4.0"
                                         },
                                         {
                                           "code": "2856",
                                           "display": "Neurologie/Schwerpunkt Schlaganfallpatienten",
                                           "designations": [],
-                                          "system": "http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel-erweitert"
+                                          "system": "http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel-erweitert",
+                                          "version": "1.4.0"
                                         },
                                         {
                                           "code": "2928",
                                           "display": "Allgemeine Psychiatrie/Schwerpunkt Neurologie",
                                           "designations": [],
-                                          "system": "http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel-erweitert"
+                                          "system": "http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel-erweitert",
+                                          "version": "1.4.0"
                                         },
                                         {
                                           "code": "2930",
                                           "display": "Allgemeine Psychiatrie/Schwerpunkt Kinder- und Jugendpsychiatrie",
                                           "designations": [],
-                                          "system": "http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel-erweitert"
+                                          "system": "http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel-erweitert",
+                                          "version": "1.4.0"
                                         },
                                         {
                                           "code": "2931",
                                           "display": "Allgemeine Psychiatrie/Schwerpunkt Psychosomatik/Psychotherapie",
                                           "designations": [],
-                                          "system": "http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel-erweitert"
+                                          "system": "http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel-erweitert",
+                                          "version": "1.4.0"
                                         },
                                         {
                                           "code": "2950",
                                           "display": "Allgemeine Psychiatrie/Schwerpunkt Suchtbehandlung",
                                           "designations": [],
-                                          "system": "http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel-erweitert"
+                                          "system": "http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel-erweitert",
+                                          "version": "1.4.0"
                                         },
                                         {
                                           "code": "2951",
                                           "display": "Allgemeine Psychiatrie/Schwerpunkt Gerontopsychiatrie",
                                           "designations": [],
-                                          "system": "http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel-erweitert"
+                                          "system": "http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel-erweitert",
+                                          "version": "1.4.0"
                                         },
                                         {
                                           "code": "2952",
                                           "display": "Allgemeine Psychiatrie/Schwerpunkt Forensische Behandlung",
                                           "designations": [],
-                                          "system": "http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel-erweitert"
+                                          "system": "http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel-erweitert",
+                                          "version": "1.4.0"
                                         },
                                         {
                                           "code": "2953",
                                           "display": "Allgemeine Psychiatrie/Schwerpunkt Suchtbehandlung, Tagesklinik",
                                           "designations": [],
-                                          "system": "http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel-erweitert"
+                                          "system": "http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel-erweitert",
+                                          "version": "1.4.0"
                                         },
                                         {
                                           "code": "2954",
                                           "display": "Allgemeine Psychiatrie/Schwerpunkt Suchtbehandlung, Nachtklinik",
                                           "designations": [],
-                                          "system": "http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel-erweitert"
+                                          "system": "http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel-erweitert",
+                                          "version": "1.4.0"
                                         },
                                         {
                                           "code": "2955",
                                           "display": "Allgemeine Psychiatrie/Schwerpunkt Gerontopsychiatrie, Tagesklinik",
                                           "designations": [],
-                                          "system": "http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel-erweitert"
+                                          "system": "http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel-erweitert",
+                                          "version": "1.4.0"
                                         },
                                         {
                                           "code": "2956",
                                           "display": "Allgemeine Psychiatrie/Schwerpunkt Gerontopsychiatrie, Nachtklinik",
                                           "designations": [],
-                                          "system": "http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel-erweitert"
+                                          "system": "http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel-erweitert",
+                                          "version": "1.4.0"
                                         },
                                         {
                                           "code": "2960",
                                           "display": "Allgemeine Psychiatrie/Tagesklinik (für teilstationäre Pflegesätze)",
                                           "designations": [],
-                                          "system": "http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel-erweitert"
+                                          "system": "http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel-erweitert",
+                                          "version": "1.4.0"
                                         },
                                         {
                                           "code": "2961",
                                           "display": "Allgemeine Psychiatrie/Nachtklinik (für teilstationäre Pflegesätze)",
                                           "designations": [],
-                                          "system": "http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel-erweitert"
+                                          "system": "http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel-erweitert",
+                                          "version": "1.4.0"
                                         },
                                         {
                                           "code": "3060",
                                           "display": "Kinder- und Jugendpsychiatrie/Tagesklinik (für teilstationäre Pflegesätze)",
                                           "designations": [],
-                                          "system": "http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel-erweitert"
+                                          "system": "http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel-erweitert",
+                                          "version": "1.4.0"
                                         },
                                         {
                                           "code": "3061",
                                           "display": "Kinder- und Jugendpsychiatrie/Nachtklinik (für teilstationäre Pflegesätze)",
                                           "designations": [],
-                                          "system": "http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel-erweitert"
+                                          "system": "http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel-erweitert",
+                                          "version": "1.4.0"
                                         },
                                         {
                                           "code": "3110",
                                           "display": "Psychosomatik/Psychotherapie/Schwerpunkt Kinder- und Jugendpsychosomatik",
                                           "designations": [],
-                                          "system": "http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel-erweitert"
+                                          "system": "http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel-erweitert",
+                                          "version": "1.4.0"
                                         },
                                         {
                                           "code": "3160",
                                           "display": "Psychosomatik/Psychotherapie/Tagesklinik (für teilstationäre Pflegesätze)",
                                           "designations": [],
-                                          "system": "http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel-erweitert"
+                                          "system": "http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel-erweitert",
+                                          "version": "1.4.0"
                                         },
                                         {
                                           "code": "3161",
                                           "display": "Psychosomatik/Psychotherapie/Nachtklinik (für teilstationäre Pflegesätze)",
                                           "designations": [],
-                                          "system": "http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel-erweitert"
+                                          "system": "http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel-erweitert",
+                                          "version": "1.4.0"
                                         },
                                         {
                                           "code": "3233",
                                           "display": "Nuklearmedizin/Schwerpunkt Strahlenheilkunde",
                                           "designations": [],
-                                          "system": "http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel-erweitert"
+                                          "system": "http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel-erweitert",
+                                          "version": "1.4.0"
                                         },
                                         {
                                           "code": "3305",
                                           "display": "Strahlenheilkunde/Schwerpunkt Hämatologie und internistische Onkologie",
                                           "designations": [],
-                                          "system": "http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel-erweitert"
+                                          "system": "http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel-erweitert",
+                                          "version": "1.4.0"
                                         },
                                         {
                                           "code": "3350",
                                           "display": "Strahlenheilkunde/Schwerpunkt Radiologie",
                                           "designations": [],
-                                          "system": "http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel-erweitert"
+                                          "system": "http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel-erweitert",
+                                          "version": "1.4.0"
                                         },
                                         {
                                           "code": "3460",
                                           "display": "Dermatologie/Tagesklinik (für teilstationäre Pflegesätze)",
                                           "designations": [],
-                                          "system": "http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel-erweitert"
+                                          "system": "http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel-erweitert",
+                                          "version": "1.4.0"
                                         },
                                         {
                                           "code": "3601",
                                           "display": "Intensivmedizin/Schwerpunkt Innere Medizin",
                                           "designations": [],
-                                          "system": "http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel-erweitert"
+                                          "system": "http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel-erweitert",
+                                          "version": "1.4.0"
                                         },
                                         {
                                           "code": "3603",
                                           "display": "Intensivmedizin/Schwerpunkt Kardiologie",
                                           "designations": [],
-                                          "system": "http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel-erweitert"
+                                          "system": "http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel-erweitert",
+                                          "version": "1.4.0"
                                         },
                                         {
                                           "code": "3610",
                                           "display": "Intensivmedizin/Schwerpunkt Pädiatrie",
                                           "designations": [],
-                                          "system": "http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel-erweitert"
+                                          "system": "http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel-erweitert",
+                                          "version": "1.4.0"
                                         },
                                         {
                                           "code": "3617",
                                           "display": "Intensivmedizin/Schwerpunkt Neurochirurgie",
                                           "designations": [],
-                                          "system": "http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel-erweitert"
+                                          "system": "http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel-erweitert",
+                                          "version": "1.4.0"
                                         },
                                         {
                                           "code": "3618",
                                           "display": "Intensivmedizin/Schwerpunkt Chirurgie",
                                           "designations": [],
-                                          "system": "http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel-erweitert"
+                                          "system": "http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel-erweitert",
+                                          "version": "1.4.0"
                                         },
                                         {
                                           "code": "3621",
                                           "display": "Intensivmedizin/Herzchirurgie",
                                           "designations": [],
-                                          "system": "http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel-erweitert"
+                                          "system": "http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel-erweitert",
+                                          "version": "1.4.0"
                                         },
                                         {
                                           "code": "3622",
                                           "display": "Intensivmedizin/Schwerpunkt Urologie",
                                           "designations": [],
-                                          "system": "http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel-erweitert"
+                                          "system": "http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel-erweitert",
+                                          "version": "1.4.0"
                                         },
                                         {
                                           "code": "3624",
                                           "display": "Intensivmedizin/Schwerpunkt Frauenheilkunde und Geburtshilfe",
                                           "designations": [],
-                                          "system": "http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel-erweitert"
+                                          "system": "http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel-erweitert",
+                                          "version": "1.4.0"
                                         },
                                         {
                                           "code": "3626",
                                           "display": "Intensivmedizin/Schwerpunkt Hals-, Nasen-, Ohrenheilkunde",
                                           "designations": [],
-                                          "system": "http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel-erweitert"
+                                          "system": "http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel-erweitert",
+                                          "version": "1.4.0"
                                         },
                                         {
                                           "code": "3628",
                                           "display": "Intensivmedizin/Schwerpunkt Neurologie",
                                           "designations": [],
-                                          "system": "http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel-erweitert"
+                                          "system": "http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel-erweitert",
+                                          "version": "1.4.0"
                                         },
                                         {
                                           "code": "3650",
                                           "display": "Operative Intensivmedizin/Schwerpunkt Chirurgie",
                                           "designations": [],
-                                          "system": "http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel-erweitert"
+                                          "system": "http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel-erweitert",
+                                          "version": "1.4.0"
                                         },
                                         {
                                           "code": "3651",
                                           "display": "Intensivmedizin/Thorax-Herzchirurgie",
                                           "designations": [],
-                                          "system": "http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel-erweitert"
+                                          "system": "http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel-erweitert",
+                                          "version": "1.4.0"
                                         },
                                         {
                                           "code": "3652",
                                           "display": "Intensivmedizin/Herz-Thoraxchirurgie",
                                           "designations": [],
-                                          "system": "http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel-erweitert"
+                                          "system": "http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel-erweitert",
+                                          "version": "1.4.0"
                                         },
                                         {
                                           "code": "3750",
                                           "display": "Angiologie",
                                           "designations": [],
-                                          "system": "http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel-erweitert"
+                                          "system": "http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel-erweitert",
+                                          "version": "1.4.0"
                                         },
                                         {
                                           "code": "3751",
                                           "display": "Radiologie",
                                           "designations": [],
-                                          "system": "http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel-erweitert"
+                                          "system": "http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel-erweitert",
+                                          "version": "1.4.0"
                                         },
                                         {
                                           "code": "3752",
                                           "display": "Palliativmedizin",
                                           "designations": [],
-                                          "system": "http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel-erweitert"
+                                          "system": "http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel-erweitert",
+                                          "version": "1.4.0"
                                         },
                                         {
                                           "code": "3753",
                                           "display": "Schmerztherapie",
                                           "designations": [],
-                                          "system": "http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel-erweitert"
+                                          "system": "http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel-erweitert",
+                                          "version": "1.4.0"
                                         },
                                         {
                                           "code": "3754",
                                           "display": "Heiltherapeutische Abteilung",
                                           "designations": [],
-                                          "system": "http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel-erweitert"
+                                          "system": "http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel-erweitert",
+                                          "version": "1.4.0"
                                         },
                                         {
                                           "code": "3755",
                                           "display": "Wirbelsäulenchirurgie",
                                           "designations": [],
-                                          "system": "http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel-erweitert"
+                                          "system": "http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel-erweitert",
+                                          "version": "1.4.0"
                                         },
                                         {
                                           "code": "3756",
                                           "display": "Suchtmedizin",
                                           "designations": [],
-                                          "system": "http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel-erweitert"
+                                          "system": "http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel-erweitert",
+                                          "version": "1.4.0"
                                         },
                                         {
                                           "code": "3757",
                                           "display": "Visceralchirurgie",
                                           "designations": [],
-                                          "system": "http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel-erweitert"
+                                          "system": "http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel-erweitert",
+                                          "version": "1.4.0"
                                         },
                                         {
                                           "code": "3758",
                                           "display": "Weaningeinheit",
                                           "designations": [],
-                                          "system": "http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel-erweitert"
+                                          "system": "http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel-erweitert",
+                                          "version": "1.4.0"
                                         }
                                       ],
                                       "required": true,
@@ -5089,7 +5305,8 @@
                                           "code": "261665006",
                                           "display": "Unbekannt",
                                           "designations": [],
-                                          "system": "http://snomed.info/sct"
+                                          "system": "http://snomed.info/sct",
+                                          "version": "http://snomed.info/sct/11000274103/version/20241115"
                                         },
                                         {
                                           "code": "1631000175102",
@@ -5100,25 +5317,29 @@
                                               "value": "Patient/Patientin nicht gefragt"
                                             }
                                           ],
-                                          "system": "http://snomed.info/sct"
+                                          "system": "http://snomed.info/sct",
+                                          "version": "http://snomed.info/sct/11000274103/version/20241115"
                                         },
                                         {
                                           "code": "becauseOfDisease",
                                           "display": "Hospitalisiert aufgrund der gemeldeten Krankheit",
                                           "designations": [],
-                                          "system": "https://demis.rki.de/fhir/CodeSystem/hospitalizationReason"
+                                          "system": "https://demis.rki.de/fhir/CodeSystem/hospitalizationReason",
+                                          "version": "1.0.1"
                                         },
                                         {
                                           "code": "becauseOfOtherReason",
                                           "display": "Hospitalisiert aufgrund einer anderen Ursache als der gemeldeten Krankheit",
                                           "designations": [],
-                                          "system": "https://demis.rki.de/fhir/CodeSystem/hospitalizationReason"
+                                          "system": "https://demis.rki.de/fhir/CodeSystem/hospitalizationReason",
+                                          "version": "1.0.1"
                                         },
                                         {
                                           "code": "forIsolation",
                                           "display": "Hospitalisiert zur Isolierung",
                                           "designations": [],
-                                          "system": "https://demis.rki.de/fhir/CodeSystem/hospitalizationReason"
+                                          "system": "https://demis.rki.de/fhir/CodeSystem/hospitalizationReason",
+                                          "version": "1.0.1"
                                         }
                                       ],
                                       "required": true,
@@ -5255,7 +5476,8 @@
                                                   "code": "261665006",
                                                   "display": "Unbekannt",
                                                   "designations": [],
-                                                  "system": "http://snomed.info/sct"
+                                                  "system": "http://snomed.info/sct",
+                                                  "version": "http://snomed.info/sct/11000274103/version/20241115"
                                                 },
                                                 {
                                                   "code": "1631000175102",
@@ -5266,13 +5488,15 @@
                                                       "value": "Patient/Patientin nicht gefragt"
                                                     }
                                                   ],
-                                                  "system": "http://snomed.info/sct"
+                                                  "system": "http://snomed.info/sct",
+                                                  "version": "http://snomed.info/sct/11000274103/version/20241115"
                                                 },
                                                 {
                                                   "code": "34051000087100:{370130000=41277001}",
                                                   "display": "Staatenlos",
                                                   "designations": [],
-                                                  "system": "http://snomed.info/sct"
+                                                  "system": "http://snomed.info/sct",
+                                                  "version": "http://snomed.info/sct/11000274103/version/20241115"
                                                 },
                                                 {
                                                   "code": "DE",
@@ -8158,7 +8382,8 @@
                     "code": "261665006",
                     "display": "Unbekannt",
                     "designations": [],
-                    "system": "http://snomed.info/sct"
+                    "system": "http://snomed.info/sct",
+                    "version": "http://snomed.info/sct/11000274103/version/20241115"
                   },
                   {
                     "code": "1631000175102",
@@ -8169,7 +8394,8 @@
                         "value": "Patient/Patientin nicht gefragt"
                       }
                     ],
-                    "system": "http://snomed.info/sct"
+                    "system": "http://snomed.info/sct",
+                    "version": "http://snomed.info/sct/11000274103/version/20241115"
                   },
                   {
                     "code": "373066001",
@@ -8180,7 +8406,8 @@
                         "value": "Ja"
                       }
                     ],
-                    "system": "http://snomed.info/sct"
+                    "system": "http://snomed.info/sct",
+                    "version": "http://snomed.info/sct/11000274103/version/20241115"
                   },
                   {
                     "code": "373067005",
@@ -8191,7 +8418,8 @@
                         "value": "Nein"
                       }
                     ],
-                    "system": "http://snomed.info/sct"
+                    "system": "http://snomed.info/sct",
+                    "version": "http://snomed.info/sct/11000274103/version/20241115"
                   }
                 ],
                 "required": true,
@@ -8249,7 +8477,8 @@
                                       "value": "Medizinische Einrichtung"
                                     }
                                   ],
-                                  "system": "https://demis.rki.de/fhir/CodeSystem/organizationType"
+                                  "system": "https://demis.rki.de/fhir/CodeSystem/organizationType",
+                                  "version": "1.4.2"
                                 },
                                 {
                                   "code": "hospital",
@@ -8265,6 +8494,7 @@
                                     }
                                   ],
                                   "system": "https://demis.rki.de/fhir/CodeSystem/organizationType",
+                                  "version": "1.4.2",
                                   "breadcrumb": "Medizinische Einrichtung"
                                 },
                                 {
@@ -8281,6 +8511,7 @@
                                     }
                                   ],
                                   "system": "https://demis.rki.de/fhir/CodeSystem/organizationType",
+                                  "version": "1.4.2",
                                   "breadcrumb": "Medizinische Einrichtung"
                                 },
                                 {
@@ -8297,6 +8528,7 @@
                                     }
                                   ],
                                   "system": "https://demis.rki.de/fhir/CodeSystem/organizationType",
+                                  "version": "1.4.2",
                                   "breadcrumb": "Medizinische Einrichtung"
                                 },
                                 {
@@ -8313,6 +8545,7 @@
                                     }
                                   ],
                                   "system": "https://demis.rki.de/fhir/CodeSystem/organizationType",
+                                  "version": "1.4.2",
                                   "breadcrumb": "Medizinische Einrichtung"
                                 },
                                 {
@@ -8329,6 +8562,7 @@
                                     }
                                   ],
                                   "system": "https://demis.rki.de/fhir/CodeSystem/organizationType",
+                                  "version": "1.4.2",
                                   "breadcrumb": "Medizinische Einrichtung"
                                 },
                                 {
@@ -8345,6 +8579,7 @@
                                     }
                                   ],
                                   "system": "https://demis.rki.de/fhir/CodeSystem/organizationType",
+                                  "version": "1.4.2",
                                   "breadcrumb": "Medizinische Einrichtung"
                                 },
                                 {
@@ -8361,6 +8596,7 @@
                                     }
                                   ],
                                   "system": "https://demis.rki.de/fhir/CodeSystem/organizationType",
+                                  "version": "1.4.2",
                                   "breadcrumb": "Medizinische Einrichtung"
                                 },
                                 {
@@ -8377,6 +8613,7 @@
                                     }
                                   ],
                                   "system": "https://demis.rki.de/fhir/CodeSystem/organizationType",
+                                  "version": "1.4.2",
                                   "breadcrumb": "Medizinische Einrichtung"
                                 },
                                 {
@@ -8393,6 +8630,7 @@
                                     }
                                   ],
                                   "system": "https://demis.rki.de/fhir/CodeSystem/organizationType",
+                                  "version": "1.4.2",
                                   "breadcrumb": "Medizinische Einrichtung"
                                 },
                                 {
@@ -8409,6 +8647,7 @@
                                     }
                                   ],
                                   "system": "https://demis.rki.de/fhir/CodeSystem/organizationType",
+                                  "version": "1.4.2",
                                   "breadcrumb": "Medizinische Einrichtung"
                                 },
                                 {
@@ -8425,6 +8664,7 @@
                                     }
                                   ],
                                   "system": "https://demis.rki.de/fhir/CodeSystem/organizationType",
+                                  "version": "1.4.2",
                                   "breadcrumb": "Medizinische Einrichtung"
                                 },
                                 {
@@ -8441,6 +8681,7 @@
                                     }
                                   ],
                                   "system": "https://demis.rki.de/fhir/CodeSystem/organizationType",
+                                  "version": "1.4.2",
                                   "breadcrumb": "Medizinische Einrichtung"
                                 },
                                 {
@@ -8457,6 +8698,7 @@
                                     }
                                   ],
                                   "system": "https://demis.rki.de/fhir/CodeSystem/organizationType",
+                                  "version": "1.4.2",
                                   "breadcrumb": "Medizinische Einrichtung"
                                 },
                                 {
@@ -8473,6 +8715,7 @@
                                     }
                                   ],
                                   "system": "https://demis.rki.de/fhir/CodeSystem/organizationType",
+                                  "version": "1.4.2",
                                   "breadcrumb": "Medizinische Einrichtung"
                                 },
                                 {
@@ -8488,7 +8731,8 @@
                                       "value": "Gemeinschaftseinrichtung"
                                     }
                                   ],
-                                  "system": "https://demis.rki.de/fhir/CodeSystem/organizationType"
+                                  "system": "https://demis.rki.de/fhir/CodeSystem/organizationType",
+                                  "version": "1.4.2"
                                 },
                                 {
                                   "code": "kindergarten",
@@ -8504,6 +8748,7 @@
                                     }
                                   ],
                                   "system": "https://demis.rki.de/fhir/CodeSystem/organizationType",
+                                  "version": "1.4.2",
                                   "breadcrumb": "Gemeinschaftseinrichtung"
                                 },
                                 {
@@ -8520,6 +8765,7 @@
                                     }
                                   ],
                                   "system": "https://demis.rki.de/fhir/CodeSystem/organizationType",
+                                  "version": "1.4.2",
                                   "breadcrumb": "Gemeinschaftseinrichtung"
                                 },
                                 {
@@ -8536,6 +8782,7 @@
                                     }
                                   ],
                                   "system": "https://demis.rki.de/fhir/CodeSystem/organizationType",
+                                  "version": "1.4.2",
                                   "breadcrumb": "Gemeinschaftseinrichtung"
                                 },
                                 {
@@ -8552,6 +8799,7 @@
                                     }
                                   ],
                                   "system": "https://demis.rki.de/fhir/CodeSystem/organizationType",
+                                  "version": "1.4.2",
                                   "breadcrumb": "Gemeinschaftseinrichtung"
                                 },
                                 {
@@ -8568,6 +8816,7 @@
                                     }
                                   ],
                                   "system": "https://demis.rki.de/fhir/CodeSystem/organizationType",
+                                  "version": "1.4.2",
                                   "breadcrumb": "Gemeinschaftseinrichtung"
                                 },
                                 {
@@ -8584,6 +8833,7 @@
                                     }
                                   ],
                                   "system": "https://demis.rki.de/fhir/CodeSystem/organizationType",
+                                  "version": "1.4.2",
                                   "breadcrumb": "Gemeinschaftseinrichtung"
                                 },
                                 {
@@ -8600,6 +8850,7 @@
                                     }
                                   ],
                                   "system": "https://demis.rki.de/fhir/CodeSystem/organizationType",
+                                  "version": "1.4.2",
                                   "breadcrumb": "Gemeinschaftseinrichtung"
                                 },
                                 {
@@ -8616,6 +8867,7 @@
                                     }
                                   ],
                                   "system": "https://demis.rki.de/fhir/CodeSystem/organizationType",
+                                  "version": "1.4.2",
                                   "breadcrumb": "Gemeinschaftseinrichtung"
                                 },
                                 {
@@ -8631,7 +8883,8 @@
                                       "value": "Gemeinschaftsunterkunft"
                                     }
                                   ],
-                                  "system": "https://demis.rki.de/fhir/CodeSystem/organizationType"
+                                  "system": "https://demis.rki.de/fhir/CodeSystem/organizationType",
+                                  "version": "1.4.2"
                                 },
                                 {
                                   "code": "homelessShelter",
@@ -8647,6 +8900,7 @@
                                     }
                                   ],
                                   "system": "https://demis.rki.de/fhir/CodeSystem/organizationType",
+                                  "version": "1.4.2",
                                   "breadcrumb": "Gemeinschaftsunterkunft"
                                 },
                                 {
@@ -8663,6 +8917,7 @@
                                     }
                                   ],
                                   "system": "https://demis.rki.de/fhir/CodeSystem/organizationType",
+                                  "version": "1.4.2",
                                   "breadcrumb": "Gemeinschaftsunterkunft"
                                 },
                                 {
@@ -8679,6 +8934,7 @@
                                     }
                                   ],
                                   "system": "https://demis.rki.de/fhir/CodeSystem/organizationType",
+                                  "version": "1.4.2",
                                   "breadcrumb": "Gemeinschaftsunterkunft"
                                 },
                                 {
@@ -8695,6 +8951,7 @@
                                     }
                                   ],
                                   "system": "https://demis.rki.de/fhir/CodeSystem/organizationType",
+                                  "version": "1.4.2",
                                   "breadcrumb": "Gemeinschaftsunterkunft"
                                 },
                                 {
@@ -8710,7 +8967,8 @@
                                       "value": "voll- oder teilstationäre Einrichtung und besondere Wohnform zur Betreuung und Unterbringung"
                                     }
                                   ],
-                                  "system": "https://demis.rki.de/fhir/CodeSystem/organizationType"
+                                  "system": "https://demis.rki.de/fhir/CodeSystem/organizationType",
+                                  "version": "1.4.2"
                                 },
                                 {
                                   "code": "elderlyCareHome",
@@ -8726,6 +8984,7 @@
                                     }
                                   ],
                                   "system": "https://demis.rki.de/fhir/CodeSystem/organizationType",
+                                  "version": "1.4.2",
                                   "breadcrumb": "voll- oder teilstationäre Einrichtung und besondere Wohnform zur Betreuung und Unterbringung"
                                 },
                                 {
@@ -8742,6 +9001,7 @@
                                     }
                                   ],
                                   "system": "https://demis.rki.de/fhir/CodeSystem/organizationType",
+                                  "version": "1.4.2",
                                   "breadcrumb": "voll- oder teilstationäre Einrichtung und besondere Wohnform zur Betreuung und Unterbringung"
                                 },
                                 {
@@ -8758,6 +9018,7 @@
                                     }
                                   ],
                                   "system": "https://demis.rki.de/fhir/CodeSystem/organizationType",
+                                  "version": "1.4.2",
                                   "breadcrumb": "voll- oder teilstationäre Einrichtung und besondere Wohnform zur Betreuung und Unterbringung"
                                 },
                                 {
@@ -8774,6 +9035,7 @@
                                     }
                                   ],
                                   "system": "https://demis.rki.de/fhir/CodeSystem/organizationType",
+                                  "version": "1.4.2",
                                   "breadcrumb": "voll- oder teilstationäre Einrichtung und besondere Wohnform zur Betreuung und Unterbringung"
                                 },
                                 {
@@ -8790,6 +9052,7 @@
                                     }
                                   ],
                                   "system": "https://demis.rki.de/fhir/CodeSystem/organizationType",
+                                  "version": "1.4.2",
                                   "breadcrumb": "voll- oder teilstationäre Einrichtung und besondere Wohnform zur Betreuung und Unterbringung"
                                 },
                                 {
@@ -8805,7 +9068,8 @@
                                       "value": "Sonstige Einrichtung mit Blutübertragungsrisiko"
                                     }
                                   ],
-                                  "system": "https://demis.rki.de/fhir/CodeSystem/organizationType"
+                                  "system": "https://demis.rki.de/fhir/CodeSystem/organizationType",
+                                  "version": "1.4.2"
                                 },
                                 {
                                   "code": "othHygRelFacility",
@@ -8820,7 +9084,8 @@
                                       "value": "Sonstige hygienerelevante Einrichtung"
                                     }
                                   ],
-                                  "system": "https://demis.rki.de/fhir/CodeSystem/organizationType"
+                                  "system": "https://demis.rki.de/fhir/CodeSystem/organizationType",
+                                  "version": "1.4.2"
                                 },
                                 {
                                   "code": "othAccom",
@@ -8835,7 +9100,8 @@
                                       "value": "Andere Unterkunft"
                                     }
                                   ],
-                                  "system": "https://demis.rki.de/fhir/CodeSystem/organizationType"
+                                  "system": "https://demis.rki.de/fhir/CodeSystem/organizationType",
+                                  "version": "1.4.2"
                                 },
                                 {
                                   "code": "hotel",
@@ -8851,6 +9117,7 @@
                                     }
                                   ],
                                   "system": "https://demis.rki.de/fhir/CodeSystem/organizationType",
+                                  "version": "1.4.2",
                                   "breadcrumb": "Andere Unterkunft"
                                 },
                                 {
@@ -8867,6 +9134,7 @@
                                     }
                                   ],
                                   "system": "https://demis.rki.de/fhir/CodeSystem/organizationType",
+                                  "version": "1.4.2",
                                   "breadcrumb": "Andere Unterkunft"
                                 },
                                 {
@@ -8883,6 +9151,7 @@
                                     }
                                   ],
                                   "system": "https://demis.rki.de/fhir/CodeSystem/organizationType",
+                                  "version": "1.4.2",
                                   "breadcrumb": "Andere Unterkunft"
                                 },
                                 {
@@ -8899,6 +9168,7 @@
                                     }
                                   ],
                                   "system": "https://demis.rki.de/fhir/CodeSystem/organizationType",
+                                  "version": "1.4.2",
                                   "breadcrumb": "Andere Unterkunft"
                                 },
                                 {
@@ -8914,7 +9184,8 @@
                                       "value": "Lebensmittelbetrieb"
                                     }
                                   ],
-                                  "system": "https://demis.rki.de/fhir/CodeSystem/organizationType"
+                                  "system": "https://demis.rki.de/fhir/CodeSystem/organizationType",
+                                  "version": "1.4.2"
                                 },
                                 {
                                   "code": "laboratory",
@@ -8929,7 +9200,8 @@
                                       "value": "Erregerdiagnostische Untersuchungsstelle"
                                     }
                                   ],
-                                  "system": "https://demis.rki.de/fhir/CodeSystem/organizationType"
+                                  "system": "https://demis.rki.de/fhir/CodeSystem/organizationType",
+                                  "version": "1.4.2"
                                 },
                                 {
                                   "code": "publicHealthLab",
@@ -8945,6 +9217,7 @@
                                     }
                                   ],
                                   "system": "https://demis.rki.de/fhir/CodeSystem/organizationType",
+                                  "version": "1.4.2",
                                   "breadcrumb": "Erregerdiagnostische Untersuchungsstelle"
                                 },
                                 {
@@ -8961,6 +9234,7 @@
                                     }
                                   ],
                                   "system": "https://demis.rki.de/fhir/CodeSystem/organizationType",
+                                  "version": "1.4.2",
                                   "breadcrumb": "Erregerdiagnostische Untersuchungsstelle"
                                 },
                                 {
@@ -8977,6 +9251,7 @@
                                     }
                                   ],
                                   "system": "https://demis.rki.de/fhir/CodeSystem/organizationType",
+                                  "version": "1.4.2",
                                   "breadcrumb": "Erregerdiagnostische Untersuchungsstelle"
                                 },
                                 {
@@ -8993,6 +9268,7 @@
                                     }
                                   ],
                                   "system": "https://demis.rki.de/fhir/CodeSystem/organizationType",
+                                  "version": "1.4.2",
                                   "breadcrumb": "Erregerdiagnostische Untersuchungsstelle"
                                 },
                                 {
@@ -9009,6 +9285,7 @@
                                     }
                                   ],
                                   "system": "https://demis.rki.de/fhir/CodeSystem/organizationType",
+                                  "version": "1.4.2",
                                   "breadcrumb": "Erregerdiagnostische Untersuchungsstelle"
                                 },
                                 {
@@ -9025,6 +9302,7 @@
                                     }
                                   ],
                                   "system": "https://demis.rki.de/fhir/CodeSystem/organizationType",
+                                  "version": "1.4.2",
                                   "breadcrumb": "Erregerdiagnostische Untersuchungsstelle"
                                 }
                               ],
@@ -9127,19 +9405,22 @@
                                   "code": "care",
                                   "display": "Betreuung",
                                   "designations": [],
-                                  "system": "https://demis.rki.de/fhir/CodeSystem/organizationAssociation"
+                                  "system": "https://demis.rki.de/fhir/CodeSystem/organizationAssociation",
+                                  "version": "1.0.1"
                                 },
                                 {
                                   "code": "employment",
                                   "display": "Tätigkeit",
                                   "designations": [],
-                                  "system": "https://demis.rki.de/fhir/CodeSystem/organizationAssociation"
+                                  "system": "https://demis.rki.de/fhir/CodeSystem/organizationAssociation",
+                                  "version": "1.0.1"
                                 },
                                 {
                                   "code": "accommodation",
                                   "display": "Unterbringung",
                                   "designations": [],
-                                  "system": "https://demis.rki.de/fhir/CodeSystem/organizationAssociation"
+                                  "system": "https://demis.rki.de/fhir/CodeSystem/organizationAssociation",
+                                  "version": "1.0.1"
                                 }
                               ],
                               "required": true,
@@ -9278,7 +9559,8 @@
                                           "code": "261665006",
                                           "display": "Unbekannt",
                                           "designations": [],
-                                          "system": "http://snomed.info/sct"
+                                          "system": "http://snomed.info/sct",
+                                          "version": "http://snomed.info/sct/11000274103/version/20241115"
                                         },
                                         {
                                           "code": "1631000175102",
@@ -9289,13 +9571,15 @@
                                               "value": "Patient/Patientin nicht gefragt"
                                             }
                                           ],
-                                          "system": "http://snomed.info/sct"
+                                          "system": "http://snomed.info/sct",
+                                          "version": "http://snomed.info/sct/11000274103/version/20241115"
                                         },
                                         {
                                           "code": "34051000087100:{370130000=41277001}",
                                           "display": "Staatenlos",
                                           "designations": [],
-                                          "system": "http://snomed.info/sct"
+                                          "system": "http://snomed.info/sct",
+                                          "version": "http://snomed.info/sct/11000274103/version/20241115"
                                         },
                                         {
                                           "code": "DE",
@@ -12169,7 +12453,8 @@
                     "code": "261665006",
                     "display": "Unbekannt",
                     "designations": [],
-                    "system": "http://snomed.info/sct"
+                    "system": "http://snomed.info/sct",
+                    "version": "http://snomed.info/sct/11000274103/version/20241115"
                   },
                   {
                     "code": "1631000175102",
@@ -12180,7 +12465,8 @@
                         "value": "Patient/Patientin nicht gefragt"
                       }
                     ],
-                    "system": "http://snomed.info/sct"
+                    "system": "http://snomed.info/sct",
+                    "version": "http://snomed.info/sct/11000274103/version/20241115"
                   },
                   {
                     "code": "373066001",
@@ -12191,7 +12477,8 @@
                         "value": "Ja"
                       }
                     ],
-                    "system": "http://snomed.info/sct"
+                    "system": "http://snomed.info/sct",
+                    "version": "http://snomed.info/sct/11000274103/version/20241115"
                   },
                   {
                     "code": "373067005",
@@ -12202,7 +12489,8 @@
                         "value": "Nein"
                       }
                     ],
-                    "system": "http://snomed.info/sct"
+                    "system": "http://snomed.info/sct",
+                    "version": "http://snomed.info/sct/11000274103/version/20241115"
                   }
                 ],
                 "required": true,
@@ -12310,7 +12598,8 @@
                                   "code": "261665006",
                                   "display": "Unbekannt",
                                   "designations": [],
-                                  "system": "http://snomed.info/sct"
+                                  "system": "http://snomed.info/sct",
+                                  "version": "http://snomed.info/sct/11000274103/version/20241115"
                                 },
                                 {
                                   "code": "1631000175102",
@@ -12321,7 +12610,8 @@
                                       "value": "Patient/Patientin nicht gefragt"
                                     }
                                   ],
-                                  "system": "http://snomed.info/sct"
+                                  "system": "http://snomed.info/sct",
+                                  "version": "http://snomed.info/sct/11000274103/version/20241115"
                                 }
                               ],
                               "required": true,
@@ -12400,7 +12690,8 @@
                     "code": "261665006",
                     "display": "Unbekannt",
                     "designations": [],
-                    "system": "http://snomed.info/sct"
+                    "system": "http://snomed.info/sct",
+                    "version": "http://snomed.info/sct/11000274103/version/20241115"
                   },
                   {
                     "code": "1631000175102",
@@ -12411,7 +12702,8 @@
                         "value": "Patient/Patientin nicht gefragt"
                       }
                     ],
-                    "system": "http://snomed.info/sct"
+                    "system": "http://snomed.info/sct",
+                    "version": "http://snomed.info/sct/11000274103/version/20241115"
                   },
                   {
                     "code": "373066001",
@@ -12422,7 +12714,8 @@
                         "value": "Ja"
                       }
                     ],
-                    "system": "http://snomed.info/sct"
+                    "system": "http://snomed.info/sct",
+                    "version": "http://snomed.info/sct/11000274103/version/20241115"
                   },
                   {
                     "code": "373067005",
@@ -12433,7 +12726,8 @@
                         "value": "Nein"
                       }
                     ],
-                    "system": "http://snomed.info/sct"
+                    "system": "http://snomed.info/sct",
+                    "version": "http://snomed.info/sct/11000274103/version/20241115"
                   }
                 ],
                 "required": true,
@@ -12549,7 +12843,8 @@
                         "value": "Atemstörung (Dyspnoe)"
                       }
                     ],
-                    "system": "http://snomed.info/sct"
+                    "system": "http://snomed.info/sct",
+                    "version": "http://snomed.info/sct/11000274103/version/20241115"
                   },
                   {
                     "code": "54840006",
@@ -12560,7 +12855,8 @@
                         "value": "Gedeihstörung"
                       }
                     ],
-                    "system": "http://snomed.info/sct"
+                    "system": "http://snomed.info/sct",
+                    "version": "http://snomed.info/sct/11000274103/version/20241115"
                   },
                   {
                     "code": "11934000",
@@ -12571,25 +12867,29 @@
                         "value": "Herabhängen des Oberlids (Ptosis)"
                       }
                     ],
-                    "system": "http://snomed.info/sct"
+                    "system": "http://snomed.info/sct",
+                    "version": "http://snomed.info/sct/11000274103/version/20241115"
                   },
                   {
                     "code": "73013002:{263502005=424124008}",
                     "display": "Hirnnervenstörung, akut entstanden",
                     "designations": [],
-                    "system": "http://snomed.info/sct"
+                    "system": "http://snomed.info/sct",
+                    "version": "http://snomed.info/sct/11000274103/version/20241115"
                   },
                   {
                     "code": "26544005",
                     "display": "Muskelschwäche",
                     "designations": [],
-                    "system": "http://snomed.info/sct"
+                    "system": "http://snomed.info/sct",
+                    "version": "http://snomed.info/sct/11000274103/version/20241115"
                   },
                   {
                     "code": "39157001",
                     "display": "Schlaffe Lähmung",
                     "designations": [],
-                    "system": "http://snomed.info/sct"
+                    "system": "http://snomed.info/sct",
+                    "version": "http://snomed.info/sct/11000274103/version/20241115"
                   },
                   {
                     "code": "40739000",
@@ -12600,7 +12900,8 @@
                         "value": "Schluckstörung"
                       }
                     ],
-                    "system": "http://snomed.info/sct"
+                    "system": "http://snomed.info/sct",
+                    "version": "http://snomed.info/sct/11000274103/version/20241115"
                   },
                   {
                     "code": "289155006",
@@ -12611,7 +12912,8 @@
                         "value": "Trinkschwäche"
                       }
                     ],
-                    "system": "http://snomed.info/sct"
+                    "system": "http://snomed.info/sct",
+                    "version": "http://snomed.info/sct/11000274103/version/20241115"
                   },
                   {
                     "code": "111360009",
@@ -12622,13 +12924,15 @@
                         "value": "Verstopfung (Obstipation)"
                       }
                     ],
-                    "system": "http://snomed.info/sct"
+                    "system": "http://snomed.info/sct",
+                    "version": "http://snomed.info/sct/11000274103/version/20241115"
                   },
                   {
                     "code": "397540003",
                     "display": "Visuelle Beeinträchtigung",
                     "designations": [],
-                    "system": "http://snomed.info/sct"
+                    "system": "http://snomed.info/sct",
+                    "version": "http://snomed.info/sct/11000274103/version/20241115"
                   }
                 ],
                 "required": false,

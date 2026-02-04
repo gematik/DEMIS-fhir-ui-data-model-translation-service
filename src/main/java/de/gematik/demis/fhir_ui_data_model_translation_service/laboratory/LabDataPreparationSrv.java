@@ -4,7 +4,7 @@ package de.gematik.demis.fhir_ui_data_model_translation_service.laboratory;
  * #%L
  * FHIR UI Data Model Translation Service
  * %%
- * Copyright (C) 2025 gematik GmbH
+ * Copyright (C) 2025 - 2026 gematik GmbH
  * %%
  * Licensed under the EUPL, Version 1.2 or - as soon they will be approved by the
  * European Commission – subsequent versions of the EUPL (the "Licence").
@@ -36,6 +36,8 @@ import static java.util.Collections.*;
 import ca.uhn.fhir.context.FhirContext;
 import de.gematik.demis.fhir_ui_data_model_translation_service.model.CodeDisplay;
 import de.gematik.demis.fhir_ui_data_model_translation_service.model.Designation;
+import de.gematik.demis.fhir_ui_data_model_translation_service.model.StaticSystemVersion;
+import de.gematik.demis.fhir_ui_data_model_translation_service.translation.DataLoaderSrv;
 import de.gematik.demis.fhir_ui_data_model_translation_service.utils.SnapshotFilesService;
 import jakarta.annotation.PostConstruct;
 import java.io.File;
@@ -67,13 +69,17 @@ public class LabDataPreparationSrv {
   private static final Pattern RESISTANCEGENE_PATTERN =
       Pattern.compile("ValueSet-resistanceGene(.{4})\\.json");
 
+  private static final String SNOMED_URL = "http://snomed.info/sct";
+  private static final String LOINC_URL = "http://loinc.org";
+
   private final SnapshotFilesService snapshotFilesService;
   private final PathogenNotificationCategoryList pathogenNotificationCategoryList;
   private final FhirContext fhirContext;
+  private final DataLoaderSrv dataLoaderSrv;
   private final boolean addTestDataErrorCase;
   private final boolean addTestDataSortingCase;
   private final boolean isNotification73ProcessingActive;
-  private final boolean isSnapshot6Active;
+  private final boolean isSnomedVersionActive;
   @Getter private Map<String, LabNotificationData> laboratoryDataMap; // 7.3, 7.1
   private Map<PathogenNotificationCategory, SequencedCollection<CodeDisplay>>
       pathogenNotificationCategories;
@@ -83,23 +89,34 @@ public class LabDataPreparationSrv {
       FhirContext fhirContext,
       SnapshotFilesService snapshotFilesService,
       PathogenNotificationCategoryList pathogenNotificationCategoryList,
+      DataLoaderSrv dataLoaderSrv,
       @Value("${add.test.data.error.case.for.lab}") boolean addTestDataErrorCase,
       @Value("${add.test.data.laboratory.sorting}") boolean addTestDataSortingCase,
       @Value("${feature.flag.notifications.7_3}") boolean isNotification73ProcessingActive,
-      @Value("${feature.flag.snapshot.6.active}") boolean isSnapshot6Active) {
+      @Value("${feature.flag.snomed.version.from.futs}") boolean isSnomedVersionActive) {
     this.fhirContext = fhirContext;
     this.snapshotFilesService = snapshotFilesService;
     this.pathogenNotificationCategoryList = pathogenNotificationCategoryList;
+    this.dataLoaderSrv = dataLoaderSrv;
     this.addTestDataErrorCase = addTestDataErrorCase;
     this.addTestDataSortingCase = addTestDataSortingCase;
     this.isNotification73ProcessingActive = isNotification73ProcessingActive;
-    this.isSnapshot6Active = isSnapshot6Active;
+    this.isSnomedVersionActive = isSnomedVersionActive;
   }
 
   @PostConstruct
   protected void initializeData() {
     this.laboratoryDataMap = new HashMap<>();
     this.notificationCategories = new ArrayList<>();
+
+    List<StaticSystemVersion> staticVersionList = null;
+    if (isSnomedVersionActive) {
+      staticVersionList = new LinkedList<>();
+      staticVersionList.add(
+          new StaticSystemVersion(SNOMED_URL, dataLoaderSrv.getVersion(SNOMED_URL)));
+      staticVersionList.add(
+          new StaticSystemVersion(LOINC_URL, dataLoaderSrv.getVersion(LOINC_URL)));
+    }
 
     if (isNotification73ProcessingActive) {
       this.pathogenNotificationCategories =
@@ -156,7 +173,8 @@ public class LabDataPreparationSrv {
               answerSetList,
               substanceList,
               resistanceList,
-              resistanceGeneList);
+              resistanceGeneList,
+              staticVersionList);
 
       if (laboratoryJsonDataModel.isUseable()) {
         log.debug("Integrating notification category: {}", code);
@@ -197,15 +215,13 @@ public class LabDataPreparationSrv {
     answerSetMap.put("abcd", answerSet);
     substanceMap.put("abcd", substances);
 
-    List<CodeDisplay> tmpnotificationCategories = new ArrayList<>();
-    tmpnotificationCategories.addAll(this.notificationCategories);
+    List<CodeDisplay> tmpnotificationCategories = new ArrayList<>(this.notificationCategories);
     tmpnotificationCategories.add(createTestDataForErrorCase());
     this.notificationCategories = tmpnotificationCategories;
   }
 
   private void addTestDataSortingCase() {
-    List<CodeDisplay> tmpnotificationCategories = new ArrayList<>();
-    tmpnotificationCategories.addAll(this.notificationCategories);
+    List<CodeDisplay> tmpnotificationCategories = new ArrayList<>(this.notificationCategories);
     tmpnotificationCategories.add(createTestDataForSorting());
     this.notificationCategories = tmpnotificationCategories;
   }
@@ -288,39 +304,24 @@ public class LabDataPreparationSrv {
       String json = FileUtils.readFileToString(file, StandardCharsets.UTF_8);
       ValueSet valueSet = fhirContext.newJsonParser().parseResource(ValueSet.class, json);
 
-      if (isNotification73ProcessingActive || isSnapshot6Active) {
-        ValueSet.ConceptSetComponent include = valueSet.getCompose().getInclude().get(0);
-        String system = include.getSystem();
-        String version = include.hasVersion() ? include.getVersion() : null;
-        String systemWithVersion = version != null ? system + "|" + version : system;
+      ValueSet.ConceptSetComponent include = valueSet.getCompose().getInclude().getFirst();
+      String system = include.getSystem();
+      String version = include.hasVersion() ? include.getVersion() : null;
+      String systemWithVersion = version != null ? system + "|" + version : system;
 
-        List<CodeDisplay> codeDisplays =
-            include.getConcept().stream()
-                .map(
-                    component ->
-                        CodeDisplay.builder()
-                            .code(component.getCode())
-                            .display(component.getDisplay())
-                            .designations(extractDesignations(component.getDesignation()))
-                            .order(extractOrder(component))
-                            .system(systemWithVersion)
-                            .build())
-                .toList();
-        return filterAndSortList(codeDisplays);
-      } else {
-        List<CodeDisplay> codeDisplays =
-            valueSet.getCompose().getInclude().get(0).getConcept().stream()
-                .map(
-                    component ->
-                        CodeDisplay.builder()
-                            .code(component.getCode())
-                            .display(component.getDisplay())
-                            .designations(extractDesignations(component.getDesignation()))
-                            .order(extractOrder(component))
-                            .build())
-                .toList();
-        return filterAndSortList(codeDisplays);
-      }
+      List<CodeDisplay> codeDisplays =
+          include.getConcept().stream()
+              .map(
+                  component ->
+                      CodeDisplay.builder()
+                          .code(component.getCode())
+                          .display(component.getDisplay())
+                          .designations(extractDesignations(component.getDesignation()))
+                          .order(extractOrder(component))
+                          .system(systemWithVersion)
+                          .build())
+              .toList();
+      return filterAndSortList(codeDisplays);
     } catch (IOException e) {
       log.error("error while reading file {}", file.getName(), e);
       return emptyList();

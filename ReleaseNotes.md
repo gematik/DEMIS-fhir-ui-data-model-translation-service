@@ -2,6 +2,15 @@
  
 # Release notes
 
+## 2.4.0
+- added designation uses to codes
+- added FEATURE_FLAG_ADD_DESIGNATION_USE
+- updated spring-parent to 2.14.19
+- added version parameter to CodeDisplay object
+- added version for snomed and loinc to prepared pathogen data for front end
+- added FEATURE_FLAG_SNOMED_VERSION_FROM_FUTS
+- removed feature flag FEATURE_FLAG_SNAPSHOT_6_ACTIVE
+
 ## 2.3.4
 - upgraded fhir-package-initializer to 1.0.6 to reduce wait time for istio-proxy
 - removed FEATURE_FLAG_DISEASE_DATEPICKER

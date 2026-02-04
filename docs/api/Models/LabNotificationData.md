@@ -10,6 +10,7 @@
 | **methods** | [**List**](CodeDisplay.md) |  | [optional] [default to null] |
 | **resistanceGenes** | [**List**](CodeDisplay.md) |  | [optional] [default to null] |
 | **resistances** | [**List**](CodeDisplay.md) |  | [optional] [default to null] |
+| **staticSystemVersions** | [**List**](StaticSystemVersion.md) |  | [optional] [default to null] |
 | **subheader** | **String** |  | [optional] [default to null] |
 | **substances** | [**List**](CodeDisplay.md) |  | [optional] [default to null] |
 

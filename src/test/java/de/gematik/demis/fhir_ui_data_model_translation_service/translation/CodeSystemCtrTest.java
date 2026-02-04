@@ -4,7 +4,7 @@ package de.gematik.demis.fhir_ui_data_model_translation_service.translation;
  * #%L
  * FHIR UI Data Model Translation Service
  * %%
- * Copyright (C) 2025 gematik GmbH
+ * Copyright (C) 2025 - 2026 gematik GmbH
  * %%
  * Licensed under the EUPL, Version 1.2 or - as soon they will be approved by the
  * European Commission – subsequent versions of the EUPL (the "Licence").
@@ -56,7 +56,7 @@ class CodeSystemCtrTest {
   @MockitoBean private DataLoaderSrv dataLoaderSrv;
 
   @Test
-  void shouldReturDisplayValueForOneCode() throws Exception {
+  void shouldReturnDisplayValueForOneCode() throws Exception {
     String code = "ordinary";
     String system = "addressUse";
 
@@ -88,7 +88,7 @@ class CodeSystemCtrTest {
   }
 
   @Test
-  void shouldReturDisplayValueForOneCodePathParam() throws Exception {
+  void shouldReturnDisplayValueForOneCodePathParam() throws Exception {
     String code = "ordinary";
     String system = "addressUse";
 

@@ -4,7 +4,7 @@ package de.gematik.demis.fhir_ui_data_model_translation_service.translation;
  * #%L
  * FHIR UI Data Model Translation Service
  * %%
- * Copyright (C) 2025 gematik GmbH
+ * Copyright (C) 2025 - 2026 gematik GmbH
  * %%
  * Licensed under the EUPL, Version 1.2 or - as soon they will be approved by the
  * European Commission – subsequent versions of the EUPL (the "Licence").
@@ -73,7 +73,7 @@ public class ValueSetCtrIT {
       String contentAsString = result.getResponse().getContentAsString(StandardCharsets.UTF_8);
       checkExpectedAndActualContentAsJsonNodes(
           contentAsString,
-          "[{\"code\":\"ASKU\",\"display\":\"asked but unknown\",\"designations\":[{\"language\":\"de\",\"value\":\"nicht ermittelbar\"}],\"system\":\"http://terminology.hl7.org/CodeSystem/v3-NullFlavor\"},{\"code\":\"NASK\",\"display\":\"not asked\",\"designations\":[{\"language\":\"de\",\"value\":\"nicht erhoben\"}],\"system\":\"http://terminology.hl7.org/CodeSystem/v3-NullFlavor\"}]",
+          "[{\"code\":\"ASKU\",\"display\":\"asked but unknown\",\"designations\":[{\"language\":\"de\",\"value\":\"nicht ermittelbar\"}],\"system\":\"http://terminology.hl7.org/CodeSystem/v3-NullFlavor\",\"version\":\"2.1.0\"},{\"code\":\"NASK\",\"display\":\"not asked\",\"designations\":[{\"language\":\"de\",\"value\":\"nicht erhoben\"}],\"system\":\"http://terminology.hl7.org/CodeSystem/v3-NullFlavor\",\"version\":\"2.1.0\"}]",
           mapper);
 
       MvcResult result2 =
@@ -104,7 +104,7 @@ public class ValueSetCtrIT {
       String contentAsString = result.getResponse().getContentAsString(StandardCharsets.UTF_8);
       checkExpectedAndActualContentAsJsonNodes(
           contentAsString,
-          "{\"code\":\"ASKU\",\"display\":\"asked but unknown\",\"designations\":[{\"language\":\"de\",\"value\":\"nicht ermittelbar\"}],\"system\":\"http://terminology.hl7.org/CodeSystem/v3-NullFlavor\"}",
+          "{\"code\":\"ASKU\",\"display\":\"asked but unknown\",\"designations\":[{\"language\":\"de\",\"value\":\"nicht ermittelbar\"}],\"system\":\"http://terminology.hl7.org/CodeSystem/v3-NullFlavor\",\"version\":\"2.1.0\"} ",
           mapper);
 
       MvcResult result2 =

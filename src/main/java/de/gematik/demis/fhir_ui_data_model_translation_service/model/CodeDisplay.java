@@ -4,7 +4,7 @@ package de.gematik.demis.fhir_ui_data_model_translation_service.model;
  * #%L
  * FHIR UI Data Model Translation Service
  * %%
- * Copyright (C) 2025 gematik GmbH
+ * Copyright (C) 2025 - 2026 gematik GmbH
  * %%
  * Licensed under the EUPL, Version 1.2 or - as soon they will be approved by the
  * European Commission – subsequent versions of the EUPL (the "Licence").
@@ -26,8 +26,6 @@ package de.gematik.demis.fhir_ui_data_model_translation_service.model;
  * find details in the "Readme" file.
  * #L%
  */
-
-import static de.gematik.demis.fhir_ui_data_model_translation_service.utils.Utils.GERMAN_DESIGNATION_ID;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
@@ -52,12 +50,30 @@ import lombok.Setter;
 @Getter
 @Setter
 public class CodeDisplay {
+
+  public static final String GERMAN_DESIGNATION_ID = "de-DE";
+
   private String code;
   private String display;
   @Builder.Default private Set<Designation> designations = new HashSet<>();
   @JsonIgnore private int order;
   private String system;
+  private String version;
   private String breadcrumb;
+
+  @JsonIgnore
+  public boolean isTwoCharacterCode() {
+    return (code != null) && (code.length() == 2);
+  }
+
+  @JsonIgnore
+  public String getGermanDesignation() {
+    return designations.stream()
+        .filter(designation -> designation.language().startsWith(GERMAN_DESIGNATION_ID))
+        .findFirst()
+        .map(Designation::value)
+        .orElse(display);
+  }
 
   public List<String> extractHeadersFromCodeDisplay() {
     String[] parts = getDisplay().split(";", 2);
@@ -93,23 +109,21 @@ public class CodeDisplay {
         && Objects.equals(code, that.code)
         && Objects.equals(display, that.display)
         && Objects.equals(designations, that.designations)
-        && Objects.equals(system, that.system);
+        && Objects.equals(system, that.system)
+        && Objects.equals(version, that.version);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(code, display, designations, order, system);
+    return Objects.hash(code, display, designations, order, system, version);
   }
 
-  public static boolean isTwoCharacterCode(CodeDisplay codeDisplay) {
-    return codeDisplay.getCode().length() == 2;
-  }
-
-  public static String getGermanDesignation(CodeDisplay codeDisplay) {
-    return codeDisplay.getDesignations().stream()
-        .filter(designation -> designation.language().startsWith(GERMAN_DESIGNATION_ID))
-        .findFirst()
-        .map(Designation::value)
-        .orElse(codeDisplay.getDisplay());
+  @Override
+  public String toString() {
+    if (version == null) {
+      return String.format("{\"code\":\"%s\",\"system\":\"%s\"}", code, system);
+    }
+    return String.format(
+        "{\"code\":\"%s\",\"system\":\"%s\",\"version\":\"%s\"}", code, system, version);
   }
 }

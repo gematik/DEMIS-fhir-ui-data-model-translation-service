@@ -4,7 +4,7 @@ package de.gematik.demis.fhir_ui_data_model_translation_service.laboratory;
  * #%L
  * FHIR UI Data Model Translation Service
  * %%
- * Copyright (C) 2025 gematik GmbH
+ * Copyright (C) 2025 - 2026 gematik GmbH
  * %%
  * Licensed under the EUPL, Version 1.2 or - as soon they will be approved by the
  * European Commission – subsequent versions of the EUPL (the "Licence").
@@ -29,6 +29,7 @@ package de.gematik.demis.fhir_ui_data_model_translation_service.laboratory;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import de.gematik.demis.fhir_ui_data_model_translation_service.model.CodeDisplay;
+import de.gematik.demis.fhir_ui_data_model_translation_service.model.StaticSystemVersion;
 import java.util.List;
 
 /**
@@ -52,7 +53,8 @@ public record LabNotificationData(
     List<CodeDisplay> answerSet,
     List<CodeDisplay> substances,
     List<CodeDisplay> resistances,
-    List<CodeDisplay> resistanceGenes) {
+    List<CodeDisplay> resistanceGenes,
+    List<StaticSystemVersion> staticSystemVersions) {
 
   @JsonIgnore
   public boolean isUseable() {

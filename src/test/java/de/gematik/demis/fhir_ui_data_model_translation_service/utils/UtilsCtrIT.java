@@ -4,7 +4,7 @@ package de.gematik.demis.fhir_ui_data_model_translation_service.utils;
  * #%L
  * FHIR UI Data Model Translation Service
  * %%
- * Copyright (C) 2025 gematik GmbH
+ * Copyright (C) 2025 - 2026 gematik GmbH
  * %%
  * Licensed under the EUPL, Version 1.2 or - as soon they will be approved by the
  * European Commission – subsequent versions of the EUPL (the "Licence").
@@ -58,6 +58,6 @@ class UtilsCtrIT {
     String contentAsString = result.getResponse().getContentAsString(StandardCharsets.UTF_8);
     assertThat(contentAsString)
         .isEqualTo(
-            "[{\"code\":\"DE\",\"display\":\"Germany\",\"designations\":[{\"language\":\"de-DE\",\"value\":\"Deutschland\"}],\"system\":\"urn:iso:std:iso:3166\"},{\"code\":\"NZ\",\"display\":\"New Zealand\",\"designations\":[{\"language\":\"de-DE\",\"value\":\"Neuseeland\"}],\"system\":\"urn:iso:std:iso:3166\"},{\"code\":\"CH\",\"display\":\"Switzerland\",\"designations\":[{\"language\":\"de-DE\",\"value\":\"Schweiz\"}],\"system\":\"urn:iso:std:iso:3166\"}]");
+            "[{\"code\":\"DE\",\"display\":\"Germany\",\"designations\":[{\"language\":\"de-DE\",\"value\":\"Deutschland\"}],\"system\":\"urn:iso:std:iso:3166\",\"version\":\"1.0.0\"},{\"code\":\"NZ\",\"display\":\"New Zealand\",\"designations\":[{\"language\":\"de-DE\",\"value\":\"Neuseeland\"}],\"system\":\"urn:iso:std:iso:3166\",\"version\":\"1.0.0\"},{\"code\":\"CH\",\"display\":\"Switzerland\",\"designations\":[{\"language\":\"de-DE\",\"value\":\"Schweiz\"}],\"system\":\"urn:iso:std:iso:3166\",\"version\":\"1.0.0\"}]");
   }
 }
