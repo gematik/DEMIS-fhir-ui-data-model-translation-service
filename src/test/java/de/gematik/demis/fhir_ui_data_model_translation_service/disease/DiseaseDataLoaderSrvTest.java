@@ -4,7 +4,7 @@ package de.gematik.demis.fhir_ui_data_model_translation_service.disease;
  * #%L
  * FHIR UI Data Model Translation Service
  * %%
- * Copyright (C) 2025 gematik GmbH
+ * Copyright (C) 2025 - 2026 gematik GmbH
  * %%
  * Licensed under the EUPL, Version 1.2 or - as soon they will be approved by the
  * European Commission – subsequent versions of the EUPL (the "Licence").
@@ -49,9 +49,6 @@ class DiseaseDataLoaderSrvTest {
   @Mock private QuestionnairePreparation questionnairePreparationMock;
   private DiseaseDataLoaderSrv diseaseDataLoaderSrv;
 
-  @Mock
-  private DiseaseNotificationCategoriesSrvRegression diseaseNotificationCategoriesSrvRegressionMock;
-
   @Mock private DiseaseNotificationCategoriesSrv diseaseNotificationCategoriesSrvMock;
   @Mock private DiseaseDataPreparationSrv diseaseDataPreparationSrvMock;
 
@@ -68,7 +65,6 @@ class DiseaseDataLoaderSrvTest {
     diseaseDataLoaderSrv =
         new DiseaseDataLoaderSrv(
             questionnairePreparationMock,
-            diseaseNotificationCategoriesSrvRegressionMock,
             diseaseNotificationCategoriesSrvMock,
             diseaseDataPreparationSrvMock);
     diseaseDataLoaderSrv.init();
@@ -114,11 +110,9 @@ class DiseaseDataLoaderSrvTest {
 
   private void initDiseaseDataLoaderSrvWithCategories(List<CodeDisplay> categories) {
     when(diseaseNotificationCategoriesSrvMock.getCategories()).thenReturn(categories);
-    when(diseaseNotificationCategoriesSrvRegressionMock.getCategories()).thenReturn(categories);
     diseaseDataLoaderSrv =
         new DiseaseDataLoaderSrv(
             questionnairePreparationMock,
-            diseaseNotificationCategoriesSrvRegressionMock,
             diseaseNotificationCategoriesSrvMock,
             diseaseDataPreparationSrvMock);
     diseaseDataLoaderSrv.init();

@@ -4,7 +4,7 @@ package de.gematik.demis.fhir_ui_data_model_translation_service.translation;
  * #%L
  * FHIR UI Data Model Translation Service
  * %%
- * Copyright (C) 2025 gematik GmbH
+ * Copyright (C) 2025 - 2026 gematik GmbH
  * %%
  * Licensed under the EUPL, Version 1.2 or - as soon they will be approved by the
  * European Commission – subsequent versions of the EUPL (the "Licence").
@@ -27,59 +27,49 @@ package de.gematik.demis.fhir_ui_data_model_translation_service.translation;
  * #L%
  */
 
+import static de.gematik.demis.fhir_ui_data_model_translation_service.model.Use.toUse;
 import static de.gematik.demis.fhir_ui_data_model_translation_service.utils.Utils.getFileString;
 
 import ca.uhn.fhir.context.FhirContext;
+import de.gematik.demis.fhir_ui_data_model_translation_service.FeatureFlags;
 import de.gematik.demis.fhir_ui_data_model_translation_service.model.CodeDisplay;
 import de.gematik.demis.fhir_ui_data_model_translation_service.model.Designation;
 import de.gematik.demis.fhir_ui_data_model_translation_service.utils.Utils;
 import java.io.File;
-import java.util.ArrayList;
-import java.util.Comparator;
-import java.util.HashSet;
-import java.util.LinkedHashMap;
-import java.util.LinkedHashSet;
-import java.util.List;
-import java.util.Map;
-import java.util.Optional;
-import java.util.Set;
+import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.stream.Collectors;
 import lombok.Getter;
+import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.hl7.fhir.r4.model.ValueSet;
 
+@RequiredArgsConstructor
 @Slf4j
 class ValueSets {
 
   private final LinkedHashSet<File> valueSetFiles;
   private final FhirContext fhirContext;
-
   private final CodeSystems codeSystems;
+  private final FeatureFlags featureFlags;
 
   @Getter private Map<String, Map<String, CodeDisplay>> valueSetData = new ConcurrentHashMap<>();
 
   private List<ValueSetPreparation> valueSetPreparations;
 
-  ValueSets(LinkedHashSet<File> valueSetFiles, FhirContext fhirContext, CodeSystems codeSystems) {
-    this.valueSetFiles = valueSetFiles;
-    this.fhirContext = fhirContext;
-    this.codeSystems = codeSystems;
-  }
-
   ValueSets build() {
     // phase 1 - read all files and create ValueSetPreparation objects
-    // ValueSetPreparation objects contain direct links to include elements and a boolean when
+    // contain direct links to include elements and a boolean when
     // another value sets is called
     valueSetPreparations = new ArrayList<>();
     valueSetFiles.forEach(this::initialParsing);
 
     // phase 2 - process all ValueSetPreparation objects that do not need another value set. set all
     // preparation objects to processable, if their needed value set was processed
-    processeDataWithNoDependenciesOnOtherValueSets();
+    processDataWithNoDependenciesOnOtherValueSets();
 
     // phase 3 - find all ValueSetPreparation objects that are processable and process them
-    processDataWithDepenenciesOnOtherValueSets();
+    processDataWithDependenciesOnOtherValueSets();
 
     // phase 4 - sort all value sets
     valueSetData.entrySet().forEach(this::sortAndFilterValueSetMap);
@@ -92,11 +82,11 @@ class ValueSets {
                     Map.Entry::getValue,
                     (oldValue, newValue) -> oldValue,
                     LinkedHashMap::new));
-    log.info("ValueSets build finished. Number of ValueSets: " + valueSetData.size());
+    log.info("ValueSets build finished. Number of ValueSets: {}", valueSetData.size());
     return this;
   }
 
-  private void processDataWithDepenenciesOnOtherValueSets() {
+  private void processDataWithDependenciesOnOtherValueSets() {
     int index = 0;
     while (!valueSetPreparations.isEmpty() && index < valueSetPreparations.size()) {
       ValueSetPreparation valueSetPreparation = valueSetPreparations.get(index);
@@ -111,7 +101,7 @@ class ValueSets {
     }
   }
 
-  private void processeDataWithNoDependenciesOnOtherValueSets() {
+  private void processDataWithNoDependenciesOnOtherValueSets() {
     List<ValueSetPreparation> processed =
         valueSetPreparations.stream()
             .filter(ValueSetPreparation::isStandalone)
@@ -144,7 +134,7 @@ class ValueSets {
 
   private void initialParsing(File file) {
     try {
-      log.info("Parsing value set file: " + file.getName());
+      log.info("Parsing value set file: {}", file.getName());
       ValueSet valueSet =
           fhirContext.newJsonParser().parseResource(ValueSet.class, getFileString(file));
 
@@ -157,13 +147,13 @@ class ValueSets {
               .allMatch(include -> include.getValueSet().isEmpty());
       valueSetPreparations.add(new ValueSetPreparation(valueSet, isStandAlone));
     } catch (Exception e) {
-      log.error("Error while parsing file: " + file.getName(), e);
+      log.error("Error while parsing file: {}", file.getName(), e);
     }
   }
 
   private boolean checkNeededValueSetIsAvailable(ValueSetPreparation valueSetPreparation) {
     List<ValueSet.ConceptSetComponent> include1 =
-        valueSetPreparation.getValueSet().getCompose().getInclude();
+        valueSetPreparation.valueSet().getCompose().getInclude();
     for (ValueSet.ConceptSetComponent setComponent : include1) {
       if (setComponent.getValueSet() != null
           && !setComponent.getValueSet().isEmpty()
@@ -175,8 +165,7 @@ class ValueSets {
   }
 
   private void processIncludeData(ValueSetPreparation valueSetPreparation) {
-    log.info(
-        "Processing include data from value set: " + valueSetPreparation.getValueSet().getUrl());
+    log.info("Processing include data from value set: {}", valueSetPreparation.valueSet().getUrl());
     String fileNameKey = valueSetPreparation.valueSet.getUrl();
     String valueSetVersion = valueSetPreparation.valueSet.getVersion();
     if (valueSetVersion != null) {
@@ -186,7 +175,7 @@ class ValueSets {
     Map<String, CodeDisplay> keyToValueSetMap = valueSetData.get(fileNameKey);
 
     List<ValueSet.ConceptSetComponent> include =
-        valueSetPreparation.getValueSet().getCompose().getInclude();
+        valueSetPreparation.valueSet().getCompose().getInclude();
 
     for (ValueSet.ConceptSetComponent cSC : include) {
       if (cSC.getConcept().isEmpty()) {
@@ -204,9 +193,9 @@ class ValueSets {
             .toList();
     // order keysWithSameUrl and search for latest version
     Optional<String> valueSetWithHighestVersion =
-        keysWithSameUrl.stream().sorted(Comparator.reverseOrder()).findFirst();
+        keysWithSameUrl.stream().max(Comparator.naturalOrder());
 
-    // add highest version of value set if found value set is the current processed one
+    // add the highest version of value set if found value set is the current processed one
     if (valueSetWithHighestVersion.isPresent()
         && valueSetWithHighestVersion.get().equals(fileNameKey)) {
       valueSetData.put(
@@ -238,19 +227,34 @@ class ValueSets {
       ValueSet.ConceptReferenceComponent referenceComponent,
       ValueSet.ConceptSetComponent setComponent) {
     // extract data and create new CodeDisplay. search for breadcrump in code system
-    CodeDisplay codeDisplay =
+    final var builder =
         CodeDisplay.builder()
             .code(referenceComponent.getCode())
             .display(referenceComponent.getDisplay())
-            .system(setComponent.getSystem())
-            .order(Utils.extractOrder(referenceComponent))
-            .build();
+            .system(setComponent.getSystem());
+    if (featureFlags.isAddCodeDisplayVersion()) {
+      builder.version(setComponent.getVersion());
+    }
+    final CodeDisplay codeDisplay = builder.order(Utils.extractOrder(referenceComponent)).build();
     if (referenceComponent.hasDesignation()) {
       Set<Designation> designations = new HashSet<>();
-      referenceComponent
-          .getDesignation()
-          .forEach(cRDC -> designations.add(new Designation(cRDC.getLanguage(), cRDC.getValue())));
-      codeDisplay.addDesignation(designations);
+      if (featureFlags.isAddDesignationUse()) {
+        referenceComponent
+            .getDesignation()
+            .forEach(
+                cRDC ->
+                    designations.add(
+                        new Designation(
+                            cRDC.getLanguage(), cRDC.getValue(), toUse(cRDC.getUse()))));
+        codeDisplay.addDesignation(designations);
+      } else {
+        referenceComponent
+            .getDesignation()
+            .forEach(
+                cRDC -> designations.add(new Designation(cRDC.getLanguage(), cRDC.getValue())));
+
+        codeDisplay.addDesignation(designations);
+      }
     }
 
     // get all codeSystems that start with the setCompoenets system
@@ -279,14 +283,5 @@ class ValueSets {
     return codeDisplay;
   }
 
-  @Getter
-  private class ValueSetPreparation {
-    private final ValueSet valueSet;
-    private final boolean isStandalone;
-
-    ValueSetPreparation(ValueSet valueSet, boolean isStandalone) {
-      this.valueSet = valueSet;
-      this.isStandalone = isStandalone;
-    }
-  }
+  private record ValueSetPreparation(ValueSet valueSet, boolean isStandalone) {}
 }

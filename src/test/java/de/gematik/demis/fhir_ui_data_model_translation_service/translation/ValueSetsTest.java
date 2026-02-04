@@ -4,7 +4,7 @@ package de.gematik.demis.fhir_ui_data_model_translation_service.translation;
  * #%L
  * FHIR UI Data Model Translation Service
  * %%
- * Copyright (C) 2025 gematik GmbH
+ * Copyright (C) 2025 - 2026 gematik GmbH
  * %%
  * Licensed under the EUPL, Version 1.2 or - as soon they will be approved by the
  * European Commission – subsequent versions of the EUPL (the "Licence").
@@ -34,17 +34,12 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.Mockito.when;
 
 import ca.uhn.fhir.context.FhirContext;
+import de.gematik.demis.fhir_ui_data_model_translation_service.FeatureFlags;
 import de.gematik.demis.fhir_ui_data_model_translation_service.model.CodeDisplay;
 import de.gematik.demis.fhir_ui_data_model_translation_service.model.Designation;
+import de.gematik.demis.fhir_ui_data_model_translation_service.model.Use;
 import java.io.File;
-import java.io.IOException;
-import java.util.Comparator;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.LinkedHashSet;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -74,36 +69,43 @@ class ValueSetsTest {
       "src/test/resources/profilesNotForIT/ValueSet-resistanceGene.json";
   static final String SORT_FILTER_FILE =
       "src/test/resources/sortedValueSets/ValueSet-materialINVP.json";
+  private static final FeatureFlags FEATURE_FLAGS_ENABLED =
+      FeatureFlags.builder().addDesignationUse(true).addCodeDisplayVersion(true).build();
   @Mock private CodeSystems codeSystemsMock;
 
   @Test
   void shouldCreateValueSetsWithoutExpansionData() {
     LinkedHashSet<File> files = new LinkedHashSet<>(singleton(EVIDENCE_CVDD));
-    ValueSets valueSets = new ValueSets(files, FHIR_CONTEXT, codeSystemsMock);
+    ValueSets valueSets =
+        new ValueSets(files, FHIR_CONTEXT, codeSystemsMock, FEATURE_FLAGS_ENABLED);
     valueSets.build();
 
-    assertThat(valueSets.getValueSetData()).isNotEmpty();
+    final Map<String, Map<String, CodeDisplay>> actualCodes = valueSets.getValueSetData();
+    assertThat(actualCodes).isNotEmpty();
     // include data
-    assertThat(valueSets.getValueSetData().get("https://demis.rki.de/fhir/ValueSet/evidenceCVDD"))
+    assertThat(actualCodes.get("https://demis.rki.de/fhir/ValueSet/evidenceCVDD"))
         .containsKey("67782005");
-    CodeDisplay codeDisplay67782005 =
-        valueSets
-            .getValueSetData()
-            .get("https://demis.rki.de/fhir/ValueSet/evidenceCVDD")
-            .get("67782005");
+    final CodeDisplay codeDisplay67782005 =
+        actualCodes.get("https://demis.rki.de/fhir/ValueSet/evidenceCVDD").get("67782005");
+    assertThat(codeDisplay67782005.getSystem()).isNotNull();
+    assertThat(codeDisplay67782005.getVersion()).isNotNull();
     assertThat(codeDisplay67782005.getDisplay()).isEqualTo("akutes schweres Atemnotsyndrom (ARDS)");
     assertThat(codeDisplay67782005.getDesignations())
         .containsExactly(
-            new Designation("en-US", "Acute respiratory distress syndrome (disorder)"));
+            new Designation(
+                "en-US",
+                "Acute respiratory distress syndrome (disorder)",
+                new Use("http://snomed.info/sct", "900000000000003001")));
     // expansion data
-    assertThat(valueSets.getValueSetData().get("https://demis.rki.de/fhir/ValueSet/evidenceCVDD"))
+    assertThat(actualCodes.get("https://demis.rki.de/fhir/ValueSet/evidenceCVDD"))
         .doesNotContainKey("409966000");
   }
 
   @Test
   void shouldCreateThreeEntries() {
     LinkedHashSet<File> files = new LinkedHashSet<>(asList(EVIDENCE_CVDD, EVIDENCE_CVDD2));
-    ValueSets valueSets = new ValueSets(files, FHIR_CONTEXT, codeSystemsMock);
+    ValueSets valueSets =
+        new ValueSets(files, FHIR_CONTEXT, codeSystemsMock, FEATURE_FLAGS_ENABLED);
     valueSets.build();
 
     assertThat(valueSets.getValueSetData()).isNotEmpty();
@@ -125,7 +127,7 @@ class ValueSetsTest {
   }
 
   @Test
-  void shouldCreateValueSetWithDesignationFromCodeSystem() throws IOException {
+  void shouldCreateValueSetWithDesignationFromCodeSystem() {
     Map<String, CodeDisplay> mockCodeToCodeDisplayMap = new HashMap<>();
     Set<Designation> designations1 = new HashSet<>();
     designations1.add(
@@ -137,7 +139,10 @@ class ValueSetsTest {
     when(codeSystemsMock.getCodeSystemData()).thenReturn(mockAllCodeSystemCodeDisplayData);
     Map<String, Map<String, CodeDisplay>> valueSets =
         new ValueSets(
-                new LinkedHashSet<>(singleton(ABVP_LAB_TEST_FILE)), FHIR_CONTEXT, codeSystemsMock)
+                new LinkedHashSet<>(singleton(ABVP_LAB_TEST_FILE)),
+                FHIR_CONTEXT,
+                codeSystemsMock,
+                FEATURE_FLAGS_ENABLED)
             .build()
             .getValueSetData();
     assertThat(valueSets).hasSize(2);
@@ -161,12 +166,13 @@ class ValueSetsTest {
   }
 
   @Test
-  void shouldSortValueSetAsCodeDisplayRepresentation() throws IOException {
+  void shouldSortValueSetAsCodeDisplayRepresentation() {
     Map<String, Map<String, CodeDisplay>> valueSets =
         new ValueSets(
                 new LinkedHashSet<>(singleton(ANSWER_SET_FOR_SORT_FILE)),
                 FHIR_CONTEXT,
-                codeSystemsMock)
+                codeSystemsMock,
+                FEATURE_FLAGS_ENABLED)
             .build()
             .getValueSetData();
     assertThat(valueSets).hasSize(2);
@@ -191,7 +197,8 @@ class ValueSetsTest {
             new File(RESISTANCE_FILE),
             new File(RESISTANCE_GENE_FILE));
     LinkedHashSet<File> files = new LinkedHashSet<>(fileList);
-    ValueSets valueSets = new ValueSets(files, FHIR_CONTEXT, codeSystemsMock);
+    ValueSets valueSets =
+        new ValueSets(files, FHIR_CONTEXT, codeSystemsMock, FEATURE_FLAGS_ENABLED);
     valueSets.build();
 
     assertThat(valueSets.getValueSetData()).isNotEmpty();
@@ -209,7 +216,8 @@ class ValueSetsTest {
   @Test
   void shouldSortAndFilterValueSet() {
     LinkedHashSet<File> files = new LinkedHashSet<>(singleton(new File(SORT_FILTER_FILE)));
-    ValueSets valueSets = new ValueSets(files, FHIR_CONTEXT, codeSystemsMock);
+    ValueSets valueSets =
+        new ValueSets(files, FHIR_CONTEXT, codeSystemsMock, FEATURE_FLAGS_ENABLED);
     valueSets.build();
 
     Map<String, CodeDisplay> actual =
@@ -224,9 +232,10 @@ class ValueSetsTest {
   class RegressionTest {
 
     @Test
-    void shouldCreateValueSetsWithoutExpansionData() throws IOException {
+    void shouldCreateValueSetsWithoutExpansionData() {
       LinkedHashSet<File> files = new LinkedHashSet<>(singleton(EVIDENCE_CVDD));
-      ValueSets valueSets = new ValueSets(files, FHIR_CONTEXT, codeSystemsMock);
+      ValueSets valueSets =
+          new ValueSets(files, FHIR_CONTEXT, codeSystemsMock, FEATURE_FLAGS_ENABLED);
       valueSets.build();
 
       assertThat(valueSets.getValueSetData()).isNotEmpty();
@@ -242,14 +251,17 @@ class ValueSetsTest {
           .isEqualTo("akutes schweres Atemnotsyndrom (ARDS)");
       assertThat(codeDisplay67782005.getDesignations())
           .containsExactly(
-              new Designation("en-US", "Acute respiratory distress syndrome (disorder)"));
+              new Designation(
+                  "en-US",
+                  "Acute respiratory distress syndrome (disorder)",
+                  new Use("http://snomed.info/sct", "900000000000003001")));
       // expansion data
       assertThat(valueSets.getValueSetData().get("https://demis.rki.de/fhir/ValueSet/evidenceCVDD"))
           .doesNotContainKey("409966000");
     }
 
     @Test
-    void shouldCreateValueSetWithDesignation() throws IOException {
+    void shouldCreateValueSetWithDesignation() {
       Map<String, CodeDisplay> mockCodeToCodeDisplayMap = new HashMap<>();
       Set<Designation> designations1 = new HashSet<>();
       designations1.add(
@@ -264,7 +276,8 @@ class ValueSetsTest {
           new ValueSets(
                   new LinkedHashSet<>(singletonList(ABVP_LAB_TEST_FILE)),
                   FHIR_CONTEXT,
-                  codeSystemsMock)
+                  codeSystemsMock,
+                  FEATURE_FLAGS_ENABLED)
               .build()
               .getValueSetData();
       assertThat(valueSets).hasSize(2);
@@ -288,12 +301,13 @@ class ValueSetsTest {
     }
 
     @Test
-    void shouldSortValueSetAsCodeDisplayRepresentation() throws IOException {
+    void shouldSortValueSetAsCodeDisplayRepresentation() {
       Map<String, Map<String, CodeDisplay>> valueSets =
           new ValueSets(
                   new LinkedHashSet<>(singleton(ANSWER_SET_FOR_SORT_FILE)),
                   FHIR_CONTEXT,
-                  codeSystemsMock)
+                  codeSystemsMock,
+                  FEATURE_FLAGS_ENABLED)
               .build()
               .getValueSetData();
       assertThat(valueSets).hasSize(2);
@@ -306,7 +320,8 @@ class ValueSetsTest {
     @Test
     void shouldSortAndFilterValueSet() {
       LinkedHashSet<File> files = new LinkedHashSet<>(singleton(new File(SORT_FILTER_FILE)));
-      ValueSets valueSets = new ValueSets(files, FHIR_CONTEXT, codeSystemsMock);
+      ValueSets valueSets =
+          new ValueSets(files, FHIR_CONTEXT, codeSystemsMock, FEATURE_FLAGS_ENABLED);
       valueSets.build();
 
       Map<String, CodeDisplay> actual =

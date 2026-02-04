@@ -4,7 +4,7 @@ package de.gematik.demis.fhir_ui_data_model_translation_service.translation;
  * #%L
  * FHIR UI Data Model Translation Service
  * %%
- * Copyright (C) 2025 gematik GmbH
+ * Copyright (C) 2025 - 2026 gematik GmbH
  * %%
  * Licensed under the EUPL, Version 1.2 or - as soon they will be approved by the
  * European Commission – subsequent versions of the EUPL (the "Licence").
@@ -32,9 +32,11 @@ import static org.assertj.core.api.Assertions.assertThatThrownBy;
 import static org.mockito.Mockito.when;
 
 import ca.uhn.fhir.context.FhirContext;
+import de.gematik.demis.fhir_ui_data_model_translation_service.FeatureFlags;
 import de.gematik.demis.fhir_ui_data_model_translation_service.exception.DataNotFoundExcp;
 import de.gematik.demis.fhir_ui_data_model_translation_service.model.CodeDisplay;
 import de.gematik.demis.fhir_ui_data_model_translation_service.model.Designation;
+import de.gematik.demis.fhir_ui_data_model_translation_service.model.Use;
 import de.gematik.demis.fhir_ui_data_model_translation_service.objects.code.displays.AddressUseTOs;
 import de.gematik.demis.fhir_ui_data_model_translation_service.utils.SnapshotFilesService;
 import java.io.File;
@@ -53,9 +55,12 @@ import org.mockito.junit.jupiter.MockitoExtension;
 @ExtendWith(MockitoExtension.class)
 class DataLoaderSrvTest {
 
+  private static final FeatureFlags FEATURE_FLAGS_ENABLED =
+      FeatureFlags.builder().addDesignationUse(true).addCodeDisplayVersion(true).build();
+
   private static File addressUseFileCS;
-  private static File LOINCFileCS;
-  private static File emptyLOINCFileCS;
+  private static File loincFileCS;
+  private static File emptyLoincFileCS;
   private static File notificationCategoryFileCS;
   private static File geographicRegionVS;
   private static File laboratoryTestINVPFileVS;
@@ -74,8 +79,8 @@ class DataLoaderSrvTest {
   static void setup() {
     addressUseFileCS =
         new File("src/test/resources/profiles/CodeSystem/CodeSystem-addressUse.json");
-    LOINCFileCS = new File("src/test/resources/profiles/CodeSystem/CodeSystem-loinc-2.74.json");
-    emptyLOINCFileCS =
+    loincFileCS = new File("src/test/resources/profiles/CodeSystem/CodeSystem-loinc-2.74.json");
+    emptyLoincFileCS =
         new File("src/test/resources/profiles/CodeSystem/CodeSystem-emptyLOINC.json");
     notificationCategoryFileCS =
         new File("src/test/resources/profiles/CodeSystem/CodeSystem-notificationCategory.json");
@@ -106,7 +111,7 @@ class DataLoaderSrvTest {
   void testConstructorAndInit_shouldAddCodeSystemAndValueSetData() throws IOException {
 
     when(snapshotFilesServiceMock.getCodeSystemFiles())
-        .thenReturn(List.of(addressUseFileCS, LOINCFileCS, notificationCategoryFileCS));
+        .thenReturn(List.of(addressUseFileCS, loincFileCS, notificationCategoryFileCS));
     when(snapshotFilesServiceMock.getValueSetFiles())
         .thenReturn(
             List.of(
@@ -117,7 +122,11 @@ class DataLoaderSrvTest {
                 fileForTestCoverageVS));
 
     DataLoaderSrv dataLoaderSrv =
-        new DataLoaderSrv(snapshotFilesServiceMock, FhirContext.forR4(), hl7CodeSystemSrvMock);
+        new DataLoaderSrv(
+            snapshotFilesServiceMock,
+            FhirContext.forR4Cached(),
+            hl7CodeSystemSrvMock,
+            FEATURE_FLAGS_ENABLED);
     dataLoaderSrv.initialize();
 
     assertThat(dataLoaderSrv.getCodeSystems())
@@ -158,7 +167,11 @@ class DataLoaderSrvTest {
         .thenReturn(List.of(addressUseFalseGroupVS, materialInvpFileVS));
 
     DataLoaderSrv dataLoaderSrv =
-        new DataLoaderSrv(snapshotFilesServiceMock, FhirContext.forR4(), hl7CodeSystemSrvMock);
+        new DataLoaderSrv(
+            snapshotFilesServiceMock,
+            FhirContext.forR4Cached(),
+            hl7CodeSystemSrvMock,
+            FEATURE_FLAGS_ENABLED);
     dataLoaderSrv.initialize();
 
     assertThat(dataLoaderSrv.getCodeSystems()).hasSize(2);
@@ -170,7 +183,7 @@ class DataLoaderSrvTest {
       throws IOException {
 
     when(snapshotFilesServiceMock.getCodeSystemFiles())
-        .thenReturn(List.of(addressUseFileCS, LOINCFileCS, notificationCategoryFileCS));
+        .thenReturn(List.of(addressUseFileCS, loincFileCS, notificationCategoryFileCS));
     when(snapshotFilesServiceMock.getValueSetFiles())
         .thenReturn(
             List.of(
@@ -180,7 +193,11 @@ class DataLoaderSrvTest {
                 materialInvpFileVS));
 
     DataLoaderSrv dataLoaderSrv =
-        new DataLoaderSrv(snapshotFilesServiceMock, FhirContext.forR4(), hl7CodeSystemSrvMock);
+        new DataLoaderSrv(
+            snapshotFilesServiceMock,
+            FhirContext.forR4Cached(),
+            hl7CodeSystemSrvMock,
+            FEATURE_FLAGS_ENABLED);
     dataLoaderSrv.initialize();
 
     assertThat(dataLoaderSrv.getCodeSystems())
@@ -213,10 +230,16 @@ class DataLoaderSrvTest {
     when(snapshotFilesServiceMock.getValueSetFiles()).thenReturn(List.of());
 
     DataLoaderSrv dataLoaderSrv =
-        new DataLoaderSrv(snapshotFilesServiceMock, FhirContext.forR4(), hl7CodeSystemSrvMock);
+        new DataLoaderSrv(
+            snapshotFilesServiceMock,
+            FhirContext.forR4Cached(),
+            hl7CodeSystemSrvMock,
+            FEATURE_FLAGS_ENABLED);
     dataLoaderSrv.initialize();
 
-    assertThat(dataLoaderSrv.getCodeSystemData("https://demis.rki.de/fhir/CodeSystem/addressUse"))
+    final List<CodeDisplay> actualCodes =
+        dataLoaderSrv.getCodeSystemData("https://demis.rki.de/fhir/CodeSystem/addressUse");
+    assertThat(actualCodes)
         .hasSize(3)
         .containsExactlyInAnyOrderElementsOf(
             List.of(AddressUseTOs.current(), AddressUseTOs.ordinary(), AddressUseTOs.primary()));
@@ -229,7 +252,11 @@ class DataLoaderSrvTest {
     when(snapshotFilesServiceMock.getValueSetFiles()).thenReturn(List.of(methodInvpFileVS));
 
     DataLoaderSrv dataLoaderSrv =
-        new DataLoaderSrv(snapshotFilesServiceMock, FhirContext.forR4(), hl7CodeSystemSrvMock);
+        new DataLoaderSrv(
+            snapshotFilesServiceMock,
+            FhirContext.forR4Cached(),
+            hl7CodeSystemSrvMock,
+            FEATURE_FLAGS_ENABLED);
     dataLoaderSrv.initialize();
 
     assertThatThrownBy(
@@ -247,7 +274,11 @@ class DataLoaderSrvTest {
     when(snapshotFilesServiceMock.getValueSetFiles()).thenReturn(List.of());
 
     DataLoaderSrv dataLoaderSrv =
-        new DataLoaderSrv(snapshotFilesServiceMock, FhirContext.forR4(), hl7CodeSystemSrvMock);
+        new DataLoaderSrv(
+            snapshotFilesServiceMock,
+            FhirContext.forR4Cached(),
+            hl7CodeSystemSrvMock,
+            FEATURE_FLAGS_ENABLED);
     dataLoaderSrv.initialize();
 
     assertThatThrownBy(() -> dataLoaderSrv.getCodeSystemData("foobar"))
@@ -265,11 +296,15 @@ class DataLoaderSrvTest {
   @Test
   void testExceptionForNoData() throws IOException {
 
-    when(snapshotFilesServiceMock.getCodeSystemFiles()).thenReturn(List.of(emptyLOINCFileCS));
+    when(snapshotFilesServiceMock.getCodeSystemFiles()).thenReturn(List.of(emptyLoincFileCS));
     when(snapshotFilesServiceMock.getValueSetFiles()).thenReturn(List.of(geographicRegionVS));
 
     DataLoaderSrv dataLoaderSrv =
-        new DataLoaderSrv(snapshotFilesServiceMock, FhirContext.forR4(), hl7CodeSystemSrvMock);
+        new DataLoaderSrv(
+            snapshotFilesServiceMock,
+            FhirContext.forR4Cached(),
+            hl7CodeSystemSrvMock,
+            FEATURE_FLAGS_ENABLED);
     dataLoaderSrv.initialize();
 
     assertThatThrownBy(() -> dataLoaderSrv.getCodeSystemData("foobar"))
@@ -291,7 +326,11 @@ class DataLoaderSrvTest {
     when(snapshotFilesServiceMock.getValueSetFiles()).thenReturn(List.of(materialInvpFileVS));
 
     DataLoaderSrv dataLoaderSrv =
-        new DataLoaderSrv(snapshotFilesServiceMock, FhirContext.forR4(), hl7CodeSystemSrvMock);
+        new DataLoaderSrv(
+            snapshotFilesServiceMock,
+            FhirContext.forR4Cached(),
+            hl7CodeSystemSrvMock,
+            FEATURE_FLAGS_ENABLED);
     dataLoaderSrv.initialize();
 
     assertThat(dataLoaderSrv.getValueSetData("https://demis.rki.de/fhir/ValueSet/materialINVP"))
@@ -302,11 +341,14 @@ class DataLoaderSrvTest {
                 .order(100)
                 .display("Bronchoalveolar lavage fluid specimen (specimen)")
                 .system("http://snomed.info/sct")
+                .version("http://snomed.info/sct/900000000000207008/version/20230331")
                 .designations(
                     Set.of(
-                        new Designation("de-DE", "Bronchoalveoläre Lavage"),
+                        new Designation("de-DE", "Bronchoalveoläre Lavage", new Use(null, null)),
                         new Designation(
-                            "en-US", "Bronchoalveolar lavage fluid specimen (specimen)")))
+                            "en-US",
+                            "Bronchoalveolar lavage fluid specimen (specimen)",
+                            new Use("http://snomed.info/sct", "900000000000003001"))))
                 .build());
 
     assertThatThrownBy(() -> dataLoaderSrv.getValueSetData("raboof"))
@@ -318,11 +360,15 @@ class DataLoaderSrvTest {
   void testConstructorAndInit_shouldAddCodeSystemData() throws IOException {
 
     when(snapshotFilesServiceMock.getCodeSystemFiles())
-        .thenReturn(List.of(addressUseFileCS, LOINCFileCS, notificationCategoryFileCS));
+        .thenReturn(List.of(addressUseFileCS, loincFileCS, notificationCategoryFileCS));
     when(snapshotFilesServiceMock.getValueSetFiles()).thenReturn(List.of());
 
     DataLoaderSrv dataLoaderSrv =
-        new DataLoaderSrv(snapshotFilesServiceMock, FhirContext.forR4(), hl7CodeSystemSrvMock);
+        new DataLoaderSrv(
+            snapshotFilesServiceMock,
+            FhirContext.forR4Cached(),
+            hl7CodeSystemSrvMock,
+            FEATURE_FLAGS_ENABLED);
     dataLoaderSrv.initialize();
 
     assertThat(
@@ -332,8 +378,14 @@ class DataLoaderSrvTest {
             CodeDisplay.builder()
                 .code("current")
                 .display("Derzeitiger Aufenthaltsort")
-                .designations(Set.of(new Designation("en-US", "Current Residence")))
+                .designations(
+                    Set.of(
+                        new Designation(
+                            "en-US",
+                            "Current Residence",
+                            new Use("http://snomed.info/sct", "900000000000003001"))))
                 .system("https://demis.rki.de/fhir/CodeSystem/addressUse")
+                .version("1.1.0")
                 .order(100)
                 .build());
 
@@ -343,6 +395,7 @@ class DataLoaderSrvTest {
                 .code("100-8")
                 .display("Cefoperazone [Susceptibility] by Minimum inhibitory concentration (MIC)")
                 .system("http://loinc.org")
+                .version("2.74")
                 .order(100)
                 .build());
     assertThat(
@@ -354,6 +407,7 @@ class DataLoaderSrvTest {
                 .display(
                     "Adenoviren; Meldepflicht nur für den direkten Nachweis im Konjunktivalabstrich")
                 .system("https://demis.rki.de/fhir/CodeSystem/notificationCategory")
+                .version("2.0.0")
                 .designations(Set.of(new Designation("de-DE", "Adenoviren, Konjunktivalabstrich")))
                 .order(100)
                 .build());
@@ -385,7 +439,11 @@ class DataLoaderSrvTest {
                 materialInvpFileVS));
 
     DataLoaderSrv dataLoaderSrv =
-        new DataLoaderSrv(snapshotFilesServiceMock, FhirContext.forR4(), hl7CodeSystemSrvMock);
+        new DataLoaderSrv(
+            snapshotFilesServiceMock,
+            FhirContext.forR4Cached(),
+            hl7CodeSystemSrvMock,
+            FEATURE_FLAGS_ENABLED);
     dataLoaderSrv.initialize();
 
     List<CodeDisplay> valueSetDataWithoutUrl =
@@ -412,12 +470,15 @@ class DataLoaderSrvTest {
                 .code("258607008")
                 .display("Bronchoalveolar lavage fluid specimen (specimen)")
                 .system("http://snomed.info/sct")
+                .version("http://snomed.info/sct/900000000000207008/version/20230331")
                 .order(100)
                 .designations(
                     Set.of(
-                        new Designation("de-DE", "Bronchoalveoläre Lavage"),
+                        new Designation("de-DE", "Bronchoalveoläre Lavage", new Use(null, null)),
                         new Designation(
-                            "en-US", "Bronchoalveolar lavage fluid specimen (specimen)")))
+                            "en-US",
+                            "Bronchoalveolar lavage fluid specimen (specimen)",
+                            new Use("http://snomed.info/sct", "900000000000003001"))))
                 .build());
     assertThat(
             dataLoaderSrv.getValueSetData(
@@ -430,6 +491,7 @@ class DataLoaderSrvTest {
                 .display(
                     "Influenza virus A H3 RNA [Presence] in Respiratory specimen by NAA with probe detection")
                 .system("http://loinc.org")
+                .version("2.74")
                 .order(100)
                 .build());
   }
@@ -456,7 +518,11 @@ class DataLoaderSrvTest {
     when(snapshotFilesServiceMock.getValueSetFiles()).thenReturn(List.of());
 
     DataLoaderSrv dataLoaderSrv =
-        new DataLoaderSrv(snapshotFilesServiceMock, FhirContext.forR4(), hl7CodeSystemSrvMock);
+        new DataLoaderSrv(
+            snapshotFilesServiceMock,
+            FhirContext.forR4Cached(),
+            hl7CodeSystemSrvMock,
+            FEATURE_FLAGS_ENABLED);
     dataLoaderSrv.initialize();
 
     CodeDisplay actual =
@@ -472,12 +538,6 @@ class DataLoaderSrvTest {
             "http://hl7.org/fhir/CodeSystem/condition-ver-status"))
         .thenReturn(true);
 
-    CodeDisplay expected =
-        CodeDisplay.builder()
-            .code("actual")
-            .display("actual")
-            .system("http://hl7.org/fhir/CodeSystem/condition-ver-status")
-            .build();
     when(hl7CodeSystemSrvMock.getFileContent("http://hl7.org/fhir/CodeSystem/condition-ver-status"))
         .thenThrow(new IOException());
 
@@ -485,7 +545,11 @@ class DataLoaderSrvTest {
     when(snapshotFilesServiceMock.getValueSetFiles()).thenReturn(List.of());
 
     DataLoaderSrv dataLoaderSrv =
-        new DataLoaderSrv(snapshotFilesServiceMock, FhirContext.forR4(), hl7CodeSystemSrvMock);
+        new DataLoaderSrv(
+            snapshotFilesServiceMock,
+            FhirContext.forR4Cached(),
+            hl7CodeSystemSrvMock,
+            FEATURE_FLAGS_ENABLED);
     dataLoaderSrv.initialize();
 
     assertThatThrownBy(
@@ -519,7 +583,11 @@ class DataLoaderSrvTest {
     when(snapshotFilesServiceMock.getValueSetFiles()).thenReturn(List.of(materialInvpFileVS));
 
     DataLoaderSrv dataLoaderSrv =
-        new DataLoaderSrv(snapshotFilesServiceMock, FhirContext.forR4(), hl7CodeSystemSrvMock);
+        new DataLoaderSrv(
+            snapshotFilesServiceMock,
+            FhirContext.forR4Cached(),
+            hl7CodeSystemSrvMock,
+            FEATURE_FLAGS_ENABLED);
     dataLoaderSrv.initialize();
 
     List<CodeDisplay> actual =
@@ -541,7 +609,11 @@ class DataLoaderSrvTest {
       when(snapshotFilesServiceMock.getValueSetFiles()).thenReturn(List.of());
 
       DataLoaderSrv dataLoaderSrv =
-          new DataLoaderSrv(snapshotFilesServiceMock, FhirContext.forR4(), hl7CodeSystemSrvMock);
+          new DataLoaderSrv(
+              snapshotFilesServiceMock,
+              FhirContext.forR4Cached(),
+              hl7CodeSystemSrvMock,
+              FEATURE_FLAGS_ENABLED);
       dataLoaderSrv.initialize();
 
       assertThat(
@@ -561,7 +633,11 @@ class DataLoaderSrvTest {
       when(snapshotFilesServiceMock.getValueSetFiles()).thenReturn(List.of());
 
       DataLoaderSrv dataLoaderSrv =
-          new DataLoaderSrv(snapshotFilesServiceMock, FhirContext.forR4(), hl7CodeSystemSrvMock);
+          new DataLoaderSrv(
+              snapshotFilesServiceMock,
+              FhirContext.forR4Cached(),
+              hl7CodeSystemSrvMock,
+              FEATURE_FLAGS_ENABLED);
       dataLoaderSrv.initialize();
 
       assertThat(
@@ -581,7 +657,11 @@ class DataLoaderSrvTest {
       when(snapshotFilesServiceMock.getValueSetFiles()).thenReturn(List.of());
 
       DataLoaderSrv dataLoaderSrv =
-          new DataLoaderSrv(snapshotFilesServiceMock, FhirContext.forR4(), hl7CodeSystemSrvMock);
+          new DataLoaderSrv(
+              snapshotFilesServiceMock,
+              FhirContext.forR4Cached(),
+              hl7CodeSystemSrvMock,
+              FEATURE_FLAGS_ENABLED);
       dataLoaderSrv.initialize();
 
       assertThat(
@@ -592,6 +672,7 @@ class DataLoaderSrvTest {
                   .code("NI")
                   .display("NoInformation")
                   .system("http://terminology.hl7.org/CodeSystem/v3-NullFlavor")
+                  .version("2018-08-12")
                   .designations(Set.of(new Designation("de", "keine Information")))
                   .order(100)
                   .build());
@@ -606,7 +687,11 @@ class DataLoaderSrvTest {
       when(snapshotFilesServiceMock.getValueSetFiles()).thenReturn(List.of());
 
       DataLoaderSrv dataLoaderSrv =
-          new DataLoaderSrv(snapshotFilesServiceMock, FhirContext.forR4(), hl7CodeSystemSrvMock);
+          new DataLoaderSrv(
+              snapshotFilesServiceMock,
+              FhirContext.forR4Cached(),
+              hl7CodeSystemSrvMock,
+              FEATURE_FLAGS_ENABLED);
       dataLoaderSrv.initialize();
 
       assertThat(
@@ -617,6 +702,7 @@ class DataLoaderSrvTest {
                   .code("NI")
                   .display("NoInformation")
                   .system("http://terminology.hl7.org/CodeSystem/v3-NullFlavor")
+                  .version("2018-08-12")
                   .order(100)
                   .build());
     }
@@ -633,14 +719,18 @@ class DataLoaderSrvTest {
       when(snapshotFilesServiceMock.getValueSetFiles()).thenReturn(List.of(materialInvpFileVS));
 
       DataLoaderSrv dataLoaderSrv =
-          new DataLoaderSrv(snapshotFilesServiceMock, FhirContext.forR4(), hl7CodeSystemSrvMock);
+          new DataLoaderSrv(
+              snapshotFilesServiceMock,
+              FhirContext.forR4Cached(),
+              hl7CodeSystemSrvMock,
+              FEATURE_FLAGS_ENABLED);
       dataLoaderSrv.initialize();
 
       assertThat(
               dataLoaderSrv
                   .getCodeSystemData("http://snomed.info/sct", "258607008")
                   .getDesignations())
-          .contains(new Designation("de-DE", "Bronchoalveoläre Lavage"));
+          .contains(new Designation("de-DE", "Bronchoalveoläre Lavage", new Use(null, null)));
 
       assertThat(dataLoaderSrv.getCodeSystemData("http://snomed.info/sct"))
           .contains(
@@ -650,9 +740,12 @@ class DataLoaderSrvTest {
                   .designations(
                       Set.of(
                           new Designation(
-                              "en-US", "Bronchoalveolar lavage fluid specimen (specimen)"),
-                          new Designation("de-DE", "Bronchoalveoläre Lavage")))
+                              "en-US",
+                              "Bronchoalveolar lavage fluid specimen (specimen)",
+                              new Use("http://snomed.info/sct", "900000000000003001")),
+                          new Designation("de-DE", "Bronchoalveoläre Lavage", new Use(null, null))))
                   .system("http://snomed.info/sct")
+                  .version("http://snomed.info/sct/900000000000207008/version/20230331")
                   .order(100)
                   .build());
     }
@@ -664,7 +757,11 @@ class DataLoaderSrvTest {
       when(snapshotFilesServiceMock.getValueSetFiles()).thenReturn(List.of(materialInvpFileVS));
 
       DataLoaderSrv dataLoaderSrv =
-          new DataLoaderSrv(snapshotFilesServiceMock, FhirContext.forR4(), hl7CodeSystemSrvMock);
+          new DataLoaderSrv(
+              snapshotFilesServiceMock,
+              FhirContext.forR4Cached(),
+              hl7CodeSystemSrvMock,
+              FEATURE_FLAGS_ENABLED);
       dataLoaderSrv.initialize();
 
       assertThat(dataLoaderSrv.getValueSet())
@@ -681,11 +778,67 @@ class DataLoaderSrvTest {
       when(snapshotFilesServiceMock.getValueSetFiles()).thenReturn(List.of(materialInvpFileVS));
 
       DataLoaderSrv dataLoaderSrv =
-          new DataLoaderSrv(snapshotFilesServiceMock, FhirContext.forR4(), hl7CodeSystemSrvMock);
+          new DataLoaderSrv(
+              snapshotFilesServiceMock,
+              FhirContext.forR4Cached(),
+              hl7CodeSystemSrvMock,
+              FEATURE_FLAGS_ENABLED);
       dataLoaderSrv.initialize();
 
       assertThat(dataLoaderSrv.getValueSet())
           .contains("https://demis.rki.de/fhir/ValueSet/materialINVP");
     }
+  }
+
+  @Test
+  void shouldReturnVersionFromSnomed() throws IOException {
+    when(snapshotFilesServiceMock.getCodeSystemFiles()).thenReturn(List.of(snomedCodesCS));
+
+    DataLoaderSrv dataLoaderSrv =
+        new DataLoaderSrv(
+            snapshotFilesServiceMock,
+            FhirContext.forR4Cached(),
+            hl7CodeSystemSrvMock,
+            FEATURE_FLAGS_ENABLED);
+    dataLoaderSrv.initialize();
+
+    assertThat(dataLoaderSrv.getVersion("http://snomed.info/sct"))
+        .isNotNull()
+        .isEqualTo("http://snomed.info/sct/900000000000207008/version/20230331");
+  }
+
+  @Test
+  void shouldReturnExceptionWhenCodeSystemNotPartOfData() throws IOException {
+    when(snapshotFilesServiceMock.getCodeSystemFiles()).thenReturn(List.of(loincFileCS));
+
+    DataLoaderSrv dataLoaderSrv =
+        new DataLoaderSrv(
+            snapshotFilesServiceMock,
+            FhirContext.forR4Cached(),
+            hl7CodeSystemSrvMock,
+            FEATURE_FLAGS_ENABLED);
+    dataLoaderSrv.initialize();
+
+    assertThatThrownBy(() -> dataLoaderSrv.getVersion("http://snomed.info/sct"))
+        .isInstanceOf(DataNotFoundExcp.class)
+        .hasMessage(
+            "the version of the code system http://snomed.info/sct was not added to the version map");
+  }
+
+  @Test
+  void shouldReturnExceptionForNoCodeSystem() throws IOException {
+    when(snapshotFilesServiceMock.getCodeSystemFiles()).thenReturn(List.of());
+
+    DataLoaderSrv dataLoaderSrv =
+        new DataLoaderSrv(
+            snapshotFilesServiceMock,
+            FhirContext.forR4Cached(),
+            hl7CodeSystemSrvMock,
+            FEATURE_FLAGS_ENABLED);
+    dataLoaderSrv.initialize();
+
+    assertThatThrownBy(() -> dataLoaderSrv.getVersion("http://snomed.info/sct"))
+        .isInstanceOf(DataNotFoundExcp.class)
+        .hasMessage("the map for code systems was not initialized");
   }
 }

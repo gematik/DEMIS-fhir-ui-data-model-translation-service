@@ -18,13 +18,15 @@
                     "code": "yes",
                     "display": "Ja",
                     "designations": [],
-                    "system": "https://demis.rki.de/fhir/CodeSystem/yesOrNoAnswer"
+                    "system": "https://demis.rki.de/fhir/CodeSystem/yesOrNoAnswer",
+                    "version": "1.0.0"
                   },
                   {
                     "code": "no",
                     "display": "Nein",
                     "designations": [],
-                    "system": "https://demis.rki.de/fhir/CodeSystem/yesOrNoAnswer"
+                    "system": "https://demis.rki.de/fhir/CodeSystem/yesOrNoAnswer",
+                    "version": "1.0.0"
                   },
                   {
                     "code": "ASKU",
@@ -35,7 +37,8 @@
                         "value": "nicht ermittelbar"
                       }
                     ],
-                    "system": "http://terminology.hl7.org/CodeSystem/v3-NullFlavor"
+                    "system": "http://terminology.hl7.org/CodeSystem/v3-NullFlavor",
+                    "version": "2.1.0"
                   },
                   {
                     "code": "NASK",
@@ -46,7 +49,8 @@
                         "value": "nicht erhoben"
                       }
                     ],
-                    "system": "http://terminology.hl7.org/CodeSystem/v3-NullFlavor"
+                    "system": "http://terminology.hl7.org/CodeSystem/v3-NullFlavor",
+                    "version": "2.1.0"
                   }
                 ],
                 "required": true,
@@ -78,13 +82,15 @@
                     "code": "yes",
                     "display": "Ja",
                     "designations": [],
-                    "system": "https://demis.rki.de/fhir/CodeSystem/yesOrNoAnswer"
+                    "system": "https://demis.rki.de/fhir/CodeSystem/yesOrNoAnswer",
+                    "version": "1.0.0"
                   },
                   {
                     "code": "no",
                     "display": "Nein",
                     "designations": [],
-                    "system": "https://demis.rki.de/fhir/CodeSystem/yesOrNoAnswer"
+                    "system": "https://demis.rki.de/fhir/CodeSystem/yesOrNoAnswer",
+                    "version": "1.0.0"
                   },
                   {
                     "code": "ASKU",
@@ -95,7 +101,8 @@
                         "value": "nicht ermittelbar"
                       }
                     ],
-                    "system": "http://terminology.hl7.org/CodeSystem/v3-NullFlavor"
+                    "system": "http://terminology.hl7.org/CodeSystem/v3-NullFlavor",
+                    "version": "2.1.0"
                   },
                   {
                     "code": "NASK",
@@ -106,7 +113,8 @@
                         "value": "nicht erhoben"
                       }
                     ],
-                    "system": "http://terminology.hl7.org/CodeSystem/v3-NullFlavor"
+                    "system": "http://terminology.hl7.org/CodeSystem/v3-NullFlavor",
+                    "version": "2.1.0"
                   }
                 ],
                 "required": true,
@@ -155,25 +163,29 @@
                                   "code": "1",
                                   "display": "Arbeitsplatz, andere",
                                   "designations": [],
-                                  "system": "https://demis.rki.de/fhir/CodeSystem/infectionEnvironmentSetting"
+                                  "system": "https://demis.rki.de/fhir/CodeSystem/infectionEnvironmentSetting",
+                                  "version": "1.0.0"
                                 },
                                 {
                                   "code": "110",
                                   "display": "Großraumbüro",
                                   "designations": [],
-                                  "system": "https://demis.rki.de/fhir/CodeSystem/infectionEnvironmentSetting"
+                                  "system": "https://demis.rki.de/fhir/CodeSystem/infectionEnvironmentSetting",
+                                  "version": "1.0.0"
                                 },
                                 {
                                   "code": "111",
                                   "display": "Lebensmittelbereich",
                                   "designations": [],
-                                  "system": "https://demis.rki.de/fhir/CodeSystem/infectionEnvironmentSetting"
+                                  "system": "https://demis.rki.de/fhir/CodeSystem/infectionEnvironmentSetting",
+                                  "version": "1.0.0"
                                 },
                                 {
                                   "code": "112",
                                   "display": "Baugewerbe",
                                   "designations": [],
-                                  "system": "https://demis.rki.de/fhir/CodeSystem/infectionEnvironmentSetting"
+                                  "system": "https://demis.rki.de/fhir/CodeSystem/infectionEnvironmentSetting",
+                                  "version": "1.0.0"
                                 },
                                 {
                                   "code": "444107005+257698009",
@@ -184,7 +196,8 @@
                                       "value": "444107005 | Exposure to communicable disease (navigational concept) | + 257698009 | School (environment) |"
                                     }
                                   ],
-                                  "system": "http://snomed.info/sct"
+                                  "system": "http://snomed.info/sct",
+                                  "version": "http://snomed.info/sct/900000000000207008/version/20230331"
                                 },
                                 {
                                   "code": "444107005+413817003",
@@ -195,7 +208,8 @@
                                       "value": "444107005 | Exposure to communicable disease (navigational concept) | + 413817003 | Child day care center (environment) |"
                                     }
                                   ],
-                                  "system": "http://snomed.info/sct"
+                                  "system": "http://snomed.info/sct",
+                                  "version": "http://snomed.info/sct/900000000000207008/version/20230331"
                                 },
                                 {
                                   "code": "444107005+285141008",
@@ -206,7 +220,8 @@
                                       "value": "444107005 | Exposure to communicable disease (navigational concept) | + 285141008 | Work environment (environment) |"
                                     }
                                   ],
-                                  "system": "http://snomed.info/sct"
+                                  "system": "http://snomed.info/sct",
+                                  "version": "http://snomed.info/sct/900000000000207008/version/20230331"
                                 },
                                 {
                                   "code": "ASKU",
@@ -217,7 +232,8 @@
                                       "value": "nicht ermittelbar"
                                     }
                                   ],
-                                  "system": "http://terminology.hl7.org/CodeSystem/v3-NullFlavor"
+                                  "system": "http://terminology.hl7.org/CodeSystem/v3-NullFlavor",
+                                  "version": "2.1.0"
                                 },
                                 {
                                   "code": "NASK",
@@ -228,7 +244,8 @@
                                       "value": "nicht erhoben"
                                     }
                                   ],
-                                  "system": "http://terminology.hl7.org/CodeSystem/v3-NullFlavor"
+                                  "system": "http://terminology.hl7.org/CodeSystem/v3-NullFlavor",
+                                  "version": "2.1.0"
                                 }
                               ],
                               "required": true,
@@ -320,13 +337,15 @@
                     "code": "yes",
                     "display": "Ja",
                     "designations": [],
-                    "system": "https://demis.rki.de/fhir/CodeSystem/yesOrNoAnswer"
+                    "system": "https://demis.rki.de/fhir/CodeSystem/yesOrNoAnswer",
+                    "version": "1.0.0"
                   },
                   {
                     "code": "no",
                     "display": "Nein",
                     "designations": [],
-                    "system": "https://demis.rki.de/fhir/CodeSystem/yesOrNoAnswer"
+                    "system": "https://demis.rki.de/fhir/CodeSystem/yesOrNoAnswer",
+                    "version": "1.0.0"
                   },
                   {
                     "code": "ASKU",
@@ -337,7 +356,8 @@
                         "value": "nicht ermittelbar"
                       }
                     ],
-                    "system": "http://terminology.hl7.org/CodeSystem/v3-NullFlavor"
+                    "system": "http://terminology.hl7.org/CodeSystem/v3-NullFlavor",
+                    "version": "2.1.0"
                   },
                   {
                     "code": "NASK",
@@ -348,7 +368,8 @@
                         "value": "nicht erhoben"
                       }
                     ],
-                    "system": "http://terminology.hl7.org/CodeSystem/v3-NullFlavor"
+                    "system": "http://terminology.hl7.org/CodeSystem/v3-NullFlavor",
+                    "version": "2.1.0"
                   }
                 ],
                 "required": true,
@@ -409,7 +430,8 @@
                                           "value": "Vaccine product containing only severe acute respiratory syndrome coronavirus 2 messenger ribonucleic acid (medicinal product)"
                                         }
                                       ],
-                                      "system": "http://snomed.info/sct"
+                                      "system": "http://snomed.info/sct",
+                                      "version": "http://snomed.info/sct/11000274103/version/20240515"
                                     },
                                     {
                                       "code": "1287596002",
@@ -420,7 +442,8 @@
                                           "value": "Adult vaccine product containing only severe acute respiratory syndrome coronavirus 2 encoding B lineage spike protein and BA.4/BA.5 lineage spike protein messenger ribonucleic acid (medicinal product)"
                                         }
                                       ],
-                                      "system": "http://snomed.info/sct"
+                                      "system": "http://snomed.info/sct",
+                                      "version": "http://snomed.info/sct/11000274103/version/20240515"
                                     },
                                     {
                                       "code": "1287595003",
@@ -431,7 +454,8 @@
                                           "value": "Pediatric vaccine product containing only severe acute respiratory syndrome coronavirus 2 encoding B lineage spike protein and BA.4/BA.5 lineage spike protein messenger ribonucleic acid (medicinal product)"
                                         }
                                       ],
-                                      "system": "http://snomed.info/sct"
+                                      "system": "http://snomed.info/sct",
+                                      "version": "http://snomed.info/sct/11000274103/version/20240515"
                                     },
                                     {
                                       "code": "1187593009",
@@ -442,7 +466,8 @@
                                           "value": "Vaccine product containing only severe acute respiratory syndrome coronavirus 2 deoxyribonucleic acid plasmid encoding spike protein (medicinal product)"
                                         }
                                       ],
-                                      "system": "http://snomed.info/sct"
+                                      "system": "http://snomed.info/sct",
+                                      "version": "http://snomed.info/sct/11000274103/version/20240515"
                                     },
                                     {
                                       "code": "1162643001",
@@ -453,7 +478,8 @@
                                           "value": "Vaccine product containing only severe acute respiratory syndrome coronavirus 2 recombinant spike protein antigen (medicinal product)"
                                         }
                                       ],
-                                      "system": "http://snomed.info/sct"
+                                      "system": "http://snomed.info/sct",
+                                      "version": "http://snomed.info/sct/11000274103/version/20240515"
                                     },
                                     {
                                       "code": "29061000087103",
@@ -464,7 +490,8 @@
                                           "value": "Vaccine product containing only recombinant non-replicating viral vector encoding severe acute respiratory syndrome coronavirus 2 spike protein (medicinal product)"
                                         }
                                       ],
-                                      "system": "http://snomed.info/sct"
+                                      "system": "http://snomed.info/sct",
+                                      "version": "http://snomed.info/sct/11000274103/version/20240515"
                                     },
                                     {
                                       "code": "1157024006",
@@ -475,7 +502,8 @@
                                           "value": "Vaccine product containing only inactivated whole severe acute respiratory syndrome coronavirus 2 antigen (medicinal product)"
                                         }
                                       ],
-                                      "system": "http://snomed.info/sct"
+                                      "system": "http://snomed.info/sct",
+                                      "version": "http://snomed.info/sct/11000274103/version/20240515"
                                     },
                                     {
                                       "code": "74964007",
@@ -486,7 +514,8 @@
                                           "value": "Other (qualifier value)"
                                         }
                                       ],
-                                      "system": "http://snomed.info/sct"
+                                      "system": "http://snomed.info/sct",
+                                      "version": "http://snomed.info/sct/11000274103/version/20240515"
                                     }
                                   ],
                                   "required": true,
@@ -571,7 +600,8 @@
                               "value": "nicht erhoben"
                             }
                           ],
-                          "system": "http://terminology.hl7.org/CodeSystem/v3-NullFlavor"
+                          "system": "http://terminology.hl7.org/CodeSystem/v3-NullFlavor",
+                          "version": "2.1.0"
                         },
                         {
                           "code": "ASKU",
@@ -582,7 +612,8 @@
                               "value": "nicht ermittelbar"
                             }
                           ],
-                          "system": "http://terminology.hl7.org/CodeSystem/v3-NullFlavor"
+                          "system": "http://terminology.hl7.org/CodeSystem/v3-NullFlavor",
+                          "version": "2.1.0"
                         },
                         {
                           "code": "49601007",
@@ -593,7 +624,8 @@
                               "value": "Disorder of cardiovascular system (disorder)"
                             }
                           ],
-                          "system": "http://snomed.info/sct"
+                          "system": "http://snomed.info/sct",
+                          "version": "http://snomed.info/sct/900000000000207008/version/20230331"
                         },
                         {
                           "code": "86569001",
@@ -604,7 +636,8 @@
                               "value": "Postpartum state (finding)"
                             }
                           ],
-                          "system": "http://snomed.info/sct"
+                          "system": "http://snomed.info/sct",
+                          "version": "http://snomed.info/sct/900000000000207008/version/20230331"
                         },
                         {
                           "code": "260413007",
@@ -615,7 +648,8 @@
                               "value": "None (qualifier value)"
                             }
                           ],
-                          "system": "http://snomed.info/sct"
+                          "system": "http://snomed.info/sct",
+                          "version": "http://snomed.info/sct/900000000000207008/version/20230331"
                         }
                       ],
                       "required": false,
@@ -650,7 +684,8 @@
                                   "value": "First trimester (qualifier value)"
                                 }
                               ],
-                              "system": "http://snomed.info/sct"
+                              "system": "http://snomed.info/sct",
+                              "version": "http://snomed.info/sct/900000000000207008/version/20230331"
                             },
                             {
                               "code": "255247007",
@@ -661,7 +696,8 @@
                                   "value": "Second trimester (qualifier value)"
                                 }
                               ],
-                              "system": "http://snomed.info/sct"
+                              "system": "http://snomed.info/sct",
+                              "version": "http://snomed.info/sct/900000000000207008/version/20230331"
                             },
                             {
                               "code": "255248002",
@@ -672,7 +708,8 @@
                                   "value": "Third trimester (qualifier value)"
                                 }
                               ],
-                              "system": "http://snomed.info/sct"
+                              "system": "http://snomed.info/sct",
+                              "version": "http://snomed.info/sct/900000000000207008/version/20230331"
                             },
                             {
                               "code": "ASKU",
@@ -683,7 +720,8 @@
                                   "value": "nicht ermittelbar"
                                 }
                               ],
-                              "system": "http://terminology.hl7.org/CodeSystem/v3-NullFlavor"
+                              "system": "http://terminology.hl7.org/CodeSystem/v3-NullFlavor",
+                              "version": "2.1.0"
                             },
                             {
                               "code": "NASK",
@@ -694,7 +732,8 @@
                                   "value": "nicht erhoben"
                                 }
                               ],
-                              "system": "http://terminology.hl7.org/CodeSystem/v3-NullFlavor"
+                              "system": "http://terminology.hl7.org/CodeSystem/v3-NullFlavor",
+                              "version": "2.1.0"
                             }
                           ],
                           "required": false,
@@ -739,13 +778,15 @@
                     "code": "yes",
                     "display": "Ja",
                     "designations": [],
-                    "system": "https://demis.rki.de/fhir/CodeSystem/yesOrNoAnswer"
+                    "system": "https://demis.rki.de/fhir/CodeSystem/yesOrNoAnswer",
+                    "version": "1.0.0"
                   },
                   {
                     "code": "no",
                     "display": "Nein",
                     "designations": [],
-                    "system": "https://demis.rki.de/fhir/CodeSystem/yesOrNoAnswer"
+                    "system": "https://demis.rki.de/fhir/CodeSystem/yesOrNoAnswer",
+                    "version": "1.0.0"
                   },
                   {
                     "code": "ASKU",
@@ -756,7 +797,8 @@
                         "value": "nicht ermittelbar"
                       }
                     ],
-                    "system": "http://terminology.hl7.org/CodeSystem/v3-NullFlavor"
+                    "system": "http://terminology.hl7.org/CodeSystem/v3-NullFlavor",
+                    "version": "2.1.0"
                   },
                   {
                     "code": "NASK",
@@ -767,7 +809,8 @@
                         "value": "nicht erhoben"
                       }
                     ],
-                    "system": "http://terminology.hl7.org/CodeSystem/v3-NullFlavor"
+                    "system": "http://terminology.hl7.org/CodeSystem/v3-NullFlavor",
+                    "version": "2.1.0"
                   }
                 ],
                 "required": false,
@@ -855,13 +898,15 @@
                     "code": "yes",
                     "display": "Ja",
                     "designations": [],
-                    "system": "https://demis.rki.de/fhir/CodeSystem/yesOrNoAnswer"
+                    "system": "https://demis.rki.de/fhir/CodeSystem/yesOrNoAnswer",
+                    "version": "1.0.0"
                   },
                   {
                     "code": "no",
                     "display": "Nein",
                     "designations": [],
-                    "system": "https://demis.rki.de/fhir/CodeSystem/yesOrNoAnswer"
+                    "system": "https://demis.rki.de/fhir/CodeSystem/yesOrNoAnswer",
+                    "version": "1.0.0"
                   },
                   {
                     "code": "ASKU",
@@ -872,7 +917,8 @@
                         "value": "nicht ermittelbar"
                       }
                     ],
-                    "system": "http://terminology.hl7.org/CodeSystem/v3-NullFlavor"
+                    "system": "http://terminology.hl7.org/CodeSystem/v3-NullFlavor",
+                    "version": "2.1.0"
                   },
                   {
                     "code": "NASK",
@@ -883,7 +929,8 @@
                         "value": "nicht erhoben"
                       }
                     ],
-                    "system": "http://terminology.hl7.org/CodeSystem/v3-NullFlavor"
+                    "system": "http://terminology.hl7.org/CodeSystem/v3-NullFlavor",
+                    "version": "2.1.0"
                   }
                 ],
                 "required": true,
@@ -945,7 +992,8 @@
                         "value": "nicht ermittelbar"
                       }
                     ],
-                    "system": "http://terminology.hl7.org/CodeSystem/v3-NullFlavor"
+                    "system": "http://terminology.hl7.org/CodeSystem/v3-NullFlavor",
+                    "version": "2.1.0"
                   },
                   {
                     "code": "NASK",
@@ -956,7 +1004,8 @@
                         "value": "nicht erhoben"
                       }
                     ],
-                    "system": "http://terminology.hl7.org/CodeSystem/v3-NullFlavor"
+                    "system": "http://terminology.hl7.org/CodeSystem/v3-NullFlavor",
+                    "version": "2.1.0"
                   }
                 ],
                 "required": true,
@@ -992,13 +1041,15 @@
                     "code": "yes",
                     "display": "Ja",
                     "designations": [],
-                    "system": "https://demis.rki.de/fhir/CodeSystem/yesOrNoAnswer"
+                    "system": "https://demis.rki.de/fhir/CodeSystem/yesOrNoAnswer",
+                    "version": "1.0.0"
                   },
                   {
                     "code": "no",
                     "display": "Nein",
                     "designations": [],
-                    "system": "https://demis.rki.de/fhir/CodeSystem/yesOrNoAnswer"
+                    "system": "https://demis.rki.de/fhir/CodeSystem/yesOrNoAnswer",
+                    "version": "1.0.0"
                   },
                   {
                     "code": "ASKU",
@@ -1009,7 +1060,8 @@
                         "value": "nicht ermittelbar"
                       }
                     ],
-                    "system": "http://terminology.hl7.org/CodeSystem/v3-NullFlavor"
+                    "system": "http://terminology.hl7.org/CodeSystem/v3-NullFlavor",
+                    "version": "2.1.0"
                   },
                   {
                     "code": "NASK",
@@ -1020,7 +1072,8 @@
                         "value": "nicht erhoben"
                       }
                     ],
-                    "system": "http://terminology.hl7.org/CodeSystem/v3-NullFlavor"
+                    "system": "http://terminology.hl7.org/CodeSystem/v3-NullFlavor",
+                    "version": "2.1.0"
                   }
                 ],
                 "required": true,
@@ -1189,7 +1242,8 @@
                                     "value": "nicht erhoben"
                                   }
                                 ],
-                                "system": "http://terminology.hl7.org/CodeSystem/v3-NullFlavor"
+                                "system": "http://terminology.hl7.org/CodeSystem/v3-NullFlavor",
+                                "version": "2.1.0"
                               },
                               {
                                 "code": "ASKU",
@@ -1200,7 +1254,8 @@
                                     "value": "nicht ermittelbar"
                                   }
                                 ],
-                                "system": "http://terminology.hl7.org/CodeSystem/v3-NullFlavor"
+                                "system": "http://terminology.hl7.org/CodeSystem/v3-NullFlavor",
+                                "version": "2.1.0"
                               }
                             ],
                             "clearable": true,
@@ -1334,13 +1389,15 @@
                     "code": "yes",
                     "display": "Ja",
                     "designations": [],
-                    "system": "https://demis.rki.de/fhir/CodeSystem/yesOrNoAnswer"
+                    "system": "https://demis.rki.de/fhir/CodeSystem/yesOrNoAnswer",
+                    "version": "1.0.0"
                   },
                   {
                     "code": "no",
                     "display": "Nein",
                     "designations": [],
-                    "system": "https://demis.rki.de/fhir/CodeSystem/yesOrNoAnswer"
+                    "system": "https://demis.rki.de/fhir/CodeSystem/yesOrNoAnswer",
+                    "version": "1.0.0"
                   },
                   {
                     "code": "ASKU",
@@ -1351,7 +1408,8 @@
                         "value": "nicht ermittelbar"
                       }
                     ],
-                    "system": "http://terminology.hl7.org/CodeSystem/v3-NullFlavor"
+                    "system": "http://terminology.hl7.org/CodeSystem/v3-NullFlavor",
+                    "version": "2.1.0"
                   },
                   {
                     "code": "NASK",
@@ -1362,7 +1420,8 @@
                         "value": "nicht erhoben"
                       }
                     ],
-                    "system": "http://terminology.hl7.org/CodeSystem/v3-NullFlavor"
+                    "system": "http://terminology.hl7.org/CodeSystem/v3-NullFlavor",
+                    "version": "2.1.0"
                   }
                 ],
                 "required": true,
@@ -1419,13 +1478,15 @@
                                           "code": "0100",
                                           "display": "Innere Medizin",
                                           "designations": [],
-                                          "system": "https://demis.rki.de/fhir/CodeSystem/hospitalizationServiceType"
+                                          "system": "https://demis.rki.de/fhir/CodeSystem/hospitalizationServiceType",
+                                          "version": "1.0.2"
                                         },
                                         {
                                           "code": "0102",
                                           "display": "Schwerpunkt Geriatrie",
                                           "designations": [],
                                           "system": "https://demis.rki.de/fhir/CodeSystem/hospitalizationServiceType",
+                                          "version": "1.0.2",
                                           "breadcrumb": "Innere Medizin"
                                         },
                                         {
@@ -1433,6 +1494,7 @@
                                           "display": "Schwerpunkt Kardiologie",
                                           "designations": [],
                                           "system": "https://demis.rki.de/fhir/CodeSystem/hospitalizationServiceType",
+                                          "version": "1.0.2",
                                           "breadcrumb": "Innere Medizin"
                                         },
                                         {
@@ -1440,6 +1502,7 @@
                                           "display": "Schwerpunkt Nephrologie",
                                           "designations": [],
                                           "system": "https://demis.rki.de/fhir/CodeSystem/hospitalizationServiceType",
+                                          "version": "1.0.2",
                                           "breadcrumb": "Innere Medizin"
                                         },
                                         {
@@ -1447,6 +1510,7 @@
                                           "display": "Schwerpunkt Hämatologie und internistische Onkologie",
                                           "designations": [],
                                           "system": "https://demis.rki.de/fhir/CodeSystem/hospitalizationServiceType",
+                                          "version": "1.0.2",
                                           "breadcrumb": "Innere Medizin"
                                         },
                                         {
@@ -1454,6 +1518,7 @@
                                           "display": "Schwerpunkt Endokrinologie",
                                           "designations": [],
                                           "system": "https://demis.rki.de/fhir/CodeSystem/hospitalizationServiceType",
+                                          "version": "1.0.2",
                                           "breadcrumb": "Innere Medizin"
                                         },
                                         {
@@ -1461,6 +1526,7 @@
                                           "display": "Schwerpunkt Gastroenterologie",
                                           "designations": [],
                                           "system": "https://demis.rki.de/fhir/CodeSystem/hospitalizationServiceType",
+                                          "version": "1.0.2",
                                           "breadcrumb": "Innere Medizin"
                                         },
                                         {
@@ -1468,6 +1534,7 @@
                                           "display": "Schwerpunkt Pneumologie",
                                           "designations": [],
                                           "system": "https://demis.rki.de/fhir/CodeSystem/hospitalizationServiceType",
+                                          "version": "1.0.2",
                                           "breadcrumb": "Innere Medizin"
                                         },
                                         {
@@ -1475,6 +1542,7 @@
                                           "display": "Schwerpunkt Rheumatologie",
                                           "designations": [],
                                           "system": "https://demis.rki.de/fhir/CodeSystem/hospitalizationServiceType",
+                                          "version": "1.0.2",
                                           "breadcrumb": "Innere Medizin"
                                         },
                                         {
@@ -1482,6 +1550,7 @@
                                           "display": "Schwerpunkt Lungen- und Bronchialheilkunde",
                                           "designations": [],
                                           "system": "https://demis.rki.de/fhir/CodeSystem/hospitalizationServiceType",
+                                          "version": "1.0.2",
                                           "breadcrumb": "Innere Medizin"
                                         },
                                         {
@@ -1489,6 +1558,7 @@
                                           "display": "Tumorforschung",
                                           "designations": [],
                                           "system": "https://demis.rki.de/fhir/CodeSystem/hospitalizationServiceType",
+                                          "version": "1.0.2",
                                           "breadcrumb": "Innere Medizin"
                                         },
                                         {
@@ -1496,6 +1566,7 @@
                                           "display": "Schwerpunkt Coloproktologie",
                                           "designations": [],
                                           "system": "https://demis.rki.de/fhir/CodeSystem/hospitalizationServiceType",
+                                          "version": "1.0.2",
                                           "breadcrumb": "Innere Medizin"
                                         },
                                         {
@@ -1503,6 +1574,7 @@
                                           "display": "Schwerpunkt Infektionskrankheiten",
                                           "designations": [],
                                           "system": "https://demis.rki.de/fhir/CodeSystem/hospitalizationServiceType",
+                                          "version": "1.0.2",
                                           "breadcrumb": "Innere Medizin"
                                         },
                                         {
@@ -1510,6 +1582,7 @@
                                           "display": "Schwerpunkt Diabetes",
                                           "designations": [],
                                           "system": "https://demis.rki.de/fhir/CodeSystem/hospitalizationServiceType",
+                                          "version": "1.0.2",
                                           "breadcrumb": "Innere Medizin"
                                         },
                                         {
@@ -1517,6 +1590,7 @@
                                           "display": "Schwerpunkt Naturheilkunde",
                                           "designations": [],
                                           "system": "https://demis.rki.de/fhir/CodeSystem/hospitalizationServiceType",
+                                          "version": "1.0.2",
                                           "breadcrumb": "Innere Medizin"
                                         },
                                         {
@@ -1524,19 +1598,22 @@
                                           "display": "Schwerpunkt Schlaganfallpatienten",
                                           "designations": [],
                                           "system": "https://demis.rki.de/fhir/CodeSystem/hospitalizationServiceType",
+                                          "version": "1.0.2",
                                           "breadcrumb": "Innere Medizin"
                                         },
                                         {
                                           "code": "0200",
                                           "display": "Geriatrie",
                                           "designations": [],
-                                          "system": "https://demis.rki.de/fhir/CodeSystem/hospitalizationServiceType"
+                                          "system": "https://demis.rki.de/fhir/CodeSystem/hospitalizationServiceType",
+                                          "version": "1.0.2"
                                         },
                                         {
                                           "code": "0224",
                                           "display": "Schwerpunkt Frauenheilkunde",
                                           "designations": [],
                                           "system": "https://demis.rki.de/fhir/CodeSystem/hospitalizationServiceType",
+                                          "version": "1.0.2",
                                           "breadcrumb": "Geriatrie"
                                         },
                                         {
@@ -1544,6 +1621,7 @@
                                           "display": "Tagesklinik (für teilstationäre Pflegesätze)",
                                           "designations": [],
                                           "system": "https://demis.rki.de/fhir/CodeSystem/hospitalizationServiceType",
+                                          "version": "1.0.2",
                                           "breadcrumb": "Geriatrie"
                                         },
                                         {
@@ -1551,32 +1629,37 @@
                                           "display": "Nachtklinik (für teilstationäre Pflegesätze)",
                                           "designations": [],
                                           "system": "https://demis.rki.de/fhir/CodeSystem/hospitalizationServiceType",
+                                          "version": "1.0.2",
                                           "breadcrumb": "Geriatrie"
                                         },
                                         {
                                           "code": "0300",
                                           "display": "Kardiologie",
                                           "designations": [],
-                                          "system": "https://demis.rki.de/fhir/CodeSystem/hospitalizationServiceType"
+                                          "system": "https://demis.rki.de/fhir/CodeSystem/hospitalizationServiceType",
+                                          "version": "1.0.2"
                                         },
                                         {
                                           "code": "1136",
                                           "display": "Schwerpunkt Intensivmedizin",
                                           "designations": [],
                                           "system": "https://demis.rki.de/fhir/CodeSystem/hospitalizationServiceType",
+                                          "version": "1.0.2",
                                           "breadcrumb": "Kardiologie"
                                         },
                                         {
                                           "code": "0400",
                                           "display": "Nephrologie",
                                           "designations": [],
-                                          "system": "https://demis.rki.de/fhir/CodeSystem/hospitalizationServiceType"
+                                          "system": "https://demis.rki.de/fhir/CodeSystem/hospitalizationServiceType",
+                                          "version": "1.0.2"
                                         },
                                         {
                                           "code": "0410",
                                           "display": "Schwerpunkt Pädiatrie",
                                           "designations": [],
                                           "system": "https://demis.rki.de/fhir/CodeSystem/hospitalizationServiceType",
+                                          "version": "1.0.2",
                                           "breadcrumb": "Nephrologie"
                                         },
                                         {
@@ -1584,25 +1667,29 @@
                                           "display": "Intensivmedizin",
                                           "designations": [],
                                           "system": "https://demis.rki.de/fhir/CodeSystem/hospitalizationServiceType",
+                                          "version": "1.0.2",
                                           "breadcrumb": "Nephrologie"
                                         },
                                         {
                                           "code": "0500",
                                           "display": "Hämatologie und internistische Onkologie",
                                           "designations": [],
-                                          "system": "https://demis.rki.de/fhir/CodeSystem/hospitalizationServiceType"
+                                          "system": "https://demis.rki.de/fhir/CodeSystem/hospitalizationServiceType",
+                                          "version": "1.0.2"
                                         },
                                         {
                                           "code": "0600",
                                           "display": "Endokrinologie",
                                           "designations": [],
-                                          "system": "https://demis.rki.de/fhir/CodeSystem/hospitalizationServiceType"
+                                          "system": "https://demis.rki.de/fhir/CodeSystem/hospitalizationServiceType",
+                                          "version": "1.0.2"
                                         },
                                         {
                                           "code": "0607",
                                           "display": "Schwerpunkt Gastroenterologie",
                                           "designations": [],
                                           "system": "https://demis.rki.de/fhir/CodeSystem/hospitalizationServiceType",
+                                          "version": "1.0.2",
                                           "breadcrumb": "Endokrinologie"
                                         },
                                         {
@@ -1610,19 +1697,22 @@
                                           "display": "Schwerpunkt Pädiatrie",
                                           "designations": [],
                                           "system": "https://demis.rki.de/fhir/CodeSystem/hospitalizationServiceType",
+                                          "version": "1.0.2",
                                           "breadcrumb": "Endokrinologie"
                                         },
                                         {
                                           "code": "0700",
                                           "display": "Gastroenterologie",
                                           "designations": [],
-                                          "system": "https://demis.rki.de/fhir/CodeSystem/hospitalizationServiceType"
+                                          "system": "https://demis.rki.de/fhir/CodeSystem/hospitalizationServiceType",
+                                          "version": "1.0.2"
                                         },
                                         {
                                           "code": "0706",
                                           "display": "Schwerpunkt Endokrinologie",
                                           "designations": [],
                                           "system": "https://demis.rki.de/fhir/CodeSystem/hospitalizationServiceType",
+                                          "version": "1.0.2",
                                           "breadcrumb": "Gastroenterologie"
                                         },
                                         {
@@ -1630,38 +1720,44 @@
                                           "display": "Schwerpunkt Pädiatrie",
                                           "designations": [],
                                           "system": "https://demis.rki.de/fhir/CodeSystem/hospitalizationServiceType",
+                                          "version": "1.0.2",
                                           "breadcrumb": "Gastroenterologie"
                                         },
                                         {
                                           "code": "0800",
                                           "display": "Pneumologie",
                                           "designations": [],
-                                          "system": "https://demis.rki.de/fhir/CodeSystem/hospitalizationServiceType"
+                                          "system": "https://demis.rki.de/fhir/CodeSystem/hospitalizationServiceType",
+                                          "version": "1.0.2"
                                         },
                                         {
                                           "code": "0900",
                                           "display": "Rheumatologie",
                                           "designations": [],
-                                          "system": "https://demis.rki.de/fhir/CodeSystem/hospitalizationServiceType"
+                                          "system": "https://demis.rki.de/fhir/CodeSystem/hospitalizationServiceType",
+                                          "version": "1.0.2"
                                         },
                                         {
                                           "code": "0910",
                                           "display": "Schwerpunkt Pädiatrie",
                                           "designations": [],
                                           "system": "https://demis.rki.de/fhir/CodeSystem/hospitalizationServiceType",
+                                          "version": "1.0.2",
                                           "breadcrumb": "Rheumatologie"
                                         },
                                         {
                                           "code": "1000",
                                           "display": "Pädiatrie",
                                           "designations": [],
-                                          "system": "https://demis.rki.de/fhir/CodeSystem/hospitalizationServiceType"
+                                          "system": "https://demis.rki.de/fhir/CodeSystem/hospitalizationServiceType",
+                                          "version": "1.0.2"
                                         },
                                         {
                                           "code": "1004",
                                           "display": "Schwerpunkt Nephrologie",
                                           "designations": [],
                                           "system": "https://demis.rki.de/fhir/CodeSystem/hospitalizationServiceType",
+                                          "version": "1.0.2",
                                           "breadcrumb": "Pädiatrie"
                                         },
                                         {
@@ -1669,6 +1765,7 @@
                                           "display": "Schwerpunkt Hämatologie und internistische Onkologie",
                                           "designations": [],
                                           "system": "https://demis.rki.de/fhir/CodeSystem/hospitalizationServiceType",
+                                          "version": "1.0.2",
                                           "breadcrumb": "Pädiatrie"
                                         },
                                         {
@@ -1676,6 +1773,7 @@
                                           "display": "Schwerpunkt Endokrinologie",
                                           "designations": [],
                                           "system": "https://demis.rki.de/fhir/CodeSystem/hospitalizationServiceType",
+                                          "version": "1.0.2",
                                           "breadcrumb": "Pädiatrie"
                                         },
                                         {
@@ -1683,6 +1781,7 @@
                                           "display": "Schwerpunkt Gastroenterologie",
                                           "designations": [],
                                           "system": "https://demis.rki.de/fhir/CodeSystem/hospitalizationServiceType",
+                                          "version": "1.0.2",
                                           "breadcrumb": "Pädiatrie"
                                         },
                                         {
@@ -1690,6 +1789,7 @@
                                           "display": "Schwerpunkt Rheumatologie",
                                           "designations": [],
                                           "system": "https://demis.rki.de/fhir/CodeSystem/hospitalizationServiceType",
+                                          "version": "1.0.2",
                                           "breadcrumb": "Pädiatrie"
                                         },
                                         {
@@ -1697,6 +1797,7 @@
                                           "display": "Schwerpunkt Kinderkardiologie",
                                           "designations": [],
                                           "system": "https://demis.rki.de/fhir/CodeSystem/hospitalizationServiceType",
+                                          "version": "1.0.2",
                                           "breadcrumb": "Pädiatrie"
                                         },
                                         {
@@ -1704,6 +1805,7 @@
                                           "display": "Schwerpunkt Neonatologie",
                                           "designations": [],
                                           "system": "https://demis.rki.de/fhir/CodeSystem/hospitalizationServiceType",
+                                          "version": "1.0.2",
                                           "breadcrumb": "Pädiatrie"
                                         },
                                         {
@@ -1711,6 +1813,7 @@
                                           "display": "Schwerpunkt Lungen- und Bronchialheilkunde",
                                           "designations": [],
                                           "system": "https://demis.rki.de/fhir/CodeSystem/hospitalizationServiceType",
+                                          "version": "1.0.2",
                                           "breadcrumb": "Pädiatrie"
                                         },
                                         {
@@ -1718,6 +1821,7 @@
                                           "display": "Schwerpunkt Kinderneurologie",
                                           "designations": [],
                                           "system": "https://demis.rki.de/fhir/CodeSystem/hospitalizationServiceType",
+                                          "version": "1.0.2",
                                           "breadcrumb": "Pädiatrie"
                                         },
                                         {
@@ -1725,50 +1829,58 @@
                                           "display": "Schwerpunkt Perinatalmedizin",
                                           "designations": [],
                                           "system": "https://demis.rki.de/fhir/CodeSystem/hospitalizationServiceType",
+                                          "version": "1.0.2",
                                           "breadcrumb": "Pädiatrie"
                                         },
                                         {
                                           "code": "1100",
                                           "display": "Kinderkardiologie",
                                           "designations": [],
-                                          "system": "https://demis.rki.de/fhir/CodeSystem/hospitalizationServiceType"
+                                          "system": "https://demis.rki.de/fhir/CodeSystem/hospitalizationServiceType",
+                                          "version": "1.0.2"
                                         },
                                         {
                                           "code": "1200",
                                           "display": "Neonatologie",
                                           "designations": [],
-                                          "system": "https://demis.rki.de/fhir/CodeSystem/hospitalizationServiceType"
+                                          "system": "https://demis.rki.de/fhir/CodeSystem/hospitalizationServiceType",
+                                          "version": "1.0.2"
                                         },
                                         {
                                           "code": "1300",
                                           "display": "Kinderchirurgie",
                                           "designations": [],
-                                          "system": "https://demis.rki.de/fhir/CodeSystem/hospitalizationServiceType"
+                                          "system": "https://demis.rki.de/fhir/CodeSystem/hospitalizationServiceType",
+                                          "version": "1.0.2"
                                         },
                                         {
                                           "code": "1400",
                                           "display": "Lungen- und Bronchialheilkunde",
                                           "designations": [],
-                                          "system": "https://demis.rki.de/fhir/CodeSystem/hospitalizationServiceType"
+                                          "system": "https://demis.rki.de/fhir/CodeSystem/hospitalizationServiceType",
+                                          "version": "1.0.2"
                                         },
                                         {
                                           "code": "1410",
                                           "display": "Schwerpunkt Pädiatrie",
                                           "designations": [],
                                           "system": "https://demis.rki.de/fhir/CodeSystem/hospitalizationServiceType",
+                                          "version": "1.0.2",
                                           "breadcrumb": "Lungen- und Bronchialheilkunde"
                                         },
                                         {
                                           "code": "1500",
                                           "display": "Allgemeine Chirurgie",
                                           "designations": [],
-                                          "system": "https://demis.rki.de/fhir/CodeSystem/hospitalizationServiceType"
+                                          "system": "https://demis.rki.de/fhir/CodeSystem/hospitalizationServiceType",
+                                          "version": "1.0.2"
                                         },
                                         {
                                           "code": "1513",
                                           "display": "Schwerpunkt Kinderchirurgie",
                                           "designations": [],
                                           "system": "https://demis.rki.de/fhir/CodeSystem/hospitalizationServiceType",
+                                          "version": "1.0.2",
                                           "breadcrumb": "Allgemeine Chirurgie"
                                         },
                                         {
@@ -1776,6 +1888,7 @@
                                           "display": "Schwerpunkt Unfallchirurgie",
                                           "designations": [],
                                           "system": "https://demis.rki.de/fhir/CodeSystem/hospitalizationServiceType",
+                                          "version": "1.0.2",
                                           "breadcrumb": "Allgemeine Chirurgie"
                                         },
                                         {
@@ -1783,6 +1896,7 @@
                                           "display": "Schwerpunkt Gefäßchirurgie",
                                           "designations": [],
                                           "system": "https://demis.rki.de/fhir/CodeSystem/hospitalizationServiceType",
+                                          "version": "1.0.2",
                                           "breadcrumb": "Allgemeine Chirurgie"
                                         },
                                         {
@@ -1790,6 +1904,7 @@
                                           "display": "Schwerpunkt Plastische Chirurgie",
                                           "designations": [],
                                           "system": "https://demis.rki.de/fhir/CodeSystem/hospitalizationServiceType",
+                                          "version": "1.0.2",
                                           "breadcrumb": "Allgemeine Chirurgie"
                                         },
                                         {
@@ -1797,6 +1912,7 @@
                                           "display": "Schwerpunkt Thoraxchirurgie",
                                           "designations": [],
                                           "system": "https://demis.rki.de/fhir/CodeSystem/hospitalizationServiceType",
+                                          "version": "1.0.2",
                                           "breadcrumb": "Allgemeine Chirurgie"
                                         },
                                         {
@@ -1804,6 +1920,7 @@
                                           "display": "Schwerpunkt Orthopädie",
                                           "designations": [],
                                           "system": "https://demis.rki.de/fhir/CodeSystem/hospitalizationServiceType",
+                                          "version": "1.0.2",
                                           "breadcrumb": "Allgemeine Chirurgie"
                                         },
                                         {
@@ -1811,6 +1928,7 @@
                                           "display": "Intensivmedizin  (§  13  Abs.  2  Satz  3  2.  Halbsatz BPflV in der am 31.12.2003 geltenden Fassung)",
                                           "designations": [],
                                           "system": "https://demis.rki.de/fhir/CodeSystem/hospitalizationServiceType",
+                                          "version": "1.0.2",
                                           "breadcrumb": "Allgemeine Chirurgie"
                                         },
                                         {
@@ -1818,6 +1936,7 @@
                                           "display": "Schwerpunkt Abdominal- und Gefäßchirurgie",
                                           "designations": [],
                                           "system": "https://demis.rki.de/fhir/CodeSystem/hospitalizationServiceType",
+                                          "version": "1.0.2",
                                           "breadcrumb": "Allgemeine Chirurgie"
                                         },
                                         {
@@ -1825,43 +1944,50 @@
                                           "display": "Schwerpunkt Handchirurgie",
                                           "designations": [],
                                           "system": "https://demis.rki.de/fhir/CodeSystem/hospitalizationServiceType",
+                                          "version": "1.0.2",
                                           "breadcrumb": "Allgemeine Chirurgie"
                                         },
                                         {
                                           "code": "1600",
                                           "display": "Unfallchirurgie",
                                           "designations": [],
-                                          "system": "https://demis.rki.de/fhir/CodeSystem/hospitalizationServiceType"
+                                          "system": "https://demis.rki.de/fhir/CodeSystem/hospitalizationServiceType",
+                                          "version": "1.0.2"
                                         },
                                         {
                                           "code": "1700",
                                           "display": "Neurochirurgie",
                                           "designations": [],
-                                          "system": "https://demis.rki.de/fhir/CodeSystem/hospitalizationServiceType"
+                                          "system": "https://demis.rki.de/fhir/CodeSystem/hospitalizationServiceType",
+                                          "version": "1.0.2"
                                         },
                                         {
                                           "code": "1800",
                                           "display": "Gefäßchirurgie",
                                           "designations": [],
-                                          "system": "https://demis.rki.de/fhir/CodeSystem/hospitalizationServiceType"
+                                          "system": "https://demis.rki.de/fhir/CodeSystem/hospitalizationServiceType",
+                                          "version": "1.0.2"
                                         },
                                         {
                                           "code": "1900",
                                           "display": "Plastische Chirurgie",
                                           "designations": [],
-                                          "system": "https://demis.rki.de/fhir/CodeSystem/hospitalizationServiceType"
+                                          "system": "https://demis.rki.de/fhir/CodeSystem/hospitalizationServiceType",
+                                          "version": "1.0.2"
                                         },
                                         {
                                           "code": "2000",
                                           "display": "Thoraxchirurgie",
                                           "designations": [],
-                                          "system": "https://demis.rki.de/fhir/CodeSystem/hospitalizationServiceType"
+                                          "system": "https://demis.rki.de/fhir/CodeSystem/hospitalizationServiceType",
+                                          "version": "1.0.2"
                                         },
                                         {
                                           "code": "2021",
                                           "display": "Schwerpunkt Herzchirurgie",
                                           "designations": [],
                                           "system": "https://demis.rki.de/fhir/CodeSystem/hospitalizationServiceType",
+                                          "version": "1.0.2",
                                           "breadcrumb": "Thoraxchirurgie"
                                         },
                                         {
@@ -1869,6 +1995,7 @@
                                           "display": "Intensivmedizin",
                                           "designations": [],
                                           "system": "https://demis.rki.de/fhir/CodeSystem/hospitalizationServiceType",
+                                          "version": "1.0.2",
                                           "breadcrumb": "Thoraxchirurgie"
                                         },
                                         {
@@ -1876,19 +2003,22 @@
                                           "display": "Schwerpunkt Herzchirurgie Intensivmedizin",
                                           "designations": [],
                                           "system": "https://demis.rki.de/fhir/CodeSystem/hospitalizationServiceType",
+                                          "version": "1.0.2",
                                           "breadcrumb": "Thoraxchirurgie"
                                         },
                                         {
                                           "code": "2100",
                                           "display": "Herzchirurgie",
                                           "designations": [],
-                                          "system": "https://demis.rki.de/fhir/CodeSystem/hospitalizationServiceType"
+                                          "system": "https://demis.rki.de/fhir/CodeSystem/hospitalizationServiceType",
+                                          "version": "1.0.2"
                                         },
                                         {
                                           "code": "2118",
                                           "display": "Schwerpunkt Gefäßchirurgie",
                                           "designations": [],
                                           "system": "https://demis.rki.de/fhir/CodeSystem/hospitalizationServiceType",
+                                          "version": "1.0.2",
                                           "breadcrumb": "Herzchirurgie"
                                         },
                                         {
@@ -1896,6 +2026,7 @@
                                           "display": "Schwerpunkt Thoraxchirurgie",
                                           "designations": [],
                                           "system": "https://demis.rki.de/fhir/CodeSystem/hospitalizationServiceType",
+                                          "version": "1.0.2",
                                           "breadcrumb": "Herzchirurgie"
                                         },
                                         {
@@ -1903,6 +2034,7 @@
                                           "display": "Intensivmedizin (§ 13 Abs. 2 Satz 3 2. Halbsatz BPflV in der am 31.12.2003 geltenden Fassung)",
                                           "designations": [],
                                           "system": "https://demis.rki.de/fhir/CodeSystem/hospitalizationServiceType",
+                                          "version": "1.0.2",
                                           "breadcrumb": "Herzchirurgie"
                                         },
                                         {
@@ -1910,25 +2042,29 @@
                                           "display": "Schwerpunkt Thoraxchirurgie Intensivmedizin",
                                           "designations": [],
                                           "system": "https://demis.rki.de/fhir/CodeSystem/hospitalizationServiceType",
+                                          "version": "1.0.2",
                                           "breadcrumb": "Herzchirurgie"
                                         },
                                         {
                                           "code": "2200",
                                           "display": "Urologie",
                                           "designations": [],
-                                          "system": "https://demis.rki.de/fhir/CodeSystem/hospitalizationServiceType"
+                                          "system": "https://demis.rki.de/fhir/CodeSystem/hospitalizationServiceType",
+                                          "version": "1.0.2"
                                         },
                                         {
                                           "code": "2300",
                                           "display": "Orthopädie",
                                           "designations": [],
-                                          "system": "https://demis.rki.de/fhir/CodeSystem/hospitalizationServiceType"
+                                          "system": "https://demis.rki.de/fhir/CodeSystem/hospitalizationServiceType",
+                                          "version": "1.0.2"
                                         },
                                         {
                                           "code": "2309",
                                           "display": "Schwerpunkt Rheumatologie",
                                           "designations": [],
                                           "system": "https://demis.rki.de/fhir/CodeSystem/hospitalizationServiceType",
+                                          "version": "1.0.2",
                                           "breadcrumb": "Orthopädie"
                                         },
                                         {
@@ -1936,43 +2072,50 @@
                                           "display": "Schwerpunkt Chirurgie",
                                           "designations": [],
                                           "system": "https://demis.rki.de/fhir/CodeSystem/hospitalizationServiceType",
+                                          "version": "1.0.2",
                                           "breadcrumb": "Orthopädie"
                                         },
                                         {
                                           "code": "2400",
                                           "display": "Frauenheilkunde und Geburtshilfe",
                                           "designations": [],
-                                          "system": "https://demis.rki.de/fhir/CodeSystem/hospitalizationServiceType"
+                                          "system": "https://demis.rki.de/fhir/CodeSystem/hospitalizationServiceType",
+                                          "version": "1.0.2"
                                         },
                                         {
                                           "code": "2500",
                                           "display": "davon Geburtshilfe",
                                           "designations": [],
-                                          "system": "https://demis.rki.de/fhir/CodeSystem/hospitalizationServiceType"
+                                          "system": "https://demis.rki.de/fhir/CodeSystem/hospitalizationServiceType",
+                                          "version": "1.0.2"
                                         },
                                         {
                                           "code": "2600",
                                           "display": "Hals-, Nasen-, Ohrenheilkunde",
                                           "designations": [],
-                                          "system": "https://demis.rki.de/fhir/CodeSystem/hospitalizationServiceType"
+                                          "system": "https://demis.rki.de/fhir/CodeSystem/hospitalizationServiceType",
+                                          "version": "1.0.2"
                                         },
                                         {
                                           "code": "2700",
                                           "display": "Augenheilkunde",
                                           "designations": [],
-                                          "system": "https://demis.rki.de/fhir/CodeSystem/hospitalizationServiceType"
+                                          "system": "https://demis.rki.de/fhir/CodeSystem/hospitalizationServiceType",
+                                          "version": "1.0.2"
                                         },
                                         {
                                           "code": "2800",
                                           "display": "Neurologie",
                                           "designations": [],
-                                          "system": "https://demis.rki.de/fhir/CodeSystem/hospitalizationServiceType"
+                                          "system": "https://demis.rki.de/fhir/CodeSystem/hospitalizationServiceType",
+                                          "version": "1.0.2"
                                         },
                                         {
                                           "code": "2810",
                                           "display": "Schwerpunkt Pädiatrie",
                                           "designations": [],
                                           "system": "https://demis.rki.de/fhir/CodeSystem/hospitalizationServiceType",
+                                          "version": "1.0.2",
                                           "breadcrumb": "Neurologie"
                                         },
                                         {
@@ -1980,6 +2123,7 @@
                                           "display": "Schwerpunkt Gerontologie",
                                           "designations": [],
                                           "system": "https://demis.rki.de/fhir/CodeSystem/hospitalizationServiceType",
+                                          "version": "1.0.2",
                                           "breadcrumb": "Neurologie"
                                         },
                                         {
@@ -1987,6 +2131,7 @@
                                           "display": "Schwerpunkt Neurologische Frührehabilitation",
                                           "designations": [],
                                           "system": "https://demis.rki.de/fhir/CodeSystem/hospitalizationServiceType",
+                                          "version": "1.0.2",
                                           "breadcrumb": "Neurologie"
                                         },
                                         {
@@ -1994,19 +2139,22 @@
                                           "display": "Schwerpunkt Schlaganfallpatienten",
                                           "designations": [],
                                           "system": "https://demis.rki.de/fhir/CodeSystem/hospitalizationServiceType",
+                                          "version": "1.0.2",
                                           "breadcrumb": "Neurologie"
                                         },
                                         {
                                           "code": "2900",
                                           "display": "Allgemeine Psychiatrie",
                                           "designations": [],
-                                          "system": "https://demis.rki.de/fhir/CodeSystem/hospitalizationServiceType"
+                                          "system": "https://demis.rki.de/fhir/CodeSystem/hospitalizationServiceType",
+                                          "version": "1.0.2"
                                         },
                                         {
                                           "code": "2928",
                                           "display": "Schwerpunkt Neurologie",
                                           "designations": [],
                                           "system": "https://demis.rki.de/fhir/CodeSystem/hospitalizationServiceType",
+                                          "version": "1.0.2",
                                           "breadcrumb": "Allgemeine Psychiatrie"
                                         },
                                         {
@@ -2014,6 +2162,7 @@
                                           "display": "Schwerpunkt Kinder- und Jugendpsychiatrie",
                                           "designations": [],
                                           "system": "https://demis.rki.de/fhir/CodeSystem/hospitalizationServiceType",
+                                          "version": "1.0.2",
                                           "breadcrumb": "Allgemeine Psychiatrie"
                                         },
                                         {
@@ -2021,6 +2170,7 @@
                                           "display": "Schwerpunkt Psychosomatik/Psychotherapie",
                                           "designations": [],
                                           "system": "https://demis.rki.de/fhir/CodeSystem/hospitalizationServiceType",
+                                          "version": "1.0.2",
                                           "breadcrumb": "Allgemeine Psychiatrie"
                                         },
                                         {
@@ -2028,6 +2178,7 @@
                                           "display": "Schwerpunkt Suchtbehandlung",
                                           "designations": [],
                                           "system": "https://demis.rki.de/fhir/CodeSystem/hospitalizationServiceType",
+                                          "version": "1.0.2",
                                           "breadcrumb": "Allgemeine Psychiatrie"
                                         },
                                         {
@@ -2035,6 +2186,7 @@
                                           "display": "Schwerpunkt Gerontopsychiatrie",
                                           "designations": [],
                                           "system": "https://demis.rki.de/fhir/CodeSystem/hospitalizationServiceType",
+                                          "version": "1.0.2",
                                           "breadcrumb": "Allgemeine Psychiatrie"
                                         },
                                         {
@@ -2042,6 +2194,7 @@
                                           "display": "Schwerpunkt Forensische Behandlung",
                                           "designations": [],
                                           "system": "https://demis.rki.de/fhir/CodeSystem/hospitalizationServiceType",
+                                          "version": "1.0.2",
                                           "breadcrumb": "Allgemeine Psychiatrie"
                                         },
                                         {
@@ -2049,6 +2202,7 @@
                                           "display": "Schwerpunkt Suchtbehandlung, Tagesklinik",
                                           "designations": [],
                                           "system": "https://demis.rki.de/fhir/CodeSystem/hospitalizationServiceType",
+                                          "version": "1.0.2",
                                           "breadcrumb": "Allgemeine Psychiatrie"
                                         },
                                         {
@@ -2056,6 +2210,7 @@
                                           "display": "Schwerpunkt Suchtbehandlung, Nachtklinik",
                                           "designations": [],
                                           "system": "https://demis.rki.de/fhir/CodeSystem/hospitalizationServiceType",
+                                          "version": "1.0.2",
                                           "breadcrumb": "Allgemeine Psychiatrie"
                                         },
                                         {
@@ -2063,6 +2218,7 @@
                                           "display": "Schwerpunkt Gerontopsychiatrie, Tagesklinik",
                                           "designations": [],
                                           "system": "https://demis.rki.de/fhir/CodeSystem/hospitalizationServiceType",
+                                          "version": "1.0.2",
                                           "breadcrumb": "Allgemeine Psychiatrie"
                                         },
                                         {
@@ -2070,6 +2226,7 @@
                                           "display": "Schwerpunkt Gerontopsychiatrie, Nachtklinik",
                                           "designations": [],
                                           "system": "https://demis.rki.de/fhir/CodeSystem/hospitalizationServiceType",
+                                          "version": "1.0.2",
                                           "breadcrumb": "Allgemeine Psychiatrie"
                                         },
                                         {
@@ -2077,6 +2234,7 @@
                                           "display": "Tagesklinik (für teilstationäre Pflegesätze)",
                                           "designations": [],
                                           "system": "https://demis.rki.de/fhir/CodeSystem/hospitalizationServiceType",
+                                          "version": "1.0.2",
                                           "breadcrumb": "Allgemeine Psychiatrie"
                                         },
                                         {
@@ -2084,19 +2242,22 @@
                                           "display": "Nachtklinik (für teilstationäre Pflegesätze)",
                                           "designations": [],
                                           "system": "https://demis.rki.de/fhir/CodeSystem/hospitalizationServiceType",
+                                          "version": "1.0.2",
                                           "breadcrumb": "Allgemeine Psychiatrie"
                                         },
                                         {
                                           "code": "3000",
                                           "display": "Kinder-und Jugendpsychiatrie",
                                           "designations": [],
-                                          "system": "https://demis.rki.de/fhir/CodeSystem/hospitalizationServiceType"
+                                          "system": "https://demis.rki.de/fhir/CodeSystem/hospitalizationServiceType",
+                                          "version": "1.0.2"
                                         },
                                         {
                                           "code": "3060",
                                           "display": "Kinder- und Jugendpsychiatrie/Tagesklinik (für teilstationäre Pflegesätze)",
                                           "designations": [],
                                           "system": "https://demis.rki.de/fhir/CodeSystem/hospitalizationServiceType",
+                                          "version": "1.0.2",
                                           "breadcrumb": "Kinder-und Jugendpsychiatrie"
                                         },
                                         {
@@ -2104,19 +2265,22 @@
                                           "display": "Kinder- und Jugendpsychiatrie/Nachtklinik (für teilstationäre Pflegesätze)",
                                           "designations": [],
                                           "system": "https://demis.rki.de/fhir/CodeSystem/hospitalizationServiceType",
+                                          "version": "1.0.2",
                                           "breadcrumb": "Kinder-und Jugendpsychiatrie"
                                         },
                                         {
                                           "code": "3100",
                                           "display": "Psychosomatik/Psychotherapie",
                                           "designations": [],
-                                          "system": "https://demis.rki.de/fhir/CodeSystem/hospitalizationServiceType"
+                                          "system": "https://demis.rki.de/fhir/CodeSystem/hospitalizationServiceType",
+                                          "version": "1.0.2"
                                         },
                                         {
                                           "code": "3110",
                                           "display": "Schwerpunkt Kinder- und Jugendpsychosomatik",
                                           "designations": [],
                                           "system": "https://demis.rki.de/fhir/CodeSystem/hospitalizationServiceType",
+                                          "version": "1.0.2",
                                           "breadcrumb": "Psychosomatik/Psychotherapie"
                                         },
                                         {
@@ -2124,6 +2288,7 @@
                                           "display": "Tagesklinik (für teilstationäre Pflegesätze)",
                                           "designations": [],
                                           "system": "https://demis.rki.de/fhir/CodeSystem/hospitalizationServiceType",
+                                          "version": "1.0.2",
                                           "breadcrumb": "Psychosomatik/Psychotherapie"
                                         },
                                         {
@@ -2131,32 +2296,37 @@
                                           "display": "Nachtklinik (für teilstationäre Pflegesätze)",
                                           "designations": [],
                                           "system": "https://demis.rki.de/fhir/CodeSystem/hospitalizationServiceType",
+                                          "version": "1.0.2",
                                           "breadcrumb": "Psychosomatik/Psychotherapie"
                                         },
                                         {
                                           "code": "3200",
                                           "display": "Nuklearmedizin",
                                           "designations": [],
-                                          "system": "https://demis.rki.de/fhir/CodeSystem/hospitalizationServiceType"
+                                          "system": "https://demis.rki.de/fhir/CodeSystem/hospitalizationServiceType",
+                                          "version": "1.0.2"
                                         },
                                         {
                                           "code": "3233",
                                           "display": "Schwerpunkt Strahlenheilkunde",
                                           "designations": [],
                                           "system": "https://demis.rki.de/fhir/CodeSystem/hospitalizationServiceType",
+                                          "version": "1.0.2",
                                           "breadcrumb": "Nuklearmedizin"
                                         },
                                         {
                                           "code": "3300",
                                           "display": "Strahlenheilkunde",
                                           "designations": [],
-                                          "system": "https://demis.rki.de/fhir/CodeSystem/hospitalizationServiceType"
+                                          "system": "https://demis.rki.de/fhir/CodeSystem/hospitalizationServiceType",
+                                          "version": "1.0.2"
                                         },
                                         {
                                           "code": "3305",
                                           "display": "Schwerpunkt Hämatologie und internistische Onkologie",
                                           "designations": [],
                                           "system": "https://demis.rki.de/fhir/CodeSystem/hospitalizationServiceType",
+                                          "version": "1.0.2",
                                           "breadcrumb": "Strahlenheilkunde"
                                         },
                                         {
@@ -2164,38 +2334,44 @@
                                           "display": "Schwerpunkt Radiologie",
                                           "designations": [],
                                           "system": "https://demis.rki.de/fhir/CodeSystem/hospitalizationServiceType",
+                                          "version": "1.0.2",
                                           "breadcrumb": "Strahlenheilkunde"
                                         },
                                         {
                                           "code": "3400",
                                           "display": "Dermatologie",
                                           "designations": [],
-                                          "system": "https://demis.rki.de/fhir/CodeSystem/hospitalizationServiceType"
+                                          "system": "https://demis.rki.de/fhir/CodeSystem/hospitalizationServiceType",
+                                          "version": "1.0.2"
                                         },
                                         {
                                           "code": "3460",
                                           "display": "Tagesklinik (für teilstationäre Pflegesätze)",
                                           "designations": [],
                                           "system": "https://demis.rki.de/fhir/CodeSystem/hospitalizationServiceType",
+                                          "version": "1.0.2",
                                           "breadcrumb": "Dermatologie"
                                         },
                                         {
                                           "code": "3500",
                                           "display": "Zahn- und Kieferheilkunde, Mund- und Kieferchirurgie",
                                           "designations": [],
-                                          "system": "https://demis.rki.de/fhir/CodeSystem/hospitalizationServiceType"
+                                          "system": "https://demis.rki.de/fhir/CodeSystem/hospitalizationServiceType",
+                                          "version": "1.0.2"
                                         },
                                         {
                                           "code": "3600",
                                           "display": "Intensivmedizin",
                                           "designations": [],
-                                          "system": "https://demis.rki.de/fhir/CodeSystem/hospitalizationServiceType"
+                                          "system": "https://demis.rki.de/fhir/CodeSystem/hospitalizationServiceType",
+                                          "version": "1.0.2"
                                         },
                                         {
                                           "code": "3601",
                                           "display": "Schwerpunkt Innere Medizin",
                                           "designations": [],
                                           "system": "https://demis.rki.de/fhir/CodeSystem/hospitalizationServiceType",
+                                          "version": "1.0.2",
                                           "breadcrumb": "Intensivmedizin"
                                         },
                                         {
@@ -2203,6 +2379,7 @@
                                           "display": "Schwerpunkt Kardiologie",
                                           "designations": [],
                                           "system": "https://demis.rki.de/fhir/CodeSystem/hospitalizationServiceType",
+                                          "version": "1.0.2",
                                           "breadcrumb": "Intensivmedizin"
                                         },
                                         {
@@ -2210,6 +2387,7 @@
                                           "display": "Schwerpunkt Pädiatrie",
                                           "designations": [],
                                           "system": "https://demis.rki.de/fhir/CodeSystem/hospitalizationServiceType",
+                                          "version": "1.0.2",
                                           "breadcrumb": "Intensivmedizin"
                                         },
                                         {
@@ -2217,6 +2395,7 @@
                                           "display": "Schwerpunkt Neurochirurgie",
                                           "designations": [],
                                           "system": "https://demis.rki.de/fhir/CodeSystem/hospitalizationServiceType",
+                                          "version": "1.0.2",
                                           "breadcrumb": "Intensivmedizin"
                                         },
                                         {
@@ -2224,6 +2403,7 @@
                                           "display": "Schwerpunkt Chirurgie",
                                           "designations": [],
                                           "system": "https://demis.rki.de/fhir/CodeSystem/hospitalizationServiceType",
+                                          "version": "1.0.2",
                                           "breadcrumb": "Intensivmedizin"
                                         },
                                         {
@@ -2231,6 +2411,7 @@
                                           "display": "Schwerpunkt Herzchirurgie",
                                           "designations": [],
                                           "system": "https://demis.rki.de/fhir/CodeSystem/hospitalizationServiceType",
+                                          "version": "1.0.2",
                                           "breadcrumb": "Intensivmedizin"
                                         },
                                         {
@@ -2238,6 +2419,7 @@
                                           "display": "Schwerpunkt Urologie",
                                           "designations": [],
                                           "system": "https://demis.rki.de/fhir/CodeSystem/hospitalizationServiceType",
+                                          "version": "1.0.2",
                                           "breadcrumb": "Intensivmedizin"
                                         },
                                         {
@@ -2245,6 +2427,7 @@
                                           "display": "Schwerpunkt Frauenheilkunde und Geburtshilfe",
                                           "designations": [],
                                           "system": "https://demis.rki.de/fhir/CodeSystem/hospitalizationServiceType",
+                                          "version": "1.0.2",
                                           "breadcrumb": "Intensivmedizin"
                                         },
                                         {
@@ -2252,6 +2435,7 @@
                                           "display": "Schwerpunkt Hals-, Nasen-, Ohrenheilkunde",
                                           "designations": [],
                                           "system": "https://demis.rki.de/fhir/CodeSystem/hospitalizationServiceType",
+                                          "version": "1.0.2",
                                           "breadcrumb": "Intensivmedizin"
                                         },
                                         {
@@ -2259,25 +2443,29 @@
                                           "display": "Schwerpunkt Neurologie",
                                           "designations": [],
                                           "system": "https://demis.rki.de/fhir/CodeSystem/hospitalizationServiceType",
+                                          "version": "1.0.2",
                                           "breadcrumb": "Intensivmedizin"
                                         },
                                         {
                                           "code": "2316",
                                           "display": "Orthopädie und Unfallchirurgie",
                                           "designations": [],
-                                          "system": "https://demis.rki.de/fhir/CodeSystem/hospitalizationServiceType"
+                                          "system": "https://demis.rki.de/fhir/CodeSystem/hospitalizationServiceType",
+                                          "version": "1.0.2"
                                         },
                                         {
                                           "code": "2425",
                                           "display": "Frauenheilkunde",
                                           "designations": [],
-                                          "system": "https://demis.rki.de/fhir/CodeSystem/hospitalizationServiceType"
+                                          "system": "https://demis.rki.de/fhir/CodeSystem/hospitalizationServiceType",
+                                          "version": "1.0.2"
                                         },
                                         {
                                           "code": "2402",
                                           "display": "Schwerpunkt Geriatrie",
                                           "designations": [],
                                           "system": "https://demis.rki.de/fhir/CodeSystem/hospitalizationServiceType",
+                                          "version": "1.0.2",
                                           "breadcrumb": "Frauenheilkunde"
                                         },
                                         {
@@ -2285,6 +2473,7 @@
                                           "display": "Schwerpunkt Hämatologie und internistische Onkologie",
                                           "designations": [],
                                           "system": "https://demis.rki.de/fhir/CodeSystem/hospitalizationServiceType",
+                                          "version": "1.0.2",
                                           "breadcrumb": "Frauenheilkunde"
                                         },
                                         {
@@ -2292,85 +2481,99 @@
                                           "display": "Schwerpunkt Endokrinologie",
                                           "designations": [],
                                           "system": "https://demis.rki.de/fhir/CodeSystem/hospitalizationServiceType",
+                                          "version": "1.0.2",
                                           "breadcrumb": "Frauenheilkunde"
                                         },
                                         {
                                           "code": "3700",
                                           "display": "Sonstige Fachabteilung",
                                           "designations": [],
-                                          "system": "https://demis.rki.de/fhir/CodeSystem/hospitalizationServiceType"
+                                          "system": "https://demis.rki.de/fhir/CodeSystem/hospitalizationServiceType",
+                                          "version": "1.0.2"
                                         },
                                         {
                                           "code": "3651",
                                           "display": "Thorax-Herzchirurgie",
                                           "designations": [],
-                                          "system": "https://demis.rki.de/fhir/CodeSystem/hospitalizationServiceType"
+                                          "system": "https://demis.rki.de/fhir/CodeSystem/hospitalizationServiceType",
+                                          "version": "1.0.2"
                                         },
                                         {
                                           "code": "3652",
                                           "display": "Herz-Thoraxchirurgie",
                                           "designations": [],
-                                          "system": "https://demis.rki.de/fhir/CodeSystem/hospitalizationServiceType"
+                                          "system": "https://demis.rki.de/fhir/CodeSystem/hospitalizationServiceType",
+                                          "version": "1.0.2"
                                         },
                                         {
                                           "code": "3750",
                                           "display": "Angiologie",
                                           "designations": [],
-                                          "system": "https://demis.rki.de/fhir/CodeSystem/hospitalizationServiceType"
+                                          "system": "https://demis.rki.de/fhir/CodeSystem/hospitalizationServiceType",
+                                          "version": "1.0.2"
                                         },
                                         {
                                           "code": "3751",
                                           "display": "Radiologie",
                                           "designations": [],
-                                          "system": "https://demis.rki.de/fhir/CodeSystem/hospitalizationServiceType"
+                                          "system": "https://demis.rki.de/fhir/CodeSystem/hospitalizationServiceType",
+                                          "version": "1.0.2"
                                         },
                                         {
                                           "code": "3752",
                                           "display": "Palliativmedizin",
                                           "designations": [],
-                                          "system": "https://demis.rki.de/fhir/CodeSystem/hospitalizationServiceType"
+                                          "system": "https://demis.rki.de/fhir/CodeSystem/hospitalizationServiceType",
+                                          "version": "1.0.2"
                                         },
                                         {
                                           "code": "3753",
                                           "display": "Schmerztherapie",
                                           "designations": [],
-                                          "system": "https://demis.rki.de/fhir/CodeSystem/hospitalizationServiceType"
+                                          "system": "https://demis.rki.de/fhir/CodeSystem/hospitalizationServiceType",
+                                          "version": "1.0.2"
                                         },
                                         {
                                           "code": "3754",
                                           "display": "Heiltherapeutische Abteilung",
                                           "designations": [],
-                                          "system": "https://demis.rki.de/fhir/CodeSystem/hospitalizationServiceType"
+                                          "system": "https://demis.rki.de/fhir/CodeSystem/hospitalizationServiceType",
+                                          "version": "1.0.2"
                                         },
                                         {
                                           "code": "3755",
                                           "display": "Wirbelsäulenchirurgie",
                                           "designations": [],
-                                          "system": "https://demis.rki.de/fhir/CodeSystem/hospitalizationServiceType"
+                                          "system": "https://demis.rki.de/fhir/CodeSystem/hospitalizationServiceType",
+                                          "version": "1.0.2"
                                         },
                                         {
                                           "code": "3756",
                                           "display": "Suchtmedizin",
                                           "designations": [],
-                                          "system": "https://demis.rki.de/fhir/CodeSystem/hospitalizationServiceType"
+                                          "system": "https://demis.rki.de/fhir/CodeSystem/hospitalizationServiceType",
+                                          "version": "1.0.2"
                                         },
                                         {
                                           "code": "3757",
                                           "display": "Visceralchirurgie",
                                           "designations": [],
-                                          "system": "https://demis.rki.de/fhir/CodeSystem/hospitalizationServiceType"
+                                          "system": "https://demis.rki.de/fhir/CodeSystem/hospitalizationServiceType",
+                                          "version": "1.0.2"
                                         },
                                         {
                                           "code": "3758",
                                           "display": "Weaningeinheit",
                                           "designations": [],
-                                          "system": "https://demis.rki.de/fhir/CodeSystem/hospitalizationServiceType"
+                                          "system": "https://demis.rki.de/fhir/CodeSystem/hospitalizationServiceType",
+                                          "version": "1.0.2"
                                         },
                                         {
                                           "code": "1051",
                                           "display": "Langzeitbereich Kinder",
                                           "designations": [],
-                                          "system": "https://demis.rki.de/fhir/CodeSystem/hospitalizationServiceType"
+                                          "system": "https://demis.rki.de/fhir/CodeSystem/hospitalizationServiceType",
+                                          "version": "1.0.2"
                                         }
                                       ],
                                       "required": true,
@@ -2464,7 +2667,8 @@
                                               "value": "nicht erhoben"
                                             }
                                           ],
-                                          "system": "http://terminology.hl7.org/CodeSystem/v3-NullFlavor"
+                                          "system": "http://terminology.hl7.org/CodeSystem/v3-NullFlavor",
+                                          "version": "2.1.0"
                                         },
                                         {
                                           "code": "ASKU",
@@ -2475,25 +2679,29 @@
                                               "value": "nicht ermittelbar"
                                             }
                                           ],
-                                          "system": "http://terminology.hl7.org/CodeSystem/v3-NullFlavor"
+                                          "system": "http://terminology.hl7.org/CodeSystem/v3-NullFlavor",
+                                          "version": "2.1.0"
                                         },
                                         {
                                           "code": "becauseOfDisease",
                                           "display": "Hospitalisiert aufgrund der gemeldeten Krankheit",
                                           "designations": [],
-                                          "system": "https://demis.rki.de/fhir/CodeSystem/hospitalizationReason"
+                                          "system": "https://demis.rki.de/fhir/CodeSystem/hospitalizationReason",
+                                          "version": "1.0.0"
                                         },
                                         {
                                           "code": "becauseOfOtherReason",
                                           "display": "Hospitalisiert aufgrund einer anderen Ursache als der gemeldeten Krankheit",
                                           "designations": [],
-                                          "system": "https://demis.rki.de/fhir/CodeSystem/hospitalizationReason"
+                                          "system": "https://demis.rki.de/fhir/CodeSystem/hospitalizationReason",
+                                          "version": "1.0.0"
                                         },
                                         {
                                           "code": "forIsolation",
                                           "display": "Hospitalisiert zur Isolierung",
                                           "designations": [],
-                                          "system": "https://demis.rki.de/fhir/CodeSystem/hospitalizationReason"
+                                          "system": "https://demis.rki.de/fhir/CodeSystem/hospitalizationReason",
+                                          "version": "1.0.0"
                                         }
                                       ],
                                       "required": false,
@@ -2668,7 +2876,8 @@
                                                       "value": "nicht erhoben"
                                                     }
                                                   ],
-                                                  "system": "http://terminology.hl7.org/CodeSystem/v3-NullFlavor"
+                                                  "system": "http://terminology.hl7.org/CodeSystem/v3-NullFlavor",
+                                                  "version": "2.1.0"
                                                 },
                                                 {
                                                   "code": "ASKU",
@@ -2679,7 +2888,8 @@
                                                       "value": "nicht ermittelbar"
                                                     }
                                                   ],
-                                                  "system": "http://terminology.hl7.org/CodeSystem/v3-NullFlavor"
+                                                  "system": "http://terminology.hl7.org/CodeSystem/v3-NullFlavor",
+                                                  "version": "2.1.0"
                                                 }
                                               ],
                                               "clearable": true,
@@ -2831,13 +3041,15 @@
                     "code": "yes",
                     "display": "Ja",
                     "designations": [],
-                    "system": "https://demis.rki.de/fhir/CodeSystem/yesOrNoAnswer"
+                    "system": "https://demis.rki.de/fhir/CodeSystem/yesOrNoAnswer",
+                    "version": "1.0.0"
                   },
                   {
                     "code": "no",
                     "display": "Nein",
                     "designations": [],
-                    "system": "https://demis.rki.de/fhir/CodeSystem/yesOrNoAnswer"
+                    "system": "https://demis.rki.de/fhir/CodeSystem/yesOrNoAnswer",
+                    "version": "1.0.0"
                   },
                   {
                     "code": "ASKU",
@@ -2848,7 +3060,8 @@
                         "value": "nicht ermittelbar"
                       }
                     ],
-                    "system": "http://terminology.hl7.org/CodeSystem/v3-NullFlavor"
+                    "system": "http://terminology.hl7.org/CodeSystem/v3-NullFlavor",
+                    "version": "2.1.0"
                   },
                   {
                     "code": "NASK",
@@ -2859,7 +3072,8 @@
                         "value": "nicht erhoben"
                       }
                     ],
-                    "system": "http://terminology.hl7.org/CodeSystem/v3-NullFlavor"
+                    "system": "http://terminology.hl7.org/CodeSystem/v3-NullFlavor",
+                    "version": "2.1.0"
                   }
                 ],
                 "required": true,
@@ -2916,7 +3130,8 @@
                                       "value": "Medizinische Einrichtung"
                                     }
                                   ],
-                                  "system": "https://demis.rki.de/fhir/CodeSystem/organizationType"
+                                  "system": "https://demis.rki.de/fhir/CodeSystem/organizationType",
+                                  "version": "1.2.0"
                                 },
                                 {
                                   "code": "hospital",
@@ -2932,6 +3147,7 @@
                                     }
                                   ],
                                   "system": "https://demis.rki.de/fhir/CodeSystem/organizationType",
+                                  "version": "1.2.0",
                                   "breadcrumb": "Medizinische Einrichtung"
                                 },
                                 {
@@ -2948,6 +3164,7 @@
                                     }
                                   ],
                                   "system": "https://demis.rki.de/fhir/CodeSystem/organizationType",
+                                  "version": "1.2.0",
                                   "breadcrumb": "Medizinische Einrichtung"
                                 },
                                 {
@@ -2964,6 +3181,7 @@
                                     }
                                   ],
                                   "system": "https://demis.rki.de/fhir/CodeSystem/organizationType",
+                                  "version": "1.2.0",
                                   "breadcrumb": "Medizinische Einrichtung"
                                 },
                                 {
@@ -2980,6 +3198,7 @@
                                     }
                                   ],
                                   "system": "https://demis.rki.de/fhir/CodeSystem/organizationType",
+                                  "version": "1.2.0",
                                   "breadcrumb": "Medizinische Einrichtung"
                                 },
                                 {
@@ -2996,6 +3215,7 @@
                                     }
                                   ],
                                   "system": "https://demis.rki.de/fhir/CodeSystem/organizationType",
+                                  "version": "1.2.0",
                                   "breadcrumb": "Medizinische Einrichtung"
                                 },
                                 {
@@ -3012,6 +3232,7 @@
                                     }
                                   ],
                                   "system": "https://demis.rki.de/fhir/CodeSystem/organizationType",
+                                  "version": "1.2.0",
                                   "breadcrumb": "Medizinische Einrichtung"
                                 },
                                 {
@@ -3028,6 +3249,7 @@
                                     }
                                   ],
                                   "system": "https://demis.rki.de/fhir/CodeSystem/organizationType",
+                                  "version": "1.2.0",
                                   "breadcrumb": "Medizinische Einrichtung"
                                 },
                                 {
@@ -3044,6 +3266,7 @@
                                     }
                                   ],
                                   "system": "https://demis.rki.de/fhir/CodeSystem/organizationType",
+                                  "version": "1.2.0",
                                   "breadcrumb": "Medizinische Einrichtung"
                                 },
                                 {
@@ -3060,6 +3283,7 @@
                                     }
                                   ],
                                   "system": "https://demis.rki.de/fhir/CodeSystem/organizationType",
+                                  "version": "1.2.0",
                                   "breadcrumb": "Medizinische Einrichtung"
                                 },
                                 {
@@ -3076,6 +3300,7 @@
                                     }
                                   ],
                                   "system": "https://demis.rki.de/fhir/CodeSystem/organizationType",
+                                  "version": "1.2.0",
                                   "breadcrumb": "Medizinische Einrichtung"
                                 },
                                 {
@@ -3092,6 +3317,7 @@
                                     }
                                   ],
                                   "system": "https://demis.rki.de/fhir/CodeSystem/organizationType",
+                                  "version": "1.2.0",
                                   "breadcrumb": "Medizinische Einrichtung"
                                 },
                                 {
@@ -3108,6 +3334,7 @@
                                     }
                                   ],
                                   "system": "https://demis.rki.de/fhir/CodeSystem/organizationType",
+                                  "version": "1.2.0",
                                   "breadcrumb": "Medizinische Einrichtung"
                                 },
                                 {
@@ -3124,6 +3351,7 @@
                                     }
                                   ],
                                   "system": "https://demis.rki.de/fhir/CodeSystem/organizationType",
+                                  "version": "1.2.0",
                                   "breadcrumb": "Medizinische Einrichtung"
                                 },
                                 {
@@ -3140,6 +3368,7 @@
                                     }
                                   ],
                                   "system": "https://demis.rki.de/fhir/CodeSystem/organizationType",
+                                  "version": "1.2.0",
                                   "breadcrumb": "Medizinische Einrichtung"
                                 }
                               ],
@@ -3234,19 +3463,22 @@
                                   "code": "employment",
                                   "display": "Tätigkeit",
                                   "designations": [],
-                                  "system": "https://demis.rki.de/fhir/CodeSystem/organizationAssociation"
+                                  "system": "https://demis.rki.de/fhir/CodeSystem/organizationAssociation",
+                                  "version": "1.0.0"
                                 },
                                 {
                                   "code": "care",
                                   "display": "Betreuung",
                                   "designations": [],
-                                  "system": "https://demis.rki.de/fhir/CodeSystem/organizationAssociation"
+                                  "system": "https://demis.rki.de/fhir/CodeSystem/organizationAssociation",
+                                  "version": "1.0.0"
                                 },
                                 {
                                   "code": "accommodation",
                                   "display": "Unterbringung",
                                   "designations": [],
-                                  "system": "https://demis.rki.de/fhir/CodeSystem/organizationAssociation"
+                                  "system": "https://demis.rki.de/fhir/CodeSystem/organizationAssociation",
+                                  "version": "1.0.0"
                                 }
                               ],
                               "required": true,
@@ -3423,7 +3655,8 @@
                                               "value": "nicht erhoben"
                                             }
                                           ],
-                                          "system": "http://terminology.hl7.org/CodeSystem/v3-NullFlavor"
+                                          "system": "http://terminology.hl7.org/CodeSystem/v3-NullFlavor",
+                                          "version": "2.1.0"
                                         },
                                         {
                                           "code": "ASKU",
@@ -3434,7 +3667,8 @@
                                               "value": "nicht ermittelbar"
                                             }
                                           ],
-                                          "system": "http://terminology.hl7.org/CodeSystem/v3-NullFlavor"
+                                          "system": "http://terminology.hl7.org/CodeSystem/v3-NullFlavor",
+                                          "version": "2.1.0"
                                         }
                                       ],
                                       "clearable": true,
@@ -3574,13 +3808,15 @@
                     "code": "yes",
                     "display": "Ja",
                     "designations": [],
-                    "system": "https://demis.rki.de/fhir/CodeSystem/yesOrNoAnswer"
+                    "system": "https://demis.rki.de/fhir/CodeSystem/yesOrNoAnswer",
+                    "version": "1.0.0"
                   },
                   {
                     "code": "no",
                     "display": "Nein",
                     "designations": [],
-                    "system": "https://demis.rki.de/fhir/CodeSystem/yesOrNoAnswer"
+                    "system": "https://demis.rki.de/fhir/CodeSystem/yesOrNoAnswer",
+                    "version": "1.0.0"
                   },
                   {
                     "code": "ASKU",
@@ -3591,7 +3827,8 @@
                         "value": "nicht ermittelbar"
                       }
                     ],
-                    "system": "http://terminology.hl7.org/CodeSystem/v3-NullFlavor"
+                    "system": "http://terminology.hl7.org/CodeSystem/v3-NullFlavor",
+                    "version": "2.1.0"
                   },
                   {
                     "code": "NASK",
@@ -3602,7 +3839,8 @@
                         "value": "nicht erhoben"
                       }
                     ],
-                    "system": "http://terminology.hl7.org/CodeSystem/v3-NullFlavor"
+                    "system": "http://terminology.hl7.org/CodeSystem/v3-NullFlavor",
+                    "version": "2.1.0"
                   }
                 ],
                 "required": true,
@@ -3702,13 +3940,15 @@
                                   "code": "31000003",
                                   "display": "Europa",
                                   "designations": [],
-                                  "system": "https://demis.rki.de/fhir/CodeSystem/geographicRegion"
+                                  "system": "https://demis.rki.de/fhir/CodeSystem/geographicRegion",
+                                  "version": "1.0.0"
                                 },
                                 {
                                   "code": "41000011",
                                   "display": "Nordeuropa",
                                   "designations": [],
                                   "system": "https://demis.rki.de/fhir/CodeSystem/geographicRegion",
+                                  "version": "1.0.0",
                                   "breadcrumb": "Europa"
                                 },
                                 {
@@ -3716,6 +3956,7 @@
                                   "display": "Dänemark",
                                   "designations": [],
                                   "system": "https://demis.rki.de/fhir/CodeSystem/geographicRegion",
+                                  "version": "1.0.0",
                                   "breadcrumb": "Europa|Nordeuropa"
                                 },
                                 {
@@ -3723,6 +3964,7 @@
                                   "display": "Aarhus",
                                   "designations": [],
                                   "system": "https://demis.rki.de/fhir/CodeSystem/geographicRegion",
+                                  "version": "1.0.0",
                                   "breadcrumb": "Europa|Nordeuropa|Dänemark"
                                 },
                                 {
@@ -3730,6 +3972,7 @@
                                   "display": "Bornholm",
                                   "designations": [],
                                   "system": "https://demis.rki.de/fhir/CodeSystem/geographicRegion",
+                                  "version": "1.0.0",
                                   "breadcrumb": "Europa|Nordeuropa|Dänemark"
                                 },
                                 {
@@ -3737,6 +3980,7 @@
                                   "display": "Färöer",
                                   "designations": [],
                                   "system": "https://demis.rki.de/fhir/CodeSystem/geographicRegion",
+                                  "version": "1.0.0",
                                   "breadcrumb": "Europa|Nordeuropa|Dänemark"
                                 },
                                 {
@@ -3744,6 +3988,7 @@
                                   "display": "Frederiksberg",
                                   "designations": [],
                                   "system": "https://demis.rki.de/fhir/CodeSystem/geographicRegion",
+                                  "version": "1.0.0",
                                   "breadcrumb": "Europa|Nordeuropa|Dänemark"
                                 },
                                 {
@@ -3751,6 +3996,7 @@
                                   "display": "Frederiksborg",
                                   "designations": [],
                                   "system": "https://demis.rki.de/fhir/CodeSystem/geographicRegion",
+                                  "version": "1.0.0",
                                   "breadcrumb": "Europa|Nordeuropa|Dänemark"
                                 },
                                 {
@@ -3758,6 +4004,7 @@
                                   "display": "Fyn",
                                   "designations": [],
                                   "system": "https://demis.rki.de/fhir/CodeSystem/geographicRegion",
+                                  "version": "1.0.0",
                                   "breadcrumb": "Europa|Nordeuropa|Dänemark"
                                 },
                                 {
@@ -3765,6 +4012,7 @@
                                   "display": "Grönland",
                                   "designations": [],
                                   "system": "https://demis.rki.de/fhir/CodeSystem/geographicRegion",
+                                  "version": "1.0.0",
                                   "breadcrumb": "Europa|Nordeuropa|Dänemark"
                                 },
                                 {
@@ -3772,6 +4020,7 @@
                                   "display": "Koebenhavn",
                                   "designations": [],
                                   "system": "https://demis.rki.de/fhir/CodeSystem/geographicRegion",
+                                  "version": "1.0.0",
                                   "breadcrumb": "Europa|Nordeuropa|Dänemark"
                                 },
                                 {
@@ -3779,6 +4028,7 @@
                                   "display": "Nordjylland",
                                   "designations": [],
                                   "system": "https://demis.rki.de/fhir/CodeSystem/geographicRegion",
+                                  "version": "1.0.0",
                                   "breadcrumb": "Europa|Nordeuropa|Dänemark"
                                 },
                                 {
@@ -3786,6 +4036,7 @@
                                   "display": "Ribe",
                                   "designations": [],
                                   "system": "https://demis.rki.de/fhir/CodeSystem/geographicRegion",
+                                  "version": "1.0.0",
                                   "breadcrumb": "Europa|Nordeuropa|Dänemark"
                                 },
                                 {
@@ -3793,6 +4044,7 @@
                                   "display": "Ringkoebing",
                                   "designations": [],
                                   "system": "https://demis.rki.de/fhir/CodeSystem/geographicRegion",
+                                  "version": "1.0.0",
                                   "breadcrumb": "Europa|Nordeuropa|Dänemark"
                                 },
                                 {
@@ -3800,6 +4052,7 @@
                                   "display": "Roskilde",
                                   "designations": [],
                                   "system": "https://demis.rki.de/fhir/CodeSystem/geographicRegion",
+                                  "version": "1.0.0",
                                   "breadcrumb": "Europa|Nordeuropa|Dänemark"
                                 },
                                 {
@@ -3807,6 +4060,7 @@
                                   "display": "Soenderjylland",
                                   "designations": [],
                                   "system": "https://demis.rki.de/fhir/CodeSystem/geographicRegion",
+                                  "version": "1.0.0",
                                   "breadcrumb": "Europa|Nordeuropa|Dänemark"
                                 },
                                 {
@@ -3814,6 +4068,7 @@
                                   "display": "Storstroem",
                                   "designations": [],
                                   "system": "https://demis.rki.de/fhir/CodeSystem/geographicRegion",
+                                  "version": "1.0.0",
                                   "breadcrumb": "Europa|Nordeuropa|Dänemark"
                                 },
                                 {
@@ -3821,6 +4076,7 @@
                                   "display": "Vejle",
                                   "designations": [],
                                   "system": "https://demis.rki.de/fhir/CodeSystem/geographicRegion",
+                                  "version": "1.0.0",
                                   "breadcrumb": "Europa|Nordeuropa|Dänemark"
                                 },
                                 {
@@ -3828,6 +4084,7 @@
                                   "display": "Vestsjaelland",
                                   "designations": [],
                                   "system": "https://demis.rki.de/fhir/CodeSystem/geographicRegion",
+                                  "version": "1.0.0",
                                   "breadcrumb": "Europa|Nordeuropa|Dänemark"
                                 },
                                 {
@@ -3835,13 +4092,15 @@
                                   "display": "Viborg",
                                   "designations": [],
                                   "system": "https://demis.rki.de/fhir/CodeSystem/geographicRegion",
+                                  "version": "1.0.0",
                                   "breadcrumb": "Europa|Nordeuropa|Dänemark"
                                 },
                                 {
                                   "code": "31099999",
                                   "display": "Ausland (Land unbekannt)",
                                   "designations": [],
-                                  "system": "https://demis.rki.de/fhir/CodeSystem/geographicRegion"
+                                  "system": "https://demis.rki.de/fhir/CodeSystem/geographicRegion",
+                                  "version": "1.0.0"
                                 },
                                 {
                                   "code": "ASKU",
@@ -3852,7 +4111,8 @@
                                       "value": "nicht ermittelbar"
                                     }
                                   ],
-                                  "system": "http://terminology.hl7.org/CodeSystem/v3-NullFlavor"
+                                  "system": "http://terminology.hl7.org/CodeSystem/v3-NullFlavor",
+                                  "version": "2.1.0"
                                 },
                                 {
                                   "code": "NASK",
@@ -3863,7 +4123,8 @@
                                       "value": "nicht erhoben"
                                     }
                                   ],
-                                  "system": "http://terminology.hl7.org/CodeSystem/v3-NullFlavor"
+                                  "system": "http://terminology.hl7.org/CodeSystem/v3-NullFlavor",
+                                  "version": "2.1.0"
                                 }
                               ],
                               "required": true,
@@ -3942,13 +4203,15 @@
                     "code": "yes",
                     "display": "Ja",
                     "designations": [],
-                    "system": "https://demis.rki.de/fhir/CodeSystem/yesOrNoAnswer"
+                    "system": "https://demis.rki.de/fhir/CodeSystem/yesOrNoAnswer",
+                    "version": "1.0.0"
                   },
                   {
                     "code": "no",
                     "display": "Nein",
                     "designations": [],
-                    "system": "https://demis.rki.de/fhir/CodeSystem/yesOrNoAnswer"
+                    "system": "https://demis.rki.de/fhir/CodeSystem/yesOrNoAnswer",
+                    "version": "1.0.0"
                   },
                   {
                     "code": "ASKU",
@@ -3959,7 +4222,8 @@
                         "value": "nicht ermittelbar"
                       }
                     ],
-                    "system": "http://terminology.hl7.org/CodeSystem/v3-NullFlavor"
+                    "system": "http://terminology.hl7.org/CodeSystem/v3-NullFlavor",
+                    "version": "2.1.0"
                   },
                   {
                     "code": "NASK",
@@ -3970,7 +4234,8 @@
                         "value": "nicht erhoben"
                       }
                     ],
-                    "system": "http://terminology.hl7.org/CodeSystem/v3-NullFlavor"
+                    "system": "http://terminology.hl7.org/CodeSystem/v3-NullFlavor",
+                    "version": "2.1.0"
                   }
                 ],
                 "required": true,
@@ -4086,7 +4351,8 @@
                         "value": "Acute respiratory distress syndrome (disorder)"
                       }
                     ],
-                    "system": "http://snomed.info/sct"
+                    "system": "http://snomed.info/sct",
+                    "version": "http://snomed.info/sct/900000000000207008/version/20230331"
                   },
                   {
                     "code": "43724002",
@@ -4097,7 +4363,8 @@
                         "value": "Chill (finding)"
                       }
                     ],
-                    "system": "http://snomed.info/sct"
+                    "system": "http://snomed.info/sct",
+                    "version": "http://snomed.info/sct/900000000000207008/version/20230331"
                   },
                   {
                     "code": "25064002",
@@ -4108,7 +4375,8 @@
                         "value": "Headache (finding)"
                       }
                     ],
-                    "system": "http://snomed.info/sct"
+                    "system": "http://snomed.info/sct",
+                    "version": "http://snomed.info/sct/900000000000207008/version/20230331"
                   },
                   {
                     "code": "68962001",
@@ -4119,7 +4387,8 @@
                         "value": "Muscle pain (finding)"
                       }
                     ],
-                    "system": "http://snomed.info/sct"
+                    "system": "http://snomed.info/sct",
+                    "version": "http://snomed.info/sct/900000000000207008/version/20230331"
                   },
                   {
                     "code": "371820004",
@@ -4130,7 +4399,8 @@
                         "value": "Patient ventilated (finding)"
                       }
                     ],
-                    "system": "http://snomed.info/sct"
+                    "system": "http://snomed.info/sct",
+                    "version": "http://snomed.info/sct/900000000000207008/version/20230901"
                   },
                   {
                     "code": "62315008",
@@ -4141,7 +4411,8 @@
                         "value": "Diarrhea (finding)"
                       }
                     ],
-                    "system": "http://snomed.info/sct"
+                    "system": "http://snomed.info/sct",
+                    "version": "http://snomed.info/sct/900000000000207008/version/20230901"
                   },
                   {
                     "code": "213257006",
@@ -4152,7 +4423,8 @@
                         "value": "Generally unwell (finding)"
                       }
                     ],
-                    "system": "http://snomed.info/sct"
+                    "system": "http://snomed.info/sct",
+                    "version": "http://snomed.info/sct/900000000000207008/version/20230901"
                   }
                 ],
                 "required": false,

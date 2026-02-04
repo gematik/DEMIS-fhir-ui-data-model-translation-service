@@ -42,7 +42,7 @@
             "extension": [
               {
                 "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
-                "valueInteger": 100
+                "valueInteger": 10
               }
             ],
             "code": "715350001",

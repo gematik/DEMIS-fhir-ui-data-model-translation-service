@@ -4,7 +4,7 @@ package de.gematik.demis.fhir_ui_data_model_translation_service.disease;
  * #%L
  * FHIR UI Data Model Translation Service
  * %%
- * Copyright (C) 2025 gematik GmbH
+ * Copyright (C) 2025 - 2026 gematik GmbH
  * %%
  * Licensed under the EUPL, Version 1.2 or - as soon they will be approved by the
  * European Commission – subsequent versions of the EUPL (the "Licence").
@@ -48,19 +48,13 @@ import org.springframework.stereotype.Service;
 public class DiseaseDataLoaderSrv {
 
   private final QuestionnairePreparation questionnairePreparation;
-  private final DiseaseNotificationCategoriesSrvRegression categoriesSrvRegression;
   private final DiseaseNotificationCategoriesSrv categoriesSrv;
   private final DiseaseDataPreparationSrv diseaseDataPreparationSrv;
 
   @Value("${feature.flag.notifications.7_3}")
   private boolean isNotification73Active;
 
-  @Value("${feature.flag.snapshot.6.active}")
-  private boolean isSnapshot6Active;
-
   private Map<String, QuestionnaireTranslation> translations;
-  private List<CodeDisplay>
-      possibleDiseaseCodesRegresssion; // TODO Delete with notification7_3 flag
   private List<CodeDisplay> possibleDiseaseCodes;
   private List<CodeDisplay> possibleDiseaseCodesNonNominal;
 
@@ -75,7 +69,6 @@ public class DiseaseDataLoaderSrv {
   @PostConstruct
   void init() {
     translations = questionnairePreparation.build();
-    possibleDiseaseCodesRegresssion = categoriesSrvRegression.getCategories();
     possibleDiseaseCodes = categoriesSrv.getCategories();
     possibleDiseaseCodesNonNominal = categoriesSrv.getCategoriesNonNominal();
   }
@@ -85,11 +78,7 @@ public class DiseaseDataLoaderSrv {
       contextualName = "all-codes",
       lowCardinalityKeyValues = {"disease", "fhir"})
   public List<CodeDisplay> getAllPossibleDiseaseCodes() {
-    if (isNotification73Active || isSnapshot6Active) {
-      return possibleDiseaseCodes;
-    } else {
-      return possibleDiseaseCodesRegresssion;
-    }
+    return possibleDiseaseCodes;
   }
 
   @Observed(

@@ -4,7 +4,7 @@ package de.gematik.demis.fhir_ui_data_model_translation_service.objects.code.dis
  * #%L
  * FHIR UI Data Model Translation Service
  * %%
- * Copyright (C) 2025 gematik GmbH
+ * Copyright (C) 2025 - 2026 gematik GmbH
  * %%
  * Licensed under the EUPL, Version 1.2 or - as soon they will be approved by the
  * European Commission – subsequent versions of the EUPL (the "Licence").
@@ -29,6 +29,7 @@ package de.gematik.demis.fhir_ui_data_model_translation_service.objects.code.dis
 
 import de.gematik.demis.fhir_ui_data_model_translation_service.model.CodeDisplay;
 import de.gematik.demis.fhir_ui_data_model_translation_service.model.Designation;
+import de.gematik.demis.fhir_ui_data_model_translation_service.model.Use;
 import java.util.Set;
 
 public class AddressUseTOs {
@@ -37,8 +38,14 @@ public class AddressUseTOs {
     return CodeDisplay.builder()
         .code("current")
         .display("Derzeitiger Aufenthaltsort")
-        .designations(Set.of(new Designation("en-US", "Current Residence")))
+        .designations(
+            Set.of(
+                new Designation(
+                    "en-US",
+                    "Current Residence",
+                    new Use("http://snomed.info/sct", "900000000000003001"))))
         .system("https://demis.rki.de/fhir/CodeSystem/addressUse")
+        .version("1.1.0")
         .order(100)
         .build();
   }
@@ -47,8 +54,14 @@ public class AddressUseTOs {
     return CodeDisplay.builder()
         .code("ordinary")
         .display("Gewöhnlicher Aufenthaltsort")
-        .designations(Set.of(new Designation("en-US", "Ordinary Residence")))
+        .designations(
+            Set.of(
+                new Designation(
+                    "en-US",
+                    "Ordinary Residence",
+                    new Use("http://snomed.info/sct", "900000000000003001"))))
         .system("https://demis.rki.de/fhir/CodeSystem/addressUse")
+        .version("1.1.0")
         .order(100)
         .build();
   }
@@ -57,8 +70,14 @@ public class AddressUseTOs {
     return CodeDisplay.builder()
         .code("primary")
         .display("Hauptwohnsitz")
-        .designations(Set.of(new Designation("en-US", "Primary Residence")))
+        .designations(
+            Set.of(
+                new Designation(
+                    "en-US",
+                    "Primary Residence",
+                    new Use("http://snomed.info/sct", "900000000000003001"))))
         .system("https://demis.rki.de/fhir/CodeSystem/addressUse")
+        .version("1.1.0")
         .order(100)
         .build();
   }

@@ -4,7 +4,7 @@ package de.gematik.demis.fhir_ui_data_model_translation_service.translation;
  * #%L
  * FHIR UI Data Model Translation Service
  * %%
- * Copyright (C) 2025 gematik GmbH
+ * Copyright (C) 2025 - 2026 gematik GmbH
  * %%
  * Licensed under the EUPL, Version 1.2 or - as soon they will be approved by the
  * European Commission – subsequent versions of the EUPL (the "Licence").
@@ -28,34 +28,33 @@ package de.gematik.demis.fhir_ui_data_model_translation_service.translation;
  */
 
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.junit.jupiter.api.Assertions.*;
 
 import ca.uhn.fhir.context.FhirContext;
+import de.gematik.demis.fhir_ui_data_model_translation_service.FeatureFlags;
 import de.gematik.demis.fhir_ui_data_model_translation_service.model.CodeDisplay;
 import de.gematik.demis.fhir_ui_data_model_translation_service.model.Designation;
 import java.io.File;
 import java.io.IOException;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.LinkedHashSet;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
+import org.hl7.fhir.r4.model.CodeSystem.ConceptDefinitionDesignationComponent;
+import org.hl7.fhir.r4.model.Coding;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.CsvSource;
 
 class CodeSystemsTest {
 
-  public static final boolean SORTING_NOT_ACTIVATED = false;
   public static final String CODE_SYSTEM_NULL_FLAVOR =
       "http://terminology.hl7.org/CodeSystem/v3-NullFlavor";
-
+  private static final FeatureFlags FEATURE_FLAGS_ENABLED =
+      FeatureFlags.builder().addDesignationUse(true).addCodeDisplayVersion(true).build();
   private final File addressUseFile =
       new File("src/test/resources/profiles/CodeSystem/CodeSystem-addressUse.json");
   private final File addressUseFile2 =
       new File("src/test/resources/profiles/CodeSystem/CodeSystem-addressUse2.json");
-  private final File LOINCFile =
+  private final File loincFile =
       new File("src/test/resources/profiles/CodeSystem/CodeSystem-loinc-2.74.json");
   private final File translationNullFlavorFile =
       new File("src/test/resources/profiles/CodeSystem/CodeSystem-translationNullFlavor.json");
@@ -71,20 +70,8 @@ class CodeSystemsTest {
   void shouldSortCodeSystemEntries() throws IOException {
     LinkedHashSet<File> files = new LinkedHashSet<>(Collections.singletonList(fileForSorting));
     CodeSystems codeSystems =
-        new CodeSystems(files, FhirContext.forR4Cached(), Collections.emptyList());
-    codeSystems.build();
-
-    Map<String, CodeDisplay> codeSystem =
-        codeSystems.getCodeSystemData().get("https://demis.rki.de/fhir/CodeSystem/addressUse");
-    assertThat(codeSystem).hasSize(3);
-    assertThat(codeSystem.keySet()).containsExactly("primary", "ordinary", "current");
-  }
-
-  @Test
-  void shouldSortCodeSystemEntriesRegression() throws IOException {
-    LinkedHashSet<File> files = new LinkedHashSet<>(Collections.singletonList(fileForSorting));
-    CodeSystems codeSystems =
-        new CodeSystems(files, FhirContext.forR4Cached(), Collections.emptyList());
+        new CodeSystems(
+            files, FhirContext.forR4Cached(), Collections.emptyList(), FEATURE_FLAGS_ENABLED);
     codeSystems.build();
 
     Map<String, CodeDisplay> codeSystem =
@@ -95,9 +82,10 @@ class CodeSystemsTest {
 
   @Test
   void shouldCreateCodeSystems() throws IOException {
-    LinkedHashSet<File> files = new LinkedHashSet<>(Arrays.asList(addressUseFile, LOINCFile));
+    LinkedHashSet<File> files = new LinkedHashSet<>(Arrays.asList(addressUseFile, loincFile));
     CodeSystems codeSystems =
-        new CodeSystems(files, FhirContext.forR4Cached(), Collections.emptyList());
+        new CodeSystems(
+            files, FhirContext.forR4Cached(), Collections.emptyList(), FEATURE_FLAGS_ENABLED);
     codeSystems.build();
 
     Map<String, Map<String, CodeDisplay>> codeSystemData = codeSystems.getCodeSystemData();
@@ -112,9 +100,10 @@ class CodeSystemsTest {
   @DisplayName("should create code systems with two system with same url but different versions")
   void shouldCreateCodeSystemsWithTwoSystemWithSameUrlButDifferenVersions() throws IOException {
     LinkedHashSet<File> files =
-        new LinkedHashSet<>(Arrays.asList(addressUseFile, addressUseFile2, LOINCFile));
+        new LinkedHashSet<>(Arrays.asList(addressUseFile, addressUseFile2, loincFile));
     CodeSystems codeSystems =
-        new CodeSystems(files, FhirContext.forR4Cached(), Collections.emptyList());
+        new CodeSystems(
+            files, FhirContext.forR4Cached(), Collections.emptyList(), FEATURE_FLAGS_ENABLED);
     codeSystems.build();
 
     Map<String, Map<String, CodeDisplay>> codeSystemData = codeSystems.getCodeSystemData();
@@ -138,7 +127,8 @@ class CodeSystemsTest {
     LinkedHashSet<File> files =
         new LinkedHashSet<>(Collections.singletonList(translationNullFlavorFile));
     CodeSystems codeSystems =
-        new CodeSystems(files, FhirContext.forR4Cached(), Collections.emptyList());
+        new CodeSystems(
+            files, FhirContext.forR4Cached(), Collections.emptyList(), FEATURE_FLAGS_ENABLED);
     codeSystems.build();
 
     Map<String, Map<String, CodeDisplay>> codeSystemData = codeSystems.getCodeSystemData();
@@ -153,7 +143,8 @@ class CodeSystemsTest {
     LinkedHashSet<File> files =
         new LinkedHashSet<>(Arrays.asList(translationNullFlavorFile, v3FlavorFile));
     CodeSystems codeSystems =
-        new CodeSystems(files, FhirContext.forR4Cached(), Collections.emptyList());
+        new CodeSystems(
+            files, FhirContext.forR4Cached(), Collections.emptyList(), FEATURE_FLAGS_ENABLED);
     codeSystems.build();
 
     Map<String, Map<String, CodeDisplay>> codeSystemData = codeSystems.getCodeSystemData();
@@ -177,7 +168,8 @@ class CodeSystemsTest {
     LinkedHashSet<File> files =
         new LinkedHashSet<>(Arrays.asList(translationNullFlavorFile, v3FlavorFileReduced));
     CodeSystems codeSystems =
-        new CodeSystems(files, FhirContext.forR4Cached(), Collections.emptyList());
+        new CodeSystems(
+            files, FhirContext.forR4Cached(), Collections.emptyList(), FEATURE_FLAGS_ENABLED);
     codeSystems.build();
 
     Map<String, Map<String, CodeDisplay>> codeSystemData = codeSystems.getCodeSystemData();
@@ -197,7 +189,11 @@ class CodeSystemsTest {
     LinkedHashSet<File> files =
         new LinkedHashSet<>(Arrays.asList(translationNullFlavorFile, v3FlavorFileReduced));
     CodeSystems codeSystems =
-        new CodeSystems(files, FhirContext.forR4Cached(), List.of(CODE_SYSTEM_NULL_FLAVOR));
+        new CodeSystems(
+            files,
+            FhirContext.forR4Cached(),
+            List.of(CODE_SYSTEM_NULL_FLAVOR),
+            FEATURE_FLAGS_ENABLED);
     codeSystems.build();
 
     Map<String, Map<String, CodeDisplay>> codeSystemData = codeSystems.getCodeSystemData();
@@ -207,13 +203,15 @@ class CodeSystemsTest {
     assertThat(notAsked).isNotNull();
     assertThat(notAsked.getDesignations()).contains(new Designation("de", "nicht erhoben"));
     assertThat(notAsked.getBreadcrumb()).isNull();
+    assertThat(notAsked.getVersion()).isNotNull();
   }
 
   @Test
   void shouldAddCodeSystemToData() throws IOException {
-    LinkedHashSet<File> files = new LinkedHashSet<>(Arrays.asList(addressUseFile, LOINCFile));
+    LinkedHashSet<File> files = new LinkedHashSet<>(Arrays.asList(addressUseFile, loincFile));
     CodeSystems codeSystems =
-        new CodeSystems(files, FhirContext.forR4Cached(), Collections.emptyList());
+        new CodeSystems(
+            files, FhirContext.forR4Cached(), Collections.emptyList(), FEATURE_FLAGS_ENABLED);
     codeSystems.build();
 
     Map<String, CodeDisplay> mapToAdd = new HashMap<>();
@@ -236,9 +234,10 @@ class CodeSystemsTest {
 
     @Test
     void shouldCreateCodeSystems() throws IOException {
-      LinkedHashSet<File> files = new LinkedHashSet<>(Arrays.asList(addressUseFile, LOINCFile));
+      LinkedHashSet<File> files = new LinkedHashSet<>(Arrays.asList(addressUseFile, loincFile));
       CodeSystems codeSystems =
-          new CodeSystems(files, FhirContext.forR4Cached(), Collections.emptyList());
+          new CodeSystems(
+              files, FhirContext.forR4Cached(), Collections.emptyList(), FEATURE_FLAGS_ENABLED);
       codeSystems.build();
 
       Map<String, Map<String, CodeDisplay>> codeSystemData = codeSystems.getCodeSystemData();
@@ -254,7 +253,8 @@ class CodeSystemsTest {
       LinkedHashSet<File> files =
           new LinkedHashSet<>(Collections.singletonList(translationNullFlavorFile));
       CodeSystems codeSystems =
-          new CodeSystems(files, FhirContext.forR4Cached(), Collections.emptyList());
+          new CodeSystems(
+              files, FhirContext.forR4Cached(), Collections.emptyList(), FEATURE_FLAGS_ENABLED);
       codeSystems.build();
 
       Map<String, Map<String, CodeDisplay>> codeSystemData = codeSystems.getCodeSystemData();
@@ -269,7 +269,8 @@ class CodeSystemsTest {
       LinkedHashSet<File> files =
           new LinkedHashSet<>(Arrays.asList(translationNullFlavorFile, v3FlavorFile));
       CodeSystems codeSystems =
-          new CodeSystems(files, FhirContext.forR4Cached(), Collections.emptyList());
+          new CodeSystems(
+              files, FhirContext.forR4Cached(), Collections.emptyList(), FEATURE_FLAGS_ENABLED);
       codeSystems.build();
 
       Map<String, Map<String, CodeDisplay>> codeSystemData = codeSystems.getCodeSystemData();
@@ -293,7 +294,8 @@ class CodeSystemsTest {
       LinkedHashSet<File> files =
           new LinkedHashSet<>(Arrays.asList(translationNullFlavorFile, v3FlavorFileReduced));
       CodeSystems codeSystems =
-          new CodeSystems(files, FhirContext.forR4Cached(), Collections.emptyList());
+          new CodeSystems(
+              files, FhirContext.forR4Cached(), Collections.emptyList(), FEATURE_FLAGS_ENABLED);
       codeSystems.build();
 
       Map<String, Map<String, CodeDisplay>> codeSystemData = codeSystems.getCodeSystemData();
@@ -311,9 +313,10 @@ class CodeSystemsTest {
 
     @Test
     void shouldAddCodeSystemToData() throws IOException {
-      LinkedHashSet<File> files = new LinkedHashSet<>(Arrays.asList(addressUseFile, LOINCFile));
+      LinkedHashSet<File> files = new LinkedHashSet<>(Arrays.asList(addressUseFile, loincFile));
       CodeSystems codeSystems =
-          new CodeSystems(files, FhirContext.forR4Cached(), Collections.emptyList());
+          new CodeSystems(
+              files, FhirContext.forR4Cached(), Collections.emptyList(), FEATURE_FLAGS_ENABLED);
       codeSystems.build();
 
       Map<String, CodeDisplay> mapToAdd = new HashMap<>();
@@ -334,6 +337,126 @@ class CodeSystemsTest {
           .isNotNull()
           .isInstanceOf(Map.class)
           .isEqualTo(mapToAdd);
+    }
+  }
+
+  @Nested
+  @DisplayName("Tests for extractUseOrNull method")
+  class ExtractUseOrNullTests {
+
+    @Test
+    @DisplayName("should return null when Use is null")
+    void shouldReturnNullWhenUseIsNull() {
+      var designation = new ConceptDefinitionDesignationComponent();
+      designation.setLanguage("de");
+      designation.setValue("deutscher Text");
+
+      var result = CodeSystems.extractUseOrNull(designation);
+
+      assertThat(result).isNull();
+    }
+
+    @Test
+    @DisplayName("should return Use when Use has system and code")
+    void shouldReturnUseWhenUseHasSystemAndCode() {
+      var designation = new ConceptDefinitionDesignationComponent();
+      designation.setLanguage("de");
+      designation.setValue("deutscher Text");
+      var coding = new Coding();
+      coding.setSystem("http://snomed.info/sct");
+      coding.setCode("900000000000013009");
+      designation.setUse(coding);
+
+      var result = CodeSystems.extractUseOrNull(designation);
+
+      assertThat(result).isNotNull();
+      assertThat(result.system()).isEqualTo("http://snomed.info/sct");
+      assertThat(result.code()).isEqualTo("900000000000013009");
+    }
+
+    @Test
+    @DisplayName("should return null when Use has null code")
+    void shouldReturnNullWhenUseHasNullCode() {
+      var designation = new ConceptDefinitionDesignationComponent();
+      designation.setLanguage("de");
+      designation.setValue("deutscher Text");
+      var coding = new Coding();
+      coding.setSystem("http://example.org/system");
+      designation.setUse(coding);
+
+      var result = CodeSystems.extractUseOrNull(designation);
+
+      assertThat(result).isNull();
+    }
+
+    @Test
+    @DisplayName("should return null when Use has null system")
+    void shouldReturnNullWhenUseHasNullSystem() {
+      var designation = new ConceptDefinitionDesignationComponent();
+      designation.setLanguage("de");
+      designation.setValue("deutscher Text");
+      var coding = new Coding();
+      coding.setCode("synonym");
+      designation.setUse(coding);
+
+      var result = CodeSystems.extractUseOrNull(designation);
+
+      assertThat(result).isNull();
+    }
+
+    @Test
+    @DisplayName("should return null when Use has both code and system as null")
+    void shouldReturnNullWhenUseHasBothCodeAndSystemAsNull() {
+      var designation = new ConceptDefinitionDesignationComponent();
+      designation.setLanguage("de");
+      designation.setValue("deutscher Text");
+      var coding = new Coding();
+      designation.setUse(coding);
+
+      var result = CodeSystems.extractUseOrNull(designation);
+
+      assertThat(result).isNull();
+    }
+
+    @ParameterizedTest
+    @CsvSource({
+      "'', '', 'both system and code are empty strings'",
+      "'', 'validCode', 'system is empty string'",
+      "'http://example.org/system', '', 'code is empty string'"
+    })
+    @DisplayName("should return null when empty strings are provided")
+    void shouldReturnNullWhenEmptyStringsAreProvided(String system, String code, String scenario) {
+      var designation = new ConceptDefinitionDesignationComponent();
+      designation.setLanguage("de");
+      designation.setValue("deutscher Text");
+      var coding = new Coding();
+      coding.setSystem(system);
+      coding.setCode(code);
+      designation.setUse(coding);
+
+      var result = CodeSystems.extractUseOrNull(designation);
+
+      assertThat(result).as("scenario: %s", scenario).isNull();
+    }
+
+    @Test
+    @DisplayName("should handle Use with display value")
+    void shouldHandleUseWithDisplayValue() {
+      var designation = new ConceptDefinitionDesignationComponent();
+      designation.setLanguage("en");
+      designation.setValue("english text");
+      var coding = new Coding();
+      coding.setSystem("http://terminology.hl7.org/CodeSystem/designation-usage");
+      coding.setCode("definition");
+      coding.setDisplay("Definition");
+      designation.setUse(coding);
+
+      var result = CodeSystems.extractUseOrNull(designation);
+
+      assertThat(result).isNotNull();
+      assertThat(result.system())
+          .isEqualTo("http://terminology.hl7.org/CodeSystem/designation-usage");
+      assertThat(result.code()).isEqualTo("definition");
     }
   }
 }

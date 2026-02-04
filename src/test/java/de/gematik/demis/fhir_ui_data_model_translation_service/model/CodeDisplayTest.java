@@ -4,7 +4,7 @@ package de.gematik.demis.fhir_ui_data_model_translation_service.model;
  * #%L
  * FHIR UI Data Model Translation Service
  * %%
- * Copyright (C) 2025 gematik GmbH
+ * Copyright (C) 2025 - 2026 gematik GmbH
  * %%
  * Licensed under the EUPL, Version 1.2 or - as soon they will be approved by the
  * European Commission – subsequent versions of the EUPL (the "Licence").
@@ -300,7 +300,7 @@ class CodeDisplayTest {
     @Test
     void testGetGermanDesignationWithNoDesignation() {
       CodeDisplay codeDisplay = CodeDisplay.builder().display("Test Display").build();
-      assertThat(codeDisplay.getGermanDesignation(codeDisplay)).isEqualTo("Test Display");
+      assertThat(codeDisplay.getGermanDesignation()).isEqualTo("Test Display");
     }
 
     @Test
@@ -310,8 +310,7 @@ class CodeDisplayTest {
               .designations(
                   Collections.singleton(new Designation("de-DE", "some german designation")))
               .build();
-      assertThat(codeDisplay.getGermanDesignation(codeDisplay))
-          .isEqualTo("some german designation");
+      assertThat(codeDisplay.getGermanDesignation()).isEqualTo("some german designation");
     }
 
     @Test
@@ -322,7 +321,7 @@ class CodeDisplayTest {
               .designations(
                   Collections.singleton(new Designation("en-US", "some english designation")))
               .build();
-      assertThat(codeDisplay.getGermanDesignation(codeDisplay)).isEqualTo("Test Display");
+      assertThat(codeDisplay.getGermanDesignation()).isEqualTo("Test Display");
     }
 
     @Test
@@ -335,8 +334,7 @@ class CodeDisplayTest {
                       new Designation("en-US", "some english designation"),
                       new Designation("de-DE", "some german designation")))
               .build();
-      assertThat(codeDisplay.getGermanDesignation(codeDisplay))
-          .isEqualTo("some german designation");
+      assertThat(codeDisplay.getGermanDesignation()).isEqualTo("some german designation");
     }
   }
 }

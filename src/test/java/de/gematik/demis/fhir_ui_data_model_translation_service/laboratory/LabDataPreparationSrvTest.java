@@ -4,7 +4,7 @@ package de.gematik.demis.fhir_ui_data_model_translation_service.laboratory;
  * #%L
  * FHIR UI Data Model Translation Service
  * %%
- * Copyright (C) 2025 gematik GmbH
+ * Copyright (C) 2025 - 2026 gematik GmbH
  * %%
  * Licensed under the EUPL, Version 1.2 or - as soon they will be approved by the
  * European Commission – subsequent versions of the EUPL (the "Licence").
@@ -34,8 +34,10 @@ import static org.mockito.Mockito.*;
 import ca.uhn.fhir.context.FhirContext;
 import de.gematik.demis.fhir_ui_data_model_translation_service.model.CodeDisplay;
 import de.gematik.demis.fhir_ui_data_model_translation_service.model.Designation;
+import de.gematik.demis.fhir_ui_data_model_translation_service.model.StaticSystemVersion;
 import de.gematik.demis.fhir_ui_data_model_translation_service.objects.NotificationCategoryListTO;
 import de.gematik.demis.fhir_ui_data_model_translation_service.objects.TestObjects;
+import de.gematik.demis.fhir_ui_data_model_translation_service.translation.DataLoaderSrv;
 import de.gematik.demis.fhir_ui_data_model_translation_service.utils.SnapshotFilesService;
 import java.io.File;
 import java.util.Collections;
@@ -72,6 +74,7 @@ class LabDataPreparationSrvTest {
   private static File gappAnswerSetFile;
   @Mock private SnapshotFilesService snapshotFilesServiceMock;
   @Mock private PathogenNotificationCategoryList pathogenNotificationCategoryListMock;
+  @Mock private DataLoaderSrv dataLoaderSrvMock;
 
   @BeforeAll
   static void setUp() {
@@ -110,6 +113,8 @@ class LabDataPreparationSrvTest {
                         new Designation("en-US", "Antigen assay (procedure)"),
                         new Designation("de-DE", "Antigennachweis")))
                 .order(100)
+                .system(
+                    "http://snomed.info/sct|http://snomed.info/sct/900000000000207008/version/20230901")
                 .build())
         .doesNotContain(
             CodeDisplay.builder()
@@ -142,9 +147,10 @@ class LabDataPreparationSrvTest {
 
     LabDataPreparationSrv labDataPreparationSrv =
         new LabDataPreparationSrv(
-            FhirContext.forR4(),
+            FhirContext.forR4Cached(),
             snapshotFilesServiceMock,
             pathogenNotificationCategoryListMock,
+            dataLoaderSrvMock,
             false,
             false,
             false,
@@ -160,9 +166,10 @@ class LabDataPreparationSrvTest {
   void shouldNotInitializeOnOldProfiles() {
     LabDataPreparationSrv labDataPreparationSrv =
         new LabDataPreparationSrv(
-            FhirContext.forR4(),
+            FhirContext.forR4Cached(),
             snapshotFilesServiceMock,
             pathogenNotificationCategoryListMock,
+            dataLoaderSrvMock,
             true,
             false,
             false,
@@ -221,24 +228,22 @@ class LabDataPreparationSrvTest {
           .as(
               "the material list should contain the set of 9 codes that are saved in the test data info model with order != 0.")
           .hasSize(9)
-          .containsAll(
-              List.of(TestObjects.codeDisplay().invpMaterialCodes().snomed_258607008Reg()));
+          .containsAll(List.of(TestObjects.codeDisplay().invpMaterialCodes().snomed_258607008()));
 
       assertThat(laboratoryJsonDataMap.get("invp").answerSet())
           .as(
-              "the answerset list should contain the set of 23 codes that are saved in the test data info model")
+              "the answerset list should contain the set of 22 codes that are saved in the test data info model")
           .hasSize(22)
-          .contains(TestObjects.codeDisplay().invpAnswerSetCodeTOs().snomed_715350001R())
-          .doesNotContain(TestObjects.codeDisplay().invpAnswerSetCodeTOs().snomed_407479009());
+          .contains(TestObjects.codeDisplay().invpAnswerSetCodeTOs().snomed_715350001());
 
       assertThat(laboratoryJsonDataMap.get("hbvp").substances())
           .as(
               "the substance list should contain the set of 3 codes that are saved in the test data info model")
           .hasSize(3)
           .containsExactlyInAnyOrder(
-              TestObjects.codeDisplay().hbvpSubstanceCodeTOs().snomed_22290004Reg(),
-              TestObjects.codeDisplay().hbvpSubstanceCodeTOs().snomed_60605004Reg(),
-              TestObjects.codeDisplay().hbvpSubstanceCodeTOs().snomed_39082004Reg());
+              TestObjects.codeDisplay().hbvpSubstanceCodeTOs().snomed_22290004(),
+              TestObjects.codeDisplay().hbvpSubstanceCodeTOs().snomed_60605004(),
+              TestObjects.codeDisplay().hbvpSubstanceCodeTOs().snomed_39082004());
     }
 
     @Test
@@ -292,9 +297,10 @@ class LabDataPreparationSrvTest {
                   TestObjects.notificationCategoryCodeDisplay().legp()));
       LabDataPreparationSrv labDataPreparationSrv =
           new LabDataPreparationSrv(
-              FhirContext.forR4(),
+              FhirContext.forR4Cached(),
               snapshotFilesServiceMock,
               pathogenNotificationCategoryListMock,
+              dataLoaderSrvMock,
               true,
               false,
               false,
@@ -310,9 +316,10 @@ class LabDataPreparationSrvTest {
     private LabDataPreparationSrv initTestObject() {
       LabDataPreparationSrv labDataPreparationSrv =
           new LabDataPreparationSrv(
-              FhirContext.forR4(),
+              FhirContext.forR4Cached(),
               snapshotFilesServiceMock,
               pathogenNotificationCategoryListMock,
+              dataLoaderSrvMock,
               false,
               false,
               false,
@@ -375,7 +382,7 @@ class LabDataPreparationSrvTest {
               "the material list should contain the set of 5 codes that are saved in the test data info model.")
           .hasSize(5)
           .doesNotContain(TestObjects.codeDisplay().invpMaterialCodes().snomed_258607008())
-          .contains(TestObjects.codeDisplay().invpMaterialCodes().snomed_309174004RReg());
+          .contains(TestObjects.codeDisplay().invpMaterialCodes().snomed_309174004());
 
       assertThat(laboratoryJsonDataMap.get("invp").answerSet())
           .as(
@@ -383,17 +390,17 @@ class LabDataPreparationSrvTest {
           .hasSize(4)
           .containsAll(
               List.of(
-                  TestObjects.codeDisplay().invpAnswerSetCodeTOs().snomed_407479009Reg(),
-                  TestObjects.codeDisplay().invpAnswerSetCodeTOs().snomed_715350001Reg()));
+                  TestObjects.codeDisplay().invpAnswerSetCodeTOs().snomed_407479009(),
+                  TestObjects.codeDisplay().invpAnswerSetCodeTOs().snomed_715350001()));
 
       assertThat(laboratoryJsonDataMap.get("hbvp").substances())
           .as(
               "the substance list should contain the set of 3 codes that are saved in the test data info model")
           .hasSize(3)
           .containsExactlyInAnyOrder(
-              TestObjects.codeDisplay().hbvpSubstanceCodeTOs().snomed_22290004Reg(),
-              TestObjects.codeDisplay().hbvpSubstanceCodeTOs().snomed_60605004Reg(),
-              TestObjects.codeDisplay().hbvpSubstanceCodeTOs().snomed_39082004Reg());
+              TestObjects.codeDisplay().hbvpSubstanceCodeTOs().snomed_22290004(),
+              TestObjects.codeDisplay().hbvpSubstanceCodeTOs().snomed_60605004(),
+              TestObjects.codeDisplay().hbvpSubstanceCodeTOs().snomed_39082004());
     }
 
     @Test
@@ -447,9 +454,10 @@ class LabDataPreparationSrvTest {
                   TestObjects.notificationCategoryCodeDisplay().legp()));
       LabDataPreparationSrv labDataPreparationSrv =
           new LabDataPreparationSrv(
-              FhirContext.forR4(),
+              FhirContext.forR4Cached(),
               snapshotFilesServiceMock,
               pathogenNotificationCategoryListMock,
+              dataLoaderSrvMock,
               true,
               false,
               false,
@@ -465,9 +473,10 @@ class LabDataPreparationSrvTest {
     private LabDataPreparationSrv initTestObject() {
       LabDataPreparationSrv labDataPreparationSrv =
           new LabDataPreparationSrv(
-              FhirContext.forR4(),
+              FhirContext.forR4Cached(),
               snapshotFilesServiceMock,
               pathogenNotificationCategoryListMock,
+              dataLoaderSrvMock,
               false,
               false,
               false,
@@ -527,7 +536,7 @@ class LabDataPreparationSrvTest {
 
       assertThat(laboratoryJsonDataMap.get("invp").materials())
           .as(
-              "the material list should contain the set of 6 codes that are saved in the test data info model.")
+              "the material list should contain the set of 5 codes that are saved in the test data info model.")
           .hasSize(5)
           .extracting("code")
           .containsExactlyElementsOf(
@@ -535,22 +544,22 @@ class LabDataPreparationSrvTest {
 
       assertThat(laboratoryJsonDataMap.get("invp").answerSet())
           .as(
-              "the answerset list should contain the set of 5 codes that are saved in the test data info model")
+              "the answerset list should contain the set of 4 codes that are saved in the test data info model")
           .hasSize(4)
           .containsExactly(
-              TestObjects.codeDisplay().invpAnswerSetCodeTOs().snomed_700350009Reg(),
-              TestObjects.codeDisplay().invpAnswerSetCodeTOs().snomed_442352004Reg(),
-              TestObjects.codeDisplay().invpAnswerSetCodeTOs().snomed_407479009Reg(),
-              TestObjects.codeDisplay().invpAnswerSetCodeTOs().snomed_715350001Reg());
+              TestObjects.codeDisplay().invpAnswerSetCodeTOs().snomed_700350009(),
+              TestObjects.codeDisplay().invpAnswerSetCodeTOs().snomed_442352004(),
+              TestObjects.codeDisplay().invpAnswerSetCodeTOs().snomed_407479009(),
+              TestObjects.codeDisplay().invpAnswerSetCodeTOs().snomed_715350001());
 
       assertThat(laboratoryJsonDataMap.get("hbvp").substances())
           .as(
               "the substance list should contain the set of 3 codes that are saved in the test data info model")
           .hasSize(3)
           .containsExactlyInAnyOrder(
-              TestObjects.codeDisplay().hbvpSubstanceCodeTOs().snomed_39082004Reg(),
-              TestObjects.codeDisplay().hbvpSubstanceCodeTOs().snomed_60605004Reg(),
-              TestObjects.codeDisplay().hbvpSubstanceCodeTOs().snomed_22290004Reg());
+              TestObjects.codeDisplay().hbvpSubstanceCodeTOs().snomed_39082004(),
+              TestObjects.codeDisplay().hbvpSubstanceCodeTOs().snomed_60605004(),
+              TestObjects.codeDisplay().hbvpSubstanceCodeTOs().snomed_22290004());
     }
 
     @Test
@@ -604,9 +613,10 @@ class LabDataPreparationSrvTest {
                   TestObjects.notificationCategoryCodeDisplay().legp()));
       LabDataPreparationSrv labDataPreparationSrv =
           new LabDataPreparationSrv(
-              FhirContext.forR4(),
+              FhirContext.forR4Cached(),
               snapshotFilesServiceMock,
               pathogenNotificationCategoryListMock,
+              dataLoaderSrvMock,
               true,
               false,
               false,
@@ -637,9 +647,10 @@ class LabDataPreparationSrvTest {
                   TestObjects.notificationCategoryCodeDisplay().legp()));
       LabDataPreparationSrv labDataPreparationSrv =
           new LabDataPreparationSrv(
-              FhirContext.forR4(),
+              FhirContext.forR4Cached(),
               snapshotFilesServiceMock,
               pathogenNotificationCategoryListMock,
+              dataLoaderSrvMock,
               true,
               true,
               false,
@@ -659,13 +670,14 @@ class LabDataPreparationSrvTest {
 
       LabDataPreparationSrv labDataPreparationSrv =
           new LabDataPreparationSrv(
-              FhirContext.forR4(),
+              FhirContext.forR4Cached(),
               snapshotFilesServiceMock,
               pathogenNotificationCategoryListMock,
+              dataLoaderSrvMock,
               true,
               true,
               true,
-              false);
+              true);
       labDataPreparationSrv.initializeData();
 
       SequencedCollection<CodeDisplay> notificationCategories =
@@ -676,15 +688,91 @@ class LabDataPreparationSrvTest {
     private LabDataPreparationSrv initTestObject() {
       LabDataPreparationSrv labDataPreparationSrv =
           new LabDataPreparationSrv(
-              FhirContext.forR4(),
+              FhirContext.forR4Cached(),
               snapshotFilesServiceMock,
               pathogenNotificationCategoryListMock,
+              dataLoaderSrvMock,
               false,
               false,
               false,
               false);
       labDataPreparationSrv.initializeData();
       return labDataPreparationSrv;
+    }
+  }
+
+  @Nested
+  @DisplayName("snomed and loinc version should be added to pathogen data set for front end")
+  class PathogenDataSetWithCodeSystemVersions {
+    @Test
+    void shouldReturnSnomedAndLoincVersion() {
+      materialFiles = asList(materialFile1, materialFile2, materialFile3);
+      methodFiles = asList(methodFile1, methodFile2, methodFile3);
+      answerSetFiles = asList(answerSetFile1, answerSetFile2, answerSetFile3);
+      substanceFiles = Collections.singletonList(substanceFile3);
+      when(snapshotFilesServiceMock.getMaterials()).thenReturn(materialFiles);
+      when(snapshotFilesServiceMock.getMethods()).thenReturn(methodFiles);
+      when(snapshotFilesServiceMock.getAnswerSets()).thenReturn(answerSetFiles);
+      when(snapshotFilesServiceMock.getSubstances()).thenReturn(substanceFiles);
+      when(pathogenNotificationCategoryListMock.getPathogenNotificationCategoryList())
+          .thenReturn(
+              asList(
+                  TestObjects.notificationCategoryCodeDisplay().invp(),
+                  TestObjects.notificationCategoryCodeDisplay().hbvp(),
+                  TestObjects.notificationCategoryCodeDisplay().legp()));
+      when(dataLoaderSrvMock.getVersion("http://snomed.info/sct")).thenReturn("SNOMED_VERSION");
+      when(dataLoaderSrvMock.getVersion("http://loinc.org")).thenReturn("LOINC_VERSION");
+
+      LabDataPreparationSrv labDataPreparationSrv =
+          new LabDataPreparationSrv(
+              FhirContext.forR4Cached(),
+              snapshotFilesServiceMock,
+              pathogenNotificationCategoryListMock,
+              dataLoaderSrvMock,
+              false,
+              false,
+              false,
+              true);
+      labDataPreparationSrv.initializeData();
+      List<StaticSystemVersion> versions =
+          labDataPreparationSrv.getLaboratoryDataMap().get("invp").staticSystemVersions();
+      assertThat(versions)
+          .isNotNull()
+          .contains(new StaticSystemVersion("http://snomed.info/sct", "SNOMED_VERSION"))
+          .contains(new StaticSystemVersion("http://loinc.org", "LOINC_VERSION"));
+    }
+
+    @Test
+    void shouldReturnNullForSnomedAndLoincVersion() {
+      materialFiles = asList(materialFile1, materialFile2, materialFile3);
+      methodFiles = asList(methodFile1, methodFile2, methodFile3);
+      answerSetFiles = asList(answerSetFile1, answerSetFile2, answerSetFile3);
+      substanceFiles = Collections.singletonList(substanceFile3);
+      when(snapshotFilesServiceMock.getMaterials()).thenReturn(materialFiles);
+      when(snapshotFilesServiceMock.getMethods()).thenReturn(methodFiles);
+      when(snapshotFilesServiceMock.getAnswerSets()).thenReturn(answerSetFiles);
+      when(snapshotFilesServiceMock.getSubstances()).thenReturn(substanceFiles);
+      when(pathogenNotificationCategoryListMock.getPathogenNotificationCategoryList())
+          .thenReturn(
+              asList(
+                  TestObjects.notificationCategoryCodeDisplay().invp(),
+                  TestObjects.notificationCategoryCodeDisplay().hbvp(),
+                  TestObjects.notificationCategoryCodeDisplay().legp()));
+
+      LabDataPreparationSrv labDataPreparationSrv =
+          new LabDataPreparationSrv(
+              FhirContext.forR4Cached(),
+              snapshotFilesServiceMock,
+              pathogenNotificationCategoryListMock,
+              dataLoaderSrvMock,
+              false,
+              false,
+              false,
+              false);
+      labDataPreparationSrv.initializeData();
+      List<StaticSystemVersion> versions =
+          labDataPreparationSrv.getLaboratoryDataMap().get("invp").staticSystemVersions();
+      assertThat(versions).isNull();
     }
   }
 }

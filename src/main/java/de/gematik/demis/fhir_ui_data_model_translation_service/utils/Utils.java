@@ -4,7 +4,7 @@ package de.gematik.demis.fhir_ui_data_model_translation_service.utils;
  * #%L
  * FHIR UI Data Model Translation Service
  * %%
- * Copyright (C) 2025 gematik GmbH
+ * Copyright (C) 2025 - 2026 gematik GmbH
  * %%
  * Licensed under the EUPL, Version 1.2 or - as soon they will be approved by the
  * European Commission – subsequent versions of the EUPL (the "Licence").
@@ -27,6 +27,7 @@ package de.gematik.demis.fhir_ui_data_model_translation_service.utils;
  * #L%
  */
 
+import static de.gematik.demis.fhir_ui_data_model_translation_service.model.CodeDisplay.GERMAN_DESIGNATION_ID;
 import static de.gematik.demis.fhir_ui_data_model_translation_service.model.Designation.getDesignations;
 
 import de.gematik.demis.fhir_ui_data_model_translation_service.model.CodeDisplay;
@@ -35,13 +36,7 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Optional;
-import java.util.Set;
+import java.util.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import lombok.extern.slf4j.Slf4j;
@@ -53,9 +48,8 @@ import org.hl7.fhir.r4.model.ValueSet;
 @Slf4j
 public final class Utils {
 
-  private static final int DEFAULT_ORDER_VALUE = 100;
-  public static final String GERMAN_DESIGNATION_ID = "de-DE";
   public static final String NOTIFICATION_CATEGORY_PROPERTY = "ifsg-paragraph";
+  private static final int DEFAULT_ORDER_VALUE = 100;
 
   private Utils() {}
 

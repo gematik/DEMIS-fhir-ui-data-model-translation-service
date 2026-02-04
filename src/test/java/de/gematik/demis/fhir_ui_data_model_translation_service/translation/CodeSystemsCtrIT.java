@@ -4,7 +4,7 @@ package de.gematik.demis.fhir_ui_data_model_translation_service.translation;
  * #%L
  * FHIR UI Data Model Translation Service
  * %%
- * Copyright (C) 2025 gematik GmbH
+ * Copyright (C) 2025 - 2026 gematik GmbH
  * %%
  * Licensed under the EUPL, Version 1.2 or - as soon they will be approved by the
  * European Commission – subsequent versions of the EUPL (the "Licence").
@@ -50,11 +50,13 @@ import org.springframework.test.web.servlet.MvcResult;
 @AutoConfigureMockMvc
 @SpringBootTest
 @AutoConfigureObservability
-@TestPropertySource(locations = "classpath:application-test.properties")
+@TestPropertySource(
+    locations = "classpath:application-test.properties",
+    properties = {"feature.flag.addDesignationUse=false"})
 class CodeSystemsCtrIT {
 
   public static final String CODE_DISPLAY =
-      "{\"code\":\"100343-3\",\"display\":\"Influenza virus B RNA [Presence] in Saliva (oral fluid) by NAA with probe detection\",\"designations\":[{\"language\":\"de-DE\",\"value\":\"Influenza-Virus B-RNA [Nachweis] in Speichel mit Nukleinsäureamplifikation mit Sondendetektion\"}],\"system\":\"http://loinc.org\"}";
+      "{\"code\":\"100343-3\",\"display\":\"Influenza virus B RNA [Presence] in Saliva (oral fluid) by NAA with probe detection\",\"designations\":[{\"language\":\"de-DE\",\"value\":\"Influenza-Virus B-RNA [Nachweis] in Speichel mit Nukleinsäureamplifikation mit Sondendetektion\"}],\"system\":\"http://loinc.org\",\"version\":\"2.74\"}";
 
   public static final String CODE_DISPLAY_2 =
       "{\"code\":\"provisional\",\"display\":\"Provisional\",\"designations\":[]}";

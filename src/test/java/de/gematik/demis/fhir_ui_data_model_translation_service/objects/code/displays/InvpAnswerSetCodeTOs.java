@@ -4,7 +4,7 @@ package de.gematik.demis.fhir_ui_data_model_translation_service.objects.code.dis
  * #%L
  * FHIR UI Data Model Translation Service
  * %%
- * Copyright (C) 2025 gematik GmbH
+ * Copyright (C) 2025 - 2026 gematik GmbH
  * %%
  * Licensed under the EUPL, Version 1.2 or - as soon they will be approved by the
  * European Commission – subsequent versions of the EUPL (the "Licence").
@@ -46,19 +46,6 @@ public class InvpAnswerSetCodeTOs {
         .build();
   }
 
-  /** Todo Remove with feature.flag.notifications.7_3 */
-  public CodeDisplay snomed_407479009Reg() {
-    return CodeDisplay.builder()
-        .code("407479009")
-        .display("Influenza A virus (organism)")
-        .designations(
-            Set.of(
-                new Designation("en-US", "Influenza A virus (organism)"),
-                new Designation("de-DE", "Influenza A-Virus")))
-        .order(50)
-        .build();
-  }
-
   public CodeDisplay snomed_715350001() {
     return CodeDisplay.builder()
         .code("715350001")
@@ -69,31 +56,6 @@ public class InvpAnswerSetCodeTOs {
                 new Designation("de-DE", "Influenza A-Virus, Subtyp H10N7")))
         .order(10)
         .system("http://snomed.info/sct|http://snomed.info/sct/900000000000207008/version/20230331")
-        .build();
-  }
-
-  /** Todo Remove with feature.flag.notifications.7_3 */
-  public CodeDisplay snomed_715350001Reg() {
-    return CodeDisplay.builder()
-        .code("715350001")
-        .display("Influenza A virus subtype H10N7 (organism)")
-        .designations(
-            Set.of(
-                new Designation("en-US", "Influenza A virus subtype H10N7 (organism)"),
-                new Designation("de-DE", "Influenza A-Virus, Subtyp H10N7")))
-        .order(10)
-        .build();
-  }
-
-  public CodeDisplay snomed_715350001R() {
-    return CodeDisplay.builder()
-        .code("715350001")
-        .display("Influenza A virus subtype H10N7 (organism)")
-        .designations(
-            Set.of(
-                new Designation("en-US", "Influenza A virus subtype H10N7 (organism)"),
-                new Designation("de-DE", "Influenza A-Virus, Subtyp H10N7")))
-        .order(100)
         .build();
   }
 
@@ -110,19 +72,6 @@ public class InvpAnswerSetCodeTOs {
         .build();
   }
 
-  /** Todo Remove with feature.flag.notifications.7_3 */
-  public CodeDisplay snomed_442352004Reg() {
-    return CodeDisplay.builder()
-        .code("442352004")
-        .display("Influenza A virus subtype H1N1 (organism)")
-        .designations(
-            Set.of(
-                new Designation("en-US", "Influenza A virus subtype H1N1 (organism)"),
-                new Designation("de-DE", "Influenza A-Virus (H1N1)")))
-        .order(99)
-        .build();
-  }
-
   public CodeDisplay snomed_700350009() {
     return CodeDisplay.builder()
         .code("700350009")
@@ -133,19 +82,6 @@ public class InvpAnswerSetCodeTOs {
                 new Designation("de-DE", "Influenza A-Virus, Subtyp H10N8")))
         .order(100)
         .system("http://snomed.info/sct|http://snomed.info/sct/900000000000207008/version/20230331")
-        .build();
-  }
-
-  /** Todo Remove with feature.flag.notifications.7_3 */
-  public CodeDisplay snomed_700350009Reg() {
-    return CodeDisplay.builder()
-        .code("700350009")
-        .display("Influenza A virus subtype H10N8 (organism)")
-        .designations(
-            Set.of(
-                new Designation("en-US", "Influenza A virus subtype H10N8 (organism)"),
-                new Designation("de-DE", "Influenza A-Virus, Subtyp H10N8")))
-        .order(100)
         .build();
   }
 }

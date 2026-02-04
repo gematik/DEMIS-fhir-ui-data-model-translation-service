@@ -4,7 +4,7 @@ package de.gematik.demis.fhir_ui_data_model_translation_service.translation;
  * #%L
  * FHIR UI Data Model Translation Service
  * %%
- * Copyright (C) 2025 gematik GmbH
+ * Copyright (C) 2025 - 2026 gematik GmbH
  * %%
  * Licensed under the EUPL, Version 1.2 or - as soon they will be approved by the
  * European Commission – subsequent versions of the EUPL (the "Licence").
@@ -32,24 +32,20 @@ import static de.gematik.demis.fhir_ui_data_model_translation_service.utils.Util
 
 import ca.uhn.fhir.context.FhirContext;
 import ca.uhn.fhir.parser.DataFormatException;
+import de.gematik.demis.fhir_ui_data_model_translation_service.FeatureFlags;
 import de.gematik.demis.fhir_ui_data_model_translation_service.model.CodeDisplay;
 import de.gematik.demis.fhir_ui_data_model_translation_service.model.Designation;
+import de.gematik.demis.fhir_ui_data_model_translation_service.model.Use;
 import java.io.File;
 import java.io.IOException;
-import java.util.Comparator;
-import java.util.HashMap;
-import java.util.LinkedHashMap;
-import java.util.LinkedHashSet;
-import java.util.List;
-import java.util.Map;
-import java.util.Optional;
-import java.util.Set;
+import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.stream.Collectors;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.hl7.fhir.r4.model.CodeSystem;
+import org.jspecify.annotations.Nullable;
 
 @RequiredArgsConstructor
 @Slf4j
@@ -58,6 +54,7 @@ class CodeSystems {
   private final LinkedHashSet<File> codeSystemFiles;
   private final FhirContext fhirContext;
   private final List<String> excludedCodeSystems;
+  private final FeatureFlags featureFlags;
 
   /**
    * map that contains pairs of supplemented code systems and supplement code system. the key is the
@@ -67,6 +64,7 @@ class CodeSystems {
   private final Map<String, String> codeSystemToSupplement = new HashMap<>();
 
   @Getter private Map<String, Map<String, CodeDisplay>> codeSystemData = new ConcurrentHashMap<>();
+  @Getter private Map<String, String> codeSystemVersions = new ConcurrentHashMap<>();
 
   private static Map<String, CodeDisplay> sortCodeSystemEntries(
       Map<String, CodeDisplay> keyToCodeDisplayMap) {
@@ -81,6 +79,42 @@ class CodeSystems {
                 Map.Entry::getValue,
                 (oldValue, newValue) -> oldValue,
                 LinkedHashMap::new));
+  }
+
+  protected static @Nullable Use extractUseOrNull(
+      CodeSystem.ConceptDefinitionDesignationComponent conceptDesignation) {
+    return conceptDesignation.getUse() != null
+            && conceptDesignation.getUse().getCode() != null
+            && conceptDesignation.getUse().getSystem() != null
+        ? Use.toUse(conceptDesignation.getUse())
+        : null;
+  }
+
+  private void addDesignations(
+      CodeSystem.ConceptDefinitionComponent concept, CodeDisplay codeDisplay) {
+    // check for designations and add designations to code display
+    if (!concept.getDesignation().isEmpty()) {
+      List<CodeSystem.ConceptDefinitionDesignationComponent> designation = concept.getDesignation();
+      Set<Designation> designations = new LinkedHashSet<>();
+      final boolean addDesignationUseData = featureFlags.isAddDesignationUse();
+      for (var conceptDesignation : designation) {
+        if (addDesignationUseData) {
+          Use use = extractUseOrNull(conceptDesignation);
+          designations.add(
+              new Designation(
+                  conceptDesignation.getLanguage(), conceptDesignation.getValue(), use));
+        } else {
+          if (conceptDesignation.getUse() != null
+              && (conceptDesignation.getUse().getCode() != null
+                      && !conceptDesignation.getUse().getCode().equals("FullySpecifiedName")
+                  || conceptDesignation.getUse().getCode() == null)) {
+            designations.add(
+                new Designation(conceptDesignation.getLanguage(), conceptDesignation.getValue()));
+          }
+        }
+      }
+      codeDisplay.setDesignations(designations);
+    }
   }
 
   void addCodeSystem(String system, CodeDisplayMapWithVersion codeDisplays) {
@@ -127,8 +161,8 @@ class CodeSystems {
   /**
    * reads code systems and creates code displays. reads supplement data and adds it to the code
    *
-   * @return
-   * @throws IOException
+   * @return this very object
+   * @throws IOException if reading/parsing files fails
    */
   CodeSystems build() throws IOException {
     for (File file : codeSystemFiles) {
@@ -138,16 +172,19 @@ class CodeSystems {
             fhirContext.newJsonParser().parseResource(CodeSystem.class, getFileString(file));
 
         // get data and map to CodeDisplay
-        String fileNameKey = codeSystem.getUrl();
-        if (codeSystem.getVersion() != null) {
-          fileNameKey += "|" + codeSystem.getVersion();
+        final String systemUrl = codeSystem.getUrl();
+        final String version = codeSystem.getVersion();
+
+        String fileNameKey = systemUrl;
+        if (version != null) {
+          fileNameKey += "|" + version;
         }
         codeSystemData.putIfAbsent(fileNameKey, new LinkedHashMap<>());
         Map<String, CodeDisplay> keyToCodeDisplayMap = codeSystemData.get(fileNameKey);
 
         for (CodeSystem.ConceptDefinitionComponent concept : codeSystem.getConcept()) {
           extractCodesRecursive(
-              keyToCodeDisplayMap, concept, codeSystem.getUrl(), fileNameKey, null);
+              keyToCodeDisplayMap, concept, systemUrl, version, fileNameKey, null);
         }
 
         // add supplementsystem if marked as supplement
@@ -159,22 +196,21 @@ class CodeSystems {
 
         // check for multiple versions of the same code system
         List<String> keysWithSameUrl =
-            codeSystemData.keySet().stream()
-                .filter(key -> key.startsWith(codeSystem.getUrl()))
-                .toList();
+            codeSystemData.keySet().stream().filter(key -> key.startsWith(systemUrl)).toList();
         // order keysWithSameUrl and search for latest version
         Optional<String> codeSystemWithHighestVersion =
-            keysWithSameUrl.stream().sorted(Comparator.reverseOrder()).findFirst();
+            keysWithSameUrl.stream().max(Comparator.naturalOrder());
 
         // add highest version as standard version if found code system is the current processed one
         if (codeSystemWithHighestVersion.isPresent()
             && codeSystemWithHighestVersion.get().equals(fileNameKey)) {
-          codeSystemData.put(
-              codeSystem.getUrl(), codeSystemData.get(codeSystemWithHighestVersion.get()));
+          codeSystemData.put(systemUrl, codeSystemData.get(codeSystemWithHighestVersion.get()));
         } else if (codeSystemWithHighestVersion.isEmpty()) {
           // when no version is found, add the current version as standard version
-          codeSystemData.put(codeSystem.getUrl(), keyToCodeDisplayMap);
+          codeSystemData.put(systemUrl, keyToCodeDisplayMap);
         }
+
+        codeSystemVersions.put(codeSystem.getUrl(), codeSystem.getVersion());
 
       } catch (DataFormatException e) {
         log.error("Error while reading {}", file.getName(), e);
@@ -215,54 +251,49 @@ class CodeSystems {
   }
 
   /**
-   * extracts codes from concepts of a code system recursively. The codes are added to the given
+   * Extracts codes from concepts of a code system recursively. The codes are added to the given
    * map. a code system can have concepts whose elements contain other concepts.
    *
-   * @param filesForKeywordMap
-   * @param concept
-   * @param fileNameKey
+   * @param filesForKeywordMap map to add the extracted codes to
+   * @param concept concept to extract codes from
+   * @param system code system url
+   * @param version code system version
+   * @param fileNameKey file name key of the code system
+   * @param breadCrumb breadcrumb to add to the code display
    */
   private void extractCodesRecursive(
       Map<String, CodeDisplay> filesForKeywordMap,
       CodeSystem.ConceptDefinitionComponent concept,
       String system,
+      String version,
       String fileNameKey,
       String breadCrumb) {
     // create code display
-    CodeDisplay codeDisplay = createCodeDisplay(concept, system, fileNameKey, breadCrumb);
+    CodeDisplay codeDisplay = createCodeDisplay(concept, system, version, fileNameKey, breadCrumb);
 
-    // check for designations and add designations to code display
-    if (!concept.getDesignation().isEmpty()) {
-      List<CodeSystem.ConceptDefinitionDesignationComponent> designation = concept.getDesignation();
-      Set<Designation> designations = new LinkedHashSet<>();
-      for (var conceptDesignation : designation) {
-        if (conceptDesignation.getUse() != null
-            && (conceptDesignation.getUse().getCode() != null
-                    && !conceptDesignation.getUse().getCode().equals("FullySpecifiedName")
-                || conceptDesignation.getUse().getCode() == null)) {
-          designations.add(
-              new Designation(conceptDesignation.getLanguage(), conceptDesignation.getValue()));
-        }
-      }
-      codeDisplay.setDesignations(designations);
-    }
+    addDesignations(concept, codeDisplay);
 
     filesForKeywordMap.put(concept.getCode(), codeDisplay);
 
     for (var internalConcept : concept.getConcept()) {
       String breadCrumb1 =
           ((breadCrumb == null ? "" : breadCrumb + "|") + codeDisplay.getDisplay()).trim();
-      extractCodesRecursive(filesForKeywordMap, internalConcept, system, fileNameKey, breadCrumb1);
+      extractCodesRecursive(
+          filesForKeywordMap, internalConcept, system, version, fileNameKey, breadCrumb1);
     }
   }
 
   private CodeDisplay createCodeDisplay(
       CodeSystem.ConceptDefinitionComponent concept,
       String system,
+      String version,
       String fileNameKey,
       String breadCrumb) {
     final var builder = CodeDisplay.builder();
     builder.system(system);
+    if (featureFlags.isAddCodeDisplayVersion()) {
+      builder.version(version);
+    }
     builder.code(concept.getCode());
     builder.display(concept.getDisplay());
     builder.order(extractOrder(concept));
@@ -275,11 +306,11 @@ class CodeSystems {
 
   /**
    * Adds the supplement system to the map if the metadata resource is marked as supplement. only
-   * useable for code systems since only code systems can (currently) be marked as supplementary
-   * code systems
+   * usable for code systems since only code systems can (currently) be marked as supplementary code
+   * systems
    *
-   * @param metadataResource
-   * @param fileNameKey
+   * @param metadataResource the code system to check
+   * @param fileNameKey the file name key of the code system
    */
   private void addSupplementSystemIfMarkedAsSupp(CodeSystem metadataResource, String fileNameKey) {
     if (metadataResource.getSupplements() != null) {
