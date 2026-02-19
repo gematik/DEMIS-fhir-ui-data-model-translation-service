@@ -490,7 +490,7 @@
     <dependency>
       <groupId>de.gematik.demis</groupId>
       <artifactId>notification-builder-library</artifactId>
-      <version>9.0.10</version>
+      <version>9.1.0</version>
       <licenses>
         <license>
           <name>Licensed under the EUPL 1.2</name>
@@ -514,7 +514,7 @@
     <dependency>
       <groupId>de.gematik.demis</groupId>
       <artifactId>spring-parent</artifactId>
-      <version>2.14.20</version>
+      <version>2.14.21</version>
       <licenses>
         <license>
           <name>Licensed under the EUPL 1.2</name>

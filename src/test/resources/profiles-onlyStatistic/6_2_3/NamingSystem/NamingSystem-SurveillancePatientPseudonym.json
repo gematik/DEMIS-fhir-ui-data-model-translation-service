@@ -1,0 +1,14 @@
+{
+  "resourceType": "NamingSystem",
+  "id": "SurveillancePatientPseudonym",
+  "name": "SurveillancePatientPseudonym",
+  "status": "active",
+  "kind": "identifier",
+  "date": "2025-03-14",
+  "description": "Das SurveillancePatientPseudonym ist das NamingSystem um das Patienten-Pseudonym der Surveillance-Systeme zu übermitteln.",
+  "uniqueId": [ {
+    "type": "uri",
+    "value": "https://demis.rki.de/fhir/sid/SurveillancePatientPseudonym",
+    "preferred": true
+  } ]
+}

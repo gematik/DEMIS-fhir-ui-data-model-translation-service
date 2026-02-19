@@ -1,0 +1,133 @@
+{
+  "resourceType": "CodeSystem",
+  "id": "snomedct-20251115",
+  "url": "http://snomed.info/sct",
+  "identifier": [ {
+    "system": "urn:ietf:rfc:3986",
+    "value": "urn:oid:2.16.840.1.113883.6.96"
+  } ],
+  "version": "http://snomed.info/sct/11000274103/version/20251115",
+  "name": "SNOMED_CT",
+  "title": "SNOMED CT (all versions)",
+  "status": "active",
+  "experimental": false,
+  "publisher": "IHTSDO",
+  "contact": [ {
+    "telecom": [ {
+      "system": "url",
+      "value": "http://ihtsdo.org"
+    } ]
+  } ],
+  "description": "SNOMED CT is the most comprehensive and precise clinical health terminology product in the world, owned and distributed around the world by The International Health Terminology Standards Development Organisation (IHTSDO).",
+  "copyright": "© 2002-2016 International Health Terminology Standards Development Organisation (IHTSDO). All rights reserved. SNOMED CT®, was originally created by The College of American Pathologists. \"SNOMED\" and \"SNOMED CT\" are registered trademarks of the IHTSDO http://www.ihtsdo.org/snomed-ct/get-snomed-ct",
+  "caseSensitive": false,
+  "hierarchyMeaning": "is-a",
+  "compositional": true,
+  "versionNeeded": false,
+  "content": "fragment",
+  "count": 35,
+  "concept": [ {
+    "code": "1156860005",
+    "display": "Antigenschnelltest mittels Immunoassay"
+  }, {
+    "code": "118119003",
+    "display": "Mikrobieller Antikörpernachweis"
+  }, {
+    "code": "121276004",
+    "display": "Antigennachweis"
+  }, {
+    "code": "122443003",
+    "display": "Toxinnachweis"
+  }, {
+    "code": "1259932009",
+    "display": "LAMP - Loop-mediated Isothermal Amplification"
+  }, {
+    "code": "1303970008",
+    "display": "Elektronenmikroskopische Untersuchung"
+  }, {
+    "code": "1303998006",
+    "display": "Multiplex-PCR"
+  }, {
+    "code": "1304162005",
+    "display": "Methode der Nukleinsäuresequenzierung"
+  }, {
+    "code": "250758002",
+    "display": "Immunglobulin-G-Index"
+  }, {
+    "code": "258075003",
+    "display": "Serotypisierung"
+  }, {
+    "code": "264896000",
+    "display": "Nukleinsäureanalyse"
+  }, {
+    "code": "269829001",
+    "display": "TPHA-Test"
+  }, {
+    "code": "278289002",
+    "display": "Mikroskopiemethode"
+  }, {
+    "code": "31651002",
+    "display": "Immunglobulin-A-Messung"
+  }, {
+    "code": "32746004",
+    "display": "Direkter Fluoreszenz-Antikörper-Test für Syphilis"
+  }, {
+    "code": "420848008",
+    "display": "Verabreichung von Malariaprophylaxe"
+  }, {
+    "code": "45293001",
+    "display": "Immunglobulin-G-Messung"
+  }, {
+    "code": "45764000",
+    "display": "Immunglobulin-M-Messung"
+  }, {
+    "code": "68431000052104",
+    "display": "Enzymimmunoassay-Methode"
+  }, {
+    "code": "702658000",
+    "display": "Mikrobielle Kulturmethode"
+  }, {
+    "code": "703446000",
+    "display": "Immunoblot-Methode"
+  }, {
+    "code": "703447009",
+    "display": "Enzymimmunoassay"
+  }, {
+    "code": "703455002",
+    "display": "RPR-Test"
+  }, {
+    "code": "703456001",
+    "display": "VDRL-Test"
+  }, {
+    "code": "703458000",
+    "display": "Neutralisationstest"
+  }, {
+    "code": "703725008",
+    "display": "Kultur"
+  }, {
+    "code": "708056006",
+    "display": "Methode zum Nachweis säurefester Stäbchen"
+  }, {
+    "code": "708058007",
+    "display": "Durchflusszytometrie"
+  }, {
+    "code": "714797009",
+    "display": "Histologischer Test"
+  }, {
+    "code": "767096000",
+    "display": "Indirekte Immunfluoreszenzmethode"
+  }, {
+    "code": "83581000052107",
+    "display": "MALDI-TOF-Massenspektrometrie"
+  }, {
+    "code": "900000000000003001"
+  }, {
+    "code": "900000000000013009"
+  }, {
+    "code": "91454002",
+    "display": "Pleozytose des Liquors"
+  }, {
+    "code": "9232009",
+    "display": "FTA-Abs-Test"
+  } ]
+}

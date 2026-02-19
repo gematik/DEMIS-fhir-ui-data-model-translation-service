@@ -50,6 +50,9 @@ class CodeSystemsTest {
       "http://terminology.hl7.org/CodeSystem/v3-NullFlavor";
   private static final FeatureFlags FEATURE_FLAGS_ENABLED =
       FeatureFlags.builder().addDesignationUse(true).addCodeDisplayVersion(true).build();
+  private static final File CODE_SYSTEM_NO_CONTENT =
+      new File("src/test/resources/profilesNotForIT/CodeSystem-pzn.json");
+
   private final File addressUseFile =
       new File("src/test/resources/profiles/CodeSystem/CodeSystem-addressUse.json");
   private final File addressUseFile2 =
@@ -227,6 +230,18 @@ class CodeSystemsTest {
         .isNotNull()
         .isInstanceOf(Map.class)
         .isEqualTo(mapToAdd);
+  }
+
+  @Test
+  void shouldIgnoreCodeSystemsWithoutContent() throws IOException {
+    LinkedHashSet<File> files = new LinkedHashSet<>(List.of(CODE_SYSTEM_NO_CONTENT));
+    CodeSystems codeSystems =
+        new CodeSystems(
+            files, FhirContext.forR4Cached(), Collections.emptyList(), FEATURE_FLAGS_ENABLED);
+    codeSystems.build();
+
+    Map<String, Map<String, CodeDisplay>> codeSystemData = codeSystems.getCodeSystemData();
+    assertThat(codeSystemData).isEmpty();
   }
 
   @Nested

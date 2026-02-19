@@ -1,0 +1,113 @@
+{
+  "resourceType": "ConceptMap",
+  "id": "IHEHealthcareFacilityCodes2DEMISOrganizationTypeCodes",
+  "url": "https://demis.rki.de/fhir/ConceptMap/IHEHealthcareFacilityCodes2DEMISOrganizationTypeCodes",
+  "version": "1.0.0",
+  "name": "IHEHealthcareFacilityCodes2DEMISOrganizationTypeCodes",
+  "title": "IHEHealthcareFacilityCodes2DEMISOrganizationTypeCodes",
+  "status": "active",
+  "date": "2025-02-20",
+  "publisher": "Robert Koch-Institut",
+  "contact": [ {
+    "telecom": [ {
+      "system": "email",
+      "value": "demis-support@rki.de"
+    } ]
+  } ],
+  "description": "Die ConceptMap IHEHealthcareFacilityCodes2DEMISOrganizationTypeCodes ordnet die Codes der IHE-Einrichtungstypen (patientenbezogene Gesundheitsversorgung) den Codes der DEMIS-Einrichtungsarten zu.",
+  "jurisdiction": [ {
+    "coding": [ {
+      "system": "urn:iso:std:iso:3166",
+      "version": "ALPHA-2",
+      "code": "DE"
+    } ]
+  } ],
+  "copyright": "Copyright (C) 2021-2025 Robert Koch-Institut",
+  "sourceUri": "http://ihe-d.de/ValueSets/IHEXDShealthcareFacilityTypeCode",
+  "targetUri": "https://demis.rki.de/fhir/ValueSet/organizationType",
+  "group": [ {
+    "source": "urn:oid:1.3.6.1.4.1.19376.3.276.1.5.2",
+    "target": "https://demis.rki.de/fhir/CodeSystem/organizationType",
+    "element": [ {
+      "code": "KHS",
+      "display": "Krankenhaus",
+      "target": [ {
+        "code": "hospital",
+        "display": "Krankenhaus",
+        "equivalence": "equivalent"
+      } ]
+    }, {
+      "code": "REH",
+      "display": "Medizinische Rehabilitation",
+      "target": [ {
+        "code": "prevCareRehab",
+        "display": "Vorsorge- oder Reha-Einrichtung",
+        "equivalence": "equivalent"
+      } ]
+    }, {
+      "code": "HEB",
+      "display": "Hebamme/Geburtshaus",
+      "target": [ {
+        "code": "maternity",
+        "display": "Entbindungseinrichtung",
+        "equivalence": "equivalent"
+      } ]
+    }, {
+      "code": "PRA",
+      "display": "Arztpraxis",
+      "target": [ {
+        "code": "physicianOffice",
+        "display": "Arztpraxis",
+        "equivalence": "equivalent"
+      }, {
+        "code": "dentalSurgery",
+        "display": "Zahnarztpraxis",
+        "equivalence": "equivalent"
+      } ]
+    }, {
+      "code": "HEI",
+      "display": "Nicht-ärztliche Heilberufs-Praxis",
+      "target": [ {
+        "code": "othMedPractice",
+        "display": "Sonstige Heilberufepraxis",
+        "equivalence": "equivalent"
+      } ]
+    }, {
+      "code": "RTN",
+      "display": "Rettungsdienst",
+      "target": [ {
+        "code": "emResServ",
+        "display": "Rettungsdienst",
+        "equivalence": "equivalent"
+      } ]
+    }, {
+      "code": "PFL",
+      "display": "Pflegeheim",
+      "target": [ {
+        "code": "elderlyCareHome",
+        "display": "Einrichtung zur Betreuung/Unterbringung älterer Menschen",
+        "equivalence": "equivalent"
+      }, {
+        "code": "disabledCareHome",
+        "display": "Einrichtung zur Betreuung/Unterbringung behinderter Menschen",
+        "equivalence": "equivalent"
+      }, {
+        "code": "assistedCareHome",
+        "display": "Einrichtung zur Betreuung/Unterbringung pflegebedürftiger Menschen",
+        "equivalence": "equivalent"
+      }, {
+        "code": "outpatICServ",
+        "display": "Ambulanter Intensivpflegedienst",
+        "equivalence": "equivalent"
+      } ]
+    }, {
+      "code": "APD",
+      "display": "Ambulanter Pflegedienst",
+      "target": [ {
+        "code": "othOutpatCareS",
+        "display": "Sonstiger ambulanter Pflegedienst",
+        "equivalence": "equivalent"
+      } ]
+    } ]
+  } ]
+}

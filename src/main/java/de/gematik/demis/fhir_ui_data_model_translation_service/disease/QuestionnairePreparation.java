@@ -29,6 +29,7 @@ package de.gematik.demis.fhir_ui_data_model_translation_service.disease;
 
 import ca.uhn.fhir.context.FhirContext;
 import com.google.common.collect.ImmutableMap;
+import de.gematik.demis.fhir_ui_data_model_translation_service.context.OnlyInDiseaseContext;
 import de.gematik.demis.fhir_ui_data_model_translation_service.disease.formly.model.QuestionnaireTranslation;
 import de.gematik.demis.fhir_ui_data_model_translation_service.utils.Utils;
 import jakarta.annotation.PostConstruct;
@@ -42,6 +43,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.hl7.fhir.r4.model.Questionnaire;
 import org.springframework.stereotype.Component;
 
+@OnlyInDiseaseContext
 @Component
 @Slf4j
 @RequiredArgsConstructor

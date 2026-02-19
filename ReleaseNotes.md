@@ -2,6 +2,12 @@
  
 # Release notes
 
+## 2.5.0
+- added processing of FHIR profiles LaboratoryFacility and InfectProtectFacility
+- skipping CodeSystem files with no content
+- added FEATURE_FLAG_SNAPSHOT_6_ACTIVE
+- added possibility to create Beans conditionally based on business context
+
 ## 2.4.0
 - added designation uses to codes
 - added FEATURE_FLAG_ADD_DESIGNATION_USE

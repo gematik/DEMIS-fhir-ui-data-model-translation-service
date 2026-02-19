@@ -29,6 +29,7 @@ package de.gematik.demis.fhir_ui_data_model_translation_service.disease;
 
 import static de.gematik.demis.fhir_ui_data_model_translation_service.utils.Utils.getCodeFromFileName;
 
+import de.gematik.demis.fhir_ui_data_model_translation_service.context.OnlyInDiseaseContext;
 import de.gematik.demis.fhir_ui_data_model_translation_service.utils.SnapshotFilesService;
 import jakarta.annotation.PostConstruct;
 import java.io.File;
@@ -41,6 +42,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
+@OnlyInDiseaseContext
 @Component
 @Slf4j
 public class Questionnaires {

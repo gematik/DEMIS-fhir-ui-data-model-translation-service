@@ -30,6 +30,7 @@ package de.gematik.demis.fhir_ui_data_model_translation_service.disease.formly.p
 import static de.gematik.demis.fhir_ui_data_model_translation_service.disease.formly.model.Wrapper.PANEL;
 import static org.springframework.util.ObjectUtils.isEmpty;
 
+import de.gematik.demis.fhir_ui_data_model_translation_service.context.OnlyInDiseaseContext;
 import de.gematik.demis.fhir_ui_data_model_translation_service.disease.formly.fhir.TooltipExtension;
 import de.gematik.demis.fhir_ui_data_model_translation_service.disease.formly.model.FieldGroup;
 import de.gematik.demis.fhir_ui_data_model_translation_service.disease.formly.model.Props;
@@ -38,6 +39,7 @@ import lombok.RequiredArgsConstructor;
 import org.hl7.fhir.r4.model.Questionnaire;
 import org.springframework.stereotype.Component;
 
+@OnlyInDiseaseContext
 @Component
 @RequiredArgsConstructor
 public class GroupProcessor implements ItemProcessor {

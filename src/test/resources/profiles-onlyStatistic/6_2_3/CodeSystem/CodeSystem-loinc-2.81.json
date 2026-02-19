@@ -1,0 +1,296 @@
+{
+  "resourceType": "CodeSystem",
+  "id": "loinc-2.81",
+  "url": "http://loinc.org",
+  "identifier": [ {
+    "system": "urn:ietf:rfc:3986",
+    "value": "urn:oid:2.16.840.1.113883.6.1"
+  } ],
+  "version": "2.81",
+  "name": "LOINC",
+  "title": "LOINC Code System",
+  "status": "active",
+  "experimental": false,
+  "publisher": "Regenstrief Institute, Inc.",
+  "contact": [ {
+    "telecom": [ {
+      "value": "http://loinc.org"
+    } ]
+  } ],
+  "description": "LOINC is a freely available international standard for tests, measurements, and observations",
+  "copyright": "This content from LOINC® is copyright © 1995 Regenstrief Institute, Inc. and the LOINC Committee, and available at no cost under the license at http://loinc.org/terms-of-use",
+  "caseSensitive": false,
+  "valueSet": " http://loinc.org/vs",
+  "compositional": false,
+  "versionNeeded": false,
+  "content": "fragment",
+  "count": 90,
+  "concept": [ {
+    "code": "100049-6",
+    "display": "Eravacyclin [Empfindlichkeit]"
+  }, {
+    "code": "100057-9",
+    "display": "Prothionamid [Empfindlichkeit]"
+  }, {
+    "code": "101673-2",
+    "display": "KPC-Carbapenemase [Nachweis] in Isolat mittels Immunoassay-Schnelltest"
+  }, {
+    "code": "101674-0",
+    "display": "OXA-48-like-Carbapenemase [Nachweis] in Isolat mittels Immunoassay-Schnelltest"
+  }, {
+    "code": "101675-7",
+    "display": "IMP-Carbapenemase [Nachweis] in Isolat mittels Immunoassay-Schnelltest"
+  }, {
+    "code": "101676-5",
+    "display": "VIM-Carbapenemase [Nachweis] in Isolat mittels Immunoassay-Schnelltest"
+  }, {
+    "code": "101677-3",
+    "display": "NDM-Carbapenemase [Nachweis] in Isolat mittels Immunoassay-Schnelltest"
+  }, {
+    "code": "105037-6",
+    "display": "OXA-23-Carbapenemase [Nachweis] mittels Immunoassay-Schnelltest"
+  }, {
+    "code": "105038-4",
+    "display": "OXA-40+58-Carbapenemase [Nachweis] mittels Immunoassay-Schnelltest"
+  }, {
+    "code": "18860-7",
+    "display": "Amikacin [Empfindlichkeit]"
+  }, {
+    "code": "18872-2",
+    "display": "Capreomycin [Empfindlichkeit]"
+  }, {
+    "code": "18879-7",
+    "display": "Cefepim [Empfindlichkeit]"
+  }, {
+    "code": "18886-2",
+    "display": "Cefotaxim [Empfindlichkeit]"
+  }, {
+    "code": "18893-8",
+    "display": "Ceftazidim [Empfindlichkeit]"
+  }, {
+    "code": "18906-8",
+    "display": "Ciprofloxacin [Empfindlichkeit]"
+  }, {
+    "code": "18912-6",
+    "display": "Colistin [Empfindlichkeit]"
+  }, {
+    "code": "18914-2",
+    "display": "Cycloserin [Empfindlichkeit]"
+  }, {
+    "code": "18921-7",
+    "display": "Ethambutol [Empfindlichkeit]"
+  }, {
+    "code": "18928-2",
+    "display": "Gentamicin [Empfindlichkeit]"
+  }, {
+    "code": "18932-4",
+    "display": "Imipenem [Empfindlichkeit]"
+  }, {
+    "code": "18934-0",
+    "display": "Isoniazid [Empfindlichkeit]"
+  }, {
+    "code": "18935-7",
+    "display": "Kanamycin [Empfindlichkeit]"
+  }, {
+    "code": "18943-1",
+    "display": "Meropenem [Empfindlichkeit]"
+  }, {
+    "code": "18945-6",
+    "display": "Methicillin [Empfindlichkeit]"
+  }, {
+    "code": "18959-7",
+    "display": "Ofloxacin [Empfindlichkeit]"
+  }, {
+    "code": "18961-3",
+    "display": "Oxacillin [Empfindlichkeit]"
+  }, {
+    "code": "18969-6",
+    "display": "Piperacillin [Empfindlichkeit]"
+  }, {
+    "code": "18970-4",
+    "display": "Piperacillin+Tazobactam [Empfindlichkeit]"
+  }, {
+    "code": "18972-0",
+    "display": "Polymyxin B [Empfindlichkeit]"
+  }, {
+    "code": "18973-8",
+    "display": "Pyrazinamid [Empfindlichkeit]"
+  }, {
+    "code": "18974-6",
+    "display": "Rifampicin [Empfindlichkeit]"
+  }, {
+    "code": "18982-9",
+    "display": "Streptomycin [Empfindlichkeit]"
+  }, {
+    "code": "18996-9",
+    "display": "Tobramycin [Empfindlichkeit]"
+  }, {
+    "code": "18998-5",
+    "display": "Trimethoprim+Sulfamethoxazol [Empfindlichkeit]"
+  }, {
+    "code": "19000-9",
+    "display": "Vancomycin [Empfindlichkeit]"
+  }, {
+    "code": "19149-4",
+    "display": "Rifabutin [Empfindlichkeit]"
+  }, {
+    "code": "20629-2",
+    "display": "Levofloxacin [Empfindlichkeit]"
+  }, {
+    "code": "23627-3",
+    "display": "Clofazimin [Empfindlichkeit]"
+  }, {
+    "code": "23629-9",
+    "display": "Para-Aminosalicylat [Empfindlichkeit]"
+  }, {
+    "code": "25596-8",
+    "display": "Fosfomycin [Empfindlichkeit]"
+  }, {
+    "code": "29258-1",
+    "display": "Linezolid [Empfindlichkeit]"
+  }, {
+    "code": "31039-1",
+    "display": "Moxifloxacin [Empfindlichkeit]"
+  }, {
+    "code": "33634-7",
+    "display": "Mycobacterium tuberculosis Rifampicin-Resistenzgen [Nachweis oder Identität] in Sputum mittels Nukleinsäureamplifikation mit Sondendetektion"
+  }, {
+    "code": "35802-8",
+    "display": "Ertapenem [Empfindlichkeit]"
+  }, {
+    "code": "42357-4",
+    "display": "Tigecyclin [Empfindlichkeit]"
+  }, {
+    "code": "46244-0",
+    "display": "Mycobacterium tuberculosis-Komplex rpoB-Gen Mutation zu Rifampicin-Resistenz identifiziert mittels Molekulargenetik"
+  }, {
+    "code": "46245-7",
+    "display": "Mycobacterium tuberculosis pncA-Gen Mutation zu Pyrazinamid-Resistenz [Nachweis oder Identität] mittels Molekulargenetik"
+  }, {
+    "code": "46246-5",
+    "display": "Mycobacterium tuberculosis katG-Gen Mutation zu hoher Isoniazid-Resistenz [Nachweis oder Identität] mittels Molekulargenetik"
+  }, {
+    "code": "46247-3",
+    "display": "Mycobacterium tuberculosis embB-Gen Mutation zu Ethambutol-Resistenz [Nachweis oder Identität] mittels Molekulargenetik"
+  }, {
+    "code": "48175-4",
+    "display": "Mycobacterium tuberculosis katG + inhA-Gene Mutation zu Isoniazid-Resistenz [Nachweis] mittels Molekulargenetik"
+  }, {
+    "code": "48813-0",
+    "display": "Methicillin-Resistenz mecA-Gen [Nachweis] mittels Molekulargenetik"
+  }, {
+    "code": "48816-3",
+    "display": "Staphylococcus aureus Panton-Valentine-leukocidin-Gene [Nachweis] in Isolat oder Probenmaterial mittels Molekulargenetik"
+  }, {
+    "code": "49617-4",
+    "display": "Carbapenem-Resistenz blaKPC-Gen [Nachweis] mittels Molekulargenetik"
+  }, {
+    "code": "63072-3",
+    "display": "Mycobacterium tuberculosis inhA-Gen Mutation zu geringer Isoniazid-Resistenz [Nachweis] mittels Molekulargenetik"
+  }, {
+    "code": "63368-5",
+    "display": "Carbapenem-Resistenzgene [Nachweis oder Identität] mittels Nukleinsäureamplifikation mit Sondendetektion"
+  }, {
+    "code": "72276-9",
+    "display": "Mycobacterium tuberculosis gyrA-Gen Mutation zu Fluorchinolon-Resistenz [Nachweis] mittels Molekulargenetik"
+  }, {
+    "code": "72864-2",
+    "display": "Mycobacterium tuberculosis rpsL+rrs-Gene Mutation zu Aminoglycosid-Resistenz [Nachweis] mittels Molekulargenetik"
+  }, {
+    "code": "72865-9",
+    "display": "Mycobacterium tuberculosis ethB-Gen Mutation zu Ethionamid-Resistenz [Nachweis] mittels Molekulargenetik"
+  }, {
+    "code": "72866-7",
+    "display": "Mycobacterium tuberculosis ethA-Gen Mutation zu Ethionamid-Resistenz [Nachweis] mittels Molekulargenetik"
+  }, {
+    "code": "72867-5",
+    "display": "Mycobacterium tuberculosis gyrB-Gen Mutation zu Fluorchinolon-Resistenz [Nachweis] mittels Molekulargenetik"
+  }, {
+    "code": "73602-5",
+    "display": "Ceftolozan+Tazobactam [Empfindlichkeit]"
+  }, {
+    "code": "73603-3",
+    "display": "Ceftazidim+Avibactam [Empfindlichkeit]"
+  }, {
+    "code": "73982-1",
+    "display": "Carbapenem-Resistenz blaNDM-Gen [Nachweis] mittels Molekulargenetik"
+  }, {
+    "code": "77999-1",
+    "display": "Case notification comment"
+  }, {
+    "code": "80563-0",
+    "display": "Report"
+  }, {
+    "code": "85498-4",
+    "display": "Carbapenem-Resistenz blaIMP-Gen [Nachweis] mittels Molekulargenetik"
+  }, {
+    "code": "85501-5",
+    "display": "Carbapenem-Resistenz blaVIM-Gen [Nachweis] mittels Molekulargenetik"
+  }, {
+    "code": "85503-1",
+    "display": "Carbapenem-Resistenz blaOXA-48-Gen [Nachweis] mittels Molekulargenetik"
+  }, {
+    "code": "85823-3",
+    "display": "Carbapenem-Resistenz blaGES-Gen [Nachweis] mittels Molekulargenetik"
+  }, {
+    "code": "85825-8",
+    "display": "Carbapenem-Resistenz blaOXA-23-ähnliches Gen [Nachweis] mittels Molekulargenetik"
+  }, {
+    "code": "85826-6",
+    "display": "Carbapenem-Resistenz blaOXA-24-ähnliches Gen [Nachweis] mittels Molekulargenetik"
+  }, {
+    "code": "85827-4",
+    "display": "Carbapenem-Resistenz blaOXA-48-ähnliches Gen [Nachweis] mittels Molekulargenetik"
+  }, {
+    "code": "85828-2",
+    "display": "Carbapenem-Resistenz blaOXA-58-ähnliches Gen [Nachweis] mittels Molekulargenetik"
+  }, {
+    "code": "85829-0",
+    "display": "Carbapenem-Resistenz blaSPM-Gen [Nachweis] mittels Molekulargenetik"
+  }, {
+    "code": "85833-2",
+    "display": "Carbapenem-Resistenz blaGIM-Gen [Nachweis] mittels Molekulargenetik"
+  }, {
+    "code": "86621-0",
+    "display": "Methicillin-Resistenz mecC-Gen [Nachweis] mittels Molekulargenetik"
+  }, {
+    "code": "86712-7",
+    "display": "Carbapenem-Resistenz blaOXA-Gen [Nachweis] mittels Molekulargenetik"
+  }, {
+    "code": "86713-5",
+    "display": "Carbapenem-Resistenz blaOXA-134-ähnliches Gen [Nachweis] mittels Molekulargenetik"
+  }, {
+    "code": "86714-3",
+    "display": "Carbapenem-Resistenz blaOXA-51-ähnliches Gen [Nachweis] mittels Molekulargenetik"
+  }, {
+    "code": "88892-5",
+    "display": "Meropenem+Vaborbactam [Empfindlichkeit]"
+  }, {
+    "code": "89372-7",
+    "display": "Mycobacterium tuberculosis-Komplex rpoB-Gen Mutation zu Rifampicin-Resistenz [Nachweis] mittels Molekulargenetik"
+  }, {
+    "code": "93850-6",
+    "display": "Pretomanid [Empfindlichkeit]"
+  }, {
+    "code": "93851-4",
+    "display": "Delamanid [Empfindlichkeit]"
+  }, {
+    "code": "94274-8",
+    "display": "Bedaquilin [Empfindlichkeit]"
+  }, {
+    "code": "96372-8",
+    "display": "Imipenem+Relebactam [Empfindlichkeit]"
+  }, {
+    "code": "98065-6",
+    "display": "Carbapenem-Resistenz blaOXA-143-Gen [Nachweis] mittels Molekulargenetik"
+  }, {
+    "code": "99280-0",
+    "display": "Cefiderocol [Empfindlichkeit]"
+  }, {
+    "code": "COMPONENT"
+  }, {
+    "code": "FullySpecifiedName"
+  }, {
+    "code": "LONG_COMMON_NAME"
+  } ]
+}

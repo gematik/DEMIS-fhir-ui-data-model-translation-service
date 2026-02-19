@@ -27,9 +27,11 @@ package de.gematik.demis.fhir_ui_data_model_translation_service.disease.formly.f
  * #L%
  */
 
+import de.gematik.demis.fhir_ui_data_model_translation_service.context.OnlyInDiseaseContext;
 import org.springframework.stereotype.Component;
 
 /** Tooltip extension for displaying additional information. */
+@OnlyInDiseaseContext
 @Component
 public final class TooltipExtension extends DefaultPortalFhirExtension {
 

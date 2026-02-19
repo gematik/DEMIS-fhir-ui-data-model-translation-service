@@ -1,0 +1,43 @@
+{
+  "resourceType": "ValueSet",
+  "id": "tuberculosisCenter",
+  "url": "https://demis.rki.de/fhir/ValueSet/tuberculosisCenter",
+  "version": "1.0.0",
+  "name": "TuberculosisCenter",
+  "title": "Tuberkulosezentren",
+  "status": "active",
+  "experimental": false,
+  "date": "2025-10-15",
+  "publisher": "Robert Koch-Institut",
+  "description": "Das ValueSet TuberculosisCenter enthält die Codes der Tuberkulosezentren.",
+  "compose": {
+    "include": [ {
+      "system": "https://demis.rki.de/fhir/CodeSystem/tuberculosisCenter",
+      "version": "1.0.0"
+    } ]
+  },
+  "expansion": {
+    "timestamp": "2025-10-15T00:00:00+02:00",
+    "contains": [ {
+      "system": "https://demis.rki.de/fhir/CodeSystem/tuberculosisCenter",
+      "version": "1.0.0",
+      "code": "1.11.0.11.09.",
+      "display": "GA Lichtenberg von Berlin (TB-Stelle)"
+    }, {
+      "system": "https://demis.rki.de/fhir/CodeSystem/tuberculosisCenter",
+      "version": "1.0.0",
+      "code": "1.05.3.15.09.",
+      "display": "GA Köln (TB-Stelle)"
+    }, {
+      "system": "https://demis.rki.de/fhir/CodeSystem/tuberculosisCenter",
+      "version": "1.0.0",
+      "code": "1.06.4.12.09.",
+      "display": "GA Frankfurt am Main (TB-Stelle)"
+    }, {
+      "system": "https://demis.rki.de/fhir/CodeSystem/tuberculosisCenter",
+      "version": "1.0.0",
+      "code": "1.02.0.04.09.",
+      "display": "GA Hamburg-Mitte (TB-Stelle)"
+    } ]
+  }
+}

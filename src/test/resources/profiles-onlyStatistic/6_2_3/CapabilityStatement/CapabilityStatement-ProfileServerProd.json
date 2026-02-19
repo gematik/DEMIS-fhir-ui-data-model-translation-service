@@ -1,0 +1,1601 @@
+{
+  "resourceType": "CapabilityStatement",
+  "id": "ProfileServerProd",
+  "url": "https://demis.rki.de/fhir/CapabilityStatement/ProfileServerProd",
+  "version": "1.3.2",
+  "name": "ProfileServerProd",
+  "title": "ProfileServerProd",
+  "status": "active",
+  "date": "2023-05-30",
+  "publisher": "Robert Koch-Institut",
+  "description": "Beschreibt die Fähigkeiten (das Verhalten) des DEMIS Profil- und Resourcenservers.",
+  "kind": "instance",
+  "software": {
+    "name": "DEMIS Profil- und Resourceserver",
+    "version": "1.0.1"
+  },
+  "implementation": {
+    "description": "Der DEMIS Profil- und Resourcenserver stellt Profilresourcen und Terminologiedienste zur Verfügung.",
+    "url": "https://demis.rki.de/fhir"
+  },
+  "fhirVersion": "4.0.1",
+  "format": [ "application/fhir+xml", "xml", "application/fhir+json", "json", "application/x-turtle", "ttl", "html/json", "html/xml", "html/turtle" ],
+  "patchFormat": [ "application/fhir+json", "application/fhir+xml", "application/json-patch+json", "application/xml-patch+xml" ],
+  "rest": [ {
+    "mode": "server",
+    "documentation": "Alle Funktionalitäten des DEMIS Profil- und Resourcenserver.",
+    "security": {
+      "description": "Zugriff wird durch Token und MTLS realisiert. Mehr Informationen sind in der Wissensdatenbank zu finden (https://wiki.gematik.de/display/DSKB)."
+    },
+    "resource": [ {
+      "type": "CapabilityStatement",
+      "profile": "http://hl7.org/fhir/StructureDefinition/CapabilityStatement",
+      "interaction": [ {
+        "code": "history-instance"
+      }, {
+        "code": "history-type"
+      }, {
+        "code": "vread"
+      }, {
+        "code": "read"
+      }, {
+        "code": "search-type"
+      } ],
+      "versioning": "versioned-update",
+      "conditionalCreate": false,
+      "conditionalUpdate": false,
+      "conditionalDelete": "not-supported",
+      "searchInclude": [ "*", "CapabilityStatement:guide", "CapabilityStatement:resource-profile", "CapabilityStatement:supported-profile" ],
+      "searchParam": [ {
+        "name": "_language",
+        "definition": "https://demis.rki.de/fhir/SearchParameter/capabilitystatement-_language",
+        "type": "string",
+        "documentation": "The language of the resource"
+      }, {
+        "name": "date",
+        "definition": "https://demis.rki.de/fhir/SearchParameter/capabilitystatement-date",
+        "type": "date",
+        "documentation": "The capability statement publication date"
+      }, {
+        "name": "context-type-value",
+        "definition": "https://demis.rki.de/fhir/SearchParameter/capabilitystatement-context-type-value",
+        "type": "composite",
+        "documentation": "A use context type and value assigned to the capability statement"
+      }, {
+        "name": "software",
+        "definition": "https://demis.rki.de/fhir/SearchParameter/capabilitystatement-software",
+        "type": "string",
+        "documentation": "Part of the name of a software application"
+      }, {
+        "name": "jurisdiction",
+        "definition": "https://demis.rki.de/fhir/SearchParameter/capabilitystatement-jurisdiction",
+        "type": "token",
+        "documentation": "Intended jurisdiction for the capability statement"
+      }, {
+        "name": "_lastUpdated",
+        "definition": "https://demis.rki.de/fhir/SearchParameter/CapabilityStatement-_lastUpdated",
+        "type": "date",
+        "documentation": "Only return resources which were last updated as specified by the given range"
+      }, {
+        "name": "description",
+        "definition": "https://demis.rki.de/fhir/SearchParameter/capabilitystatement-description",
+        "type": "string",
+        "documentation": "The description of the capability statement"
+      }, {
+        "name": "context-type",
+        "definition": "https://demis.rki.de/fhir/SearchParameter/capabilitystatement-context-type",
+        "type": "token",
+        "documentation": "A type of use context assigned to the capability statement"
+      }, {
+        "name": "fhirversion",
+        "definition": "https://demis.rki.de/fhir/SearchParameter/capabilitystatement-fhirversion",
+        "type": "token",
+        "documentation": "The version of FHIR"
+      }, {
+        "name": "title",
+        "definition": "https://demis.rki.de/fhir/SearchParameter/capabilitystatement-title",
+        "type": "string",
+        "documentation": "The human-friendly name of the capability statement"
+      }, {
+        "name": "mode",
+        "definition": "https://demis.rki.de/fhir/SearchParameter/capabilitystatement-mode",
+        "type": "token",
+        "documentation": "Mode - restful (server/client) or messaging (sender/receiver)"
+      }, {
+        "name": "context-quantity",
+        "definition": "https://demis.rki.de/fhir/SearchParameter/capabilitystatement-context-quantity",
+        "type": "quantity",
+        "documentation": "A quantity- or range-valued use context assigned to the capability statement"
+      }, {
+        "name": "context",
+        "definition": "https://demis.rki.de/fhir/SearchParameter/capabilitystatement-context",
+        "type": "token",
+        "documentation": "A use context assigned to the capability statement"
+      }, {
+        "name": "context-type-quantity",
+        "definition": "https://demis.rki.de/fhir/SearchParameter/capabilitystatement-context-type-quantity",
+        "type": "composite",
+        "documentation": "A use context type and quantity- or range-based value assigned to the capability statement"
+      }, {
+        "name": "guide",
+        "definition": "https://demis.rki.de/fhir/SearchParameter/capabilitystatement-guide",
+        "type": "reference",
+        "documentation": "Implementation guides supported"
+      }, {
+        "name": "resource-profile",
+        "definition": "https://demis.rki.de/fhir/SearchParameter/capabilitystatement-resource-profile",
+        "type": "reference",
+        "documentation": "A profile id invoked in a capability statement"
+      }, {
+        "name": "resource",
+        "definition": "https://demis.rki.de/fhir/SearchParameter/capabilitystatement-resource",
+        "type": "token",
+        "documentation": "Name of a resource mentioned in a capability statement"
+      }, {
+        "name": "format",
+        "definition": "https://demis.rki.de/fhir/SearchParameter/capabilitystatement-format",
+        "type": "token",
+        "documentation": "formats supported (xml | json | ttl | mime type)"
+      }, {
+        "name": "_security",
+        "definition": "https://demis.rki.de/fhir/SearchParameter/CapabilityStatement-_security",
+        "type": "token",
+        "documentation": "Search for resources which have the given security labels"
+      }, {
+        "name": "version",
+        "definition": "https://demis.rki.de/fhir/SearchParameter/capabilitystatement-version",
+        "type": "token",
+        "documentation": "The business version of the capability statement"
+      }, {
+        "name": "supported-profile",
+        "definition": "https://demis.rki.de/fhir/SearchParameter/capabilitystatement-supported-profile",
+        "type": "reference",
+        "documentation": "Profiles for use cases supported"
+      }, {
+        "name": "url",
+        "definition": "https://demis.rki.de/fhir/SearchParameter/capabilitystatement-url",
+        "type": "uri",
+        "documentation": "The uri that identifies the capability statement"
+      }, {
+        "name": "_filter",
+        "definition": "https://demis.rki.de/fhir/SearchParameter/CapabilityStatement-_filter",
+        "type": "string",
+        "documentation": "Search the contents of the resource's data using a filter"
+      }, {
+        "name": "_profile",
+        "definition": "https://demis.rki.de/fhir/SearchParameter/CapabilityStatement-_profile",
+        "type": "uri",
+        "documentation": "Search for resources which have the given profile"
+      }, {
+        "name": "security-service",
+        "definition": "https://demis.rki.de/fhir/SearchParameter/capabilitystatement-security-service",
+        "type": "token",
+        "documentation": "OAuth | SMART-on-FHIR | NTLM | Basic | Kerberos | Certificates"
+      }, {
+        "name": "_has",
+        "definition": "https://demis.rki.de/fhir/SearchParameter/CapabilityStatement-_has",
+        "type": "string",
+        "documentation": "Return resources linked to by the given target"
+      }, {
+        "name": "_tag",
+        "definition": "https://demis.rki.de/fhir/SearchParameter/CapabilityStatement-_tag",
+        "type": "token",
+        "documentation": "Search for resources which have the given tag"
+      }, {
+        "name": "name",
+        "definition": "https://demis.rki.de/fhir/SearchParameter/capabilitystatement-name",
+        "type": "string",
+        "documentation": "Computationally friendly name of the capability statement"
+      }, {
+        "name": "publisher",
+        "definition": "https://demis.rki.de/fhir/SearchParameter/capabilitystatement-publisher",
+        "type": "string",
+        "documentation": "Name of the publisher of the capability statement"
+      }, {
+        "name": "_source",
+        "definition": "https://demis.rki.de/fhir/SearchParameter/CapabilityStatement-_source",
+        "type": "uri",
+        "documentation": "Search for resources which have the given source value (Resource.meta.source)"
+      }, {
+        "name": "_id",
+        "definition": "https://demis.rki.de/fhir/SearchParameter/capabilitystatement-_id",
+        "type": "token",
+        "documentation": "The ID of the resource"
+      }, {
+        "name": "_content",
+        "definition": "https://demis.rki.de/fhir/SearchParameter/CapabilityStatement-_content",
+        "type": "string",
+        "documentation": "Search the contents of the resource's data using a fulltext search"
+      }, {
+        "name": "_text",
+        "definition": "https://demis.rki.de/fhir/SearchParameter/CapabilityStatement-_text",
+        "type": "string",
+        "documentation": "Search the contents of the resource's narrative using a fulltext search"
+      }, {
+        "name": "status",
+        "definition": "https://demis.rki.de/fhir/SearchParameter/capabilitystatement-status",
+        "type": "token",
+        "documentation": "The current status of the capability statement"
+      } ],
+      "operation": [ {
+        "name": "expunge",
+        "definition": "https://demis.rki.de/fhir/OperationDefinition/Multi-its-expunge"
+      }, {
+        "name": "meta",
+        "definition": "https://demis.rki.de/fhir/OperationDefinition/Multi-its-meta",
+        "documentation": "Request a global list of tags, profiles, and security labels"
+      } ]
+    }, {
+      "type": "CodeSystem",
+      "profile": "http://hl7.org/fhir/StructureDefinition/CodeSystem",
+      "interaction": [ {
+        "code": "history-instance"
+      }, {
+        "code": "history-type"
+      }, {
+        "code": "vread"
+      }, {
+        "code": "read"
+      }, {
+        "code": "search-type"
+      } ],
+      "versioning": "versioned-update",
+      "conditionalCreate": false,
+      "conditionalUpdate": false,
+      "conditionalDelete": "not-supported",
+      "searchInclude": [ "*", "CodeSystem:supplements" ],
+      "searchRevInclude": [ "CodeSystem:supplements" ],
+      "searchParam": [ {
+        "name": "_language",
+        "definition": "https://demis.rki.de/fhir/SearchParameter/codesystem-_language",
+        "type": "string",
+        "documentation": "The language of the resource"
+      }, {
+        "name": "date",
+        "definition": "https://demis.rki.de/fhir/SearchParameter/codesystem-date",
+        "type": "date",
+        "documentation": "The code system publication date"
+      }, {
+        "name": "code",
+        "definition": "https://demis.rki.de/fhir/SearchParameter/codesystem-code",
+        "type": "token",
+        "documentation": "A code defined in the code system"
+      }, {
+        "name": "context-type-value",
+        "definition": "https://demis.rki.de/fhir/SearchParameter/codesystem-context-type-value",
+        "type": "composite",
+        "documentation": "A use context type and value assigned to the code system"
+      }, {
+        "name": "jurisdiction",
+        "definition": "https://demis.rki.de/fhir/SearchParameter/codesystem-jurisdiction",
+        "type": "token",
+        "documentation": "Intended jurisdiction for the code system"
+      }, {
+        "name": "_lastUpdated",
+        "definition": "https://demis.rki.de/fhir/SearchParameter/CodeSystem-_lastUpdated",
+        "type": "date",
+        "documentation": "Only return resources which were last updated as specified by the given range"
+      }, {
+        "name": "description",
+        "definition": "https://demis.rki.de/fhir/SearchParameter/codesystem-description",
+        "type": "string",
+        "documentation": "The description of the code system"
+      }, {
+        "name": "context-type",
+        "definition": "https://demis.rki.de/fhir/SearchParameter/codesystem-context-type",
+        "type": "token",
+        "documentation": "A type of use context assigned to the code system"
+      }, {
+        "name": "language",
+        "definition": "https://demis.rki.de/fhir/SearchParameter/codesystem-language",
+        "type": "token",
+        "documentation": "A language in which a designation is provided"
+      }, {
+        "name": "title",
+        "definition": "https://demis.rki.de/fhir/SearchParameter/codesystem-title",
+        "type": "string",
+        "documentation": "The human-friendly name of the code system"
+      }, {
+        "name": "context-quantity",
+        "definition": "https://demis.rki.de/fhir/SearchParameter/codesystem-context-quantity",
+        "type": "quantity",
+        "documentation": "A quantity- or range-valued use context assigned to the code system"
+      }, {
+        "name": "context",
+        "definition": "https://demis.rki.de/fhir/SearchParameter/codesystem-context",
+        "type": "token",
+        "documentation": "A use context assigned to the code system"
+      }, {
+        "name": "context-type-quantity",
+        "definition": "https://demis.rki.de/fhir/SearchParameter/codesystem-context-type-quantity",
+        "type": "composite",
+        "documentation": "A use context type and quantity- or range-based value assigned to the code system"
+      }, {
+        "name": "identifier",
+        "definition": "https://demis.rki.de/fhir/SearchParameter/codesystem-identifier",
+        "type": "token",
+        "documentation": "External identifier for the code system"
+      }, {
+        "name": "content-mode",
+        "definition": "https://demis.rki.de/fhir/SearchParameter/codesystem-content-mode",
+        "type": "token",
+        "documentation": "not-present | example | fragment | complete | supplement"
+      }, {
+        "name": "_security",
+        "definition": "https://demis.rki.de/fhir/SearchParameter/CodeSystem-_security",
+        "type": "token",
+        "documentation": "Search for resources which have the given security labels"
+      }, {
+        "name": "version",
+        "definition": "https://demis.rki.de/fhir/SearchParameter/codesystem-version",
+        "type": "token",
+        "documentation": "The business version of the code system"
+      }, {
+        "name": "url",
+        "definition": "https://demis.rki.de/fhir/SearchParameter/codesystem-url",
+        "type": "uri",
+        "documentation": "The uri that identifies the code system"
+      }, {
+        "name": "_filter",
+        "definition": "https://demis.rki.de/fhir/SearchParameter/CodeSystem-_filter",
+        "type": "string",
+        "documentation": "Search the contents of the resource's data using a filter"
+      }, {
+        "name": "supplements",
+        "definition": "https://demis.rki.de/fhir/SearchParameter/codesystem-supplements",
+        "type": "reference",
+        "documentation": "Find code system supplements for the referenced code system"
+      }, {
+        "name": "system",
+        "definition": "https://demis.rki.de/fhir/SearchParameter/codesystem-system",
+        "type": "uri",
+        "documentation": "The system for any codes defined by this code system (same as 'url')"
+      }, {
+        "name": "_profile",
+        "definition": "https://demis.rki.de/fhir/SearchParameter/CodeSystem-_profile",
+        "type": "uri",
+        "documentation": "Search for resources which have the given profile"
+      }, {
+        "name": "_has",
+        "definition": "https://demis.rki.de/fhir/SearchParameter/CodeSystem-_has",
+        "type": "string",
+        "documentation": "Return resources linked to by the given target"
+      }, {
+        "name": "_tag",
+        "definition": "https://demis.rki.de/fhir/SearchParameter/CodeSystem-_tag",
+        "type": "token",
+        "documentation": "Search for resources which have the given tag"
+      }, {
+        "name": "name",
+        "definition": "https://demis.rki.de/fhir/SearchParameter/codesystem-name",
+        "type": "string",
+        "documentation": "Computationally friendly name of the code system"
+      }, {
+        "name": "publisher",
+        "definition": "https://demis.rki.de/fhir/SearchParameter/codesystem-publisher",
+        "type": "string",
+        "documentation": "Name of the publisher of the code system"
+      }, {
+        "name": "_source",
+        "definition": "https://demis.rki.de/fhir/SearchParameter/CodeSystem-_source",
+        "type": "uri",
+        "documentation": "Search for resources which have the given source value (Resource.meta.source)"
+      }, {
+        "name": "_id",
+        "definition": "https://demis.rki.de/fhir/SearchParameter/codesystem-_id",
+        "type": "token",
+        "documentation": "The ID of the resource"
+      }, {
+        "name": "_content",
+        "definition": "https://demis.rki.de/fhir/SearchParameter/CodeSystem-_content",
+        "type": "string",
+        "documentation": "Search the contents of the resource's data using a fulltext search"
+      }, {
+        "name": "_text",
+        "definition": "https://demis.rki.de/fhir/SearchParameter/CodeSystem-_text",
+        "type": "string",
+        "documentation": "Search the contents of the resource's narrative using a fulltext search"
+      }, {
+        "name": "status",
+        "definition": "https://demis.rki.de/fhir/SearchParameter/codesystem-status",
+        "type": "token",
+        "documentation": "The current status of the code system"
+      } ],
+      "operation": [ {
+        "name": "lookup",
+        "definition": "https://demis.rki.de/fhir/OperationDefinition/CodeSystem-t-lookup"
+      }, {
+        "name": "validate-code",
+        "definition": "https://demis.rki.de/fhir/OperationDefinition/CodeSystemValueSet-it-validate-code"
+      }, {
+        "name": "expunge",
+        "definition": "https://demis.rki.de/fhir/OperationDefinition/Multi-its-expunge"
+      }, {
+        "name": "meta",
+        "definition": "https://demis.rki.de/fhir/OperationDefinition/Multi-its-meta",
+        "documentation": "Request a global list of tags, profiles, and security labels"
+      }, {
+        "name": "upload-external-code-system",
+        "definition": "https://demis.rki.de/fhir/OperationDefinition/CodeSystem-t-upload-external-code-system"
+      }, {
+        "name": "upload-code-system",
+        "definition": "https://demis.rki.de/fhir/OperationDefinition/CodeSystem-t-upload-code-system"
+      } ]
+    }, {
+      "type": "ConceptMap",
+      "profile": "http://hl7.org/fhir/StructureDefinition/ConceptMap",
+      "interaction": [ {
+        "code": "history-instance"
+      }, {
+        "code": "history-type"
+      }, {
+        "code": "vread"
+      }, {
+        "code": "read"
+      }, {
+        "code": "search-type"
+      } ],
+      "versioning": "versioned-update",
+      "conditionalCreate": false,
+      "conditionalUpdate": false,
+      "conditionalDelete": "not-supported",
+      "searchInclude": [ "*", "ConceptMap:other", "ConceptMap:source", "ConceptMap:source-uri", "ConceptMap:target", "ConceptMap:target-uri" ],
+      "searchRevInclude": [ "ConceptMap:other" ],
+      "searchParam": [ {
+        "name": "_language",
+        "definition": "https://demis.rki.de/fhir/SearchParameter/conceptmap-_language",
+        "type": "string",
+        "documentation": "The language of the resource"
+      }, {
+        "name": "date",
+        "definition": "https://demis.rki.de/fhir/SearchParameter/conceptmap-date",
+        "type": "date",
+        "documentation": "The concept map publication date"
+      }, {
+        "name": "other",
+        "definition": "https://demis.rki.de/fhir/SearchParameter/conceptmap-other",
+        "type": "reference",
+        "documentation": "canonical reference to an additional ConceptMap to use for mapping if the source concept is unmapped"
+      }, {
+        "name": "context-type-value",
+        "definition": "https://demis.rki.de/fhir/SearchParameter/conceptmap-context-type-value",
+        "type": "composite",
+        "documentation": "A use context type and value assigned to the concept map"
+      }, {
+        "name": "dependson",
+        "definition": "https://demis.rki.de/fhir/SearchParameter/conceptmap-dependson",
+        "type": "uri",
+        "documentation": "Reference to property mapping depends on"
+      }, {
+        "name": "target-system",
+        "definition": "https://demis.rki.de/fhir/SearchParameter/conceptmap-target-system",
+        "type": "uri",
+        "documentation": "Target system that the concepts are to be mapped to"
+      }, {
+        "name": "jurisdiction",
+        "definition": "https://demis.rki.de/fhir/SearchParameter/conceptmap-jurisdiction",
+        "type": "token",
+        "documentation": "Intended jurisdiction for the concept map"
+      }, {
+        "name": "_lastUpdated",
+        "definition": "https://demis.rki.de/fhir/SearchParameter/ConceptMap-_lastUpdated",
+        "type": "date",
+        "documentation": "Only return resources which were last updated as specified by the given range"
+      }, {
+        "name": "description",
+        "definition": "https://demis.rki.de/fhir/SearchParameter/conceptmap-description",
+        "type": "string",
+        "documentation": "The description of the concept map"
+      }, {
+        "name": "context-type",
+        "definition": "https://demis.rki.de/fhir/SearchParameter/conceptmap-context-type",
+        "type": "token",
+        "documentation": "A type of use context assigned to the concept map"
+      }, {
+        "name": "source",
+        "definition": "https://demis.rki.de/fhir/SearchParameter/conceptmap-source",
+        "type": "reference",
+        "documentation": "The source value set that contains the concepts that are being mapped"
+      }, {
+        "name": "title",
+        "definition": "https://demis.rki.de/fhir/SearchParameter/conceptmap-title",
+        "type": "string",
+        "documentation": "The human-friendly name of the concept map"
+      }, {
+        "name": "context-quantity",
+        "definition": "https://demis.rki.de/fhir/SearchParameter/conceptmap-context-quantity",
+        "type": "quantity",
+        "documentation": "A quantity- or range-valued use context assigned to the concept map"
+      }, {
+        "name": "source-uri",
+        "definition": "https://demis.rki.de/fhir/SearchParameter/conceptmap-source-uri",
+        "type": "reference",
+        "documentation": "The source value set that contains the concepts that are being mapped"
+      }, {
+        "name": "context",
+        "definition": "https://demis.rki.de/fhir/SearchParameter/conceptmap-context",
+        "type": "token",
+        "documentation": "A use context assigned to the concept map"
+      }, {
+        "name": "context-type-quantity",
+        "definition": "https://demis.rki.de/fhir/SearchParameter/conceptmap-context-type-quantity",
+        "type": "composite",
+        "documentation": "A use context type and quantity- or range-based value assigned to the concept map"
+      }, {
+        "name": "source-system",
+        "definition": "https://demis.rki.de/fhir/SearchParameter/conceptmap-source-system",
+        "type": "uri",
+        "documentation": "Source system where concepts to be mapped are defined"
+      }, {
+        "name": "target-code",
+        "definition": "https://demis.rki.de/fhir/SearchParameter/conceptmap-target-code",
+        "type": "token",
+        "documentation": "Code that identifies the target element"
+      }, {
+        "name": "target-uri",
+        "definition": "https://demis.rki.de/fhir/SearchParameter/conceptmap-target-uri",
+        "type": "reference",
+        "documentation": "The target value set which provides context for the mappings"
+      }, {
+        "name": "identifier",
+        "definition": "https://demis.rki.de/fhir/SearchParameter/conceptmap-identifier",
+        "type": "token",
+        "documentation": "External identifier for the concept map"
+      }, {
+        "name": "product",
+        "definition": "https://demis.rki.de/fhir/SearchParameter/conceptmap-product",
+        "type": "uri",
+        "documentation": "Reference to property mapping depends on"
+      }, {
+        "name": "_security",
+        "definition": "https://demis.rki.de/fhir/SearchParameter/ConceptMap-_security",
+        "type": "token",
+        "documentation": "Search for resources which have the given security labels"
+      }, {
+        "name": "version",
+        "definition": "https://demis.rki.de/fhir/SearchParameter/conceptmap-version",
+        "type": "token",
+        "documentation": "The business version of the concept map"
+      }, {
+        "name": "url",
+        "definition": "https://demis.rki.de/fhir/SearchParameter/conceptmap-url",
+        "type": "uri",
+        "documentation": "The uri that identifies the concept map"
+      }, {
+        "name": "target",
+        "definition": "https://demis.rki.de/fhir/SearchParameter/conceptmap-target",
+        "type": "reference",
+        "documentation": "The target value set which provides context for the mappings"
+      }, {
+        "name": "_filter",
+        "definition": "https://demis.rki.de/fhir/SearchParameter/ConceptMap-_filter",
+        "type": "string",
+        "documentation": "Search the contents of the resource's data using a filter"
+      }, {
+        "name": "source-code",
+        "definition": "https://demis.rki.de/fhir/SearchParameter/conceptmap-source-code",
+        "type": "token",
+        "documentation": "Identifies element being mapped"
+      }, {
+        "name": "_profile",
+        "definition": "https://demis.rki.de/fhir/SearchParameter/ConceptMap-_profile",
+        "type": "uri",
+        "documentation": "Search for resources which have the given profile"
+      }, {
+        "name": "_has",
+        "definition": "https://demis.rki.de/fhir/SearchParameter/ConceptMap-_has",
+        "type": "string",
+        "documentation": "Return resources linked to by the given target"
+      }, {
+        "name": "_tag",
+        "definition": "https://demis.rki.de/fhir/SearchParameter/ConceptMap-_tag",
+        "type": "token",
+        "documentation": "Search for resources which have the given tag"
+      }, {
+        "name": "name",
+        "definition": "https://demis.rki.de/fhir/SearchParameter/conceptmap-name",
+        "type": "string",
+        "documentation": "Computationally friendly name of the concept map"
+      }, {
+        "name": "publisher",
+        "definition": "https://demis.rki.de/fhir/SearchParameter/conceptmap-publisher",
+        "type": "string",
+        "documentation": "Name of the publisher of the concept map"
+      }, {
+        "name": "_source",
+        "definition": "https://demis.rki.de/fhir/SearchParameter/ConceptMap-_source",
+        "type": "uri",
+        "documentation": "Search for resources which have the given source value (Resource.meta.source)"
+      }, {
+        "name": "_id",
+        "definition": "https://demis.rki.de/fhir/SearchParameter/conceptmap-_id",
+        "type": "token",
+        "documentation": "The ID of the resource"
+      }, {
+        "name": "_content",
+        "definition": "https://demis.rki.de/fhir/SearchParameter/ConceptMap-_content",
+        "type": "string",
+        "documentation": "Search the contents of the resource's data using a fulltext search"
+      }, {
+        "name": "_text",
+        "definition": "https://demis.rki.de/fhir/SearchParameter/ConceptMap-_text",
+        "type": "string",
+        "documentation": "Search the contents of the resource's narrative using a fulltext search"
+      }, {
+        "name": "status",
+        "definition": "https://demis.rki.de/fhir/SearchParameter/conceptmap-status",
+        "type": "token",
+        "documentation": "The current status of the concept map"
+      } ],
+      "operation": [ {
+        "name": "translate",
+        "definition": "https://demis.rki.de/fhir/OperationDefinition/ConceptMap-it-translate"
+      }, {
+        "name": "expunge",
+        "definition": "https://demis.rki.de/fhir/OperationDefinition/Multi-its-expunge"
+      }, {
+        "name": "meta",
+        "definition": "https://demis.rki.de/fhir/OperationDefinition/Multi-its-meta",
+        "documentation": "Request a global list of tags, profiles, and security labels"
+      } ]
+    }, {
+      "type": "NamingSystem",
+      "profile": "http://hl7.org/fhir/StructureDefinition/NamingSystem",
+      "interaction": [ {
+        "code": "history-instance"
+      }, {
+        "code": "history-type"
+      }, {
+        "code": "vread"
+      }, {
+        "code": "read"
+      }, {
+        "code": "search-type"
+      } ],
+      "versioning": "versioned-update",
+      "conditionalCreate": false,
+      "conditionalUpdate": false,
+      "conditionalDelete": "not-supported",
+      "searchInclude": [ "*" ],
+      "searchParam": [ {
+        "name": "_language",
+        "definition": "https://demis.rki.de/fhir/SearchParameter/namingsystem-_language",
+        "type": "string",
+        "documentation": "The language of the resource"
+      }, {
+        "name": "date",
+        "definition": "https://demis.rki.de/fhir/SearchParameter/namingsystem-date",
+        "type": "date",
+        "documentation": "The naming system publication date"
+      }, {
+        "name": "context-type-value",
+        "definition": "https://demis.rki.de/fhir/SearchParameter/namingsystem-context-type-value",
+        "type": "composite",
+        "documentation": "A use context type and value assigned to the naming system"
+      }, {
+        "name": "jurisdiction",
+        "definition": "https://demis.rki.de/fhir/SearchParameter/namingsystem-jurisdiction",
+        "type": "token",
+        "documentation": "Intended jurisdiction for the naming system"
+      }, {
+        "name": "_lastUpdated",
+        "definition": "https://demis.rki.de/fhir/SearchParameter/NamingSystem-_lastUpdated",
+        "type": "date",
+        "documentation": "Only return resources which were last updated as specified by the given range"
+      }, {
+        "name": "description",
+        "definition": "https://demis.rki.de/fhir/SearchParameter/namingsystem-description",
+        "type": "string",
+        "documentation": "The description of the naming system"
+      }, {
+        "name": "context-type",
+        "definition": "https://demis.rki.de/fhir/SearchParameter/namingsystem-context-type",
+        "type": "token",
+        "documentation": "A type of use context assigned to the naming system"
+      }, {
+        "name": "type",
+        "definition": "https://demis.rki.de/fhir/SearchParameter/namingsystem-type",
+        "type": "token",
+        "documentation": "e.g. driver,  provider,  patient, bank etc."
+      }, {
+        "name": "context-quantity",
+        "definition": "https://demis.rki.de/fhir/SearchParameter/namingsystem-context-quantity",
+        "type": "quantity",
+        "documentation": "A quantity- or range-valued use context assigned to the naming system"
+      }, {
+        "name": "contact",
+        "definition": "https://demis.rki.de/fhir/SearchParameter/namingsystem-contact",
+        "type": "string",
+        "documentation": "Name of an individual to contact"
+      }, {
+        "name": "responsible",
+        "definition": "https://demis.rki.de/fhir/SearchParameter/namingsystem-responsible",
+        "type": "string",
+        "documentation": "Who maintains system namespace?"
+      }, {
+        "name": "context",
+        "definition": "https://demis.rki.de/fhir/SearchParameter/namingsystem-context",
+        "type": "token",
+        "documentation": "A use context assigned to the naming system"
+      }, {
+        "name": "telecom",
+        "definition": "https://demis.rki.de/fhir/SearchParameter/namingsystem-telecom",
+        "type": "token",
+        "documentation": "Contact details for individual or organization"
+      }, {
+        "name": "value",
+        "definition": "https://demis.rki.de/fhir/SearchParameter/namingsystem-value",
+        "type": "string",
+        "documentation": "The unique identifier"
+      }, {
+        "name": "context-type-quantity",
+        "definition": "https://demis.rki.de/fhir/SearchParameter/namingsystem-context-type-quantity",
+        "type": "composite",
+        "documentation": "A use context type and quantity- or range-based value assigned to the naming system"
+      }, {
+        "name": "period",
+        "definition": "https://demis.rki.de/fhir/SearchParameter/namingsystem-period",
+        "type": "date",
+        "documentation": "When is identifier valid?"
+      }, {
+        "name": "kind",
+        "definition": "https://demis.rki.de/fhir/SearchParameter/namingsystem-kind",
+        "type": "token",
+        "documentation": "codesystem | identifier | root"
+      }, {
+        "name": "_security",
+        "definition": "https://demis.rki.de/fhir/SearchParameter/NamingSystem-_security",
+        "type": "token",
+        "documentation": "Search for resources which have the given security labels"
+      }, {
+        "name": "id-type",
+        "definition": "https://demis.rki.de/fhir/SearchParameter/namingsystem-id-type",
+        "type": "token",
+        "documentation": "oid | uuid | uri | other"
+      }, {
+        "name": "_filter",
+        "definition": "https://demis.rki.de/fhir/SearchParameter/NamingSystem-_filter",
+        "type": "string",
+        "documentation": "Search the contents of the resource's data using a filter"
+      }, {
+        "name": "_profile",
+        "definition": "https://demis.rki.de/fhir/SearchParameter/NamingSystem-_profile",
+        "type": "uri",
+        "documentation": "Search for resources which have the given profile"
+      }, {
+        "name": "_has",
+        "definition": "https://demis.rki.de/fhir/SearchParameter/NamingSystem-_has",
+        "type": "string",
+        "documentation": "Return resources linked to by the given target"
+      }, {
+        "name": "_tag",
+        "definition": "https://demis.rki.de/fhir/SearchParameter/NamingSystem-_tag",
+        "type": "token",
+        "documentation": "Search for resources which have the given tag"
+      }, {
+        "name": "name",
+        "definition": "https://demis.rki.de/fhir/SearchParameter/namingsystem-name",
+        "type": "string",
+        "documentation": "Computationally friendly name of the naming system"
+      }, {
+        "name": "publisher",
+        "definition": "https://demis.rki.de/fhir/SearchParameter/namingsystem-publisher",
+        "type": "string",
+        "documentation": "Name of the publisher of the naming system"
+      }, {
+        "name": "_source",
+        "definition": "https://demis.rki.de/fhir/SearchParameter/NamingSystem-_source",
+        "type": "uri",
+        "documentation": "Search for resources which have the given source value (Resource.meta.source)"
+      }, {
+        "name": "_id",
+        "definition": "https://demis.rki.de/fhir/SearchParameter/namingsystem-_id",
+        "type": "token",
+        "documentation": "The ID of the resource"
+      }, {
+        "name": "_content",
+        "definition": "https://demis.rki.de/fhir/SearchParameter/NamingSystem-_content",
+        "type": "string",
+        "documentation": "Search the contents of the resource's data using a fulltext search"
+      }, {
+        "name": "_text",
+        "definition": "https://demis.rki.de/fhir/SearchParameter/NamingSystem-_text",
+        "type": "string",
+        "documentation": "Search the contents of the resource's narrative using a fulltext search"
+      }, {
+        "name": "status",
+        "definition": "https://demis.rki.de/fhir/SearchParameter/namingsystem-status",
+        "type": "token",
+        "documentation": "The current status of the naming system"
+      } ],
+      "operation": [ {
+        "name": "expunge",
+        "definition": "https://demis.rki.de/fhir/OperationDefinition/Multi-its-expunge"
+      }, {
+        "name": "meta",
+        "definition": "https://demis.rki.de/fhir/OperationDefinition/Multi-its-meta",
+        "documentation": "Request a global list of tags, profiles, and security labels"
+      } ]
+    }, {
+      "type": "OperationDefinition",
+      "profile": "http://hl7.org/fhir/StructureDefinition/OperationDefinition",
+      "interaction": [ {
+        "code": "history-instance"
+      }, {
+        "code": "history-type"
+      }, {
+        "code": "vread"
+      }, {
+        "code": "read"
+      }, {
+        "code": "search-type"
+      } ],
+      "versioning": "versioned-update",
+      "conditionalCreate": false,
+      "conditionalUpdate": false,
+      "conditionalDelete": "not-supported",
+      "searchInclude": [ "*", "OperationDefinition:base", "OperationDefinition:input-profile", "OperationDefinition:output-profile" ],
+      "searchRevInclude": [ "OperationDefinition:base" ],
+      "searchParam": [ {
+        "name": "_language",
+        "definition": "https://demis.rki.de/fhir/SearchParameter/operationdefinition-_language",
+        "type": "string",
+        "documentation": "The language of the resource"
+      }, {
+        "name": "date",
+        "definition": "https://demis.rki.de/fhir/SearchParameter/operationdefinition-date",
+        "type": "date",
+        "documentation": "The operation definition publication date"
+      }, {
+        "name": "code",
+        "definition": "https://demis.rki.de/fhir/SearchParameter/operationdefinition-code",
+        "type": "token",
+        "documentation": "Name used to invoke the operation"
+      }, {
+        "name": "instance",
+        "definition": "https://demis.rki.de/fhir/SearchParameter/operationdefinition-instance",
+        "type": "token",
+        "documentation": "Invoke on an instance?"
+      }, {
+        "name": "context-type-value",
+        "definition": "https://demis.rki.de/fhir/SearchParameter/operationdefinition-context-type-value",
+        "type": "composite",
+        "documentation": "A use context type and value assigned to the operation definition"
+      }, {
+        "name": "jurisdiction",
+        "definition": "https://demis.rki.de/fhir/SearchParameter/operationdefinition-jurisdiction",
+        "type": "token",
+        "documentation": "Intended jurisdiction for the operation definition"
+      }, {
+        "name": "_lastUpdated",
+        "definition": "https://demis.rki.de/fhir/SearchParameter/OperationDefinition-_lastUpdated",
+        "type": "date",
+        "documentation": "Only return resources which were last updated as specified by the given range"
+      }, {
+        "name": "description",
+        "definition": "https://demis.rki.de/fhir/SearchParameter/operationdefinition-description",
+        "type": "string",
+        "documentation": "The description of the operation definition"
+      }, {
+        "name": "context-type",
+        "definition": "https://demis.rki.de/fhir/SearchParameter/operationdefinition-context-type",
+        "type": "token",
+        "documentation": "A type of use context assigned to the operation definition"
+      }, {
+        "name": "title",
+        "definition": "https://demis.rki.de/fhir/SearchParameter/operationdefinition-title",
+        "type": "string",
+        "documentation": "The human-friendly name of the operation definition"
+      }, {
+        "name": "type",
+        "definition": "https://demis.rki.de/fhir/SearchParameter/operationdefinition-type",
+        "type": "token",
+        "documentation": "Invoke at the type level?"
+      }, {
+        "name": "context-quantity",
+        "definition": "https://demis.rki.de/fhir/SearchParameter/operationdefinition-context-quantity",
+        "type": "quantity",
+        "documentation": "A quantity- or range-valued use context assigned to the operation definition"
+      }, {
+        "name": "output-profile",
+        "definition": "https://demis.rki.de/fhir/SearchParameter/operationdefinition-output-profile",
+        "type": "reference",
+        "documentation": "Validation information for out parameters"
+      }, {
+        "name": "context",
+        "definition": "https://demis.rki.de/fhir/SearchParameter/operationdefinition-context",
+        "type": "token",
+        "documentation": "A use context assigned to the operation definition"
+      }, {
+        "name": "context-type-quantity",
+        "definition": "https://demis.rki.de/fhir/SearchParameter/operationdefinition-context-type-quantity",
+        "type": "composite",
+        "documentation": "A use context type and quantity- or range-based value assigned to the operation definition"
+      }, {
+        "name": "kind",
+        "definition": "https://demis.rki.de/fhir/SearchParameter/operationdefinition-kind",
+        "type": "token",
+        "documentation": "operation | query"
+      }, {
+        "name": "_security",
+        "definition": "https://demis.rki.de/fhir/SearchParameter/OperationDefinition-_security",
+        "type": "token",
+        "documentation": "Search for resources which have the given security labels"
+      }, {
+        "name": "version",
+        "definition": "https://demis.rki.de/fhir/SearchParameter/operationdefinition-version",
+        "type": "token",
+        "documentation": "The business version of the operation definition"
+      }, {
+        "name": "url",
+        "definition": "https://demis.rki.de/fhir/SearchParameter/operationdefinition-url",
+        "type": "uri",
+        "documentation": "The uri that identifies the operation definition"
+      }, {
+        "name": "_filter",
+        "definition": "https://demis.rki.de/fhir/SearchParameter/OperationDefinition-_filter",
+        "type": "string",
+        "documentation": "Search the contents of the resource's data using a filter"
+      }, {
+        "name": "input-profile",
+        "definition": "https://demis.rki.de/fhir/SearchParameter/operationdefinition-input-profile",
+        "type": "reference",
+        "documentation": "Validation information for in parameters"
+      }, {
+        "name": "system",
+        "definition": "https://demis.rki.de/fhir/SearchParameter/operationdefinition-system",
+        "type": "token",
+        "documentation": "Invoke at the system level?"
+      }, {
+        "name": "_profile",
+        "definition": "https://demis.rki.de/fhir/SearchParameter/OperationDefinition-_profile",
+        "type": "uri",
+        "documentation": "Search for resources which have the given profile"
+      }, {
+        "name": "_has",
+        "definition": "https://demis.rki.de/fhir/SearchParameter/OperationDefinition-_has",
+        "type": "string",
+        "documentation": "Return resources linked to by the given target"
+      }, {
+        "name": "_tag",
+        "definition": "https://demis.rki.de/fhir/SearchParameter/OperationDefinition-_tag",
+        "type": "token",
+        "documentation": "Search for resources which have the given tag"
+      }, {
+        "name": "name",
+        "definition": "https://demis.rki.de/fhir/SearchParameter/operationdefinition-name",
+        "type": "string",
+        "documentation": "Computationally friendly name of the operation definition"
+      }, {
+        "name": "publisher",
+        "definition": "https://demis.rki.de/fhir/SearchParameter/operationdefinition-publisher",
+        "type": "string",
+        "documentation": "Name of the publisher of the operation definition"
+      }, {
+        "name": "_source",
+        "definition": "https://demis.rki.de/fhir/SearchParameter/OperationDefinition-_source",
+        "type": "uri",
+        "documentation": "Search for resources which have the given source value (Resource.meta.source)"
+      }, {
+        "name": "_id",
+        "definition": "https://demis.rki.de/fhir/SearchParameter/operationdefinition-_id",
+        "type": "token",
+        "documentation": "The ID of the resource"
+      }, {
+        "name": "_content",
+        "definition": "https://demis.rki.de/fhir/SearchParameter/OperationDefinition-_content",
+        "type": "string",
+        "documentation": "Search the contents of the resource's data using a fulltext search"
+      }, {
+        "name": "_text",
+        "definition": "https://demis.rki.de/fhir/SearchParameter/OperationDefinition-_text",
+        "type": "string",
+        "documentation": "Search the contents of the resource's narrative using a fulltext search"
+      }, {
+        "name": "base",
+        "definition": "https://demis.rki.de/fhir/SearchParameter/operationdefinition-base",
+        "type": "reference",
+        "documentation": "Marks this as a profile of the base"
+      }, {
+        "name": "status",
+        "definition": "https://demis.rki.de/fhir/SearchParameter/operationdefinition-status",
+        "type": "token",
+        "documentation": "The current status of the operation definition"
+      } ],
+      "operation": [ {
+        "name": "expunge",
+        "definition": "https://demis.rki.de/fhir/OperationDefinition/Multi-its-expunge"
+      }, {
+        "name": "meta",
+        "definition": "https://demis.rki.de/fhir/OperationDefinition/Multi-its-meta",
+        "documentation": "Request a global list of tags, profiles, and security labels"
+      } ]
+    }, {
+      "type": "Questionnaire",
+      "profile": "http://hl7.org/fhir/StructureDefinition/Questionnaire",
+      "interaction": [ {
+        "code": "history-instance"
+      }, {
+        "code": "history-type"
+      }, {
+        "code": "vread"
+      }, {
+        "code": "read"
+      }, {
+        "code": "search-type"
+      } ],
+      "versioning": "versioned-update",
+      "conditionalCreate": false,
+      "conditionalUpdate": false,
+      "conditionalDelete": "not-supported",
+      "searchInclude": [ "*" ],
+      "searchParam": [ {
+        "name": "_language",
+        "definition": "https://demis.rki.de/fhir/SearchParameter/questionnaire-_language",
+        "type": "string",
+        "documentation": "The language of the resource"
+      }, {
+        "name": "date",
+        "definition": "https://demis.rki.de/fhir/SearchParameter/questionnaire-date",
+        "type": "date",
+        "documentation": "The questionnaire publication date"
+      }, {
+        "name": "code",
+        "definition": "https://demis.rki.de/fhir/SearchParameter/questionnaire-code",
+        "type": "token",
+        "documentation": "A code that corresponds to one of its items in the questionnaire"
+      }, {
+        "name": "context-type-value",
+        "definition": "https://demis.rki.de/fhir/SearchParameter/questionnaire-context-type-value",
+        "type": "composite",
+        "documentation": "A use context type and value assigned to the questionnaire"
+      }, {
+        "name": "jurisdiction",
+        "definition": "https://demis.rki.de/fhir/SearchParameter/questionnaire-jurisdiction",
+        "type": "token",
+        "documentation": "Intended jurisdiction for the questionnaire"
+      }, {
+        "name": "_lastUpdated",
+        "definition": "https://demis.rki.de/fhir/SearchParameter/Questionnaire-_lastUpdated",
+        "type": "date",
+        "documentation": "Only return resources which were last updated as specified by the given range"
+      }, {
+        "name": "description",
+        "definition": "https://demis.rki.de/fhir/SearchParameter/questionnaire-description",
+        "type": "string",
+        "documentation": "The description of the questionnaire"
+      }, {
+        "name": "context-type",
+        "definition": "https://demis.rki.de/fhir/SearchParameter/questionnaire-context-type",
+        "type": "token",
+        "documentation": "A type of use context assigned to the questionnaire"
+      }, {
+        "name": "title",
+        "definition": "https://demis.rki.de/fhir/SearchParameter/questionnaire-title",
+        "type": "string",
+        "documentation": "The human-friendly name of the questionnaire"
+      }, {
+        "name": "context-quantity",
+        "definition": "https://demis.rki.de/fhir/SearchParameter/questionnaire-context-quantity",
+        "type": "quantity",
+        "documentation": "A quantity- or range-valued use context assigned to the questionnaire"
+      }, {
+        "name": "effective",
+        "definition": "https://demis.rki.de/fhir/SearchParameter/questionnaire-effective",
+        "type": "date",
+        "documentation": "The time during which the questionnaire is intended to be in use"
+      }, {
+        "name": "context",
+        "definition": "https://demis.rki.de/fhir/SearchParameter/questionnaire-context",
+        "type": "token",
+        "documentation": "A use context assigned to the questionnaire"
+      }, {
+        "name": "definition",
+        "definition": "https://demis.rki.de/fhir/SearchParameter/questionnaire-definition",
+        "type": "uri",
+        "documentation": "ElementDefinition - details for the item"
+      }, {
+        "name": "context-type-quantity",
+        "definition": "https://demis.rki.de/fhir/SearchParameter/questionnaire-context-type-quantity",
+        "type": "composite",
+        "documentation": "A use context type and quantity- or range-based value assigned to the questionnaire"
+      }, {
+        "name": "identifier",
+        "definition": "https://demis.rki.de/fhir/SearchParameter/questionnaire-identifier",
+        "type": "token",
+        "documentation": "External identifier for the questionnaire"
+      }, {
+        "name": "_security",
+        "definition": "https://demis.rki.de/fhir/SearchParameter/Questionnaire-_security",
+        "type": "token",
+        "documentation": "Search for resources which have the given security labels"
+      }, {
+        "name": "version",
+        "definition": "https://demis.rki.de/fhir/SearchParameter/questionnaire-version",
+        "type": "token",
+        "documentation": "The business version of the questionnaire"
+      }, {
+        "name": "url",
+        "definition": "https://demis.rki.de/fhir/SearchParameter/questionnaire-url",
+        "type": "uri",
+        "documentation": "The uri that identifies the questionnaire"
+      }, {
+        "name": "_filter",
+        "definition": "https://demis.rki.de/fhir/SearchParameter/Questionnaire-_filter",
+        "type": "string",
+        "documentation": "Search the contents of the resource's data using a filter"
+      }, {
+        "name": "subject-type",
+        "definition": "https://demis.rki.de/fhir/SearchParameter/questionnaire-subject-type",
+        "type": "token",
+        "documentation": "Resource that can be subject of QuestionnaireResponse"
+      }, {
+        "name": "_profile",
+        "definition": "https://demis.rki.de/fhir/SearchParameter/Questionnaire-_profile",
+        "type": "uri",
+        "documentation": "Search for resources which have the given profile"
+      }, {
+        "name": "_has",
+        "definition": "https://demis.rki.de/fhir/SearchParameter/Questionnaire-_has",
+        "type": "string",
+        "documentation": "Return resources linked to by the given target"
+      }, {
+        "name": "_tag",
+        "definition": "https://demis.rki.de/fhir/SearchParameter/Questionnaire-_tag",
+        "type": "token",
+        "documentation": "Search for resources which have the given tag"
+      }, {
+        "name": "name",
+        "definition": "https://demis.rki.de/fhir/SearchParameter/questionnaire-name",
+        "type": "string",
+        "documentation": "Computationally friendly name of the questionnaire"
+      }, {
+        "name": "publisher",
+        "definition": "https://demis.rki.de/fhir/SearchParameter/questionnaire-publisher",
+        "type": "string",
+        "documentation": "Name of the publisher of the questionnaire"
+      }, {
+        "name": "_source",
+        "definition": "https://demis.rki.de/fhir/SearchParameter/Questionnaire-_source",
+        "type": "uri",
+        "documentation": "Search for resources which have the given source value (Resource.meta.source)"
+      }, {
+        "name": "_id",
+        "definition": "https://demis.rki.de/fhir/SearchParameter/questionnaire-_id",
+        "type": "token",
+        "documentation": "The ID of the resource"
+      }, {
+        "name": "_content",
+        "definition": "https://demis.rki.de/fhir/SearchParameter/Questionnaire-_content",
+        "type": "string",
+        "documentation": "Search the contents of the resource's data using a fulltext search"
+      }, {
+        "name": "_text",
+        "definition": "https://demis.rki.de/fhir/SearchParameter/Questionnaire-_text",
+        "type": "string",
+        "documentation": "Search the contents of the resource's narrative using a fulltext search"
+      }, {
+        "name": "status",
+        "definition": "https://demis.rki.de/fhir/SearchParameter/questionnaire-status",
+        "type": "token",
+        "documentation": "The current status of the questionnaire"
+      } ],
+      "operation": [ {
+        "name": "expunge",
+        "definition": "https://demis.rki.de/fhir/OperationDefinition/Multi-its-expunge"
+      }, {
+        "name": "meta",
+        "definition": "https://demis.rki.de/fhir/OperationDefinition/Multi-its-meta",
+        "documentation": "Request a global list of tags, profiles, and security labels"
+      } ]
+    }, {
+      "type": "StructureDefinition",
+      "profile": "http://hl7.org/fhir/StructureDefinition/StructureDefinition",
+      "interaction": [ {
+        "code": "history-instance"
+      }, {
+        "code": "history-type"
+      }, {
+        "code": "vread"
+      }, {
+        "code": "read"
+      }, {
+        "code": "search-type"
+      } ],
+      "versioning": "versioned-update",
+      "conditionalCreate": false,
+      "conditionalUpdate": false,
+      "conditionalDelete": "not-supported",
+      "searchInclude": [ "*", "StructureDefinition:base", "StructureDefinition:valueset" ],
+      "searchRevInclude": [ "CapabilityStatement:resource-profile", "CapabilityStatement:supported-profile", "OperationDefinition:input-profile", "OperationDefinition:output-profile", "StructureDefinition:base" ],
+      "searchParam": [ {
+        "name": "_language",
+        "definition": "https://demis.rki.de/fhir/SearchParameter/structuredefinition-_language",
+        "type": "string",
+        "documentation": "The language of the resource"
+      }, {
+        "name": "date",
+        "definition": "https://demis.rki.de/fhir/SearchParameter/structuredefinition-date",
+        "type": "date",
+        "documentation": "The structure definition publication date"
+      }, {
+        "name": "context-type-value",
+        "definition": "https://demis.rki.de/fhir/SearchParameter/structuredefinition-context-type-value",
+        "type": "composite",
+        "documentation": "A use context type and value assigned to the structure definition"
+      }, {
+        "name": "jurisdiction",
+        "definition": "https://demis.rki.de/fhir/SearchParameter/structuredefinition-jurisdiction",
+        "type": "token",
+        "documentation": "Intended jurisdiction for the structure definition"
+      }, {
+        "name": "_lastUpdated",
+        "definition": "https://demis.rki.de/fhir/SearchParameter/StructureDefinition-_lastUpdated",
+        "type": "date",
+        "documentation": "Only return resources which were last updated as specified by the given range"
+      }, {
+        "name": "description",
+        "definition": "https://demis.rki.de/fhir/SearchParameter/structuredefinition-description",
+        "type": "string",
+        "documentation": "The description of the structure definition"
+      }, {
+        "name": "context-type",
+        "definition": "https://demis.rki.de/fhir/SearchParameter/structuredefinition-context-type",
+        "type": "token",
+        "documentation": "A type of use context assigned to the structure definition"
+      }, {
+        "name": "experimental",
+        "definition": "https://demis.rki.de/fhir/SearchParameter/structuredefinition-experimental",
+        "type": "token",
+        "documentation": "For testing purposes, not real usage"
+      }, {
+        "name": "title",
+        "definition": "https://demis.rki.de/fhir/SearchParameter/structuredefinition-title",
+        "type": "string",
+        "documentation": "The human-friendly name of the structure definition"
+      }, {
+        "name": "type",
+        "definition": "https://demis.rki.de/fhir/SearchParameter/structuredefinition-type",
+        "type": "uri",
+        "documentation": "Type defined or constrained by this structure"
+      }, {
+        "name": "context-quantity",
+        "definition": "https://demis.rki.de/fhir/SearchParameter/structuredefinition-context-quantity",
+        "type": "quantity",
+        "documentation": "A quantity- or range-valued use context assigned to the structure definition"
+      }, {
+        "name": "path",
+        "definition": "https://demis.rki.de/fhir/SearchParameter/structuredefinition-path",
+        "type": "token",
+        "documentation": "A path that is constrained in the StructureDefinition"
+      }, {
+        "name": "base-path",
+        "definition": "https://demis.rki.de/fhir/SearchParameter/structuredefinition-base-path",
+        "type": "token",
+        "documentation": "Path that identifies the base element"
+      }, {
+        "name": "context",
+        "definition": "https://demis.rki.de/fhir/SearchParameter/structuredefinition-context",
+        "type": "token",
+        "documentation": "A use context assigned to the structure definition"
+      }, {
+        "name": "keyword",
+        "definition": "https://demis.rki.de/fhir/SearchParameter/structuredefinition-keyword",
+        "type": "token",
+        "documentation": "A code for the StructureDefinition"
+      }, {
+        "name": "context-type-quantity",
+        "definition": "https://demis.rki.de/fhir/SearchParameter/structuredefinition-context-type-quantity",
+        "type": "composite",
+        "documentation": "A use context type and quantity- or range-based value assigned to the structure definition"
+      }, {
+        "name": "identifier",
+        "definition": "https://demis.rki.de/fhir/SearchParameter/structuredefinition-identifier",
+        "type": "token",
+        "documentation": "External identifier for the structure definition"
+      }, {
+        "name": "valueset",
+        "definition": "https://demis.rki.de/fhir/SearchParameter/structuredefinition-valueset",
+        "type": "reference",
+        "documentation": "A vocabulary binding reference"
+      }, {
+        "name": "kind",
+        "definition": "https://demis.rki.de/fhir/SearchParameter/structuredefinition-kind",
+        "type": "token",
+        "documentation": "primitive-type | complex-type | resource | logical"
+      }, {
+        "name": "_security",
+        "definition": "https://demis.rki.de/fhir/SearchParameter/StructureDefinition-_security",
+        "type": "token",
+        "documentation": "Search for resources which have the given security labels"
+      }, {
+        "name": "abstract",
+        "definition": "https://demis.rki.de/fhir/SearchParameter/structuredefinition-abstract",
+        "type": "token",
+        "documentation": "Whether the structure is abstract"
+      }, {
+        "name": "version",
+        "definition": "https://demis.rki.de/fhir/SearchParameter/structuredefinition-version",
+        "type": "token",
+        "documentation": "The business version of the structure definition"
+      }, {
+        "name": "url",
+        "definition": "https://demis.rki.de/fhir/SearchParameter/structuredefinition-url",
+        "type": "uri",
+        "documentation": "The uri that identifies the structure definition"
+      }, {
+        "name": "_filter",
+        "definition": "https://demis.rki.de/fhir/SearchParameter/StructureDefinition-_filter",
+        "type": "string",
+        "documentation": "Search the contents of the resource's data using a filter"
+      }, {
+        "name": "_profile",
+        "definition": "https://demis.rki.de/fhir/SearchParameter/StructureDefinition-_profile",
+        "type": "uri",
+        "documentation": "Search for resources which have the given profile"
+      }, {
+        "name": "ext-context",
+        "definition": "https://demis.rki.de/fhir/SearchParameter/structuredefinition-ext-context",
+        "type": "token",
+        "documentation": "The system is the URL for the context-type: e.g. http://hl7.org/fhir/extension-context-type#element|CodeableConcept.text"
+      }, {
+        "name": "_has",
+        "definition": "https://demis.rki.de/fhir/SearchParameter/StructureDefinition-_has",
+        "type": "string",
+        "documentation": "Return resources linked to by the given target"
+      }, {
+        "name": "_tag",
+        "definition": "https://demis.rki.de/fhir/SearchParameter/StructureDefinition-_tag",
+        "type": "token",
+        "documentation": "Search for resources which have the given tag"
+      }, {
+        "name": "name",
+        "definition": "https://demis.rki.de/fhir/SearchParameter/structuredefinition-name",
+        "type": "string",
+        "documentation": "Computationally friendly name of the structure definition"
+      }, {
+        "name": "publisher",
+        "definition": "https://demis.rki.de/fhir/SearchParameter/structuredefinition-publisher",
+        "type": "string",
+        "documentation": "Name of the publisher of the structure definition"
+      }, {
+        "name": "derivation",
+        "definition": "https://demis.rki.de/fhir/SearchParameter/structuredefinition-derivation",
+        "type": "token",
+        "documentation": "specialization | constraint - How relates to base definition"
+      }, {
+        "name": "_source",
+        "definition": "https://demis.rki.de/fhir/SearchParameter/StructureDefinition-_source",
+        "type": "uri",
+        "documentation": "Search for resources which have the given source value (Resource.meta.source)"
+      }, {
+        "name": "_id",
+        "definition": "https://demis.rki.de/fhir/SearchParameter/structuredefinition-_id",
+        "type": "token",
+        "documentation": "The ID of the resource"
+      }, {
+        "name": "_content",
+        "definition": "https://demis.rki.de/fhir/SearchParameter/StructureDefinition-_content",
+        "type": "string",
+        "documentation": "Search the contents of the resource's data using a fulltext search"
+      }, {
+        "name": "_text",
+        "definition": "https://demis.rki.de/fhir/SearchParameter/StructureDefinition-_text",
+        "type": "string",
+        "documentation": "Search the contents of the resource's narrative using a fulltext search"
+      }, {
+        "name": "base",
+        "definition": "https://demis.rki.de/fhir/SearchParameter/structuredefinition-base",
+        "type": "reference",
+        "documentation": "Definition that this type is constrained/specialized from"
+      }, {
+        "name": "status",
+        "definition": "https://demis.rki.de/fhir/SearchParameter/structuredefinition-status",
+        "type": "token",
+        "documentation": "The current status of the structure definition"
+      } ],
+      "operation": [ {
+        "name": "snapshot",
+        "definition": "https://demis.rki.de/fhir/OperationDefinition/StructureDefinition-it-snapshot"
+      }, {
+        "name": "expunge",
+        "definition": "https://demis.rki.de/fhir/OperationDefinition/Multi-its-expunge"
+      }, {
+        "name": "meta",
+        "definition": "https://demis.rki.de/fhir/OperationDefinition/Multi-its-meta",
+        "documentation": "Request a global list of tags, profiles, and security labels"
+      } ]
+    }, {
+      "type": "ValueSet",
+      "profile": "http://hl7.org/fhir/StructureDefinition/ValueSet",
+      "interaction": [ {
+        "code": "history-instance"
+      }, {
+        "code": "history-type"
+      }, {
+        "code": "vread"
+      }, {
+        "code": "read"
+      }, {
+        "code": "search-type"
+      } ],
+      "versioning": "versioned-update",
+      "conditionalCreate": false,
+      "conditionalUpdate": false,
+      "conditionalDelete": "not-supported",
+      "searchInclude": [ "*" ],
+      "searchRevInclude": [ "ConceptMap:source", "ConceptMap:source-uri", "ConceptMap:target", "ConceptMap:target-uri", "StructureDefinition:valueset" ],
+      "searchParam": [ {
+        "name": "_language",
+        "definition": "https://demis.rki.de/fhir/SearchParameter/valueset-_language",
+        "type": "string",
+        "documentation": "The language of the resource"
+      }, {
+        "name": "date",
+        "definition": "https://demis.rki.de/fhir/SearchParameter/valueset-date",
+        "type": "date",
+        "documentation": "The value set publication date"
+      }, {
+        "name": "code",
+        "definition": "https://demis.rki.de/fhir/SearchParameter/valueset-code",
+        "type": "token",
+        "documentation": "This special parameter searches for codes in the value set. See additional notes on the ValueSet resource"
+      }, {
+        "name": "context-type-value",
+        "definition": "https://demis.rki.de/fhir/SearchParameter/valueset-context-type-value",
+        "type": "composite",
+        "documentation": "A use context type and value assigned to the value set"
+      }, {
+        "name": "jurisdiction",
+        "definition": "https://demis.rki.de/fhir/SearchParameter/valueset-jurisdiction",
+        "type": "token",
+        "documentation": "Intended jurisdiction for the value set"
+      }, {
+        "name": "_lastUpdated",
+        "definition": "https://demis.rki.de/fhir/SearchParameter/ValueSet-_lastUpdated",
+        "type": "date",
+        "documentation": "Only return resources which were last updated as specified by the given range"
+      }, {
+        "name": "description",
+        "definition": "https://demis.rki.de/fhir/SearchParameter/valueset-description",
+        "type": "string",
+        "documentation": "The description of the value set"
+      }, {
+        "name": "context-type",
+        "definition": "https://demis.rki.de/fhir/SearchParameter/valueset-context-type",
+        "type": "token",
+        "documentation": "A type of use context assigned to the value set"
+      }, {
+        "name": "title",
+        "definition": "https://demis.rki.de/fhir/SearchParameter/valueset-title",
+        "type": "string",
+        "documentation": "The human-friendly name of the value set"
+      }, {
+        "name": "reference",
+        "definition": "https://demis.rki.de/fhir/SearchParameter/valueset-reference",
+        "type": "uri",
+        "documentation": "A code system included or excluded in the value set or an imported value set"
+      }, {
+        "name": "context-quantity",
+        "definition": "https://demis.rki.de/fhir/SearchParameter/valueset-context-quantity",
+        "type": "quantity",
+        "documentation": "A quantity- or range-valued use context assigned to the value set"
+      }, {
+        "name": "context",
+        "definition": "https://demis.rki.de/fhir/SearchParameter/valueset-context",
+        "type": "token",
+        "documentation": "A use context assigned to the value set"
+      }, {
+        "name": "context-type-quantity",
+        "definition": "https://demis.rki.de/fhir/SearchParameter/valueset-context-type-quantity",
+        "type": "composite",
+        "documentation": "A use context type and quantity- or range-based value assigned to the value set"
+      }, {
+        "name": "identifier",
+        "definition": "https://demis.rki.de/fhir/SearchParameter/valueset-identifier",
+        "type": "token",
+        "documentation": "External identifier for the value set"
+      }, {
+        "name": "_security",
+        "definition": "https://demis.rki.de/fhir/SearchParameter/ValueSet-_security",
+        "type": "token",
+        "documentation": "Search for resources which have the given security labels"
+      }, {
+        "name": "version",
+        "definition": "https://demis.rki.de/fhir/SearchParameter/valueset-version",
+        "type": "token",
+        "documentation": "The business version of the value set"
+      }, {
+        "name": "url",
+        "definition": "https://demis.rki.de/fhir/SearchParameter/valueset-url",
+        "type": "uri",
+        "documentation": "The uri that identifies the value set"
+      }, {
+        "name": "expansion",
+        "definition": "https://demis.rki.de/fhir/SearchParameter/valueset-expansion",
+        "type": "uri",
+        "documentation": "Identifies the value set expansion (business identifier)"
+      }, {
+        "name": "_filter",
+        "definition": "https://demis.rki.de/fhir/SearchParameter/ValueSet-_filter",
+        "type": "string",
+        "documentation": "Search the contents of the resource's data using a filter"
+      }, {
+        "name": "_profile",
+        "definition": "https://demis.rki.de/fhir/SearchParameter/ValueSet-_profile",
+        "type": "uri",
+        "documentation": "Search for resources which have the given profile"
+      }, {
+        "name": "_has",
+        "definition": "https://demis.rki.de/fhir/SearchParameter/ValueSet-_has",
+        "type": "string",
+        "documentation": "Return resources linked to by the given target"
+      }, {
+        "name": "_tag",
+        "definition": "https://demis.rki.de/fhir/SearchParameter/ValueSet-_tag",
+        "type": "token",
+        "documentation": "Search for resources which have the given tag"
+      }, {
+        "name": "name",
+        "definition": "https://demis.rki.de/fhir/SearchParameter/valueset-name",
+        "type": "string",
+        "documentation": "Computationally friendly name of the value set"
+      }, {
+        "name": "publisher",
+        "definition": "https://demis.rki.de/fhir/SearchParameter/valueset-publisher",
+        "type": "string",
+        "documentation": "Name of the publisher of the value set"
+      }, {
+        "name": "_source",
+        "definition": "https://demis.rki.de/fhir/SearchParameter/ValueSet-_source",
+        "type": "uri",
+        "documentation": "Search for resources which have the given source value (Resource.meta.source)"
+      }, {
+        "name": "_id",
+        "definition": "https://demis.rki.de/fhir/SearchParameter/valueset-_id",
+        "type": "token",
+        "documentation": "The ID of the resource"
+      }, {
+        "name": "_content",
+        "definition": "https://demis.rki.de/fhir/SearchParameter/ValueSet-_content",
+        "type": "string",
+        "documentation": "Search the contents of the resource's data using a fulltext search"
+      }, {
+        "name": "_text",
+        "definition": "https://demis.rki.de/fhir/SearchParameter/ValueSet-_text",
+        "type": "string",
+        "documentation": "Search the contents of the resource's narrative using a fulltext search"
+      }, {
+        "name": "status",
+        "definition": "https://demis.rki.de/fhir/SearchParameter/valueset-status",
+        "type": "token",
+        "documentation": "The current status of the value set"
+      } ],
+      "operation": [ {
+        "name": "expand",
+        "definition": "https://demis.rki.de/fhir/OperationDefinition/ValueSet-it-expand"
+      }, {
+        "name": "validate-code",
+        "definition": "https://demis.rki.de/fhir/OperationDefinition/CodeSystemValueSet-it-validate-code"
+      }, {
+        "name": "expunge",
+        "definition": "https://demis.rki.de/fhir/OperationDefinition/Multi-its-expunge"
+      }, {
+        "name": "meta",
+        "definition": "https://demis.rki.de/fhir/OperationDefinition/Multi-its-meta",
+        "documentation": "Request a global list of tags, profiles, and security labels"
+      } ]
+    } ],
+    "operation": [ {
+      "name": "mark-all-resources-for-reindexing",
+      "definition": "https://demis.rki.de/fhir/OperationDefinition/-s-mark-all-resources-for-reindexing",
+      "documentation": "Marks all currently existing resources of a given type, or all resources of all types, for reindexing."
+    }, {
+      "name": "expunge",
+      "definition": "https://demis.rki.de/fhir/OperationDefinition/Multi-its-expunge"
+    }, {
+      "name": "meta",
+      "definition": "https://demis.rki.de/fhir/OperationDefinition/Multi-its-meta"
+    } ]
+  } ]
+}

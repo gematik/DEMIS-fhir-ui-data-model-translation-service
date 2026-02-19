@@ -29,6 +29,7 @@ package de.gematik.demis.fhir_ui_data_model_translation_service.disease.formly.p
 
 import static de.gematik.demis.fhir_ui_data_model_translation_service.disease.formly.model.Wrapper.FORM_FIELD;
 
+import de.gematik.demis.fhir_ui_data_model_translation_service.context.OnlyInDiseaseContext;
 import de.gematik.demis.fhir_ui_data_model_translation_service.disease.formly.fhir.TooltipExtension;
 import de.gematik.demis.fhir_ui_data_model_translation_service.disease.formly.model.FieldGroup;
 import de.gematik.demis.fhir_ui_data_model_translation_service.disease.formly.model.Props;
@@ -46,6 +47,7 @@ import org.springframework.stereotype.Service;
  * ItemProcessor interface and is responsible for creating field groups and extracting quantity
  * information from questionnaire items.
  */
+@OnlyInDiseaseContext
 @Service
 public class QuantityProcessor implements ItemProcessor {
 

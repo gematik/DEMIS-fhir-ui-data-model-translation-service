@@ -1,0 +1,41 @@
+{
+  "resourceType": "CodeSystem",
+  "id": "addressUse",
+  "url": "https://demis.rki.de/fhir/CodeSystem/addressUse",
+  "version": "1.2.1",
+  "name": "AddressUse",
+  "title": "Adressnutzung",
+  "status": "active",
+  "experimental": false,
+  "date": "2025-03-28",
+  "publisher": "Robert Koch-Institut",
+  "contact": [ {
+    "telecom": [ {
+      "system": "email",
+      "value": "demis-support@rki.de"
+    } ]
+  } ],
+  "description": "Das CodeSystem AddressUse enthält die Codes für die Adressnutzung.",
+  "jurisdiction": [ {
+    "coding": [ {
+      "system": "urn:iso:std:iso:3166",
+      "version": "ALPHA-2",
+      "code": "DE"
+    } ]
+  } ],
+  "copyright": "(C) 2021-2025 Robert Koch-Institut",
+  "caseSensitive": false,
+  "valueSet": "https://demis.rki.de/fhir/ValueSet/addressUse",
+  "content": "complete",
+  "count": 3,
+  "concept": [ {
+    "code": "current",
+    "display": "Derzeitiger Aufenthaltsort"
+  }, {
+    "code": "ordinary",
+    "display": "Gewöhnlicher Aufenthaltsort"
+  }, {
+    "code": "primary",
+    "display": "Hauptwohnsitz"
+  } ]
+}

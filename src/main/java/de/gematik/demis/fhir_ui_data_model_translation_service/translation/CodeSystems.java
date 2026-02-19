@@ -170,6 +170,10 @@ class CodeSystems {
       try {
         CodeSystem codeSystem =
             fhirContext.newJsonParser().parseResource(CodeSystem.class, getFileString(file));
+        if (codeSystem.getContent() == CodeSystem.CodeSystemContentMode.NOTPRESENT) {
+          log.info("Code system in file {} has no content. Skipping file.", file.getName());
+          continue;
+        }
 
         // get data and map to CodeDisplay
         final String systemUrl = codeSystem.getUrl();

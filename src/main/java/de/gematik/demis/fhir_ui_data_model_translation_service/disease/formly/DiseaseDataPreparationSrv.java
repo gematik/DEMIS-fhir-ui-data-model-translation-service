@@ -29,6 +29,7 @@ package de.gematik.demis.fhir_ui_data_model_translation_service.disease.formly;
 
 import ca.uhn.fhir.context.FhirContext;
 import de.gematik.demis.fhir_ui_data_model_translation_service.FeatureFlags;
+import de.gematik.demis.fhir_ui_data_model_translation_service.context.OnlyInDiseaseContext;
 import de.gematik.demis.fhir_ui_data_model_translation_service.disease.DiseaseNotificationCategoriesSrv;
 import de.gematik.demis.fhir_ui_data_model_translation_service.disease.DiseaseNotificationCategoriesSrvRegression;
 import de.gematik.demis.fhir_ui_data_model_translation_service.disease.Questionnaires;
@@ -37,7 +38,7 @@ import de.gematik.demis.fhir_ui_data_model_translation_service.disease.formly.mo
 import de.gematik.demis.fhir_ui_data_model_translation_service.disease.formly.model.FormlyFieldConfigs;
 import de.gematik.demis.fhir_ui_data_model_translation_service.disease.formly.model.Props;
 import de.gematik.demis.fhir_ui_data_model_translation_service.disease.formly.processor.*;
-import de.gematik.demis.fhir_ui_data_model_translation_service.disease.formly.processor.resources.DiseaseProcessor;
+import de.gematik.demis.fhir_ui_data_model_translation_service.disease.formly.processor.DiseaseProcessor;
 import de.gematik.demis.fhir_ui_data_model_translation_service.utils.Utils;
 import de.gematik.demis.notification.builder.demis.fhir.notification.types.NotificationCategory;
 import jakarta.annotation.PostConstruct;
@@ -56,6 +57,7 @@ import org.hl7.fhir.r4.model.Questionnaire;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
+@OnlyInDiseaseContext
 @RequiredArgsConstructor
 @Service
 @Slf4j

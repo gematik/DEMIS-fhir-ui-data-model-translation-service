@@ -34,6 +34,7 @@ import static de.gematik.demis.fhir_ui_data_model_translation_service.utils.Util
 import static java.util.Collections.*;
 
 import ca.uhn.fhir.context.FhirContext;
+import de.gematik.demis.fhir_ui_data_model_translation_service.context.OnlyInLaboratoryContext;
 import de.gematik.demis.fhir_ui_data_model_translation_service.model.CodeDisplay;
 import de.gematik.demis.fhir_ui_data_model_translation_service.model.Designation;
 import de.gematik.demis.fhir_ui_data_model_translation_service.model.StaticSystemVersion;
@@ -55,6 +56,7 @@ import org.springframework.stereotype.Service;
 
 /** This service provides specific data for a notification category code. */
 @Service
+@OnlyInLaboratoryContext
 @Slf4j
 public class LabDataPreparationSrv {
 
@@ -78,7 +80,7 @@ public class LabDataPreparationSrv {
   private final DataLoaderSrv dataLoaderSrv;
   private final boolean addTestDataErrorCase;
   private final boolean addTestDataSortingCase;
-  private final boolean isNotification73ProcessingActive;
+  private final boolean isSnapshot6Active;
   private final boolean isSnomedVersionActive;
   @Getter private Map<String, LabNotificationData> laboratoryDataMap; // 7.3, 7.1
   private Map<PathogenNotificationCategory, SequencedCollection<CodeDisplay>>
@@ -92,7 +94,7 @@ public class LabDataPreparationSrv {
       DataLoaderSrv dataLoaderSrv,
       @Value("${add.test.data.error.case.for.lab}") boolean addTestDataErrorCase,
       @Value("${add.test.data.laboratory.sorting}") boolean addTestDataSortingCase,
-      @Value("${feature.flag.notifications.7_3}") boolean isNotification73ProcessingActive,
+      @Value("${feature.flag.snapshot6}") boolean isSnapshot6Active,
       @Value("${feature.flag.snomed.version.from.futs}") boolean isSnomedVersionActive) {
     this.fhirContext = fhirContext;
     this.snapshotFilesService = snapshotFilesService;
@@ -100,8 +102,8 @@ public class LabDataPreparationSrv {
     this.dataLoaderSrv = dataLoaderSrv;
     this.addTestDataErrorCase = addTestDataErrorCase;
     this.addTestDataSortingCase = addTestDataSortingCase;
-    this.isNotification73ProcessingActive = isNotification73ProcessingActive;
     this.isSnomedVersionActive = isSnomedVersionActive;
+    this.isSnapshot6Active = isSnapshot6Active;
   }
 
   @PostConstruct
@@ -118,7 +120,7 @@ public class LabDataPreparationSrv {
           new StaticSystemVersion(LOINC_URL, dataLoaderSrv.getVersion(LOINC_URL)));
     }
 
-    if (isNotification73ProcessingActive) {
+    if (isSnapshot6Active) {
       this.pathogenNotificationCategories =
           pathogenNotificationCategoryList.getPathogenNotificationCategories();
       this.notificationCategories =
@@ -127,8 +129,8 @@ public class LabDataPreparationSrv {
               .toList();
     }
 
-    // remove this block with feature.flag.notification7_3
-    if ((!this.isNotification73ProcessingActive) || notificationCategories.isEmpty()) {
+    // remove this block with feature.flag.snapshot6
+    if (notificationCategories.isEmpty()) {
       this.notificationCategories =
           pathogenNotificationCategoryList.getPathogenNotificationCategoryList();
     }

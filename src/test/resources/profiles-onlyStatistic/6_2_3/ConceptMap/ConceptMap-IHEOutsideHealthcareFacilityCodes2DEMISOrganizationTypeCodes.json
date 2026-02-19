@@ -1,0 +1,61 @@
+{
+  "resourceType": "ConceptMap",
+  "id": "IHEOutsideHealthcareFacilityCodes2DEMISOrganizationTypeCodes",
+  "url": "https://demis.rki.de/fhir/ConceptMap/IHEOutsideHealthcareFacilityCodes2DEMISOrganizationTypeCodes",
+  "version": "1.0.0",
+  "name": "IHEOutsideHealthcareFacilityCodes2DEMISOrganizationTypeCodes",
+  "title": "IHEOutsideHealthcareFacilityCodes2DEMISOrganizationTypeCodes",
+  "status": "active",
+  "date": "2025-02-20",
+  "publisher": "Robert Koch-Institut",
+  "contact": [ {
+    "telecom": [ {
+      "system": "email",
+      "value": "demis-support@rki.de"
+    } ]
+  } ],
+  "description": "Die ConceptMap IHEOutsideHealthcareFacilityCodes2DEMISOrganizationTypeCodes ordnet die Codes der IHE-Einrichtungstypen (ausserhalb der patientenbezogenen Gesundheitsversorgung) den Codes der DEMIS-Einrichtungsarten zu.",
+  "jurisdiction": [ {
+    "coding": [ {
+      "system": "urn:iso:std:iso:3166",
+      "version": "ALPHA-2",
+      "code": "DE"
+    } ]
+  } ],
+  "copyright": "Copyright (C) 2021-2025 Robert Koch-Institut",
+  "sourceUri": "http://ihe-d.de/ValueSets/IHEXDShealthcareFacilityTypeCode",
+  "targetUri": "https://demis.rki.de/fhir/ValueSet/organizationType",
+  "group": [ {
+    "source": "urn:oid:1.3.6.1.4.1.19376.3.276.1.5.3",
+    "target": "https://demis.rki.de/fhir/CodeSystem/organizationType",
+    "element": [ {
+      "code": "BIL",
+      "display": "Bildungseinrichtung",
+      "target": [ {
+        "code": "kindergarten",
+        "display": "Kindertageseinrichtung (z. B. Kita)",
+        "equivalence": "equivalent"
+      }, {
+        "code": "childDayNursery",
+        "display": "Kindertagespflege",
+        "equivalence": "equivalent"
+      }, {
+        "code": "school",
+        "display": "Schule",
+        "equivalence": "equivalent"
+      }, {
+        "code": "childHome",
+        "display": "Kinderheim o.ä.",
+        "equivalence": "equivalent"
+      }, {
+        "code": "childDayCare",
+        "display": "Kinderhort",
+        "equivalence": "equivalent"
+      }, {
+        "code": "othChildCareFac",
+        "display": "Sonstige Kinderbetreuungseinrichtung",
+        "equivalence": "equivalent"
+      } ]
+    } ]
+  } ]
+}

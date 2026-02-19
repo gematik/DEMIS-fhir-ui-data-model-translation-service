@@ -28,6 +28,7 @@ package de.gematik.demis.fhir_ui_data_model_translation_service.laboratory;
  */
 
 import de.gematik.demis.fhir_ui_data_model_translation_service.conceptmaps.ConceptMapPreparationSrv;
+import de.gematik.demis.fhir_ui_data_model_translation_service.context.OnlyInLaboratoryContext;
 import de.gematik.demis.fhir_ui_data_model_translation_service.model.CodeDisplay;
 import java.util.HashSet;
 import java.util.Optional;
@@ -36,6 +37,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
 @Service
+@OnlyInLaboratoryContext
 @Slf4j
 public class LaboratoryFollowupSrv {
   private final ConceptMapPreparationSrv conceptMapPreparationSrv;

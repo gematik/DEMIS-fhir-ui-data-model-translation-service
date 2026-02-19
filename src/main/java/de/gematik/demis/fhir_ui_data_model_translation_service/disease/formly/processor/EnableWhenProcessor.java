@@ -27,6 +27,7 @@ package de.gematik.demis.fhir_ui_data_model_translation_service.disease.formly.p
  * #L%
  */
 
+import de.gematik.demis.fhir_ui_data_model_translation_service.context.OnlyInDiseaseContext;
 import de.gematik.demis.fhir_ui_data_model_translation_service.disease.formly.model.EnableWhen;
 import de.gematik.demis.fhir_ui_data_model_translation_service.disease.formly.model.FieldArray;
 import de.gematik.demis.fhir_ui_data_model_translation_service.disease.formly.model.FieldGroup;
@@ -45,6 +46,7 @@ import org.hl7.fhir.r4.model.Questionnaire;
 import org.springframework.stereotype.Service;
 
 /** Processes enable-when conditions. */
+@OnlyInDiseaseContext
 @Service
 @Slf4j
 public class EnableWhenProcessor {

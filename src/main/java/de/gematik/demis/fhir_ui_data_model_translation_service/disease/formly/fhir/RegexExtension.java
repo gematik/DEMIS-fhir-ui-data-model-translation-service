@@ -27,9 +27,11 @@ package de.gematik.demis.fhir_ui_data_model_translation_service.disease.formly.f
  * #L%
  */
 
+import de.gematik.demis.fhir_ui_data_model_translation_service.context.OnlyInDiseaseContext;
 import org.springframework.stereotype.Component;
 
 /** Regex extension for validating values. */
+@OnlyInDiseaseContext
 @Component
 public final class RegexExtension extends DefaultPortalFhirExtension {
 

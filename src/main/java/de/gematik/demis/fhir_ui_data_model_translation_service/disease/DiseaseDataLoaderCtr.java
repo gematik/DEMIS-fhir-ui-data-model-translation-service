@@ -27,6 +27,7 @@ package de.gematik.demis.fhir_ui_data_model_translation_service.disease;
  * #L%
  */
 
+import de.gematik.demis.fhir_ui_data_model_translation_service.context.OnlyInDiseaseContext;
 import de.gematik.demis.fhir_ui_data_model_translation_service.disease.formly.model.FormlyFieldConfigs;
 import de.gematik.demis.fhir_ui_data_model_translation_service.disease.formly.model.QuestionnaireTranslation;
 import de.gematik.demis.fhir_ui_data_model_translation_service.model.CodeDisplay;
@@ -42,6 +43,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.server.ResponseStatusException;
 
+@OnlyInDiseaseContext
 @RestController
 @Slf4j
 public class DiseaseDataLoaderCtr {

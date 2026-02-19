@@ -27,6 +27,7 @@ package de.gematik.demis.fhir_ui_data_model_translation_service.disease.formly.p
  * #L%
  */
 
+import de.gematik.demis.fhir_ui_data_model_translation_service.context.OnlyInDiseaseContext;
 import de.gematik.demis.fhir_ui_data_model_translation_service.disease.formly.fhir.RegexExtension;
 import de.gematik.demis.fhir_ui_data_model_translation_service.disease.formly.fhir.TooltipExtension;
 import de.gematik.demis.fhir_ui_data_model_translation_service.disease.formly.fieldtypes.DatePicker;
@@ -36,6 +37,7 @@ import org.hl7.fhir.r4.model.Questionnaire;
 import org.springframework.stereotype.Service;
 
 /** Processor for questionnaire items expecting an answer of type date */
+@OnlyInDiseaseContext
 @Service
 @RequiredArgsConstructor
 public class DateProcessor implements ItemProcessor {

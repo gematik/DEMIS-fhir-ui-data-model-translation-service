@@ -28,6 +28,7 @@ package de.gematik.demis.fhir_ui_data_model_translation_service.disease.formly.p
  */
 
 import com.google.common.annotations.VisibleForTesting;
+import de.gematik.demis.fhir_ui_data_model_translation_service.context.OnlyInDiseaseContext;
 import java.math.BigDecimal;
 import java.util.List;
 import java.util.Objects;
@@ -74,6 +75,7 @@ import org.springframework.stereotype.Service;
  * differentiate between 0.28 and 0.279. This is only possible if we introduce additional
  * constraints on the comparator that can be used.
  */
+@OnlyInDiseaseContext
 @Service
 public class QuantityBoundProcessor {
 

@@ -27,6 +27,7 @@ package de.gematik.demis.fhir_ui_data_model_translation_service.laboratory;
  * #L%
  */
 
+import de.gematik.demis.fhir_ui_data_model_translation_service.context.OnlyInLaboratoryContext;
 import de.gematik.demis.fhir_ui_data_model_translation_service.model.CodeDisplay;
 import java.util.List;
 import java.util.SequencedCollection;
@@ -38,6 +39,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
+@OnlyInLaboratoryContext
 @Slf4j
 public class LaboratoryDataLoaderCtr {
 

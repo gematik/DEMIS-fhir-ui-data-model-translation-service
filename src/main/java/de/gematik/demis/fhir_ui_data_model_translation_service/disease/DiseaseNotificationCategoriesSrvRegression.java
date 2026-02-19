@@ -31,6 +31,7 @@ import static de.gematik.demis.fhir_ui_data_model_translation_service.utils.Util
 import static de.gematik.demis.fhir_ui_data_model_translation_service.utils.Utils.getFileString;
 
 import ca.uhn.fhir.context.FhirContext;
+import de.gematik.demis.fhir_ui_data_model_translation_service.context.OnlyInDiseaseContext;
 import de.gematik.demis.fhir_ui_data_model_translation_service.model.CodeDisplay;
 import de.gematik.demis.fhir_ui_data_model_translation_service.utils.SnapshotFilesService;
 import jakarta.annotation.PostConstruct;
@@ -42,6 +43,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.hl7.fhir.r4.model.CodeSystem;
 import org.springframework.stereotype.Service;
 
+@OnlyInDiseaseContext
 @Service
 @Slf4j
 public class DiseaseNotificationCategoriesSrvRegression {
