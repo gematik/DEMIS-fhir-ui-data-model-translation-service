@@ -27,6 +27,7 @@ package de.gematik.demis.fhir_ui_data_model_translation_service.laboratory;
  * #L%
  */
 
+import de.gematik.demis.fhir_ui_data_model_translation_service.context.OnlyInLaboratoryContext;
 import de.gematik.demis.fhir_ui_data_model_translation_service.exception.DataNotFoundExcp;
 import de.gematik.demis.fhir_ui_data_model_translation_service.model.CodeDisplay;
 import io.micrometer.observation.annotation.Observed;
@@ -36,6 +37,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 @Service
+@OnlyInLaboratoryContext
 @Slf4j
 public class LaboratoryDataLoaderSrv {
 
@@ -47,18 +49,18 @@ public class LaboratoryDataLoaderSrv {
   private final FederalStateNotificationCategoryData federalStateNotificationCategoryData;
   private final FederalStateNotificationCategoryDataRegression
       federalStateNotificationCategoryDataRegression;
-  private boolean isNotifications7_3active;
+  private boolean isSnapshot6Active;
 
   public LaboratoryDataLoaderSrv(
       LabDataPreparationSrv labDataPreparationSrv,
       FederalStateNotificationCategoryData federalStateNotificationCategoryData,
       FederalStateNotificationCategoryDataRegression federalStateNotificationCategoryDataRegression,
-      @Value("${feature.flag.notifications.7_3}") boolean isNotifications73active) {
+      @Value("${feature.flag.snapshot6}") boolean isSnapshot6Active) {
     this.labDataPreparationSrv = labDataPreparationSrv;
     this.federalStateNotificationCategoryData = federalStateNotificationCategoryData;
     this.federalStateNotificationCategoryDataRegression =
         federalStateNotificationCategoryDataRegression;
-    isNotifications7_3active = isNotifications73active;
+    this.isSnapshot6Active = isSnapshot6Active;
   }
 
   private static void processNoData(String code, String errorMessage) {
@@ -80,7 +82,7 @@ public class LaboratoryDataLoaderSrv {
       lowCardinalityKeyValues = {"laboratory", "fhir"})
   public List<CodeDisplay> getDataForPathogenCodesForFederalState(String federalState) {
     List<CodeDisplay> codeDisplays;
-    if (isNotifications7_3active) {
+    if (isSnapshot6Active) {
       codeDisplays =
           federalStateNotificationCategoryData
               .getFederalStateNotificationCategories()

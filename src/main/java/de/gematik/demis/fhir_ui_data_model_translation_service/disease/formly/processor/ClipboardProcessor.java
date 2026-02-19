@@ -27,6 +27,7 @@ package de.gematik.demis.fhir_ui_data_model_translation_service.disease.formly.p
  * #L%
  */
 
+import de.gematik.demis.fhir_ui_data_model_translation_service.context.OnlyInDiseaseContext;
 import de.gematik.demis.fhir_ui_data_model_translation_service.disease.formly.DiseaseClipboardProps;
 import de.gematik.demis.fhir_ui_data_model_translation_service.disease.formly.model.FieldGroup;
 import de.gematik.demis.fhir_ui_data_model_translation_service.disease.formly.model.ImportSpec;
@@ -38,6 +39,7 @@ import org.apache.commons.lang3.StringUtils;
 import org.hl7.fhir.r4.model.Questionnaire;
 import org.springframework.stereotype.Service;
 
+@OnlyInDiseaseContext
 @RequiredArgsConstructor(access = AccessLevel.PACKAGE)
 @Service
 public class ClipboardProcessor {

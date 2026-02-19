@@ -34,6 +34,7 @@ import static de.gematik.demis.fhir_ui_data_model_translation_service.utils.Util
 import static de.gematik.demis.fhir_ui_data_model_translation_service.utils.Utils.extractOrder;
 
 import ca.uhn.fhir.context.FhirContext;
+import de.gematik.demis.fhir_ui_data_model_translation_service.context.OnlyInLaboratoryContext;
 import de.gematik.demis.fhir_ui_data_model_translation_service.model.CodeDisplay;
 import de.gematik.demis.fhir_ui_data_model_translation_service.utils.SnapshotFilesService;
 import de.gematik.demis.fhir_ui_data_model_translation_service.utils.Utils;
@@ -55,6 +56,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
 @Component
+@OnlyInLaboratoryContext
 @Slf4j
 public class FederalStateNotificationCategoryDataRegression {
 

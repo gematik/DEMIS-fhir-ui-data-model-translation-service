@@ -1,0 +1,109 @@
+{
+  "resourceType": "CapabilityStatement",
+  "id": "NotificationClearingApiTest",
+  "url": "https://demis.rki.de/fhir/CapabilityStatement/NotificationClearingApiTest",
+  "version": "1.0.3",
+  "name": "NotificationClearingApiTest",
+  "title": "NotificationClearingApiTest",
+  "status": "active",
+  "date": "2025-05-17",
+  "publisher": "Robert Koch-Institut",
+  "description": "Beschreibt die Fähigkeiten (das Verhalten) der DEMIS Notification Clearing API.",
+  "kind": "instance",
+  "software": {
+    "name": "DEMIS Notification API",
+    "version": "1.7.1"
+  },
+  "implementation": {
+    "description": "Die Testinstanz der DEMIS Notification Clearing API realisiert die Speicherung der vorverarbeiteten und verschlüsselten Testmeldungen und stellt die Schnittstelle zum Abruf gespeicherten Informationen für die Akteure des ÖGD bereit.",
+    "url": "https://demis-test.rki.de/notification-clearing-api/fhir"
+  },
+  "fhirVersion": "4.0.1",
+  "format": [ "application/fhir+xml", "application/fhir+json" ],
+  "rest": [ {
+    "mode": "server",
+    "documentation": "Alle Funktionalitäten der DEMIS Notification Clearing API.",
+    "security": {
+      "description": "Zugriff wird durch Token und MTLS realisiert. Mehr Informationen sind in der Wissensdatenbank zu finden (https://wiki.gematik.de/display/DSKB)."
+    },
+    "resource": [ {
+      "type": "Bundle",
+      "profile": "http://hl7.org/fhir/StructureDefinition/Bundle",
+      "interaction": [ {
+        "code": "read"
+      }, {
+        "code": "vread"
+      }, {
+        "code": "history-instance"
+      }, {
+        "code": "history-type"
+      }, {
+        "code": "search-type"
+      } ],
+      "conditionalCreate": false,
+      "conditionalUpdate": false,
+      "conditionalDelete": "not-supported",
+      "searchInclude": [ "*" ],
+      "searchParam": [ {
+        "name": "_language",
+        "definition": "http://build.fhir.org/resource-definitions.html#Resource.language",
+        "type": "string",
+        "documentation": "The language of the resource"
+      }, {
+        "name": "_id",
+        "definition": "http://hl7.org/fhir/R4/resource-definitions.html#Resource.id",
+        "type": "token",
+        "documentation": "Logical id of this artifact"
+      }, {
+        "name": "_lastUpdate",
+        "definition": "http://hl7.org/fhir/R4/resource-definitions.html#Meta.lastUpdated",
+        "type": "date",
+        "documentation": "When the resource version last changed"
+      }, {
+        "name": "_tag",
+        "definition": "http://hl7.org/fhir/R4/resource-definitions.html#Meta.tag",
+        "type": "token",
+        "documentation": "A tag defining the health department identifier (https://demis.rki.de/fhir/CodeSystem/ResponsibleDepartment)."
+      } ]
+    }, {
+      "type": "Binary",
+      "profile": "http://hl7.org/fhir/StructureDefinition/Binary",
+      "interaction": [ {
+        "code": "read"
+      }, {
+        "code": "vread"
+      }, {
+        "code": "history-instance"
+      }, {
+        "code": "history-type"
+      }, {
+        "code": "search-type"
+      } ],
+      "conditionalCreate": false,
+      "conditionalUpdate": false,
+      "conditionalDelete": "not-supported",
+      "searchInclude": [ "*" ],
+      "searchParam": [ {
+        "name": "_language",
+        "definition": "http://build.fhir.org/resource-definitions.html#Resource.language",
+        "type": "string",
+        "documentation": "The language of the resource"
+      }, {
+        "name": "_id",
+        "definition": "http://hl7.org/fhir/R4/resource-definitions.html#Resource.id",
+        "type": "token",
+        "documentation": "Logical id of this artifact"
+      }, {
+        "name": "_lastUpdate",
+        "definition": "http://hl7.org/fhir/R4/resource-definitions.html#Meta.lastUpdated",
+        "type": "date",
+        "documentation": "When the resource version last changed"
+      }, {
+        "name": "_tag",
+        "definition": "http://hl7.org/fhir/R4/resource-definitions.html#Meta.tag",
+        "type": "token",
+        "documentation": "A tag defining the health department identifier (https://demis.rki.de/fhir/CodeSystem/ResponsibleDepartment)."
+      } ]
+    } ]
+  } ]
+}

@@ -40,7 +40,7 @@ import de.gematik.demis.fhir_ui_data_model_translation_service.disease.Questionn
 import de.gematik.demis.fhir_ui_data_model_translation_service.disease.formly.model.FieldGroup;
 import de.gematik.demis.fhir_ui_data_model_translation_service.disease.formly.model.FormlyFieldConfigs;
 import de.gematik.demis.fhir_ui_data_model_translation_service.disease.formly.processor.*;
-import de.gematik.demis.fhir_ui_data_model_translation_service.disease.formly.processor.resources.DiseaseProcessor;
+import de.gematik.demis.fhir_ui_data_model_translation_service.disease.formly.processor.DiseaseProcessor;
 import de.gematik.demis.fhir_ui_data_model_translation_service.model.CodeDisplay;
 import java.io.File;
 import java.util.HashMap;

@@ -28,6 +28,7 @@ package de.gematik.demis.fhir_ui_data_model_translation_service.disease;
  */
 
 import de.gematik.demis.fhir_ui_data_model_translation_service.conceptmaps.ConceptMapPreparationSrv;
+import de.gematik.demis.fhir_ui_data_model_translation_service.context.OnlyInDiseaseContext;
 import de.gematik.demis.fhir_ui_data_model_translation_service.model.CodeDisplay;
 import java.util.HashSet;
 import java.util.Optional;
@@ -35,6 +36,7 @@ import java.util.Set;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
+@OnlyInDiseaseContext
 @Service
 @Slf4j
 public class DiseaseFollowupSrv {

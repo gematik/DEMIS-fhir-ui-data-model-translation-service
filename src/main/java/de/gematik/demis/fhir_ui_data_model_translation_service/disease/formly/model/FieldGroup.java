@@ -96,6 +96,16 @@ public class FieldGroup {
     eliminateDoubletChildren();
   }
 
+  /**
+   * Convert this FieldGroup to an array.
+   *
+   * @return array containing this FieldGroup
+   */
+  @JsonIgnore
+  public FieldGroup[] toArray() {
+    return new FieldGroup[] {this};
+  }
+
   private void eliminateDoubletChildren() {
     if (this.fieldArray != null) {
       FieldGroup[] arrayGroups = this.fieldArray.getFieldGroup();

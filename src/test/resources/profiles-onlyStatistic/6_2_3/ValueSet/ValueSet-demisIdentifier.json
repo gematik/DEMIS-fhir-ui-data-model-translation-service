@@ -1,0 +1,47 @@
+{
+  "resourceType": "ValueSet",
+  "id": "demisIdentifier",
+  "url": "https://demis.rki.de/fhir/ValueSet/demisIdentifier",
+  "version": "1.0.0",
+  "name": "DemisIdentifier",
+  "title": "Demis-Identifier",
+  "status": "active",
+  "experimental": false,
+  "date": "2025-03-24",
+  "publisher": "Robert Koch-Institut",
+  "contact": [ {
+    "telecom": [ {
+      "system": "email",
+      "value": "demis-support@rki.de"
+    } ]
+  } ],
+  "description": "Das ValueSet Demis-Identifier enthält die Codes der Demis-Identifier.",
+  "jurisdiction": [ {
+    "coding": [ {
+      "system": "urn:iso:std:iso:3166",
+      "version": "ALPHA-2",
+      "code": "DE"
+    } ]
+  } ],
+  "copyright": "(C) 2021-2025 Robert Koch-Institut",
+  "compose": {
+    "include": [ {
+      "system": "https://demis.rki.de/fhir/CodeSystem/demisIdentifier",
+      "version": "1.0.0"
+    } ]
+  },
+  "expansion": {
+    "timestamp": "2025-03-24T00:00:00+01:00",
+    "contains": [ {
+      "system": "https://demis.rki.de/fhir/CodeSystem/demisIdentifier",
+      "version": "1.0.0",
+      "code": "notificationID",
+      "display": "Meldungs-ID"
+    }, {
+      "system": "https://demis.rki.de/fhir/CodeSystem/demisIdentifier",
+      "version": "1.0.0",
+      "code": "notifcationBundleID",
+      "display": "Meldevorgangs-ID"
+    } ]
+  }
+}

@@ -48,7 +48,10 @@ class FhirUiDataModelTranslationServiceApplicationTests {
   @Autowired private LaboratoryDataLoaderSrv laboratoryDataLoaderSrv;
 
   @Test
-  void contextLoads() {
+  void contextLoads() {}
+
+  @Test
+  void resourcesLoadedAsExpected() {
     assertThat(labDataPreparationSrv).isNotNull();
     assertThat(labDataPreparationSrv.getLaboratoryDataMap()).isNotNull();
 

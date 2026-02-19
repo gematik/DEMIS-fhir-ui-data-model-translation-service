@@ -1,0 +1,35 @@
+{
+  "resourceType": "CapabilityStatement",
+  "id": "NotificationGatewayProd",
+  "url": "https://demis.rki.de/fhir/CapabilityStatement/NotificationGatewayProd",
+  "version": "1.0.0",
+  "name": "NotificationGatewayProd",
+  "title": "NotificationGatewayProd",
+  "status": "active",
+  "date": "2021-03-22",
+  "publisher": "Robert Koch-Institut",
+  "description": "Beschreibt die Fähigkeiten (das Verhalten) des DEMIS Notification Gateway.",
+  "kind": "instance",
+  "software": {
+    "name": "DEMIS Notification Gateway",
+    "version": "1.7.1"
+  },
+  "implementation": {
+    "description": "Das DEMIS Notification Gateway bildet die Außenschnittstelle der zentralen DEMIS Infrastruktur in Richtung der Melder. Hier erfolgen die Annahme, Vorverarbeitung und Weiterleitung zur späteren Speicherung der gesendeten Meldungen (Meldevorgänge).",
+    "url": "https://demis.rki.de/notification-gateway/fhir"
+  },
+  "fhirVersion": "4.0.1",
+  "format": [ "application/fhir+xml", "application/fhir+json" ],
+  "rest": [ {
+    "mode": "server",
+    "documentation": "Alle Funktionalitäten des DEMIS Notification Gateway.",
+    "operation": [ {
+      "name": "process-notification",
+      "definition": "https://demis.rki.de/fhir/OperationDefinition/ProcessNotification"
+    } ]
+  } ],
+  "document": [ {
+    "mode": "consumer",
+    "profile": "https://demis.rki.de/fhir/StructureDefinition/NotificationBundle"
+  } ]
+}

@@ -32,11 +32,13 @@ import static de.gematik.demis.fhir_ui_data_model_translation_service.disease.fo
 import static de.gematik.demis.fhir_ui_data_model_translation_service.disease.formly.processor.ClipboardProcessor.createClipboard;
 
 import de.gematik.demis.fhir_ui_data_model_translation_service.FeatureFlags;
+import de.gematik.demis.fhir_ui_data_model_translation_service.context.OnlyInDiseaseContext;
 import de.gematik.demis.fhir_ui_data_model_translation_service.disease.formly.DiseaseClipboardProps;
 import de.gematik.demis.fhir_ui_data_model_translation_service.disease.formly.fieldtypes.DatePicker;
 import de.gematik.demis.fhir_ui_data_model_translation_service.disease.formly.model.FieldGroup;
 import de.gematik.demis.fhir_ui_data_model_translation_service.disease.formly.model.Props;
 import de.gematik.demis.fhir_ui_data_model_translation_service.disease.formly.processor.ChoiceProcessor;
+import de.gematik.demis.fhir_ui_data_model_translation_service.disease.formly.processor.ItemProcessor;
 import de.gematik.demis.fhir_ui_data_model_translation_service.model.CodeDisplay;
 import de.gematik.demis.fhir_ui_data_model_translation_service.translation.DataLoaderSrv;
 import java.util.Collections;
@@ -47,9 +49,10 @@ import lombok.RequiredArgsConstructor;
 import org.hl7.fhir.r4.model.Questionnaire;
 import org.springframework.stereotype.Component;
 
+@OnlyInDiseaseContext
 @Component
 @RequiredArgsConstructor
-public class HospitalizationProcessor {
+class HospitalizationProcessor implements ItemProcessor {
 
   static final String ORGANIZATION_CHECKBOX_KEY = "copyNotifiedPersonCurrentAddress";
   static final String ORGANIZATION_CHECKBOX_LABEL =
@@ -74,14 +77,17 @@ public class HospitalizationProcessor {
       "http://fhir.de/ValueSet/dkgev/Fachabteilungsschluessel-erweitert";
   private static final String LINK_ID_SERVICE_TYPE = "serviceType";
   private static final String CLIPBOARD_MARKER_ENCOUNTER = "enc.";
+  private static final String KEY_ANSWER_PREFIX = "answer.";
+  private static final String DATE_PICKER_KEY_ANSWER = KEY_ANSWER_PREFIX + DatePicker.KEY_DEFAULT;
 
   private final DataLoaderSrv dataLoaderSrv;
-  private final OrganizationProcessor organizationProcessor;
+  private final DefaultOrganizationProcessor defaultOrganizationProcessor;
   private final DiseaseClipboardProps diseaseClipboardProps;
   private final FeatureFlags featureFlags;
 
-  public FieldGroup createFieldGroup(
-      Questionnaire.QuestionnaireItemComponent item, FieldGroup parent) {
+  @Override
+  public FieldGroup[] createFieldGroup(
+      Questionnaire.QuestionnaireItemComponent item, FieldGroup parent, String bingo) {
     FieldGroup hospitalization =
         FieldGroup.builder()
             .key("Hospitalization")
@@ -93,7 +99,7 @@ public class HospitalizationProcessor {
     createPeriod(item, hospitalization);
     createReason(item, hospitalization);
     createServiceProvider(item, hospitalization);
-    return hospitalization;
+    return hospitalization.toArray();
   }
 
   private void createServiceType(Questionnaire.QuestionnaireItemComponent item, FieldGroup parent) {
@@ -113,7 +119,7 @@ public class HospitalizationProcessor {
     FieldGroup input =
         FieldGroup.builder()
             .type(FieldGroup.TYPE_CODING)
-            .key("answer." + FieldGroup.KEY_VALUE_CODING)
+            .key(KEY_ANSWER_PREFIX + FieldGroup.KEY_VALUE_CODING)
             .className("hospitalizationServiceType")
             .parent(serviceType)
             .props(
@@ -147,7 +153,7 @@ public class HospitalizationProcessor {
             .required(true)
             .allowedPrecisions(List.of(DAY, MONTH))
             .maxDateNotInFuture(true)
-            .key(DiseaseProcessor.DATE_PICKER_KEY_ANSWER)
+            .key(DATE_PICKER_KEY_ANSWER)
             .parent(start)
             .className("hospitalizationStartDate")
             .build()
@@ -167,7 +173,7 @@ public class HospitalizationProcessor {
             .label("Entlassdatum")
             .required(false)
             .allowedPrecisions(List.of(DAY, MONTH))
-            .key(DiseaseProcessor.DATE_PICKER_KEY_ANSWER)
+            .key(DATE_PICKER_KEY_ANSWER)
             .parent(end)
             .className("hospitalizationEndDate")
             .build()
@@ -188,7 +194,7 @@ public class HospitalizationProcessor {
     FieldGroup input =
         FieldGroup.builder()
             .type(FieldGroup.TYPE_CODING)
-            .key("answer." + FieldGroup.KEY_VALUE_CODING)
+            .key(KEY_ANSWER_PREFIX + FieldGroup.KEY_VALUE_CODING)
             .className("hospitalizationReason")
             .parent(reason)
             .props(
@@ -214,7 +220,7 @@ public class HospitalizationProcessor {
             .build();
     final var enableWhen = item.getEnableWhen();
     item.setEnableWhen(Collections.emptyList());
-    this.organizationProcessor.createFieldGroup(
+    this.defaultOrganizationProcessor.createFieldGroup(
         item, serviceProvider, COPY_ORGANIZATION, COPY_CONTACT);
     item.setEnableWhen(enableWhen);
   }

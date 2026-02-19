@@ -1,0 +1,14 @@
+{
+  "resourceType": "NamingSystem",
+  "id": "SendingServiceProvider",
+  "name": "SendingServiceProvider",
+  "status": "active",
+  "kind": "identifier",
+  "date": "2025-02-12",
+  "description": "Der SendingServiceProvider ist das NamingSystem um die Identifikation der sendenden Einrichtung zu übermitteln.",
+  "uniqueId": [ {
+    "type": "uri",
+    "value": "https://demis.rki.de/fhir/NamingSystem/SendingServiceProvider",
+    "preferred": true
+  } ]
+}

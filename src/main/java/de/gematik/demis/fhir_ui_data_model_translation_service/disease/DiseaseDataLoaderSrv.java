@@ -27,6 +27,7 @@ package de.gematik.demis.fhir_ui_data_model_translation_service.disease;
  * #L%
  */
 
+import de.gematik.demis.fhir_ui_data_model_translation_service.context.OnlyInDiseaseContext;
 import de.gematik.demis.fhir_ui_data_model_translation_service.disease.formly.DiseaseDataPreparationSrv;
 import de.gematik.demis.fhir_ui_data_model_translation_service.disease.formly.model.FormlyFieldConfigs;
 import de.gematik.demis.fhir_ui_data_model_translation_service.disease.formly.model.QuestionnaireTranslation;
@@ -42,6 +43,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
+@OnlyInDiseaseContext
 @Service
 @Slf4j
 @RequiredArgsConstructor

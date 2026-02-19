@@ -1,0 +1,14 @@
+{
+  "resourceType": "NamingSystem",
+  "id": "InternalOrganizationId",
+  "name": "InternalOrganizationId",
+  "status": "active",
+  "kind": "identifier",
+  "date": "2025-03-14",
+  "description": "Die InternalOrganizationId ist das NamingSystem um eine interne ID der Einrichtung zu übermitteln.",
+  "uniqueId": [ {
+    "type": "uri",
+    "value": "https://demis.rki.de/fhir/sid/InternalOrganizationId",
+    "preferred": true
+  } ]
+}

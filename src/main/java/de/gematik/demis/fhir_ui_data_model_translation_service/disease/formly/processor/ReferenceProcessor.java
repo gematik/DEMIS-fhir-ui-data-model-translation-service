@@ -27,86 +27,40 @@ package de.gematik.demis.fhir_ui_data_model_translation_service.disease.formly.p
  * #L%
  */
 
+import de.gematik.demis.fhir_ui_data_model_translation_service.context.OnlyInDiseaseContext;
 import de.gematik.demis.fhir_ui_data_model_translation_service.disease.formly.fhir.TooltipExtension;
 import de.gematik.demis.fhir_ui_data_model_translation_service.disease.formly.model.FieldGroup;
 import de.gematik.demis.fhir_ui_data_model_translation_service.disease.formly.model.Props;
-import de.gematik.demis.fhir_ui_data_model_translation_service.disease.formly.processor.resources.HospitalizationProcessor;
-import de.gematik.demis.fhir_ui_data_model_translation_service.disease.formly.processor.resources.ImmunizationProcessor;
-import de.gematik.demis.fhir_ui_data_model_translation_service.disease.formly.processor.resources.OrganizationProcessor;
+import de.gematik.demis.fhir_ui_data_model_translation_service.disease.formly.processor.resources.ResourceProcessor;
+import java.util.Optional;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.hl7.fhir.r4.model.CanonicalType;
-import org.hl7.fhir.r4.model.CodeType;
-import org.hl7.fhir.r4.model.Extension;
 import org.hl7.fhir.r4.model.Questionnaire;
-import org.hl7.fhir.r4.model.Type;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
-@Component
+@OnlyInDiseaseContext
 @RequiredArgsConstructor
+@Service
 @Slf4j
 public class ReferenceProcessor implements ItemProcessor {
 
-  public static final String REFERENCE_PROFILE =
-      "http://hl7.org/fhir/StructureDefinition/questionnaire-referenceProfile";
-  public static final String REFERENCE_RESOURCE =
-      "http://hl7.org/fhir/StructureDefinition/questionnaire-referenceResource";
-
-  private final ImmunizationProcessor immunizationProcessor;
-  private final HospitalizationProcessor hospitalizationProcessor;
-  private final OrganizationProcessor organizationProcessor;
+  private final ResourceProcessor resourceProcessor;
   private final EnableWhenProcessor enableWhenProcessor;
   private final TooltipExtension tooltipExtension;
 
-  private static String extractReferenceType(Extension extension) {
-    Type value = extension.getValue();
-    if (value instanceof CodeType codeType) {
-      return codeType.getValue();
-    } else {
-      // CanonicalType
-      return ((CanonicalType) value).getValue();
-    }
-  }
-
+  /*
+   * Wenn es eine unbekannte Profil-Referenz ist, wird ein leerer Array zurückgegeben.
+   *
+   * Wenn eine Ressourcen-Referenz unbekannt oder nicht vorhanden ist, dann geht es in den Fall "ID only".
+   */
   @Override
   public FieldGroup[] createFieldGroup(
       Questionnaire.QuestionnaireItemComponent item, FieldGroup parent, String diseaseCode) {
-    Extension profileReference = item.getExtensionByUrl(REFERENCE_PROFILE);
-    final FieldGroup fieldGroup;
-    if (profileReference == null) {
-      fieldGroup = createResourceReferenceFieldGroup(item, parent);
-    } else {
-      fieldGroup = createProfileReferenceFieldGroup(item, diseaseCode, profileReference, parent);
+    final Optional<ItemProcessor> processor = resourceProcessor.getItemProcessor(item);
+    if (processor.isPresent()) {
+      return processor.get().createFieldGroup(item, parent, diseaseCode);
     }
-    if (fieldGroup == null) {
-      return new FieldGroup[0];
-    }
-    return new FieldGroup[] {fieldGroup};
-  }
-
-  private FieldGroup createResourceReferenceFieldGroup(
-      Questionnaire.QuestionnaireItemComponent item, FieldGroup parent) {
-    Extension resourceReference = item.getExtensionByUrl(REFERENCE_RESOURCE);
-    if (resourceReference != null
-        && extractReferenceType(resourceReference).contains("Organization")) {
-      return this.organizationProcessor.createFieldGroup(item, parent);
-    }
-    return handleIdOnlyCase(item, parent);
-  }
-
-  private FieldGroup createProfileReferenceFieldGroup(
-      Questionnaire.QuestionnaireItemComponent item,
-      String diseaseCode,
-      Extension profileReference,
-      FieldGroup parent) {
-    String type = extractReferenceType(profileReference);
-    if (type.contains("ImmunizationInformation")) {
-      return this.immunizationProcessor.createFieldGroup(item, diseaseCode, parent);
-    } else if (type.contains("Hospitalization")) {
-      return this.hospitalizationProcessor.createFieldGroup(item, parent);
-    }
-    log.info("Reference type not supported: {}", type);
-    return null;
+    return handleIdOnlyCase(item, parent).toArray();
   }
 
   private FieldGroup handleIdOnlyCase(

@@ -1,0 +1,49 @@
+{
+  "resourceType": "ConceptMap",
+  "id": "ISIKOrganizationTypeCodes2DEMISOrganizationTypeCodes",
+  "url": "https://demis.rki.de/fhir/ConceptMap/ISIKOrganizationTypeCodes2DEMISOrganizationTypeCodes",
+  "version": "1.0.0",
+  "name": "ISIKOrganizationTypeCodes2DEMISOrganizationTypeCodes",
+  "title": "ISIKOrganizationTypeCodes2DEMISOrganizationTypeCodes",
+  "status": "active",
+  "date": "2025-02-20",
+  "publisher": "Robert Koch-Institut",
+  "contact": [ {
+    "telecom": [ {
+      "system": "email",
+      "value": "demis-support@rki.de"
+    } ]
+  } ],
+  "description": "Die ConceptMap ISIKOrganizationTypeCodes2DEMISOrganizationTypeCodes ordnet die Codes der ISIK-Einrichtungstypen den Codes der DEMIS-Einrichtungsarten zu.",
+  "jurisdiction": [ {
+    "coding": [ {
+      "system": "urn:iso:std:iso:3166",
+      "version": "ALPHA-2",
+      "code": "DE"
+    } ]
+  } ],
+  "copyright": "Copyright (C) 2021-2025 Robert Koch-Institut",
+  "sourceUri": "http://hl7.org/fhir/ValueSet/organization-type",
+  "targetUri": "https://demis.rki.de/fhir/ValueSet/organizationType",
+  "group": [ {
+    "source": "http://terminology.hl7.org/CodeSystem/organization-type",
+    "target": "https://demis.rki.de/fhir/CodeSystem/organizationType",
+    "element": [ {
+      "code": "prov",
+      "display": "Healthcare Provider",
+      "target": [ {
+        "code": "medFacility",
+        "display": "Medizinische Einrichtung",
+        "equivalence": "equivalent"
+      } ]
+    }, {
+      "code": "dept",
+      "display": "Hospital Department",
+      "target": [ {
+        "code": "hospital",
+        "display": "Krankenhaus",
+        "equivalence": "equivalent"
+      } ]
+    } ]
+  } ]
+}

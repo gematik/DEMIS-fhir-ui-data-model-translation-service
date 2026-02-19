@@ -28,10 +28,12 @@ package de.gematik.demis.fhir_ui_data_model_translation_service.disease.formly.p
  */
 
 import de.gematik.demis.fhir_ui_data_model_translation_service.FeatureFlags;
+import de.gematik.demis.fhir_ui_data_model_translation_service.context.OnlyInDiseaseContext;
 import de.gematik.demis.fhir_ui_data_model_translation_service.disease.formly.fieldtypes.DatePicker;
 import de.gematik.demis.fhir_ui_data_model_translation_service.disease.formly.model.FieldGroup;
 import de.gematik.demis.fhir_ui_data_model_translation_service.disease.formly.model.Props;
 import de.gematik.demis.fhir_ui_data_model_translation_service.disease.formly.processor.ChoiceProcessor;
+import de.gematik.demis.fhir_ui_data_model_translation_service.disease.formly.processor.ItemProcessor;
 import de.gematik.demis.fhir_ui_data_model_translation_service.model.CodeDisplay;
 import de.gematik.demis.fhir_ui_data_model_translation_service.translation.DataLoaderSrv;
 import java.util.List;
@@ -39,17 +41,21 @@ import lombok.RequiredArgsConstructor;
 import org.hl7.fhir.r4.model.Questionnaire;
 import org.springframework.stereotype.Component;
 
+@OnlyInDiseaseContext
 @Component
 @RequiredArgsConstructor
-public class ImmunizationProcessor {
+class ImmunizationProcessor implements ItemProcessor {
 
   public static final String CODE_SYSTEM_SNOMED = "http://snomed.info/sct";
   private static final String REF_ELEMENT = "REF_ELEMENT";
+  private static final String DATE_PICKER_KEY_ANSWER = "answer." + DatePicker.KEY_DEFAULT;
+
   private final DataLoaderSrv dataLoaderSrv;
   private final FeatureFlags featureFlags;
 
-  public FieldGroup createFieldGroup(
-      Questionnaire.QuestionnaireItemComponent item, String diseaseCode, FieldGroup parent) {
+  @Override
+  public FieldGroup[] createFieldGroup(
+      Questionnaire.QuestionnaireItemComponent item, FieldGroup parent, String diseaseCode) {
     FieldGroup immunization =
         FieldGroup.builder()
             .key("Immunization")
@@ -60,7 +66,7 @@ public class ImmunizationProcessor {
     createVaccineCode(diseaseCode, immunization);
     createOccurrence(immunization);
     createNote(immunization);
-    return immunization;
+    return immunization.toArray();
   }
 
   private void createVaccineCode(String diseaseCode, FieldGroup parent) {
@@ -112,7 +118,7 @@ public class ImmunizationProcessor {
         .label("Datum der Impfung")
         .required(true)
         .maxDateNotInFuture(true)
-        .key(DiseaseProcessor.DATE_PICKER_KEY_ANSWER)
+        .key(DATE_PICKER_KEY_ANSWER)
         .parent(occurrence)
         .className("vaccinationDate")
         .build()

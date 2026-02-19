@@ -28,14 +28,13 @@ package de.gematik.demis.fhir_ui_data_model_translation_service.disease.formly.p
  */
 
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.mockito.Mockito.verify;
-import static org.mockito.Mockito.verifyNoInteractions;
+import static org.mockito.Mockito.*;
 
 import de.gematik.demis.fhir_ui_data_model_translation_service.disease.formly.fhir.TooltipExtension;
 import de.gematik.demis.fhir_ui_data_model_translation_service.disease.formly.model.FieldGroup;
-import de.gematik.demis.fhir_ui_data_model_translation_service.disease.formly.processor.resources.HospitalizationProcessor;
-import de.gematik.demis.fhir_ui_data_model_translation_service.disease.formly.processor.resources.ImmunizationProcessor;
-import de.gematik.demis.fhir_ui_data_model_translation_service.disease.formly.processor.resources.OrganizationProcessor;
+import de.gematik.demis.fhir_ui_data_model_translation_service.disease.formly.processor.resources.ResourceProcessor;
+import java.util.Optional;
+import org.assertj.core.api.Assertions;
 import org.hl7.fhir.r4.model.CanonicalType;
 import org.hl7.fhir.r4.model.Extension;
 import org.hl7.fhir.r4.model.Questionnaire;
@@ -50,67 +49,71 @@ import org.mockito.junit.jupiter.MockitoExtension;
 @ExtendWith(MockitoExtension.class)
 class ReferenceProcessorTest {
 
-  @Mock private ImmunizationProcessor immunizationProcessorMock;
-  @Mock private HospitalizationProcessor hospitalizationProcessorMock;
-  @Mock private OrganizationProcessor organizationProcessorMock;
+  private static final String DISEASE_CODE = "cvdd";
+
+  @Mock private ResourceProcessor resourceProcessor;
   @Mock private EnableWhenProcessor enableWhenProcessor;
   @Mock private TooltipExtension tooltipExtension;
+  @Mock private ItemProcessor itemProcessor;
 
   @InjectMocks private ReferenceProcessor referenceProcessor;
 
   @Test
-  @DisplayName("check call for immunizationProcessor")
-  void shouldCallImmunizationProcessor() {
-    Questionnaire.QuestionnaireItemComponent item = new Questionnaire.QuestionnaireItemComponent();
+  @DisplayName("profile reference of immunization information")
+  void shouldCallItemProcessor() {
+
+    // given
+    final Questionnaire.QuestionnaireItemComponent item =
+        new Questionnaire.QuestionnaireItemComponent();
     item.addExtension(
         new Extension("http://hl7.org/fhir/StructureDefinition/questionnaire-referenceProfile")
-            .setValue(new CanonicalType("ImmunizationInformation")));
-    referenceProcessor.createFieldGroup(item, null, "abcd");
-    verify(immunizationProcessorMock).createFieldGroup(item, "abcd", null);
+            .setValue(
+                new CanonicalType(
+                    "https://demis.rki.de/fhir/StructureDefinition/ImmunizationInformationCVDD")));
+    final FieldGroup parent = FieldGroup.builder().build();
+    final FieldGroup[] result = FieldGroup.builder().build().toArray();
+    when(resourceProcessor.getItemProcessor(item)).thenReturn(Optional.of(itemProcessor));
+    when(itemProcessor.createFieldGroup(item, parent, DISEASE_CODE)).thenReturn(result);
+
+    // when
+    final FieldGroup[] actual = referenceProcessor.createFieldGroup(item, parent, DISEASE_CODE);
+
+    // then
+    Assertions.assertThat(actual).isSameAs(result);
+    verify(resourceProcessor).getItemProcessor(item);
     verifyNoInteractions(enableWhenProcessor);
+    verifyNoInteractions(tooltipExtension);
   }
 
+  /**
+   * When no resource item processor is returned for the reference, the "ID only" case is handled.
+   * This is the case when no profile reference is given but a resource reference is given that is
+   * not mapped or when no reference is given at all.
+   */
   @Test
-  @DisplayName("check call for hospitalizationProcessor")
-  void shouldCallHospitalizationProcessor() {
-    Questionnaire.QuestionnaireItemComponent item = new Questionnaire.QuestionnaireItemComponent();
-    item.addExtension(
-        new Extension("http://hl7.org/fhir/StructureDefinition/questionnaire-referenceProfile")
-            .setValue(new CanonicalType("Hospitalization")));
-    referenceProcessor.createFieldGroup(item, null, null);
-    verify(hospitalizationProcessorMock).createFieldGroup(item, null);
-    verifyNoInteractions(enableWhenProcessor);
-  }
-
-  @Test
-  @DisplayName("check call for organizationProcessor")
-  void shouldCallOrganizationProcessor() {
-    Questionnaire.QuestionnaireItemComponent item = new Questionnaire.QuestionnaireItemComponent();
-    item.setLinkId("linkId");
-    item.addExtension(
-        new Extension("http://hl7.org/fhir/StructureDefinition/questionnaire-referenceResource")
-            .setValue(new CanonicalType("Organization")));
-    referenceProcessor.createFieldGroup(item, null, null);
-    verify(organizationProcessorMock).createFieldGroup(item, null);
-    verifyNoInteractions(enableWhenProcessor);
-  }
-
-  @Test
-  @DisplayName("check call for id only case")
+  @DisplayName("empty or unknown resource reference")
   void shouldCallIdOnlyCase() {
+
+    // given
     Questionnaire.QuestionnaireItemComponent item = new Questionnaire.QuestionnaireItemComponent();
     item.setLinkId("valueString");
     item.setRequired(true);
     item.setText("text");
     item.addExtension(
         new Extension("http://hl7.org/fhir/StructureDefinition/questionnaire-referenceResource")
-            .setValue(new CanonicalType("something")));
+            .setValue(new CanonicalType("unmappedResourceName")));
     FieldGroup parent = FieldGroup.builder().build();
-    FieldGroup[] fieldGroups = referenceProcessor.createFieldGroup(item, parent, null);
-    assertThat(fieldGroups).hasSize(1);
+    when(resourceProcessor.getItemProcessor(item)).thenReturn(Optional.empty());
 
+    // when
+    final FieldGroup[] fieldGroups = referenceProcessor.createFieldGroup(item, parent, null);
+
+    // then
+    assertThat(fieldGroups).hasSize(1);
     FieldGroup fieldGroup = fieldGroups[0];
-    assertThat(fieldGroup.getKey()).isEqualTo("valueReference");
+    assertThat(fieldGroup.getKey())
+        .as("ID on unmapped resource reference")
+        .isEqualTo("valueReference");
     assertThat(fieldGroup.getType()).isEqualTo("input");
     assertThat(fieldGroup.getParent()).isEqualTo(parent);
     assertThat(fieldGroup.getProps().getRequired()).isTrue();
@@ -118,17 +121,6 @@ class ReferenceProcessorTest {
     assertThat(fieldGroup.getClassName()).isEqualTo("LinkId_valueString");
     verify(enableWhenProcessor).createEnableWhens(item, fieldGroup);
     verify(enableWhenProcessor, Mockito.never()).incrementIntersectingEnableWhens(Mockito.any());
-  }
-
-  @Test
-  @DisplayName("unkown case")
-  void shouldReturnEmptyFieldGroup() {
-    Questionnaire.QuestionnaireItemComponent item = new Questionnaire.QuestionnaireItemComponent();
-    item.addExtension(
-        new Extension("http://hl7.org/fhir/StructureDefinition/questionnaire-referenceProfile")
-            .setValue(new CanonicalType("unkown")));
-    FieldGroup[] fieldGroup = referenceProcessor.createFieldGroup(item, null, null);
-    assertThat(fieldGroup).isEmpty();
-    verifyNoInteractions(enableWhenProcessor);
+    verify(tooltipExtension).getStringValueOrNull(Mockito.any());
   }
 }
