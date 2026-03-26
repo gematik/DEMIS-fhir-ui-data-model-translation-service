@@ -38,18 +38,15 @@ deploymentLabels: {}
 customEnvVars:
   DATA_PATH_HL7_DATA_ROOT: "classpath:/fhir-profile-snapshots/r4"
   DATA_PATH_GAPP_DATA: "classpath:/fhir-profile-snapshots/GAPP"
-  FEATURE_FLAG_NOTIFICATIONS_7_3: "false"
   FEATURE_FLAG_DISEASE_STRICT: "false"
-  FEATURE_FLAG_ADD_DESIGNATION_USE: "false"
   FEATURE_FLAG_CODE_DISPLAY_VERSION: "false"
-  FEATURE_FLAG_SNOMED_VERSION_FROM_FUTS: "false"
-  FEATURE_FLAG_SNAPSHOT_6: "false"
+  FEATURE_FLAG_DISEASE_QUESTIONNAIRE_ORG_INPUT_VALIDATION: "false"
 
 # Define custom Container Entrypoint and Arguments (e.g. JVM Tuning)
 # If not given, the Entrypoint defined in Dockerfile will be used
 application:
   entrypoint: ["java"]
-  parameters: ["-XX:ActiveProcessorCount=2", "-XX:MaxRAMPercentage=80.0", "-XX:+TieredCompilation", "-XX:+UseSerialGC", "-jar", "/app.jar"]
+  parameters: ["-XX:ActiveProcessorCount=2", "-XX:MaxRAMPercentage=65.0", "-XX:+TieredCompilation", "-XX:+UseG1GC", "-jar", "/app.jar"]
 
 imagePullPolicy: IfNotPresent
 # Define Image Pull Secrets if using private registry
@@ -117,10 +114,10 @@ service:
 # Resources
 resources:
   limits:
-    memory: "500Mi"
+    memory: "750Mi"
   requests:
     cpu: "50m"
-    memory: "500Mi"
+    memory: "750Mi"
 
 autoscaling:
   enabled: false

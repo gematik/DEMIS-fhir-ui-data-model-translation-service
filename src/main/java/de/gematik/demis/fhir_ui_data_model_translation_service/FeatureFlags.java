@@ -36,6 +36,6 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 @ConfigurationProperties(prefix = "feature.flag")
 public class FeatureFlags {
   boolean diseaseStrict;
-  boolean addDesignationUse;
   boolean addCodeDisplayVersion;
+  boolean diseaseQuestionnaireOrgInputValidation;
 }

@@ -2,11 +2,11 @@
   "resourceType": "StructureDefinition",
   "id": "DiseaseTOXD",
   "url": "https://demis.rki.de/fhir/StructureDefinition/DiseaseTOXD",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "name": "DiseaseTOXD",
-  "title": "Nichtnamentliche Ergänzung von Erkrankungsinformationen für Toxoplasma gondii, konnatal",
+  "title": "Nichtnamentliche Ergänzung von Erkrankungsinformationen für Toxoplasma gondii; Meldepflicht nur bei konnataler Infektion des Kindes",
   "status": "active",
-  "date": "2025-09-01",
+  "date": "2026-01-19",
   "publisher": "Robert Koch-Institut",
   "contact": [
     {
@@ -18,7 +18,7 @@
       ]
     }
   ],
-  "description": "Die Condition-Ressource DiseaseTOXD spezifiziert die zu ergänzenden Erkrankungsinformationen wie z.B. Symptome hinsichtlich Toxoplasma gondii, konnatal.",
+  "description": "Die Condition-Ressource DiseaseTOXD spezifiziert die zu ergänzenden Erkrankungsinformationen wie z.B. Symptome hinsichtlich Toxoplasma gondii; Meldepflicht nur bei konnataler Infektion des Kindes.",
   "jurisdiction": [
     {
       "coding": [
@@ -2164,8 +2164,8 @@
       {
         "id": "Condition.code",
         "path": "Condition.code",
-        "short": "Meldetatbestand \"Toxoplasma gondii; Meldepflicht nur bei konnatalen Infektionen\"",
-        "definition": "Bei Meldetatbestand \"Toxoplasma gondii; Meldepflicht nur bei konnatalen Infektionen\" ist Condition.code.coding.code mit \"toxd\" zu belegen.",
+        "short": "Meldetatbestand \"Toxoplasma gondii; Meldepflicht nur bei konnataler Infektion des Kindes\"",
+        "definition": "Bei Meldetatbestand \"Toxoplasma gondii; Meldepflicht nur bei konnataler Infektion des Kindes\" ist Condition.code.coding.code mit \"toxd\" zu belegen.",
         "requirements": "0..1 to account for primarily narrative only resources.",
         "alias": [
           "type"
@@ -3790,7 +3790,7 @@
       {
         "id": "Condition.evidence",
         "path": "Condition.evidence",
-        "short": "Symptome und Manifestationen in Bezug auf Toxoplasma gondii; Meldepflicht nur bei konnatalen Infektionen",
+        "short": "Symptome und Manifestationen in Bezug auf Toxoplasma gondii; Meldepflicht nur bei konnataler Infektion des Kindes",
         "definition": "Der Wert muss als SNOMED-Code - entsprechend des vom RKI definierten und in regelmäßigen Abständen aktualisierten ValueSets (https://demis.rki.de/fhir/ValueSet/evidenceTOXD) – im code.coding Element dargestellt werden.",
         "comment": "The evidence may be a simple list of coded symptoms/manifestations, or references to observations or formal assessments, or both.",
         "min": 0,
@@ -4158,7 +4158,7 @@
         "isSummary": true,
         "binding": {
           "strength": "extensible",
-          "description": "Symptome und Manifestationen in Bezug auf Toxoplasma gondii; Meldepflicht nur bei konnatalen Infektionen",
+          "description": "Symptome und Manifestationen in Bezug auf Toxoplasma gondii; Meldepflicht nur bei konnataler Infektion des Kindes",
           "valueSet": "https://demis.rki.de/fhir/ValueSet/evidenceTOXD"
         },
         "mapping": [
@@ -4667,8 +4667,8 @@
       {
         "id": "Condition.code",
         "path": "Condition.code",
-        "short": "Meldetatbestand \"Toxoplasma gondii; Meldepflicht nur bei konnatalen Infektionen\"",
-        "definition": "Bei Meldetatbestand \"Toxoplasma gondii; Meldepflicht nur bei konnatalen Infektionen\" ist Condition.code.coding.code mit \"toxd\" zu belegen."
+        "short": "Meldetatbestand \"Toxoplasma gondii; Meldepflicht nur bei konnataler Infektion des Kindes\"",
+        "definition": "Bei Meldetatbestand \"Toxoplasma gondii; Meldepflicht nur bei konnataler Infektion des Kindes\" ist Condition.code.coding.code mit \"toxd\" zu belegen."
       },
       {
         "id": "Condition.code.coding.system",
@@ -4683,7 +4683,7 @@
       {
         "id": "Condition.evidence",
         "path": "Condition.evidence",
-        "short": "Symptome und Manifestationen in Bezug auf Toxoplasma gondii; Meldepflicht nur bei konnatalen Infektionen",
+        "short": "Symptome und Manifestationen in Bezug auf Toxoplasma gondii; Meldepflicht nur bei konnataler Infektion des Kindes",
         "definition": "Der Wert muss als SNOMED-Code - entsprechend des vom RKI definierten und in regelmäßigen Abständen aktualisierten ValueSets (https://demis.rki.de/fhir/ValueSet/evidenceTOXD) – im code.coding Element dargestellt werden."
       },
       {
@@ -4699,7 +4699,7 @@
         "max": "1",
         "binding": {
           "strength": "extensible",
-          "description": "Symptome und Manifestationen in Bezug auf Toxoplasma gondii; Meldepflicht nur bei konnatalen Infektionen",
+          "description": "Symptome und Manifestationen in Bezug auf Toxoplasma gondii; Meldepflicht nur bei konnataler Infektion des Kindes",
           "valueSet": "https://demis.rki.de/fhir/ValueSet/evidenceTOXD"
         }
       },

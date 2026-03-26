@@ -1,0 +1,190 @@
+{
+  "resourceType": "ValueSet",
+  "id": "laboratoryTestCRYP",
+  "url": "https://demis.rki.de/fhir/ValueSet/laboratoryTestCRYP",
+  "version": "1.7.1",
+  "name": "LaboratoryTestCRYP",
+  "title": "Labortest für humanpathogene Cryptosporidium sp.",
+  "status": "active",
+  "experimental": false,
+  "date": "2025-12-05",
+  "publisher": "Robert Koch-Institut",
+  "contact": [
+    {
+      "telecom": [
+        {
+          "system": "email",
+          "value": "demis-support@rki.de"
+        }
+      ]
+    }
+  ],
+  "description": "Das ValueSet LaboratoryTestCRYP enthält die Codes der Labortests für humanpathogene Cryptosporidium sp..",
+  "jurisdiction": [
+    {
+      "coding": [
+        {
+          "system": "urn:iso:std:iso:3166",
+          "version": "ALPHA-2",
+          "code": "DE"
+        }
+      ]
+    }
+  ],
+  "copyright": "This material contains content from LOINC (http://loinc.org/). LOINC is copyright © 1995-2023, Regenstrief Institute, Inc. and the Logical Observation Identifiers Names and Codes (LOINC) Committee and is available at no cost under the license at http://loinc.org/license. LOINC® is a registered United States trademark of Regenstrief Institute, Inc.\r\n\r\nDieses Material enthält Inhalte von LOINC (http://loinc.org/). LOINC ist urheberrechtlich geschützt © 1995-2023, Regenstrief Institute, Inc. und das Logical Observation Identifiers Names and Codes (LOINC) Committee und ist unter der Lizenz http://loinc.org/license kostenlos erhältlich. LOINC® ist eine eingetragene US-amerikanische Marke des Regenstrief Institute, Inc.\r\n\r\nDownloadbedingungen für LOINC-Übersetzungen für Anwendungszwecke in Deutschland\r\nÜbersetzungen in verschiedenen Sprachen werden von \"LOINC® Adopters\", meistens Behörden oder Forschungsinstituten verschiedener Länder, erstellt und an das Regenstrief Institute weitergegeben. Das Copyright für die Übersetzungen liegt beim Regenstrief Institute. Für Deutschland wird die LOINC®-Übersetzung durch das BfArM bereitgestellt. Die Übersetzungen werden durch das Regenstrief Institute als \"Linguistic Variants\" in den halbjährlichen LOINC®-Releases (Februar und August) veröffentlicht.\r\n\r\nDas Copyright für die Übersetzungen liegt beim Regenstrief Institute, 1101 W 10th St, Indianapolis, IN 46202, USA.\r\n\r\nMit dem Download von Dateien kommt ein Nutzungsvertrag zwischen Ihnen und dem Regenstrief Institute zustande. Sie verpflichten sich, die unten verlinkten Nutzungs- und Abgabebedingungen für LOINC vom Regenstrief Institute einzuhalten.",
+  "compose": {
+    "include": [
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "concept": [
+          {
+            "code": "20781-1",
+            "display": "Cryptosporidium sp [Nachweis] in Stuhl mittels säurefester Färbung"
+          },
+          {
+            "code": "21233-2",
+            "display": "Cryptosporidium sp Antigen [Nachweis] in Stuhl"
+          },
+          {
+            "code": "31794-1",
+            "display": "Cryptosporidium sp Antigen [Nachweis] in Probenmaterial"
+          },
+          {
+            "code": "41433-4",
+            "display": "Cryptosporidium hominis DNA [Nachweis] in Probenmaterial mittels Nukleinsäureamplifikation mit Sondendetektion"
+          },
+          {
+            "code": "41434-2",
+            "display": "Cryptosporidium parvum DNA [Nachweis] in Probenmaterial mittels Nukleinsäureamplifikation mit Sondendetektion"
+          },
+          {
+            "code": "41487-0",
+            "display": "Cryptosporidium parvum Antigen [Nachweis] in Stuhl mittels Immunoassay"
+          },
+          {
+            "code": "41488-8",
+            "display": "Cryptosporidium sp [Nachweis] in Probenmaterial mittels säurefester Färbung"
+          },
+          {
+            "code": "41852-5",
+            "display": "Mikroorganismus oder Erreger identifiziert in Probenmaterial"
+          },
+          {
+            "code": "60545-1",
+            "display": "Cryptosporidium sp DNA [Nachweis] in Probenmaterial mittels Nukleinsäureamplifikation mit Sondendetektion"
+          },
+          {
+            "code": "6371-9",
+            "display": "Cryptosporidium sp Antigen [Nachweis] in Stuhl mittels Immunoassay"
+          },
+          {
+            "code": "82205-6",
+            "display": "Cryptosporidium sp DNA [Nachweis] in Stuhl mittels Nukleinsäureamplifikation mit Detektion ohne Sonde"
+          },
+          {
+            "code": "88928-7",
+            "display": "Cryptosporidium sp DNA [Nachweis] in Stuhl mittels Nukleinsäureamplifikation mit Sondendetektion"
+          },
+          {
+            "code": "91677-5",
+            "display": "Cryptosporidium parvum Antigen [Nachweis] in Stuhl mittels Immunoassay-Schnelltest"
+          },
+          {
+            "code": "92688-1",
+            "display": "Cryptosporidium parvum+hominis DNA [Nachweis] in Stuhl mittels Nukleinsäureamplifikation mit Sondendetektion"
+          }
+        ]
+      }
+    ]
+  },
+  "expansion": {
+    "timestamp": "2025-12-05T00:00:00+01:00",
+    "contains": [
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "31794-1",
+        "display": "Cryptosporidium sp Antigen [Nachweis] in Probenmaterial"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "41487-0",
+        "display": "Cryptosporidium parvum Antigen [Nachweis] in Stuhl mittels Immunoassay"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "41852-5",
+        "display": "Mikroorganismus oder Erreger identifiziert in Probenmaterial"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "6371-9",
+        "display": "Cryptosporidium sp Antigen [Nachweis] in Stuhl mittels Immunoassay"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "88928-7",
+        "display": "Cryptosporidium sp DNA [Nachweis] in Stuhl mittels Nukleinsäureamplifikation mit Sondendetektion"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "92688-1",
+        "display": "Cryptosporidium parvum+hominis DNA [Nachweis] in Stuhl mittels Nukleinsäureamplifikation mit Sondendetektion"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "82205-6",
+        "display": "Cryptosporidium sp DNA [Nachweis] in Stuhl mittels Nukleinsäureamplifikation mit Detektion ohne Sonde"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "21233-2",
+        "display": "Cryptosporidium sp Antigen [Nachweis] in Stuhl"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "41488-8",
+        "display": "Cryptosporidium sp [Nachweis] in Probenmaterial mittels säurefester Färbung"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "41434-2",
+        "display": "Cryptosporidium parvum DNA [Nachweis] in Probenmaterial mittels Nukleinsäureamplifikation mit Sondendetektion"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "41433-4",
+        "display": "Cryptosporidium hominis DNA [Nachweis] in Probenmaterial mittels Nukleinsäureamplifikation mit Sondendetektion"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "91677-5",
+        "display": "Cryptosporidium parvum Antigen [Nachweis] in Stuhl mittels Immunoassay-Schnelltest"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "20781-1",
+        "display": "Cryptosporidium sp [Nachweis] in Stuhl mittels säurefester Färbung"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "60545-1",
+        "display": "Cryptosporidium sp DNA [Nachweis] in Probenmaterial mittels Nukleinsäureamplifikation mit Sondendetektion"
+      }
+    ]
+  }
+}

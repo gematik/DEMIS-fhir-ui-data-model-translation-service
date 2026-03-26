@@ -1,0 +1,350 @@
+{
+  "resourceType": "ValueSet",
+  "id": "laboratoryTestINVP",
+  "url": "https://demis.rki.de/fhir/ValueSet/laboratoryTestINVP",
+  "version": "1.11.1",
+  "name": "LaboratoryTestINVP",
+  "title": "Labortest für Influenzavirus; Meldepflicht nur für den direkten Nachweis",
+  "status": "active",
+  "experimental": false,
+  "date": "2025-12-05",
+  "publisher": "Robert Koch-Institut",
+  "contact": [
+    {
+      "telecom": [
+        {
+          "system": "email",
+          "value": "demis-support@rki.de"
+        }
+      ]
+    }
+  ],
+  "description": "Das ValueSet LaboratoryTestINVP enthält die Codes der Labortests für Influenzavirus; Meldepflicht nur für den direkten Nachweis.",
+  "jurisdiction": [
+    {
+      "coding": [
+        {
+          "system": "urn:iso:std:iso:3166",
+          "version": "ALPHA-2",
+          "code": "DE"
+        }
+      ]
+    }
+  ],
+  "copyright": "This material contains content from LOINC (http://loinc.org/). LOINC is copyright © 1995-2023, Regenstrief Institute, Inc. and the Logical Observation Identifiers Names and Codes (LOINC) Committee and is available at no cost under the license at http://loinc.org/license. LOINC® is a registered United States trademark of Regenstrief Institute, Inc.\r\n\r\nDieses Material enthält Inhalte von LOINC (http://loinc.org/). LOINC ist urheberrechtlich geschützt © 1995-2023, Regenstrief Institute, Inc. und das Logical Observation Identifiers Names and Codes (LOINC) Committee und ist unter der Lizenz http://loinc.org/license kostenlos erhältlich. LOINC® ist eine eingetragene US-amerikanische Marke des Regenstrief Institute, Inc.\r\n\r\nDownloadbedingungen für LOINC-Übersetzungen für Anwendungszwecke in Deutschland\r\nÜbersetzungen in verschiedenen Sprachen werden von \"LOINC® Adopters\", meistens Behörden oder Forschungsinstituten verschiedener Länder, erstellt und an das Regenstrief Institute weitergegeben. Das Copyright für die Übersetzungen liegt beim Regenstrief Institute. Für Deutschland wird die LOINC®-Übersetzung durch das BfArM bereitgestellt. Die Übersetzungen werden durch das Regenstrief Institute als \"Linguistic Variants\" in den halbjährlichen LOINC®-Releases (Februar und August) veröffentlicht.\r\n\r\nDas Copyright für die Übersetzungen liegt beim Regenstrief Institute, 1101 W 10th St, Indianapolis, IN 46202, USA.\r\n\r\nMit dem Download von Dateien kommt ein Nutzungsvertrag zwischen Ihnen und dem Regenstrief Institute zustande. Sie verpflichten sich, die unten verlinkten Nutzungs- und Abgabebedingungen für LOINC vom Regenstrief Institute einzuhalten.",
+  "compose": {
+    "include": [
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "concept": [
+          {
+            "code": "105075-6",
+            "display": "Influenza-Virus A RNA [Nachweis] in Probenmaterial"
+          },
+          {
+            "code": "22827-0",
+            "display": "Influenza-Virus-A-Subtyp [Nachweis oder Identität] in Probenmaterial mittels Nukleinsäureamplifikation mit Sondendetektion"
+          },
+          {
+            "code": "31859-2",
+            "display": "Influenza-Virus A Antigen [Nachweis] in Probenmaterial"
+          },
+          {
+            "code": "31864-2",
+            "display": "Influenza-Virus B Antigen [Nachweis] in Probenmaterial"
+          },
+          {
+            "code": "31865-9",
+            "display": "Influenza-Virus C Antigen [Nachweis] in Probenmaterial"
+          },
+          {
+            "code": "34487-9",
+            "display": "Influenza-Virus A RNA [Nachweis] in Probenmaterial mittels Nukleinsäureamplifikation mit Sondendetektion"
+          },
+          {
+            "code": "40982-1",
+            "display": "Influenza-Virus B RNA [Nachweis] in Probenmaterial mittels Nukleinsäureamplifikation mit Sondendetektion"
+          },
+          {
+            "code": "41852-5",
+            "display": "Mikroorganismus oder Erreger identifiziert in Probenmaterial"
+          },
+          {
+            "code": "48509-4",
+            "display": "Influenza-Virus A und B RNA [Nachweis oder Identität] in Probenmaterial mittels Nukleinsäureamplifikation mit Sondendetektion"
+          },
+          {
+            "code": "50698-0",
+            "display": "Influenza-Virus A.Adamantan-Resistenz [Nachweis] mittels Phänotypisierung"
+          },
+          {
+            "code": "50699-8",
+            "display": "Influenza-Virus A.Adamantan-Resistenz [Nachweis]"
+          },
+          {
+            "code": "50700-4",
+            "display": "Influenza-Virus-A.Adamantan-Resistenz-RNA [Nachweis] mittels Nukleinsäureamplifikation mit Sondendetektion"
+          },
+          {
+            "code": "50703-8",
+            "display": "Influenza-Virus A.Neuraminidaseinhibitor-Resistenz [Empfindlichkeit] mittels Phänotypisierung"
+          },
+          {
+            "code": "50712-9",
+            "display": "Influenza-Virus.Neuraminidaseinhibitor-Resistenz [Empfindlichkeit]"
+          },
+          {
+            "code": "50713-7",
+            "display": "Influenza-Virus.Neuraminidaseinhibitor-Resistenz [Empfindlichkeit] mittels Genotypisierung"
+          },
+          {
+            "code": "54240-7",
+            "display": "Influenza-Virus Antigen [Nachweis] in Probenmaterial"
+          },
+          {
+            "code": "54243-1",
+            "display": "Influenza-Virus RNA [Nachweis oder Identität] in Probenmaterial mittels Sondendetektion"
+          },
+          {
+            "code": "54244-9",
+            "display": "Influenza-Virus identifiziert in Probenmaterial"
+          },
+          {
+            "code": "57896-3",
+            "display": "Influenza-Virus A 2009 H1N1v.Neuraminidaseinhibitor-Resistenz [Empfindlichkeit] in Probenmaterial mittels Genotypisierung"
+          },
+          {
+            "code": "57897-1",
+            "display": "Influenza-Virus A+B.Neuraminidaseinhibitor-Resistenz [Empfindlichkeit] in Probenmaterial mittels Genotypisierung"
+          },
+          {
+            "code": "62462-7",
+            "display": "Influenza-Virus A+B RNA [Nachweis] in Probenmaterial mittels Nukleinsäureamplifikation mit Sondendetektion"
+          },
+          {
+            "code": "62860-2",
+            "display": "Influenza-Virus C RNA [Nachweis] in Probenmaterial mittels Nukleinsäureamplifikation mit Sondendetektion"
+          },
+          {
+            "code": "76078-5",
+            "display": "Influenza-Virus A RNA [Nachweis] in Probenmaterial vom Nasopharynx mittels Nukleinsäureamplifikation mit Sondendetektion"
+          },
+          {
+            "code": "81308-9",
+            "display": "Influenza-Virus A RNA [Schwellenwertzyklus] in Probenmaterial vom Respirationstrakt mittels Nukleinsäureamplifikation mit Sondendetektion"
+          },
+          {
+            "code": "85477-8",
+            "display": "Influenza-Virus A RNA [Nachweis] in Probenmaterial vom oberen Respirationstrakt mittels Nukleinsäureamplifikation mit Sondendetektion"
+          },
+          {
+            "code": "85478-6",
+            "display": "Influenza-Virus B RNA [Nachweis] in Probenmaterial vom oberen Respirationstrakt mittels Nukleinsäureamplifikation mit Sondendetektion"
+          },
+          {
+            "code": "90885-5",
+            "display": "Influenza-Virus D RNA [Schwellenwertzyklus] in Probenmaterial mittels Nukleinsäureamplifikation mit Sondendetektion"
+          },
+          {
+            "code": "90886-3",
+            "display": "Influenza-Virus B RNA [Schwellenwertzyklus] in Probenmaterial mittels Nukleinsäureamplifikation mit Sondendetektion"
+          },
+          {
+            "code": "92141-1",
+            "display": "Influenza-Virus B RNA [Nachweis] in Probenmaterial vom Respirationstrakt mittels Nukleinsäureamplifikation mit Sondendetektion"
+          },
+          {
+            "code": "92142-9",
+            "display": "Influenza-Virus A RNA [Nachweis] in Probenmaterial vom Respirationstrakt mittels Nukleinsäureamplifikation mit Sondendetektion"
+          }
+        ]
+      }
+    ]
+  },
+  "expansion": {
+    "timestamp": "2025-12-05T00:00:00+01:00",
+    "contains": [
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "50703-8",
+        "display": "Influenza-Virus A.Neuraminidaseinhibitor-Resistenz [Empfindlichkeit] mittels Phänotypisierung"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "92141-1",
+        "display": "Influenza-Virus B RNA [Nachweis] in Probenmaterial vom Respirationstrakt mittels Nukleinsäureamplifikation mit Sondendetektion"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "50700-4",
+        "display": "Influenza-Virus-A.Adamantan-Resistenz-RNA [Nachweis] mittels Nukleinsäureamplifikation mit Sondendetektion"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "81308-9",
+        "display": "Influenza-Virus A RNA [Schwellenwertzyklus] in Probenmaterial vom Respirationstrakt mittels Nukleinsäureamplifikation mit Sondendetektion"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "31859-2",
+        "display": "Influenza-Virus A Antigen [Nachweis] in Probenmaterial"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "62860-2",
+        "display": "Influenza-Virus C RNA [Nachweis] in Probenmaterial mittels Nukleinsäureamplifikation mit Sondendetektion"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "22827-0",
+        "display": "Influenza-Virus-A-Subtyp [Nachweis oder Identität] in Probenmaterial mittels Nukleinsäureamplifikation mit Sondendetektion"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "54244-9",
+        "display": "Influenza-Virus identifiziert in Probenmaterial"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "31865-9",
+        "display": "Influenza-Virus C Antigen [Nachweis] in Probenmaterial"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "54240-7",
+        "display": "Influenza-Virus Antigen [Nachweis] in Probenmaterial"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "50698-0",
+        "display": "Influenza-Virus A.Adamantan-Resistenz [Nachweis] mittels Phänotypisierung"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "54243-1",
+        "display": "Influenza-Virus RNA [Nachweis oder Identität] in Probenmaterial mittels Sondendetektion"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "76078-5",
+        "display": "Influenza-Virus A RNA [Nachweis] in Probenmaterial vom Nasopharynx mittels Nukleinsäureamplifikation mit Sondendetektion"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "85477-8",
+        "display": "Influenza-Virus A RNA [Nachweis] in Probenmaterial vom oberen Respirationstrakt mittels Nukleinsäureamplifikation mit Sondendetektion"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "85478-6",
+        "display": "Influenza-Virus B RNA [Nachweis] in Probenmaterial vom oberen Respirationstrakt mittels Nukleinsäureamplifikation mit Sondendetektion"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "31864-2",
+        "display": "Influenza-Virus B Antigen [Nachweis] in Probenmaterial"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "57897-1",
+        "display": "Influenza-Virus A+B.Neuraminidaseinhibitor-Resistenz [Empfindlichkeit] in Probenmaterial mittels Genotypisierung"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "41852-5",
+        "display": "Mikroorganismus oder Erreger identifiziert in Probenmaterial"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "57896-3",
+        "display": "Influenza-Virus A 2009 H1N1v.Neuraminidaseinhibitor-Resistenz [Empfindlichkeit] in Probenmaterial mittels Genotypisierung"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "50699-8",
+        "display": "Influenza-Virus A.Adamantan-Resistenz [Nachweis]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "90885-5",
+        "display": "Influenza-Virus D RNA [Schwellenwertzyklus] in Probenmaterial mittels Nukleinsäureamplifikation mit Sondendetektion"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "48509-4",
+        "display": "Influenza-Virus A und B RNA [Nachweis oder Identität] in Probenmaterial mittels Nukleinsäureamplifikation mit Sondendetektion"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "34487-9",
+        "display": "Influenza-Virus A RNA [Nachweis] in Probenmaterial mittels Nukleinsäureamplifikation mit Sondendetektion"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "90886-3",
+        "display": "Influenza-Virus B RNA [Schwellenwertzyklus] in Probenmaterial mittels Nukleinsäureamplifikation mit Sondendetektion"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "105075-6",
+        "display": "Influenza-Virus A RNA [Nachweis] in Probenmaterial"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "40982-1",
+        "display": "Influenza-Virus B RNA [Nachweis] in Probenmaterial mittels Nukleinsäureamplifikation mit Sondendetektion"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "92142-9",
+        "display": "Influenza-Virus A RNA [Nachweis] in Probenmaterial vom Respirationstrakt mittels Nukleinsäureamplifikation mit Sondendetektion"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "62462-7",
+        "display": "Influenza-Virus A+B RNA [Nachweis] in Probenmaterial mittels Nukleinsäureamplifikation mit Sondendetektion"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "50713-7",
+        "display": "Influenza-Virus.Neuraminidaseinhibitor-Resistenz [Empfindlichkeit] mittels Genotypisierung"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "50712-9",
+        "display": "Influenza-Virus.Neuraminidaseinhibitor-Resistenz [Empfindlichkeit]"
+      }
+    ]
+  }
+}

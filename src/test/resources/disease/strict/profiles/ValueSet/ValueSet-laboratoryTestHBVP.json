@@ -1,0 +1,380 @@
+{
+  "resourceType": "ValueSet",
+  "id": "laboratoryTestHBVP",
+  "url": "https://demis.rki.de/fhir/ValueSet/laboratoryTestHBVP",
+  "version": "1.8.1",
+  "name": "LaboratoryTestHBVP",
+  "title": "Labortest für Hepatitis-B-Virus; Meldepflicht für alle Nachweise",
+  "status": "active",
+  "experimental": false,
+  "date": "2025-12-05",
+  "publisher": "Robert Koch-Institut",
+  "contact": [
+    {
+      "telecom": [
+        {
+          "system": "email",
+          "value": "demis-support@rki.de"
+        }
+      ]
+    }
+  ],
+  "description": "Das ValueSet LaboratoryTestHBVP enthält die Codes der Labortests für Hepatitis-B-Virus; Meldepflicht für alle Nachweise.",
+  "jurisdiction": [
+    {
+      "coding": [
+        {
+          "system": "urn:iso:std:iso:3166",
+          "version": "ALPHA-2",
+          "code": "DE"
+        }
+      ]
+    }
+  ],
+  "copyright": "This material contains content from LOINC (http://loinc.org/). LOINC is copyright © 1995-2023, Regenstrief Institute, Inc. and the Logical Observation Identifiers Names and Codes (LOINC) Committee and is available at no cost under the license at http://loinc.org/license. LOINC® is a registered United States trademark of Regenstrief Institute, Inc.\r\n\r\nDieses Material enthält Inhalte von LOINC (http://loinc.org/). LOINC ist urheberrechtlich geschützt © 1995-2023, Regenstrief Institute, Inc. und das Logical Observation Identifiers Names and Codes (LOINC) Committee und ist unter der Lizenz http://loinc.org/license kostenlos erhältlich. LOINC® ist eine eingetragene US-amerikanische Marke des Regenstrief Institute, Inc.\r\n\r\nDownloadbedingungen für LOINC-Übersetzungen für Anwendungszwecke in Deutschland\r\nÜbersetzungen in verschiedenen Sprachen werden von \"LOINC® Adopters\", meistens Behörden oder Forschungsinstituten verschiedener Länder, erstellt und an das Regenstrief Institute weitergegeben. Das Copyright für die Übersetzungen liegt beim Regenstrief Institute. Für Deutschland wird die LOINC®-Übersetzung durch das BfArM bereitgestellt. Die Übersetzungen werden durch das Regenstrief Institute als \"Linguistic Variants\" in den halbjährlichen LOINC®-Releases (Februar und August) veröffentlicht.\r\n\r\nDas Copyright für die Übersetzungen liegt beim Regenstrief Institute, 1101 W 10th St, Indianapolis, IN 46202, USA.\r\n\r\nMit dem Download von Dateien kommt ein Nutzungsvertrag zwischen Ihnen und dem Regenstrief Institute zustande. Sie verpflichten sich, die unten verlinkten Nutzungs- und Abgabebedingungen für LOINC vom Regenstrief Institute einzuhalten.",
+  "compose": {
+    "include": [
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "concept": [
+          {
+            "code": "106938-4",
+            "display": "Hepatitis-B-Virus-Core Antikörper [Einheiten/Volumen] in Serum oder Plasma mittels Immunoassay"
+          },
+          {
+            "code": "11258-1",
+            "display": "Hepatitis-B-Virus DNA [Einheiten/Volumen] in Serum"
+          },
+          {
+            "code": "13952-7",
+            "display": "Hepatitis-B-Virus-Core Antikörper [Nachweis] in Serum oder Plasma mittels Immunoassay"
+          },
+          {
+            "code": "13953-5",
+            "display": "Hepatitis-B-Virus e Antikörper [Nachweis] in Serum oder Plasma mittels Immunoassay"
+          },
+          {
+            "code": "13954-3",
+            "display": "Hepatitis-B-Virus e Antigen [Nachweis] in Serum oder Plasma mittels Immunoassay"
+          },
+          {
+            "code": "16933-4",
+            "display": "Hepatitis-B-Virus-Core Antikörper [Nachweis] in Serum"
+          },
+          {
+            "code": "16935-9",
+            "display": "Hepatitis-B-Virus-surface Antikörper [Einheiten/Volumen] in Serum"
+          },
+          {
+            "code": "22318-0",
+            "display": "Hepatitis-B-Virus-Core IgG-Antikörper [Einheiten/Volumen] in Serum"
+          },
+          {
+            "code": "22319-8",
+            "display": "Hepatitis-B-Virus-Core IgM-Antikörper [Einheiten/Volumen] in Serum"
+          },
+          {
+            "code": "22320-6",
+            "display": "Hepatitis-B-Virus e Antikörper [Nachweis] in Serum"
+          },
+          {
+            "code": "22322-2",
+            "display": "Hepatitis-B-Virus-surface Antikörper [Nachweis] in Serum"
+          },
+          {
+            "code": "24113-3",
+            "display": "Hepatitis-B-Virus-Core IgM-Antikörper [Nachweis] in Serum oder Plasma mittels Immunoassay"
+          },
+          {
+            "code": "29610-3",
+            "display": "Hepatitis-B-Virus DNA [Nachweis] in Serum oder Plasma mittels Nukleinsäureamplifikation mit Sondendetektion"
+          },
+          {
+            "code": "29615-2",
+            "display": "Hepatitis-B-Virus DNA [#/Volumen] (Viruslast) in Serum oder Plasma mittels Nukleinsäureamplifikation mit Sondendetektion"
+          },
+          {
+            "code": "31204-1",
+            "display": "Hepatitis-B-Virus-Core IgM-Antikörper [Nachweis] in Serum"
+          },
+          {
+            "code": "31844-4",
+            "display": "Hepatitis-B-Virus e Antigen [Nachweis] in Serum"
+          },
+          {
+            "code": "31845-1",
+            "display": "Hepatitis-B-Virus e Antigen [Einheiten/Volumen] in Serum"
+          },
+          {
+            "code": "32019-2",
+            "display": "Hepatitis-B-Virus-surface Antikörper [Titer] in Serum"
+          },
+          {
+            "code": "32366-7",
+            "display": "Hepatitis-B-Virus Genotyp [Nachweis oder Identität] in Serum oder Plasma mittels Nukleinsäureamplifikation mit Sondendetektion"
+          },
+          {
+            "code": "32685-0",
+            "display": "Hepatitis-B-Virus-Core IgG-Antikörper [Nachweis] in Serum"
+          },
+          {
+            "code": "39007-0",
+            "display": "Hepatitis-B-Virus e Antigen [Nachweis] in Probenmaterial"
+          },
+          {
+            "code": "41852-5",
+            "display": "Mikroorganismus oder Erreger identifiziert in Probenmaterial"
+          },
+          {
+            "code": "42595-9",
+            "display": "Hepatitis-B-Virus DNA [Einheiten/Volumen] (Viruslast) in Serum oder Plasma mittels Nukleinsäureamplifikation mit Sondendetektion"
+          },
+          {
+            "code": "49360-1",
+            "display": "Hepatitis-B-Virus DNA [Einheiten/Volumen] (Viruslast) in Probenmaterial mittels Nukleinsäureamplifikation mit Sondendetektion"
+          },
+          {
+            "code": "49362-7",
+            "display": "Hepatitis-B-Virus DNA [#/Volumen] (Viruslast) in Probenmaterial mittels Nukleinsäureamplifikation mit Sondendetektion"
+          },
+          {
+            "code": "5009-6",
+            "display": "Hepatitis-B-Virus DNA [Nachweis] in Probenmaterial mittels Nukleinsäureamplifikation mit Sondendetektion"
+          },
+          {
+            "code": "5195-3",
+            "display": "Hepatitis-B-Virus-surface Antigen [Nachweis] in Serum"
+          },
+          {
+            "code": "5196-1",
+            "display": "Hepatitis-B-Virus-surface Antigen [Nachweis] in Serum oder Plasma mittels Immunoassay"
+          },
+          {
+            "code": "58452-4",
+            "display": "Hepatitis-B-Virus-surface Antigen [Einheiten/Volumen] in Serum"
+          },
+          {
+            "code": "63557-3",
+            "display": "Hepatitis-B-Virus-surface Antigen [Einheiten/Volumen] in Serum oder Plasma mittels Immunoassay"
+          },
+          {
+            "code": "65633-0",
+            "display": "Hepatitis-B-Virus-surface Antigen [Nachweis] in Serum oder Plasma mittels Bestätigungstest"
+          },
+          {
+            "code": "70154-0",
+            "display": "Hepatitis-B-Virus-surface Antigen in Serum oder Plasma mittels Bestätigungstest"
+          },
+          {
+            "code": "7905-3",
+            "display": "Hepatitis-B-Virus-surface Antigen [Nachweis] in Serum oder Plasma mittels Neutralisationstest"
+          }
+        ]
+      }
+    ]
+  },
+  "expansion": {
+    "timestamp": "2025-12-05T00:00:00+01:00",
+    "contains": [
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "7905-3",
+        "display": "Hepatitis-B-Virus-surface Antigen [Nachweis] in Serum oder Plasma mittels Neutralisationstest"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "24113-3",
+        "display": "Hepatitis-B-Virus-Core IgM-Antikörper [Nachweis] in Serum oder Plasma mittels Immunoassay"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "16933-4",
+        "display": "Hepatitis-B-Virus-Core Antikörper [Nachweis] in Serum"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "65633-0",
+        "display": "Hepatitis-B-Virus-surface Antigen [Nachweis] in Serum oder Plasma mittels Bestätigungstest"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "31204-1",
+        "display": "Hepatitis-B-Virus-Core IgM-Antikörper [Nachweis] in Serum"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "29610-3",
+        "display": "Hepatitis-B-Virus DNA [Nachweis] in Serum oder Plasma mittels Nukleinsäureamplifikation mit Sondendetektion"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "70154-0",
+        "display": "Hepatitis-B-Virus-surface Antigen in Serum oder Plasma mittels Bestätigungstest"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "106938-4",
+        "display": "Hepatitis-B-Virus-Core Antikörper [Einheiten/Volumen] in Serum oder Plasma mittels Immunoassay"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "29615-2",
+        "display": "Hepatitis-B-Virus DNA [#/Volumen] (Viruslast) in Serum oder Plasma mittels Nukleinsäureamplifikation mit Sondendetektion"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "49362-7",
+        "display": "Hepatitis-B-Virus DNA [#/Volumen] (Viruslast) in Probenmaterial mittels Nukleinsäureamplifikation mit Sondendetektion"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "58452-4",
+        "display": "Hepatitis-B-Virus-surface Antigen [Einheiten/Volumen] in Serum"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "42595-9",
+        "display": "Hepatitis-B-Virus DNA [Einheiten/Volumen] (Viruslast) in Serum oder Plasma mittels Nukleinsäureamplifikation mit Sondendetektion"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "32685-0",
+        "display": "Hepatitis-B-Virus-Core IgG-Antikörper [Nachweis] in Serum"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "11258-1",
+        "display": "Hepatitis-B-Virus DNA [Einheiten/Volumen] in Serum"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "5196-1",
+        "display": "Hepatitis-B-Virus-surface Antigen [Nachweis] in Serum oder Plasma mittels Immunoassay"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "49360-1",
+        "display": "Hepatitis-B-Virus DNA [Einheiten/Volumen] (Viruslast) in Probenmaterial mittels Nukleinsäureamplifikation mit Sondendetektion"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "5195-3",
+        "display": "Hepatitis-B-Virus-surface Antigen [Nachweis] in Serum"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "39007-0",
+        "display": "Hepatitis-B-Virus e Antigen [Nachweis] in Probenmaterial"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "22319-8",
+        "display": "Hepatitis-B-Virus-Core IgM-Antikörper [Einheiten/Volumen] in Serum"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "32019-2",
+        "display": "Hepatitis-B-Virus-surface Antikörper [Titer] in Serum"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "41852-5",
+        "display": "Mikroorganismus oder Erreger identifiziert in Probenmaterial"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "31845-1",
+        "display": "Hepatitis-B-Virus e Antigen [Einheiten/Volumen] in Serum"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "31844-4",
+        "display": "Hepatitis-B-Virus e Antigen [Nachweis] in Serum"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "22318-0",
+        "display": "Hepatitis-B-Virus-Core IgG-Antikörper [Einheiten/Volumen] in Serum"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "13952-7",
+        "display": "Hepatitis-B-Virus-Core Antikörper [Nachweis] in Serum oder Plasma mittels Immunoassay"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "22320-6",
+        "display": "Hepatitis-B-Virus e Antikörper [Nachweis] in Serum"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "13953-5",
+        "display": "Hepatitis-B-Virus e Antikörper [Nachweis] in Serum oder Plasma mittels Immunoassay"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "13954-3",
+        "display": "Hepatitis-B-Virus e Antigen [Nachweis] in Serum oder Plasma mittels Immunoassay"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "22322-2",
+        "display": "Hepatitis-B-Virus-surface Antikörper [Nachweis] in Serum"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "32366-7",
+        "display": "Hepatitis-B-Virus Genotyp [Nachweis oder Identität] in Serum oder Plasma mittels Nukleinsäureamplifikation mit Sondendetektion"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "16935-9",
+        "display": "Hepatitis-B-Virus-surface Antikörper [Einheiten/Volumen] in Serum"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "5009-6",
+        "display": "Hepatitis-B-Virus DNA [Nachweis] in Probenmaterial mittels Nukleinsäureamplifikation mit Sondendetektion"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "63557-3",
+        "display": "Hepatitis-B-Virus-surface Antigen [Einheiten/Volumen] in Serum oder Plasma mittels Immunoassay"
+      }
+    ]
+  }
+}

@@ -33,6 +33,8 @@ import de.gematik.demis.fhir_ui_data_model_translation_service.context.OnlyInDis
 import de.gematik.demis.fhir_ui_data_model_translation_service.disease.formly.fhir.TooltipExtension;
 import de.gematik.demis.fhir_ui_data_model_translation_service.disease.formly.model.FieldGroup;
 import de.gematik.demis.fhir_ui_data_model_translation_service.disease.formly.model.Props;
+import de.gematik.demis.fhir_ui_data_model_translation_service.disease.formly.model.Validation;
+import de.gematik.demis.fhir_ui_data_model_translation_service.disease.formly.model.Validator;
 import de.gematik.demis.fhir_ui_data_model_translation_service.model.CodeDisplay;
 import de.gematik.demis.fhir_ui_data_model_translation_service.translation.DataLoaderSrv;
 import java.util.List;
@@ -51,8 +53,8 @@ public class ChoiceProcessor implements ItemProcessor {
 
   private static final String TYPE_EXTENSION_URL =
       "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl";
-  private static final String VALIDATOR = "codingValidator";
   private static final String TYPE_CODING_RKI = "drop-down-coding";
+  private static final Validator CODING_VALIDATOR = Validator.of(Validation.CODING);
 
   private final EnableWhenProcessor enableWhenProcessor;
   private final DataLoaderSrv dataLoaderSrv;
@@ -68,7 +70,7 @@ public class ChoiceProcessor implements ItemProcessor {
     if (StringUtils.contains(fieldGroup.getKey(), FieldGroup.KEY_VALUE_CODING)
         && StringUtils.equalsAny(
             fieldGroup.getType(), FieldGroup.TYPE_CODING, FieldGroup.TYPE_CODING_MULTI)) {
-      fieldGroup.addValidator(VALIDATOR);
+      fieldGroup.setValidators(CODING_VALIDATOR);
     }
   }
 

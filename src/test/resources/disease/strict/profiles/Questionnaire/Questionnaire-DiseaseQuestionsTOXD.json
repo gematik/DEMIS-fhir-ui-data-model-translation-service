@@ -2,11 +2,11 @@
   "resourceType": "Questionnaire",
   "id": "DiseaseQuestionsTOXD",
   "url": "https://demis.rki.de/fhir/Questionnaire/DiseaseQuestionsTOXD",
-  "version": "1.1.1",
+  "version": "1.2.0",
   "name": "DiseaseQuestionsTOXD",
-  "title": "Toxoplasma gondii; Meldepflicht nur bei konnatalen Infektionen: spezifische klinische und epidemiologische Angaben",
+  "title": "Toxoplasma gondii; Meldepflicht nur bei konnataler Infektion des Kindes: spezifische klinische und epidemiologische Angaben",
   "status": "active",
-  "date": "2025-09-01",
+  "date": "2026-01-19",
   "publisher": "Robert Koch-Institut",
   "contact": [
     {
@@ -18,7 +18,7 @@
       ]
     }
   ],
-  "description": "Toxoplasma gondii (konnatal) spezifische Informationsbedarfe werden in diesem meldetatbestandsspezifischen Fragebogen zusammengestellt. Dieser manifestiert sich als entsprechende QuestionnaireResponse innerhalb der Meldung.",
+  "description": "Toxoplasma gondii; Meldepflicht nur bei konnataler Infektion des Kindes spezifische Informationsbedarfe werden in diesem meldetatbestandsspezifischen Fragebogen zusammengestellt. Dieser manifestiert sich als entsprechende QuestionnaireResponse innerhalb der Meldung.",
   "jurisdiction": [
     {
       "coding": [
@@ -35,53 +35,10 @@
     {
       "extension": [
         {
-          "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-          "valueCodeableConcept": {
-            "coding": [
-              {
-                "system": "http://hl7.org/fhir/questionnaire-item-control",
-                "code": "drop-down",
-                "display": "Drop down"
-              }
-            ]
-          }
-        }
-      ],
-      "linkId": "motherEvidence",
-      "text": "Lag bei der Mutter eine klinische Symptomatik vor?",
-      "type": "choice",
-      "required": true,
-      "repeats": false,
-      "answerValueSet": "https://demis.rki.de/fhir/ValueSet/yesOrNoOrNoInformation"
-    },
-    {
-      "extension": [
-        {
-          "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-          "valueCodeableConcept": {
-            "coding": [
-              {
-                "system": "http://hl7.org/fhir/questionnaire-item-control",
-                "code": "drop-down",
-                "display": "Drop down"
-              }
-            ]
-          }
-        }
-      ],
-      "linkId": "newbornEvidence",
-      "text": "Welche Symptomatik liegt bzw. lag beim Neugeborenen vor?",
-      "type": "choice",
-      "required": true,
-      "repeats": true,
-      "answerValueSet": "https://demis.rki.de/fhir/ValueSet/answerSetNewbornEvidenceTOXD"
-    },
-    {
-      "extension": [
-        {
           "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-minQuantity",
           "valueQuantity": {
             "value": 1,
+            "unit": "Woche(n)",
             "system": "http://unitsofmeasure.org",
             "code": "wk"
           }
@@ -90,6 +47,7 @@
           "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-maxQuantity",
           "valueQuantity": {
             "value": 42,
+            "unit": "Woche(n)",
             "system": "http://unitsofmeasure.org",
             "code": "wk"
           }
@@ -107,6 +65,7 @@
           "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-minQuantity",
           "valueQuantity": {
             "value": 500,
+            "unit": "Gramm",
             "system": "http://unitsofmeasure.org",
             "code": "g"
           }
@@ -115,6 +74,7 @@
           "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-maxQuantity",
           "valueQuantity": {
             "value": 5000,
+            "unit": "Gramm",
             "system": "http://unitsofmeasure.org",
             "code": "g"
           }
@@ -149,6 +109,13 @@
       "answerValueSet": "https://demis.rki.de/fhir/ValueSet/answerSetNewbornStatusTOXD"
     },
     {
+      "linkId": "motherDOB",
+      "text": "Welches ist das Geburtsdatum der Mutter?",
+      "type": "date",
+      "required": true,
+      "repeats": false
+    },
+    {
       "extension": [
         {
           "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
@@ -156,19 +123,60 @@
             "coding": [
               {
                 "system": "http://hl7.org/fhir/questionnaire-item-control",
-                "code": "drop-down",
-                "display": "Drop down"
+                "code": "radio-button",
+                "display": "Radio Button"
               }
             ]
           }
         }
       ],
-      "linkId": "infectionRiscDuringPregnancy",
-      "text": "Lag während der Schwangerschaft eines der folgenden Infektionsrisiken vor?",
+      "linkId": "motherEvidence",
+      "text": "Lag bei der Mutter eine klinische Symptomatik vor?",
       "type": "choice",
       "required": true,
       "repeats": false,
-      "answerValueSet": "https://demis.rki.de/fhir/ValueSet/answerSetInfectionPathTOXD",
+      "answerValueSet": "https://demis.rki.de/fhir/ValueSet/yesOrNoOrNoInformation",
+      "item": [
+        {
+          "linkId": "motherSymptomOnset",
+          "text": "Bitte geben Sie an, wann die Symptome begonnen haben.",
+          "type": "date",
+          "enableWhen": [
+            {
+              "question": "motherEvidence",
+              "operator": "=",
+              "answerCoding": {
+                "system": "http://snomed.info/sct",
+                "code": "373066001"
+              }
+            }
+          ],
+          "required": true,
+          "repeats": false
+        }
+      ]
+    },
+    {
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+          "valueCodeableConcept": {
+            "coding": [
+              {
+                "system": "http://hl7.org/fhir/questionnaire-item-control",
+                "code": "radio-button",
+                "display": "Radio Button"
+              }
+            ]
+          }
+        }
+      ],
+      "linkId": "travelAbroad",
+      "text": "Fand während der Schwangerschaft ein Auslandsaufenthalt statt?",
+      "type": "choice",
+      "required": true,
+      "repeats": false,
+      "answerValueSet": "https://demis.rki.de/fhir/ValueSet/yesOrNoOrNoInformation",
       "item": [
         {
           "extension": [
@@ -185,16 +193,16 @@
               }
             }
           ],
-          "linkId": "infectionRiscCountry",
-          "text": "Welches Land wurde während der Schwangerschaft besucht?",
+          "linkId": "travelAbroadCountry",
+          "text": "Bitte geben Sie an, welches Land besucht wurde.",
           "type": "choice",
           "enableWhen": [
             {
-              "question": "infectionRiscDuringPregnancy",
+              "question": "travelAbroad",
               "operator": "=",
               "answerCoding": {
                 "system": "http://snomed.info/sct",
-                "code": "184082004+77386006"
+                "code": "373066001"
               }
             }
           ],
@@ -203,28 +211,6 @@
           "answerValueSet": "https://demis.rki.de/fhir/ValueSet/answerSetCountry"
         }
       ]
-    },
-    {
-      "extension": [
-        {
-          "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-          "valueCodeableConcept": {
-            "coding": [
-              {
-                "system": "http://hl7.org/fhir/questionnaire-item-control",
-                "code": "drop-down",
-                "display": "Drop down"
-              }
-            ]
-          }
-        }
-      ],
-      "linkId": "countryOriginMother",
-      "text": "Welches ist das Herkunftsland der Mutter?",
-      "type": "choice",
-      "required": true,
-      "repeats": false,
-      "answerValueSet": "https://demis.rki.de/fhir/ValueSet/answerSetCountry"
     }
   ]
 }

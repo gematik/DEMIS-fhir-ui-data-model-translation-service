@@ -28,7 +28,6 @@ package de.gematik.demis.fhir_ui_data_model_translation_service.laboratory;
  */
 
 import static de.gematik.demis.fhir_ui_data_model_translation_service.utils.Utils.extractNotificationCategories;
-import static de.gematik.demis.fhir_ui_data_model_translation_service.utils.Utils.getFileString;
 
 import ca.uhn.fhir.context.FhirContext;
 import de.gematik.demis.fhir_ui_data_model_translation_service.context.OnlyInLaboratoryContext;
@@ -38,9 +37,7 @@ import de.gematik.demis.fhir_ui_data_model_translation_service.utils.Utils;
 import java.io.File;
 import java.io.IOException;
 import java.util.*;
-import java.util.stream.Collectors;
 import lombok.extern.slf4j.Slf4j;
-import org.hl7.fhir.r4.model.CodeSystem;
 import org.hl7.fhir.r4.model.ValueSet;
 import org.springframework.stereotype.Component;
 
@@ -86,40 +83,6 @@ public class PathogenNotificationCategoryList {
     }
 
     return Collections.unmodifiableMap(result);
-  }
-
-  public List<CodeDisplay> getPathogenNotificationCategoryList() {
-
-    try {
-      String fileString =
-          getFileString(this.snapshotFilesService.getProfileNotificationCategoryCodeSystemFile());
-      CodeSystem notificationCategory =
-          fhirContext.newJsonParser().parseResource(CodeSystem.class, fileString);
-
-      List<CodeDisplay> codeDisplays = extractNotificationCategories(notificationCategory);
-
-      codeDisplays =
-          codeDisplays.stream()
-              .sorted(
-                  Comparator.comparing(CodeDisplay::getOrder)
-                      .reversed()) // reversed so descending order is active
-              .toList();
-
-      if (log.isInfoEnabled()) {
-        log.info(
-            "Loaded pathogen notification categories. Size: {} Codes: {}",
-            codeDisplays.size(),
-            codeDisplays.stream()
-                .map(CodeDisplay::getCode)
-                .sorted()
-                .collect(Collectors.joining(", ", "[", "]")));
-      }
-      return codeDisplays;
-
-    } catch (IOException e) {
-      log.error("Error while reading notification category file");
-      return Collections.emptyList();
-    }
   }
 
   private ValueSet parseValueSetFromFile(File file) {

@@ -1,0 +1,570 @@
+{
+  "resourceType": "ValueSet",
+  "id": "resistanceMYTP",
+  "url": "https://demis.rki.de/fhir/ValueSet/resistanceMYTP",
+  "version": "1.0.6",
+  "name": "ResistanceMYTP",
+  "title": "Resistenz für Mycobacterium tuberculosis, Mycobacterium africanum, Mycobacterium bovis; Meldepflicht für den direkten Erregernachweis sowie nachfolgend für das Ergebnis der Resistenzbestimmung; vorab auch für den Nachweis säurefester Stäbchen im Sputum",
+  "status": "active",
+  "experimental": false,
+  "date": "2025-12-02",
+  "publisher": "Robert Koch-Institut",
+  "contact": [
+    {
+      "telecom": [
+        {
+          "system": "email",
+          "value": "demis-support@rki.de"
+        }
+      ]
+    }
+  ],
+  "description": "Das ValueSet ResistanceMYTP enthält die Codes der Resistenz für Mycobacterium tuberculosis, Mycobacterium africanum, Mycobacterium bovis; Meldepflicht für den direkten Erregernachweis sowie nachfolgend für das Ergebnis der Resistenzbestimmung; vorab auch für den Nachweis säurefester Stäbchen im Sputum.",
+  "jurisdiction": [
+    {
+      "coding": [
+        {
+          "system": "urn:iso:std:iso:3166",
+          "version": "ALPHA-2",
+          "code": "DE"
+        }
+      ]
+    }
+  ],
+  "copyright": "This material contains content from LOINC (http://loinc.org/). LOINC is copyright © 1995-2023, Regenstrief Institute, Inc. and the Logical Observation Identifiers Names and Codes (LOINC) Committee and is available at no cost under the license at http://loinc.org/license. LOINC® is a registered United States trademark of Regenstrief Institute, Inc.\r\n\r\nDieses Material enthält Inhalte von LOINC (http://loinc.org/). LOINC ist urheberrechtlich geschützt © 1995-2023, Regenstrief Institute, Inc. und das Logical Observation Identifiers Names and Codes (LOINC) Committee und ist unter der Lizenz http://loinc.org/license kostenlos erhältlich. LOINC® ist eine eingetragene US-amerikanische Marke des Regenstrief Institute, Inc.\r\n\r\nDownloadbedingungen für LOINC-Übersetzungen für Anwendungszwecke in Deutschland\r\nÜbersetzungen in verschiedenen Sprachen werden von \"LOINC® Adopters\", meistens Behörden oder Forschungsinstituten verschiedener Länder, erstellt und an das Regenstrief Institute weitergegeben. Das Copyright für die Übersetzungen liegt beim Regenstrief Institute. Für Deutschland wird die LOINC®-Übersetzung durch das BfArM bereitgestellt. Die Übersetzungen werden durch das Regenstrief Institute als \"Linguistic Variants\" in den halbjährlichen LOINC®-Releases (Februar und August) veröffentlicht.\r\n\r\nDas Copyright für die Übersetzungen liegt beim Regenstrief Institute, 1101 W 10th St, Indianapolis, IN 46202, USA.\r\n\r\nMit dem Download von Dateien kommt ein Nutzungsvertrag zwischen Ihnen und dem Regenstrief Institute zustande. Sie verpflichten sich, die unten verlinkten Nutzungs- und Abgabebedingungen für LOINC vom Regenstrief Institute einzuhalten.",
+  "compose": {
+    "include": [
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "concept": [
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 18
+              }
+            ],
+            "code": "100057-9",
+            "display": "Prothionamid [Empfindlichkeit]",
+            "designation": [
+              {
+                "language": "de-DE",
+                "use": {
+                  "system": "http://loinc.org",
+                  "code": "COMPONENT"
+                },
+                "value": "Prothionamid"
+              }
+            ]
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 54
+              }
+            ],
+            "code": "18860-7",
+            "display": "Amikacin [Empfindlichkeit]",
+            "designation": [
+              {
+                "language": "de-DE",
+                "use": {
+                  "system": "http://loinc.org",
+                  "code": "COMPONENT"
+                },
+                "value": "Amikacin"
+              }
+            ]
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 52
+              }
+            ],
+            "code": "18872-2",
+            "display": "Capreomycin [Empfindlichkeit]",
+            "designation": [
+              {
+                "language": "de-DE",
+                "use": {
+                  "system": "http://loinc.org",
+                  "code": "COMPONENT"
+                },
+                "value": "Capreomycin"
+              }
+            ]
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 42
+              }
+            ],
+            "code": "18914-2",
+            "display": "Cycloserin [Empfindlichkeit]",
+            "designation": [
+              {
+                "language": "de-DE",
+                "use": {
+                  "system": "http://loinc.org",
+                  "code": "COMPONENT"
+                },
+                "value": "Cycloserin"
+              }
+            ]
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 38
+              }
+            ],
+            "code": "18921-7",
+            "display": "Ethambutol [Empfindlichkeit]",
+            "designation": [
+              {
+                "language": "de-DE",
+                "use": {
+                  "system": "http://loinc.org",
+                  "code": "COMPONENT"
+                },
+                "value": "Ethambutol"
+              }
+            ]
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 33
+              }
+            ],
+            "code": "18934-0",
+            "display": "Isoniazid [Empfindlichkeit]",
+            "designation": [
+              {
+                "language": "de-DE",
+                "use": {
+                  "system": "http://loinc.org",
+                  "code": "COMPONENT"
+                },
+                "value": "Isoniazid"
+              }
+            ]
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 32
+              }
+            ],
+            "code": "18935-7",
+            "display": "Kanamycin [Empfindlichkeit]",
+            "designation": [
+              {
+                "language": "de-DE",
+                "use": {
+                  "system": "http://loinc.org",
+                  "code": "COMPONENT"
+                },
+                "value": "Kanamycin"
+              }
+            ]
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 25
+              }
+            ],
+            "code": "18959-7",
+            "display": "Ofloxacin [Empfindlichkeit]",
+            "designation": [
+              {
+                "language": "de-DE",
+                "use": {
+                  "system": "http://loinc.org",
+                  "code": "COMPONENT"
+                },
+                "value": "Ofloxacin"
+              }
+            ]
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 17
+              }
+            ],
+            "code": "18973-8",
+            "display": "Pyrazinamid [Empfindlichkeit]",
+            "designation": [
+              {
+                "language": "de-DE",
+                "use": {
+                  "system": "http://loinc.org",
+                  "code": "COMPONENT"
+                },
+                "value": "Pyrazinamid"
+              }
+            ]
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 15
+              }
+            ],
+            "code": "18974-6",
+            "display": "Rifampicin [Empfindlichkeit]",
+            "designation": [
+              {
+                "language": "de-DE",
+                "use": {
+                  "system": "http://loinc.org",
+                  "code": "COMPONENT"
+                },
+                "value": "Rifampicin"
+              }
+            ]
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 14
+              }
+            ],
+            "code": "18982-9",
+            "display": "Streptomycin [Empfindlichkeit]",
+            "designation": [
+              {
+                "language": "de-DE",
+                "use": {
+                  "system": "http://loinc.org",
+                  "code": "COMPONENT"
+                },
+                "value": "Streptomycin"
+              }
+            ]
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 16
+              }
+            ],
+            "code": "19149-4",
+            "display": "Rifabutin [Empfindlichkeit]",
+            "designation": [
+              {
+                "language": "de-DE",
+                "use": {
+                  "system": "http://loinc.org",
+                  "code": "COMPONENT"
+                },
+                "value": "Rifabutin"
+              }
+            ]
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 31
+              }
+            ],
+            "code": "20629-2",
+            "display": "Levofloxacin [Empfindlichkeit]",
+            "designation": [
+              {
+                "language": "de-DE",
+                "use": {
+                  "system": "http://loinc.org",
+                  "code": "COMPONENT"
+                },
+                "value": "Levofloxacin"
+              }
+            ]
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 44
+              }
+            ],
+            "code": "23627-3",
+            "display": "Clofazimin [Empfindlichkeit]",
+            "designation": [
+              {
+                "language": "de-DE",
+                "use": {
+                  "system": "http://loinc.org",
+                  "code": "COMPONENT"
+                },
+                "value": "Clofazimin"
+              }
+            ]
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 23
+              }
+            ],
+            "code": "23629-9",
+            "display": "Para-Aminosalicylat [Empfindlichkeit]",
+            "designation": [
+              {
+                "language": "de-DE",
+                "use": {
+                  "system": "http://loinc.org",
+                  "code": "COMPONENT"
+                },
+                "value": "Para-Aminosalicylat"
+              }
+            ]
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 30
+              }
+            ],
+            "code": "29258-1",
+            "display": "Linezolid [Empfindlichkeit]",
+            "designation": [
+              {
+                "language": "de-DE",
+                "use": {
+                  "system": "http://loinc.org",
+                  "code": "COMPONENT"
+                },
+                "value": "Linezolid"
+              }
+            ]
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 26
+              }
+            ],
+            "code": "31039-1",
+            "display": "Moxifloxacin [Empfindlichkeit]",
+            "designation": [
+              {
+                "language": "de-DE",
+                "use": {
+                  "system": "http://loinc.org",
+                  "code": "COMPONENT"
+                },
+                "value": "Moxifloxacin"
+              }
+            ]
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 19
+              }
+            ],
+            "code": "93850-6",
+            "display": "Pretomanid [Empfindlichkeit]",
+            "designation": [
+              {
+                "language": "de-DE",
+                "use": {
+                  "system": "http://loinc.org",
+                  "code": "COMPONENT"
+                },
+                "value": "Pretomanid"
+              }
+            ]
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 41
+              }
+            ],
+            "code": "93851-4",
+            "display": "Delamanid [Empfindlichkeit]",
+            "designation": [
+              {
+                "language": "de-DE",
+                "use": {
+                  "system": "http://loinc.org",
+                  "code": "COMPONENT"
+                },
+                "value": "Delamanid"
+              }
+            ]
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 53
+              }
+            ],
+            "code": "94274-8",
+            "display": "Bedaquilin [Empfindlichkeit]",
+            "designation": [
+              {
+                "language": "de-DE",
+                "use": {
+                  "system": "http://loinc.org",
+                  "code": "COMPONENT"
+                },
+                "value": "Bedaquilin"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "expansion": {
+    "timestamp": "2025-12-02T00:00:00+01:00",
+    "contains": [
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "18973-8",
+        "display": "Pyrazinamid [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "18934-0",
+        "display": "Isoniazid [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "18974-6",
+        "display": "Rifampicin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "18982-9",
+        "display": "Streptomycin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "23629-9",
+        "display": "Para-Aminosalicylat [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "29258-1",
+        "display": "Linezolid [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "18914-2",
+        "display": "Cycloserin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "18921-7",
+        "display": "Ethambutol [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "19149-4",
+        "display": "Rifabutin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "23627-3",
+        "display": "Clofazimin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "93850-6",
+        "display": "Pretomanid [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "93851-4",
+        "display": "Delamanid [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "18860-7",
+        "display": "Amikacin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "31039-1",
+        "display": "Moxifloxacin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "100057-9",
+        "display": "Prothionamid [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "18959-7",
+        "display": "Ofloxacin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "20629-2",
+        "display": "Levofloxacin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "18935-7",
+        "display": "Kanamycin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "18872-2",
+        "display": "Capreomycin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "94274-8",
+        "display": "Bedaquilin [Empfindlichkeit]"
+      }
+    ]
+  }
+}

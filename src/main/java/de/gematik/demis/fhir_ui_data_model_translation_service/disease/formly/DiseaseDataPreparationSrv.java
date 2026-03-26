@@ -31,7 +31,6 @@ import ca.uhn.fhir.context.FhirContext;
 import de.gematik.demis.fhir_ui_data_model_translation_service.FeatureFlags;
 import de.gematik.demis.fhir_ui_data_model_translation_service.context.OnlyInDiseaseContext;
 import de.gematik.demis.fhir_ui_data_model_translation_service.disease.DiseaseNotificationCategoriesSrv;
-import de.gematik.demis.fhir_ui_data_model_translation_service.disease.DiseaseNotificationCategoriesSrvRegression;
 import de.gematik.demis.fhir_ui_data_model_translation_service.disease.Questionnaires;
 import de.gematik.demis.fhir_ui_data_model_translation_service.disease.formly.model.FieldArray;
 import de.gematik.demis.fhir_ui_data_model_translation_service.disease.formly.model.FieldGroup;
@@ -54,7 +53,6 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
 import org.hl7.fhir.r4.model.Questionnaire;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 @OnlyInDiseaseContext
@@ -67,7 +65,6 @@ public class DiseaseDataPreparationSrv {
   private static final String LINK_ID_HOSPITALIZATION_REASON = "reason";
 
   private final DiseaseNotificationCategoriesSrv categoriesSrv;
-  private final DiseaseNotificationCategoriesSrvRegression categoriesSrvRegression;
   private final Questionnaires questionnaires;
   private final FhirContext fhirContext;
   private final ChoiceProcessor choiceProcessor;
@@ -81,9 +78,6 @@ public class DiseaseDataPreparationSrv {
   private final QuantityProcessor quantityProcessor;
 
   private final FeatureFlags featureFlags;
-
-  @Value("${feature.flag.notifications.7_3}")
-  private boolean isNotification73Active;
 
   @Getter private final Map<String, FormlyFieldConfigs[]> questionnaireMap = new HashMap<>();
 
@@ -109,14 +103,10 @@ public class DiseaseDataPreparationSrv {
     Map<String, FormlyFieldConfigs[]> returnMap = new HashMap<>();
     // add condition
     String title;
-    if (isNotification73Active) {
-      if (NotificationCategory.P_6_1.equals(notificationCategory)) {
-        title = this.categoriesSrv.getCategory(code).getDisplay();
-      } else {
-        title = this.categoriesSrv.getCategoryNonNominal(code).getDisplay();
-      }
+    if (NotificationCategory.P_6_1.equals(notificationCategory)) {
+      title = this.categoriesSrv.getCategory(code).getDisplay();
     } else {
-      title = this.categoriesSrvRegression.getCategory(code).getDisplay();
+      title = this.categoriesSrv.getCategoryNonNominal(code).getDisplay();
     }
     FormlyFieldConfigs conditionHeader =
         FormlyFieldConfigs.builder().template(title).className("QUESTIONNAIRE-TITLE").build();

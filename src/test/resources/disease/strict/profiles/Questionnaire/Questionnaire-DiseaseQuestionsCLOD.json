@@ -2,11 +2,11 @@
   "resourceType": "Questionnaire",
   "id": "DiseaseQuestionsCLOD",
   "url": "https://demis.rki.de/fhir/Questionnaire/DiseaseQuestionsCLOD",
-  "version": "1.2.3",
+  "version": "1.2.4",
   "name": "DiseaseQuestionsCLOD",
   "title": "Botulismus: spezifische klinische und epidemiologische Angaben",
   "status": "active",
-  "date": "2025-10-18",
+  "date": "2026-01-22",
   "publisher": "Robert Koch-Institut",
   "contact": [
     {
@@ -64,9 +64,23 @@
       ]
     },
     {
-      "linkId": "infectionPathKindGroup",
-      "text": "Auf welchem Weg hat sich die betroffene Person wahrscheinlich infiziert?",
-      "type": "group",
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+          "valueCodeableConcept": {
+            "coding": [
+              {
+                "system": "http://hl7.org/fhir/questionnaire-item-control",
+                "code": "drop-down",
+                "display": "Drop down"
+              }
+            ]
+          }
+        }
+      ],
+      "linkId": "honey",
+      "text": "Hat der Säugling Honig verzehrt?",
+      "type": "choice",
       "enableWhen": [
         {
           "question": "form",
@@ -75,7 +89,40 @@
             "system": "http://snomed.info/sct",
             "code": "414488002"
           }
-        },
+        }
+      ],
+      "required": true,
+      "repeats": false,
+      "answerValueSet": "https://demis.rki.de/fhir/ValueSet/yesOrNoOrNoInformation",
+      "initial": [
+        {
+          "valueCoding": {
+            "system": "http://snomed.info/sct",
+            "code": "1631000175102",
+            "display": "Patient not asked (contextual qualifier) (qualifier value)"
+          }
+        }
+      ]
+    },
+    {
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+          "valueCodeableConcept": {
+            "coding": [
+              {
+                "system": "http://hl7.org/fhir/questionnaire-item-control",
+                "code": "drop-down",
+                "display": "Drop down"
+              }
+            ]
+          }
+        }
+      ],
+      "linkId": "drugs",
+      "text": "Konsumiert die betroffene Person intravenöse Drogen?",
+      "type": "choice",
+      "enableWhen": [
         {
           "question": "form",
           "operator": "=",
@@ -83,7 +130,108 @@
             "system": "http://snomed.info/sct",
             "code": "398530003"
           }
-        },
+        }
+      ],
+      "required": true,
+      "repeats": false,
+      "answerValueSet": "https://demis.rki.de/fhir/ValueSet/yesOrNoOrNoInformation",
+      "initial": [
+        {
+          "valueCoding": {
+            "system": "http://snomed.info/sct",
+            "code": "1631000175102",
+            "display": "Patient not asked (contextual qualifier) (qualifier value)"
+          }
+        }
+      ]
+    },
+    {
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+          "valueCodeableConcept": {
+            "coding": [
+              {
+                "system": "http://hl7.org/fhir/questionnaire-item-control",
+                "code": "drop-down",
+                "display": "Drop down"
+              }
+            ]
+          }
+        }
+      ],
+      "linkId": "cosmetic",
+      "text": "Hat die betroffene Person vor ihrer Infektion eine kosmetische Behandlung mit einer Injektion von Botulimum-Neurotoxin erhalten?",
+      "type": "choice",
+      "enableWhen": [
+        {
+          "question": "form",
+          "operator": "=",
+          "answerCoding": {
+            "system": "http://snomed.info/sct",
+            "code": "1156829005"
+          }
+        }
+      ],
+      "required": true,
+      "repeats": false,
+      "answerValueSet": "https://demis.rki.de/fhir/ValueSet/yesOrNoOrNoInformation",
+      "initial": [
+        {
+          "valueCoding": {
+            "system": "http://snomed.info/sct",
+            "code": "1631000175102",
+            "display": "Patient not asked (contextual qualifier) (qualifier value)"
+          }
+        }
+      ]
+    },
+    {
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+          "valueCodeableConcept": {
+            "coding": [
+              {
+                "system": "http://hl7.org/fhir/questionnaire-item-control",
+                "code": "drop-down",
+                "display": "Drop down"
+              }
+            ]
+          }
+        }
+      ],
+      "linkId": "medical",
+      "text": "Hat die betroffene Person vor Ihrer Infektion eine medizinische Behandlung mit einer Injektion von Botulimum-Neurotoxin erhalten?",
+      "type": "choice",
+      "enableWhen": [
+        {
+          "question": "form",
+          "operator": "=",
+          "answerCoding": {
+            "system": "http://snomed.info/sct",
+            "code": "1156829005"
+          }
+        }
+      ],
+      "required": true,
+      "repeats": false,
+      "answerValueSet": "https://demis.rki.de/fhir/ValueSet/yesOrNoOrNoInformation",
+      "initial": [
+        {
+          "valueCoding": {
+            "system": "http://snomed.info/sct",
+            "code": "1631000175102",
+            "display": "Patient not asked (contextual qualifier) (qualifier value)"
+          }
+        }
+      ]
+    },
+    {
+      "linkId": "food",
+      "text": "Welches Lebensmittel hat wahrscheinlich die Infektion verursacht?",
+      "type": "choice",
+      "enableWhen": [
         {
           "question": "form",
           "operator": "=",
@@ -93,234 +241,160 @@
           }
         }
       ],
-      "enableBehavior": "any",
       "required": true,
       "repeats": false,
+      "answerValueSet": "https://demis.rki.de/fhir/ValueSet/answerSetFoodCLOD",
+      "initial": [
+        {
+          "valueCoding": {
+            "system": "http://snomed.info/sct",
+            "code": "1631000175102",
+            "display": "Patient not asked (contextual qualifier) (qualifier value)"
+          }
+        }
+      ],
       "item": [
         {
-          "extension": [
-            {
-              "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-              "valueCodeableConcept": {
-                "coding": [
-                  {
-                    "system": "http://hl7.org/fhir/questionnaire-item-control",
-                    "code": "drop-down",
-                    "display": "Drop down"
-                  }
-                ]
-              }
-            }
-          ],
-          "linkId": "honey",
-          "text": "Hat der Säugling Honig verzehrt?",
-          "type": "choice",
+          "linkId": "otherfood",
+          "text": "Welches andere Lebensmittel hat wahrscheinlich die Infektion verursacht?",
+          "type": "text",
           "enableWhen": [
             {
-              "question": "form",
+              "question": "food",
               "operator": "=",
               "answerCoding": {
                 "system": "http://snomed.info/sct",
-                "code": "414488002"
+                "code": "346602001"
               }
             }
           ],
-          "required": true,
-          "repeats": false,
-          "answerValueSet": "https://demis.rki.de/fhir/ValueSet/yesOrNoOrNoInformation",
-          "initial": [
-            {
-              "valueCoding": {
-                "system": "http://snomed.info/sct",
-                "code": "1631000175102",
-                "display": "Patient not asked (contextual qualifier) (qualifier value)"
-              }
-            }
-          ]
-        },
+          "required": false,
+          "repeats": false
+        }
+      ]
+    },
+    {
+      "linkId": "consumptionWhen",
+      "text": "Verzehr am?",
+      "type": "date",
+      "enableWhen": [
         {
-          "extension": [
-            {
-              "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-              "valueCodeableConcept": {
-                "coding": [
-                  {
-                    "system": "http://hl7.org/fhir/questionnaire-item-control",
-                    "code": "drop-down",
-                    "display": "Drop down"
-                  }
-                ]
-              }
-            }
-          ],
-          "linkId": "drugs",
-          "text": "Konsumiert die betroffene Person intravenöse Drogen?",
-          "type": "choice",
-          "enableWhen": [
-            {
-              "question": "form",
-              "operator": "=",
-              "answerCoding": {
-                "system": "http://snomed.info/sct",
-                "code": "398530003"
-              }
-            }
-          ],
-          "required": true,
-          "repeats": false,
-          "answerValueSet": "https://demis.rki.de/fhir/ValueSet/yesOrNoOrNoInformation",
-          "initial": [
-            {
-              "valueCoding": {
-                "system": "http://snomed.info/sct",
-                "code": "1631000175102",
-                "display": "Patient not asked (contextual qualifier) (qualifier value)"
-              }
-            }
-          ]
-        },
+          "question": "form",
+          "operator": "=",
+          "answerCoding": {
+            "system": "http://snomed.info/sct",
+            "code": "398523009"
+          }
+        }
+      ],
+      "required": false,
+      "repeats": false
+    },
+    {
+      "linkId": "consumptionWhere",
+      "text": "Verzehr wo?",
+      "type": "choice",
+      "enableWhen": [
         {
-          "extension": [
-            {
-              "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-              "valueCodeableConcept": {
-                "coding": [
-                  {
-                    "system": "http://hl7.org/fhir/questionnaire-item-control",
-                    "code": "gtable",
-                    "display": "Group Table"
-                  }
-                ]
-              }
-            }
-          ],
-          "linkId": "foodGroup",
-          "type": "group",
-          "enableWhen": [
-            {
-              "question": "form",
-              "operator": "=",
-              "answerCoding": {
-                "system": "http://snomed.info/sct",
-                "code": "398523009"
-              }
-            }
-          ],
-          "required": true,
-          "repeats": false,
-          "item": [
-            {
-              "linkId": "food",
-              "text": "Welches Lebensmittel hat wahrscheinlich die Infektion verursacht?",
-              "type": "choice",
-              "required": true,
-              "repeats": false,
-              "answerValueSet": "https://demis.rki.de/fhir/ValueSet/answerSetFoodCLOD",
-              "initial": [
-                {
-                  "valueCoding": {
-                    "system": "http://snomed.info/sct",
-                    "code": "1631000175102",
-                    "display": "Patient not asked (contextual qualifier) (qualifier value)"
-                  }
-                }
-              ],
-              "item": [
-                {
-                  "linkId": "otherfood",
-                  "text": "Welches andere Lebensmittel hat wahrscheinlich die Infektion verursacht?",
-                  "type": "text",
-                  "enableWhen": [
-                    {
-                      "question": "food",
-                      "operator": "=",
-                      "answerCoding": {
-                        "system": "http://snomed.info/sct",
-                        "code": "346602001"
-                      }
-                    }
-                  ],
-                  "required": false,
-                  "repeats": false
-                }
-              ]
-            },
-            {
-              "linkId": "consumptionWhen",
-              "text": "Verzehr am?",
-              "type": "date",
-              "required": false,
-              "repeats": false
-            },
-            {
-              "linkId": "consumptionWhere",
-              "text": "Verzehr wo?",
-              "type": "choice",
-              "required": true,
-              "repeats": false,
-              "answerValueSet": "https://demis.rki.de/fhir/ValueSet/answerSetConsumptionCLOD",
-              "initial": [
-                {
-                  "valueCoding": {
-                    "system": "http://snomed.info/sct",
-                    "code": "1631000175102",
-                    "display": "Patient not asked (contextual qualifier) (qualifier value)"
-                  }
-                }
-              ]
-            },
-            {
-              "linkId": "conservation",
-              "text": "Auf welche Art wurde das Lebensmittel konserviert?",
-              "type": "choice",
-              "required": true,
-              "repeats": false,
-              "answerValueSet": "https://demis.rki.de/fhir/ValueSet/answerSetConservationCLOD",
-              "initial": [
-                {
-                  "valueCoding": {
-                    "system": "http://snomed.info/sct",
-                    "code": "1631000175102",
-                    "display": "Patient not asked (contextual qualifier) (qualifier value)"
-                  }
-                }
-              ]
-            },
-            {
-              "linkId": "manufacturing",
-              "text": "Aus welcher Herstellung stammt das Lebensmittel?",
-              "type": "choice",
-              "required": true,
-              "repeats": false,
-              "answerValueSet": "https://demis.rki.de/fhir/ValueSet/answerSetManufacturingCLOD",
-              "initial": [
-                {
-                  "valueCoding": {
-                    "system": "http://snomed.info/sct",
-                    "code": "1631000175102",
-                    "display": "Patient not asked (contextual qualifier) (qualifier value)"
-                  }
-                }
-              ]
-            },
-            {
-              "linkId": "toxinInFood",
-              "text": "Wurde das Toxin im Lebensmittel nachgewiesen?",
-              "type": "choice",
-              "required": true,
-              "repeats": false,
-              "answerValueSet": "https://demis.rki.de/fhir/ValueSet/yesOrNoOrNoInformation",
-              "initial": [
-                {
-                  "valueCoding": {
-                    "system": "http://snomed.info/sct",
-                    "code": "1631000175102",
-                    "display": "Patient not asked (contextual qualifier) (qualifier value)"
-                  }
-                }
-              ]
-            }
-          ]
+          "question": "form",
+          "operator": "=",
+          "answerCoding": {
+            "system": "http://snomed.info/sct",
+            "code": "398523009"
+          }
+        }
+      ],
+      "required": true,
+      "repeats": false,
+      "answerValueSet": "https://demis.rki.de/fhir/ValueSet/answerSetConsumptionCLOD",
+      "initial": [
+        {
+          "valueCoding": {
+            "system": "http://snomed.info/sct",
+            "code": "1631000175102",
+            "display": "Patient not asked (contextual qualifier) (qualifier value)"
+          }
+        }
+      ]
+    },
+    {
+      "linkId": "conservation",
+      "text": "Auf welche Art wurde das Lebensmittel konserviert?",
+      "type": "choice",
+      "enableWhen": [
+        {
+          "question": "form",
+          "operator": "=",
+          "answerCoding": {
+            "system": "http://snomed.info/sct",
+            "code": "398523009"
+          }
+        }
+      ],
+      "required": true,
+      "repeats": false,
+      "answerValueSet": "https://demis.rki.de/fhir/ValueSet/answerSetConservationCLOD",
+      "initial": [
+        {
+          "valueCoding": {
+            "system": "http://snomed.info/sct",
+            "code": "1631000175102",
+            "display": "Patient not asked (contextual qualifier) (qualifier value)"
+          }
+        }
+      ]
+    },
+    {
+      "linkId": "manufacturing",
+      "text": "Aus welcher Herstellung stammt das Lebensmittel?",
+      "type": "choice",
+      "enableWhen": [
+        {
+          "question": "form",
+          "operator": "=",
+          "answerCoding": {
+            "system": "http://snomed.info/sct",
+            "code": "398523009"
+          }
+        }
+      ],
+      "required": true,
+      "repeats": false,
+      "answerValueSet": "https://demis.rki.de/fhir/ValueSet/answerSetManufacturingCLOD",
+      "initial": [
+        {
+          "valueCoding": {
+            "system": "http://snomed.info/sct",
+            "code": "1631000175102",
+            "display": "Patient not asked (contextual qualifier) (qualifier value)"
+          }
+        }
+      ]
+    },
+    {
+      "linkId": "toxinInFood",
+      "text": "Wurde das Toxin im Lebensmittel nachgewiesen?",
+      "type": "choice",
+      "enableWhen": [
+        {
+          "question": "form",
+          "operator": "=",
+          "answerCoding": {
+            "system": "http://snomed.info/sct",
+            "code": "398523009"
+          }
+        }
+      ],
+      "required": true,
+      "repeats": false,
+      "answerValueSet": "https://demis.rki.de/fhir/ValueSet/yesOrNoOrNoInformation",
+      "initial": [
+        {
+          "valueCoding": {
+            "system": "http://snomed.info/sct",
+            "code": "1631000175102",
+            "display": "Patient not asked (contextual qualifier) (qualifier value)"
+          }
         }
       ]
     },

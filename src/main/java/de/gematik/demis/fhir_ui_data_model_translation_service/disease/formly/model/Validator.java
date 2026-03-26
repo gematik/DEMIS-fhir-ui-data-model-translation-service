@@ -29,9 +29,27 @@ package de.gematik.demis.fhir_ui_data_model_translation_service.disease.formly.m
 
 import java.util.LinkedList;
 import java.util.List;
+import java.util.stream.Stream;
 import lombok.Getter;
 
 @Getter
 public class Validator {
+
   private final List<String> validation = new LinkedList<>();
+
+  /**
+   * Factory method to create a validator with the given validations.
+   *
+   * @param validations the validations to add to the validator
+   * @return a validator with the given validations, or <code>null</code> if no validations are
+   *     given
+   */
+  public static Validator of(Validation... validations) {
+    if ((validations == null) || (validations.length == 0)) {
+      return null;
+    }
+    final Validator validator = new Validator();
+    Stream.of(validations).map(Validation::getIdentifier).forEach(validator.validation::add);
+    return validator;
+  }
 }

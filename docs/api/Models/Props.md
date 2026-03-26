@@ -14,6 +14,7 @@
 | **label** | **String** |  | [optional] [default to null] |
 | **max** | **BigDecimal** |  | [optional] [default to null] |
 | **maxDate** | **String** |  | [optional] [default to null] |
+| **maxLength** | **Integer** |  | [optional] [default to null] |
 | **min** | **BigDecimal** |  | [optional] [default to null] |
 | **minDate** | **String** |  | [optional] [default to null] |
 | **multiYear** | **Boolean** |  | [optional] [default to null] |

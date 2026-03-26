@@ -2,11 +2,11 @@
   "resourceType": "Questionnaire",
   "id": "DiseaseQuestionsHCVD",
   "url": "https://demis.rki.de/fhir/Questionnaire/DiseaseQuestionsHCVD",
-  "version": "1.4.2",
+  "version": "1.5.0",
   "name": "DiseaseQuestionsHCVD",
   "title": "Hepatitis C: spezifische klinische und epidemiologische Angaben",
   "status": "active",
-  "date": "2025-10-18",
+  "date": "2026-01-22",
   "publisher": "Robert Koch-Institut",
   "contact": [
     {
@@ -40,121 +40,99 @@
             "coding": [
               {
                 "system": "http://hl7.org/fhir/questionnaire-item-control",
-                "code": "gtable",
-                "display": "Group Table"
+                "code": "drop-down",
+                "display": "Drop down"
               }
             ]
           }
         }
       ],
-      "linkId": "nationalityGroup",
-      "type": "group",
+      "linkId": "nationality",
+      "text": "Welche Staatsangehörigkeit hat die betroffene Person?",
+      "type": "choice",
       "required": true,
       "repeats": false,
-      "item": [
+      "answerValueSet": "https://demis.rki.de/fhir/ValueSet/answerSetCountry",
+      "initial": [
         {
-          "extension": [
-            {
-              "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-              "valueCodeableConcept": {
-                "coding": [
-                  {
-                    "system": "http://hl7.org/fhir/questionnaire-item-control",
-                    "code": "drop-down",
-                    "display": "Drop down"
-                  }
-                ]
-              }
-            }
-          ],
-          "linkId": "nationality",
-          "text": "Welche Staatsangehörigkeit hat die betroffene Person?",
-          "type": "choice",
-          "required": true,
-          "repeats": false,
-          "answerValueSet": "https://demis.rki.de/fhir/ValueSet/answerSetCountry",
-          "initial": [
-            {
-              "valueCoding": {
-                "system": "http://snomed.info/sct",
-                "code": "1631000175102",
-                "display": "Patient not asked (contextual qualifier) (qualifier value)"
-              }
-            }
-          ]
-        },
-        {
-          "extension": [
-            {
-              "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-              "valueCodeableConcept": {
-                "coding": [
-                  {
-                    "system": "http://hl7.org/fhir/questionnaire-item-control",
-                    "code": "drop-down",
-                    "display": "Drop down"
-                  }
-                ]
-              }
-            }
-          ],
-          "linkId": "countryOfBirth",
-          "text": "Welcher ist der Geburtsstaat der betroffenen Person?",
-          "type": "choice",
-          "required": true,
-          "repeats": false,
-          "answerValueSet": "https://demis.rki.de/fhir/ValueSet/answerSetCountry",
-          "initial": [
-            {
-              "valueCoding": {
-                "system": "http://snomed.info/sct",
-                "code": "1631000175102",
-                "display": "Patient not asked (contextual qualifier) (qualifier value)"
-              }
-            }
-          ]
-        },
-        {
-          "extension": [
-            {
-              "url": "http://hl7.org/fhir/StructureDefinition/regex",
-              "valueString": "^19[0-9]{2}$|^20[0-9]{2}$"
-            }
-          ],
-          "linkId": "yearOfEntry",
-          "text": "Jahr der Einreise in Deutschland",
-          "type": "date",
-          "enableWhen": [
-            {
-              "question": "countryOfBirth",
-              "operator": "!=",
-              "answerCoding": {
-                "system": "urn:iso:std:iso:3166",
-                "code": "DE"
-              }
-            },
-            {
-              "question": "countryOfBirth",
-              "operator": "!=",
-              "answerCoding": {
-                "system": "http://snomed.info/sct",
-                "code": "261665006"
-              }
-            },
-            {
-              "question": "countryOfBirth",
-              "operator": "!=",
-              "answerCoding": {
-                "system": "http://snomed.info/sct",
-                "code": "1631000175102"
-              }
-            }
-          ],
-          "enableBehavior": "all",
-          "required": false,
-          "repeats": false
+          "valueCoding": {
+            "system": "http://snomed.info/sct",
+            "code": "1631000175102",
+            "display": "Patient not asked (contextual qualifier) (qualifier value)"
+          }
         }
       ]
+    },
+    {
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+          "valueCodeableConcept": {
+            "coding": [
+              {
+                "system": "http://hl7.org/fhir/questionnaire-item-control",
+                "code": "drop-down",
+                "display": "Drop down"
+              }
+            ]
+          }
+        }
+      ],
+      "linkId": "countryOfBirth",
+      "text": "Welcher ist der Geburtsstaat der betroffenen Person?",
+      "type": "choice",
+      "required": true,
+      "repeats": false,
+      "answerValueSet": "https://demis.rki.de/fhir/ValueSet/answerSetCountry",
+      "initial": [
+        {
+          "valueCoding": {
+            "system": "http://snomed.info/sct",
+            "code": "1631000175102",
+            "display": "Patient not asked (contextual qualifier) (qualifier value)"
+          }
+        }
+      ]
+    },
+    {
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/regex",
+          "valueString": "^19[0-9]{2}$|^20[0-9]{2}$"
+        }
+      ],
+      "linkId": "yearOfEntry",
+      "text": "Jahr der Einreise in Deutschland",
+      "type": "date",
+      "enableWhen": [
+        {
+          "question": "countryOfBirth",
+          "operator": "!=",
+          "answerCoding": {
+            "system": "urn:iso:std:iso:3166",
+            "code": "DE"
+          }
+        },
+        {
+          "question": "countryOfBirth",
+          "operator": "!=",
+          "answerCoding": {
+            "system": "http://snomed.info/sct",
+            "code": "261665006"
+          }
+        },
+        {
+          "question": "countryOfBirth",
+          "operator": "!=",
+          "answerCoding": {
+            "system": "http://snomed.info/sct",
+            "code": "1631000175102"
+          }
+        }
+      ],
+      "enableBehavior": "all",
+      "required": false,
+      "repeats": false
     },
     {
       "extension": [

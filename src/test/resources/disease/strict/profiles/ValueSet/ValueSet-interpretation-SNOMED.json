@@ -2,12 +2,12 @@
   "resourceType": "ValueSet",
   "id": "interpretation-SNOMED",
   "url": "https://demis.rki.de/fhir/ValueSet/interpretation-SNOMED",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "name": "Interpretation-SNOMED",
   "title": "SNOMED-Interpretation des Testergebnisses",
   "status": "active",
   "experimental": false,
-  "date": "2025-04-08",
+  "date": "2025-12-05",
   "publisher": "Robert Koch-Institut",
   "contact": [
     {
@@ -36,7 +36,7 @@
     "include": [
       {
         "system": "http://snomed.info/sct",
-        "version": "http://snomed.info/sct/11000274103/version/20241115",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
         "concept": [
           {
             "extension": [
@@ -46,13 +46,7 @@
               }
             ],
             "code": "10828004",
-            "display": "Positive (qualifier value)",
-            "designation": [
-              {
-                "language": "de-DE",
-                "value": "Positiv"
-              }
-            ]
+            "display": "Positiv"
           },
           {
             "extension": [
@@ -62,13 +56,7 @@
               }
             ],
             "code": "1255965005",
-            "display": "Susceptible with increased exposure (qualifier value)",
-            "designation": [
-              {
-                "language": "de-DE",
-                "value": "Empfindlich bei erhöhter Exposition"
-              }
-            ]
+            "display": "Empfindlich bei erhöhter Exposition"
           },
           {
             "extension": [
@@ -78,13 +66,7 @@
               }
             ],
             "code": "131196009",
-            "display": "Susceptible (qualifier value)",
-            "designation": [
-              {
-                "language": "de-DE",
-                "value": "Empfindlich"
-              }
-            ]
+            "display": "Empfindlich"
           },
           {
             "extension": [
@@ -94,13 +76,7 @@
               }
             ],
             "code": "260373001",
-            "display": "Detected (qualifier value)",
-            "designation": [
-              {
-                "language": "de-DE",
-                "value": "Nachgewiesen"
-              }
-            ]
+            "display": "Nachgewiesen"
           },
           {
             "extension": [
@@ -110,13 +86,7 @@
               }
             ],
             "code": "260385009",
-            "display": "Negative (qualifier value)",
-            "designation": [
-              {
-                "language": "de-DE",
-                "value": "Negativ"
-              }
-            ]
+            "display": "Negativ"
           },
           {
             "extension": [
@@ -126,13 +96,7 @@
               }
             ],
             "code": "260415000",
-            "display": "Not detected (qualifier value)",
-            "designation": [
-              {
-                "language": "de-DE",
-                "value": "Nicht nachgewiesen"
-              }
-            ]
+            "display": "Nicht nachgewiesen"
           },
           {
             "extension": [
@@ -142,13 +106,7 @@
               }
             ],
             "code": "264841006",
-            "display": "Intermediately susceptible (qualifier value)",
-            "designation": [
-              {
-                "language": "de-DE",
-                "value": "Intermediät empfindlich"
-              }
-            ]
+            "display": "Intermediär empfindlich"
           },
           {
             "extension": [
@@ -158,13 +116,7 @@
               }
             ],
             "code": "30714006",
-            "display": "Resistant (qualifier value)",
-            "designation": [
-              {
-                "language": "de-DE",
-                "value": "Resistent"
-              }
-            ]
+            "display": "Resistent"
           },
           {
             "extension": [
@@ -174,7 +126,7 @@
               }
             ],
             "code": "42425007",
-            "display": "Equivocal (qualifier value)",
+            "display": "Zweideutig",
             "designation": [
               {
                 "language": "de-DE",
@@ -190,80 +142,74 @@
               }
             ],
             "code": "82334004",
-            "display": "Indeterminate (qualifier value)",
-            "designation": [
-              {
-                "language": "de-DE",
-                "value": "Uneindeutig"
-              }
-            ]
+            "display": "Uneindeutig"
           }
         ]
       }
     ]
   },
   "expansion": {
-    "timestamp": "2025-04-08T00:00:00+02:00",
+    "timestamp": "2025-12-05T00:00:00+01:00",
     "contains": [
       {
         "system": "http://snomed.info/sct",
-        "version": "http://snomed.info/sct/11000274103/version/20241115",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
         "code": "260373001",
-        "display": "Detected (qualifier value)"
+        "display": "Nachgewiesen"
       },
       {
         "system": "http://snomed.info/sct",
-        "version": "http://snomed.info/sct/11000274103/version/20241115",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
         "code": "82334004",
-        "display": "Indeterminate (qualifier value)"
+        "display": "Uneindeutig"
       },
       {
         "system": "http://snomed.info/sct",
-        "version": "http://snomed.info/sct/11000274103/version/20241115",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
         "code": "260385009",
-        "display": "Negative (qualifier value)"
+        "display": "Negativ"
       },
       {
         "system": "http://snomed.info/sct",
-        "version": "http://snomed.info/sct/11000274103/version/20241115",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
         "code": "10828004",
-        "display": "Positive (qualifier value)"
+        "display": "Positiv"
       },
       {
         "system": "http://snomed.info/sct",
-        "version": "http://snomed.info/sct/11000274103/version/20241115",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
         "code": "131196009",
-        "display": "Susceptible (qualifier value)"
+        "display": "Empfindlich"
       },
       {
         "system": "http://snomed.info/sct",
-        "version": "http://snomed.info/sct/11000274103/version/20241115",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
         "code": "260415000",
-        "display": "Not detected (qualifier value)"
+        "display": "Nicht nachgewiesen"
       },
       {
         "system": "http://snomed.info/sct",
-        "version": "http://snomed.info/sct/11000274103/version/20241115",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
         "code": "42425007",
-        "display": "Equivocal (qualifier value)"
+        "display": "Zweideutig"
       },
       {
         "system": "http://snomed.info/sct",
-        "version": "http://snomed.info/sct/11000274103/version/20241115",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
         "code": "1255965005",
-        "display": "Susceptible with increased exposure (qualifier value)"
+        "display": "Empfindlich bei erhöhter Exposition"
       },
       {
         "system": "http://snomed.info/sct",
-        "version": "http://snomed.info/sct/11000274103/version/20241115",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
         "code": "264841006",
-        "display": "Intermediately susceptible (qualifier value)"
+        "display": "Intermediär empfindlich"
       },
       {
         "system": "http://snomed.info/sct",
-        "version": "http://snomed.info/sct/11000274103/version/20241115",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
         "code": "30714006",
-        "display": "Resistant (qualifier value)"
+        "display": "Resistent"
       }
     ]
   }

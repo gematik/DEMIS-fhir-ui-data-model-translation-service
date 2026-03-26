@@ -96,22 +96,10 @@ class CodeSystems {
     if (!concept.getDesignation().isEmpty()) {
       List<CodeSystem.ConceptDefinitionDesignationComponent> designation = concept.getDesignation();
       Set<Designation> designations = new LinkedHashSet<>();
-      final boolean addDesignationUseData = featureFlags.isAddDesignationUse();
       for (var conceptDesignation : designation) {
-        if (addDesignationUseData) {
-          Use use = extractUseOrNull(conceptDesignation);
-          designations.add(
-              new Designation(
-                  conceptDesignation.getLanguage(), conceptDesignation.getValue(), use));
-        } else {
-          if (conceptDesignation.getUse() != null
-              && (conceptDesignation.getUse().getCode() != null
-                      && !conceptDesignation.getUse().getCode().equals("FullySpecifiedName")
-                  || conceptDesignation.getUse().getCode() == null)) {
-            designations.add(
-                new Designation(conceptDesignation.getLanguage(), conceptDesignation.getValue()));
-          }
-        }
+        Use use = extractUseOrNull(conceptDesignation);
+        designations.add(
+            new Designation(conceptDesignation.getLanguage(), conceptDesignation.getValue(), use));
       }
       codeDisplay.setDesignations(designations);
     }

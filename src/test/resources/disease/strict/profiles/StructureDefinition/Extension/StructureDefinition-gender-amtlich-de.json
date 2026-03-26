@@ -2,11 +2,12 @@
   "resourceType": "StructureDefinition",
   "id": "gender-amtlich-de",
   "url": "http://fhir.de/StructureDefinition/gender-amtlich-de",
-  "version": "1.4.0",
+  "version": "1.5.4",
   "name": "GenderOtherDE",
   "title": "Differenzierung des administrativen Geschlechts 'other'",
   "status": "active",
-  "date": "2021-02-17",
+  "experimental": false,
+  "date": "2025-06-16",
   "publisher": "HL7 Deutschland e.V. (Technisches Komitee FHIR)",
   "contact": [
     {
@@ -49,15 +50,19 @@
   "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Extension",
   "derivation": "constraint",
   "snapshot": {
-    "extension": [
-      {
-        "url": "http://hl7.org/fhir/tools/StructureDefinition/snapshot-base-version",
-        "valueString": "4.0.1"
-      }
-    ],
     "element": [
       {
         "id": "Extension",
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
+            "valueCode": "normative"
+          },
+          {
+            "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version",
+            "valueCode": "4.0.0"
+          }
+        ],
         "path": "Extension",
         "short": "Optional Extensions Element",
         "definition": "Optional Extension Element - found in all resources.",
@@ -85,8 +90,7 @@
             "severity": "error",
             "human": "Must have either extensions or value[x], not both",
             "expression": "extension.exists() != value.exists()",
-            "xpath": "exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])",
-            "source": "http://hl7.org/fhir/StructureDefinition/Extension"
+            "xpath": "exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])"
           }
         ],
         "isModifier": false,
@@ -157,7 +161,7 @@
           "user content"
         ],
         "min": 0,
-        "max": "*",
+        "max": "0",
         "base": {
           "path": "Element.extension",
           "min": 0,
@@ -262,7 +266,8 @@
             "key": "gender-amtlich-1",
             "severity": "error",
             "human": "Die amtliche Differenzierung der Geschlechtsangabe 'other' darf nur gefüllt sein, wenn das Geschlecht 'other' angegeben ist",
-            "expression": "%resource.where(gender='other').exists()"
+            "expression": "%resource.where(gender='other').exists()",
+            "source": "http://fhir.de/StructureDefinition/gender-amtlich-de"
           }
         ],
         "isModifier": false,
@@ -283,6 +288,11 @@
   "differential": {
     "element": [
       {
+        "id": "Extension.extension",
+        "path": "Extension.extension",
+        "max": "0"
+      },
+      {
         "id": "Extension.url",
         "path": "Extension.url",
         "fixedUri": "http://fhir.de/StructureDefinition/gender-amtlich-de"
@@ -301,7 +311,8 @@
             "key": "gender-amtlich-1",
             "severity": "error",
             "human": "Die amtliche Differenzierung der Geschlechtsangabe 'other' darf nur gefüllt sein, wenn das Geschlecht 'other' angegeben ist",
-            "expression": "%resource.where(gender='other').exists()"
+            "expression": "%resource.where(gender='other').exists()",
+            "source": "http://fhir.de/StructureDefinition/gender-amtlich-de"
           }
         ],
         "binding": {

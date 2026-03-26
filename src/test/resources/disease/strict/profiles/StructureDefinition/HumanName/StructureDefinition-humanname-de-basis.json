@@ -2,12 +2,12 @@
   "resourceType": "StructureDefinition",
   "id": "humanname-de-basis",
   "url": "http://fhir.de/StructureDefinition/humanname-de-basis",
-  "version": "1.5.3",
+  "version": "1.5.4",
   "name": "HumannameDeBasis",
   "title": "HumanName, deutsches Basisprofil",
   "status": "active",
   "experimental": false,
-  "date": "2025-01-30",
+  "date": "2025-06-16",
   "publisher": "HL7 Deutschland e.V. (Technisches Komitee FHIR)",
   "contact": [
     {
@@ -30,16 +30,6 @@
     "element": [
       {
         "id": "HumanName",
-        "extension": [
-          {
-            "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
-            "valueCode": "normative"
-          },
-          {
-            "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version",
-            "valueCode": "4.0.0"
-          }
-        ],
         "path": "HumanName",
         "short": "Personenname",
         "definition": "Personenname mit in Deutschland üblichen Erweiterungen",
@@ -92,7 +82,6 @@
             "source": "http://fhir.de/StructureDefinition/humanname-de-basis"
           }
         ],
-        "isModifier": false,
         "mapping": [
           {
             "identity": "rim",
@@ -138,8 +127,6 @@
             "code": "http://hl7.org/fhirpath/System.String"
           }
         ],
-        "isModifier": false,
-        "isSummary": false,
         "mapping": [
           {
             "identity": "rim",
@@ -179,6 +166,9 @@
             "code": "Extension"
           }
         ],
+        "condition": [
+          "ele-1"
+        ],
         "constraint": [
           {
             "key": "ele-1",
@@ -193,16 +183,18 @@
             "severity": "error",
             "human": "Must have either extensions or value[x], not both",
             "expression": "extension.exists() != value.exists()",
-            "xpath": "exists(f:extension)!=exists(f:*[starts-with(local-name(.), \"value\")])",
+            "xpath": "exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])",
             "source": "http://hl7.org/fhir/StructureDefinition/Extension"
           }
         ],
-        "isModifier": false,
-        "isSummary": false,
         "mapping": [
           {
             "identity": "rim",
             "map": "n/a"
+          },
+          {
+            "identity": "rim",
+            "map": "N/A"
           }
         ]
       },
@@ -224,6 +216,9 @@
           {
             "code": "code"
           }
+        ],
+        "condition": [
+          "ele-1"
         ],
         "constraint": [
           {
@@ -250,6 +245,10 @@
           "valueSet": "http://hl7.org/fhir/ValueSet/name-use|4.0.1"
         },
         "mapping": [
+          {
+            "identity": "rim",
+            "map": "n/a"
+          },
           {
             "identity": "v2",
             "map": "XPN.7, but often indicated by which field contains the name"
@@ -283,6 +282,9 @@
             "code": "string"
           }
         ],
+        "condition": [
+          "ele-1"
+        ],
         "constraint": [
           {
             "key": "ele-1",
@@ -293,9 +295,12 @@
             "source": "http://hl7.org/fhir/StructureDefinition/Element"
           }
         ],
-        "isModifier": false,
         "isSummary": true,
         "mapping": [
+          {
+            "identity": "rim",
+            "map": "n/a"
+          },
           {
             "identity": "v2",
             "map": "implied by XPN.11"
@@ -327,6 +332,9 @@
             "code": "string"
           }
         ],
+        "condition": [
+          "ele-1"
+        ],
         "constraint": [
           {
             "key": "ele-1",
@@ -337,9 +345,12 @@
             "source": "http://hl7.org/fhir/StructureDefinition/Element"
           }
         ],
-        "isModifier": false,
         "isSummary": true,
         "mapping": [
+          {
+            "identity": "rim",
+            "map": "n/a"
+          },
           {
             "identity": "v2",
             "map": "XPN.1/FN.1"
@@ -360,8 +371,8 @@
         "representation": [
           "xmlAttr"
         ],
-        "short": "xml:id (or equivalent in JSON)",
-        "definition": "unique id for the element within a resource (for internal references)",
+        "short": "Unique id for inter-element referencing",
+        "definition": "Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.",
         "min": 0,
         "max": "1",
         "base": {
@@ -380,8 +391,12 @@
             "code": "http://hl7.org/fhirpath/System.String"
           }
         ],
-        "isModifier": false,
-        "isSummary": false
+        "mapping": [
+          {
+            "identity": "rim",
+            "map": "n/a"
+          }
+        ]
       },
       {
         "id": "HumanName.family.extension",
@@ -393,11 +408,11 @@
               "path": "url"
             }
           ],
-          "ordered": false,
+          "description": "Extensions are always sliced by (at least) url",
           "rules": "open"
         },
         "short": "Additional content defined by implementations",
-        "definition": "May be used to represent additional information that is not part of the basic definition of the resource. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+        "definition": "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
         "comment": "There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.",
         "alias": [
           "extensions",
@@ -414,6 +429,9 @@
           {
             "code": "Extension"
           }
+        ],
+        "condition": [
+          "ele-1"
         ],
         "constraint": [
           {
@@ -433,21 +451,19 @@
             "source": "http://hl7.org/fhir/StructureDefinition/Extension"
           }
         ],
-        "isModifier": false,
-        "isSummary": false
+        "mapping": [
+          {
+            "identity": "rim",
+            "map": "n/a"
+          },
+          {
+            "identity": "rim",
+            "map": "N/A"
+          }
+        ]
       },
       {
         "id": "HumanName.family.extension:namenszusatz",
-        "extension": [
-          {
-            "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
-            "valueCode": "normative"
-          },
-          {
-            "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version",
-            "valueCode": "4.0.0"
-          }
-        ],
         "path": "HumanName.family.extension",
         "sliceName": "namenszusatz",
         "short": "Namenszusatz gemäß VSDM (Versichertenstammdatenmanagement, \"eGK\")",
@@ -493,8 +509,6 @@
             "source": "http://hl7.org/fhir/StructureDefinition/Extension"
           }
         ],
-        "isModifier": false,
-        "isSummary": false,
         "mapping": [
           {
             "identity": "rim",
@@ -553,9 +567,15 @@
             "source": "http://hl7.org/fhir/StructureDefinition/Extension"
           }
         ],
-        "isModifier": false,
-        "isSummary": false,
         "mapping": [
+          {
+            "identity": "rim",
+            "map": "n/a"
+          },
+          {
+            "identity": "rim",
+            "map": "N/A"
+          },
           {
             "identity": "v2",
             "map": "FN.3"
@@ -613,9 +633,15 @@
             "source": "http://hl7.org/fhir/StructureDefinition/Extension"
           }
         ],
-        "isModifier": false,
-        "isSummary": false,
         "mapping": [
+          {
+            "identity": "rim",
+            "map": "n/a"
+          },
+          {
+            "identity": "rim",
+            "map": "N/A"
+          },
           {
             "identity": "v2",
             "map": "FN.2"
@@ -633,7 +659,7 @@
           "xmlAttr"
         ],
         "short": "Primitive value for string",
-        "definition": "The actual value",
+        "definition": "Primitive value for string",
         "min": 0,
         "max": "1",
         "base": {
@@ -656,9 +682,7 @@
             "code": "http://hl7.org/fhirpath/System.String"
           }
         ],
-        "maxLength": 1048576,
-        "isModifier": false,
-        "isSummary": false
+        "maxLength": 1048576
       },
       {
         "id": "HumanName.given",
@@ -683,6 +707,9 @@
           }
         ],
         "orderMeaning": "Given Names appear in the correct order for presenting the name",
+        "condition": [
+          "ele-1"
+        ],
         "constraint": [
           {
             "key": "ele-1",
@@ -693,9 +720,12 @@
             "source": "http://hl7.org/fhir/StructureDefinition/Element"
           }
         ],
-        "isModifier": false,
         "isSummary": true,
         "mapping": [
+          {
+            "identity": "rim",
+            "map": "n/a"
+          },
           {
             "identity": "v2",
             "map": "XPN.2 + XPN.3"
@@ -715,6 +745,7 @@
         "path": "HumanName.prefix",
         "short": "Namensteile vor dem Vornamen",
         "definition": "Namensteile vor dem Vornamen, z.B. akademischer Titel.",
+        "comment": "Note that FHIR strings SHALL NOT exceed 1MB in size",
         "min": 0,
         "max": "*",
         "base": {
@@ -728,6 +759,9 @@
           }
         ],
         "orderMeaning": "Prefixes appear in the correct order for presenting the name",
+        "condition": [
+          "ele-1"
+        ],
         "constraint": [
           {
             "key": "ele-1",
@@ -738,9 +772,12 @@
             "source": "http://hl7.org/fhir/StructureDefinition/Element"
           }
         ],
-        "isModifier": false,
         "isSummary": true,
         "mapping": [
+          {
+            "identity": "rim",
+            "map": "n/a"
+          },
           {
             "identity": "v2",
             "map": "XPN.5"
@@ -761,8 +798,8 @@
         "representation": [
           "xmlAttr"
         ],
-        "short": "xml:id (or equivalent in JSON)",
-        "definition": "unique id for the element within a resource (for internal references)",
+        "short": "Unique id for inter-element referencing",
+        "definition": "Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.",
         "min": 0,
         "max": "1",
         "base": {
@@ -781,8 +818,12 @@
             "code": "http://hl7.org/fhirpath/System.String"
           }
         ],
-        "isModifier": false,
-        "isSummary": false
+        "mapping": [
+          {
+            "identity": "rim",
+            "map": "n/a"
+          }
+        ]
       },
       {
         "id": "HumanName.prefix.extension",
@@ -794,11 +835,11 @@
               "path": "url"
             }
           ],
-          "ordered": false,
+          "description": "Extensions are always sliced by (at least) url",
           "rules": "open"
         },
         "short": "Additional content defined by implementations",
-        "definition": "May be used to represent additional information that is not part of the basic definition of the resource. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+        "definition": "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
         "comment": "There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.",
         "alias": [
           "extensions",
@@ -815,6 +856,9 @@
           {
             "code": "Extension"
           }
+        ],
+        "condition": [
+          "ele-1"
         ],
         "constraint": [
           {
@@ -834,8 +878,16 @@
             "source": "http://hl7.org/fhir/StructureDefinition/Extension"
           }
         ],
-        "isModifier": false,
-        "isSummary": false
+        "mapping": [
+          {
+            "identity": "rim",
+            "map": "n/a"
+          },
+          {
+            "identity": "rim",
+            "map": "N/A"
+          }
+        ]
       },
       {
         "id": "HumanName.prefix.extension:prefix-qualifier",
@@ -885,8 +937,15 @@
           }
         ],
         "isModifier": false,
-        "isSummary": false,
         "mapping": [
+          {
+            "identity": "rim",
+            "map": "n/a"
+          },
+          {
+            "identity": "rim",
+            "map": "N/A"
+          },
           {
             "identity": "rim",
             "map": "ENXP.qualifier"
@@ -900,7 +959,7 @@
           "xmlAttr"
         ],
         "short": "Primitive value for string",
-        "definition": "The actual value",
+        "definition": "Primitive value for string",
         "min": 0,
         "max": "1",
         "base": {
@@ -923,15 +982,14 @@
             "code": "http://hl7.org/fhirpath/System.String"
           }
         ],
-        "maxLength": 1048576,
-        "isModifier": false,
-        "isSummary": false
+        "maxLength": 1048576
       },
       {
         "id": "HumanName.suffix",
         "path": "HumanName.suffix",
         "short": "Namensteile nach dem Nachnamen",
         "definition": "Namensteile nach dem Nachnamen",
+        "comment": "Note that FHIR strings SHALL NOT exceed 1MB in size",
         "min": 0,
         "max": "*",
         "base": {
@@ -945,6 +1003,9 @@
           }
         ],
         "orderMeaning": "Suffixes appear in the correct order for presenting the name",
+        "condition": [
+          "ele-1"
+        ],
         "constraint": [
           {
             "key": "ele-1",
@@ -955,9 +1016,12 @@
             "source": "http://hl7.org/fhir/StructureDefinition/Element"
           }
         ],
-        "isModifier": false,
         "isSummary": true,
         "mapping": [
+          {
+            "identity": "rim",
+            "map": "n/a"
+          },
           {
             "identity": "v2",
             "map": "XPN/4"
@@ -973,6 +1037,7 @@
         "path": "HumanName.period",
         "short": "Time period when name was/is in use",
         "definition": "Indicates the period of time when this name was valid for the named person.",
+        "comment": "A Period specifies a range of time; the context of use will specify whether the entire range applies (e.g. \"the patient was an inpatient of the hospital for this time range\") or one value from the range applies (e.g. \"give to the patient between these two times\").\n\nPeriod is not used for a duration (a measure of elapsed time). See [Duration](datatypes.html#Duration).",
         "requirements": "Allows names to be placed in historical context.",
         "min": 0,
         "max": "1",
@@ -986,6 +1051,9 @@
             "code": "Period"
           }
         ],
+        "condition": [
+          "ele-1"
+        ],
         "constraint": [
           {
             "key": "ele-1",
@@ -994,11 +1062,30 @@
             "expression": "hasValue() or (children().count() > id.count())",
             "xpath": "@value|f:*|h:div",
             "source": "http://hl7.org/fhir/StructureDefinition/Element"
+          },
+          {
+            "key": "per-1",
+            "severity": "error",
+            "human": "If present, start SHALL have a lower value than end",
+            "expression": "start.hasValue().not() or end.hasValue().not() or (start <= end)",
+            "xpath": "not(exists(f:start/@value)) or not(exists(f:end/@value)) or (xs:dateTime(f:start/@value) <= xs:dateTime(f:end/@value))",
+            "source": "http://hl7.org/fhir/StructureDefinition/Period"
           }
         ],
-        "isModifier": false,
         "isSummary": true,
         "mapping": [
+          {
+            "identity": "rim",
+            "map": "n/a"
+          },
+          {
+            "identity": "v2",
+            "map": "DR"
+          },
+          {
+            "identity": "rim",
+            "map": "IVL<TS>[lowClosed=\"true\" and highClosed=\"true\"] or URG<TS>[lowClosed=\"true\" and highClosed=\"true\"]"
+          },
           {
             "identity": "v2",
             "map": "XPN.13 + XPN.14"

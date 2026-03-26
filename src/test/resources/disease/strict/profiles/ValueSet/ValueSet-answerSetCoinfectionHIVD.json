@@ -2,12 +2,12 @@
   "resourceType": "ValueSet",
   "id": "answerSetCoinfectionHIVD",
   "url": "https://demis.rki.de/fhir/ValueSet/answerSetCoinfectionHIVD",
-  "version": "1.0.1",
+  "version": "2.0.0",
   "name": "AnswerSetCoinfectionHIVD",
   "title": "Anwort Koinfektion mit Hepatitis B bei HIV",
   "status": "active",
   "experimental": false,
-  "date": "2025-08-12",
+  "date": "2026-01-09",
   "publisher": "Robert Koch-Institut",
   "contact": [
     {
@@ -36,7 +36,7 @@
     "include": [
       {
         "system": "http://snomed.info/sct",
-        "version": "http://snomed.info/sct/11000274103/version/20241115",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
         "concept": [
           {
             "extension": [
@@ -46,13 +46,7 @@
               }
             ],
             "code": "105629000",
-            "display": "Chlamydial infection (disorder)",
-            "designation": [
-              {
-                "language": "de-DE",
-                "value": "Chlamydieninfektion"
-              }
-            ]
+            "display": "Chlamydien-Infektion"
           },
           {
             "extension": [
@@ -62,13 +56,7 @@
               }
             ],
             "code": "1163504003",
-            "display": "Infection caused by Mycoplasma genitalium (disorder)",
-            "designation": [
-              {
-                "language": "de-DE",
-                "value": "Infektion mit Mycoplasma genitalium"
-              }
-            ]
+            "display": "Infektion durch Mycoplasma genitalium"
           },
           {
             "extension": [
@@ -84,23 +72,7 @@
             "extension": [
               {
                 "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
-                "valueInteger": 999
-              }
-            ],
-            "code": "1631000175102",
-            "display": "Patient not asked (contextual qualifier) (qualifier value)",
-            "designation": [
-              {
-                "language": "de-DE",
-                "value": "Patient/Patientin nicht gefragt"
-              }
-            ]
-          },
-          {
-            "extension": [
-              {
-                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
-                "valueInteger": 1000
+                "valueInteger": 2
               }
             ],
             "code": "261665006",
@@ -110,17 +82,11 @@
             "extension": [
               {
                 "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
-                "valueInteger": 2
+                "valueInteger": 6
               }
             ],
             "code": "373067005",
-            "display": "No (qualifier value)",
-            "designation": [
-              {
-                "language": "de-DE",
-                "value": "Nein"
-              }
-            ]
+            "display": "Nein"
           },
           {
             "extension": [
@@ -134,7 +100,11 @@
             "designation": [
               {
                 "language": "de-DE",
-                "value": "Virale Hepatitis, Typ C"
+                "use": {
+                  "system": "http://snomed.info/sct",
+                  "code": "900000000000013009"
+                },
+                "value": "Hepatitis C"
               }
             ]
           },
@@ -146,7 +116,17 @@
               }
             ],
             "code": "66071002",
-            "display": "Virale Hepatitis, Typ B"
+            "display": "Virale Hepatitis, Typ B",
+            "designation": [
+              {
+                "language": "de-DE",
+                "use": {
+                  "system": "http://snomed.info/sct",
+                  "code": "900000000000013009"
+                },
+                "value": "Hepatitis B"
+              }
+            ]
           },
           {
             "extension": [
@@ -156,72 +136,60 @@
               }
             ],
             "code": "76272004",
-            "display": "Syphilis (disorder)",
-            "designation": [
-              {
-                "language": "de-DE",
-                "value": "Syphilis"
-              }
-            ]
+            "display": "Syphilis"
           }
         ]
       }
     ]
   },
   "expansion": {
-    "timestamp": "2025-08-12T00:00:00+02:00",
+    "timestamp": "2026-01-09T00:00:00+01:00",
     "contains": [
       {
         "system": "http://snomed.info/sct",
-        "version": "http://snomed.info/sct/11000274103/version/20241115",
-        "code": "1631000175102",
-        "display": "Patient not asked (contextual qualifier) (qualifier value)"
-      },
-      {
-        "system": "http://snomed.info/sct",
-        "version": "http://snomed.info/sct/11000274103/version/20241115",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
         "code": "15628003",
         "display": "Gonorrhö"
       },
       {
         "system": "http://snomed.info/sct",
-        "version": "http://snomed.info/sct/11000274103/version/20241115",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
         "code": "373067005",
-        "display": "No (qualifier value)"
+        "display": "Nein"
       },
       {
         "system": "http://snomed.info/sct",
-        "version": "http://snomed.info/sct/11000274103/version/20241115",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
         "code": "66071002",
         "display": "Virale Hepatitis, Typ B"
       },
       {
         "system": "http://snomed.info/sct",
-        "version": "http://snomed.info/sct/11000274103/version/20241115",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
         "code": "261665006",
         "display": "Unbekannt"
       },
       {
         "system": "http://snomed.info/sct",
-        "version": "http://snomed.info/sct/11000274103/version/20241115",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
         "code": "105629000",
-        "display": "Chlamydial infection (disorder)"
+        "display": "Chlamydien-Infektion"
       },
       {
         "system": "http://snomed.info/sct",
-        "version": "http://snomed.info/sct/11000274103/version/20241115",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
         "code": "1163504003",
-        "display": "Infection caused by Mycoplasma genitalium (disorder)"
+        "display": "Infektion durch Mycoplasma genitalium"
       },
       {
         "system": "http://snomed.info/sct",
-        "version": "http://snomed.info/sct/11000274103/version/20241115",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
         "code": "76272004",
-        "display": "Syphilis (disorder)"
+        "display": "Syphilis"
       },
       {
         "system": "http://snomed.info/sct",
-        "version": "http://snomed.info/sct/11000274103/version/20241115",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
         "code": "50711007",
         "display": "Virale Hepatitis Typ C"
       }

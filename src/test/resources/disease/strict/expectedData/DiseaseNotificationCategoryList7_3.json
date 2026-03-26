@@ -41,11 +41,11 @@
   },
   {
     "code": "toxd",
-    "display": "Toxoplasma gondii; Meldepflicht nur bei konnatalen Infektionen",
+    "display": "Toxoplasma gondii; Meldepflicht nur bei konnataler Infektion des Kindes",
     "designations": [
       {
         "language": "de-DE",
-        "value": "Toxoplasma gondii, konnatal"
+        "value": "Toxoplasma gondii, konnatale Infektion des Kindes"
       }
     ]
   },

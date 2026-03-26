@@ -50,13 +50,11 @@ import org.springframework.test.web.servlet.MvcResult;
 @AutoConfigureMockMvc
 @SpringBootTest
 @AutoConfigureObservability
-@TestPropertySource(
-    locations = "classpath:application-test.properties",
-    properties = {"feature.flag.addDesignationUse=false"})
+@TestPropertySource(locations = "classpath:application-test.properties")
 class CodeSystemsCtrIT {
 
   public static final String CODE_DISPLAY =
-      "{\"code\":\"100343-3\",\"display\":\"Influenza virus B RNA [Presence] in Saliva (oral fluid) by NAA with probe detection\",\"designations\":[{\"language\":\"de-DE\",\"value\":\"Influenza-Virus B-RNA [Nachweis] in Speichel mit Nukleinsäureamplifikation mit Sondendetektion\"}],\"system\":\"http://loinc.org\",\"version\":\"2.74\"}";
+      "{\"code\":\"100343-3\",\"display\":\"Influenza virus B RNA [Presence] in Saliva (oral fluid) by NAA with probe detection\",\"designations\":[{\"language\":\"de-DE\",\"value\":\"Influenza-Virus B-RNA [Nachweis] in Speichel mit Nukleinsäureamplifikation mit Sondendetektion\",\"use\":{\"system\":\"http://loinc.org\",\"code\":\"LONG_COMMON_NAME\"}}],\"system\":\"http://loinc.org\",\"version\":\"2.74\"}";
 
   public static final String CODE_DISPLAY_2 =
       "{\"code\":\"provisional\",\"display\":\"Provisional\",\"designations\":[]}";

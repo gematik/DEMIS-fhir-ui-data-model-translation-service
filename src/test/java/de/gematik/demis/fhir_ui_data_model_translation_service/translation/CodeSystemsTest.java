@@ -49,7 +49,7 @@ class CodeSystemsTest {
   public static final String CODE_SYSTEM_NULL_FLAVOR =
       "http://terminology.hl7.org/CodeSystem/v3-NullFlavor";
   private static final FeatureFlags FEATURE_FLAGS_ENABLED =
-      FeatureFlags.builder().addDesignationUse(true).addCodeDisplayVersion(true).build();
+      FeatureFlags.builder().addCodeDisplayVersion(true).build();
   private static final File CODE_SYSTEM_NO_CONTENT =
       new File("src/test/resources/profilesNotForIT/CodeSystem-pzn.json");
 

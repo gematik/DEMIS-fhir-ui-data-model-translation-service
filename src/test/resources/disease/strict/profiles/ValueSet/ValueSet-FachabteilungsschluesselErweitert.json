@@ -7,24 +7,24 @@
     ]
   },
   "url": "http://fhir.de/ValueSet/dkgev/Fachabteilungsschluessel-erweitert",
-  "version": "1.4.0",
+  "version": "1.5.4",
   "name": "ValueSetFachabteilungsschluesselErweitert",
+  "title": "FachabteilungsschluesselErweitert ValueSet",
   "status": "active",
   "experimental": false,
-  "date": "2021-03-12",
+  "date": "2025-06-16",
   "publisher": "HL7 Deutschland e.V. (Technisches Komitee FHIR)",
   "contact": [
     {
       "telecom": [
         {
-          "system": "other",
+          "system": "url",
           "value": "http://hl7.de/technische-komitees/fhir/"
         }
       ]
     }
   ],
   "description": "Fachabteilungen gemäß Anhang 1 der BPflV in der am 31.12.2003 geltenden Fassung inkl. Spezialisierungen",
-  "copyright": "HL7 Deutschland e.V.",
   "compose": {
     "include": [
       {
@@ -33,7 +33,7 @@
     ]
   },
   "expansion": {
-    "timestamp": "2021-03-12T00:00:00+01:00",
+    "timestamp": "2025-06-16T00:00:00+02:00",
     "contains": [
       {
         "system": "http://fhir.de/CodeSystem/dkgev/Fachabteilungsschluessel-erweitert",

@@ -80,8 +80,6 @@ public class LabDataPreparationSrv {
   private final DataLoaderSrv dataLoaderSrv;
   private final boolean addTestDataErrorCase;
   private final boolean addTestDataSortingCase;
-  private final boolean isSnapshot6Active;
-  private final boolean isSnomedVersionActive;
   @Getter private Map<String, LabNotificationData> laboratoryDataMap; // 7.3, 7.1
   private Map<PathogenNotificationCategory, SequencedCollection<CodeDisplay>>
       pathogenNotificationCategories;
@@ -93,17 +91,13 @@ public class LabDataPreparationSrv {
       PathogenNotificationCategoryList pathogenNotificationCategoryList,
       DataLoaderSrv dataLoaderSrv,
       @Value("${add.test.data.error.case.for.lab}") boolean addTestDataErrorCase,
-      @Value("${add.test.data.laboratory.sorting}") boolean addTestDataSortingCase,
-      @Value("${feature.flag.snapshot6}") boolean isSnapshot6Active,
-      @Value("${feature.flag.snomed.version.from.futs}") boolean isSnomedVersionActive) {
+      @Value("${add.test.data.laboratory.sorting}") boolean addTestDataSortingCase) {
     this.fhirContext = fhirContext;
     this.snapshotFilesService = snapshotFilesService;
     this.pathogenNotificationCategoryList = pathogenNotificationCategoryList;
     this.dataLoaderSrv = dataLoaderSrv;
     this.addTestDataErrorCase = addTestDataErrorCase;
     this.addTestDataSortingCase = addTestDataSortingCase;
-    this.isSnomedVersionActive = isSnomedVersionActive;
-    this.isSnapshot6Active = isSnapshot6Active;
   }
 
   @PostConstruct
@@ -111,29 +105,17 @@ public class LabDataPreparationSrv {
     this.laboratoryDataMap = new HashMap<>();
     this.notificationCategories = new ArrayList<>();
 
-    List<StaticSystemVersion> staticVersionList = null;
-    if (isSnomedVersionActive) {
-      staticVersionList = new LinkedList<>();
-      staticVersionList.add(
-          new StaticSystemVersion(SNOMED_URL, dataLoaderSrv.getVersion(SNOMED_URL)));
-      staticVersionList.add(
-          new StaticSystemVersion(LOINC_URL, dataLoaderSrv.getVersion(LOINC_URL)));
-    }
+    List<StaticSystemVersion> staticVersionList = new LinkedList<>();
+    staticVersionList.add(
+        new StaticSystemVersion(SNOMED_URL, dataLoaderSrv.getVersion(SNOMED_URL)));
+    staticVersionList.add(new StaticSystemVersion(LOINC_URL, dataLoaderSrv.getVersion(LOINC_URL)));
 
-    if (isSnapshot6Active) {
-      this.pathogenNotificationCategories =
-          pathogenNotificationCategoryList.getPathogenNotificationCategories();
-      this.notificationCategories =
-          pathogenNotificationCategories.values().stream()
-              .flatMap(SequencedCollection::stream)
-              .toList();
-    }
-
-    // remove this block with feature.flag.snapshot6
-    if (notificationCategories.isEmpty()) {
-      this.notificationCategories =
-          pathogenNotificationCategoryList.getPathogenNotificationCategoryList();
-    }
+    this.pathogenNotificationCategories =
+        pathogenNotificationCategoryList.getPathogenNotificationCategories();
+    this.notificationCategories =
+        pathogenNotificationCategories.values().stream()
+            .flatMap(SequencedCollection::stream)
+            .toList();
 
     Map<String, List<CodeDisplay>> methodMap = createCodeToMethodMap();
     Map<String, List<CodeDisplay>> materialMap = createCodeToMaterialMap();
@@ -226,22 +208,6 @@ public class LabDataPreparationSrv {
     List<CodeDisplay> tmpnotificationCategories = new ArrayList<>(this.notificationCategories);
     tmpnotificationCategories.add(createTestDataForSorting());
     this.notificationCategories = tmpnotificationCategories;
-  }
-
-  /**
-   * @deprecated use {@link PathogenNotificationCategoryList#getNotificationCategories()}
-   */
-  @Deprecated(forRemoval = true)
-  public List<CodeDisplay> getNotificationCategories() {
-    return notificationCategories.stream()
-        .sorted(
-            Comparator.comparing(
-                (CodeDisplay cd) ->
-                    cd.extractGermanDesignations().stream()
-                        .findFirst()
-                        .map(Designation::value)
-                        .orElse(cd.getDisplay())))
-        .toList();
   }
 
   private Map<String, List<CodeDisplay>> createCodeToMethodMap() {

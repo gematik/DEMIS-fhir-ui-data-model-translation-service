@@ -2,11 +2,11 @@
   "resourceType": "StructureDefinition",
   "id": "TransmittingSite",
   "url": "https://demis.rki.de/fhir/StructureDefinition/TransmittingSite",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "name": "TransmittingSite",
   "title": "Übermittlungsstelle",
   "status": "active",
-  "date": "2025-02-20",
+  "date": "2026-01-08",
   "publisher": "Robert Koch-Institut",
   "contact": [
     {
@@ -1510,7 +1510,7 @@
           "rules": "closed"
         },
         "short": "A contact detail for the organization",
-        "definition": "A contact detail for the organization.",
+        "definition": "Kontaktangaben der Einrichtung. Telefonnummern, E-Mailadressen, Urls und Faxnummern können angegeben werden.",
         "comment": "The use code 'home' is not to be used. Note that these contacts are not the contact details of people who are employed by or represent the organization, but official contacts for the organization itself.",
         "requirements": "Human contact for the organization.",
         "min": 0,
@@ -4688,7 +4688,8 @@
             }
           ],
           "rules": "closed"
-        }
+        },
+        "definition": "Kontaktangaben der Einrichtung. Telefonnummern, E-Mailadressen, Urls und Faxnummern können angegeben werden."
       },
       {
         "id": "Organization.telecom:phone",

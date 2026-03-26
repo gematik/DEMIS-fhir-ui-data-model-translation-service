@@ -2,12 +2,12 @@
   "resourceType": "ValueSet",
   "id": "answerSetDiagnosisECHD",
   "url": "https://demis.rki.de/fhir/ValueSet/answerSetDiagnosisECHD",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "name": "AnswerSetDiagnosisECHD",
   "title": "Antwortmöglichkeiten für die Angabe der Ausprägung des Meldetatbestands \"Echinococcus sp.\"",
   "status": "active",
   "experimental": false,
-  "date": "2025-08-12",
+  "date": "2026-01-09",
   "publisher": "Robert Koch-Institut",
   "contact": [
     {
@@ -36,7 +36,7 @@
     "include": [
       {
         "system": "http://snomed.info/sct",
-        "version": "http://snomed.info/sct/11000274103/version/20241115",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
         "concept": [
           {
             "extension": [
@@ -66,13 +66,7 @@
               }
             ],
             "code": "74942003",
-            "display": "Echinokokkose",
-            "designation": [
-              {
-                "language": "de-DE",
-                "value": "Echinokkkose, nicht weiter differenziert"
-              }
-            ]
+            "display": "Echinokokkose"
           },
           {
             "extension": [
@@ -95,23 +89,23 @@
     ]
   },
   "expansion": {
-    "timestamp": "2025-08-12T00:00:00+02:00",
+    "timestamp": "2026-01-09T00:00:00+01:00",
     "contains": [
       {
         "system": "http://snomed.info/sct",
-        "version": "http://snomed.info/sct/11000274103/version/20241115",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
         "code": "21009004",
         "display": "Echinokokkose, alveoläre"
       },
       {
         "system": "http://snomed.info/sct",
-        "version": "http://snomed.info/sct/11000274103/version/20241115",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
         "code": "75006000",
         "display": "Echinococcus granulosus Infektion"
       },
       {
         "system": "http://snomed.info/sct",
-        "version": "http://snomed.info/sct/11000274103/version/20241115",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
         "code": "74942003",
         "display": "Echinokokkose"
       }

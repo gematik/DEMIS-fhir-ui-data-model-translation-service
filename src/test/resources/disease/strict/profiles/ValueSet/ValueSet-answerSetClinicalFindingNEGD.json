@@ -2,12 +2,12 @@
   "resourceType": "ValueSet",
   "id": "answerSetClinicalFindingNEGD",
   "url": "https://demis.rki.de/fhir/ValueSet/answerSetClinicalFindingNEGD",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "name": "AnswerSetClinicalFindingNEGD",
   "title": "Angabe der klinischen Beurteilung.",
   "status": "active",
   "experimental": false,
-  "date": "2025-08-12",
+  "date": "2026-01-09",
   "publisher": "Robert Koch-Institut",
   "contact": [
     {
@@ -36,7 +36,7 @@
     "include": [
       {
         "system": "http://snomed.info/sct",
-        "version": "http://snomed.info/sct/11000274103/version/20241115",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
         "concept": [
           {
             "extension": [
@@ -46,7 +46,7 @@
               }
             ],
             "code": "255219008",
-            "display": "New infection (qualifier value)",
+            "display": "Neuinfektion",
             "designation": [
               {
                 "language": "de-DE",
@@ -62,19 +62,13 @@
               }
             ],
             "code": "255230006",
-            "display": "Reinfection (qualifier value)",
-            "designation": [
-              {
-                "language": "de-DE",
-                "value": "Reinfektion"
-              }
-            ]
+            "display": "Reinfektion"
           },
           {
             "extension": [
               {
                 "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
-                "valueInteger": 1000
+                "valueInteger": 2
               }
             ],
             "code": "261665006",
@@ -88,44 +82,38 @@
               }
             ],
             "code": "266721009",
-            "display": "Absent response to treatment (situation)",
-            "designation": [
-              {
-                "language": "de-DE",
-                "value": "Versagen der Behandlung"
-              }
-            ]
+            "display": "Versagen der Behandlung"
           }
         ]
       }
     ]
   },
   "expansion": {
-    "timestamp": "2025-08-12T00:00:00+02:00",
+    "timestamp": "2026-01-09T00:00:00+01:00",
     "contains": [
       {
         "system": "http://snomed.info/sct",
-        "version": "http://snomed.info/sct/11000274103/version/20241115",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
         "code": "261665006",
         "display": "Unbekannt"
       },
       {
         "system": "http://snomed.info/sct",
-        "version": "http://snomed.info/sct/11000274103/version/20241115",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
         "code": "266721009",
-        "display": "Absent response to treatment (situation)"
+        "display": "Versagen der Behandlung"
       },
       {
         "system": "http://snomed.info/sct",
-        "version": "http://snomed.info/sct/11000274103/version/20241115",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
         "code": "255219008",
-        "display": "New infection (qualifier value)"
+        "display": "Neuinfektion"
       },
       {
         "system": "http://snomed.info/sct",
-        "version": "http://snomed.info/sct/11000274103/version/20241115",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
         "code": "255230006",
-        "display": "Reinfection (qualifier value)"
+        "display": "Reinfektion"
       }
     ]
   }

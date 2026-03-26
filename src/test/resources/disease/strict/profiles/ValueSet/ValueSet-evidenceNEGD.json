@@ -2,12 +2,12 @@
   "resourceType": "ValueSet",
   "id": "evidenceNEGD",
   "url": "https://demis.rki.de/fhir/ValueSet/evidenceNEGD",
-  "version": "1.0.1",
+  "version": "2.0.0",
   "name": "EvidenceNEGD",
   "title": "Symptome und Manifestationen in Bezug auf den Meldetatbestand \"Neisseria gonorrhoeae (Gonorrhö)\"",
   "status": "active",
   "experimental": false,
-  "date": "2025-08-12",
+  "date": "2026-01-09",
   "publisher": "Robert Koch-Institut",
   "contact": [
     {
@@ -36,18 +36,8 @@
     "include": [
       {
         "system": "http://snomed.info/sct",
-        "version": "http://snomed.info/sct/11000274103/version/20241115",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
         "concept": [
-          {
-            "extension": [
-              {
-                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
-                "valueInteger": 23
-              }
-            ],
-            "code": "194828000",
-            "display": "Angina pectoris"
-          },
           {
             "extension": [
               {
@@ -56,7 +46,7 @@
               }
             ],
             "code": "198130006",
-            "display": "Female pelvic inflammatory disease (disorder)",
+            "display": "Unterleibsentzündung der Frau",
             "designation": [
               {
                 "language": "de-DE",
@@ -68,15 +58,19 @@
             "extension": [
               {
                 "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
-                "valueInteger": 16
+                "valueInteger": 10
               }
             ],
-            "code": "266599000",
-            "display": "Dysmenorrhoe",
+            "code": "271939006",
+            "display": "Vaginalsekret",
             "designation": [
               {
                 "language": "de-DE",
-                "value": "Menstruationsbeschwerden (Dysmenorrhoe)"
+                "use": {
+                  "system": "http://snomed.info/sct",
+                  "code": "900000000000013009"
+                },
+                "value": "Vaginaler Ausfluss"
               }
             ]
           },
@@ -84,11 +78,11 @@
             "extension": [
               {
                 "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
-                "valueInteger": 10
+                "valueInteger": 11
               }
             ],
-            "code": "302770003",
-            "display": "Tenesmus von Anus und/oder Rektum"
+            "code": "278851001",
+            "display": "Rektaler Ausfluss"
           },
           {
             "extension": [
@@ -98,7 +92,7 @@
               }
             ],
             "code": "31070006",
-            "display": "Epididymitis (disorder)",
+            "display": "Epididymitis",
             "designation": [
               {
                 "language": "de-DE",
@@ -114,7 +108,7 @@
               }
             ],
             "code": "3723001",
-            "display": "Arthritis (disorder)",
+            "display": "Arthritis",
             "designation": [
               {
                 "language": "de-DE",
@@ -140,13 +134,7 @@
               }
             ],
             "code": "3951002",
-            "display": "Proctitis (disorder)",
-            "designation": [
-              {
-                "language": "de-DE",
-                "value": "Proktitis"
-              }
-            ]
+            "display": "Proktitis"
           },
           {
             "extension": [
@@ -184,15 +172,29 @@
             "extension": [
               {
                 "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 5
+              }
+            ],
+            "code": "74964007",
+            "display": "Andere"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
                 "valueInteger": 20
               }
             ],
             "code": "762257007",
-            "display": "Disseminated infection caused by Neisseria gonorrhoeae (disorder)",
+            "display": "Disseminierte Infektion durch Neisseria gonorrhoeae",
             "designation": [
               {
                 "language": "de-DE",
-                "value": "Disseminierte Gonokokkeninfektion (DGI)"
+                "use": {
+                  "system": "http://snomed.info/sct",
+                  "code": "900000000000013009"
+                },
+                "value": "DGI - Disseminierte Gonokokkeninfektion"
               }
             ]
           },
@@ -200,11 +202,11 @@
             "extension": [
               {
                 "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
-                "valueInteger": 11
+                "valueInteger": 23
               }
             ],
-            "code": "784285002",
-            "display": "Tenesmus der Harnblase"
+            "code": "84387000",
+            "display": "Asymptomatisch"
           },
           {
             "extension": [
@@ -214,7 +216,7 @@
               }
             ],
             "code": "9713002",
-            "display": "Prostatitis (disorder)",
+            "display": "Prostatitis",
             "designation": [
               {
                 "language": "de-DE",
@@ -237,97 +239,113 @@
                 "value": "Bindehautentzündung (Konjunktivitis)"
               }
             ]
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 16
+              }
+            ],
+            "code": "9957009",
+            "display": "Harnröhren-Ausfluss"
           }
         ]
       }
     ]
   },
   "expansion": {
-    "timestamp": "2025-08-12T00:00:00+02:00",
+    "timestamp": "2026-01-09T00:00:00+01:00",
     "contains": [
       {
         "system": "http://snomed.info/sct",
-        "version": "http://snomed.info/sct/11000274103/version/20241115",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
         "code": "405737000",
         "display": "Pharyngitis"
       },
       {
         "system": "http://snomed.info/sct",
-        "version": "http://snomed.info/sct/11000274103/version/20241115",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
         "code": "49650001",
         "display": "Dysurie"
       },
       {
         "system": "http://snomed.info/sct",
-        "version": "http://snomed.info/sct/11000274103/version/20241115",
-        "code": "784285002",
-        "display": "Tenesmus der Harnblase"
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "278851001",
+        "display": "Rektaler Ausfluss"
       },
       {
         "system": "http://snomed.info/sct",
-        "version": "http://snomed.info/sct/11000274103/version/20241115",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
         "code": "3723001",
-        "display": "Arthritis (disorder)"
+        "display": "Arthritis"
       },
       {
         "system": "http://snomed.info/sct",
-        "version": "http://snomed.info/sct/11000274103/version/20241115",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "271939006",
+        "display": "Vaginalsekret"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
         "code": "31070006",
-        "display": "Epididymitis (disorder)"
+        "display": "Epididymitis"
       },
       {
         "system": "http://snomed.info/sct",
-        "version": "http://snomed.info/sct/11000274103/version/20241115",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
         "code": "9713002",
-        "display": "Prostatitis (disorder)"
+        "display": "Prostatitis"
       },
       {
         "system": "http://snomed.info/sct",
-        "version": "http://snomed.info/sct/11000274103/version/20241115",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
         "code": "198130006",
-        "display": "Female pelvic inflammatory disease (disorder)"
+        "display": "Unterleibsentzündung der Frau"
       },
       {
         "system": "http://snomed.info/sct",
-        "version": "http://snomed.info/sct/11000274103/version/20241115",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
         "code": "3951002",
-        "display": "Proctitis (disorder)"
+        "display": "Proktitis"
       },
       {
         "system": "http://snomed.info/sct",
-        "version": "http://snomed.info/sct/11000274103/version/20241115",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
         "code": "762257007",
-        "display": "Disseminated infection caused by Neisseria gonorrhoeae (disorder)"
+        "display": "Disseminierte Infektion durch Neisseria gonorrhoeae"
       },
       {
         "system": "http://snomed.info/sct",
-        "version": "http://snomed.info/sct/11000274103/version/20241115",
-        "code": "266599000",
-        "display": "Dysmenorrhoe"
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "84387000",
+        "display": "Asymptomatisch"
       },
       {
         "system": "http://snomed.info/sct",
-        "version": "http://snomed.info/sct/11000274103/version/20241115",
-        "code": "302770003",
-        "display": "Tenesmus von Anus und/oder Rektum"
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "74964007",
+        "display": "Andere"
       },
       {
         "system": "http://snomed.info/sct",
-        "version": "http://snomed.info/sct/11000274103/version/20241115",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
         "code": "386661006",
         "display": "Fieber"
       },
       {
         "system": "http://snomed.info/sct",
-        "version": "http://snomed.info/sct/11000274103/version/20241115",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
         "code": "9826008",
         "display": "Konjunktivitis"
       },
       {
         "system": "http://snomed.info/sct",
-        "version": "http://snomed.info/sct/11000274103/version/20241115",
-        "code": "194828000",
-        "display": "Angina pectoris"
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "9957009",
+        "display": "Harnröhren-Ausfluss"
       }
     ]
   }

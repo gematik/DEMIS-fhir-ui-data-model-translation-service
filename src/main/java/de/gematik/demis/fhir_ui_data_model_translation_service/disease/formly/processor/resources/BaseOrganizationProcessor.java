@@ -31,9 +31,12 @@ import static de.gematik.demis.fhir_ui_data_model_translation_service.disease.fo
 import static de.gematik.demis.fhir_ui_data_model_translation_service.disease.formly.model.Wrapper.PANEL;
 import static de.gematik.demis.fhir_ui_data_model_translation_service.disease.formly.processor.ClipboardProcessor.createClipboard;
 
+import de.gematik.demis.fhir_ui_data_model_translation_service.FeatureFlags;
 import de.gematik.demis.fhir_ui_data_model_translation_service.disease.formly.DiseaseClipboardProps;
 import de.gematik.demis.fhir_ui_data_model_translation_service.disease.formly.model.FieldGroup;
 import de.gematik.demis.fhir_ui_data_model_translation_service.disease.formly.model.Props;
+import de.gematik.demis.fhir_ui_data_model_translation_service.disease.formly.model.Validation;
+import de.gematik.demis.fhir_ui_data_model_translation_service.disease.formly.model.Validator;
 import de.gematik.demis.fhir_ui_data_model_translation_service.disease.formly.processor.ChoiceProcessor;
 import de.gematik.demis.fhir_ui_data_model_translation_service.disease.formly.processor.EnableWhenProcessor;
 import de.gematik.demis.fhir_ui_data_model_translation_service.disease.formly.processor.ItemProcessor;
@@ -56,10 +59,12 @@ abstract class BaseOrganizationProcessor implements ItemProcessor {
   static final String CLIPBOARD_MARKER_ORGANIZATION = ".org.";
   static final String TYPE_LINK_ID = "type";
   static final String TYPE_VALUE_SET = "https://demis.rki.de/fhir/ValueSet/organizationType";
+  private static final int BSNR_MAX_LENGTH = 9;
 
   private final EnableWhenProcessor enableWhenProcessor;
   private final DiseaseClipboardProps diseaseClipboardProps;
   private final DataLoaderSrv dataLoaderSrv;
+  private final FeatureFlags featureFlags;
 
   @Override
   public final FieldGroup[] createFieldGroup(
@@ -143,8 +148,16 @@ abstract class BaseOrganizationProcessor implements ItemProcessor {
   private void createBsnr(Questionnaire.QuestionnaireItemComponent item, FieldGroup parent) {
     final FeatureSpec feature = getBsnrFeatureSpec();
     if (feature.enabled()) {
-      createInputFieldGroup(
-          item, "bsnr", "bsnr", "Betriebsstättennummer", feature.required(), parent);
+      final FieldGroup fieldGroup =
+          createInputFieldGroup(
+              item,
+              "bsnr",
+              "bsnr",
+              "Betriebsstättennummer",
+              feature.required(),
+              parent,
+              Validation.BSNR);
+      fieldGroup.getProps().setMaxLength(BSNR_MAX_LENGTH);
     }
   }
 
@@ -160,16 +173,18 @@ abstract class BaseOrganizationProcessor implements ItemProcessor {
   private void createName(Questionnaire.QuestionnaireItemComponent item, FieldGroup organization) {
     final FieldGroup fieldGroup =
         createInputFieldGroup(
-            item, "name", "institutionName", "Name der Einrichtung", organization);
+            item, "name", "institutionName", "Name der Einrichtung", organization, Validation.TEXT);
     fieldGroup.getProps().setRequired(Boolean.TRUE);
   }
 
   private void createAddress(Questionnaire.QuestionnaireItemComponent item, FieldGroup parent) {
     final FieldGroup address = createPanelFieldGroup("address", parent, "Adresse");
-    createInputFieldGroup(item, "street", "street", "Straße", address);
-    createInputFieldGroup(item, "houseNumber", "houseNumber", "Hausnummer", address);
-    createInputFieldGroup(item, "postalCode", "zip", "Postleitzahl", address);
-    createInputFieldGroup(item, "city", "city", "Stadt", address);
+    createInputFieldGroup(item, "street", "street", "Straße", address, Validation.TEXT);
+    createInputFieldGroup(
+        item, "houseNumber", "houseNumber", "Hausnummer", address, Validation.HOUSE_NUMBER);
+    createInputFieldGroup(
+        item, "postalCode", "zip", "Postleitzahl", address, Validation.INTERNATIONAL_ZIP);
+    createInputFieldGroup(item, "city", "city", "Stadt", address, Validation.TEXT);
     createCountry(item, address);
   }
 
@@ -182,6 +197,7 @@ abstract class BaseOrganizationProcessor implements ItemProcessor {
             .className(COUNTRY_LINK_ID)
             .parent(address)
             .props(Props.builder().label("Land").options(options).clearable(true).build())
+            .validators(Validator.of(Validation.TEXT))
             .build();
     ChoiceProcessor.enableValidation(input);
     clipboardKey(item, COUNTRY_LINK_ID).ifPresent(key -> createClipboard(key, false, input));
@@ -193,15 +209,23 @@ abstract class BaseOrganizationProcessor implements ItemProcessor {
     if (checkbox != null) {
       checkbox.addTo(contact);
     }
-    createInputFieldGroup(item, "name.prefix", "prefix", "Titel", contact);
-    createInputFieldGroup(item, "name.given", "firstname", "Vorname", contact);
-    createInputFieldGroup(item, "name.family", "lastname", "Nachname", contact);
+    createInputFieldGroup(item, "name.prefix", "prefix", "Titel", contact, Validation.NAME);
+    createInputFieldGroup(item, "name.given", "firstname", "Vorname", contact, Validation.NAME);
+    createInputFieldGroup(item, "name.family", "lastname", "Nachname", contact, Validation.NAME);
   }
 
   private void createTelecom(Questionnaire.QuestionnaireItemComponent item, FieldGroup outerGroup) {
-    FieldGroup telecom = createPanelFieldGroup("telecom", outerGroup, "Kontaktmöglichkeiten");
-    createInputFieldGroup(item, "phone", "phoneNo", "Telefonnummer", telecom);
-    createInputFieldGroup(item, "email", "email", "Email", telecom);
+    final FieldGroup telecom = createPanelFieldGroup("telecom", outerGroup, "Kontaktmöglichkeiten");
+    final FieldGroup phone =
+        createInputFieldGroup(item, "phone", "phoneNo", "Telefonnummer", telecom, Validation.PHONE);
+    final FieldGroup email =
+        createInputFieldGroup(item, "email", "email", "Email", telecom, Validation.EMAIL);
+    if (this.featureFlags.isDiseaseQuestionnaireOrgInputValidation()) {
+      // explicitly not required because UI applies required:true
+      // as default for phone and email fields
+      phone.getProps().setRequired(false);
+      email.getProps().setRequired(false);
+    }
   }
 
   private FieldGroup createInputFieldGroup(
@@ -209,8 +233,9 @@ abstract class BaseOrganizationProcessor implements ItemProcessor {
       String parameter,
       String className,
       String label,
-      FieldGroup parent) {
-    return createInputFieldGroup(item, parameter, className, label, false, parent);
+      FieldGroup parent,
+      Validation... validations) {
+    return createInputFieldGroup(item, parameter, className, label, false, parent, validations);
   }
 
   private FieldGroup createInputFieldGroup(
@@ -219,7 +244,8 @@ abstract class BaseOrganizationProcessor implements ItemProcessor {
       String className,
       String label,
       boolean required,
-      FieldGroup parent) {
+      FieldGroup parent,
+      Validation... validations) {
     final var props = Props.builder().label(label);
     if (required) {
       props.required(true);
@@ -232,6 +258,10 @@ abstract class BaseOrganizationProcessor implements ItemProcessor {
             .className(className)
             .props(props.build())
             .parent(parent)
+            .validators(
+                this.featureFlags.isDiseaseQuestionnaireOrgInputValidation()
+                    ? Validator.of(validations)
+                    : null)
             .build();
     clipboardKey(item, parameter).ifPresent(key -> createClipboard(key, false, fieldGroup));
     return fieldGroup;

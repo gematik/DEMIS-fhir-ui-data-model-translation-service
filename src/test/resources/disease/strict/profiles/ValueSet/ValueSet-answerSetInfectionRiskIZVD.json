@@ -2,12 +2,12 @@
   "resourceType": "ValueSet",
   "id": "answerSetInfectionRiskIZVD",
   "url": "https://demis.rki.de/fhir/ValueSet/answerSetInfectionRiskIZVD",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "name": "AnswerSetInfectionRiskIZVD",
   "title": "Antwortmöglichkeiten für die Angabe der Risikofaktoren in Zusammenhang mit dem Meldetatbestand \"Zoonotische Influenza\"",
   "status": "active",
   "experimental": false,
-  "date": "2025-09-03",
+  "date": "2026-01-09",
   "publisher": "Robert Koch-Institut",
   "contact": [
     {
@@ -36,23 +36,17 @@
     "include": [
       {
         "system": "http://snomed.info/sct",
-        "version": "http://snomed.info/sct/11000274103/version/20241115",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
         "concept": [
           {
             "extension": [
               {
                 "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
-                "valueInteger": 13
+                "valueInteger": 17
               }
             ],
             "code": "118940003",
-            "display": "Erkrankung des Nervensystems",
-            "designation": [
-              {
-                "language": "de-DE",
-                "value": "neurologische/neuromuskuläre Erkrankung"
-              }
-            ]
+            "display": "Erkrankung des Nervensystems"
           },
           {
             "extension": [
@@ -68,7 +62,7 @@
             "extension": [
               {
                 "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
-                "valueInteger": 16
+                "valueInteger": 15
               }
             ],
             "code": "234532001+86406008",
@@ -78,7 +72,7 @@
             "extension": [
               {
                 "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
-                "valueInteger": 14
+                "valueInteger": 13
               }
             ],
             "code": "235856003",
@@ -88,7 +82,7 @@
             "extension": [
               {
                 "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
-                "valueInteger": 998
+                "valueInteger": 3
               }
             ],
             "code": "260413007",
@@ -98,7 +92,7 @@
             "extension": [
               {
                 "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
-                "valueInteger": 15
+                "valueInteger": 14
               }
             ],
             "code": "363346000",
@@ -122,11 +116,15 @@
               }
             ],
             "code": "413839001",
-            "display": "Chronische Lungenerkrankung",
+            "display": "Chronische Lungenkrankheit",
             "designation": [
               {
                 "language": "de-DE",
-                "value": "Chronische Lungenerkrankung (z.B. COPD)"
+                "use": {
+                  "system": "http://snomed.info/sct",
+                  "code": "900000000000013009"
+                },
+                "value": "Chronische Lungenerkrankung"
               }
             ]
           },
@@ -148,13 +146,7 @@
               }
             ],
             "code": "44054006",
-            "display": "Diabetes mellitus Typ 2",
-            "designation": [
-              {
-                "language": "de-DE",
-                "value": "Diabetes Typ 2"
-              }
-            ]
+            "display": "Diabetes mellitus Typ 2"
           },
           {
             "extension": [
@@ -164,35 +156,23 @@
               }
             ],
             "code": "46635009",
-            "display": "Diabetes mellitus Typ 1",
-            "designation": [
-              {
-                "language": "de-DE",
-                "value": "Diabetes Typ 1"
-              }
-            ]
+            "display": "Diabetes mellitus Typ 1"
           },
           {
             "extension": [
               {
                 "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
-                "valueInteger": 17
+                "valueInteger": 16
               }
             ],
             "code": "49601007",
-            "display": "Herz-Kreislauf-Erkrankung",
-            "designation": [
-              {
-                "language": "de-DE",
-                "value": "Herz-Kreislauf-Erkrankung (inkl. Bluthochdruck)"
-              }
-            ]
+            "display": "Herz-Kreislauf-Erkrankung"
           },
           {
             "extension": [
               {
                 "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
-                "valueInteger": 1
+                "valueInteger": 5
               }
             ],
             "code": "74964007",
@@ -216,13 +196,7 @@
               }
             ],
             "code": "86569001",
-            "display": "Postpartaler Status",
-            "designation": [
-              {
-                "language": "de-DE",
-                "value": "Postpartum (weniger als 6 Wochen)"
-              }
-            ]
+            "display": "Postpartaler Status"
           },
           {
             "extension": [
@@ -248,23 +222,17 @@
             "extension": [
               {
                 "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
-                "valueInteger": 999
+                "valueInteger": 1
               }
             ],
             "code": "1631000175102",
-            "display": "Patient not asked (contextual qualifier) (qualifier value)",
-            "designation": [
-              {
-                "language": "de-DE",
-                "value": "Patient/Patientin nicht gefragt"
-              }
-            ]
+            "display": "Patient/Patientin nicht gefragt"
           },
           {
             "extension": [
               {
                 "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
-                "valueInteger": 1000
+                "valueInteger": 2
               }
             ],
             "code": "261665006",
@@ -275,107 +243,107 @@
     ]
   },
   "expansion": {
-    "timestamp": "2025-09-03T00:00:00+02:00",
+    "timestamp": "2026-01-09T00:00:00+01:00",
     "contains": [
       {
         "system": "http://snomed.info/sct",
-        "version": "http://snomed.info/sct/11000274103/version/20241115",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
         "code": "86569001",
         "display": "Postpartaler Status"
       },
       {
         "system": "http://snomed.info/sct",
-        "version": "http://snomed.info/sct/11000274103/version/20241115",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
         "code": "260413007",
         "display": "Kein"
       },
       {
         "system": "http://snomed.info/sct",
-        "version": "http://snomed.info/sct/11000274103/version/20241115",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
         "code": "234532001+86406008",
         "display": "Immundefizienz, inkl. HIV"
       },
       {
         "system": "http://snomed.info/sct",
-        "version": "http://snomed.info/sct/11000274103/version/20241115",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
         "code": "90708001",
         "display": "Nephropathie"
       },
       {
         "system": "http://snomed.info/sct",
-        "version": "http://snomed.info/sct/11000274103/version/20241115",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
         "code": "261665006",
         "display": "Unbekannt"
       },
       {
         "system": "http://snomed.info/sct",
-        "version": "http://snomed.info/sct/11000274103/version/20241115",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
         "code": "46635009",
         "display": "Diabetes mellitus Typ 1"
       },
       {
         "system": "http://snomed.info/sct",
-        "version": "http://snomed.info/sct/11000274103/version/20241115",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
         "code": "77386006",
         "display": "Schwangerschaft"
       },
       {
         "system": "http://snomed.info/sct",
-        "version": "http://snomed.info/sct/11000274103/version/20241115",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
         "code": "44054006",
         "display": "Diabetes mellitus Typ 2"
       },
       {
         "system": "http://snomed.info/sct",
-        "version": "http://snomed.info/sct/11000274103/version/20241115",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
         "code": "74964007",
         "display": "Andere"
       },
       {
         "system": "http://snomed.info/sct",
-        "version": "http://snomed.info/sct/11000274103/version/20241115",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
         "code": "1631000175102",
-        "display": "Patient not asked (contextual qualifier) (qualifier value)"
+        "display": "Patient/Patientin nicht gefragt"
       },
       {
         "system": "http://snomed.info/sct",
-        "version": "http://snomed.info/sct/11000274103/version/20241115",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
         "code": "118940003",
         "display": "Erkrankung des Nervensystems"
       },
       {
         "system": "http://snomed.info/sct",
-        "version": "http://snomed.info/sct/11000274103/version/20241115",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
         "code": "413839001",
-        "display": "Chronische Lungenerkrankung"
+        "display": "Chronische Lungenkrankheit"
       },
       {
         "system": "http://snomed.info/sct",
-        "version": "http://snomed.info/sct/11000274103/version/20241115",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
         "code": "414916001",
         "display": "Adipositas"
       },
       {
         "system": "http://snomed.info/sct",
-        "version": "http://snomed.info/sct/11000274103/version/20241115",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
         "code": "195967001",
         "display": "Asthma"
       },
       {
         "system": "http://snomed.info/sct",
-        "version": "http://snomed.info/sct/11000274103/version/20241115",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
         "code": "235856003",
         "display": "Lebererkrankung"
       },
       {
         "system": "http://snomed.info/sct",
-        "version": "http://snomed.info/sct/11000274103/version/20241115",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
         "code": "49601007",
         "display": "Herz-Kreislauf-Erkrankung"
       },
       {
         "system": "http://snomed.info/sct",
-        "version": "http://snomed.info/sct/11000274103/version/20241115",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
         "code": "363346000",
         "display": "Bösartige Neubildung"
       }

@@ -430,6 +430,16 @@
     ]
   },
   {
+    "code": "wbkd",
+    "display": "Weitere bedrohliche Krankheiten",
+    "designations": [
+      {
+        "language": "de-DE",
+        "value": "Weitere bedrohliche Krankheiten"
+      }
+    ]
+  },
+  {
     "code": "gapd",
     "display": "Testdata Disease",
     "designations": [

@@ -51,61 +51,61 @@
     "contains": [
       {
         "system": "http://loinc.org",
-        "version": "2.79",
+        "version": "2.81",
         "code": "LA11885-3",
         "display": "Equivocal"
       },
       {
         "system": "http://loinc.org",
-        "version": "2.79",
+        "version": "2.81",
         "code": "LA19422-7",
         "display": "Weak positive"
       },
       {
         "system": "http://loinc.org",
-        "version": "2.79",
+        "version": "2.81",
         "code": "LA24225-7",
         "display": "Susceptible"
       },
       {
         "system": "http://loinc.org",
-        "version": "2.79",
+        "version": "2.81",
         "code": "LA29303-7",
         "display": "Intermediate resistance"
       },
       {
         "system": "http://loinc.org",
-        "version": "2.79",
+        "version": "2.81",
         "code": "LA11884-6",
         "display": "Indeterminate"
       },
       {
         "system": "http://loinc.org",
-        "version": "2.79",
+        "version": "2.81",
         "code": "LA11883-8",
         "display": "Not detected"
       },
       {
         "system": "http://loinc.org",
-        "version": "2.79",
+        "version": "2.81",
         "code": "LA6676-6",
         "display": "Resistant"
       },
       {
         "system": "http://loinc.org",
-        "version": "2.79",
+        "version": "2.81",
         "code": "LA6577-6",
         "display": "Negative"
       },
       {
         "system": "http://loinc.org",
-        "version": "2.79",
+        "version": "2.81",
         "code": "LA6576-8",
         "display": "Positive"
       },
       {
         "system": "http://loinc.org",
-        "version": "2.79",
+        "version": "2.81",
         "code": "LA11882-0",
         "display": "Detected"
       }

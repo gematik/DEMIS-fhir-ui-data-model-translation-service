@@ -35,7 +35,6 @@ import ca.uhn.fhir.context.FhirContext;
 import de.gematik.demis.fhir_ui_data_model_translation_service.model.CodeDisplay;
 import de.gematik.demis.fhir_ui_data_model_translation_service.model.Designation;
 import de.gematik.demis.fhir_ui_data_model_translation_service.model.StaticSystemVersion;
-import de.gematik.demis.fhir_ui_data_model_translation_service.objects.NotificationCategoryListTO;
 import de.gematik.demis.fhir_ui_data_model_translation_service.objects.TestObjects;
 import de.gematik.demis.fhir_ui_data_model_translation_service.translation.DataLoaderSrv;
 import de.gematik.demis.fhir_ui_data_model_translation_service.utils.SnapshotFilesService;
@@ -69,9 +68,6 @@ class LabDataPreparationSrvTest {
   private static File answerSetFile2;
   private static File answerSetFile3;
   private static File substanceFile3;
-  private static File gappMethodFile;
-  private static File gappMaterialFile;
-  private static File gappAnswerSetFile;
   @Mock private SnapshotFilesService snapshotFilesServiceMock;
   @Mock private PathogenNotificationCategoryList pathogenNotificationCategoryListMock;
   @Mock private DataLoaderSrv dataLoaderSrvMock;
@@ -91,13 +87,6 @@ class LabDataPreparationSrvTest {
     methodFile1 = new File("src/test/resources/profiles/ValueSet/ValueSet-methodINVP.json");
     methodFile2 = new File("src/test/resources/profiles/ValueSet/ValueSet-methodLEGP.json");
     methodFile3 = new File("src/test/resources/profiles/ValueSet/ValueSet-methodHBVP.json");
-
-    gappMethodFile =
-        new File("src/main/resources/fhir-profile-snapshots/GAPP/ValueSet-methodGAPP.json");
-    gappMaterialFile =
-        new File("src/main/resources/fhir-profile-snapshots/GAPP/ValueSet-materialGAPP.json");
-    gappAnswerSetFile =
-        new File("src/main/resources/fhir-profile-snapshots/GAPP/ValueSet-answerSetGAPP.json");
   }
 
   private static void verifyInvpMethods(Map<String, LabNotificationData> laboratoryJsonDataMap) {
@@ -131,37 +120,6 @@ class LabDataPreparationSrvTest {
                 .build());
   }
 
-  /** Regression test, remove with feature.flag.notifications.7_3 */
-  @Test
-  void shouldReturnSortedNotificationCategoryList() {
-    materialFiles = asList(materialFile1, materialFile2, materialFile3);
-    methodFiles = asList(methodFile1, methodFile2, methodFile3);
-    answerSetFiles = asList(answerSetFile1, answerSetFile2, answerSetFile3);
-    substanceFiles = Collections.singletonList(substanceFile3);
-    when(snapshotFilesServiceMock.getMaterials()).thenReturn(materialFiles);
-    when(snapshotFilesServiceMock.getMethods()).thenReturn(methodFiles);
-    when(snapshotFilesServiceMock.getAnswerSets()).thenReturn(answerSetFiles);
-    when(snapshotFilesServiceMock.getSubstances()).thenReturn(substanceFiles);
-    when(pathogenNotificationCategoryListMock.getPathogenNotificationCategoryList())
-        .thenReturn(NotificationCategoryListTO.unsortedList());
-
-    LabDataPreparationSrv labDataPreparationSrv =
-        new LabDataPreparationSrv(
-            FhirContext.forR4Cached(),
-            snapshotFilesServiceMock,
-            pathogenNotificationCategoryListMock,
-            dataLoaderSrvMock,
-            false,
-            false,
-            false,
-            false);
-
-    labDataPreparationSrv.initializeData();
-
-    assertThat(labDataPreparationSrv.getNotificationCategories())
-        .isEqualTo(NotificationCategoryListTO.sortedList());
-  }
-
   @Test
   void shouldNotInitializeOnOldProfiles() {
     LabDataPreparationSrv labDataPreparationSrv =
@@ -171,8 +129,6 @@ class LabDataPreparationSrvTest {
             pathogenNotificationCategoryListMock,
             dataLoaderSrvMock,
             true,
-            false,
-            false,
             false);
     labDataPreparationSrv.initializeData();
     assertThat(labDataPreparationSrv.getLaboratoryDataMap()).isEmpty();
@@ -191,12 +147,14 @@ class LabDataPreparationSrvTest {
       when(snapshotFilesServiceMock.getMethods()).thenReturn(methodFiles);
       when(snapshotFilesServiceMock.getAnswerSets()).thenReturn(answerSetFiles);
       when(snapshotFilesServiceMock.getSubstances()).thenReturn(substanceFiles);
-      when(pathogenNotificationCategoryListMock.getPathogenNotificationCategoryList())
+      when(pathogenNotificationCategoryListMock.getPathogenNotificationCategories())
           .thenReturn(
-              asList(
-                  TestObjects.notificationCategoryCodeDisplay().invp(),
-                  TestObjects.notificationCategoryCodeDisplay().hbvp(),
-                  TestObjects.notificationCategoryCodeDisplay().legp()));
+              Map.of(
+                  PathogenNotificationCategory.P_7_1,
+                  List.of(
+                      TestObjects.notificationCategoryCodeDisplay().invp(),
+                      TestObjects.notificationCategoryCodeDisplay().hbvp(),
+                      TestObjects.notificationCategoryCodeDisplay().legp())));
 
       LabDataPreparationSrv labDataPreparationSrv = initTestObject();
 
@@ -279,40 +237,6 @@ class LabDataPreparationSrvTest {
       assertThat(laboratoryJsonDataMap).isEmpty();
     }
 
-    @Test
-    void shouldAddTestData() {
-      materialFiles = asList(materialFile1, materialFile2, materialFile3);
-      methodFiles = asList(methodFile1, methodFile2, methodFile3);
-      answerSetFiles = asList(answerSetFile1, answerSetFile2, answerSetFile3);
-      substanceFiles = Collections.singletonList(substanceFile3);
-      when(snapshotFilesServiceMock.getMaterials()).thenReturn(materialFiles);
-      when(snapshotFilesServiceMock.getMethods()).thenReturn(methodFiles);
-      when(snapshotFilesServiceMock.getAnswerSets()).thenReturn(answerSetFiles);
-      when(snapshotFilesServiceMock.getSubstances()).thenReturn(substanceFiles);
-      when(pathogenNotificationCategoryListMock.getPathogenNotificationCategoryList())
-          .thenReturn(
-              asList(
-                  TestObjects.notificationCategoryCodeDisplay().invp(),
-                  TestObjects.notificationCategoryCodeDisplay().hbvp(),
-                  TestObjects.notificationCategoryCodeDisplay().legp()));
-      LabDataPreparationSrv labDataPreparationSrv =
-          new LabDataPreparationSrv(
-              FhirContext.forR4Cached(),
-              snapshotFilesServiceMock,
-              pathogenNotificationCategoryListMock,
-              dataLoaderSrvMock,
-              true,
-              false,
-              false,
-              false);
-      labDataPreparationSrv.initializeData();
-
-      assertThat(labDataPreparationSrv.getNotificationCategories())
-          .extracting("code")
-          .contains("abcd");
-      assertThat(labDataPreparationSrv.getLaboratoryDataMap().get("abcd")).isNull();
-    }
-
     private LabDataPreparationSrv initTestObject() {
       LabDataPreparationSrv labDataPreparationSrv =
           new LabDataPreparationSrv(
@@ -320,8 +244,6 @@ class LabDataPreparationSrvTest {
               snapshotFilesServiceMock,
               pathogenNotificationCategoryListMock,
               dataLoaderSrvMock,
-              false,
-              false,
               false,
               false);
       labDataPreparationSrv.initializeData();
@@ -344,12 +266,14 @@ class LabDataPreparationSrvTest {
       when(snapshotFilesServiceMock.getMethods()).thenReturn(methodFiles);
       when(snapshotFilesServiceMock.getAnswerSets()).thenReturn(answerSetFiles);
       when(snapshotFilesServiceMock.getSubstances()).thenReturn(substanceFiles);
-      when(pathogenNotificationCategoryListMock.getPathogenNotificationCategoryList())
+      when(pathogenNotificationCategoryListMock.getPathogenNotificationCategories())
           .thenReturn(
-              asList(
-                  TestObjects.notificationCategoryCodeDisplay().invp(),
-                  TestObjects.notificationCategoryCodeDisplay().hbvp(),
-                  TestObjects.notificationCategoryCodeDisplay().legp()));
+              Map.of(
+                  PathogenNotificationCategory.P_7_1,
+                  List.of(
+                      TestObjects.notificationCategoryCodeDisplay().invp(),
+                      TestObjects.notificationCategoryCodeDisplay().hbvp(),
+                      TestObjects.notificationCategoryCodeDisplay().legp())));
 
       LabDataPreparationSrv labDataPreparationSrv = initTestObject();
 
@@ -436,40 +360,6 @@ class LabDataPreparationSrvTest {
       assertThat(laboratoryJsonDataMap).isEmpty();
     }
 
-    @Test
-    void shouldAddTestData() {
-      materialFiles = asList(materialFile1, materialFile2, materialFile3);
-      methodFiles = asList(methodFile1, methodFile2, methodFile3);
-      answerSetFiles = asList(answerSetFile1, answerSetFile2, answerSetFile3);
-      substanceFiles = Collections.singletonList(substanceFile3);
-      when(snapshotFilesServiceMock.getMaterials()).thenReturn(materialFiles);
-      when(snapshotFilesServiceMock.getMethods()).thenReturn(methodFiles);
-      when(snapshotFilesServiceMock.getAnswerSets()).thenReturn(answerSetFiles);
-      when(snapshotFilesServiceMock.getSubstances()).thenReturn(substanceFiles);
-      when(pathogenNotificationCategoryListMock.getPathogenNotificationCategoryList())
-          .thenReturn(
-              asList(
-                  TestObjects.notificationCategoryCodeDisplay().invp(),
-                  TestObjects.notificationCategoryCodeDisplay().hbvp(),
-                  TestObjects.notificationCategoryCodeDisplay().legp()));
-      LabDataPreparationSrv labDataPreparationSrv =
-          new LabDataPreparationSrv(
-              FhirContext.forR4Cached(),
-              snapshotFilesServiceMock,
-              pathogenNotificationCategoryListMock,
-              dataLoaderSrvMock,
-              true,
-              false,
-              false,
-              false);
-      labDataPreparationSrv.initializeData();
-
-      assertThat(labDataPreparationSrv.getNotificationCategories())
-          .extracting("code")
-          .contains("abcd");
-      assertThat(labDataPreparationSrv.getLaboratoryDataMap().get("abcd")).isNull();
-    }
-
     private LabDataPreparationSrv initTestObject() {
       LabDataPreparationSrv labDataPreparationSrv =
           new LabDataPreparationSrv(
@@ -477,8 +367,6 @@ class LabDataPreparationSrvTest {
               snapshotFilesServiceMock,
               pathogenNotificationCategoryListMock,
               dataLoaderSrvMock,
-              false,
-              false,
               false,
               false);
       labDataPreparationSrv.initializeData();
@@ -501,12 +389,14 @@ class LabDataPreparationSrvTest {
       when(snapshotFilesServiceMock.getMethods()).thenReturn(methodFiles);
       when(snapshotFilesServiceMock.getAnswerSets()).thenReturn(answerSetFiles);
       when(snapshotFilesServiceMock.getSubstances()).thenReturn(substanceFiles);
-      when(pathogenNotificationCategoryListMock.getPathogenNotificationCategoryList())
+      when(pathogenNotificationCategoryListMock.getPathogenNotificationCategories())
           .thenReturn(
-              asList(
-                  TestObjects.notificationCategoryCodeDisplay().invp(),
-                  TestObjects.notificationCategoryCodeDisplay().hbvp(),
-                  TestObjects.notificationCategoryCodeDisplay().legp()));
+              Map.of(
+                  PathogenNotificationCategory.P_7_1,
+                  List.of(
+                      TestObjects.notificationCategoryCodeDisplay().invp(),
+                      TestObjects.notificationCategoryCodeDisplay().hbvp(),
+                      TestObjects.notificationCategoryCodeDisplay().legp())));
 
       LabDataPreparationSrv labDataPreparationSrv = initTestObject();
 
@@ -596,74 +486,6 @@ class LabDataPreparationSrvTest {
     }
 
     @Test
-    void shouldAddTestDataErrorCase() {
-      materialFiles = asList(materialFile1, materialFile2, materialFile3);
-      methodFiles = asList(methodFile1, methodFile2, methodFile3);
-      answerSetFiles = asList(answerSetFile1, answerSetFile2, answerSetFile3);
-      substanceFiles = Collections.singletonList(substanceFile3);
-      when(snapshotFilesServiceMock.getMaterials()).thenReturn(materialFiles);
-      when(snapshotFilesServiceMock.getMethods()).thenReturn(methodFiles);
-      when(snapshotFilesServiceMock.getAnswerSets()).thenReturn(answerSetFiles);
-      when(snapshotFilesServiceMock.getSubstances()).thenReturn(substanceFiles);
-      when(pathogenNotificationCategoryListMock.getPathogenNotificationCategoryList())
-          .thenReturn(
-              asList(
-                  TestObjects.notificationCategoryCodeDisplay().invp(),
-                  TestObjects.notificationCategoryCodeDisplay().hbvp(),
-                  TestObjects.notificationCategoryCodeDisplay().legp()));
-      LabDataPreparationSrv labDataPreparationSrv =
-          new LabDataPreparationSrv(
-              FhirContext.forR4Cached(),
-              snapshotFilesServiceMock,
-              pathogenNotificationCategoryListMock,
-              dataLoaderSrvMock,
-              true,
-              false,
-              false,
-              false);
-      labDataPreparationSrv.initializeData();
-
-      assertThat(labDataPreparationSrv.getNotificationCategories())
-          .extracting("code")
-          .contains("abcd");
-      assertThat(labDataPreparationSrv.getLaboratoryDataMap().get("abcd")).isNull();
-    }
-
-    @Test
-    void shouldAddTestDataWithSorting() {
-      materialFiles = asList(materialFile1, materialFile2, materialFile3, gappMaterialFile);
-      methodFiles = asList(methodFile1, methodFile2, methodFile3, gappMethodFile);
-      answerSetFiles = asList(answerSetFile1, answerSetFile2, answerSetFile3, gappAnswerSetFile);
-      substanceFiles = Collections.singletonList(substanceFile3);
-      when(snapshotFilesServiceMock.getMaterials()).thenReturn(materialFiles);
-      when(snapshotFilesServiceMock.getMethods()).thenReturn(methodFiles);
-      when(snapshotFilesServiceMock.getAnswerSets()).thenReturn(answerSetFiles);
-      when(snapshotFilesServiceMock.getSubstances()).thenReturn(substanceFiles);
-      when(pathogenNotificationCategoryListMock.getPathogenNotificationCategoryList())
-          .thenReturn(
-              asList(
-                  TestObjects.notificationCategoryCodeDisplay().invp(),
-                  TestObjects.notificationCategoryCodeDisplay().hbvp(),
-                  TestObjects.notificationCategoryCodeDisplay().legp()));
-      LabDataPreparationSrv labDataPreparationSrv =
-          new LabDataPreparationSrv(
-              FhirContext.forR4Cached(),
-              snapshotFilesServiceMock,
-              pathogenNotificationCategoryListMock,
-              dataLoaderSrvMock,
-              true,
-              true,
-              false,
-              false);
-      labDataPreparationSrv.initializeData();
-
-      assertThat(labDataPreparationSrv.getNotificationCategories())
-          .extracting("code")
-          .contains("gapp");
-      assertThat(labDataPreparationSrv.getLaboratoryDataMap().get("gapp")).isNotNull();
-    }
-
-    @Test
     void shouldReturnEmptyList() {
       when(pathogenNotificationCategoryListMock.getPathogenNotificationCategories())
           .thenReturn(Collections.emptyMap());
@@ -674,8 +496,6 @@ class LabDataPreparationSrvTest {
               snapshotFilesServiceMock,
               pathogenNotificationCategoryListMock,
               dataLoaderSrvMock,
-              true,
-              true,
               true,
               true);
       labDataPreparationSrv.initializeData();
@@ -692,8 +512,6 @@ class LabDataPreparationSrvTest {
               snapshotFilesServiceMock,
               pathogenNotificationCategoryListMock,
               dataLoaderSrvMock,
-              false,
-              false,
               false,
               false);
       labDataPreparationSrv.initializeData();
@@ -714,12 +532,14 @@ class LabDataPreparationSrvTest {
       when(snapshotFilesServiceMock.getMethods()).thenReturn(methodFiles);
       when(snapshotFilesServiceMock.getAnswerSets()).thenReturn(answerSetFiles);
       when(snapshotFilesServiceMock.getSubstances()).thenReturn(substanceFiles);
-      when(pathogenNotificationCategoryListMock.getPathogenNotificationCategoryList())
+      when(pathogenNotificationCategoryListMock.getPathogenNotificationCategories())
           .thenReturn(
-              asList(
-                  TestObjects.notificationCategoryCodeDisplay().invp(),
-                  TestObjects.notificationCategoryCodeDisplay().hbvp(),
-                  TestObjects.notificationCategoryCodeDisplay().legp()));
+              Map.of(
+                  PathogenNotificationCategory.P_7_1,
+                  List.of(
+                      TestObjects.notificationCategoryCodeDisplay().invp(),
+                      TestObjects.notificationCategoryCodeDisplay().hbvp(),
+                      TestObjects.notificationCategoryCodeDisplay().legp())));
       when(dataLoaderSrvMock.getVersion("http://snomed.info/sct")).thenReturn("SNOMED_VERSION");
       when(dataLoaderSrvMock.getVersion("http://loinc.org")).thenReturn("LOINC_VERSION");
 
@@ -730,9 +550,7 @@ class LabDataPreparationSrvTest {
               pathogenNotificationCategoryListMock,
               dataLoaderSrvMock,
               false,
-              false,
-              false,
-              true);
+              false);
       labDataPreparationSrv.initializeData();
       List<StaticSystemVersion> versions =
           labDataPreparationSrv.getLaboratoryDataMap().get("invp").staticSystemVersions();
@@ -740,39 +558,6 @@ class LabDataPreparationSrvTest {
           .isNotNull()
           .contains(new StaticSystemVersion("http://snomed.info/sct", "SNOMED_VERSION"))
           .contains(new StaticSystemVersion("http://loinc.org", "LOINC_VERSION"));
-    }
-
-    @Test
-    void shouldReturnNullForSnomedAndLoincVersion() {
-      materialFiles = asList(materialFile1, materialFile2, materialFile3);
-      methodFiles = asList(methodFile1, methodFile2, methodFile3);
-      answerSetFiles = asList(answerSetFile1, answerSetFile2, answerSetFile3);
-      substanceFiles = Collections.singletonList(substanceFile3);
-      when(snapshotFilesServiceMock.getMaterials()).thenReturn(materialFiles);
-      when(snapshotFilesServiceMock.getMethods()).thenReturn(methodFiles);
-      when(snapshotFilesServiceMock.getAnswerSets()).thenReturn(answerSetFiles);
-      when(snapshotFilesServiceMock.getSubstances()).thenReturn(substanceFiles);
-      when(pathogenNotificationCategoryListMock.getPathogenNotificationCategoryList())
-          .thenReturn(
-              asList(
-                  TestObjects.notificationCategoryCodeDisplay().invp(),
-                  TestObjects.notificationCategoryCodeDisplay().hbvp(),
-                  TestObjects.notificationCategoryCodeDisplay().legp()));
-
-      LabDataPreparationSrv labDataPreparationSrv =
-          new LabDataPreparationSrv(
-              FhirContext.forR4Cached(),
-              snapshotFilesServiceMock,
-              pathogenNotificationCategoryListMock,
-              dataLoaderSrvMock,
-              false,
-              false,
-              false,
-              false);
-      labDataPreparationSrv.initializeData();
-      List<StaticSystemVersion> versions =
-          labDataPreparationSrv.getLaboratoryDataMap().get("invp").staticSystemVersions();
-      assertThat(versions).isNull();
     }
   }
 }

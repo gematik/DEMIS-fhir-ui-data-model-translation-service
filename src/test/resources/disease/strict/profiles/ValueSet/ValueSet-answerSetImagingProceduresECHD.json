@@ -2,12 +2,12 @@
   "resourceType": "ValueSet",
   "id": "answerSetImagingProceduresECHD",
   "url": "https://demis.rki.de/fhir/ValueSet/answerSetImagingProceduresECHD",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "name": "AnswerSetImagingProceduresECHD",
   "title": "Beurteilung von bildgebenden Verfahren in Bezug auf den Meldetatbestand \"Echinococcus sp.\".",
   "status": "active",
   "experimental": false,
-  "date": "2025-08-12",
+  "date": "2026-01-09",
   "publisher": "Robert Koch-Institut",
   "contact": [
     {
@@ -36,7 +36,7 @@
     "include": [
       {
         "system": "http://snomed.info/sct",
-        "version": "http://snomed.info/sct/11000274103/version/20241115",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
         "concept": [
           {
             "extension": [
@@ -46,7 +46,7 @@
               }
             ],
             "code": "255301002",
-            "display": "Classic (qualifier value)",
+            "display": "Klassisch",
             "designation": [
               {
                 "language": "de-DE",
@@ -62,10 +62,14 @@
               }
             ],
             "code": "255332001",
-            "display": "Congruent (qualifier value)",
+            "display": "Kongruent",
             "designation": [
               {
                 "language": "de-DE",
+                "use": {
+                  "system": "http://snomed.info/sct",
+                  "code": "900000000000013009"
+                },
                 "value": "Übereinstimmend"
               }
             ]
@@ -78,10 +82,14 @@
               }
             ],
             "code": "255390006",
-            "display": "Incongruent (qualifier value)",
+            "display": "Nicht kongruent",
             "designation": [
               {
                 "language": "de-DE",
+                "use": {
+                  "system": "http://snomed.info/sct",
+                  "code": "900000000000013009"
+                },
                 "value": "Nicht übereinstimmend"
               }
             ]
@@ -94,7 +102,7 @@
               }
             ],
             "code": "385660001",
-            "display": "Not done (qualifier value)",
+            "display": "Nicht erledigt",
             "designation": [
               {
                 "language": "de-DE",
@@ -107,31 +115,31 @@
     ]
   },
   "expansion": {
-    "timestamp": "2025-08-12T00:00:00+02:00",
+    "timestamp": "2026-01-09T00:00:00+01:00",
     "contains": [
       {
         "system": "http://snomed.info/sct",
-        "version": "http://snomed.info/sct/11000274103/version/20241115",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
         "code": "255332001",
-        "display": "Congruent (qualifier value)"
+        "display": "Kongruent"
       },
       {
         "system": "http://snomed.info/sct",
-        "version": "http://snomed.info/sct/11000274103/version/20241115",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
         "code": "385660001",
-        "display": "Not done (qualifier value)"
+        "display": "Nicht erledigt"
       },
       {
         "system": "http://snomed.info/sct",
-        "version": "http://snomed.info/sct/11000274103/version/20241115",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
         "code": "255301002",
-        "display": "Classic (qualifier value)"
+        "display": "Klassisch"
       },
       {
         "system": "http://snomed.info/sct",
-        "version": "http://snomed.info/sct/11000274103/version/20241115",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
         "code": "255390006",
-        "display": "Incongruent (qualifier value)"
+        "display": "Nicht kongruent"
       }
     ]
   }

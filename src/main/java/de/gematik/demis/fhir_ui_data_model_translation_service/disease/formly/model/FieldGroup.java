@@ -62,7 +62,7 @@ public class FieldGroup {
   private String type;
   private String fieldGroupClassName;
   @Setter private Props props;
-  private Validator validators;
+  @Setter private Validator validators;
   private FieldArray fieldArray;
   private List<Wrapper> wrappers;
   @Setter private String className;
@@ -77,13 +77,6 @@ public class FieldGroup {
 
   public static FieldGroupBuilder builder() {
     return new ChildCareFieldGroupBuilder();
-  }
-
-  public void addValidator(String validator) {
-    if (this.validators == null) {
-      this.validators = new Validator();
-    }
-    this.validators.getValidation().add(validator);
   }
 
   /**

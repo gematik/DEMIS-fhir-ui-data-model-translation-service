@@ -1,0 +1,290 @@
+{
+  "resourceType": "Questionnaire",
+  "id": "DiseaseQuestionsMPXD",
+  "url": "https://demis.rki.de/fhir/Questionnaire/DiseaseQuestionsMPXD",
+  "version": "1.1.3",
+  "name": "DiseaseQuestionsMPXD",
+  "title": "Mpox: spezifische klinische und epidemiologische Angaben",
+  "status": "active",
+  "date": "2025-10-18",
+  "publisher": "Robert Koch-Institut",
+  "contact": [
+    {
+      "telecom": [
+        {
+          "system": "email",
+          "value": "demis-support@rki.de"
+        }
+      ]
+    }
+  ],
+  "description": "Mpox spezifische Informationsbedarfe werden in diesem meldetatbestandsspezifischen Fragebogen zusammengestellt. Dieser manifestiert sich als entsprechende QuestionnaireResponse innerhalb der Meldung.",
+  "jurisdiction": [
+    {
+      "coding": [
+        {
+          "system": "urn:iso:std:iso:3166",
+          "version": "ALPHA-2",
+          "code": "DE"
+        }
+      ]
+    }
+  ],
+  "copyright": "Copyright (C) 2021-2025 Robert Koch-Institut",
+  "item": [
+    {
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+          "valueCodeableConcept": {
+            "coding": [
+              {
+                "system": "http://hl7.org/fhir/questionnaire-item-control",
+                "code": "drop-down",
+                "display": "Drop down"
+              }
+            ]
+          }
+        }
+      ],
+      "linkId": "immunization",
+      "text": "Wurde die betroffene Person jemals in Bezug auf die Krankheit geimpft?",
+      "type": "choice",
+      "required": true,
+      "repeats": false,
+      "answerValueSet": "https://demis.rki.de/fhir/ValueSet/yesOrNoOrNoInformation",
+      "initial": [
+        {
+          "valueCoding": {
+            "system": "http://snomed.info/sct",
+            "code": "1631000175102",
+            "display": "Patient not asked (contextual qualifier) (qualifier value)"
+          }
+        }
+      ],
+      "item": [
+        {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-referenceProfile",
+              "valueCanonical": "https://demis.rki.de/fhir/StructureDefinition/ImmunizationInformationMPXD"
+            }
+          ],
+          "linkId": "immunizationRef",
+          "text": "Impfinformationen",
+          "type": "reference",
+          "enableWhen": [
+            {
+              "question": "immunization",
+              "operator": "=",
+              "answerCoding": {
+                "system": "http://snomed.info/sct",
+                "code": "373066001"
+              }
+            }
+          ],
+          "required": false,
+          "repeats": true
+        }
+      ]
+    },
+    {
+      "linkId": "skinSymptomBegin",
+      "text": "Beginn der Hautsymptome",
+      "type": "date",
+      "required": false,
+      "repeats": false
+    },
+    {
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+          "valueCodeableConcept": {
+            "coding": [
+              {
+                "system": "http://hl7.org/fhir/questionnaire-item-control",
+                "code": "drop-down",
+                "display": "Drop down"
+              }
+            ]
+          }
+        }
+      ],
+      "linkId": "locationLymphNodeSwelling",
+      "text": "Lokalisation der Lymphknotenschwellung",
+      "type": "choice",
+      "required": true,
+      "repeats": true,
+      "answerValueSet": "https://demis.rki.de/fhir/ValueSet/answerSetLocationLymphNodeSwellingMPXD",
+      "initial": [
+        {
+          "valueCoding": {
+            "system": "http://snomed.info/sct",
+            "code": "1631000175102",
+            "display": "Patient not asked (contextual qualifier) (qualifier value)"
+          }
+        }
+      ]
+    },
+    {
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+          "valueCodeableConcept": {
+            "coding": [
+              {
+                "system": "http://hl7.org/fhir/questionnaire-item-control",
+                "code": "drop-down",
+                "display": "Drop down"
+              }
+            ]
+          }
+        }
+      ],
+      "linkId": "locationSkinLesions",
+      "text": "Lokalisation der Hautläsionen",
+      "type": "choice",
+      "required": true,
+      "repeats": true,
+      "answerValueSet": "https://demis.rki.de/fhir/ValueSet/answerSetLocationSkinLesionsMPXD",
+      "initial": [
+        {
+          "valueCoding": {
+            "system": "http://snomed.info/sct",
+            "code": "1631000175102",
+            "display": "Patient not asked (contextual qualifier) (qualifier value)"
+          }
+        }
+      ]
+    },
+    {
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+          "valueCodeableConcept": {
+            "coding": [
+              {
+                "system": "http://hl7.org/fhir/questionnaire-item-control",
+                "code": "drop-down",
+                "display": "Drop down"
+              }
+            ]
+          }
+        }
+      ],
+      "linkId": "locationMucosalLesions",
+      "text": "Lokalisation der Schleimhautläsionen",
+      "type": "choice",
+      "required": true,
+      "repeats": true,
+      "answerValueSet": "https://demis.rki.de/fhir/ValueSet/answerSetLocationMucosalLesionsMPXD",
+      "initial": [
+        {
+          "valueCoding": {
+            "system": "http://snomed.info/sct",
+            "code": "1631000175102",
+            "display": "Patient not asked (contextual qualifier) (qualifier value)"
+          }
+        }
+      ]
+    },
+    {
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+          "valueCodeableConcept": {
+            "coding": [
+              {
+                "system": "http://hl7.org/fhir/questionnaire-item-control",
+                "code": "drop-down",
+                "display": "Drop down"
+              }
+            ]
+          }
+        }
+      ],
+      "linkId": "infectionPathKind",
+      "text": "Auf welchem Weg hat sich die betroffene Person wahrscheinlich infiziert?",
+      "type": "choice",
+      "required": true,
+      "repeats": true,
+      "answerValueSet": "https://demis.rki.de/fhir/ValueSet/answerSetInfectionPathMPXD",
+      "initial": [
+        {
+          "valueCoding": {
+            "system": "http://snomed.info/sct",
+            "code": "1631000175102",
+            "display": "Patient not asked (contextual qualifier) (qualifier value)"
+          }
+        }
+      ]
+    },
+    {
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+          "valueCodeableConcept": {
+            "coding": [
+              {
+                "system": "http://hl7.org/fhir/questionnaire-item-control",
+                "code": "drop-down",
+                "display": "Drop down"
+              }
+            ]
+          }
+        }
+      ],
+      "linkId": "outbreak",
+      "text": "Kann der gemeldete Fall einem Ausbruch zugeordnet werden?",
+      "type": "choice",
+      "required": true,
+      "repeats": false,
+      "answerValueSet": "https://demis.rki.de/fhir/ValueSet/yesOrNoOrNoInformation",
+      "initial": [
+        {
+          "valueCoding": {
+            "system": "http://snomed.info/sct",
+            "code": "1631000175102",
+            "display": "Patient not asked (contextual qualifier) (qualifier value)"
+          }
+        }
+      ],
+      "item": [
+        {
+          "linkId": "outbreakNote",
+          "text": "Fallbezogene Zusatzinformationen zum Ausbruch",
+          "type": "text",
+          "enableWhen": [
+            {
+              "question": "outbreak",
+              "operator": "=",
+              "answerCoding": {
+                "system": "http://snomed.info/sct",
+                "code": "373066001"
+              }
+            }
+          ],
+          "required": false,
+          "repeats": false
+        },
+        {
+          "linkId": "outbreakNotificationId",
+          "text": "Notification-Id der zugehörigen Ausbruchsmeldung",
+          "type": "reference",
+          "enableWhen": [
+            {
+              "question": "outbreak",
+              "operator": "=",
+              "answerCoding": {
+                "system": "http://snomed.info/sct",
+                "code": "373066001"
+              }
+            }
+          ],
+          "required": false,
+          "repeats": false
+        }
+      ]
+    }
+  ]
+}

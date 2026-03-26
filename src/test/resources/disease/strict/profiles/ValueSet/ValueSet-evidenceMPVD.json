@@ -2,12 +2,12 @@
   "resourceType": "ValueSet",
   "id": "evidenceMPVD",
   "url": "https://demis.rki.de/fhir/ValueSet/evidenceMPVD",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "name": "EvidenceMPVD",
   "title": "Symptome und Manifestationen in Bezug auf den Meldetatbestand \"Mumps\"",
   "status": "active",
   "experimental": false,
-  "date": "2025-09-03",
+  "date": "2026-01-09",
   "publisher": "Robert Koch-Institut",
   "contact": [
     {
@@ -36,7 +36,7 @@
     "include": [
       {
         "system": "http://snomed.info/sct",
-        "version": "http://snomed.info/sct/11000274103/version/20241115",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
         "concept": [
           {
             "extension": [
@@ -66,7 +66,7 @@
               }
             ],
             "code": "274718005",
-            "display": "Orchitis (disorder)",
+            "display": "Orchitis",
             "designation": [
               {
                 "language": "de-DE",
@@ -157,53 +157,53 @@
     ]
   },
   "expansion": {
-    "timestamp": "2025-09-03T00:00:00+02:00",
+    "timestamp": "2026-01-09T00:00:00+01:00",
     "contains": [
       {
         "system": "http://snomed.info/sct",
-        "version": "http://snomed.info/sct/11000274103/version/20241115",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
         "code": "76047005",
         "display": "Oophoritis"
       },
       {
         "system": "http://snomed.info/sct",
-        "version": "http://snomed.info/sct/11000274103/version/20241115",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
         "code": "271613005:{363714003=162442009},{363713009=260384008}",
         "display": "geschwollene Speicheldrüse (2 oder mehr Tage)"
       },
       {
         "system": "http://snomed.info/sct",
-        "version": "http://snomed.info/sct/11000274103/version/20241115",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
         "code": "274718005",
-        "display": "Orchitis (disorder)"
+        "display": "Orchitis"
       },
       {
         "system": "http://snomed.info/sct",
-        "version": "http://snomed.info/sct/11000274103/version/20241115",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
         "code": "386661006",
         "display": "Fieber"
       },
       {
         "system": "http://snomed.info/sct",
-        "version": "http://snomed.info/sct/11000274103/version/20241115",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
         "code": "75694006",
         "display": "Pankreatitis"
       },
       {
         "system": "http://snomed.info/sct",
-        "version": "http://snomed.info/sct/11000274103/version/20241115",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
         "code": "15188001",
         "display": "Hörverlust"
       },
       {
         "system": "http://snomed.info/sct",
-        "version": "http://snomed.info/sct/11000274103/version/20241115",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
         "code": "45170000",
         "display": "Enzephalitis"
       },
       {
         "system": "http://snomed.info/sct",
-        "version": "http://snomed.info/sct/11000274103/version/20241115",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
         "code": "7180009",
         "display": "Meningitis"
       }

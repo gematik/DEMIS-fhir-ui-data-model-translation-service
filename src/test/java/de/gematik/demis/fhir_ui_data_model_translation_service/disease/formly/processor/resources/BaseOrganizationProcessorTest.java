@@ -27,12 +27,16 @@ package de.gematik.demis.fhir_ui_data_model_translation_service.disease.formly.p
  * #L%
  */
 
+import static org.assertj.core.api.Assertions.assertThat;
+
+import de.gematik.demis.fhir_ui_data_model_translation_service.FeatureFlags;
 import de.gematik.demis.fhir_ui_data_model_translation_service.disease.formly.DiseaseClipboardProps;
 import de.gematik.demis.fhir_ui_data_model_translation_service.disease.formly.model.FieldGroup;
+import de.gematik.demis.fhir_ui_data_model_translation_service.disease.formly.model.Validation;
+import de.gematik.demis.fhir_ui_data_model_translation_service.disease.formly.model.Validator;
 import de.gematik.demis.fhir_ui_data_model_translation_service.disease.formly.processor.EnableWhenProcessor;
 import de.gematik.demis.fhir_ui_data_model_translation_service.translation.DataLoaderSrv;
 import java.util.List;
-import org.assertj.core.api.Assertions;
 import org.hl7.fhir.r4.model.Questionnaire;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
@@ -44,10 +48,11 @@ import org.mockito.junit.jupiter.MockitoExtension;
 @ExtendWith(MockitoExtension.class)
 class BaseOrganizationProcessorTest {
 
+  static final FeatureFlags FEATURE_FLAGS =
+      FeatureFlags.builder().diseaseQuestionnaireOrgInputValidation(true).build();
   private static final String BSNR_KEY = "bsnr.answer.valueString";
   private static final String TYPE_KEY = "type.answer.valueCoding";
   private static final String TEST_ORGANIZATION_LINK_ID = "TestOrganization";
-
   @Mock private EnableWhenProcessor enableWhenProcessor;
   @Mock private DiseaseClipboardProps diseaseClipboardProps;
   @Mock private DataLoaderSrv dataLoaderSrv;
@@ -73,27 +78,33 @@ class BaseOrganizationProcessorTest {
     final FieldGroup[] result = processor.createFieldGroup(item, parent, "cvdd");
 
     // then
-    Assertions.assertThat(result).isNotNull().isNotEmpty().hasSize(1);
+    assertThat(result).isNotNull().isNotEmpty().hasSize(1);
     final FieldGroup organization = result[0];
-    Assertions.assertThat(organization.getKey()).isEqualTo(TEST_ORGANIZATION_LINK_ID);
+    assertThat(organization.getKey()).isEqualTo(TEST_ORGANIZATION_LINK_ID);
 
     // then organization should have identifier and type inputs
     final List<FieldGroup> fieldGroups = organization.getFieldGroups();
     final List<String> inputs = fieldGroups.stream().map(FieldGroup::getKey).toList();
-    Assertions.assertThat(inputs)
+    assertThat(inputs)
         .hasSize(6)
         .containsExactly(
             "name.answer.valueString", BSNR_KEY, TYPE_KEY, "address", "contact", "telecom");
 
     // then BSNR input should be required
     final FieldGroup bsnrInput = fieldGroups.get(1);
-    Assertions.assertThat(bsnrInput.getKey()).isEqualTo(BSNR_KEY);
-    Assertions.assertThat(bsnrInput.getProps().getRequired()).isNull();
+    assertThat(bsnrInput.getKey()).isEqualTo(BSNR_KEY);
+    assertThat(bsnrInput.getProps().getRequired()).isNull();
+    final Validator validator = bsnrInput.getValidators();
+    assertThat(validator).isNotNull();
+    assertThat(validator.getValidation())
+        .isNotNull()
+        .isNotEmpty()
+        .containsExactly(Validation.BSNR.getIdentifier());
 
     // then type input should be optional
     final FieldGroup typeInput = fieldGroups.get(2);
-    Assertions.assertThat(typeInput.getKey()).isEqualTo(TYPE_KEY);
-    Assertions.assertThat(typeInput.getProps().getRequired()).isTrue();
+    assertThat(typeInput.getKey()).isEqualTo(TYPE_KEY);
+    assertThat(typeInput.getProps().getRequired()).isTrue();
   }
 
   private static final class TestOrganizationProcessor extends BaseOrganizationProcessor {
@@ -101,7 +112,7 @@ class BaseOrganizationProcessorTest {
         EnableWhenProcessor enableWhenProcessor,
         DiseaseClipboardProps diseaseClipboardProps,
         DataLoaderSrv dataLoaderSrv) {
-      super(enableWhenProcessor, diseaseClipboardProps, dataLoaderSrv);
+      super(enableWhenProcessor, diseaseClipboardProps, dataLoaderSrv, FEATURE_FLAGS);
     }
 
     @Override

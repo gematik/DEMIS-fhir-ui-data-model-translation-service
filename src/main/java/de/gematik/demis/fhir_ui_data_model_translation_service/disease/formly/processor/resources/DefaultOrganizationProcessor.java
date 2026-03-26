@@ -27,6 +27,7 @@ package de.gematik.demis.fhir_ui_data_model_translation_service.disease.formly.p
  * #L%
  */
 
+import de.gematik.demis.fhir_ui_data_model_translation_service.FeatureFlags;
 import de.gematik.demis.fhir_ui_data_model_translation_service.context.OnlyInDiseaseContext;
 import de.gematik.demis.fhir_ui_data_model_translation_service.disease.formly.DiseaseClipboardProps;
 import de.gematik.demis.fhir_ui_data_model_translation_service.disease.formly.processor.EnableWhenProcessor;
@@ -40,7 +41,8 @@ class DefaultOrganizationProcessor extends BaseOrganizationProcessor {
   DefaultOrganizationProcessor(
       EnableWhenProcessor enableWhenProcessor,
       DiseaseClipboardProps diseaseClipboardProps,
-      DataLoaderSrv dataLoaderSrv) {
-    super(enableWhenProcessor, diseaseClipboardProps, dataLoaderSrv);
+      DataLoaderSrv dataLoaderSrv,
+      FeatureFlags featureFlags) {
+    super(enableWhenProcessor, diseaseClipboardProps, dataLoaderSrv, featureFlags);
   }
 }

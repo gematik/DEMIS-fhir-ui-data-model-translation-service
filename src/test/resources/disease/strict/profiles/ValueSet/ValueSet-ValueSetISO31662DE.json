@@ -7,12 +7,12 @@
     ]
   },
   "url": "http://fhir.de/ValueSet/iso/bundeslaender",
-  "version": "1.5.3",
+  "version": "1.5.4",
   "name": "ValueSetISO31662DE",
   "title": "ISO-3166-2:de-Laendercodes",
   "status": "active",
   "experimental": false,
-  "date": "2025-01-30",
+  "date": "2025-06-16",
   "publisher": "HL7 Deutschland e.V. (Technisches Komitee FHIR)",
   "contact": [
     {
@@ -33,7 +33,7 @@
     ]
   },
   "expansion": {
-    "timestamp": "2025-01-30T00:00:00+01:00",
+    "timestamp": "2025-06-16T00:00:00+02:00",
     "contains": [
       {
         "system": "urn:iso:std:iso:3166-2:de",

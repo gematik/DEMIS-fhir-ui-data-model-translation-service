@@ -2,12 +2,12 @@
   "resourceType": "ValueSet",
   "id": "notificationDiseaseCategoryNonNominal",
   "url": "https://demis.rki.de/fhir/ValueSet/notificationDiseaseCategoryNonNominal",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "name": "NotificationDiseaseCategoryNonNominal",
   "title": "Nichtnamentliche Meldetatbestände nach § 7 Abs. 3 IfSG",
   "status": "active",
   "experimental": false,
-  "date": "2025-08-12",
+  "date": "2026-01-09",
   "publisher": "Robert Koch-Institut",
   "contact": [
     {
@@ -36,7 +36,7 @@
     "include": [
       {
         "system": "https://demis.rki.de/fhir/CodeSystem/notificationDiseaseCategory",
-        "version": "2.0.1",
+        "version": "2.1.0",
         "concept": [
           {
             "extension": [
@@ -110,11 +110,11 @@
               }
             ],
             "code": "toxd",
-            "display": "Toxoplasma gondii; Meldepflicht nur bei konnatalen Infektionen",
+            "display": "Toxoplasma gondii; Meldepflicht nur bei konnataler Infektion des Kindes",
             "designation": [
               {
                 "language": "de-DE",
-                "value": "Toxoplasma gondii, konnatal"
+                "value": "Toxoplasma gondii, konnatale Infektion des Kindes"
               }
             ]
           },
@@ -139,41 +139,41 @@
     ]
   },
   "expansion": {
-    "timestamp": "2025-08-12T00:00:00+02:00",
+    "timestamp": "2026-01-09T00:00:00+01:00",
     "contains": [
       {
         "system": "https://demis.rki.de/fhir/CodeSystem/notificationDiseaseCategory",
-        "version": "2.0.1",
+        "version": "2.1.0",
         "code": "negd",
         "display": "Neisseria gonorrhoeae"
       },
       {
         "system": "https://demis.rki.de/fhir/CodeSystem/notificationDiseaseCategory",
-        "version": "2.0.1",
+        "version": "2.1.0",
         "code": "hivd",
         "display": "Humanes Immundefizienz-Virus (HIV)"
       },
       {
         "system": "https://demis.rki.de/fhir/CodeSystem/notificationDiseaseCategory",
-        "version": "2.0.1",
+        "version": "2.1.0",
         "code": "toxd",
-        "display": "Toxoplasma gondii; Meldepflicht nur bei konnatalen Infektionen"
+        "display": "Toxoplasma gondii; Meldepflicht nur bei konnataler Infektion des Kindes"
       },
       {
         "system": "https://demis.rki.de/fhir/CodeSystem/notificationDiseaseCategory",
-        "version": "2.0.1",
+        "version": "2.1.0",
         "code": "echd",
         "display": "Echinococcus sp."
       },
       {
         "system": "https://demis.rki.de/fhir/CodeSystem/notificationDiseaseCategory",
-        "version": "2.0.1",
+        "version": "2.1.0",
         "code": "trpd",
         "display": "Treponema pallidum"
       },
       {
         "system": "https://demis.rki.de/fhir/CodeSystem/notificationDiseaseCategory",
-        "version": "2.0.1",
+        "version": "2.1.0",
         "code": "chtd",
         "display": "Chlamydia trachomatis, sofern es sich um einen der Serotypen L1 bis L3 handelt"
       }

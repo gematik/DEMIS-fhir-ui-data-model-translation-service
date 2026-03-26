@@ -2,11 +2,11 @@
   "resourceType": "ConceptMap",
   "id": "NotificationCategoryToTransmissionCategory",
   "url": "https://demis.rki.de/fhir/ConceptMap/NotificationCategoryToTransmissionCategory",
-  "version": "2.1.0",
+  "version": "2.1.1",
   "name": "NotificationCategoryToTransmissionCategory",
   "title": "NotificationCategoryToTransmissionCategory",
   "status": "active",
-  "date": "2025-08-06",
+  "date": "2025-10-15",
   "publisher": "Robert Koch-Institut",
   "contact": [
     {
@@ -18,7 +18,7 @@
       ]
     }
   ],
-  "description": "Die ConceptMap NotificationCategoryToTransmissionCategory ordnet die Meldetatbestände der Erregernachweismeldung den 3-Buchstaben-Codes der Übermittlungskategorien aus SurvNet zu.",
+  "description": "Die ConceptMap NotificationCategoryToTransmissionCategory ordnet die 7.1-Meldetatbestände der Erregernachweismeldung den 3-Buchstaben-Codes der Übermittlungskategorien aus SurvNet zu.",
   "jurisdiction": [
     {
       "coding": [
@@ -31,8 +31,8 @@
     }
   ],
   "copyright": "Copyright (C) 2021-2025 Robert Koch-Institut",
-  "sourceUri": "https://demis.rki.de/fhir/CodeSystem/notificationCategory",
-  "targetUri": "https://demis.rki.de/fhir/CodeSystem/transmissionCategory",
+  "sourceUri": "https://demis.rki.de/fhir/ValueSet/notificationCategory",
+  "targetUri": "https://demis.rki.de/fhir/ValueSet/transmissionCategory",
   "group": [
     {
       "source": "https://demis.rki.de/fhir/CodeSystem/notificationCategory",
@@ -884,66 +884,6 @@
           "target": [
             {
               "code": "vch",
-              "equivalence": "relatedto"
-            }
-          ]
-        },
-        {
-          "code": "chtp",
-          "display": "Chlamydia trachomatis, sofern es sich um einen der Serotypen L1 bis L3 handelt",
-          "target": [
-            {
-              "code": "cht",
-              "equivalence": "relatedto"
-            }
-          ]
-        },
-        {
-          "code": "echp",
-          "display": "Echinococcus sp.",
-          "target": [
-            {
-              "code": "ech",
-              "equivalence": "relatedto"
-            }
-          ]
-        },
-        {
-          "code": "hivp",
-          "display": "Humanes Immundefizienz-Virus (HIV)",
-          "target": [
-            {
-              "code": "hiv",
-              "equivalence": "relatedto"
-            }
-          ]
-        },
-        {
-          "code": "negp",
-          "display": "Neisseria gonorrhoeae",
-          "target": [
-            {
-              "code": "neg",
-              "equivalence": "relatedto"
-            }
-          ]
-        },
-        {
-          "code": "toxp",
-          "display": "Toxoplasma gondii; Meldepflicht nur bei konnatalen Infektionen",
-          "target": [
-            {
-              "code": "tox",
-              "equivalence": "relatedto"
-            }
-          ]
-        },
-        {
-          "code": "trpp",
-          "display": "Treponema pallidum",
-          "target": [
-            {
-              "code": "trp",
               "equivalence": "relatedto"
             }
           ]

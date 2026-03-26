@@ -2,12 +2,12 @@
   "resourceType": "ValueSet",
   "id": "answerSetAcute",
   "url": "https://demis.rki.de/fhir/ValueSet/answerSetAcute",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "name": "AnswerSetAcute",
   "title": "Anwort akute Infektion aufgrund wessen.",
   "status": "active",
   "experimental": false,
-  "date": "2025-08-29",
+  "date": "2026-01-09",
   "publisher": "Robert Koch-Institut",
   "contact": [
     {
@@ -36,7 +36,7 @@
     "include": [
       {
         "system": "http://snomed.info/sct",
-        "version": "http://snomed.info/sct/11000274103/version/20241115",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
         "concept": [
           {
             "extension": [
@@ -52,15 +52,25 @@
             "extension": [
               {
                 "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
-                "valueInteger": 999
+                "valueInteger": 13
               }
             ],
-            "code": "1631000175102",
-            "display": "Patient not asked (contextual qualifier) (qualifier value)",
+            "code": "1340178004",
+            "display": "Diagnosestellung aufgrund Exposition"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 12
+              }
+            ],
+            "code": "39154008",
+            "display": "Klinische Diagnose (Kontextqualifikation)",
             "designation": [
               {
                 "language": "de-DE",
-                "value": "Patient/Patientin nicht gefragt"
+                "value": "Klinische Diagnose"
               }
             ]
           },
@@ -68,7 +78,33 @@
             "extension": [
               {
                 "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
-                "valueInteger": 1000
+                "valueInteger": 11
+              }
+            ],
+            "code": "46159000",
+            "display": "Laboratory diagnosis (contextual qualifier) (qualifier value)",
+            "designation": [
+              {
+                "language": "de-DE",
+                "value": "Labordiagnotische Konstellation"
+              }
+            ]
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 1
+              }
+            ],
+            "code": "1631000175102",
+            "display": "Patient/Patientin nicht gefragt"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 2
               }
             ],
             "code": "261665006",
@@ -79,23 +115,41 @@
     ]
   },
   "expansion": {
-    "timestamp": "2025-08-29T00:00:00+02:00",
+    "timestamp": "2026-01-09T00:00:00+01:00",
     "contains": [
       {
         "system": "http://snomed.info/sct",
-        "version": "http://snomed.info/sct/11000274103/version/20241115",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
         "code": "1631000175102",
-        "display": "Patient not asked (contextual qualifier) (qualifier value)"
+        "display": "Patient/Patientin nicht gefragt"
       },
       {
         "system": "http://snomed.info/sct",
-        "version": "http://snomed.info/sct/11000274103/version/20241115",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
         "code": "1290194006",
         "display": "Serokonversion"
       },
       {
         "system": "http://snomed.info/sct",
-        "version": "http://snomed.info/sct/11000274103/version/20241115",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "46159000",
+        "display": "Laboratory diagnosis (contextual qualifier) (qualifier value)"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "39154008",
+        "display": "Klinische Diagnose (Kontextqualifikation)"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "1340178004",
+        "display": "Diagnosestellung aufgrund Exposition"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
         "code": "261665006",
         "display": "Unbekannt"
       }

@@ -56,7 +56,7 @@ import org.mockito.junit.jupiter.MockitoExtension;
 class DataLoaderSrvTest {
 
   private static final FeatureFlags FEATURE_FLAGS_ENABLED =
-      FeatureFlags.builder().addDesignationUse(true).addCodeDisplayVersion(true).build();
+      FeatureFlags.builder().addCodeDisplayVersion(true).build();
 
   private static File addressUseFileCS;
   private static File loincFileCS;

@@ -29,6 +29,7 @@ package de.gematik.demis.fhir_ui_data_model_translation_service.objects.code.dis
 
 import de.gematik.demis.fhir_ui_data_model_translation_service.model.CodeDisplay;
 import de.gematik.demis.fhir_ui_data_model_translation_service.model.Designation;
+import de.gematik.demis.fhir_ui_data_model_translation_service.model.Use;
 import java.util.Set;
 
 public class AddressUseRegressionTOs {
@@ -37,7 +38,12 @@ public class AddressUseRegressionTOs {
     return CodeDisplay.builder()
         .code("current")
         .display("Derzeitiger Aufenthaltsort")
-        .designations(Set.of(new Designation("en-US", "Current Residence")))
+        .designations(
+            Set.of(
+                new Designation(
+                    "en-US",
+                    "Current Residence",
+                    new Use("http://snomed.info/sct", "900000000000003001"))))
         .system("https://demis.rki.de/fhir/CodeSystem/addressUse")
         .order(100)
         .build();
@@ -47,7 +53,12 @@ public class AddressUseRegressionTOs {
     return CodeDisplay.builder()
         .code("ordinary")
         .display("Gewöhnlicher Aufenthaltsort")
-        .designations(Set.of(new Designation("en-US", "Ordinary Residence")))
+        .designations(
+            Set.of(
+                new Designation(
+                    "en-US",
+                    "Ordinary Residence",
+                    new Use("http://snomed.info/sct", "900000000000003001"))))
         .system("https://demis.rki.de/fhir/CodeSystem/addressUse")
         .order(100)
         .build();
@@ -57,7 +68,12 @@ public class AddressUseRegressionTOs {
     return CodeDisplay.builder()
         .code("primary")
         .display("Hauptwohnsitz")
-        .designations(Set.of(new Designation("en-US", "Primary Residence")))
+        .designations(
+            Set.of(
+                new Designation(
+                    "en-US",
+                    "Primary Residence",
+                    new Use("http://snomed.info/sct", "900000000000003001"))))
         .system("https://demis.rki.de/fhir/CodeSystem/addressUse")
         .order(100)
         .build();

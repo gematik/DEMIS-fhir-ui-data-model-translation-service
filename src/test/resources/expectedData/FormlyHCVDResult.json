@@ -226,7 +226,11 @@
                     "designations": [
                       {
                         "language": "en-US",
-                        "value": "Acute hepatitis caused by infection suspected (situation)"
+                        "value": "Acute hepatitis caused by infection suspected (situation)",
+                        "use": {
+                          "system": "http://snomed.info/sct",
+                          "code": "900000000000003001"
+                        }
                       }
                     ],
                     "system": "http://snomed.info/sct",
@@ -483,7 +487,11 @@
                           "designations": [
                             {
                               "language": "en-US",
-                              "value": "409496000 | Mode of transmission (observable entity) | : {704326004 | Precondition (attribute) | = 365984004 | Finding of drug injection behavior (finding) |}"
+                              "value": "409496000 | Mode of transmission (observable entity) | : {704326004 | Precondition (attribute) | = 365984004 | Finding of drug injection behavior (finding) |}",
+                              "use": {
+                                "system": "http://snomed.info/sct",
+                                "code": "1119454002"
+                              }
                             }
                           ],
                           "system": "http://snomed.info/sct",
@@ -495,7 +503,11 @@
                           "designations": [
                             {
                               "language": "en-US",
-                              "value": "409496000 | Mode of transmission (observable entity) | : { 704326004 | Precondition (attribute) | = 225531006 | Homosexual behavior (finding) |}"
+                              "value": "409496000 | Mode of transmission (observable entity) | : { 704326004 | Precondition (attribute) | = 225531006 | Homosexual behavior (finding) |}",
+                              "use": {
+                                "system": "http://snomed.info/sct",
+                                "code": "1119454002"
+                              }
                             }
                           ],
                           "system": "http://snomed.info/sct",
@@ -507,7 +519,11 @@
                           "designations": [
                             {
                               "language": "en-US",
-                              "value": "409496000 | Mode of transmission (observable entity) | : { 704326004 | Precondition (attribute) | = 1288017002 | Heterosexual behavior (finding) |}"
+                              "value": "409496000 | Mode of transmission (observable entity) | : { 704326004 | Precondition (attribute) | = 1288017002 | Heterosexual behavior (finding) |}",
+                              "use": {
+                                "system": "http://snomed.info/sct",
+                                "code": "1119454002"
+                              }
                             }
                           ],
                           "system": "http://snomed.info/sct",
@@ -519,7 +535,11 @@
                           "designations": [
                             {
                               "language": "en-US",
-                              "value": "409496000 | Mode of transmission (observable entity) | : {704326004 | Precondition (attribute) | = 170489004 | Viral hepatitis carrier (finding) |}, {704326004 | Precondition (attribute) | = 224149009 | Lives in a commune (finding) |}"
+                              "value": "409496000 | Mode of transmission (observable entity) | : {704326004 | Precondition (attribute) | = 170489004 | Viral hepatitis carrier (finding) |}, {704326004 | Precondition (attribute) | = 224149009 | Lives in a commune (finding) |}",
+                              "use": {
+                                "system": "http://snomed.info/sct",
+                                "code": "1119454002"
+                              }
                             }
                           ],
                           "system": "http://snomed.info/sct",
@@ -531,7 +551,11 @@
                           "designations": [
                             {
                               "language": "en-US",
-                              "value": "409496000 | Mode of transmission (observable entity) | : {704326004 | Precondition (attribute) | = 408678008 | Healthcare associated infectious disease (disorder) |}"
+                              "value": "409496000 | Mode of transmission (observable entity) | : {704326004 | Precondition (attribute) | = 408678008 | Healthcare associated infectious disease (disorder) |}",
+                              "use": {
+                                "system": "http://snomed.info/sct",
+                                "code": "1119454002"
+                              }
                             }
                           ],
                           "system": "http://snomed.info/sct",
@@ -543,7 +567,11 @@
                           "designations": [
                             {
                               "language": "en-US",
-                              "value": "409496000 | Mode of transmission (observable entity) | : {704326004 | Precondition (attribute) | = 879862001 | Body piercing (finding) |}"
+                              "value": "409496000 | Mode of transmission (observable entity) | : {704326004 | Precondition (attribute) | = 879862001 | Body piercing (finding) |}",
+                              "use": {
+                                "system": "http://snomed.info/sct",
+                                "code": "1119454002"
+                              }
                             }
                           ],
                           "system": "http://snomed.info/sct",
@@ -555,7 +583,11 @@
                           "designations": [
                             {
                               "language": "en-US",
-                              "value": "409496000 | Mode of transmission (observable entity) | : {704326004 | Precondition (attribute) | = 341000119102 | Tattoo of skin (finding) |}"
+                              "value": "409496000 | Mode of transmission (observable entity) | : {704326004 | Precondition (attribute) | = 341000119102 | Tattoo of skin (finding) |}",
+                              "use": {
+                                "system": "http://snomed.info/sct",
+                                "code": "1119454002"
+                              }
                             }
                           ],
                           "system": "http://snomed.info/sct",
@@ -567,7 +599,11 @@
                           "designations": [
                             {
                               "language": "en-US",
-                              "value": "409496000 | Mode of transmission (observable entity) | : {704326004 | Precondition (attribute) | = 9632001 | Nursing procedure (procedure) |}"
+                              "value": "409496000 | Mode of transmission (observable entity) | : {704326004 | Precondition (attribute) | = 9632001 | Nursing procedure (procedure) |}",
+                              "use": {
+                                "system": "http://snomed.info/sct",
+                                "code": "1119454002"
+                              }
                             }
                           ],
                           "system": "http://snomed.info/sct",
@@ -792,7 +828,11 @@
                                     "designations": [
                                       {
                                         "language": "en-US",
-                                        "value": "409496000 | Mode of transmission (observable entity) | : {704326004 | Precondition (attribute) | = 387713003 | Surgical procedure (procedure) |}"
+                                        "value": "409496000 | Mode of transmission (observable entity) | : {704326004 | Precondition (attribute) | = 387713003 | Surgical procedure (procedure) |}",
+                                        "use": {
+                                          "system": "http://snomed.info/sct",
+                                          "code": "1119454002"
+                                        }
                                       }
                                     ],
                                     "system": "http://snomed.info/sct",
@@ -804,7 +844,11 @@
                                     "designations": [
                                       {
                                         "language": "en-US",
-                                        "value": "409496000 | Mode of transmission (observable entity) | : {704326004 | Precondition (attribute) | = 5447007 | Transfusion (procedure) |}"
+                                        "value": "409496000 | Mode of transmission (observable entity) | : {704326004 | Precondition (attribute) | = 5447007 | Transfusion (procedure) |}",
+                                        "use": {
+                                          "system": "http://snomed.info/sct",
+                                          "code": "1119454002"
+                                        }
                                       }
                                     ],
                                     "system": "http://snomed.info/sct",
@@ -816,7 +860,11 @@
                                     "designations": [
                                       {
                                         "language": "en-US",
-                                        "value": "409496000 | Mode of transmission (observable entity) | : {704326004 | Precondition (attribute) | = 108241001 | Dialysis procedure (procedure) |}"
+                                        "value": "409496000 | Mode of transmission (observable entity) | : {704326004 | Precondition (attribute) | = 108241001 | Dialysis procedure (procedure) |}",
+                                        "use": {
+                                          "system": "http://snomed.info/sct",
+                                          "code": "1119454002"
+                                        }
                                       }
                                     ],
                                     "system": "http://snomed.info/sct",
@@ -828,7 +876,11 @@
                                     "designations": [
                                       {
                                         "language": "en-US",
-                                        "value": "409496000 | Mode of transmission (observable entity) | : {704326004 | Precondition (attribute) | = 77465005 | Transplantation (procedure) |}"
+                                        "value": "409496000 | Mode of transmission (observable entity) | : {704326004 | Precondition (attribute) | = 77465005 | Transplantation (procedure) |}",
+                                        "use": {
+                                          "system": "http://snomed.info/sct",
+                                          "code": "1119454002"
+                                        }
                                       }
                                     ],
                                     "system": "http://snomed.info/sct",
@@ -840,7 +892,11 @@
                                     "designations": [
                                       {
                                         "language": "en-US",
-                                        "value": "History of medical injection in foreign country (situation)"
+                                        "value": "History of medical injection in foreign country (situation)",
+                                        "use": {
+                                          "system": "http://snomed.info/sct",
+                                          "code": "900000000000003001"
+                                        }
                                       }
                                     ],
                                     "system": "http://snomed.info/sct",
@@ -3342,11 +3398,19 @@
                                   "designations": [
                                     {
                                       "language": "en-US",
-                                      "value": "Medical facility"
+                                      "value": "Medical facility",
+                                      "use": {
+                                        "system": "http://snomed.info/sct",
+                                        "code": "900000000000003001"
+                                      }
                                     },
                                     {
                                       "language": "de-DE",
-                                      "value": "Medizinische Einrichtung"
+                                      "value": "Medizinische Einrichtung",
+                                      "use": {
+                                        "system": "http://snomed.info/sct",
+                                        "code": "900000000000003001"
+                                      }
                                     }
                                   ],
                                   "system": "https://demis.rki.de/fhir/CodeSystem/organizationType",
@@ -3358,11 +3422,19 @@
                                   "designations": [
                                     {
                                       "language": "en-US",
-                                      "value": "Hospital"
+                                      "value": "Hospital",
+                                      "use": {
+                                        "system": "http://snomed.info/sct",
+                                        "code": "900000000000003001"
+                                      }
                                     },
                                     {
                                       "language": "de-DE",
-                                      "value": "Krankenhaus"
+                                      "value": "Krankenhaus",
+                                      "use": {
+                                        "system": "http://snomed.info/sct",
+                                        "code": "900000000000003001"
+                                      }
                                     }
                                   ],
                                   "system": "https://demis.rki.de/fhir/CodeSystem/organizationType",
@@ -3375,11 +3447,19 @@
                                   "designations": [
                                     {
                                       "language": "en-US",
-                                      "value": "Facility for outpatient surgery"
+                                      "value": "Facility for outpatient surgery",
+                                      "use": {
+                                        "system": "http://snomed.info/sct",
+                                        "code": "900000000000003001"
+                                      }
                                     },
                                     {
                                       "language": "de-DE",
-                                      "value": "Einrichtung für ambulantes Operieren"
+                                      "value": "Einrichtung für ambulantes Operieren",
+                                      "use": {
+                                        "system": "http://snomed.info/sct",
+                                        "code": "900000000000003001"
+                                      }
                                     }
                                   ],
                                   "system": "https://demis.rki.de/fhir/CodeSystem/organizationType",
@@ -3392,11 +3472,19 @@
                                   "designations": [
                                     {
                                       "language": "en-US",
-                                      "value": "Preventive care or rehab facility"
+                                      "value": "Preventive care or rehab facility",
+                                      "use": {
+                                        "system": "http://snomed.info/sct",
+                                        "code": "900000000000003001"
+                                      }
                                     },
                                     {
                                       "language": "de-DE",
-                                      "value": "Vorsorge- oder Reha-Einrichtung"
+                                      "value": "Vorsorge- oder Reha-Einrichtung",
+                                      "use": {
+                                        "system": "http://snomed.info/sct",
+                                        "code": "900000000000003001"
+                                      }
                                     }
                                   ],
                                   "system": "https://demis.rki.de/fhir/CodeSystem/organizationType",
@@ -3409,11 +3497,19 @@
                                   "designations": [
                                     {
                                       "language": "en-US",
-                                      "value": "Dialysis facility"
+                                      "value": "Dialysis facility",
+                                      "use": {
+                                        "system": "http://snomed.info/sct",
+                                        "code": "900000000000003001"
+                                      }
                                     },
                                     {
                                       "language": "de-DE",
-                                      "value": "Dialyseeinrichtung"
+                                      "value": "Dialyseeinrichtung",
+                                      "use": {
+                                        "system": "http://snomed.info/sct",
+                                        "code": "900000000000003001"
+                                      }
                                     }
                                   ],
                                   "system": "https://demis.rki.de/fhir/CodeSystem/organizationType",
@@ -3426,11 +3522,19 @@
                                   "designations": [
                                     {
                                       "language": "en-US",
-                                      "value": "Day hospital"
+                                      "value": "Day hospital",
+                                      "use": {
+                                        "system": "http://snomed.info/sct",
+                                        "code": "900000000000003001"
+                                      }
                                     },
                                     {
                                       "language": "de-DE",
-                                      "value": "Tagesklinik"
+                                      "value": "Tagesklinik",
+                                      "use": {
+                                        "system": "http://snomed.info/sct",
+                                        "code": "900000000000003001"
+                                      }
                                     }
                                   ],
                                   "system": "https://demis.rki.de/fhir/CodeSystem/organizationType",
@@ -3443,11 +3547,19 @@
                                   "designations": [
                                     {
                                       "language": "en-US",
-                                      "value": "Maternity"
+                                      "value": "Maternity",
+                                      "use": {
+                                        "system": "http://snomed.info/sct",
+                                        "code": "900000000000003001"
+                                      }
                                     },
                                     {
                                       "language": "de-DE",
-                                      "value": "Entbindungseinrichtung"
+                                      "value": "Entbindungseinrichtung",
+                                      "use": {
+                                        "system": "http://snomed.info/sct",
+                                        "code": "900000000000003001"
+                                      }
                                     }
                                   ],
                                   "system": "https://demis.rki.de/fhir/CodeSystem/organizationType",
@@ -3460,11 +3572,19 @@
                                   "designations": [
                                     {
                                       "language": "en-US",
-                                      "value": "Physician's office"
+                                      "value": "Physician's office",
+                                      "use": {
+                                        "system": "http://snomed.info/sct",
+                                        "code": "900000000000003001"
+                                      }
                                     },
                                     {
                                       "language": "de-DE",
-                                      "value": "Arztpraxis"
+                                      "value": "Arztpraxis",
+                                      "use": {
+                                        "system": "http://snomed.info/sct",
+                                        "code": "900000000000003001"
+                                      }
                                     }
                                   ],
                                   "system": "https://demis.rki.de/fhir/CodeSystem/organizationType",
@@ -3477,11 +3597,19 @@
                                   "designations": [
                                     {
                                       "language": "en-US",
-                                      "value": "Dental surgery"
+                                      "value": "Dental surgery",
+                                      "use": {
+                                        "system": "http://snomed.info/sct",
+                                        "code": "900000000000003001"
+                                      }
                                     },
                                     {
                                       "language": "de-DE",
-                                      "value": "Zahnarztpraxis"
+                                      "value": "Zahnarztpraxis",
+                                      "use": {
+                                        "system": "http://snomed.info/sct",
+                                        "code": "900000000000003001"
+                                      }
                                     }
                                   ],
                                   "system": "https://demis.rki.de/fhir/CodeSystem/organizationType",
@@ -3494,11 +3622,19 @@
                                   "designations": [
                                     {
                                       "language": "en-US",
-                                      "value": "Psychotherapeutic facility"
+                                      "value": "Psychotherapeutic facility",
+                                      "use": {
+                                        "system": "http://snomed.info/sct",
+                                        "code": "900000000000003001"
+                                      }
                                     },
                                     {
                                       "language": "de-DE",
-                                      "value": "Psychotherapeutische Praxis"
+                                      "value": "Psychotherapeutische Praxis",
+                                      "use": {
+                                        "system": "http://snomed.info/sct",
+                                        "code": "900000000000003001"
+                                      }
                                     }
                                   ],
                                   "system": "https://demis.rki.de/fhir/CodeSystem/organizationType",
@@ -3511,11 +3647,19 @@
                                   "designations": [
                                     {
                                       "language": "en-US",
-                                      "value": "Other health professional practice"
+                                      "value": "Other health professional practice",
+                                      "use": {
+                                        "system": "http://snomed.info/sct",
+                                        "code": "900000000000003001"
+                                      }
                                     },
                                     {
                                       "language": "de-DE",
-                                      "value": "Sonstige Heilberufepraxis"
+                                      "value": "Sonstige Heilberufepraxis",
+                                      "use": {
+                                        "system": "http://snomed.info/sct",
+                                        "code": "900000000000003001"
+                                      }
                                     }
                                   ],
                                   "system": "https://demis.rki.de/fhir/CodeSystem/organizationType",
@@ -3528,11 +3672,19 @@
                                   "designations": [
                                     {
                                       "language": "en-US",
-                                      "value": "Public health medical facility"
+                                      "value": "Public health medical facility",
+                                      "use": {
+                                        "system": "http://snomed.info/sct",
+                                        "code": "900000000000003001"
+                                      }
                                     },
                                     {
                                       "language": "de-DE",
-                                      "value": "Medizinische Einrichtung des ÖGDs"
+                                      "value": "Medizinische Einrichtung des ÖGDs",
+                                      "use": {
+                                        "system": "http://snomed.info/sct",
+                                        "code": "900000000000003001"
+                                      }
                                     }
                                   ],
                                   "system": "https://demis.rki.de/fhir/CodeSystem/organizationType",
@@ -3545,11 +3697,19 @@
                                   "designations": [
                                     {
                                       "language": "en-US",
-                                      "value": "Emergency rescue service"
+                                      "value": "Emergency rescue service",
+                                      "use": {
+                                        "system": "http://snomed.info/sct",
+                                        "code": "900000000000003001"
+                                      }
                                     },
                                     {
                                       "language": "de-DE",
-                                      "value": "Rettungsdienst"
+                                      "value": "Rettungsdienst",
+                                      "use": {
+                                        "system": "http://snomed.info/sct",
+                                        "code": "900000000000003001"
+                                      }
                                     }
                                   ],
                                   "system": "https://demis.rki.de/fhir/CodeSystem/organizationType",
@@ -3562,11 +3722,19 @@
                                   "designations": [
                                     {
                                       "language": "en-US",
-                                      "value": "Facility for civil Protection and Disaster Assistance"
+                                      "value": "Facility for civil Protection and Disaster Assistance",
+                                      "use": {
+                                        "system": "http://snomed.info/sct",
+                                        "code": "900000000000003001"
+                                      }
                                     },
                                     {
                                       "language": "de-DE",
-                                      "value": "Einrichtungen des Zivil- und Katastrophenschutzes"
+                                      "value": "Einrichtungen des Zivil- und Katastrophenschutzes",
+                                      "use": {
+                                        "system": "http://snomed.info/sct",
+                                        "code": "900000000000003001"
+                                      }
                                     }
                                   ],
                                   "system": "https://demis.rki.de/fhir/CodeSystem/organizationType",
@@ -3579,11 +3747,19 @@
                                   "designations": [
                                     {
                                       "language": "en-US",
-                                      "value": "Other medical facility"
+                                      "value": "Other medical facility",
+                                      "use": {
+                                        "system": "http://snomed.info/sct",
+                                        "code": "900000000000003001"
+                                      }
                                     },
                                     {
                                       "language": "de-DE",
-                                      "value": "Sonstige medizinische Einrichtung"
+                                      "value": "Sonstige medizinische Einrichtung",
+                                      "use": {
+                                        "system": "http://snomed.info/sct",
+                                        "code": "900000000000003001"
+                                      }
                                     }
                                   ],
                                   "system": "https://demis.rki.de/fhir/CodeSystem/organizationType",
@@ -4567,7 +4743,11 @@
                     "designations": [
                       {
                         "language": "en-US",
-                        "value": "Jaundice (finding)"
+                        "value": "Jaundice (finding)",
+                        "use": {
+                          "system": "http://snomed.info/sct",
+                          "code": "900000000000003001"
+                        }
                       }
                     ],
                     "system": "http://snomed.info/sct",
@@ -4579,7 +4759,11 @@
                     "designations": [
                       {
                         "language": "en-US",
-                        "value": "105721009 | General problem AND/OR complaint (finding) | : {363698007 | Finding site (attribute) | = 80581009 | Upper abdomen structure (body structure) |}"
+                        "value": "105721009 | General problem AND/OR complaint (finding) | : {363698007 | Finding site (attribute) | = 80581009 | Upper abdomen structure (body structure) |}",
+                        "use": {
+                          "system": "http://snomed.info/sct",
+                          "code": "1119454002"
+                        }
                       }
                     ],
                     "system": "http://snomed.info/sct",
@@ -4591,7 +4775,11 @@
                     "designations": [
                       {
                         "language": "en-US",
-                        "value": "Liver enzymes level above reference range (finding)"
+                        "value": "Liver enzymes level above reference range (finding)",
+                        "use": {
+                          "system": "http://snomed.info/sct",
+                          "code": "900000000000003001"
+                        }
                       }
                     ],
                     "system": "http://snomed.info/sct",

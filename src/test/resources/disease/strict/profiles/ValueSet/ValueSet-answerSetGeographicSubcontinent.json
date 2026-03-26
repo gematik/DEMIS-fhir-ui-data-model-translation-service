@@ -1,0 +1,504 @@
+{
+  "resourceType": "ValueSet",
+  "id": "answerSetGeographicSubcontinent",
+  "url": "https://demis.rki.de/fhir/ValueSet/answerSetGeographicSubcontinent",
+  "version": "1.0.0",
+  "name": "AnswerSetGeographicSubcontinent",
+  "title": "Kontinente und Subkontinente",
+  "status": "active",
+  "experimental": false,
+  "date": "2026-01-09",
+  "publisher": "Robert Koch-Institut",
+  "contact": [
+    {
+      "telecom": [
+        {
+          "system": "email",
+          "value": "demis-support@rki.de"
+        }
+      ]
+    }
+  ],
+  "description": "Das ValueSet GeographicSubcontinent enthält die Codes der Kontinente und Subkontinent.",
+  "jurisdiction": [
+    {
+      "coding": [
+        {
+          "system": "urn:iso:std:iso:3166",
+          "version": "ALPHA-2",
+          "code": "DE"
+        }
+      ]
+    }
+  ],
+  "copyright": "(C) 2021-2025 Robert Koch-Institut",
+  "compose": {
+    "include": [
+      {
+        "system": "https://demis.rki.de/fhir/CodeSystem/geographicRegion",
+        "version": "1.1.1",
+        "concept": [
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 17
+              }
+            ],
+            "code": "21000500",
+            "display": "Ozeanien"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 26
+              }
+            ],
+            "code": "31000009",
+            "display": "Nordamerika"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 27
+              }
+            ],
+            "code": "31000011",
+            "display": "Mittelamerika"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 25
+              }
+            ],
+            "code": "31000013",
+            "display": "Südamerika"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 36
+              }
+            ],
+            "code": "31001112",
+            "display": "Nordafrika"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 29
+              }
+            ],
+            "code": "31001113",
+            "display": "Westafrika"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 33
+              }
+            ],
+            "code": "31001114",
+            "display": "Ostafrika"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 28
+              }
+            ],
+            "code": "31001115",
+            "display": "Zentralafrika"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 32
+              }
+            ],
+            "code": "31001116",
+            "display": "Südafrika"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 19
+              }
+            ],
+            "code": "31002847",
+            "display": "Zentralasien"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 24
+              }
+            ],
+            "code": "31002849",
+            "display": "Ostasien"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 22
+              }
+            ],
+            "code": "31002850",
+            "display": "Südostasien"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 23
+              }
+            ],
+            "code": "31002851",
+            "display": "Südasien"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 20
+              }
+            ],
+            "code": "31002852",
+            "display": "Vorderasien"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 18
+              }
+            ],
+            "code": "41000006",
+            "display": "Australien (Subkontinent)"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 16
+              }
+            ],
+            "code": "41000008",
+            "display": "Mitteleuropa"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 15
+              }
+            ],
+            "code": "41000011",
+            "display": "Nordeuropa"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 35
+              }
+            ],
+            "code": "41000012",
+            "display": "Nordostafrika"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 14
+              }
+            ],
+            "code": "41000013",
+            "display": "Nordosteuropa"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 34
+              }
+            ],
+            "code": "41000014",
+            "display": "Nordwestafrika"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 13
+              }
+            ],
+            "code": "41000017",
+            "display": "Osteuropa"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 12
+              }
+            ],
+            "code": "41000022",
+            "display": "Südeuropa"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 31
+              }
+            ],
+            "code": "41000023",
+            "display": "Südostafrika"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 11
+              }
+            ],
+            "code": "41000025",
+            "display": "Südosteuropa"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 30
+              }
+            ],
+            "code": "41000026",
+            "display": "Südwestafrika"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 21
+              }
+            ],
+            "code": "41000027",
+            "display": "Südwestasien"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 10
+              }
+            ],
+            "code": "41000030",
+            "display": "Westeuropa"
+          }
+        ]
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "concept": [
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 2
+              }
+            ],
+            "code": "261665006",
+            "display": "Unbekannt"
+          }
+        ]
+      }
+    ]
+  },
+  "expansion": {
+    "timestamp": "2026-01-09T00:00:00+01:00",
+    "contains": [
+      {
+        "system": "https://demis.rki.de/fhir/CodeSystem/geographicRegion",
+        "version": "1.1.1",
+        "code": "41000017",
+        "display": "Osteuropa"
+      },
+      {
+        "system": "https://demis.rki.de/fhir/CodeSystem/geographicRegion",
+        "version": "1.1.1",
+        "code": "31000013",
+        "display": "Südamerika"
+      },
+      {
+        "system": "https://demis.rki.de/fhir/CodeSystem/geographicRegion",
+        "version": "1.1.1",
+        "code": "31002852",
+        "display": "Vorderasien"
+      },
+      {
+        "system": "https://demis.rki.de/fhir/CodeSystem/geographicRegion",
+        "version": "1.1.1",
+        "code": "41000014",
+        "display": "Nordwestafrika"
+      },
+      {
+        "system": "https://demis.rki.de/fhir/CodeSystem/geographicRegion",
+        "version": "1.1.1",
+        "code": "31002851",
+        "display": "Südasien"
+      },
+      {
+        "system": "https://demis.rki.de/fhir/CodeSystem/geographicRegion",
+        "version": "1.1.1",
+        "code": "31000011",
+        "display": "Mittelamerika"
+      },
+      {
+        "system": "https://demis.rki.de/fhir/CodeSystem/geographicRegion",
+        "version": "1.1.1",
+        "code": "31002850",
+        "display": "Südostasien"
+      },
+      {
+        "system": "https://demis.rki.de/fhir/CodeSystem/geographicRegion",
+        "version": "1.1.1",
+        "code": "41000013",
+        "display": "Nordosteuropa"
+      },
+      {
+        "system": "https://demis.rki.de/fhir/CodeSystem/geographicRegion",
+        "version": "1.1.1",
+        "code": "41000012",
+        "display": "Nordostafrika"
+      },
+      {
+        "system": "https://demis.rki.de/fhir/CodeSystem/geographicRegion",
+        "version": "1.1.1",
+        "code": "41000011",
+        "display": "Nordeuropa"
+      },
+      {
+        "system": "https://demis.rki.de/fhir/CodeSystem/geographicRegion",
+        "version": "1.1.1",
+        "code": "41000030",
+        "display": "Westeuropa"
+      },
+      {
+        "system": "https://demis.rki.de/fhir/CodeSystem/geographicRegion",
+        "version": "1.1.1",
+        "code": "31002849",
+        "display": "Ostasien"
+      },
+      {
+        "system": "https://demis.rki.de/fhir/CodeSystem/geographicRegion",
+        "version": "1.1.1",
+        "code": "31002847",
+        "display": "Zentralasien"
+      },
+      {
+        "system": "https://demis.rki.de/fhir/CodeSystem/geographicRegion",
+        "version": "1.1.1",
+        "code": "31000009",
+        "display": "Nordamerika"
+      },
+      {
+        "system": "https://demis.rki.de/fhir/CodeSystem/geographicRegion",
+        "version": "1.1.1",
+        "code": "21000500",
+        "display": "Ozeanien"
+      },
+      {
+        "system": "https://demis.rki.de/fhir/CodeSystem/geographicRegion",
+        "version": "1.1.1",
+        "code": "41000008",
+        "display": "Mitteleuropa"
+      },
+      {
+        "system": "https://demis.rki.de/fhir/CodeSystem/geographicRegion",
+        "version": "1.1.1",
+        "code": "31001115",
+        "display": "Zentralafrika"
+      },
+      {
+        "system": "https://demis.rki.de/fhir/CodeSystem/geographicRegion",
+        "version": "1.1.1",
+        "code": "41000006",
+        "display": "Australien (Subkontinent)"
+      },
+      {
+        "system": "https://demis.rki.de/fhir/CodeSystem/geographicRegion",
+        "version": "1.1.1",
+        "code": "31001116",
+        "display": "Südafrika"
+      },
+      {
+        "system": "https://demis.rki.de/fhir/CodeSystem/geographicRegion",
+        "version": "1.1.1",
+        "code": "41000027",
+        "display": "Südwestasien"
+      },
+      {
+        "system": "https://demis.rki.de/fhir/CodeSystem/geographicRegion",
+        "version": "1.1.1",
+        "code": "41000026",
+        "display": "Südwestafrika"
+      },
+      {
+        "system": "https://demis.rki.de/fhir/CodeSystem/geographicRegion",
+        "version": "1.1.1",
+        "code": "31001113",
+        "display": "Westafrika"
+      },
+      {
+        "system": "https://demis.rki.de/fhir/CodeSystem/geographicRegion",
+        "version": "1.1.1",
+        "code": "31001114",
+        "display": "Ostafrika"
+      },
+      {
+        "system": "https://demis.rki.de/fhir/CodeSystem/geographicRegion",
+        "version": "1.1.1",
+        "code": "41000025",
+        "display": "Südosteuropa"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "261665006",
+        "display": "Unbekannt"
+      },
+      {
+        "system": "https://demis.rki.de/fhir/CodeSystem/geographicRegion",
+        "version": "1.1.1",
+        "code": "31001112",
+        "display": "Nordafrika"
+      },
+      {
+        "system": "https://demis.rki.de/fhir/CodeSystem/geographicRegion",
+        "version": "1.1.1",
+        "code": "41000023",
+        "display": "Südostafrika"
+      },
+      {
+        "system": "https://demis.rki.de/fhir/CodeSystem/geographicRegion",
+        "version": "1.1.1",
+        "code": "41000022",
+        "display": "Südeuropa"
+      }
+    ]
+  }
+}

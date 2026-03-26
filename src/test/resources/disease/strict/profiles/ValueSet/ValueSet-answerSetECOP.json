@@ -1,0 +1,2378 @@
+{
+  "resourceType": "ValueSet",
+  "id": "answerSetECOP",
+  "url": "https://demis.rki.de/fhir/ValueSet/answerSetECOP",
+  "version": "1.10.0",
+  "name": "AnswerSetECOP",
+  "title": "AnswerSet für Escherichia coli (sonstige darmpathogene Stämme)",
+  "status": "active",
+  "experimental": false,
+  "date": "2025-12-17",
+  "publisher": "Robert Koch-Institut",
+  "contact": [
+    {
+      "telecom": [
+        {
+          "system": "email",
+          "value": "demis-support@rki.de"
+        }
+      ]
+    }
+  ],
+  "description": "Das ValueSet AnswerSetECOP enthält die Codes der Answer-Codes für Escherichia coli (sonstige darmpathogene Stämme).",
+  "jurisdiction": [
+    {
+      "coding": [
+        {
+          "system": "urn:iso:std:iso:3166",
+          "version": "ALPHA-2",
+          "code": "DE"
+        }
+      ]
+    }
+  ],
+  "copyright": "This material includes SNOMED Clinical Terms® (SNOMED CT®) which is used by permission of the International Health Terminology Standards Development Organisation (IHTSDO). All rights reserved. SNOMED CT®, was originally created by The College of American Pathologists. “SNOMED” and “SNOMED CT” are registered trademarks of the IHTSDO.\r\n\r\nDieses Material enthält SNOMED Clinical Terms® (SNOMED CT®), die mit Genehmigung der International Health Terminology Standards Development Organisation (IHTSDO) verwendet werden. Alle Rechte vorbehalten. SNOMED CT® wurde ursprünglich vom College of American Pathologists entwickelt. \"SNOMED\" und \"SNOMED CT\" sind eingetragene Warenzeichen der IHTSDO.\r\n\r\nDownloadbedingungen für SNOMED-CT\r\n\r\nEnthält durch SNOMED International urheberrechtlich geschützte Information. Jede Verwendung von SNOMED CT in Deutschland erfordert eine vollgültige Affiliate Lizenz oder eine Sublizenz. Die entsprechende Lizenz ist kostenlos, vorausgesetzt die Verwendung findet nur in Deutschland statt und erfüllt die Bedingungen des Affiliate License Agreements. Affiliate Lizenzen können über das Mitglieder-Lizenzierungs- und Distributions-Service (MLDS) direkt beim jeweiligen NRC beantragt werden. https://mlds.ihtsdotools.org/#/landing/DE?lang=de\r\n\r\nContains information protected by copyright of SNOMED International. Any use of SNOMED CT in Austria requires a valid affiliate license or sublicense. The corresponding license is free of charge, provided that the use only takes place in Austria and fulfills the conditions of the Affiliate License Agreement. Affiliate licenses can be requested directly from the respective NRC via the Member Licensing and Distribution Service (MLDS). ttps://mlds.ihtsdotools.org/#/landing/DE?lang=de",
+  "compose": {
+    "include": [
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "concept": [
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 65
+              }
+            ],
+            "code": "1085101000112108",
+            "display": "Escherichia coli, Serogruppe O182"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 162
+              }
+            ],
+            "code": "1112001000112105",
+            "display": "Escherichia coli, Serogruppe O28ab"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 200
+              }
+            ],
+            "code": "112283007",
+            "display": "Escherichia coli"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 195
+              }
+            ],
+            "code": "116394005",
+            "display": "Enterotoxigene Escherichia coli"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 197
+              }
+            ],
+            "code": "116396007",
+            "display": "Enteroinvasive Escherichia coli"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 198
+              }
+            ],
+            "code": "116397003",
+            "display": "Enteroaggregative Escherichia coli"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 172
+              }
+            ],
+            "code": "1269432003",
+            "display": "Escherichia coli, Serogruppe O16"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 185
+              }
+            ],
+            "code": "131260002",
+            "display": "Escherichia coli, Serogruppe O26"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 189
+              }
+            ],
+            "code": "131261003",
+            "display": "Escherichia coli, Serogruppe O111"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 107
+              }
+            ],
+            "code": "1354801007",
+            "display": "Escherichia coli, Serotyp O125:H6",
+            "designation": [
+              {
+                "language": "de-DE",
+                "value": "Escherichia coli, Serogruppe O125:H6"
+              }
+            ]
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 170
+              }
+            ],
+            "code": "26451000087103",
+            "display": "Escherichia coli, Serogruppe O19"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 173
+              }
+            ],
+            "code": "407162008",
+            "display": "Escherichia coli, Serogruppe O15"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 169
+              }
+            ],
+            "code": "407164009",
+            "display": "Escherichia coli, Serogruppe O20"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 192
+              }
+            ],
+            "code": "407166006",
+            "display": "Escherichia coli, Serogruppe O157"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 165
+              }
+            ],
+            "code": "407167002",
+            "display": "Escherichia coli, Serogruppe O25"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 164
+              }
+            ],
+            "code": "407170003",
+            "display": "Escherichia coli, Serogruppe O27"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 153
+              }
+            ],
+            "code": "407174007",
+            "display": "Escherichia coli, Serogruppe O49"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 147
+              }
+            ],
+            "code": "407176009",
+            "display": "Escherichia coli, Serogruppe O63"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 136
+              }
+            ],
+            "code": "407178005",
+            "display": "Escherichia coli, Serogruppe O78"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 104
+              }
+            ],
+            "code": "407181000",
+            "display": "Escherichia coli, Serogruppe O128"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 92
+              }
+            ],
+            "code": "407183002",
+            "display": "Escherichia coli, Serogruppe O148"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 88
+              }
+            ],
+            "code": "407185009",
+            "display": "Escherichia coli, Serogruppe O153"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 85
+              }
+            ],
+            "code": "407187001",
+            "display": "Escherichia coli, Serogruppe O159"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 78
+              }
+            ],
+            "code": "407191006",
+            "display": "Escherichia coli, Serogruppe O167"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 76
+              }
+            ],
+            "code": "407193009",
+            "display": "Escherichia coli, Serogruppe O169"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 149
+              }
+            ],
+            "code": "407195002",
+            "display": "Escherichia coli, Serogruppe O55"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 128
+              }
+            ],
+            "code": "407200006",
+            "display": "Escherichia coli, Serogruppe O86"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 116
+              }
+            ],
+            "code": "407205001",
+            "display": "Escherichia coli, Serogruppe O114"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 111
+              }
+            ],
+            "code": "407208004",
+            "display": "Escherichia coli, Serogruppe O119"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 107
+              }
+            ],
+            "code": "407210002",
+            "display": "Escherichia coli, Serogruppe O125"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 106
+              }
+            ],
+            "code": "407212005",
+            "display": "Escherichia coli, Serogruppe O126"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 105
+              }
+            ],
+            "code": "407215007",
+            "display": "Escherichia coli, Serogruppe O127"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 96
+              }
+            ],
+            "code": "407223009",
+            "display": "Escherichia coli, Serogruppe O142"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 163
+              }
+            ],
+            "code": "407226001",
+            "display": "Escherichia coli, Serogruppe O28"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 160
+              }
+            ],
+            "code": "407228000",
+            "display": "Escherichia coli, Serogruppe O29"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 118
+              }
+            ],
+            "code": "407230003",
+            "display": "Escherichia coli, Serogruppe O112"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 108
+              }
+            ],
+            "code": "407232006",
+            "display": "Escherichia coli, Serogruppe O124"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 100
+              }
+            ],
+            "code": "407236009",
+            "display": "Escherichia coli, Serogruppe O136"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 95
+              }
+            ],
+            "code": "407238005",
+            "display": "Escherichia coli, Serogruppe O143"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 94
+              }
+            ],
+            "code": "407240000",
+            "display": "Escherichia coli, Serogruppe O144"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 89
+              }
+            ],
+            "code": "407242008",
+            "display": "Escherichia coli, Serogruppe O152"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 81
+              }
+            ],
+            "code": "407244009",
+            "display": "Escherichia coli, Serogruppe O164"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 183
+              }
+            ],
+            "code": "407250004",
+            "display": "Escherichia coli, Serogruppe O1"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 182
+              }
+            ],
+            "code": "407252007",
+            "display": "Escherichia coli, Serogruppe O2"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 180
+              }
+            ],
+            "code": "407255009",
+            "display": "Escherichia coli, Serogruppe O5"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 176
+              }
+            ],
+            "code": "407257001",
+            "display": "Escherichia coli, Serogruppe O9"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 174
+              }
+            ],
+            "code": "407259003",
+            "display": "Escherichia coli, Serogruppe O14"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 167
+              }
+            ],
+            "code": "407261007",
+            "display": "Escherichia coli, Serogruppe O22"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 154
+              }
+            ],
+            "code": "407266002",
+            "display": "Escherichia coli, Serogruppe O45"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 186
+              }
+            ],
+            "code": "407268001",
+            "display": "Escherichia coli, Serogruppe O48"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 152
+              }
+            ],
+            "code": "407270005",
+            "display": "Escherichia coli, Serogruppe O50"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 135
+              }
+            ],
+            "code": "407272002",
+            "display": "Escherichia coli, Serogruppe O79"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 131
+              }
+            ],
+            "code": "407274001",
+            "display": "Escherichia coli, Serogruppe O83"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 187
+              }
+            ],
+            "code": "407276004",
+            "display": "Escherichia coli, Serogruppe O91"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 188
+              }
+            ],
+            "code": "407280009",
+            "display": "Escherichia coli, Serogruppe O103"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 122
+              }
+            ],
+            "code": "407282001",
+            "display": "Escherichia coli, Serogruppe O104"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 117
+              }
+            ],
+            "code": "407286003",
+            "display": "Escherichia coli, Serogruppe O113"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 112
+              }
+            ],
+            "code": "407288002",
+            "display": "Escherichia coli, Serogruppe O118"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 110
+              }
+            ],
+            "code": "407292009",
+            "display": "Escherichia coli, Serogruppe O121"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 99
+              }
+            ],
+            "code": "407296007",
+            "display": "Escherichia coli, Serogruppe O137"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 190
+              }
+            ],
+            "code": "407298008",
+            "display": "Escherichia coli, Serogruppe O145"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 82
+              }
+            ],
+            "code": "407302000",
+            "display": "Escherichia coli, Serogruppe O163"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 80
+              }
+            ],
+            "code": "407304004",
+            "display": "Escherichia coli, Serogruppe O165"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 73
+              }
+            ],
+            "code": "407307006",
+            "display": "Escherichia coli, Serogruppe O172"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 193
+              }
+            ],
+            "code": "407309009",
+            "display": "Escherichia coli, Serogruppe O rau"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 184
+              }
+            ],
+            "code": "414132004",
+            "display": "Escherichia coli nicht O157"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 199
+              }
+            ],
+            "code": "416989002",
+            "display": "Diffus adhärierende Escherichia coli"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 72
+              }
+            ],
+            "code": "422953009",
+            "display": "Escherichia coli, Serogruppe O174"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 68
+              }
+            ],
+            "code": "424672005",
+            "display": "Escherichia coli, Serogruppe O178"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 79
+              }
+            ],
+            "code": "425004001",
+            "display": "Escherichia coli, Serogruppe O166"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 86
+              }
+            ],
+            "code": "427294000",
+            "display": "Escherichia coli, Serogruppe O158"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 127
+              }
+            ],
+            "code": "432096007",
+            "display": "Escherichia coli, Serogruppe O88"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 67
+              }
+            ],
+            "code": "442019004",
+            "display": "Escherichia coli, Serogruppe O179"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 103
+              }
+            ],
+            "code": "442109007",
+            "display": "Escherichia coli, Serogruppe O130"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 144
+              }
+            ],
+            "code": "442282007",
+            "display": "Escherichia coli, Serogruppe O69"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 130
+              }
+            ],
+            "code": "443091009",
+            "display": "Escherichia coli, Serogruppe O84"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 179
+              }
+            ],
+            "code": "450477004",
+            "display": "Escherichia coli, Serogruppe O6"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 177
+              }
+            ],
+            "code": "450478009",
+            "display": "Escherichia coli, Serogruppe O8"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 66
+              }
+            ],
+            "code": "457140000",
+            "display": "Escherichia coli, Serogruppe O181"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 69
+              }
+            ],
+            "code": "457145005",
+            "display": "Escherichia coli, Serogruppe O177"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 71
+              }
+            ],
+            "code": "457297005",
+            "display": "Escherichia coli, Serogruppe O175"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 90
+              }
+            ],
+            "code": "457354003",
+            "display": "Escherichia coli, Serogruppe O150"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 91
+              }
+            ],
+            "code": "457374005",
+            "display": "Escherichia coli, Serogruppe O149"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 93
+              }
+            ],
+            "code": "457394001",
+            "display": "Escherichia coli, Serogruppe O146"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 77
+              }
+            ],
+            "code": "457571003",
+            "display": "Escherichia coli, Serogruppe O168"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 83
+              }
+            ],
+            "code": "457846008",
+            "display": "Escherichia coli, Serogruppe O162"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 84
+              }
+            ],
+            "code": "457880006",
+            "display": "Escherichia coli, Serogruppe O160"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 191
+              }
+            ],
+            "code": "457907005",
+            "display": "Escherichia coli, Serotyp O157:nicht-motil"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 87
+              }
+            ],
+            "code": "457944005",
+            "display": "Escherichia coli, Serogruppe O156"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 97
+              }
+            ],
+            "code": "457991003",
+            "display": "Escherichia coli, Serogruppe O141"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 98
+              }
+            ],
+            "code": "458025003",
+            "display": "Escherichia coli, Serogruppe O140"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 102
+              }
+            ],
+            "code": "458051001",
+            "display": "Escherichia coli, Serogruppe O132"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 109
+              }
+            ],
+            "code": "458071005",
+            "display": "Escherichia coli, Serogruppe O123"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 181
+              }
+            ],
+            "code": "458089006",
+            "display": "Escherichia coli, Serogruppe O3"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 178
+              }
+            ],
+            "code": "458090002",
+            "display": "Escherichia coli, Serogruppe O7"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 175
+              }
+            ],
+            "code": "458091003",
+            "display": "Escherichia coli, Serogruppe O11"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 171
+              }
+            ],
+            "code": "458110000",
+            "display": "Escherichia coli, Serogruppe O18"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 168
+              }
+            ],
+            "code": "458115005",
+            "display": "Escherichia coli, Serogruppe O21"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 166
+              }
+            ],
+            "code": "458119004",
+            "display": "Escherichia coli, Serogruppe O24"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 158
+              }
+            ],
+            "code": "458136007",
+            "display": "Escherichia coli, Serogruppe O38"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 157
+              }
+            ],
+            "code": "458138008",
+            "display": "Escherichia coli, Serogruppe O42"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 156
+              }
+            ],
+            "code": "458140003",
+            "display": "Escherichia coli, Serogruppe O43"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 151
+              }
+            ],
+            "code": "458152005",
+            "display": "Escherichia coli, Serogruppe O52"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 150
+              }
+            ],
+            "code": "458154006",
+            "display": "Escherichia coli, Serogruppe O53"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 148
+              }
+            ],
+            "code": "458160006",
+            "display": "Escherichia coli, Serogruppe O60"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 113
+              }
+            ],
+            "code": "459071004",
+            "display": "Escherichia coli, Serogruppe O117"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 114
+              }
+            ],
+            "code": "459074007",
+            "display": "Escherichia coli, Serogruppe O116"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 115
+              }
+            ],
+            "code": "459077000",
+            "display": "Escherichia coli, Serogruppe O115"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 119
+              }
+            ],
+            "code": "459092004",
+            "display": "Escherichia coli, Serogruppe O110"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 120
+              }
+            ],
+            "code": "459096001",
+            "display": "Escherichia coli, Serogruppe O109"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 123
+              }
+            ],
+            "code": "459106006",
+            "display": "Escherichia coli, Serogruppe O101"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 124
+              }
+            ],
+            "code": "459107002",
+            "display": "Escherichia coli, Serogruppe O100"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 125
+              }
+            ],
+            "code": "459109004",
+            "display": "Escherichia coli, Serogruppe O98"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 129
+              }
+            ],
+            "code": "459121000",
+            "display": "Escherichia coli, Serogruppe O85"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 132
+              }
+            ],
+            "code": "459128006",
+            "display": "Escherichia coli, Serogruppe O82"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 134
+              }
+            ],
+            "code": "459130008",
+            "display": "Escherichia coli, Serogruppe O80"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 138
+              }
+            ],
+            "code": "459136002",
+            "display": "Escherichia coli, Serogruppe O76"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 140
+              }
+            ],
+            "code": "459141005",
+            "display": "Escherichia coli, Serogruppe O74"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 141
+              }
+            ],
+            "code": "459143008",
+            "display": "Escherichia coli, Serogruppe O73"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 142
+              }
+            ],
+            "code": "459146000",
+            "display": "Escherichia coli, Serogruppe O71"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 143
+              }
+            ],
+            "code": "459149007",
+            "display": "Escherichia coli, Serogruppe O70"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 0
+              }
+            ],
+            "code": "55446002",
+            "display": "Genetische Mutation",
+            "designation": [
+              {
+                "language": "de-DE",
+                "value": "Genetische Mutation gefunden"
+              }
+            ]
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 155
+              }
+            ],
+            "code": "608886002",
+            "display": "Escherichia coli, Serogruppe O44"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 161
+              }
+            ],
+            "code": "698020006",
+            "display": "Escherichia coli, Serogruppe O28ac"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 63
+              }
+            ],
+            "code": "705177007",
+            "display": "Escherichia coli, Serogruppe O186"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 70
+              }
+            ],
+            "code": "707501002",
+            "display": "Escherichia coli, Serogruppe O176"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 159
+              }
+            ],
+            "code": "709311003",
+            "display": "Escherichia coli, Serogruppe O32"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 64
+              }
+            ],
+            "code": "709312005",
+            "display": "Escherichia coli, Serogruppe O185"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 121
+              }
+            ],
+            "code": "715306002",
+            "display": "Escherichia coli, Serogruppe O108"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 146
+              }
+            ],
+            "code": "715309009",
+            "display": "Escherichia coli, Serogruppe O64"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 145
+              }
+            ],
+            "code": "715310004",
+            "display": "Escherichia coli, Serogruppe O66"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 139
+              }
+            ],
+            "code": "725506000",
+            "display": "Escherichia coli, Serogruppe O75"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 194
+              }
+            ],
+            "code": "733594004",
+            "display": "Escherichia coli, Serogruppe O:nicht-motil"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 137
+              }
+            ],
+            "code": "738514000",
+            "display": "Escherichia coli, Serogruppe O77"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 101
+              }
+            ],
+            "code": "738773001",
+            "display": "Escherichia coli, Serogruppe O134"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 133
+              }
+            ],
+            "code": "785855007",
+            "display": "Escherichia coli, Serogruppe O81"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 126
+              }
+            ],
+            "code": "830231008",
+            "display": "Escherichia coli, Serogruppe O93"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 196
+              }
+            ],
+            "code": "83285000",
+            "display": "Enteropathogene Escherichia coli"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 74
+              }
+            ],
+            "code": "870643006",
+            "display": "Escherichia coli, Serogruppe O171"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 75
+              }
+            ],
+            "code": "871877007",
+            "display": "Escherichia coli, Serogruppe O170"
+          }
+        ]
+      },
+      {
+        "valueSet": [
+          "https://demis.rki.de/fhir/ValueSet/answerSetLaboratoryTest-SNOMED"
+        ]
+      },
+      {
+        "valueSet": [
+          "https://demis.rki.de/fhir/ValueSet/answerSetResistance-SNOMED"
+        ]
+      }
+    ]
+  },
+  "expansion": {
+    "timestamp": "2025-12-17T00:00:00+01:00",
+    "contains": [
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "407304004",
+        "display": "Escherichia coli, Serogruppe O165"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "458152005",
+        "display": "Escherichia coli, Serogruppe O52"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "450478009",
+        "display": "Escherichia coli, Serogruppe O8"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "725506000",
+        "display": "Escherichia coli, Serogruppe O75"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "260385009",
+        "display": "Negativ"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "458089006",
+        "display": "Escherichia coli, Serogruppe O3"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "457394001",
+        "display": "Escherichia coli, Serogruppe O146"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "407230003",
+        "display": "Escherichia coli, Serogruppe O112"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "738773001",
+        "display": "Escherichia coli, Serogruppe O134"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "131260002",
+        "display": "Escherichia coli, Serogruppe O26"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "407167002",
+        "display": "Escherichia coli, Serogruppe O25"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "459071004",
+        "display": "Escherichia coli, Serogruppe O117"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "407215007",
+        "display": "Escherichia coli, Serogruppe O127"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "407238005",
+        "display": "Escherichia coli, Serogruppe O143"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "459136002",
+        "display": "Escherichia coli, Serogruppe O76"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "707501002",
+        "display": "Escherichia coli, Serogruppe O176"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "407276004",
+        "display": "Escherichia coli, Serogruppe O91"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "407164009",
+        "display": "Escherichia coli, Serogruppe O20"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "407288002",
+        "display": "Escherichia coli, Serogruppe O118"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "407307006",
+        "display": "Escherichia coli, Serogruppe O172"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "407242008",
+        "display": "Escherichia coli, Serogruppe O152"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "457374005",
+        "display": "Escherichia coli, Serogruppe O149"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "407170003",
+        "display": "Escherichia coli, Serogruppe O27"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "407191006",
+        "display": "Escherichia coli, Serogruppe O167"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "442282007",
+        "display": "Escherichia coli, Serogruppe O69"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "457571003",
+        "display": "Escherichia coli, Serogruppe O168"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "424672005",
+        "display": "Escherichia coli, Serogruppe O178"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "407210002",
+        "display": "Escherichia coli, Serogruppe O125"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "407280009",
+        "display": "Escherichia coli, Serogruppe O103"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "427294000",
+        "display": "Escherichia coli, Serogruppe O158"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "407185009",
+        "display": "Escherichia coli, Serogruppe O153"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "443091009",
+        "display": "Escherichia coli, Serogruppe O84"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "709311003",
+        "display": "Escherichia coli, Serogruppe O32"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "260373001",
+        "display": "Nachgewiesen"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "432096007",
+        "display": "Escherichia coli, Serogruppe O88"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "407268001",
+        "display": "Escherichia coli, Serogruppe O48"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "458119004",
+        "display": "Escherichia coli, Serogruppe O24"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "407302000",
+        "display": "Escherichia coli, Serogruppe O163"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "442019004",
+        "display": "Escherichia coli, Serogruppe O179"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "608886002",
+        "display": "Escherichia coli, Serogruppe O44"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "459143008",
+        "display": "Escherichia coli, Serogruppe O73"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "830231008",
+        "display": "Escherichia coli, Serogruppe O93"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "407226001",
+        "display": "Escherichia coli, Serogruppe O28"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "457297005",
+        "display": "Escherichia coli, Serogruppe O175"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "458051001",
+        "display": "Escherichia coli, Serogruppe O132"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "457354003",
+        "display": "Escherichia coli, Serogruppe O150"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "414132004",
+        "display": "Escherichia coli nicht O157"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "407232006",
+        "display": "Escherichia coli, Serogruppe O124"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "459092004",
+        "display": "Escherichia coli, Serogruppe O110"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "459130008",
+        "display": "Escherichia coli, Serogruppe O80"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "116396007",
+        "display": "Enteroinvasive Escherichia coli"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "407274001",
+        "display": "Escherichia coli, Serogruppe O83"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "407259003",
+        "display": "Escherichia coli, Serogruppe O14"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "1255965005",
+        "display": "Empfindlich bei erhöhter Exposition"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "407183002",
+        "display": "Escherichia coli, Serogruppe O148"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "407223009",
+        "display": "Escherichia coli, Serogruppe O142"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "459146000",
+        "display": "Escherichia coli, Serogruppe O71"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "457880006",
+        "display": "Escherichia coli, Serogruppe O160"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "1269432003",
+        "display": "Escherichia coli, Serogruppe O16"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "407282001",
+        "display": "Escherichia coli, Serogruppe O104"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "457846008",
+        "display": "Escherichia coli, Serogruppe O162"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "459121000",
+        "display": "Escherichia coli, Serogruppe O85"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "407240000",
+        "display": "Escherichia coli, Serogruppe O144"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "459107002",
+        "display": "Escherichia coli, Serogruppe O100"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "458138008",
+        "display": "Escherichia coli, Serogruppe O42"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "458025003",
+        "display": "Escherichia coli, Serogruppe O140"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "131261003",
+        "display": "Escherichia coli, Serogruppe O111"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "738514000",
+        "display": "Escherichia coli, Serogruppe O77"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "407212005",
+        "display": "Escherichia coli, Serogruppe O126"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "407166006",
+        "display": "Escherichia coli, Serogruppe O157"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "458090002",
+        "display": "Escherichia coli, Serogruppe O7"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "407296007",
+        "display": "Escherichia coli, Serogruppe O137"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "442109007",
+        "display": "Escherichia coli, Serogruppe O130"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "1354801007",
+        "display": "Escherichia coli, Serotyp O125:H6"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "407266002",
+        "display": "Escherichia coli, Serogruppe O45"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "416989002",
+        "display": "Diffus adhärierende Escherichia coli"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "459149007",
+        "display": "Escherichia coli, Serogruppe O70"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "459141005",
+        "display": "Escherichia coli, Serogruppe O74"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "407205001",
+        "display": "Escherichia coli, Serogruppe O114"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "698020006",
+        "display": "Escherichia coli, Serogruppe O28ac"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "870643006",
+        "display": "Escherichia coli, Serogruppe O171"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "458110000",
+        "display": "Escherichia coli, Serogruppe O18"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "116394005",
+        "display": "Enterotoxigene Escherichia coli"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "871877007",
+        "display": "Escherichia coli, Serogruppe O170"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "407257001",
+        "display": "Escherichia coli, Serogruppe O9"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "457140000",
+        "display": "Escherichia coli, Serogruppe O181"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "457907005",
+        "display": "Escherichia coli, Serotyp O157:nicht-motil"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "715310004",
+        "display": "Escherichia coli, Serogruppe O66"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "407272002",
+        "display": "Escherichia coli, Serogruppe O79"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "458091003",
+        "display": "Escherichia coli, Serogruppe O11"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "785855007",
+        "display": "Escherichia coli, Serogruppe O81"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "733594004",
+        "display": "Escherichia coli, Serogruppe O:nicht-motil"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "457991003",
+        "display": "Escherichia coli, Serogruppe O141"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "407200006",
+        "display": "Escherichia coli, Serogruppe O86"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "407181000",
+        "display": "Escherichia coli, Serogruppe O128"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "131196009",
+        "display": "Empfindlich"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "459106006",
+        "display": "Escherichia coli, Serogruppe O101"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "264841006",
+        "display": "Intermediär empfindlich"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "407174007",
+        "display": "Escherichia coli, Serogruppe O49"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "422953009",
+        "display": "Escherichia coli, Serogruppe O174"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "459109004",
+        "display": "Escherichia coli, Serogruppe O98"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "715309009",
+        "display": "Escherichia coli, Serogruppe O64"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "55446002",
+        "display": "Genetische Mutation"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "407228000",
+        "display": "Escherichia coli, Serogruppe O29"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "1112001000112105",
+        "display": "Escherichia coli, Serogruppe O28ab"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "407208004",
+        "display": "Escherichia coli, Serogruppe O119"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "458115005",
+        "display": "Escherichia coli, Serogruppe O21"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "458136007",
+        "display": "Escherichia coli, Serogruppe O38"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "407195002",
+        "display": "Escherichia coli, Serogruppe O55"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "407252007",
+        "display": "Escherichia coli, Serogruppe O2"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "458071005",
+        "display": "Escherichia coli, Serogruppe O123"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "260408008",
+        "display": "Schwach positiv"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "425004001",
+        "display": "Escherichia coli, Serogruppe O166"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "457145005",
+        "display": "Escherichia coli, Serogruppe O177"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "407298008",
+        "display": "Escherichia coli, Serogruppe O145"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "407270005",
+        "display": "Escherichia coli, Serogruppe O50"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "83285000",
+        "display": "Enteropathogene Escherichia coli"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "458154006",
+        "display": "Escherichia coli, Serogruppe O53"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "715306002",
+        "display": "Escherichia coli, Serogruppe O108"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "407178005",
+        "display": "Escherichia coli, Serogruppe O78"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "260415000",
+        "display": "Nicht nachgewiesen"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "459128006",
+        "display": "Escherichia coli, Serogruppe O82"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "459096001",
+        "display": "Escherichia coli, Serogruppe O109"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "82334004",
+        "display": "Uneindeutig"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "458160006",
+        "display": "Escherichia coli, Serogruppe O60"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "407255009",
+        "display": "Escherichia coli, Serogruppe O5"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "407236009",
+        "display": "Escherichia coli, Serogruppe O136"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "459077000",
+        "display": "Escherichia coli, Serogruppe O115"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "10828004",
+        "display": "Positiv"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "26451000087103",
+        "display": "Escherichia coli, Serogruppe O19"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "1085101000112108",
+        "display": "Escherichia coli, Serogruppe O182"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "709312005",
+        "display": "Escherichia coli, Serogruppe O185"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "450477004",
+        "display": "Escherichia coli, Serogruppe O6"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "407187001",
+        "display": "Escherichia coli, Serogruppe O159"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "407244009",
+        "display": "Escherichia coli, Serogruppe O164"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "407286003",
+        "display": "Escherichia coli, Serogruppe O113"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "407309009",
+        "display": "Escherichia coli, Serogruppe O rau"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "407176009",
+        "display": "Escherichia coli, Serogruppe O63"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "407193009",
+        "display": "Escherichia coli, Serogruppe O169"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "705177007",
+        "display": "Escherichia coli, Serogruppe O186"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "459074007",
+        "display": "Escherichia coli, Serogruppe O116"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "407261007",
+        "display": "Escherichia coli, Serogruppe O22"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "458140003",
+        "display": "Escherichia coli, Serogruppe O43"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "116397003",
+        "display": "Enteroaggregative Escherichia coli"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "407292009",
+        "display": "Escherichia coli, Serogruppe O121"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "407250004",
+        "display": "Escherichia coli, Serogruppe O1"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "42425007",
+        "display": "Zweideutig"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "407162008",
+        "display": "Escherichia coli, Serogruppe O15"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "30714006",
+        "display": "Resistent"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "112283007",
+        "display": "Escherichia coli"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "457944005",
+        "display": "Escherichia coli, Serogruppe O156"
+      }
+    ]
+  }
+}

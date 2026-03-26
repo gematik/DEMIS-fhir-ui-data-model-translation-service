@@ -36,6 +36,7 @@ import de.gematik.demis.fhir_ui_data_model_translation_service.FeatureFlags;
 import de.gematik.demis.fhir_ui_data_model_translation_service.exception.DataNotFoundExcp;
 import de.gematik.demis.fhir_ui_data_model_translation_service.model.CodeDisplay;
 import de.gematik.demis.fhir_ui_data_model_translation_service.model.Designation;
+import de.gematik.demis.fhir_ui_data_model_translation_service.model.Use;
 import de.gematik.demis.fhir_ui_data_model_translation_service.objects.code.displays.AddressUseRegressionTOs;
 import de.gematik.demis.fhir_ui_data_model_translation_service.utils.SnapshotFilesService;
 import java.io.File;
@@ -343,9 +344,11 @@ class DataLoaderSrvRegressionTest {
                 .system("http://snomed.info/sct")
                 .designations(
                     Set.of(
-                        new Designation("de-DE", "Bronchoalveoläre Lavage"),
+                        new Designation("de-DE", "Bronchoalveoläre Lavage", new Use(null, null)),
                         new Designation(
-                            "en-US", "Bronchoalveolar lavage fluid specimen (specimen)")))
+                            "en-US",
+                            "Bronchoalveolar lavage fluid specimen (specimen)",
+                            new Use("http://snomed.info/sct", "900000000000003001"))))
                 .build());
 
     assertThatThrownBy(() -> dataLoaderSrv.getValueSetData("raboof"))
@@ -375,7 +378,12 @@ class DataLoaderSrvRegressionTest {
             CodeDisplay.builder()
                 .code("current")
                 .display("Derzeitiger Aufenthaltsort")
-                .designations(Set.of(new Designation("en-US", "Current Residence")))
+                .designations(
+                    Set.of(
+                        new Designation(
+                            "en-US",
+                            "Current Residence",
+                            new Use("http://snomed.info/sct", "900000000000003001"))))
                 .system("https://demis.rki.de/fhir/CodeSystem/addressUse")
                 .order(100)
                 .build());
@@ -462,9 +470,11 @@ class DataLoaderSrvRegressionTest {
                 .order(100)
                 .designations(
                     Set.of(
-                        new Designation("de-DE", "Bronchoalveoläre Lavage"),
+                        new Designation("de-DE", "Bronchoalveoläre Lavage", new Use(null, null)),
                         new Designation(
-                            "en-US", "Bronchoalveolar lavage fluid specimen (specimen)")))
+                            "en-US",
+                            "Bronchoalveolar lavage fluid specimen (specimen)",
+                            new Use("http://snomed.info/sct", "900000000000003001"))))
                 .build());
     assertThat(
             dataLoaderSrv.getValueSetData(
@@ -713,7 +723,7 @@ class DataLoaderSrvRegressionTest {
               dataLoaderSrv
                   .getCodeSystemData("http://snomed.info/sct", "258607008")
                   .getDesignations())
-          .contains(new Designation("de-DE", "Bronchoalveoläre Lavage"));
+          .contains(new Designation("de-DE", "Bronchoalveoläre Lavage", new Use(null, null)));
 
       assertThat(dataLoaderSrv.getCodeSystemData("http://snomed.info/sct"))
           .contains(
@@ -723,8 +733,10 @@ class DataLoaderSrvRegressionTest {
                   .designations(
                       Set.of(
                           new Designation(
-                              "en-US", "Bronchoalveolar lavage fluid specimen (specimen)"),
-                          new Designation("de-DE", "Bronchoalveoläre Lavage")))
+                              "en-US",
+                              "Bronchoalveolar lavage fluid specimen (specimen)",
+                              new Use("http://snomed.info/sct", "900000000000003001")),
+                          new Designation("de-DE", "Bronchoalveoläre Lavage", new Use(null, null))))
                   .system("http://snomed.info/sct")
                   .order(100)
                   .build());

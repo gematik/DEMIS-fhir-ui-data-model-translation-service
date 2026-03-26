@@ -28,7 +28,6 @@ package de.gematik.demis.fhir_ui_data_model_translation_service.disease;
  */
 
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.assertj.core.api.Assertions.assertThatThrownBy;
 import static org.mockito.Mockito.when;
 
 import de.gematik.demis.fhir_ui_data_model_translation_service.disease.formly.model.QuestionnaireTranslation;
@@ -46,27 +45,15 @@ class DiseaseDataLoaderCtrTest {
   private DiseaseDataLoaderCtr diseaseDataLoaderCtr;
 
   @Test
-  void getQuestionsForSpecificCodeTest() throws Exception {
+  void getQuestionsForSpecificCodeTest() {
     String code = "testCode";
 
     QuestionnaireTranslation exptectedData = QuestionnaireTranslation.builder().build();
     when(diseaseDataLoaderSrv.getQuestionnaireTranslations(code)).thenReturn(exptectedData);
-    diseaseDataLoaderCtr =
-        new DiseaseDataLoaderCtr(diseaseDataLoaderSrv, diseaseFollowupSrv, false);
+    diseaseDataLoaderCtr = new DiseaseDataLoaderCtr(diseaseDataLoaderSrv, diseaseFollowupSrv);
 
     QuestionnaireTranslation actualData = diseaseDataLoaderCtr.getQuestionsForSpecificCode(code);
 
     assertThat(actualData).isEqualTo(exptectedData);
-  }
-
-  @Test
-  void shouldThrowExceptionForNotActive7_3Processing() {
-
-    diseaseDataLoaderCtr =
-        new DiseaseDataLoaderCtr(diseaseDataLoaderSrv, diseaseFollowupSrv, false);
-
-    assertThatThrownBy(() -> diseaseDataLoaderCtr.getAllAvailableCodesNonNominal())
-        .isInstanceOf(UnsupportedOperationException.class)
-        .hasMessage("Feature flag for §7.3 is not active");
   }
 }

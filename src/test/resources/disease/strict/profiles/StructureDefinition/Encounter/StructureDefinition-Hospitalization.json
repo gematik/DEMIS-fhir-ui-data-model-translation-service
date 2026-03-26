@@ -2,11 +2,11 @@
   "resourceType": "StructureDefinition",
   "id": "Hospitalization",
   "url": "https://demis.rki.de/fhir/StructureDefinition/Hospitalization",
-  "version": "1.2.1",
+  "version": "1.2.2",
   "name": "Hospitalization",
   "title": "Hospitalisierung",
   "status": "active",
-  "date": "2025-09-01",
+  "date": "2026-01-22",
   "publisher": "Robert Koch-Institut",
   "contact": [
     {
@@ -2251,7 +2251,8 @@
           {
             "code": "Reference",
             "targetProfile": [
-              "https://demis.rki.de/fhir/StructureDefinition/NotifiedPerson"
+              "https://demis.rki.de/fhir/StructureDefinition/NotifiedPerson",
+              "https://demis.rki.de/fhir/StructureDefinition/NotifiedPersonAnonymous"
             ]
           }
         ],
@@ -5772,7 +5773,8 @@
           {
             "code": "Reference",
             "targetProfile": [
-              "https://demis.rki.de/fhir/StructureDefinition/NotifiedPerson"
+              "https://demis.rki.de/fhir/StructureDefinition/NotifiedPerson",
+              "https://demis.rki.de/fhir/StructureDefinition/NotifiedPersonAnonymous"
             ]
           }
         ],
