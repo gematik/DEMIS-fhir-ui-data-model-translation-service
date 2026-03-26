@@ -2,12 +2,12 @@
   "resourceType": "ValueSet",
   "id": "reasonForTesting",
   "url": "https://demis.rki.de/fhir/ValueSet/reasonForTesting",
-  "version": "1.6.0",
+  "version": "1.6.1",
   "name": "ReasonForTesting",
   "title": "Untersuchungsgrund",
   "status": "active",
   "experimental": false,
-  "date": "2025-04-08",
+  "date": "2025-12-05",
   "publisher": "Robert Koch-Institut",
   "contact": [
     {
@@ -36,7 +36,7 @@
     "include": [
       {
         "system": "http://snomed.info/sct",
-        "version": "http://snomed.info/sct/11000274103/version/20241115",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
         "concept": [
           {
             "extension": [
@@ -46,7 +46,7 @@
               }
             ],
             "code": "168186002",
-            "display": "Sample - microbiological exam (procedure)",
+            "display": "Mikrobiologische Untersuchung von Probenmaterial",
             "designation": [
               {
                 "language": "de-DE",
@@ -72,7 +72,7 @@
               }
             ],
             "code": "314074007",
-            "display": "Microbiology screening test (procedure)",
+            "display": "Mikrobiologischer Screeningtest",
             "designation": [
               {
                 "language": "de-DE",
@@ -88,7 +88,7 @@
               }
             ],
             "code": "428792000",
-            "display": "Person exposed to disease (person)",
+            "display": "Person exponiert gegenüber Krankheit",
             "designation": [
               {
                 "language": "de-DE",
@@ -131,49 +131,49 @@
     ]
   },
   "expansion": {
-    "timestamp": "2025-04-08T00:00:00+02:00",
+    "timestamp": "2025-12-05T00:00:00+01:00",
     "contains": [
       {
         "system": "http://snomed.info/sct",
-        "version": "http://snomed.info/sct/11000274103/version/20241115",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
         "code": "871560001:{246501002=703690001}",
         "display": "bestätigender PCR-Test (nach einem positiven Antigen-Schnell- oder Selbsttest)"
       },
       {
         "system": "http://snomed.info/sct",
-        "version": "http://snomed.info/sct/11000274103/version/20241115",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
         "code": "9718006:{363702006=(308273005:255234002=122442008)},{363702006=(308273005:255234002=9718006)}",
         "display": "Verlaufs-PCR in Folge eines Virusnachweis mittels PCR"
       },
       {
         "system": "http://snomed.info/sct",
-        "version": "http://snomed.info/sct/11000274103/version/20241115",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
         "code": "261665006",
         "display": "Unbekannt"
       },
       {
         "system": "http://snomed.info/sct",
-        "version": "http://snomed.info/sct/11000274103/version/20241115",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
         "code": "314074007",
-        "display": "Microbiology screening test (procedure)"
+        "display": "Mikrobiologischer Screeningtest"
       },
       {
         "system": "http://snomed.info/sct",
-        "version": "http://snomed.info/sct/11000274103/version/20241115",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
         "code": "9718006:{363702006=(308273005:255234002=117725006)},{363702006=(308273005:255234002=9718006)}",
         "display": "Verlaufs-PCR in Folge eines Bakteriennachweis mittels PCR"
       },
       {
         "system": "http://snomed.info/sct",
-        "version": "http://snomed.info/sct/11000274103/version/20241115",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
         "code": "428792000",
-        "display": "Person exposed to disease (person)"
+        "display": "Person exponiert gegenüber Krankheit"
       },
       {
         "system": "http://snomed.info/sct",
-        "version": "http://snomed.info/sct/11000274103/version/20241115",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
         "code": "168186002",
-        "display": "Sample - microbiological exam (procedure)"
+        "display": "Mikrobiologische Untersuchung von Probenmaterial"
       }
     ]
   }

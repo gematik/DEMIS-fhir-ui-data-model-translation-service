@@ -238,23 +238,13 @@ class ValueSets {
     final CodeDisplay codeDisplay = builder.order(Utils.extractOrder(referenceComponent)).build();
     if (referenceComponent.hasDesignation()) {
       Set<Designation> designations = new HashSet<>();
-      if (featureFlags.isAddDesignationUse()) {
-        referenceComponent
-            .getDesignation()
-            .forEach(
-                cRDC ->
-                    designations.add(
-                        new Designation(
-                            cRDC.getLanguage(), cRDC.getValue(), toUse(cRDC.getUse()))));
-        codeDisplay.addDesignation(designations);
-      } else {
-        referenceComponent
-            .getDesignation()
-            .forEach(
-                cRDC -> designations.add(new Designation(cRDC.getLanguage(), cRDC.getValue())));
-
-        codeDisplay.addDesignation(designations);
-      }
+      referenceComponent
+          .getDesignation()
+          .forEach(
+              cRDC ->
+                  designations.add(
+                      new Designation(cRDC.getLanguage(), cRDC.getValue(), toUse(cRDC.getUse()))));
+      codeDisplay.addDesignation(designations);
     }
 
     // get all codeSystems that start with the setCompoenets system

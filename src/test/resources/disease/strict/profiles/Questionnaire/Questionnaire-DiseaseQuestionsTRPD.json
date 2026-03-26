@@ -1,0 +1,376 @@
+{
+  "resourceType": "Questionnaire",
+  "id": "DiseaseQuestionsTRPD",
+  "url": "https://demis.rki.de/fhir/Questionnaire/DiseaseQuestionsTRPD",
+  "version": "1.2.0",
+  "name": "DiseaseQuestionsTRPD",
+  "title": "Treponema pallidum: spezifische klinische und epidemiologische Angaben",
+  "status": "active",
+  "date": "2026-01-15",
+  "publisher": "Robert Koch-Institut",
+  "contact": [
+    {
+      "telecom": [
+        {
+          "system": "email",
+          "value": "demis-support@rki.de"
+        }
+      ]
+    }
+  ],
+  "description": "Treponema pallidum (Syphilis) spezifische Informationsbedarfe werden in diesem meldetatbestandsspezifischen Fragebogen zusammengestellt. Dieser manifestiert sich als entsprechende QuestionnaireResponse innerhalb der Meldung.",
+  "jurisdiction": [
+    {
+      "coding": [
+        {
+          "system": "urn:iso:std:iso:3166",
+          "version": "ALPHA-2",
+          "code": "DE"
+        }
+      ]
+    }
+  ],
+  "copyright": "Copyright (C) 2021-2025 Robert Koch-Institut",
+  "item": [
+    {
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/regex",
+          "valueString": "^19[0-9]{2}-[0-9]{2}$|^20[0-9]{2}-[0-9]{2}$|^19[0-9]{2}$|^20[0-9]{2}$"
+        }
+      ],
+      "linkId": "timeOfInfection",
+      "text": "Welcher ist der wahrscheinliche Infektionszeitpunkt?",
+      "type": "date",
+      "required": false,
+      "repeats": false
+    },
+    {
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+          "valueCodeableConcept": {
+            "coding": [
+              {
+                "system": "http://hl7.org/fhir/questionnaire-item-control",
+                "code": "drop-down",
+                "display": "Drop down"
+              }
+            ]
+          }
+        }
+      ],
+      "linkId": "clinicalFindingTRPD",
+      "text": "Wie lautet die klinische Beurteilung der vorliegenden Infektion?",
+      "type": "choice",
+      "required": true,
+      "repeats": false,
+      "answerValueSet": "https://demis.rki.de/fhir/ValueSet/answerSetClinicalFindingTRPD"
+    },
+    {
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+          "valueCodeableConcept": {
+            "coding": [
+              {
+                "system": "http://hl7.org/fhir/questionnaire-item-control",
+                "code": "drop-down",
+                "display": "Drop down"
+              }
+            ]
+          }
+        }
+      ],
+      "linkId": "coinfections",
+      "text": "Liegen Koinfektionen vor?",
+      "type": "choice",
+      "required": true,
+      "repeats": true,
+      "answerValueSet": "https://demis.rki.de/fhir/ValueSet/answerSetCoinfectionTRPD"
+    },
+    {
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+          "valueCodeableConcept": {
+            "coding": [
+              {
+                "system": "http://hl7.org/fhir/questionnaire-item-control",
+                "code": "radio-button",
+                "display": "Radio Button"
+              }
+            ]
+          }
+        }
+      ],
+      "linkId": "hivPrEPStatusTRPD",
+      "text": "Wurde zum Zeitpunkt der Syphilis-Infektion eine HIV-PrEP eingenommen?",
+      "type": "choice",
+      "required": true,
+      "repeats": false,
+      "answerValueSet": "https://demis.rki.de/fhir/ValueSet/yesOrNoOrUnknown"
+    },
+    {
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+          "valueCodeableConcept": {
+            "coding": [
+              {
+                "system": "http://hl7.org/fhir/questionnaire-item-control",
+                "code": "radio-button",
+                "display": "Radio Button"
+              }
+            ]
+          }
+        }
+      ],
+      "linkId": "stiProphylaxisStatusTRPD",
+      "text": "Wurde zum Zeitpunkt der Syphilis-Infektion eine antibiotische STI-Prophylaxe eingenommen (z.B. Doxy-PEP)?",
+      "type": "choice",
+      "required": true,
+      "repeats": false,
+      "answerValueSet": "https://demis.rki.de/fhir/ValueSet/answerSetSTIProphylaxis"
+    },
+    {
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+          "valueCodeableConcept": {
+            "coding": [
+              {
+                "system": "http://hl7.org/fhir/questionnaire-item-control",
+                "code": "drop-down",
+                "display": "Drop down"
+              }
+            ]
+          }
+        }
+      ],
+      "linkId": "infectionPathRisk",
+      "text": "Auf welchem Weg hat sich die betroffene Person wahrscheinlich infiziert?",
+      "type": "choice",
+      "required": true,
+      "repeats": true,
+      "answerValueSet": "https://demis.rki.de/fhir/ValueSet/answerSetInfectionPathTRPD",
+      "item": [
+        {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-minQuantity",
+              "valueQuantity": {
+                "value": 2,
+                "unit": "Titer",
+                "system": "http://unitsofmeasure.org",
+                "code": "{titer}"
+              }
+            },
+            {
+              "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-maxQuantity",
+              "valueQuantity": {
+                "value": 1000,
+                "unit": "Titer",
+                "system": "http://unitsofmeasure.org",
+                "code": "{titer}"
+              }
+            }
+          ],
+          "linkId": "connatalTiter",
+          "text": "Bitte geben Sie den mütterlichen VDRL/RPR-Titer an (Vereinfachte Schreibweise, also beispielsweise \"32\" statt \"1:32\").",
+          "type": "quantity",
+          "enableWhen": [
+            {
+              "question": "infectionPathRisk",
+              "operator": "=",
+              "answerCoding": {
+                "system": "http://snomed.info/sct",
+                "code": "1290740005"
+              }
+            }
+          ],
+          "required": true,
+          "repeats": false
+        }
+      ]
+    },
+    {
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+          "valueCodeableConcept": {
+            "coding": [
+              {
+                "system": "http://hl7.org/fhir/questionnaire-item-control",
+                "code": "radio-button",
+                "display": "Radio Button"
+              }
+            ]
+          }
+        }
+      ],
+      "linkId": "sexWork",
+      "text": "Hat die betroffene Person Sexarbeit ausgeübt oder in Anspruch genommen?",
+      "type": "choice",
+      "required": true,
+      "repeats": true,
+      "answerValueSet": "https://demis.rki.de/fhir/ValueSet/answerSetSexWork"
+    },
+    {
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+          "valueCodeableConcept": {
+            "coding": [
+              {
+                "system": "http://hl7.org/fhir/questionnaire-item-control",
+                "code": "drop-down",
+                "display": "Drop down"
+              }
+            ]
+          }
+        }
+      ],
+      "linkId": "partnerNotifiedTRPD",
+      "text": "Hat die betroffene Person ihre (Sexual)Partner*innen über die Syphilis-Infektion benachrichtigt?",
+      "type": "choice",
+      "required": true,
+      "repeats": false,
+      "answerValueSet": "https://demis.rki.de/fhir/ValueSet/answerSetPartnerNotified"
+    },
+    {
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+          "valueCodeableConcept": {
+            "coding": [
+              {
+                "system": "http://hl7.org/fhir/questionnaire-item-control",
+                "code": "drop-down",
+                "display": "Drop down"
+              }
+            ]
+          }
+        }
+      ],
+      "linkId": "countryOrigin",
+      "text": "Welches ist das Herkunftsland der betroffenen Person?",
+      "type": "choice",
+      "required": true,
+      "repeats": false,
+      "answerValueSet": "https://demis.rki.de/fhir/ValueSet/answerSetCountry",
+      "item": [
+        {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+              "valueCodeableConcept": {
+                "coding": [
+                  {
+                    "system": "http://hl7.org/fhir/questionnaire-item-control",
+                    "code": "drop-down",
+                    "display": "Drop down"
+                  }
+                ]
+              }
+            }
+          ],
+          "linkId": "regionOrigin",
+          "text": "Welche ist die Herkunftsregion der betroffenen Person?",
+          "type": "choice",
+          "enableWhen": [
+            {
+              "question": "countryOrigin",
+              "operator": "=",
+              "answerCoding": {
+                "system": "http://snomed.info/sct",
+                "code": "261665006"
+              }
+            }
+          ],
+          "required": true,
+          "repeats": false,
+          "answerValueSet": "https://demis.rki.de/fhir/ValueSet/answerSetGeographicSubcontinent"
+        }
+      ]
+    },
+    {
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+          "valueCodeableConcept": {
+            "coding": [
+              {
+                "system": "http://hl7.org/fhir/questionnaire-item-control",
+                "code": "drop-down",
+                "display": "Drop down"
+              }
+            ]
+          }
+        }
+      ],
+      "linkId": "countryOfInfection",
+      "text": "Welches ist das wahrscheinliche Infektionsland?",
+      "type": "choice",
+      "required": true,
+      "repeats": false,
+      "answerValueSet": "https://demis.rki.de/fhir/ValueSet/answerSetCountry",
+      "item": [
+        {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+              "valueCodeableConcept": {
+                "coding": [
+                  {
+                    "system": "http://hl7.org/fhir/questionnaire-item-control",
+                    "code": "drop-down",
+                    "display": "Drop down"
+                  }
+                ]
+              }
+            }
+          ],
+          "linkId": "regionOfInfection",
+          "text": "Welche ist die wahrscheinliche Infektionsregion?",
+          "type": "choice",
+          "enableWhen": [
+            {
+              "question": "countryOfInfection",
+              "operator": "=",
+              "answerCoding": {
+                "system": "http://snomed.info/sct",
+                "code": "261665006"
+              }
+            }
+          ],
+          "required": true,
+          "repeats": false,
+          "answerValueSet": "https://demis.rki.de/fhir/ValueSet/answerSetGeographicSubcontinent"
+        }
+      ]
+    },
+    {
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+          "valueCodeableConcept": {
+            "coding": [
+              {
+                "system": "http://hl7.org/fhir/questionnaire-item-control",
+                "code": "radio-button",
+                "display": "Radio Button"
+              }
+            ]
+          }
+        }
+      ],
+      "linkId": "genderDefintion",
+      "text": "Zusatzangabe zur geschlechtlichen Selbstdefinition der betroffenen Person, falls bekannt.",
+      "type": "choice",
+      "required": false,
+      "repeats": false,
+      "answerValueSet": "https://demis.rki.de/fhir/ValueSet/answerSetGenderDefinition"
+    }
+  ]
+}

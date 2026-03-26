@@ -33,7 +33,6 @@ import java.util.List;
 import java.util.SequencedCollection;
 import java.util.Set;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
@@ -45,15 +44,12 @@ public class LaboratoryDataLoaderCtr {
 
   private final LaboratoryDataLoaderSrv laboratoryDataLoaderSrv;
   private final LaboratoryFollowupSrv laboratoryFollowupSrv;
-  private final boolean isNotification73Active;
 
   public LaboratoryDataLoaderCtr(
       LaboratoryDataLoaderSrv laboratoryDataLoaderSrv,
-      LaboratoryFollowupSrv laboratoryFollowupSrv,
-      @Value("${feature.flag.notifications.7_3}") boolean isNotification73Active) {
+      LaboratoryFollowupSrv laboratoryFollowupSrv) {
     this.laboratoryDataLoaderSrv = laboratoryDataLoaderSrv;
     this.laboratoryFollowupSrv = laboratoryFollowupSrv;
-    this.isNotification73Active = isNotification73Active;
   }
 
   @GetMapping({"/laboratory/federalStates", "/laboratory/7.1/federalStates"})
@@ -96,11 +92,7 @@ public class LaboratoryDataLoaderCtr {
 
   @GetMapping("/laboratory/7.3")
   public SequencedCollection<CodeDisplay> get73NotificationCategories() {
-    if (isNotification73Active) {
-      return laboratoryDataLoaderSrv.getAvailableNotificationCategories(
-          PathogenNotificationCategory.P_7_3);
-    } else {
-      throw new UnsupportedOperationException("Feature flag for §7.3 is not active");
-    }
+    return laboratoryDataLoaderSrv.getAvailableNotificationCategories(
+        PathogenNotificationCategory.P_7_3);
   }
 }

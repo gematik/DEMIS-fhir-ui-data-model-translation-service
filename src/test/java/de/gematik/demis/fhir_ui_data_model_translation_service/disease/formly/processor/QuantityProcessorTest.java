@@ -161,7 +161,6 @@ class QuantityProcessorTest {
             enableWhenProcessor,
             clipboardProcessor,
             quantityBoundProcessor,
-            true,
             new TooltipExtension());
   }
 
@@ -222,39 +221,5 @@ class QuantityProcessorTest {
               assertThat(p.getQuantity().getCode()).isEqualTo("wk");
             });
     assertThat(fg.getValidators()).isNull();
-  }
-
-  // Can be removed with FEATURE_FLAG_NOTIFICATIONS_7_3
-  @Test
-  void thatUpperAndLowerBoundAreNotExtractedWithDisabledFeatureFlag() {
-    final EnableWhenProcessor enableWhenProcessor = Mockito.mock(EnableWhenProcessor.class);
-    final ClipboardProcessor clipboardProcessor = Mockito.mock(ClipboardProcessor.class);
-    final QuantityBoundProcessor quantityBoundProcessor = new QuantityBoundProcessor();
-    quantityProcessor =
-        new QuantityProcessor(
-            enableWhenProcessor,
-            clipboardProcessor,
-            quantityBoundProcessor,
-            false,
-            new TooltipExtension());
-
-    final FhirContext ctx = FhirContext.forR4Cached();
-    final IParser parser = ctx.newJsonParser();
-    final Questionnaire questionnaire =
-        parser.parseResource(Questionnaire.class, FHIR_JSON_WITH_QUANTITY_BOUNDS);
-    final Questionnaire.QuestionnaireItemComponent item = questionnaire.getItemFirstRep();
-
-    final FieldGroup[] result = quantityProcessor.createFieldGroup(item, null, null);
-
-    assertThat(result).hasSize(1);
-    final FieldGroup fg = result[0];
-    assertThat(fg.getProps())
-        .satisfies(
-            p -> {
-              assertThat(p.getMin()).isNull();
-              assertThat(p.getMax()).isNull();
-              assertThat(p.getStep()).isNull();
-            });
-    assertThat(fg.getValidators().getValidation()).contains("numberValidator", "nonBlankValidator");
   }
 }

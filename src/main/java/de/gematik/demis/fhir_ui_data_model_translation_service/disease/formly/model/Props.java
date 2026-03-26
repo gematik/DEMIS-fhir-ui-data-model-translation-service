@@ -79,6 +79,7 @@ public class Props {
   private String minDate;
   private String maxDate;
   private Boolean multiYear;
+  private Integer maxLength;
 
   @Data
   @Builder

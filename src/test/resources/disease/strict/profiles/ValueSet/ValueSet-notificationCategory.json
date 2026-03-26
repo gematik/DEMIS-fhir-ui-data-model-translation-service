@@ -2,12 +2,12 @@
   "resourceType": "ValueSet",
   "id": "notificationCategory",
   "url": "https://demis.rki.de/fhir/ValueSet/notificationCategory",
-  "version": "2.3.0",
+  "version": "2.3.1",
   "name": "NotificationCategory",
   "title": "Namentliche Meldetatbestände nach § 7 Abs. 1 IfSG",
   "status": "active",
   "experimental": false,
-  "date": "2025-08-11",
+  "date": "2026-01-19",
   "publisher": "Robert Koch-Institut",
   "contact": [
     {
@@ -36,7 +36,7 @@
     "include": [
       {
         "system": "https://demis.rki.de/fhir/CodeSystem/notificationCategory",
-        "version": "2.3.0",
+        "version": "2.3.1",
         "concept": [
           {
             "extension": [
@@ -1403,515 +1403,515 @@
     ]
   },
   "expansion": {
-    "timestamp": "2025-08-11T00:00:00+02:00",
+    "timestamp": "2026-01-19T00:00:00+01:00",
     "contains": [
       {
         "system": "https://demis.rki.de/fhir/CodeSystem/notificationCategory",
-        "version": "2.3.0",
+        "version": "2.3.1",
         "code": "bovp",
         "display": "humanpathogene Bornaviren; Meldepflicht nur für den direkten Nachweis"
       },
       {
         "system": "https://demis.rki.de/fhir/CodeSystem/notificationCategory",
-        "version": "2.3.0",
+        "version": "2.3.1",
         "code": "wnvp",
         "display": "West-Nil-Virus"
       },
       {
         "system": "https://demis.rki.de/fhir/CodeSystem/notificationCategory",
-        "version": "2.3.0",
+        "version": "2.3.1",
         "code": "frtp",
         "display": "Francisella tularensis"
       },
       {
         "system": "https://demis.rki.de/fhir/CodeSystem/notificationCategory",
-        "version": "2.3.0",
+        "version": "2.3.1",
         "code": "cryp",
         "display": "humanpathogene Cryptosporidium sp."
       },
       {
         "system": "https://demis.rki.de/fhir/CodeSystem/notificationCategory",
-        "version": "2.3.0",
+        "version": "2.3.1",
         "code": "fsvp",
         "display": "FSME-Virus"
       },
       {
         "system": "https://demis.rki.de/fhir/CodeSystem/notificationCategory",
-        "version": "2.3.0",
+        "version": "2.3.1",
         "code": "yenp",
         "display": "Yersinia spp. (darmpathogen)"
       },
       {
         "system": "https://demis.rki.de/fhir/CodeSystem/notificationCategory",
-        "version": "2.3.0",
+        "version": "2.3.1",
         "code": "spap",
         "display": "Salmonella Paratyphi; Meldepflicht für alle direkten Nachweise"
       },
       {
         "system": "https://demis.rki.de/fhir/CodeSystem/notificationCategory",
-        "version": "2.3.0",
+        "version": "2.3.1",
         "code": "ehcp",
         "display": "Escherichia coli (enterohämorrhagische Stämme) (EHEC)"
       },
       {
         "system": "https://demis.rki.de/fhir/CodeSystem/notificationCategory",
-        "version": "2.3.0",
+        "version": "2.3.1",
         "code": "mrsp",
         "display": "Middle-East-Respiratory-Syndrome-Coronavirus (MERS-CoV)"
       },
       {
         "system": "https://demis.rki.de/fhir/CodeSystem/notificationCategory",
-        "version": "2.3.0",
+        "version": "2.3.1",
         "code": "borp",
         "display": "Borrelia recurrentis"
       },
       {
         "system": "https://demis.rki.de/fhir/CodeSystem/notificationCategory",
-        "version": "2.3.0",
+        "version": "2.3.1",
         "code": "htvp",
         "display": "Hantavirus"
       },
       {
         "system": "https://demis.rki.de/fhir/CodeSystem/notificationCategory",
-        "version": "2.3.0",
+        "version": "2.3.1",
         "code": "ebcp",
         "display": "Enterobacterales bei Nachweis einer Carbapenemase-Determinante oder mit verminderter Empfindlichkeit gegenüber Carbapenemen außer bei natürlicher Resistenz; Meldepflicht nur bei Infektion oder Kolonisation"
       },
       {
         "system": "https://demis.rki.de/fhir/CodeSystem/notificationCategory",
-        "version": "2.3.0",
+        "version": "2.3.1",
         "code": "novp",
         "display": "Norovirus"
       },
       {
         "system": "https://demis.rki.de/fhir/CodeSystem/notificationCategory",
-        "version": "2.3.0",
+        "version": "2.3.1",
         "code": "rsvp",
         "display": "Respiratorisches-Synzytial-Virus"
       },
       {
         "system": "https://demis.rki.de/fhir/CodeSystem/notificationCategory",
-        "version": "2.3.0",
+        "version": "2.3.1",
         "code": "ruvp",
         "display": "Rubellavirus"
       },
       {
         "system": "https://demis.rki.de/fhir/CodeSystem/notificationCategory",
-        "version": "2.3.0",
+        "version": "2.3.1",
         "code": "ship",
         "display": "Shigella sp."
       },
       {
         "system": "https://demis.rki.de/fhir/CodeSystem/notificationCategory",
-        "version": "2.3.0",
+        "version": "2.3.1",
         "code": "banp",
         "display": "Bacillus anthracis"
       },
       {
         "system": "https://demis.rki.de/fhir/CodeSystem/notificationCategory",
-        "version": "2.3.0",
+        "version": "2.3.1",
         "code": "hbvp",
         "display": "Hepatitis-B-Virus; Meldepflicht für alle Nachweise"
       },
       {
         "system": "https://demis.rki.de/fhir/CodeSystem/notificationCategory",
-        "version": "2.3.0",
+        "version": "2.3.1",
         "code": "styp",
         "display": "Salmonella Typhi; Meldepflicht für alle direkten Nachweise"
       },
       {
         "system": "https://demis.rki.de/fhir/CodeSystem/notificationCategory",
-        "version": "2.3.0",
+        "version": "2.3.1",
         "code": "cvdp",
         "display": "Severe-Acute-Respiratory-Syndrome-Coronavirus-2 (SARS-CoV-2)"
       },
       {
         "system": "https://demis.rki.de/fhir/CodeSystem/notificationCategory",
-        "version": "2.3.0",
+        "version": "2.3.1",
         "code": "hdvp",
         "display": "Hepatitis-D-Virus; Meldepflicht für alle Nachweise"
       },
       {
         "system": "https://demis.rki.de/fhir/CodeSystem/notificationCategory",
-        "version": "2.3.0",
+        "version": "2.3.1",
         "code": "lepp",
         "display": "humanpathogene Leptospira sp."
       },
       {
         "system": "https://demis.rki.de/fhir/CodeSystem/notificationCategory",
-        "version": "2.3.0",
+        "version": "2.3.1",
         "code": "spyp",
         "display": "Scharlach, Beta-hämolysierenden Streptokokken der Gruppe A"
       },
       {
         "system": "https://demis.rki.de/fhir/CodeSystem/notificationCategory",
-        "version": "2.3.0",
+        "version": "2.3.1",
         "code": "wbkp",
         "display": "Krankheitserreger unter Berücksichtigung der Art der Krankheitserreger und der Häufigkeit ihres Nachweises wenn Hinweise auf eine schwerwiegende Gefahr für die Allgemeinheit bestehen"
       },
       {
         "system": "https://demis.rki.de/fhir/CodeSystem/notificationCategory",
-        "version": "2.3.0",
+        "version": "2.3.1",
         "code": "ypsp",
         "display": "Yersinia pestis"
       },
       {
         "system": "https://demis.rki.de/fhir/CodeSystem/notificationCategory",
-        "version": "2.3.0",
+        "version": "2.3.1",
         "code": "gilp",
         "display": "Giardia lamblia"
       },
       {
         "system": "https://demis.rki.de/fhir/CodeSystem/notificationCategory",
-        "version": "2.3.0",
+        "version": "2.3.1",
         "code": "coxp",
         "display": "Coxiella burnetii"
       },
       {
         "system": "https://demis.rki.de/fhir/CodeSystem/notificationCategory",
-        "version": "2.3.0",
+        "version": "2.3.1",
         "code": "rbvp",
         "display": "Rabiesvirus"
       },
       {
         "system": "https://demis.rki.de/fhir/CodeSystem/notificationCategory",
-        "version": "2.3.0",
+        "version": "2.3.1",
         "code": "acbp",
         "display": "Acinetobacter spp. bei Nachweis einer Carbapenemase-Determinante oder mit verminderter Empfindlichkeit gegenüber Carbapenemen außer bei natürlicher Resistenz; Meldepflicht nur bei Infektion oder Kolonisation"
       },
       {
         "system": "https://demis.rki.de/fhir/CodeSystem/notificationCategory",
-        "version": "2.3.0",
+        "version": "2.3.1",
         "code": "brup",
         "display": "Brucella sp."
       },
       {
         "system": "https://demis.rki.de/fhir/CodeSystem/notificationCategory",
-        "version": "2.3.0",
+        "version": "2.3.1",
         "code": "ricp",
         "display": "Rickettsia prowazekii"
       },
       {
         "system": "https://demis.rki.de/fhir/CodeSystem/notificationCategory",
-        "version": "2.3.0",
+        "version": "2.3.1",
         "code": "gfvp",
         "display": "Gelbfiebervirus"
       },
       {
         "system": "https://demis.rki.de/fhir/CodeSystem/notificationCategory",
-        "version": "2.3.0",
+        "version": "2.3.1",
         "code": "spnp",
         "display": "Streptococcus pneumoniae; Meldepflicht nur für den direkten Nachweis aus Liquor, Blut, Gelenkpunktat oder anderen normalerweise sterilen Substraten"
       },
       {
         "system": "https://demis.rki.de/fhir/CodeSystem/notificationCategory",
-        "version": "2.3.0",
+        "version": "2.3.1",
         "code": "mpxp",
         "display": "Orthopockenviren (Mpoxvirus)"
       },
       {
         "system": "https://demis.rki.de/fhir/CodeSystem/notificationCategory",
-        "version": "2.3.0",
+        "version": "2.3.1",
         "code": "msvp",
         "display": "Masernvirus"
       },
       {
         "system": "https://demis.rki.de/fhir/CodeSystem/notificationCategory",
-        "version": "2.3.0",
+        "version": "2.3.1",
         "code": "bobp",
         "display": "(Lyme-) Borreliose, Borrelia burgdorferi"
       },
       {
         "system": "https://demis.rki.de/fhir/CodeSystem/notificationCategory",
-        "version": "2.3.0",
+        "version": "2.3.1",
         "code": "salp",
         "display": "Salmonella (sonstige)"
       },
       {
         "system": "https://demis.rki.de/fhir/CodeSystem/notificationCategory",
-        "version": "2.3.0",
+        "version": "2.3.1",
         "code": "pvbp",
         "display": "Ringelröteln, Parvovirus B 19"
       },
       {
         "system": "https://demis.rki.de/fhir/CodeSystem/notificationCategory",
-        "version": "2.3.0",
+        "version": "2.3.1",
         "code": "denp",
         "display": "Denguevirus"
       },
       {
         "system": "https://demis.rki.de/fhir/CodeSystem/notificationCategory",
-        "version": "2.3.0",
+        "version": "2.3.1",
         "code": "mbvp",
         "display": "Marburgvirus"
       },
       {
         "system": "https://demis.rki.de/fhir/CodeSystem/notificationCategory",
-        "version": "2.3.0",
+        "version": "2.3.1",
         "code": "adep",
         "display": "Adenoviren; Meldepflicht bei akuter Infektion für Nachweise aus allen Körpermaterialien"
       },
       {
         "system": "https://demis.rki.de/fhir/CodeSystem/notificationCategory",
-        "version": "2.3.0",
+        "version": "2.3.1",
         "code": "cvsp",
         "display": "Severe-Acute-Respiratory-Syndrome-Coronavirus-1 (SARS-CoV-1) (2003)"
       },
       {
         "system": "https://demis.rki.de/fhir/CodeSystem/notificationCategory",
-        "version": "2.3.0",
+        "version": "2.3.1",
         "code": "hinp",
         "display": "Haemophilus influenzae; Meldepflicht nur für den direkten Nachweis aus Liquor oder Blut"
       },
       {
         "system": "https://demis.rki.de/fhir/CodeSystem/notificationCategory",
-        "version": "2.3.0",
+        "version": "2.3.1",
         "code": "clop",
         "display": "Clostridium botulinum oder Toxinnachweis"
       },
       {
         "system": "https://demis.rki.de/fhir/CodeSystem/notificationCategory",
-        "version": "2.3.0",
+        "version": "2.3.1",
         "code": "mpmp",
         "display": "Mycoplasmen"
       },
       {
         "system": "https://demis.rki.de/fhir/CodeSystem/notificationCategory",
-        "version": "2.3.0",
+        "version": "2.3.1",
         "code": "gbsp",
         "display": "Gruppe-B-Streptokokken (GBS); Meldepflicht nur für den direkten Nachweis bei Schwangeren und Neugeborenen"
       },
       {
         "system": "https://demis.rki.de/fhir/CodeSystem/notificationCategory",
-        "version": "2.3.0",
+        "version": "2.3.1",
         "code": "caup",
         "display": "Candida auris; Meldepflicht nur für den direkten Nachweis"
       },
       {
         "system": "https://demis.rki.de/fhir/CodeSystem/notificationCategory",
-        "version": "2.3.0",
+        "version": "2.3.1",
         "code": "pinp",
         "display": "Parainfluenzavirus"
       },
       {
         "system": "https://demis.rki.de/fhir/CodeSystem/notificationCategory",
-        "version": "2.3.0",
+        "version": "2.3.1",
         "code": "vzvp",
         "display": "Varizella-Zoster-Virus"
       },
       {
         "system": "https://demis.rki.de/fhir/CodeSystem/notificationCategory",
-        "version": "2.3.0",
+        "version": "2.3.1",
         "code": "lsvp",
         "display": "Lassavirus"
       },
       {
         "system": "https://demis.rki.de/fhir/CodeSystem/notificationCategory",
-        "version": "2.3.0",
+        "version": "2.3.1",
         "code": "rtvp",
         "display": "Rotavirus"
       },
       {
         "system": "https://demis.rki.de/fhir/CodeSystem/notificationCategory",
-        "version": "2.3.0",
+        "version": "2.3.1",
         "code": "pkvp",
         "display": "Orthopockenviren (Variolavirus)"
       },
       {
         "system": "https://demis.rki.de/fhir/CodeSystem/notificationCategory",
-        "version": "2.3.0",
+        "version": "2.3.1",
         "code": "havp",
         "display": "Hepatitis-A-Virus"
       },
       {
         "system": "https://demis.rki.de/fhir/CodeSystem/notificationCategory",
-        "version": "2.3.0",
+        "version": "2.3.1",
         "code": "zkvp",
         "display": "Zika-Virus"
       },
       {
         "system": "https://demis.rki.de/fhir/CodeSystem/notificationCategory",
-        "version": "2.3.0",
+        "version": "2.3.1",
         "code": "camp",
         "display": "Campylobacter spp. (darmpathogen)"
       },
       {
         "system": "https://demis.rki.de/fhir/CodeSystem/notificationCategory",
-        "version": "2.3.0",
+        "version": "2.3.1",
         "code": "ecop",
         "display": "Escherichia coli (sonstige darmpathogene Stämme)"
       },
       {
         "system": "https://demis.rki.de/fhir/CodeSystem/notificationCategory",
-        "version": "2.3.0",
+        "version": "2.3.1",
         "code": "hcvp",
         "display": "Hepatitis-C-Virus; Meldepflicht für alle Nachweise"
       },
       {
         "system": "https://demis.rki.de/fhir/CodeSystem/notificationCategory",
-        "version": "2.3.0",
+        "version": "2.3.1",
         "code": "povp",
         "display": "Poliovirus"
       },
       {
         "system": "https://demis.rki.de/fhir/CodeSystem/notificationCategory",
-        "version": "2.3.0",
+        "version": "2.3.1",
         "code": "hevp",
         "display": "Hepatitis-E-Virus"
       },
       {
         "system": "https://demis.rki.de/fhir/CodeSystem/notificationCategory",
-        "version": "2.3.0",
+        "version": "2.3.1",
         "code": "vchp",
         "display": "Vibrio cholerae"
       },
       {
         "system": "https://demis.rki.de/fhir/CodeSystem/notificationCategory",
-        "version": "2.3.0",
+        "version": "2.3.1",
         "code": "etvp",
         "display": "Enteroviren"
       },
       {
         "system": "https://demis.rki.de/fhir/CodeSystem/notificationCategory",
-        "version": "2.3.0",
+        "version": "2.3.1",
         "code": "chlp",
         "display": "Chlamydia psittaci"
       },
       {
         "system": "https://demis.rki.de/fhir/CodeSystem/notificationCategory",
-        "version": "2.3.0",
+        "version": "2.3.1",
         "code": "plap",
         "display": "Plasmodium spp. (Malaria)"
       },
       {
         "system": "https://demis.rki.de/fhir/CodeSystem/notificationCategory",
-        "version": "2.3.0",
+        "version": "2.3.1",
         "code": "hfap",
         "display": "Andere Erreger hämorrhagischer Fieber"
       },
       {
         "system": "https://demis.rki.de/fhir/CodeSystem/notificationCategory",
-        "version": "2.3.0",
+        "version": "2.3.1",
         "code": "eahp",
         "display": "Amoebiasis, Entamoeba histolytica"
       },
       {
         "system": "https://demis.rki.de/fhir/CodeSystem/notificationCategory",
-        "version": "2.3.0",
+        "version": "2.3.1",
         "code": "mylp",
         "display": "Mycobacterium leprae"
       },
       {
         "system": "https://demis.rki.de/fhir/CodeSystem/notificationCategory",
-        "version": "2.3.0",
+        "version": "2.3.1",
         "code": "ckvp",
         "display": "Chikungunya-Virus"
       },
       {
         "system": "https://demis.rki.de/fhir/CodeSystem/notificationCategory",
-        "version": "2.3.0",
+        "version": "2.3.1",
         "code": "cltp",
         "display": "Tetanus, Clostridium tetani"
       },
       {
         "system": "https://demis.rki.de/fhir/CodeSystem/notificationCategory",
-        "version": "2.3.0",
+        "version": "2.3.1",
         "code": "ncvp",
         "display": "Vibrio spp., humanpathogen (außer Erreger der Cholera); soweit ausschließlich eine Ohrinfektion vorliegt, nur bei Vibrio cholerae non O1/non-O139"
       },
       {
         "system": "https://demis.rki.de/fhir/CodeSystem/notificationCategory",
-        "version": "2.3.0",
+        "version": "2.3.1",
         "code": "astp",
         "display": "Astroviren"
       },
       {
         "system": "https://demis.rki.de/fhir/CodeSystem/notificationCategory",
-        "version": "2.3.0",
+        "version": "2.3.1",
         "code": "legp",
         "display": "Legionella sp."
       },
       {
         "system": "https://demis.rki.de/fhir/CodeSystem/notificationCategory",
-        "version": "2.3.0",
+        "version": "2.3.1",
         "code": "bpsp",
         "display": "Bordetella pertussis, Bordetella parapertussis"
       },
       {
         "system": "https://demis.rki.de/fhir/CodeSystem/notificationCategory",
-        "version": "2.3.0",
+        "version": "2.3.1",
         "code": "mytp",
         "display": "Mycobacterium tuberculosis, Mycobacterium africanum, Mycobacterium bovis; Meldepflicht für den direkten Erregernachweis sowie nachfolgend für das Ergebnis der Resistenzbestimmung; vorab auch für den Nachweis säurefester Stäbchen im Sputum"
       },
       {
         "system": "https://demis.rki.de/fhir/CodeSystem/notificationCategory",
-        "version": "2.3.0",
+        "version": "2.3.1",
         "code": "corp",
         "display": "Corynebacterium spp. (Toxin bildend)"
       },
       {
         "system": "https://demis.rki.de/fhir/CodeSystem/notificationCategory",
-        "version": "2.3.0",
+        "version": "2.3.1",
         "code": "trip",
         "display": "Trichinella spiralis"
       },
       {
         "system": "https://demis.rki.de/fhir/CodeSystem/notificationCategory",
-        "version": "2.3.0",
+        "version": "2.3.1",
         "code": "cymp",
         "display": "Cytomegalie, Cytomegalievirus"
       },
       {
         "system": "https://demis.rki.de/fhir/CodeSystem/notificationCategory",
-        "version": "2.3.0",
+        "version": "2.3.1",
         "code": "mpvp",
         "display": "Mumpsvirus"
       },
       {
         "system": "https://demis.rki.de/fhir/CodeSystem/notificationCategory",
-        "version": "2.3.0",
+        "version": "2.3.1",
         "code": "lisp",
         "display": "Listeria monocytogenes; Meldepflicht nur für den direkten Nachweis aus Blut, Liquor oder anderen normalerweise sterilen Substraten sowie aus Abstrichen von Neugeborenen"
       },
       {
         "system": "https://demis.rki.de/fhir/CodeSystem/notificationCategory",
-        "version": "2.3.0",
+        "version": "2.3.1",
         "code": "ebvp",
         "display": "Ebolavirus"
       },
       {
         "system": "https://demis.rki.de/fhir/CodeSystem/notificationCategory",
-        "version": "2.3.0",
+        "version": "2.3.1",
         "code": "invp",
         "display": "Influenzavirus; Meldepflicht nur für den direkten Nachweis"
       },
       {
         "system": "https://demis.rki.de/fhir/CodeSystem/notificationCategory",
-        "version": "2.3.0",
+        "version": "2.3.1",
         "code": "neip",
         "display": "Neisseria meningitidis; Meldepflicht nur für den direkten Nachweis aus Liquor, Blut, hämorrhagischen Hautinfiltraten oder anderen normalerweise sterilen Substraten"
       },
       {
         "system": "https://demis.rki.de/fhir/CodeSystem/notificationCategory",
-        "version": "2.3.0",
+        "version": "2.3.1",
         "code": "mrap",
         "display": "Staphylococcus aureus (Methicillin-resistente Stämme); Meldepflicht nur für den Nachweis aus Blut oder Liquor"
       },
       {
         "system": "https://demis.rki.de/fhir/CodeSystem/notificationCategory",
-        "version": "2.3.0",
+        "version": "2.3.1",
         "code": "opxp",
         "display": "Orthopockenviren (sonstige Orthopockenviren)"
       },
       {
         "system": "https://demis.rki.de/fhir/CodeSystem/notificationCategory",
-        "version": "2.3.0",
+        "version": "2.3.1",
         "code": "abvp",
         "display": "Arboviren (sonstige)"
       },
       {
         "system": "https://demis.rki.de/fhir/CodeSystem/notificationCategory",
-        "version": "2.3.0",
+        "version": "2.3.1",
         "code": "advp",
         "display": "Adenoviren; Meldepflicht nur für den direkten Nachweis im Konjunktivalabstrich"
       }

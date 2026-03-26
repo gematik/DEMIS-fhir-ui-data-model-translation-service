@@ -2,12 +2,12 @@
   "resourceType": "ValueSet",
   "id": "answerSetResistance-SNOMED",
   "url": "https://demis.rki.de/fhir/ValueSet/answerSetResistance-SNOMED",
-  "version": "1.3.0",
+  "version": "1.3.1",
   "name": "AnswerSetResistance-SNOMED",
   "title": "SNOMED-AnswerSet für Resistenz",
   "status": "active",
   "experimental": false,
-  "date": "2025-04-08",
+  "date": "2025-12-05",
   "publisher": "Robert Koch-Institut",
   "contact": [
     {
@@ -36,7 +36,7 @@
     "include": [
       {
         "system": "http://snomed.info/sct",
-        "version": "http://snomed.info/sct/11000274103/version/20241115",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
         "concept": [
           {
             "extension": [
@@ -46,13 +46,7 @@
               }
             ],
             "code": "1255965005",
-            "display": "Susceptible with increased exposure (qualifier value)",
-            "designation": [
-              {
-                "language": "de-DE",
-                "value": "Empfindlich bei erhöhter Exposition"
-              }
-            ]
+            "display": "Empfindlich bei erhöhter Exposition"
           },
           {
             "extension": [
@@ -62,13 +56,7 @@
               }
             ],
             "code": "131196009",
-            "display": "Susceptible (qualifier value)",
-            "designation": [
-              {
-                "language": "de-DE",
-                "value": "Empfindlich"
-              }
-            ]
+            "display": "Empfindlich"
           },
           {
             "extension": [
@@ -78,13 +66,7 @@
               }
             ],
             "code": "264841006",
-            "display": "Intermediately susceptible (qualifier value)",
-            "designation": [
-              {
-                "language": "de-DE",
-                "value": "Intermediär empfindlich"
-              }
-            ]
+            "display": "Intermediär empfindlich"
           },
           {
             "extension": [
@@ -94,13 +76,7 @@
               }
             ],
             "code": "30714006",
-            "display": "Resistant (qualifier value)",
-            "designation": [
-              {
-                "language": "de-DE",
-                "value": "Resistent"
-              }
-            ]
+            "display": "Resistent"
           },
           {
             "extension": [
@@ -110,50 +86,44 @@
               }
             ],
             "code": "82334004",
-            "display": "Indeterminate (qualifier value)",
-            "designation": [
-              {
-                "language": "de-DE",
-                "value": "Uneindeutig"
-              }
-            ]
+            "display": "Uneindeutig"
           }
         ]
       }
     ]
   },
   "expansion": {
-    "timestamp": "2025-04-08T00:00:00+02:00",
+    "timestamp": "2025-12-05T00:00:00+01:00",
     "contains": [
       {
         "system": "http://snomed.info/sct",
-        "version": "http://snomed.info/sct/11000274103/version/20241115",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
         "code": "82334004",
-        "display": "Indeterminate (qualifier value)"
+        "display": "Uneindeutig"
       },
       {
         "system": "http://snomed.info/sct",
-        "version": "http://snomed.info/sct/11000274103/version/20241115",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
         "code": "131196009",
-        "display": "Susceptible (qualifier value)"
+        "display": "Empfindlich"
       },
       {
         "system": "http://snomed.info/sct",
-        "version": "http://snomed.info/sct/11000274103/version/20241115",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
         "code": "1255965005",
-        "display": "Susceptible with increased exposure (qualifier value)"
+        "display": "Empfindlich bei erhöhter Exposition"
       },
       {
         "system": "http://snomed.info/sct",
-        "version": "http://snomed.info/sct/11000274103/version/20241115",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
         "code": "264841006",
-        "display": "Intermediately susceptible (qualifier value)"
+        "display": "Intermediär empfindlich"
       },
       {
         "system": "http://snomed.info/sct",
-        "version": "http://snomed.info/sct/11000274103/version/20241115",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
         "code": "30714006",
-        "display": "Resistant (qualifier value)"
+        "display": "Resistent"
       }
     ]
   }

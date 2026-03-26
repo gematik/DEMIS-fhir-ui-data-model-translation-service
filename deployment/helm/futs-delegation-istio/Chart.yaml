@@ -1,6 +1,0 @@
-apiVersion: v2
-name: futs-delegation-istio
-description: DEMIS fhir-ui-data-model-translation-service Istio Configuration for delegation
-type: application
-version: 2.4.0
-appVersion: "2.4.0"

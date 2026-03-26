@@ -2,17 +2,18 @@
   "resourceType": "CodeSystem",
   "id": "pzn",
   "url": "http://fhir.de/CodeSystem/ifa/pzn",
-  "version": "1.4.0",
   "name": "Pzn",
+  "title": "PZN",
   "status": "active",
   "experimental": false,
-  "date": "2021-02-17",
+  "version": "rki.demis.sky.0.0.0",
+  "date": "2025-06-16",
   "publisher": "HL7 Deutschland e.V. (Technisches Komitee FHIR)",
   "contact": [
     {
       "telecom": [
         {
-          "system": "other",
+          "system": "url",
           "value": "http://hl7.de/technische-komitees/fhir/"
         }
       ]

@@ -40,7 +40,6 @@ import java.util.Map;
 import java.util.Optional;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 @OnlyInDiseaseContext
@@ -52,9 +51,6 @@ public class DiseaseDataLoaderSrv {
   private final QuestionnairePreparation questionnairePreparation;
   private final DiseaseNotificationCategoriesSrv categoriesSrv;
   private final DiseaseDataPreparationSrv diseaseDataPreparationSrv;
-
-  @Value("${feature.flag.notifications.7_3}")
-  private boolean isNotification73Active;
 
   private Map<String, QuestionnaireTranslation> translations;
   private List<CodeDisplay> possibleDiseaseCodes;
@@ -88,11 +84,7 @@ public class DiseaseDataLoaderSrv {
       contextualName = "all-codes",
       lowCardinalityKeyValues = {"disease", "fhir"})
   public List<CodeDisplay> getPossibleDiseaseCodesNonNominal() {
-    if (isNotification73Active) {
-      return possibleDiseaseCodesNonNominal;
-    } else {
-      throw new UnsupportedOperationException("Feature flag for §7.3 is not active");
-    }
+    return possibleDiseaseCodesNonNominal;
   }
 
   @Observed(

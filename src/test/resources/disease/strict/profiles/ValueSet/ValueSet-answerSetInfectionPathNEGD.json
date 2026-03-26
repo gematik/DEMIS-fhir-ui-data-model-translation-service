@@ -2,12 +2,12 @@
   "resourceType": "ValueSet",
   "id": "answerSetInfectionPathNEGD",
   "url": "https://demis.rki.de/fhir/ValueSet/answerSetInfectionPathNEGD",
-  "version": "1.0.1",
+  "version": "2.0.0",
   "name": "AnswerSetInfectionPathNEGD",
   "title": "Antwortmöglichkeiten zur Angabe des Infektionswegs bei dem Meldetatbestand \"Neisseria gonorrhoeae (Gonorrhö)\"",
   "status": "active",
   "experimental": false,
-  "date": "2025-08-12",
+  "date": "2026-01-09",
   "publisher": "Robert Koch-Institut",
   "contact": [
     {
@@ -36,7 +36,7 @@
     "include": [
       {
         "system": "http://snomed.info/sct",
-        "version": "http://snomed.info/sct/11000274103/version/20241115",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
         "concept": [
           {
             "extension": [
@@ -50,6 +50,10 @@
             "designation": [
               {
                 "language": "de-DE",
+                "use": {
+                  "system": "http://snomed.info/sct",
+                  "code": "900000000000013009"
+                },
                 "value": "Mutter-Kind-Übertragung"
               }
             ]
@@ -58,23 +62,7 @@
             "extension": [
               {
                 "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
-                "valueInteger": 999
-              }
-            ],
-            "code": "1631000175102",
-            "display": "Patient not asked (contextual qualifier) (qualifier value)",
-            "designation": [
-              {
-                "language": "de-DE",
-                "value": "Patient/Patientin nicht gefragt"
-              }
-            ]
-          },
-          {
-            "extension": [
-              {
-                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
-                "valueInteger": 1000
+                "valueInteger": 2
               }
             ],
             "code": "261665006",
@@ -108,19 +96,13 @@
               }
             ],
             "code": "472988006",
-            "display": "Sexually active with transgender person (finding)",
-            "designation": [
-              {
-                "language": "de-DE",
-                "value": "Sexuell aktiv mit Trans*personen"
-              }
-            ]
+            "display": "Sexuell aktiv mit Trans*person"
           },
           {
             "extension": [
               {
                 "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
-                "valueInteger": 1
+                "valueInteger": 5
               }
             ],
             "code": "74964007",
@@ -131,47 +113,41 @@
     ]
   },
   "expansion": {
-    "timestamp": "2025-08-12T00:00:00+02:00",
+    "timestamp": "2026-01-09T00:00:00+01:00",
     "contains": [
       {
         "system": "http://snomed.info/sct",
-        "version": "http://snomed.info/sct/11000274103/version/20241115",
-        "code": "1631000175102",
-        "display": "Patient not asked (contextual qualifier) (qualifier value)"
-      },
-      {
-        "system": "http://snomed.info/sct",
-        "version": "http://snomed.info/sct/11000274103/version/20241115",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
         "code": "1290740005",
         "display": "Vertikale Transmission"
       },
       {
         "system": "http://snomed.info/sct",
-        "version": "http://snomed.info/sct/11000274103/version/20241115",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
         "code": "472986005",
         "display": "Sexuell aktiv mit Männern"
       },
       {
         "system": "http://snomed.info/sct",
-        "version": "http://snomed.info/sct/11000274103/version/20241115",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
         "code": "472988006",
-        "display": "Sexually active with transgender person (finding)"
+        "display": "Sexuell aktiv mit Trans*person"
       },
       {
         "system": "http://snomed.info/sct",
-        "version": "http://snomed.info/sct/11000274103/version/20241115",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
         "code": "261665006",
         "display": "Unbekannt"
       },
       {
         "system": "http://snomed.info/sct",
-        "version": "http://snomed.info/sct/11000274103/version/20241115",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
         "code": "472987001",
         "display": "Sexuell aktiv mit Frauen"
       },
       {
         "system": "http://snomed.info/sct",
-        "version": "http://snomed.info/sct/11000274103/version/20241115",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
         "code": "74964007",
         "display": "Andere"
       }

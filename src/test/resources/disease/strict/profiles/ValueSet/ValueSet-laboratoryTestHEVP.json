@@ -1,0 +1,160 @@
+{
+  "resourceType": "ValueSet",
+  "id": "laboratoryTestHEVP",
+  "url": "https://demis.rki.de/fhir/ValueSet/laboratoryTestHEVP",
+  "version": "1.7.1",
+  "name": "LaboratoryTestHEVP",
+  "title": "Labortest für Hepatitis-E-Virus",
+  "status": "active",
+  "experimental": false,
+  "date": "2025-12-05",
+  "publisher": "Robert Koch-Institut",
+  "contact": [
+    {
+      "telecom": [
+        {
+          "system": "email",
+          "value": "demis-support@rki.de"
+        }
+      ]
+    }
+  ],
+  "description": "Das ValueSet LaboratoryTestHEVP enthält die Codes der Labortests für Hepatitis-E-Virus.",
+  "jurisdiction": [
+    {
+      "coding": [
+        {
+          "system": "urn:iso:std:iso:3166",
+          "version": "ALPHA-2",
+          "code": "DE"
+        }
+      ]
+    }
+  ],
+  "copyright": "This material contains content from LOINC (http://loinc.org/). LOINC is copyright © 1995-2023, Regenstrief Institute, Inc. and the Logical Observation Identifiers Names and Codes (LOINC) Committee and is available at no cost under the license at http://loinc.org/license. LOINC® is a registered United States trademark of Regenstrief Institute, Inc.\r\n\r\nDieses Material enthält Inhalte von LOINC (http://loinc.org/). LOINC ist urheberrechtlich geschützt © 1995-2023, Regenstrief Institute, Inc. und das Logical Observation Identifiers Names and Codes (LOINC) Committee und ist unter der Lizenz http://loinc.org/license kostenlos erhältlich. LOINC® ist eine eingetragene US-amerikanische Marke des Regenstrief Institute, Inc.\r\n\r\nDownloadbedingungen für LOINC-Übersetzungen für Anwendungszwecke in Deutschland\r\nÜbersetzungen in verschiedenen Sprachen werden von \"LOINC® Adopters\", meistens Behörden oder Forschungsinstituten verschiedener Länder, erstellt und an das Regenstrief Institute weitergegeben. Das Copyright für die Übersetzungen liegt beim Regenstrief Institute. Für Deutschland wird die LOINC®-Übersetzung durch das BfArM bereitgestellt. Die Übersetzungen werden durch das Regenstrief Institute als \"Linguistic Variants\" in den halbjährlichen LOINC®-Releases (Februar und August) veröffentlicht.\r\n\r\nDas Copyright für die Übersetzungen liegt beim Regenstrief Institute, 1101 W 10th St, Indianapolis, IN 46202, USA.\r\n\r\nMit dem Download von Dateien kommt ein Nutzungsvertrag zwischen Ihnen und dem Regenstrief Institute zustande. Sie verpflichten sich, die unten verlinkten Nutzungs- und Abgabebedingungen für LOINC vom Regenstrief Institute einzuhalten.",
+  "compose": {
+    "include": [
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "concept": [
+          {
+            "code": "14211-7",
+            "display": "Hepatitis-E-Virus IgG-Antikörper [Nachweis] in Serum"
+          },
+          {
+            "code": "14212-5",
+            "display": "Hepatitis-E-Virus IgM-Antikörper [Nachweis] in Serum"
+          },
+          {
+            "code": "41852-5",
+            "display": "Mikroorganismus oder Erreger identifiziert in Probenmaterial"
+          },
+          {
+            "code": "49693-5",
+            "display": "Hepatitis-E-Virus IgG-Antikörper [Nachweis] in Serum mittels Immunoassay"
+          },
+          {
+            "code": "51798-7",
+            "display": "Hepatitis-E-Virus IgM-Antikörper [Einheiten/Volumen] in Serum"
+          },
+          {
+            "code": "56513-5",
+            "display": "Hepatitis-E-Virus IgG-Antikörper [Einheiten/Volumen] in Serum oder Plasma mittels Immunoassay"
+          },
+          {
+            "code": "69961-1",
+            "display": "Hepatitis-E-Virus RNA [Einheiten/Volumen] (Viruslast) in Serum oder Plasma mittels Nukleinsäureamplifikation mit Sondendetektion"
+          },
+          {
+            "code": "83128-9",
+            "display": "Hepatitis-E-Virus IgM-Antikörper [Nachweis] in Serum oder Plasma mittels Immunoassay"
+          },
+          {
+            "code": "90460-7",
+            "display": "Hepatitis-E-Virus RNA [Nachweis] in Serum oder Plasma mittels Nukleinsäureamplifikation mit Sondendetektion"
+          },
+          {
+            "code": "91071-1",
+            "display": "Hepatitis-E-Virus RNA [Nachweis] in Stuhl mittels Nukleinsäureamplifikation mit Sondendetektion"
+          },
+          {
+            "code": "95156-6",
+            "display": "Hepatitis-E-Virus RNA [Nachweis] in Probenmaterial mittels Nukleinsäureamplifikation mit Sondendetektion"
+          }
+        ]
+      }
+    ]
+  },
+  "expansion": {
+    "timestamp": "2025-12-05T00:00:00+01:00",
+    "contains": [
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "51798-7",
+        "display": "Hepatitis-E-Virus IgM-Antikörper [Einheiten/Volumen] in Serum"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "83128-9",
+        "display": "Hepatitis-E-Virus IgM-Antikörper [Nachweis] in Serum oder Plasma mittels Immunoassay"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "56513-5",
+        "display": "Hepatitis-E-Virus IgG-Antikörper [Einheiten/Volumen] in Serum oder Plasma mittels Immunoassay"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "90460-7",
+        "display": "Hepatitis-E-Virus RNA [Nachweis] in Serum oder Plasma mittels Nukleinsäureamplifikation mit Sondendetektion"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "91071-1",
+        "display": "Hepatitis-E-Virus RNA [Nachweis] in Stuhl mittels Nukleinsäureamplifikation mit Sondendetektion"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "14212-5",
+        "display": "Hepatitis-E-Virus IgM-Antikörper [Nachweis] in Serum"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "14211-7",
+        "display": "Hepatitis-E-Virus IgG-Antikörper [Nachweis] in Serum"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "69961-1",
+        "display": "Hepatitis-E-Virus RNA [Einheiten/Volumen] (Viruslast) in Serum oder Plasma mittels Nukleinsäureamplifikation mit Sondendetektion"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "41852-5",
+        "display": "Mikroorganismus oder Erreger identifiziert in Probenmaterial"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "49693-5",
+        "display": "Hepatitis-E-Virus IgG-Antikörper [Nachweis] in Serum mittels Immunoassay"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "95156-6",
+        "display": "Hepatitis-E-Virus RNA [Nachweis] in Probenmaterial mittels Nukleinsäureamplifikation mit Sondendetektion"
+      }
+    ]
+  }
+}

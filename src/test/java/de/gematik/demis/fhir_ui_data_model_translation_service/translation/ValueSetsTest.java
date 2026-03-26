@@ -70,7 +70,7 @@ class ValueSetsTest {
   static final String SORT_FILTER_FILE =
       "src/test/resources/sortedValueSets/ValueSet-materialINVP.json";
   private static final FeatureFlags FEATURE_FLAGS_ENABLED =
-      FeatureFlags.builder().addDesignationUse(true).addCodeDisplayVersion(true).build();
+      FeatureFlags.builder().addCodeDisplayVersion(true).build();
   @Mock private CodeSystems codeSystemsMock;
 
   @Test

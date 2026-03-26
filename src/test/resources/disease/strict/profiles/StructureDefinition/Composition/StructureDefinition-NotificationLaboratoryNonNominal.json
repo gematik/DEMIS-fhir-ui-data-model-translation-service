@@ -2,12 +2,35 @@
   "resourceType": "StructureDefinition",
   "id": "NotificationLaboratoryNonNominal",
   "url": "https://demis.rki.de/fhir/StructureDefinition/NotificationLaboratoryNonNominal",
-  "version": "1.0.2",
+  "version": "1.1.0",
   "name": "NotificationLaboratoryNonNominal",
   "title": "Nichtnamentliche Erregernachweismeldung nach § 7 Abs. 3 IfSG",
   "status": "active",
-  "date": "2025-08-12",
+  "date": "2026-01-13",
+  "publisher": "Robert Koch-Institut",
+  "contact": [
+    {
+      "telecom": [
+        {
+          "system": "email",
+          "value": "demis-support@rki.de"
+        }
+      ]
+    }
+  ],
   "description": "Die nichtnamentliche Erregernachweismeldung definiert die Meldeinhalte, die von Laboren übermittelt werden müssen. Erregerspezifische Befunddaten werden über Subprofile des nichtnamentlichen Laborbericht-Profils definiert. In der nichtnamentlichen Erregernachweismeldung nach § 7 Abs. 3 IfSG kann ein erregerspezifischer, nichtnamentlicher Laborbericht referenziert werden.",
+  "jurisdiction": [
+    {
+      "coding": [
+        {
+          "system": "urn:iso:std:iso:3166",
+          "version": "ALPHA-2",
+          "code": "DE"
+        }
+      ]
+    }
+  ],
+  "copyright": "Copyright (C) 2021-2025 Robert Koch-Institut",
   "fhirVersion": "4.0.1",
   "mapping": [
     {
@@ -1794,8 +1817,8 @@
       {
         "id": "Composition.subject",
         "path": "Composition.subject",
-        "short": "Verweis auf die betroffene Person (namentlich).",
-        "definition": "Verweis auf die betroffene Person (namentlich).",
+        "short": "Verweis auf die betroffene Person (namentlich oder anonym).",
+        "definition": "Verweis auf die betroffene Person (namentlich oder anonym).",
         "comment": "For clinical documents, this is usually the patient.",
         "requirements": "Essential metadata for searching for the composition. Identifies who and/or what the composition/document is about.",
         "min": 1,
@@ -1809,7 +1832,8 @@
           {
             "code": "Reference",
             "targetProfile": [
-              "https://demis.rki.de/fhir/StructureDefinition/NotifiedPerson"
+              "https://demis.rki.de/fhir/StructureDefinition/NotifiedPerson",
+              "https://demis.rki.de/fhir/StructureDefinition/NotifiedPersonAnonymous"
             ]
           }
         ],
@@ -5917,14 +5941,15 @@
       {
         "id": "Composition.subject",
         "path": "Composition.subject",
-        "short": "Verweis auf die betroffene Person (namentlich).",
-        "definition": "Verweis auf die betroffene Person (namentlich).",
+        "short": "Verweis auf die betroffene Person (namentlich oder anonym).",
+        "definition": "Verweis auf die betroffene Person (namentlich oder anonym).",
         "min": 1,
         "type": [
           {
             "code": "Reference",
             "targetProfile": [
-              "https://demis.rki.de/fhir/StructureDefinition/NotifiedPerson"
+              "https://demis.rki.de/fhir/StructureDefinition/NotifiedPerson",
+              "https://demis.rki.de/fhir/StructureDefinition/NotifiedPersonAnonymous"
             ]
           }
         ],

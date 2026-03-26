@@ -50,7 +50,10 @@ class DefaultOrganizationProcessorTest {
   void createFieldGroup_shouldCreate() {
     DefaultOrganizationProcessor processor =
         new DefaultOrganizationProcessor(
-            new EnableWhenProcessor(), this.diseaseClipboardProps, this.dataLoaderSrv);
+            new EnableWhenProcessor(),
+            this.diseaseClipboardProps,
+            this.dataLoaderSrv,
+            BaseOrganizationProcessorTest.FEATURE_FLAGS);
     FieldGroup parent = FieldGroup.builder().build();
     Questionnaire.QuestionnaireItemComponent item = new Questionnaire.QuestionnaireItemComponent();
     item.setLinkId("testLinkId");

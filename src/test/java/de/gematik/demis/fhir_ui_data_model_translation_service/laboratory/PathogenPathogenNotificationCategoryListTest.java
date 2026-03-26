@@ -33,20 +33,13 @@ import static org.mockito.ArgumentMatchers.eq;
 import static org.mockito.Mockito.when;
 
 import ca.uhn.fhir.context.FhirContext;
-import de.gematik.demis.fhir_ui_data_model_translation_service.model.CodeDisplay;
-import de.gematik.demis.fhir_ui_data_model_translation_service.model.Designation;
-import de.gematik.demis.fhir_ui_data_model_translation_service.objects.TestObjects;
 import de.gematik.demis.fhir_ui_data_model_translation_service.utils.SnapshotFilesService;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
-import java.util.List;
-import java.util.Set;
 import org.apache.commons.io.IOUtils;
 import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.Mock;
@@ -61,31 +54,12 @@ class PathogenPathogenNotificationCategoryListTest {
   private File notificationCategoryFile7_3;
   private FhirContext fhirContext;
   @Mock private SnapshotFilesService snapshotFilesServiceMock;
-  private PathogenNotificationCategoryList pathogenNotificationCategoryList;
 
   @BeforeEach
   void setUp() {
     notificationCategoryFile7_1 =
         new File("src/test/resources/profiles/CodeSystem/CodeSystem-notificationCategory.json");
     fhirContext = FhirContext.forR4();
-  }
-
-  @DisplayName(
-      "io exception while reading notificationCategoryFile should lead to empty CodeDisplay list as result")
-  @Test
-  void shouldReturnEmptyListIfIOExceptionOccurs() {
-    try (MockedStatic<IOUtils> utilities = Mockito.mockStatic(IOUtils.class)) {
-      utilities
-          .when(() -> IOUtils.toString(any(FileInputStream.class), eq(StandardCharsets.UTF_8)))
-          .thenThrow(new IOException());
-
-      when(snapshotFilesServiceMock.getProfileNotificationCategoryCodeSystemFile())
-          .thenReturn(notificationCategoryFile7_1);
-
-      var testobject = new PathogenNotificationCategoryList(snapshotFilesServiceMock, fhirContext);
-
-      assertThat(testobject.getPathogenNotificationCategoryList()).isEmpty();
-    }
   }
 
   @Test
@@ -100,7 +74,7 @@ class PathogenPathogenNotificationCategoryListTest {
     when(snapshotFilesServiceMock.getProfileNotificationCategoryNonNomimalValueSetFile())
         .thenReturn(notificationCategoryFile7_3);
 
-    pathogenNotificationCategoryList =
+    PathogenNotificationCategoryList pathogenNotificationCategoryList =
         new PathogenNotificationCategoryList(snapshotFilesServiceMock, fhirContext);
 
     assertThat(
@@ -139,158 +113,6 @@ class PathogenPathogenNotificationCategoryListTest {
       var testobject = new PathogenNotificationCategoryList(snapshotFilesServiceMock, fhirContext);
 
       assertThat(testobject.getPathogenNotificationCategories()).isEmpty();
-    }
-  }
-
-  @Nested
-  @DisplayName("unfiltered laboratory notification category tests")
-  class UnfilteredLabNotCatTests {
-    @Test
-    @DisplayName("should return data from file for notification category with no filtering")
-    void shouldReturnDataFromFileForNotificationCategoryWithNoFiltering() {
-
-      when(snapshotFilesServiceMock.getProfileNotificationCategoryCodeSystemFile())
-          .thenReturn(notificationCategoryFile7_1);
-
-      pathogenNotificationCategoryList =
-          new PathogenNotificationCategoryList(snapshotFilesServiceMock, fhirContext);
-
-      List<CodeDisplay> filteredNotificationCategoryList =
-          pathogenNotificationCategoryList.getPathogenNotificationCategoryList();
-
-      assertThat(filteredNotificationCategoryList).hasSize(91);
-    }
-
-    @Test
-    @DisplayName("should return data from file for notification category")
-    void shouldReturnDataFromFileForNotificationCategory() {
-
-      when(snapshotFilesServiceMock.getProfileNotificationCategoryCodeSystemFile())
-          .thenReturn(notificationCategoryFile7_1);
-
-      pathogenNotificationCategoryList =
-          new PathogenNotificationCategoryList(snapshotFilesServiceMock, fhirContext);
-
-      List<CodeDisplay> filteredNotificationCategoryList =
-          pathogenNotificationCategoryList.getPathogenNotificationCategoryList();
-
-      assertThat(filteredNotificationCategoryList)
-          .hasSize(91)
-          .extracting("code")
-          .contains("hbvp", "invp");
-    }
-
-    @Test
-    @DisplayName("check designations and display values")
-    void shouldReturnDataWithDesignationAndDisplay() {
-
-      when(snapshotFilesServiceMock.getProfileNotificationCategoryCodeSystemFile())
-          .thenReturn(notificationCategoryFile7_1);
-
-      pathogenNotificationCategoryList =
-          new PathogenNotificationCategoryList(snapshotFilesServiceMock, fhirContext);
-
-      List<CodeDisplay> filteredNotificationCategoryList =
-          pathogenNotificationCategoryList.getPathogenNotificationCategoryList();
-
-      assertThat(filteredNotificationCategoryList)
-          .hasSize(91)
-          .contains(TestObjects.codeDisplayWithDesignation().invpRegression());
-    }
-
-    @DisplayName(
-        "NotificationCategoryList should handle empty filter list through using an empty list and no filtering")
-    @Test
-    void shouldHandleEmptyFilterListGracefully() {
-      when(snapshotFilesServiceMock.getProfileNotificationCategoryCodeSystemFile())
-          .thenReturn(notificationCategoryFile7_1);
-
-      PathogenNotificationCategoryList pathogenNotificationCategoryList =
-          new PathogenNotificationCategoryList(snapshotFilesServiceMock, fhirContext);
-
-      List<CodeDisplay> filteredNotificationCategoryList =
-          pathogenNotificationCategoryList.getPathogenNotificationCategoryList();
-
-      assertThat(filteredNotificationCategoryList).hasSize(91);
-    }
-  }
-
-  @Nested
-  @DisplayName("filtered laboratory notification category tests")
-  class FilteredLabNotCatTests {
-    @Test
-    @DisplayName("should return data from file for notification category with no filtering")
-    void shouldReturnDataFromFileForNotificationCategoryWithNoFiltering() {
-
-      when(snapshotFilesServiceMock.getProfileNotificationCategoryCodeSystemFile())
-          .thenReturn(notificationCategoryFile7_1);
-
-      pathogenNotificationCategoryList =
-          new PathogenNotificationCategoryList(snapshotFilesServiceMock, fhirContext);
-
-      List<CodeDisplay> filteredNotificationCategoryList =
-          pathogenNotificationCategoryList.getPathogenNotificationCategoryList();
-
-      assertThat(filteredNotificationCategoryList).hasSize(91);
-    }
-
-    @Test
-    @DisplayName("should return data from file for notification category")
-    void shouldReturnDataFromFileForNotificationCategory() {
-
-      when(snapshotFilesServiceMock.getProfileNotificationCategoryCodeSystemFile())
-          .thenReturn(notificationCategoryFile7_1);
-
-      pathogenNotificationCategoryList =
-          new PathogenNotificationCategoryList(snapshotFilesServiceMock, fhirContext);
-
-      List<CodeDisplay> filteredNotificationCategoryList =
-          pathogenNotificationCategoryList.getPathogenNotificationCategoryList();
-
-      assertThat(filteredNotificationCategoryList)
-          .hasSize(91)
-          .extracting("code")
-          .contains("hbvp", "invp");
-    }
-
-    @Test
-    @DisplayName("check designations and display values")
-    void shouldReturnDataWithDesignationAndDisplay() {
-
-      when(snapshotFilesServiceMock.getProfileNotificationCategoryCodeSystemFile())
-          .thenReturn(notificationCategoryFile7_1);
-
-      pathogenNotificationCategoryList =
-          new PathogenNotificationCategoryList(snapshotFilesServiceMock, fhirContext);
-
-      List<CodeDisplay> filteredNotificationCategoryList =
-          pathogenNotificationCategoryList.getPathogenNotificationCategoryList();
-
-      assertThat(filteredNotificationCategoryList)
-          .hasSize(91)
-          .contains(
-              CodeDisplay.builder()
-                  .code("invp")
-                  .display("Influenzavirus; Meldepflicht nur für den direkten Nachweis")
-                  .designations(Set.of(new Designation("de-DE", "Influenzavirus")))
-                  .order(100)
-                  .build());
-    }
-
-    @DisplayName(
-        "NotificationCategoryList should handle empty filter list through using an empty list and no filtering")
-    @Test
-    void shouldHandleEmptyFilterListGracefully() {
-      when(snapshotFilesServiceMock.getProfileNotificationCategoryCodeSystemFile())
-          .thenReturn(notificationCategoryFile7_1);
-
-      PathogenNotificationCategoryList pathogenNotificationCategoryList =
-          new PathogenNotificationCategoryList(snapshotFilesServiceMock, fhirContext);
-
-      List<CodeDisplay> filteredNotificationCategoryList =
-          pathogenNotificationCategoryList.getPathogenNotificationCategoryList();
-
-      assertThat(filteredNotificationCategoryList).hasSize(91);
     }
   }
 }

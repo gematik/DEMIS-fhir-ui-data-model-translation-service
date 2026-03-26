@@ -2,11 +2,11 @@
   "resourceType": "StructureDefinition",
   "id": "NotifiedPersonAnonymous",
   "url": "https://demis.rki.de/fhir/StructureDefinition/NotifiedPersonAnonymous",
-  "version": "1.5.1",
+  "version": "1.5.2",
   "name": "NotifiedPersonAnonymous",
   "title": "Betroffene Person (anonym)",
   "status": "active",
-  "date": "2025-06-06",
+  "date": "2026-01-13",
   "description": "Profil zur Abbildung von anonym gemeldeten Personen (nichtnamentlich nach § 10 IfSG ohne Erstellung eines Pseudonyms), z.B. im Zusammenhang mit Meldungen gemäß § 7 Abs. 4 IfSG.",
   "fhirVersion": "4.0.1",
   "kind": "resource",
@@ -1093,7 +1093,7 @@
             "human": "Must have either extensions or value[x], not both",
             "expression": "extension.exists() != value.exists()",
             "xpath": "exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])",
-            "source": "http://hl7.org/fhir/StructureDefinition/Extension"
+            "source": "http://hl7.org/fhir/StructureDefinition/Patient"
           }
         ],
         "isModifier": false,
@@ -1335,6 +1335,7 @@
             "source": "http://hl7.org/fhir/StructureDefinition/Element"
           }
         ],
+        "mustSupport": true,
         "isModifier": false,
         "isSummary": true,
         "mapping": [
@@ -2583,6 +2584,7 @@
             "source": "http://hl7.org/fhir/StructureDefinition/Element"
           }
         ],
+        "mustSupport": true,
         "isModifier": false,
         "isSummary": true,
         "mapping": [
@@ -5277,7 +5279,8 @@
         "id": "Patient.address:hauptwohnung",
         "path": "Patient.address",
         "sliceName": "hauptwohnung",
-        "max": "1"
+        "max": "1",
+        "mustSupport": true
       },
       {
         "id": "Patient.address:hauptwohnung.extension",
@@ -5386,7 +5389,8 @@
         "id": "Patient.address:gewoehnlicherAufenthaltsort",
         "path": "Patient.address",
         "sliceName": "gewoehnlicherAufenthaltsort",
-        "max": "1"
+        "max": "1",
+        "mustSupport": true
       },
       {
         "id": "Patient.address:gewoehnlicherAufenthaltsort.extension",

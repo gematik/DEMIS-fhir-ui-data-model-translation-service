@@ -1,0 +1,3620 @@
+{
+  "resourceType": "ValueSet",
+  "id": "resistance",
+  "url": "https://demis.rki.de/fhir/ValueSet/resistance",
+  "version": "1.11.1",
+  "name": "Resistance",
+  "title": "Resistenz",
+  "status": "active",
+  "experimental": false,
+  "date": "2025-12-05",
+  "publisher": "Robert Koch-Institut",
+  "contact": [
+    {
+      "telecom": [
+        {
+          "system": "email",
+          "value": "demis-support@rki.de"
+        }
+      ]
+    }
+  ],
+  "description": "Das ValueSet Resistance enthält die Codes für die Resistenzen.",
+  "jurisdiction": [
+    {
+      "coding": [
+        {
+          "system": "urn:iso:std:iso:3166",
+          "version": "ALPHA-2",
+          "code": "DE"
+        }
+      ]
+    }
+  ],
+  "copyright": "This material contains content from LOINC (http://loinc.org/). LOINC is copyright © 1995-2023, Regenstrief Institute, Inc. and the Logical Observation Identifiers Names and Codes (LOINC) Committee and is available at no cost under the license at http://loinc.org/license. LOINC® is a registered United States trademark of Regenstrief Institute, Inc.\r\n\r\nDieses Material enthält Inhalte von LOINC (http://loinc.org/). LOINC ist urheberrechtlich geschützt © 1995-2023, Regenstrief Institute, Inc. und das Logical Observation Identifiers Names and Codes (LOINC) Committee und ist unter der Lizenz http://loinc.org/license kostenlos erhältlich. LOINC® ist eine eingetragene US-amerikanische Marke des Regenstrief Institute, Inc.\r\n\r\nDownloadbedingungen für LOINC-Übersetzungen für Anwendungszwecke in Deutschland\r\nÜbersetzungen in verschiedenen Sprachen werden von \"LOINC® Adopters\", meistens Behörden oder Forschungsinstituten verschiedener Länder, erstellt und an das Regenstrief Institute weitergegeben. Das Copyright für die Übersetzungen liegt beim Regenstrief Institute. Für Deutschland wird die LOINC®-Übersetzung durch das BfArM bereitgestellt. Die Übersetzungen werden durch das Regenstrief Institute als \"Linguistic Variants\" in den halbjährlichen LOINC®-Releases (Februar und August) veröffentlicht.\r\n\r\nDas Copyright für die Übersetzungen liegt beim Regenstrief Institute, 1101 W 10th St, Indianapolis, IN 46202, USA.\r\n\r\nMit dem Download von Dateien kommt ein Nutzungsvertrag zwischen Ihnen und dem Regenstrief Institute zustande. Sie verpflichten sich, die unten verlinkten Nutzungs- und Abgabebedingungen für LOINC vom Regenstrief Institute einzuhalten.",
+  "compose": {
+    "include": [
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "concept": [
+          {
+            "code": "100041-3",
+            "display": "Aminoglycosid [Empfindlichkeit]"
+          },
+          {
+            "code": "100042-1",
+            "display": "Atovaquon [Empfindlichkeit]"
+          },
+          {
+            "code": "100043-9",
+            "display": "Azithromycin+Ethambutol [Empfindlichkeit]"
+          },
+          {
+            "code": "100044-7",
+            "display": "Cefcapen [Empfindlichkeit]"
+          },
+          {
+            "code": "100045-4",
+            "display": "Cefozopran [Empfindlichkeit]"
+          },
+          {
+            "code": "100046-2",
+            "display": "Cefquinom [Empfindlichkeit]"
+          },
+          {
+            "code": "100047-0",
+            "display": "Cefteram [Empfindlichkeit]"
+          },
+          {
+            "code": "100048-8",
+            "display": "Clarithromycin+Ethambutol [Empfindlichkeit]"
+          },
+          {
+            "code": "100049-6",
+            "display": "Eravacyclin [Empfindlichkeit]"
+          },
+          {
+            "code": "100050-4",
+            "display": "Erythromycin+Ethambutol [Empfindlichkeit]"
+          },
+          {
+            "code": "100051-2",
+            "display": "Ethambutol+Rifampicin [Empfindlichkeit]"
+          },
+          {
+            "code": "100052-0",
+            "display": "Flomoxef [Empfindlichkeit]"
+          },
+          {
+            "code": "100053-8",
+            "display": "Fluorchinolon [Empfindlichkeit]"
+          },
+          {
+            "code": "100054-6",
+            "display": "Gamithromycin [Empfindlichkeit]"
+          },
+          {
+            "code": "100055-3",
+            "display": "Optochin [Empfindlichkeit]"
+          },
+          {
+            "code": "100056-1",
+            "display": "Panipenem [Empfindlichkeit]"
+          },
+          {
+            "code": "100057-9",
+            "display": "Prothionamid [Empfindlichkeit]"
+          },
+          {
+            "code": "100058-7",
+            "display": "Prulifloxacin [Empfindlichkeit]"
+          },
+          {
+            "code": "100059-5",
+            "display": "Rifapentin [Empfindlichkeit]"
+          },
+          {
+            "code": "100060-3",
+            "display": "Tildipirosin [Empfindlichkeit]"
+          },
+          {
+            "code": "100061-1",
+            "display": "Tosufloxacin [Empfindlichkeit]"
+          },
+          {
+            "code": "100699-8",
+            "display": "Rifabutin+Ethambutol [Empfindlichkeit]"
+          },
+          {
+            "code": "103653-2",
+            "display": "Ciprofloxacin [Empfindlichkeit] für Meningitis"
+          },
+          {
+            "code": "103654-0",
+            "display": "Meropenem [Empfindlichkeit] für Meningitis"
+          },
+          {
+            "code": "103672-2",
+            "display": "Amoxicillin+Clavulanat [Empfindlichkeit] für Harnwegsinfektionen"
+          },
+          {
+            "code": "1-8",
+            "display": "Aciclovir [Empfindlichkeit]"
+          },
+          {
+            "code": "18855-7",
+            "display": "5-Fluorocytosin [Empfindlichkeit]"
+          },
+          {
+            "code": "18857-3",
+            "display": "Almecillin [Empfindlichkeit]"
+          },
+          {
+            "code": "18859-9",
+            "display": "Amdinocillin [Empfindlichkeit]"
+          },
+          {
+            "code": "18860-7",
+            "display": "Amikacin [Empfindlichkeit]"
+          },
+          {
+            "code": "18861-5",
+            "display": "Amoxicillin [Empfindlichkeit]"
+          },
+          {
+            "code": "18862-3",
+            "display": "Amoxicillin+Clavulanat [Empfindlichkeit]"
+          },
+          {
+            "code": "18863-1",
+            "display": "Amphotericin B [Empfindlichkeit]"
+          },
+          {
+            "code": "18864-9",
+            "display": "Ampicillin [Empfindlichkeit]"
+          },
+          {
+            "code": "18865-6",
+            "display": "Ampicillin+Sulbactam [Empfindlichkeit]"
+          },
+          {
+            "code": "18866-4",
+            "display": "Azithromycin [Empfindlichkeit]"
+          },
+          {
+            "code": "18867-2",
+            "display": "Azlocillin [Empfindlichkeit]"
+          },
+          {
+            "code": "18868-0",
+            "display": "Aztreonam [Empfindlichkeit]"
+          },
+          {
+            "code": "18869-8",
+            "display": "Bacampicillin [Empfindlichkeit]"
+          },
+          {
+            "code": "18870-6",
+            "display": "Bacitracin [Empfindlichkeit]"
+          },
+          {
+            "code": "18871-4",
+            "display": "Butirosin [Empfindlichkeit]"
+          },
+          {
+            "code": "18872-2",
+            "display": "Capreomycin [Empfindlichkeit]"
+          },
+          {
+            "code": "18873-0",
+            "display": "Carbenicillin [Empfindlichkeit]"
+          },
+          {
+            "code": "18874-8",
+            "display": "Cefaclor [Empfindlichkeit]"
+          },
+          {
+            "code": "18875-5",
+            "display": "Cefadroxil [Empfindlichkeit]"
+          },
+          {
+            "code": "18876-3",
+            "display": "Cefamandol [Empfindlichkeit]"
+          },
+          {
+            "code": "18877-1",
+            "display": "Cefatrizin [Empfindlichkeit]"
+          },
+          {
+            "code": "18878-9",
+            "display": "Cefazolin [Empfindlichkeit]"
+          },
+          {
+            "code": "18879-7",
+            "display": "Cefepim [Empfindlichkeit]"
+          },
+          {
+            "code": "18880-5",
+            "display": "Cefixim [Empfindlichkeit]"
+          },
+          {
+            "code": "18881-3",
+            "display": "Cefmetazol [Empfindlichkeit]"
+          },
+          {
+            "code": "18882-1",
+            "display": "Cefodizim [Empfindlichkeit]"
+          },
+          {
+            "code": "18883-9",
+            "display": "Cefonicid [Empfindlichkeit]"
+          },
+          {
+            "code": "18884-7",
+            "display": "Cefoperazon [Empfindlichkeit]"
+          },
+          {
+            "code": "18885-4",
+            "display": "Ceforanid [Empfindlichkeit]"
+          },
+          {
+            "code": "18886-2",
+            "display": "Cefotaxim [Empfindlichkeit]"
+          },
+          {
+            "code": "18887-0",
+            "display": "Cefotetan [Empfindlichkeit]"
+          },
+          {
+            "code": "18888-8",
+            "display": "Cefoxitin [Empfindlichkeit]"
+          },
+          {
+            "code": "18889-6",
+            "display": "Cefpirom [Empfindlichkeit]"
+          },
+          {
+            "code": "18890-4",
+            "display": "Cefpodoxim [Empfindlichkeit]"
+          },
+          {
+            "code": "18891-2",
+            "display": "Cefprozil [Empfindlichkeit]"
+          },
+          {
+            "code": "18892-0",
+            "display": "Cefsulodin [Empfindlichkeit]"
+          },
+          {
+            "code": "18893-8",
+            "display": "Ceftazidim [Empfindlichkeit]"
+          },
+          {
+            "code": "18894-6",
+            "display": "Ceftizoxim [Empfindlichkeit]"
+          },
+          {
+            "code": "18895-3",
+            "display": "Ceftriaxon [Empfindlichkeit]"
+          },
+          {
+            "code": "18896-1",
+            "display": "Cefuroxim parenteral [Empfindlichkeit]"
+          },
+          {
+            "code": "18897-9",
+            "display": "Cephalexin [Empfindlichkeit]"
+          },
+          {
+            "code": "18898-7",
+            "display": "Cephaloglycin [Empfindlichkeit]"
+          },
+          {
+            "code": "18899-5",
+            "display": "Cephaloridin [Empfindlichkeit]"
+          },
+          {
+            "code": "18900-1",
+            "display": "Cephalothin [Empfindlichkeit]"
+          },
+          {
+            "code": "18901-9",
+            "display": "Cephapirin [Empfindlichkeit]"
+          },
+          {
+            "code": "18902-7",
+            "display": "Cephradin [Empfindlichkeit]"
+          },
+          {
+            "code": "18903-5",
+            "display": "Chloramphenicol [Empfindlichkeit]"
+          },
+          {
+            "code": "18904-3",
+            "display": "Chlortetracyclin [Empfindlichkeit]"
+          },
+          {
+            "code": "18905-0",
+            "display": "Cinoxacin [Empfindlichkeit]"
+          },
+          {
+            "code": "18906-8",
+            "display": "Ciprofloxacin [Empfindlichkeit]"
+          },
+          {
+            "code": "18907-6",
+            "display": "Clarithromycin [Empfindlichkeit]"
+          },
+          {
+            "code": "18908-4",
+            "display": "Clindamycin [Empfindlichkeit]"
+          },
+          {
+            "code": "18909-2",
+            "display": "Clotrimazol [Empfindlichkeit]"
+          },
+          {
+            "code": "18910-0",
+            "display": "Cloxacillin [Empfindlichkeit]"
+          },
+          {
+            "code": "18911-8",
+            "display": "Colistimethat"
+          },
+          {
+            "code": "18912-6",
+            "display": "Colistin [Empfindlichkeit]"
+          },
+          {
+            "code": "18913-4",
+            "display": "Ciclacillin [Empfindlichkeit]"
+          },
+          {
+            "code": "18914-2",
+            "display": "Cycloserin [Empfindlichkeit]"
+          },
+          {
+            "code": "18915-9",
+            "display": "Demeclocyclin [Empfindlichkeit]"
+          },
+          {
+            "code": "18916-7",
+            "display": "Dicloxacillin [Empfindlichkeit]"
+          },
+          {
+            "code": "18917-5",
+            "display": "Doxycyclin [Empfindlichkeit]"
+          },
+          {
+            "code": "18918-3",
+            "display": "Enoxacin [Empfindlichkeit]"
+          },
+          {
+            "code": "18919-1",
+            "display": "Erythromycin [Empfindlichkeit]"
+          },
+          {
+            "code": "18920-9",
+            "display": "Erythromycin+Sulfisoxazol [Empfindlichkeit]"
+          },
+          {
+            "code": "18921-7",
+            "display": "Ethambutol [Empfindlichkeit]"
+          },
+          {
+            "code": "18922-5",
+            "display": "Ethionamid [Empfindlichkeit]"
+          },
+          {
+            "code": "18923-3",
+            "display": "Floxacillin [Empfindlichkeit]"
+          },
+          {
+            "code": "18924-1",
+            "display": "Fluconazol [Empfindlichkeit]"
+          },
+          {
+            "code": "18926-6",
+            "display": "Framycetin [Empfindlichkeit]"
+          },
+          {
+            "code": "18927-4",
+            "display": "Fusidat [Empfindlichkeit]"
+          },
+          {
+            "code": "18928-2",
+            "display": "Gentamicin [Empfindlichkeit]"
+          },
+          {
+            "code": "18929-0",
+            "display": "Gentamicin.Hochdosis [Empfindlichkeit]"
+          },
+          {
+            "code": "18930-8",
+            "display": "Gramicidin D [Empfindlichkeit]"
+          },
+          {
+            "code": "18931-6",
+            "display": "Hetacillin [Empfindlichkeit]"
+          },
+          {
+            "code": "18932-4",
+            "display": "Imipenem [Empfindlichkeit]"
+          },
+          {
+            "code": "18934-0",
+            "display": "Isoniazid [Empfindlichkeit]"
+          },
+          {
+            "code": "18935-7",
+            "display": "Kanamycin [Empfindlichkeit]"
+          },
+          {
+            "code": "18936-5",
+            "display": "Kanamycin.Hochdosis [Empfindlichkeit]"
+          },
+          {
+            "code": "18937-3",
+            "display": "Ketoconazol [Empfindlichkeit]"
+          },
+          {
+            "code": "18938-1",
+            "display": "Lincomycin [Empfindlichkeit]"
+          },
+          {
+            "code": "18939-9",
+            "display": "Lomefloxacin [Empfindlichkeit]"
+          },
+          {
+            "code": "18940-7",
+            "display": "Loracarbef [Empfindlichkeit]"
+          },
+          {
+            "code": "18941-5",
+            "display": "Lymecyclin [Empfindlichkeit]"
+          },
+          {
+            "code": "18942-3",
+            "display": "Meclocyclin [Empfindlichkeit]"
+          },
+          {
+            "code": "18943-1",
+            "display": "Meropenem [Empfindlichkeit]"
+          },
+          {
+            "code": "18944-9",
+            "display": "Methacyclin [Empfindlichkeit]"
+          },
+          {
+            "code": "18945-6",
+            "display": "Methicillin [Empfindlichkeit]"
+          },
+          {
+            "code": "18946-4",
+            "display": "Metronidazol [Empfindlichkeit]"
+          },
+          {
+            "code": "18947-2",
+            "display": "Mezlocillin [Empfindlichkeit]"
+          },
+          {
+            "code": "18948-0",
+            "display": "Minocyclin [Empfindlichkeit]"
+          },
+          {
+            "code": "18949-8",
+            "display": "Miocamycin [Empfindlichkeit]"
+          },
+          {
+            "code": "18950-6",
+            "display": "Latamoxef [Empfindlichkeit]"
+          },
+          {
+            "code": "18951-4",
+            "display": "Nafcillin [Empfindlichkeit]"
+          },
+          {
+            "code": "18952-2",
+            "display": "Nalidixat [Empfindlichkeit]"
+          },
+          {
+            "code": "18953-0",
+            "display": "Neomycin [Empfindlichkeit]"
+          },
+          {
+            "code": "18954-8",
+            "display": "Netilmicin [Empfindlichkeit]"
+          },
+          {
+            "code": "18955-5",
+            "display": "Nitrofurantoin [Empfindlichkeit]"
+          },
+          {
+            "code": "18956-3",
+            "display": "Norfloxacin [Empfindlichkeit]"
+          },
+          {
+            "code": "18957-1",
+            "display": "Novobiocin [Empfindlichkeit]"
+          },
+          {
+            "code": "18958-9",
+            "display": "Nystatin [Empfindlichkeit]"
+          },
+          {
+            "code": "18959-7",
+            "display": "Ofloxacin [Empfindlichkeit]"
+          },
+          {
+            "code": "18960-5",
+            "display": "Oleandomycin [Empfindlichkeit]"
+          },
+          {
+            "code": "18961-3",
+            "display": "Oxacillin [Empfindlichkeit]"
+          },
+          {
+            "code": "18962-1",
+            "display": "Oxytetracyclin [Empfindlichkeit]"
+          },
+          {
+            "code": "18963-9",
+            "display": "Pefloxacin [Empfindlichkeit]"
+          },
+          {
+            "code": "18964-7",
+            "display": "Penicillin [Empfindlichkeit]"
+          },
+          {
+            "code": "18965-4",
+            "display": "Penicillin G [Empfindlichkeit]"
+          },
+          {
+            "code": "18966-2",
+            "display": "Penicillin V [Empfindlichkeit]"
+          },
+          {
+            "code": "18967-0",
+            "display": "Phenethicillin [Empfindlichkeit]"
+          },
+          {
+            "code": "18968-8",
+            "display": "Pipemidat [Empfindlichkeit]"
+          },
+          {
+            "code": "18969-6",
+            "display": "Piperacillin [Empfindlichkeit]"
+          },
+          {
+            "code": "18970-4",
+            "display": "Piperacillin+Tazobactam [Empfindlichkeit]"
+          },
+          {
+            "code": "18971-2",
+            "display": "Pivampicillin [Empfindlichkeit]"
+          },
+          {
+            "code": "18972-0",
+            "display": "Polymyxin B [Empfindlichkeit]"
+          },
+          {
+            "code": "18973-8",
+            "display": "Pyrazinamid [Empfindlichkeit]"
+          },
+          {
+            "code": "18974-6",
+            "display": "Rifampicin [Empfindlichkeit]"
+          },
+          {
+            "code": "18975-3",
+            "display": "Ristocetin [Empfindlichkeit]"
+          },
+          {
+            "code": "18976-1",
+            "display": "Rolitetracyclin [Empfindlichkeit]"
+          },
+          {
+            "code": "18977-9",
+            "display": "Rosoxacin [Empfindlichkeit]"
+          },
+          {
+            "code": "18978-7",
+            "display": "Roxithromycin [Empfindlichkeit]"
+          },
+          {
+            "code": "18979-5",
+            "display": "Sisomicin [Empfindlichkeit]"
+          },
+          {
+            "code": "18980-3",
+            "display": "Spectinomycin [Empfindlichkeit]"
+          },
+          {
+            "code": "18981-1",
+            "display": "Spiramycin [Empfindlichkeit]"
+          },
+          {
+            "code": "18982-9",
+            "display": "Streptomycin [Empfindlichkeit]"
+          },
+          {
+            "code": "18983-7",
+            "display": "Streptomycin.Hochdosis [Empfindlichkeit]"
+          },
+          {
+            "code": "18984-5",
+            "display": "Sulfadiazin [Empfindlichkeit]"
+          },
+          {
+            "code": "18985-2",
+            "display": "Sulfamethoxazol [Empfindlichkeit]"
+          },
+          {
+            "code": "18986-0",
+            "display": "Sulfisoxazol [Empfindlichkeit]"
+          },
+          {
+            "code": "18987-8",
+            "display": "Sulfonamid [Empfindlichkeit]"
+          },
+          {
+            "code": "18988-6",
+            "display": "Talampicillin [Empfindlichkeit]"
+          },
+          {
+            "code": "18989-4",
+            "display": "Teicoplanin [Empfindlichkeit]"
+          },
+          {
+            "code": "18990-2",
+            "display": "Temafloxacin [Empfindlichkeit]"
+          },
+          {
+            "code": "18991-0",
+            "display": "Temocillin [Empfindlichkeit]"
+          },
+          {
+            "code": "18992-8",
+            "display": "Terbinafin [Empfindlichkeit]"
+          },
+          {
+            "code": "18993-6",
+            "display": "Tetracyclin [Empfindlichkeit]"
+          },
+          {
+            "code": "18994-4",
+            "display": "Ticarcillin [Empfindlichkeit]"
+          },
+          {
+            "code": "18995-1",
+            "display": "Ticarcillin+Clavulanat [Empfindlichkeit]"
+          },
+          {
+            "code": "18996-9",
+            "display": "Tobramycin [Empfindlichkeit]"
+          },
+          {
+            "code": "18997-7",
+            "display": "Trimethoprim [Empfindlichkeit]"
+          },
+          {
+            "code": "18998-5",
+            "display": "Trimethoprim+Sulfamethoxazol [Empfindlichkeit]"
+          },
+          {
+            "code": "18999-3",
+            "display": "Troleandomycin [Empfindlichkeit]"
+          },
+          {
+            "code": "19000-9",
+            "display": "Vancomycin [Empfindlichkeit]"
+          },
+          {
+            "code": "19001-7",
+            "display": "Viomycin [Empfindlichkeit]"
+          },
+          {
+            "code": "19149-4",
+            "display": "Rifabutin [Empfindlichkeit]"
+          },
+          {
+            "code": "20388-5",
+            "display": "Nitrofurazon [Empfindlichkeit]"
+          },
+          {
+            "code": "20389-3",
+            "display": "Mupirocin [Empfindlichkeit]"
+          },
+          {
+            "code": "20390-1",
+            "display": "Sulfadiazin-Silber [Empfindlichkeit]"
+          },
+          {
+            "code": "20391-9",
+            "display": "Mafenid [Empfindlichkeit]"
+          },
+          {
+            "code": "20629-2",
+            "display": "Levofloxacin [Empfindlichkeit]"
+          },
+          {
+            "code": "23627-3",
+            "display": "Clofazimin [Empfindlichkeit]"
+          },
+          {
+            "code": "23628-1",
+            "display": "Sparfloxacin [Empfindlichkeit]"
+          },
+          {
+            "code": "23629-9",
+            "display": "Para-Aminosalicylat [Empfindlichkeit]"
+          },
+          {
+            "code": "23636-4",
+            "display": "Cefdinir [Empfindlichkeit]"
+          },
+          {
+            "code": "23638-0",
+            "display": "Grepafloxacin [Empfindlichkeit]"
+          },
+          {
+            "code": "23640-6",
+            "display": "Quinupristin+Dalfopristin [Empfindlichkeit]"
+          },
+          {
+            "code": "23642-2",
+            "display": "Trovafloxacin [Empfindlichkeit]"
+          },
+          {
+            "code": "23658-8",
+            "display": "Anderes Antibiotikum [Empfindlichkeit]"
+          },
+          {
+            "code": "23659-6",
+            "display": "Apramycin [Empfindlichkeit]"
+          },
+          {
+            "code": "23709-9",
+            "display": "Ceftiofur [Empfindlichkeit]"
+          },
+          {
+            "code": "23712-3",
+            "display": "Enrofloxacin [Empfindlichkeit]"
+          },
+          {
+            "code": "23740-4",
+            "display": "Florfenicol [Empfindlichkeit]"
+          },
+          {
+            "code": "25595-0",
+            "display": "Econazol [Empfindlichkeit]"
+          },
+          {
+            "code": "25596-8",
+            "display": "Fosfomycin [Empfindlichkeit]"
+          },
+          {
+            "code": "25597-6",
+            "display": "Josamycin [Empfindlichkeit]"
+          },
+          {
+            "code": "25607-3",
+            "display": "Miconazol [Empfindlichkeit]"
+          },
+          {
+            "code": "25608-1",
+            "display": "Nitroxolin [Empfindlichkeit]"
+          },
+          {
+            "code": "256-8",
+            "display": "Foscarnet [Empfindlichkeit]"
+          },
+          {
+            "code": "265-9",
+            "display": "Ganciclovir [Empfindlichkeit]"
+          },
+          {
+            "code": "29258-1",
+            "display": "Linezolid [Empfindlichkeit]"
+          },
+          {
+            "code": "30298-4",
+            "display": "Lamivudin [Empfindlichkeit]"
+          },
+          {
+            "code": "30299-2",
+            "display": "Amprenavir [Empfindlichkeit]"
+          },
+          {
+            "code": "30300-8",
+            "display": "Didanosin [Empfindlichkeit]"
+          },
+          {
+            "code": "30301-6",
+            "display": "Zalcitabin [Empfindlichkeit]"
+          },
+          {
+            "code": "30302-4",
+            "display": "Stavudin [Empfindlichkeit]"
+          },
+          {
+            "code": "30303-2",
+            "display": "Abacavir [Empfindlichkeit]"
+          },
+          {
+            "code": "30304-0",
+            "display": "Adefovir [Empfindlichkeit]"
+          },
+          {
+            "code": "30305-7",
+            "display": "Delavirdin [Empfindlichkeit]"
+          },
+          {
+            "code": "30306-5",
+            "display": "Efavirenz [Empfindlichkeit]"
+          },
+          {
+            "code": "30307-3",
+            "display": "Indinavir [Empfindlichkeit]"
+          },
+          {
+            "code": "30308-1",
+            "display": "Ritonavir [Empfindlichkeit]"
+          },
+          {
+            "code": "30309-9",
+            "display": "Nelfinavir [Empfindlichkeit]"
+          },
+          {
+            "code": "30310-7",
+            "display": "Saquinavir [Empfindlichkeit]"
+          },
+          {
+            "code": "30311-5",
+            "display": "Nevirapin [Empfindlichkeit]"
+          },
+          {
+            "code": "31038-3",
+            "display": "Gatifloxacin [Empfindlichkeit]"
+          },
+          {
+            "code": "31039-1",
+            "display": "Moxifloxacin [Empfindlichkeit]"
+          },
+          {
+            "code": "32372-5",
+            "display": "Fleroxacin [Empfindlichkeit]"
+          },
+          {
+            "code": "32373-3",
+            "display": "Arbekacin [Empfindlichkeit]"
+          },
+          {
+            "code": "32374-1",
+            "display": "Cefotiam [Empfindlichkeit]"
+          },
+          {
+            "code": "32375-8",
+            "display": "Cefmenoxim [Empfindlichkeit]"
+          },
+          {
+            "code": "32376-6",
+            "display": "Clinafloxacin [Empfindlichkeit]"
+          },
+          {
+            "code": "32377-4",
+            "display": "Cefetamet [Empfindlichkeit]"
+          },
+          {
+            "code": "32378-2",
+            "display": "Caspofungin [Empfindlichkeit]"
+          },
+          {
+            "code": "32379-0",
+            "display": "Voriconazol [Empfindlichkeit]"
+          },
+          {
+            "code": "32381-6",
+            "display": "Isepamicin [Empfindlichkeit]"
+          },
+          {
+            "code": "32383-2",
+            "display": "Pristinamycin [Empfindlichkeit]"
+          },
+          {
+            "code": "32384-0",
+            "display": "Thiacetazon [Empfindlichkeit]"
+          },
+          {
+            "code": "32597-7",
+            "display": "Natamycin [Empfindlichkeit]"
+          },
+          {
+            "code": "32603-3",
+            "display": "Itraconazol [Empfindlichkeit]"
+          },
+          {
+            "code": "33627-1",
+            "display": "Tenofovir [Empfindlichkeit]"
+          },
+          {
+            "code": "33628-9",
+            "display": "Cidofovir [Empfindlichkeit]"
+          },
+          {
+            "code": "35756-6",
+            "display": "Avilamycin [Empfindlichkeit]"
+          },
+          {
+            "code": "35762-4",
+            "display": "Cefditoren [Empfindlichkeit]"
+          },
+          {
+            "code": "35771-5",
+            "display": "Cefotaxim+Clavulanat [Empfindlichkeit]"
+          },
+          {
+            "code": "35776-4",
+            "display": "Ceftazidim+Clavulanat [Empfindlichkeit]"
+          },
+          {
+            "code": "35779-8",
+            "display": "Ceftibuten [Empfindlichkeit]"
+          },
+          {
+            "code": "35783-0",
+            "display": "Cefuroxim oral [Empfindlichkeit]"
+          },
+          {
+            "code": "35789-7",
+            "display": "Daptomycin [Empfindlichkeit]"
+          },
+          {
+            "code": "35792-1",
+            "display": "Difloxacin [Empfindlichkeit]"
+          },
+          {
+            "code": "35795-4",
+            "display": "Dirithromycin [Empfindlichkeit]"
+          },
+          {
+            "code": "35802-8",
+            "display": "Ertapenem [Empfindlichkeit]"
+          },
+          {
+            "code": "35805-1",
+            "display": "Bambermycine [Empfindlichkeit]"
+          },
+          {
+            "code": "35813-5",
+            "display": "Garenoxacin [Empfindlichkeit]"
+          },
+          {
+            "code": "35816-8",
+            "display": "Gemifloxacin [Empfindlichkeit]"
+          },
+          {
+            "code": "35827-5",
+            "display": "Orbifloxacin [Empfindlichkeit]"
+          },
+          {
+            "code": "35831-7",
+            "display": "Pirlimycin [Empfindlichkeit]"
+          },
+          {
+            "code": "35838-2",
+            "display": "Salinomycin [Empfindlichkeit]"
+          },
+          {
+            "code": "35845-7",
+            "display": "Telithromycin [Empfindlichkeit]"
+          },
+          {
+            "code": "35848-1",
+            "display": "Tiamulin [Empfindlichkeit]"
+          },
+          {
+            "code": "35851-5",
+            "display": "Tilmicosin [Empfindlichkeit]"
+          },
+          {
+            "code": "35854-9",
+            "display": "Trospectomycin [Empfindlichkeit]"
+          },
+          {
+            "code": "35858-0",
+            "display": "Tylosin [Empfindlichkeit]"
+          },
+          {
+            "code": "35861-4",
+            "display": "Virginiamycin [Empfindlichkeit]"
+          },
+          {
+            "code": "35874-7",
+            "display": "Penicillin+Novobiocin [Empfindlichkeit]"
+          },
+          {
+            "code": "41726-1",
+            "display": "ABT492 [Empfindlichkeit]"
+          },
+          {
+            "code": "41727-9",
+            "display": "Aztreonam+Clavulanat [Empfindlichkeit]"
+          },
+          {
+            "code": "41728-7",
+            "display": "Biapenem [Empfindlichkeit]"
+          },
+          {
+            "code": "41729-5",
+            "display": "Cefotetan+Clavulanat [Empfindlichkeit]"
+          },
+          {
+            "code": "41730-3",
+            "display": "Cefoxitin+Clavulanat [Empfindlichkeit]"
+          },
+          {
+            "code": "41731-1",
+            "display": "Cefpodoxim+Clavulanat [Empfindlichkeit]"
+          },
+          {
+            "code": "41732-9",
+            "display": "Ceftriaxon+Clavulanat [Empfindlichkeit]"
+          },
+          {
+            "code": "41733-7",
+            "display": "Clavulanat [Empfindlichkeit]"
+          },
+          {
+            "code": "41734-5",
+            "display": "Dalbavancin [Empfindlichkeit]"
+          },
+          {
+            "code": "41735-2",
+            "display": "Evernimicin [Empfindlichkeit]"
+          },
+          {
+            "code": "41736-0",
+            "display": "Oritavancin [Empfindlichkeit]"
+          },
+          {
+            "code": "41737-8",
+            "display": "Ramoplanin [Empfindlichkeit]"
+          },
+          {
+            "code": "41738-6",
+            "display": "Rosaramicin [Empfindlichkeit]"
+          },
+          {
+            "code": "41739-4",
+            "display": "Sulbactam [Empfindlichkeit]"
+          },
+          {
+            "code": "41740-2",
+            "display": "Tazobactam [Empfindlichkeit]"
+          },
+          {
+            "code": "41993-7",
+            "display": "Atazanavir [Empfindlichkeit]"
+          },
+          {
+            "code": "42353-3",
+            "display": "Cefepim+Clavulanat [Empfindlichkeit]"
+          },
+          {
+            "code": "42357-4",
+            "display": "Tigecyclin [Empfindlichkeit]"
+          },
+          {
+            "code": "42535-5",
+            "display": "Tipranavir [Empfindlichkeit]"
+          },
+          {
+            "code": "43272-4",
+            "display": "Ceftobiprol [Empfindlichkeit]"
+          },
+          {
+            "code": "50633-7",
+            "display": "Ceftriaxon [Empfindlichkeit] für Meningitis"
+          },
+          {
+            "code": "50712-9",
+            "display": "Influenza-Virus.Neuraminidaseinhibitor-Resistenz [Empfindlichkeit]"
+          },
+          {
+            "code": "51503-1",
+            "display": "Penicillin G Procain [Empfindlichkeit]"
+          },
+          {
+            "code": "51504-9",
+            "display": "Penicillin G Benzathin [Empfindlichkeit]"
+          },
+          {
+            "code": "51694-8",
+            "display": "Carumonam [Empfindlichkeit]"
+          },
+          {
+            "code": "51698-9",
+            "display": "Dapson [Empfindlichkeit]"
+          },
+          {
+            "code": "51719-3",
+            "display": "Paromomycin [Empfindlichkeit]"
+          },
+          {
+            "code": "51724-3",
+            "display": "Cefuroxim [Empfindlichkeit]"
+          },
+          {
+            "code": "52128-6",
+            "display": "Cefotaxim [Empfindlichkeit] für Meningitis"
+          },
+          {
+            "code": "531-4",
+            "display": "Zidovudin [Empfindlichkeit]"
+          },
+          {
+            "code": "54166-4",
+            "display": "Cefoperazon+Sulbactam [Empfindlichkeit]"
+          },
+          {
+            "code": "54169-8",
+            "display": "Thiamphenicol [Empfindlichkeit]"
+          },
+          {
+            "code": "54170-6",
+            "display": "Imipenem+EDTA [Empfindlichkeit]"
+          },
+          {
+            "code": "54188-8",
+            "display": "Posaconazol [Empfindlichkeit]"
+          },
+          {
+            "code": "54191-2",
+            "display": "Cefotaxim+Sulbactam [Empfindlichkeit]"
+          },
+          {
+            "code": "54194-6",
+            "display": "Mezlocillin+Sulbactam [Empfindlichkeit]"
+          },
+          {
+            "code": "54197-9",
+            "display": "Piperacillin+Sulbactam [Empfindlichkeit]"
+          },
+          {
+            "code": "54200-1",
+            "display": "Griseofulvin [Empfindlichkeit]"
+          },
+          {
+            "code": "54908-9",
+            "display": "Cefminox [Empfindlichkeit]"
+          },
+          {
+            "code": "54928-7",
+            "display": "Tinidazol [Empfindlichkeit]"
+          },
+          {
+            "code": "55196-0",
+            "display": "Terconazol [Empfindlichkeit]"
+          },
+          {
+            "code": "55289-3",
+            "display": "Sulopenem [Empfindlichkeit]"
+          },
+          {
+            "code": "55292-7",
+            "display": "Linopristin+Flopristin [Empfindlichkeit]"
+          },
+          {
+            "code": "55614-2",
+            "display": "Amoxicillin+Sulbactam [Empfindlichkeit]"
+          },
+          {
+            "code": "55625-8",
+            "display": "Cefacetril [Empfindlichkeit]"
+          },
+          {
+            "code": "55631-6",
+            "display": "Cephalothin+Sulbactam [Empfindlichkeit]"
+          },
+          {
+            "code": "55635-7",
+            "display": "Cefamandol+Sulbactam [Empfindlichkeit]"
+          },
+          {
+            "code": "55649-8",
+            "display": "Ceftazidim+Sulbactam [Empfindlichkeit]"
+          },
+          {
+            "code": "55657-1",
+            "display": "Clindamycin.Hochdosis [Empfindlichkeit]"
+          },
+          {
+            "code": "55670-4",
+            "display": "Dibekacin [Empfindlichkeit]"
+          },
+          {
+            "code": "55676-1",
+            "display": "Flumequin [Empfindlichkeit]"
+          },
+          {
+            "code": "55682-9",
+            "display": "Isoconazol [Empfindlichkeit]"
+          },
+          {
+            "code": "55691-0",
+            "display": "Ornidazol [Empfindlichkeit]"
+          },
+          {
+            "code": "55696-9",
+            "display": "Oxolinat [Empfindlichkeit]"
+          },
+          {
+            "code": "55706-6",
+            "display": "Piromidat [Empfindlichkeit]"
+          },
+          {
+            "code": "55717-3",
+            "display": "Ticarcillin+Sulbactam [Empfindlichkeit]"
+          },
+          {
+            "code": "55738-9",
+            "display": "Cefotiamhexetil [Empfindlichkeit]"
+          },
+          {
+            "code": "57095-2",
+            "display": "Anidulafungin [Empfindlichkeit]"
+          },
+          {
+            "code": "57896-3",
+            "display": "Influenza-Virus A 2009 H1N1v.Neuraminidaseinhibitor-Resistenz [Empfindlichkeit] in Probenmaterial mittels Genotypisierung"
+          },
+          {
+            "code": "58080-3",
+            "display": "Penicillin parenteral [Empfindlichkeit] für Meningitis"
+          },
+          {
+            "code": "58085-2",
+            "display": "Penicillin parenteral [Empfindlichkeit]"
+          },
+          {
+            "code": "60535-2",
+            "display": "Doripenem [Empfindlichkeit]"
+          },
+          {
+            "code": "61188-9",
+            "display": "Clindamycin.induziert [Empfindlichkeit]"
+          },
+          {
+            "code": "65340-2",
+            "display": "Micafungin [Empfindlichkeit]"
+          },
+          {
+            "code": "6-7",
+            "display": "Amantadin [Empfindlichkeit]"
+          },
+          {
+            "code": "69574-2",
+            "display": "Furazolidon [Empfindlichkeit]"
+          },
+          {
+            "code": "6984-9",
+            "display": "Beta-Lactamase.Breitspektrum [Empfindlichkeit]"
+          },
+          {
+            "code": "6985-6",
+            "display": "Beta-Lactamase.normal [Empfindlichkeit]"
+          },
+          {
+            "code": "73585-2",
+            "display": "Tizoxanid [Empfindlichkeit]"
+          },
+          {
+            "code": "73586-0",
+            "display": "Tedizolid [Empfindlichkeit]"
+          },
+          {
+            "code": "73587-8",
+            "display": "Solithromycin [Empfindlichkeit]"
+          },
+          {
+            "code": "73588-6",
+            "display": "Sarafloxacin [Empfindlichkeit]"
+          },
+          {
+            "code": "73589-4",
+            "display": "Rifaximin [Empfindlichkeit]"
+          },
+          {
+            "code": "73590-2",
+            "display": "Razupenem [Empfindlichkeit]"
+          },
+          {
+            "code": "73591-0",
+            "display": "Premafloxacin [Empfindlichkeit]"
+          },
+          {
+            "code": "73592-8",
+            "display": "Plazomicin [Empfindlichkeit]"
+          },
+          {
+            "code": "73594-4",
+            "display": "Omadacyclin [Empfindlichkeit]"
+          },
+          {
+            "code": "73595-1",
+            "display": "Nitazoxanid [Empfindlichkeit]"
+          },
+          {
+            "code": "73596-9",
+            "display": "Marbofloxacin [Empfindlichkeit]"
+          },
+          {
+            "code": "73597-7",
+            "display": "Iclaprim [Empfindlichkeit]"
+          },
+          {
+            "code": "73598-5",
+            "display": "Finafloxacin [Empfindlichkeit]"
+          },
+          {
+            "code": "73599-3",
+            "display": "Fidaxomicin [Empfindlichkeit]"
+          },
+          {
+            "code": "73600-9",
+            "display": "Faropenem [Empfindlichkeit]"
+          },
+          {
+            "code": "73601-7",
+            "display": "Danofloxacin [Empfindlichkeit]"
+          },
+          {
+            "code": "73602-5",
+            "display": "Ceftolozan+Tazobactam [Empfindlichkeit]"
+          },
+          {
+            "code": "73603-3",
+            "display": "Ceftazidim+Avibactam [Empfindlichkeit]"
+          },
+          {
+            "code": "73604-1",
+            "display": "Ceftarolin+Avibactam [Empfindlichkeit]"
+          },
+          {
+            "code": "73605-8",
+            "display": "Ceftarolin [Empfindlichkeit]"
+          },
+          {
+            "code": "73606-6",
+            "display": "Besifloxacin [Empfindlichkeit]"
+          },
+          {
+            "code": "87791-0",
+            "display": "Carbadox [Empfindlichkeit]"
+          },
+          {
+            "code": "87792-8",
+            "display": "Cefovecin [Empfindlichkeit]"
+          },
+          {
+            "code": "87797-7",
+            "display": "Sulfathiazol [Empfindlichkeit]"
+          },
+          {
+            "code": "87798-5",
+            "display": "Tulathromycin [Empfindlichkeit]"
+          },
+          {
+            "code": "87800-9",
+            "display": "Pradofloxacin [Empfindlichkeit]"
+          },
+          {
+            "code": "87802-5",
+            "display": "Sulfachloropyridazin [Empfindlichkeit]"
+          },
+          {
+            "code": "87803-3",
+            "display": "Sulfadimethoxin [Empfindlichkeit]"
+          },
+          {
+            "code": "88462-7",
+            "display": "Carbapenem [Empfindlichkeit]"
+          },
+          {
+            "code": "88885-9",
+            "display": "Delafloxacin [Empfindlichkeit]"
+          },
+          {
+            "code": "88886-7",
+            "display": "Telavancin [Empfindlichkeit]"
+          },
+          {
+            "code": "88887-5",
+            "display": "Isavuconazol [Empfindlichkeit]"
+          },
+          {
+            "code": "88892-5",
+            "display": "Meropenem+Vaborbactam [Empfindlichkeit]"
+          },
+          {
+            "code": "93850-6",
+            "display": "Pretomanid [Empfindlichkeit]"
+          },
+          {
+            "code": "93851-4",
+            "display": "Delamanid [Empfindlichkeit]"
+          },
+          {
+            "code": "94274-8",
+            "display": "Bedaquilin [Empfindlichkeit]"
+          },
+          {
+            "code": "96372-8",
+            "display": "Imipenem+Relebactam [Empfindlichkeit]"
+          },
+          {
+            "code": "97941-9",
+            "display": "Cycloheximid [Empfindlichkeit] in Isolat"
+          },
+          {
+            "code": "99280-0",
+            "display": "Cefiderocol [Empfindlichkeit]"
+          },
+          {
+            "code": "99281-8",
+            "display": "Lefamulin [Empfindlichkeit]"
+          }
+        ]
+      }
+    ]
+  },
+  "expansion": {
+    "timestamp": "2025-12-05T00:00:00+01:00",
+    "contains": [
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "73606-6",
+        "display": "Besifloxacin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "18947-2",
+        "display": "Mezlocillin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "18985-2",
+        "display": "Sulfamethoxazol [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "18924-1",
+        "display": "Fluconazol [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "55614-2",
+        "display": "Amoxicillin+Sulbactam [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "18962-1",
+        "display": "Oxytetracyclin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "30304-0",
+        "display": "Adefovir [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "100050-4",
+        "display": "Erythromycin+Ethambutol [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "87791-0",
+        "display": "Carbadox [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "18864-9",
+        "display": "Ampicillin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "32376-6",
+        "display": "Clinafloxacin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "18887-0",
+        "display": "Cefotetan [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "18959-7",
+        "display": "Ofloxacin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "100058-7",
+        "display": "Prulifloxacin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "18936-5",
+        "display": "Kanamycin.Hochdosis [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "256-8",
+        "display": "Foscarnet [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "41735-2",
+        "display": "Evernimicin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "42535-5",
+        "display": "Tipranavir [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "65340-2",
+        "display": "Micafungin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "35838-2",
+        "display": "Salinomycin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "73595-1",
+        "display": "Nitazoxanid [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "18997-7",
+        "display": "Trimethoprim [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "18974-6",
+        "display": "Rifampicin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "51724-3",
+        "display": "Cefuroxim [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "55625-8",
+        "display": "Cefacetril [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "100046-2",
+        "display": "Cefquinom [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "6-7",
+        "display": "Amantadin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "73596-9",
+        "display": "Marbofloxacin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "18913-4",
+        "display": "Ciclacillin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "18951-4",
+        "display": "Nafcillin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "100061-1",
+        "display": "Tosufloxacin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "35789-7",
+        "display": "Daptomycin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "18888-8",
+        "display": "Cefoxitin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "18899-5",
+        "display": "Cephaloridin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "54197-9",
+        "display": "Piperacillin+Sulbactam [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "100699-8",
+        "display": "Rifabutin+Ethambutol [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "18876-3",
+        "display": "Cefamandol [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "19001-7",
+        "display": "Viomycin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "25595-0",
+        "display": "Econazol [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "87792-8",
+        "display": "Cefovecin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "35792-1",
+        "display": "Difloxacin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "18902-7",
+        "display": "Cephradin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "20390-1",
+        "display": "Sulfadiazin-Silber [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "18891-2",
+        "display": "Cefprozil [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "18900-1",
+        "display": "Cephalothin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "18946-4",
+        "display": "Metronidazol [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "100059-5",
+        "display": "Rifapentin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "18923-3",
+        "display": "Floxacillin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "18984-5",
+        "display": "Sulfadiazin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "35779-8",
+        "display": "Ceftibuten [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "30303-2",
+        "display": "Abacavir [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "18961-3",
+        "display": "Oxacillin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "100051-2",
+        "display": "Ethambutol+Rifampicin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "35756-6",
+        "display": "Avilamycin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "35816-8",
+        "display": "Gemifloxacin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "18886-2",
+        "display": "Cefotaxim [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "18863-1",
+        "display": "Amphotericin B [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "18935-7",
+        "display": "Kanamycin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "18958-9",
+        "display": "Nystatin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "35831-7",
+        "display": "Pirlimycin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "18912-6",
+        "display": "Colistin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "41736-0",
+        "display": "Oritavancin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "35854-9",
+        "display": "Trospectomycin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "100047-0",
+        "display": "Cefteram [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "18973-8",
+        "display": "Pyrazinamid [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "18996-9",
+        "display": "Tobramycin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "87802-5",
+        "display": "Sulfachloropyridazin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "18950-6",
+        "display": "Latamoxef [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "73597-7",
+        "display": "Iclaprim [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "23658-8",
+        "display": "Anderes Antibiotikum [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "32377-4",
+        "display": "Cefetamet [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "50633-7",
+        "display": "Ceftriaxon [Empfindlichkeit] für Meningitis"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "18898-7",
+        "display": "Cephaloglycin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "25596-8",
+        "display": "Fosfomycin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "25607-3",
+        "display": "Miconazol [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "18875-5",
+        "display": "Cefadroxil [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "18901-9",
+        "display": "Cephapirin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "41993-7",
+        "display": "Atazanavir [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "18890-4",
+        "display": "Cefpodoxim [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "18909-2",
+        "display": "Clotrimazol [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "35827-5",
+        "display": "Orbifloxacin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "73585-2",
+        "display": "Tizoxanid [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "18941-5",
+        "display": "Lymecyclin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "18964-7",
+        "display": "Penicillin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "32381-6",
+        "display": "Isepamicin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "30306-5",
+        "display": "Efavirenz [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "51504-9",
+        "display": "Penicillin G Benzathin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "51719-3",
+        "display": "Paromomycin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "55289-3",
+        "display": "Sulopenem [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "100052-0",
+        "display": "Flomoxef [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "73604-1",
+        "display": "Ceftarolin+Avibactam [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "18878-9",
+        "display": "Cefazolin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "55635-7",
+        "display": "Cefamandol+Sulbactam [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "55696-9",
+        "display": "Oxolinat [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "18889-6",
+        "display": "Cefpirom [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "18866-4",
+        "display": "Azithromycin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "103654-0",
+        "display": "Meropenem [Empfindlichkeit] für Meningitis"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "54169-8",
+        "display": "Thiamphenicol [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "31039-1",
+        "display": "Moxifloxacin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "41733-7",
+        "display": "Clavulanat [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "20629-2",
+        "display": "Levofloxacin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "32603-3",
+        "display": "Itraconazol [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "18881-3",
+        "display": "Cefmetazol [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "99281-8",
+        "display": "Lefamulin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "18915-9",
+        "display": "Demeclocyclin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "35874-7",
+        "display": "Penicillin+Novobiocin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "35813-5",
+        "display": "Garenoxacin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "18999-3",
+        "display": "Troleandomycin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "52128-6",
+        "display": "Cefotaxim [Empfindlichkeit] für Meningitis"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "18938-1",
+        "display": "Lincomycin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "18976-1",
+        "display": "Rolitetracyclin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "18930-8",
+        "display": "Gramicidin D [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "20389-3",
+        "display": "Mupirocin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "23659-6",
+        "display": "Apramycin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "32378-2",
+        "display": "Caspofungin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "18953-0",
+        "display": "Neomycin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "18991-0",
+        "display": "Temocillin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "23636-4",
+        "display": "Cefdinir [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "55292-7",
+        "display": "Linopristin+Flopristin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "18855-7",
+        "display": "5-Fluorocytosin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "41729-5",
+        "display": "Cefotetan+Clavulanat [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "55706-6",
+        "display": "Piromidat [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "51698-9",
+        "display": "Dapson [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "18893-8",
+        "display": "Ceftazidim [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "18927-4",
+        "display": "Fusidat [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "58080-3",
+        "display": "Penicillin parenteral [Empfindlichkeit] für Meningitis"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "18870-6",
+        "display": "Bacitracin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "18904-3",
+        "display": "Chlortetracyclin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "100048-8",
+        "display": "Clarithromycin+Ethambutol [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "87798-5",
+        "display": "Tulathromycin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "29258-1",
+        "display": "Linezolid [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "30305-7",
+        "display": "Delavirdin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "73605-8",
+        "display": "Ceftarolin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "18963-9",
+        "display": "Pefloxacin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "100053-8",
+        "display": "Fluorchinolon [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "18948-0",
+        "display": "Minocyclin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "18940-7",
+        "display": "Loracarbef [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "54194-6",
+        "display": "Mezlocillin+Sulbactam [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "18986-0",
+        "display": "Sulfisoxazol [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "51503-1",
+        "display": "Penicillin G Procain [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "55657-1",
+        "display": "Clindamycin.Hochdosis [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "96372-8",
+        "display": "Imipenem+Relebactam [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "18865-6",
+        "display": "Ampicillin+Sulbactam [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "103653-2",
+        "display": "Ciprofloxacin [Empfindlichkeit] für Meningitis"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "31038-3",
+        "display": "Gatifloxacin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "41734-5",
+        "display": "Dalbavancin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "18880-5",
+        "display": "Cefixim [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "18937-3",
+        "display": "Ketoconazol [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "73594-4",
+        "display": "Omadacyclin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "55717-3",
+        "display": "Ticarcillin+Sulbactam [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "1-8",
+        "display": "Aciclovir [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "18998-5",
+        "display": "Trimethoprim+Sulfamethoxazol [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "18914-2",
+        "display": "Cycloserin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "18952-2",
+        "display": "Nalidixat [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "35851-5",
+        "display": "Tilmicosin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "18975-3",
+        "display": "Ristocetin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "20388-5",
+        "display": "Nitrofurazon [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "32379-0",
+        "display": "Voriconazol [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "87800-9",
+        "display": "Pradofloxacin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "54908-9",
+        "display": "Cefminox [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "100041-3",
+        "display": "Aminoglycosid [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "18990-2",
+        "display": "Temafloxacin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "23640-6",
+        "display": "Quinupristin+Dalfopristin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "35776-4",
+        "display": "Ceftazidim+Clavulanat [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "20391-9",
+        "display": "Mafenid [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "18877-1",
+        "display": "Cefatrizin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "100049-6",
+        "display": "Eravacyclin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "18903-5",
+        "display": "Chloramphenicol [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "18926-6",
+        "display": "Framycetin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "35848-1",
+        "display": "Tiamulin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "87797-7",
+        "display": "Sulfathiazol [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "18949-8",
+        "display": "Miocamycin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "18987-8",
+        "display": "Sulfonamid [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "23712-3",
+        "display": "Enrofloxacin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "18892-0",
+        "display": "Cefsulodin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "35802-8",
+        "display": "Ertapenem [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "88885-9",
+        "display": "Delafloxacin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "42357-4",
+        "display": "Tigecyclin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "32383-2",
+        "display": "Pristinamycin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "100054-6",
+        "display": "Gamithromycin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "18943-1",
+        "display": "Meropenem [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "18989-4",
+        "display": "Teicoplanin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "73588-6",
+        "display": "Sarafloxacin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "73602-5",
+        "display": "Ceftolozan+Tazobactam [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "18905-0",
+        "display": "Cinoxacin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "18966-2",
+        "display": "Penicillin V [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "54170-6",
+        "display": "Imipenem+EDTA [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "30308-1",
+        "display": "Ritonavir [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "6984-9",
+        "display": "Beta-Lactamase.Breitspektrum [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "18981-1",
+        "display": "Spiramycin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "30300-8",
+        "display": "Didanosin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "93850-6",
+        "display": "Pretomanid [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "35762-4",
+        "display": "Cefditoren [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "18883-9",
+        "display": "Cefonicid [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "18868-0",
+        "display": "Aztreonam [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "23709-9",
+        "display": "Ceftiofur [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "41739-4",
+        "display": "Sulbactam [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "18860-7",
+        "display": "Amikacin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "73591-0",
+        "display": "Premafloxacin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "94274-8",
+        "display": "Bedaquilin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "18978-7",
+        "display": "Roxithromycin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "18917-5",
+        "display": "Doxycyclin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "41731-1",
+        "display": "Cefpodoxim+Clavulanat [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "18955-5",
+        "display": "Nitrofurantoin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "73592-8",
+        "display": "Plazomicin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "18993-6",
+        "display": "Tetracyclin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "19149-4",
+        "display": "Rifabutin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "18932-4",
+        "display": "Imipenem [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "30311-5",
+        "display": "Nevirapin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "18970-4",
+        "display": "Piperacillin+Tazobactam [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "100042-1",
+        "display": "Atovaquon [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "32372-5",
+        "display": "Fleroxacin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "54166-4",
+        "display": "Cefoperazon+Sulbactam [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "18869-8",
+        "display": "Bacampicillin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "55682-9",
+        "display": "Isoconazol [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "23638-0",
+        "display": "Grepafloxacin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "57896-3",
+        "display": "Influenza-Virus A 2009 H1N1v.Neuraminidaseinhibitor-Resistenz [Empfindlichkeit] in Probenmaterial mittels Genotypisierung"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "41727-9",
+        "display": "Aztreonam+Clavulanat [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "55196-0",
+        "display": "Terconazol [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "18857-3",
+        "display": "Almecillin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "33627-1",
+        "display": "Tenofovir [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "55670-4",
+        "display": "Dibekacin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "18895-3",
+        "display": "Ceftriaxon [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "18944-9",
+        "display": "Methacyclin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "18929-0",
+        "display": "Gentamicin.Hochdosis [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "18872-2",
+        "display": "Capreomycin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "61188-9",
+        "display": "Clindamycin.induziert [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "18906-8",
+        "display": "Ciprofloxacin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "35845-7",
+        "display": "Telithromycin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "88462-7",
+        "display": "Carbapenem [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "88886-7",
+        "display": "Telavancin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "100055-3",
+        "display": "Optochin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "18965-4",
+        "display": "Penicillin G [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "35861-4",
+        "display": "Virginiamycin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "18942-3",
+        "display": "Meclocyclin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "18988-6",
+        "display": "Talampicillin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "73589-4",
+        "display": "Rifaximin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "18980-3",
+        "display": "Spectinomycin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "23627-3",
+        "display": "Clofazimin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "73603-3",
+        "display": "Ceftazidim+Avibactam [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "30307-3",
+        "display": "Indinavir [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "18879-7",
+        "display": "Cefepim [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "32384-0",
+        "display": "Thiacetazon [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "6985-6",
+        "display": "Beta-Lactamase.normal [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "99280-0",
+        "display": "Cefiderocol [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "93851-4",
+        "display": "Delamanid [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "18939-9",
+        "display": "Lomefloxacin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "18867-2",
+        "display": "Azlocillin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "55738-9",
+        "display": "Cefotiamhexetil [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "41732-9",
+        "display": "Ceftriaxon+Clavulanat [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "18882-1",
+        "display": "Cefodizim [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "18954-8",
+        "display": "Netilmicin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "35858-0",
+        "display": "Tylosin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "18916-7",
+        "display": "Dicloxacillin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "18977-9",
+        "display": "Rosoxacin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "23740-4",
+        "display": "Florfenicol [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "18931-6",
+        "display": "Hetacillin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "100043-9",
+        "display": "Azithromycin+Ethambutol [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "18992-8",
+        "display": "Terbinafin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "30310-7",
+        "display": "Saquinavir [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "32373-3",
+        "display": "Arbekacin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "41728-7",
+        "display": "Biapenem [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "23642-2",
+        "display": "Trovafloxacin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "18894-6",
+        "display": "Ceftizoxim [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "32597-7",
+        "display": "Natamycin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "18871-4",
+        "display": "Butirosin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "33628-9",
+        "display": "Cidofovir [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "88887-5",
+        "display": "Isavuconazol [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "18920-9",
+        "display": "Erythromycin+Sulfisoxazol [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "18928-2",
+        "display": "Gentamicin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "531-4",
+        "display": "Zidovudin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "50712-9",
+        "display": "Influenza-Virus.Neuraminidaseinhibitor-Resistenz [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "60535-2",
+        "display": "Doripenem [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "100056-1",
+        "display": "Panipenem [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "54191-2",
+        "display": "Cefotaxim+Sulbactam [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "18922-5",
+        "display": "Ethionamid [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "18960-5",
+        "display": "Oleandomycin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "18983-7",
+        "display": "Streptomycin.Hochdosis [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "73600-9",
+        "display": "Faropenem [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "30302-4",
+        "display": "Stavudin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "55631-6",
+        "display": "Cephalothin+Sulbactam [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "18859-9",
+        "display": "Amdinocillin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "23628-1",
+        "display": "Sparfloxacin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "97941-9",
+        "display": "Cycloheximid [Empfindlichkeit] in Isolat"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "41737-8",
+        "display": "Ramoplanin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "54188-8",
+        "display": "Posaconazol [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "18885-4",
+        "display": "Ceforanid [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "18919-1",
+        "display": "Erythromycin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "35783-0",
+        "display": "Cefuroxim oral [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "18862-3",
+        "display": "Amoxicillin+Clavulanat [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "18911-8",
+        "display": "Colistimethat"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "30299-2",
+        "display": "Amprenavir [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "18957-1",
+        "display": "Novobiocin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "18934-0",
+        "display": "Isoniazid [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "100044-7",
+        "display": "Cefcapen [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "87803-3",
+        "display": "Sulfadimethoxin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "73598-5",
+        "display": "Finafloxacin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "18972-0",
+        "display": "Polymyxin B [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "18995-1",
+        "display": "Ticarcillin+Clavulanat [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "32374-1",
+        "display": "Cefotiam [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "18897-9",
+        "display": "Cephalexin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "25597-6",
+        "display": "Josamycin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "55676-1",
+        "display": "Flumequin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "18874-8",
+        "display": "Cefaclor [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "25608-1",
+        "display": "Nitroxolin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "35771-5",
+        "display": "Cefotaxim+Clavulanat [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "35805-1",
+        "display": "Bambermycine [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "55691-0",
+        "display": "Ornidazol [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "18908-4",
+        "display": "Clindamycin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "73586-0",
+        "display": "Tedizolid [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "43272-4",
+        "display": "Ceftobiprol [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "18969-6",
+        "display": "Piperacillin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "51694-8",
+        "display": "Carumonam [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "41740-2",
+        "display": "Tazobactam [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "42353-3",
+        "display": "Cefepim+Clavulanat [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "69574-2",
+        "display": "Furazolidon [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "18982-9",
+        "display": "Streptomycin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "23629-9",
+        "display": "Para-Aminosalicylat [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "30309-9",
+        "display": "Nelfinavir [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "18921-7",
+        "display": "Ethambutol [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "73587-8",
+        "display": "Solithromycin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "73601-7",
+        "display": "Danofloxacin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "18967-0",
+        "display": "Phenethicillin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "30301-6",
+        "display": "Zalcitabin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "54928-7",
+        "display": "Tinidazol [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "57095-2",
+        "display": "Anidulafungin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "41738-6",
+        "display": "Rosaramicin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "18884-7",
+        "display": "Cefoperazon [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "18861-5",
+        "display": "Amoxicillin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "32375-8",
+        "display": "Cefmenoxim [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "100057-9",
+        "display": "Prothionamid [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "18918-3",
+        "display": "Enoxacin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "103672-2",
+        "display": "Amoxicillin+Clavulanat [Empfindlichkeit] für Harnwegsinfektionen"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "73590-2",
+        "display": "Razupenem [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "18979-5",
+        "display": "Sisomicin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "30298-4",
+        "display": "Lamivudin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "41730-3",
+        "display": "Cefoxitin+Clavulanat [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "18956-3",
+        "display": "Norfloxacin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "55649-8",
+        "display": "Ceftazidim+Sulbactam [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "73599-3",
+        "display": "Fidaxomicin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "100045-4",
+        "display": "Cefozopran [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "18910-0",
+        "display": "Cloxacillin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "58085-2",
+        "display": "Penicillin parenteral [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "18994-4",
+        "display": "Ticarcillin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "88892-5",
+        "display": "Meropenem+Vaborbactam [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "54200-1",
+        "display": "Griseofulvin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "18971-2",
+        "display": "Pivampicillin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "100060-3",
+        "display": "Tildipirosin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "35795-4",
+        "display": "Dirithromycin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "19000-9",
+        "display": "Vancomycin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "265-9",
+        "display": "Ganciclovir [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "18896-1",
+        "display": "Cefuroxim parenteral [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "41726-1",
+        "display": "ABT492 [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "18873-0",
+        "display": "Carbenicillin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "18945-6",
+        "display": "Methicillin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "18907-6",
+        "display": "Clarithromycin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "18968-8",
+        "display": "Pipemidat [Empfindlichkeit]"
+      }
+    ]
+  }
+}

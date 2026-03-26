@@ -7,17 +7,18 @@
     ]
   },
   "url": "http://fhir.de/CodeSystem/gender-amtlich-de",
-  "version": "1.4.0",
+  "version": "1.5.4",
   "name": "GenderAmtlichDE",
+  "title": "amtliches Geschlecht",
   "status": "active",
   "experimental": false,
-  "date": "2021-02-17",
+  "date": "2025-06-16",
   "publisher": "HL7 Deutschland e.V. (Technisches Komitee FHIR)",
   "contact": [
     {
       "telecom": [
         {
-          "system": "other",
+          "system": "url",
           "value": "http://hl7.de/technische-komitees/fhir/"
         }
       ]
@@ -28,6 +29,7 @@
   "caseSensitive": false,
   "valueSet": "http://fhir.de/ValueSet/gender-amtlich-de",
   "content": "complete",
+  "count": 4,
   "concept": [
     {
       "code": "M",

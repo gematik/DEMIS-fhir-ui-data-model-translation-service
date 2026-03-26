@@ -125,7 +125,6 @@ DockerHub: [demis-profile-snapshots](https://hub.docker.com/repository/docker/ge
 
 | Property                                 | Description                                                         |
 |------------------------------------------|---------------------------------------------------------------------|
-| `feature.flag.notification7_3`           | activates §7.3 notification categories                              |
 | `feature.flag.moveHospitalizationReason` | moves question for hospitalization to the common questionnaire part | 
 
 ## Ops Flags

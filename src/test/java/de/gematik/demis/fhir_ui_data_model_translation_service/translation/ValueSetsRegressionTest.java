@@ -37,6 +37,7 @@ import ca.uhn.fhir.context.FhirContext;
 import de.gematik.demis.fhir_ui_data_model_translation_service.FeatureFlags;
 import de.gematik.demis.fhir_ui_data_model_translation_service.model.CodeDisplay;
 import de.gematik.demis.fhir_ui_data_model_translation_service.model.Designation;
+import de.gematik.demis.fhir_ui_data_model_translation_service.model.Use;
 import java.io.File;
 import java.util.Comparator;
 import java.util.HashMap;
@@ -98,7 +99,10 @@ class ValueSetsRegressionTest {
     assertThat(codeDisplay67782005.getDisplay()).isEqualTo("akutes schweres Atemnotsyndrom (ARDS)");
     assertThat(codeDisplay67782005.getDesignations())
         .containsExactly(
-            new Designation("en-US", "Acute respiratory distress syndrome (disorder)"));
+            new Designation(
+                "en-US",
+                "Acute respiratory distress syndrome (disorder)",
+                new Use("http://snomed.info/sct", "900000000000003001")));
     // expansion data
     assertThat(valueSets.getValueSetData().get("https://demis.rki.de/fhir/ValueSet/evidenceCVDD"))
         .doesNotContainKey("409966000");
@@ -254,7 +258,10 @@ class ValueSetsRegressionTest {
           .isEqualTo("akutes schweres Atemnotsyndrom (ARDS)");
       assertThat(codeDisplay67782005.getDesignations())
           .containsExactly(
-              new Designation("en-US", "Acute respiratory distress syndrome (disorder)"));
+              new Designation(
+                  "en-US",
+                  "Acute respiratory distress syndrome (disorder)",
+                  new Use("http://snomed.info/sct", "900000000000003001")));
       // expansion data
       assertThat(valueSets.getValueSetData().get("https://demis.rki.de/fhir/ValueSet/evidenceCVDD"))
           .doesNotContainKey("409966000");

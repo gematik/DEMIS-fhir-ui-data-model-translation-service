@@ -193,7 +193,11 @@
                                   "designations": [
                                     {
                                       "language": "en-US",
-                                      "value": "444107005 | Exposure to communicable disease (navigational concept) | + 257698009 | School (environment) |"
+                                      "value": "444107005 | Exposure to communicable disease (navigational concept) | + 257698009 | School (environment) |",
+                                      "use": {
+                                        "system": "http://snomed.info/sct",
+                                        "code": "1119454002"
+                                      }
                                     }
                                   ],
                                   "system": "http://snomed.info/sct",
@@ -205,7 +209,11 @@
                                   "designations": [
                                     {
                                       "language": "en-US",
-                                      "value": "444107005 | Exposure to communicable disease (navigational concept) | + 413817003 | Child day care center (environment) |"
+                                      "value": "444107005 | Exposure to communicable disease (navigational concept) | + 413817003 | Child day care center (environment) |",
+                                      "use": {
+                                        "system": "http://snomed.info/sct",
+                                        "code": "1119454002"
+                                      }
                                     }
                                   ],
                                   "system": "http://snomed.info/sct",
@@ -217,7 +225,11 @@
                                   "designations": [
                                     {
                                       "language": "en-US",
-                                      "value": "444107005 | Exposure to communicable disease (navigational concept) | + 285141008 | Work environment (environment) |"
+                                      "value": "444107005 | Exposure to communicable disease (navigational concept) | + 285141008 | Work environment (environment) |",
+                                      "use": {
+                                        "system": "http://snomed.info/sct",
+                                        "code": "1119454002"
+                                      }
                                     }
                                   ],
                                   "system": "http://snomed.info/sct",
@@ -427,7 +439,11 @@
                                       "designations": [
                                         {
                                           "language": "en-US",
-                                          "value": "Vaccine product containing only severe acute respiratory syndrome coronavirus 2 messenger ribonucleic acid (medicinal product)"
+                                          "value": "Vaccine product containing only severe acute respiratory syndrome coronavirus 2 messenger ribonucleic acid (medicinal product)",
+                                          "use": {
+                                            "system": "http://snomed.info/sct",
+                                            "code": "900000000000003001"
+                                          }
                                         }
                                       ],
                                       "system": "http://snomed.info/sct",
@@ -439,7 +455,11 @@
                                       "designations": [
                                         {
                                           "language": "en-US",
-                                          "value": "Adult vaccine product containing only severe acute respiratory syndrome coronavirus 2 encoding B lineage spike protein and BA.4/BA.5 lineage spike protein messenger ribonucleic acid (medicinal product)"
+                                          "value": "Adult vaccine product containing only severe acute respiratory syndrome coronavirus 2 encoding B lineage spike protein and BA.4/BA.5 lineage spike protein messenger ribonucleic acid (medicinal product)",
+                                          "use": {
+                                            "system": "http://snomed.info/sct",
+                                            "code": "900000000000003001"
+                                          }
                                         }
                                       ],
                                       "system": "http://snomed.info/sct",
@@ -451,7 +471,11 @@
                                       "designations": [
                                         {
                                           "language": "en-US",
-                                          "value": "Pediatric vaccine product containing only severe acute respiratory syndrome coronavirus 2 encoding B lineage spike protein and BA.4/BA.5 lineage spike protein messenger ribonucleic acid (medicinal product)"
+                                          "value": "Pediatric vaccine product containing only severe acute respiratory syndrome coronavirus 2 encoding B lineage spike protein and BA.4/BA.5 lineage spike protein messenger ribonucleic acid (medicinal product)",
+                                          "use": {
+                                            "system": "http://snomed.info/sct",
+                                            "code": "900000000000003001"
+                                          }
                                         }
                                       ],
                                       "system": "http://snomed.info/sct",
@@ -463,7 +487,11 @@
                                       "designations": [
                                         {
                                           "language": "en-US",
-                                          "value": "Vaccine product containing only severe acute respiratory syndrome coronavirus 2 deoxyribonucleic acid plasmid encoding spike protein (medicinal product)"
+                                          "value": "Vaccine product containing only severe acute respiratory syndrome coronavirus 2 deoxyribonucleic acid plasmid encoding spike protein (medicinal product)",
+                                          "use": {
+                                            "system": "http://snomed.info/sct",
+                                            "code": "900000000000003001"
+                                          }
                                         }
                                       ],
                                       "system": "http://snomed.info/sct",
@@ -475,7 +503,11 @@
                                       "designations": [
                                         {
                                           "language": "en-US",
-                                          "value": "Vaccine product containing only severe acute respiratory syndrome coronavirus 2 recombinant spike protein antigen (medicinal product)"
+                                          "value": "Vaccine product containing only severe acute respiratory syndrome coronavirus 2 recombinant spike protein antigen (medicinal product)",
+                                          "use": {
+                                            "system": "http://snomed.info/sct",
+                                            "code": "900000000000003001"
+                                          }
                                         }
                                       ],
                                       "system": "http://snomed.info/sct",
@@ -487,7 +519,11 @@
                                       "designations": [
                                         {
                                           "language": "en-US",
-                                          "value": "Vaccine product containing only recombinant non-replicating viral vector encoding severe acute respiratory syndrome coronavirus 2 spike protein (medicinal product)"
+                                          "value": "Vaccine product containing only recombinant non-replicating viral vector encoding severe acute respiratory syndrome coronavirus 2 spike protein (medicinal product)",
+                                          "use": {
+                                            "system": "http://snomed.info/sct",
+                                            "code": "900000000000003001"
+                                          }
                                         }
                                       ],
                                       "system": "http://snomed.info/sct",
@@ -499,7 +535,11 @@
                                       "designations": [
                                         {
                                           "language": "en-US",
-                                          "value": "Vaccine product containing only inactivated whole severe acute respiratory syndrome coronavirus 2 antigen (medicinal product)"
+                                          "value": "Vaccine product containing only inactivated whole severe acute respiratory syndrome coronavirus 2 antigen (medicinal product)",
+                                          "use": {
+                                            "system": "http://snomed.info/sct",
+                                            "code": "900000000000003001"
+                                          }
                                         }
                                       ],
                                       "system": "http://snomed.info/sct",
@@ -511,7 +551,11 @@
                                       "designations": [
                                         {
                                           "language": "en-US",
-                                          "value": "Other (qualifier value)"
+                                          "value": "Other (qualifier value)",
+                                          "use": {
+                                            "system": "http://snomed.info/sct",
+                                            "code": "900000000000003001"
+                                          }
                                         }
                                       ],
                                       "system": "http://snomed.info/sct",
@@ -621,7 +665,11 @@
                           "designations": [
                             {
                               "language": "en-US",
-                              "value": "Disorder of cardiovascular system (disorder)"
+                              "value": "Disorder of cardiovascular system (disorder)",
+                              "use": {
+                                "system": "http://snomed.info/sct",
+                                "code": "900000000000003001"
+                              }
                             }
                           ],
                           "system": "http://snomed.info/sct",
@@ -633,7 +681,11 @@
                           "designations": [
                             {
                               "language": "en-US",
-                              "value": "Postpartum state (finding)"
+                              "value": "Postpartum state (finding)",
+                              "use": {
+                                "system": "http://snomed.info/sct",
+                                "code": "900000000000003001"
+                              }
                             }
                           ],
                           "system": "http://snomed.info/sct",
@@ -645,7 +697,11 @@
                           "designations": [
                             {
                               "language": "en-US",
-                              "value": "None (qualifier value)"
+                              "value": "None (qualifier value)",
+                              "use": {
+                                "system": "http://snomed.info/sct",
+                                "code": "900000000000003001"
+                              }
                             }
                           ],
                           "system": "http://snomed.info/sct",
@@ -681,7 +737,11 @@
                               "designations": [
                                 {
                                   "language": "en-US",
-                                  "value": "First trimester (qualifier value)"
+                                  "value": "First trimester (qualifier value)",
+                                  "use": {
+                                    "system": "http://snomed.info/sct",
+                                    "code": "900000000000003001"
+                                  }
                                 }
                               ],
                               "system": "http://snomed.info/sct",
@@ -693,7 +753,11 @@
                               "designations": [
                                 {
                                   "language": "en-US",
-                                  "value": "Second trimester (qualifier value)"
+                                  "value": "Second trimester (qualifier value)",
+                                  "use": {
+                                    "system": "http://snomed.info/sct",
+                                    "code": "900000000000003001"
+                                  }
                                 }
                               ],
                               "system": "http://snomed.info/sct",
@@ -705,7 +769,11 @@
                               "designations": [
                                 {
                                   "language": "en-US",
-                                  "value": "Third trimester (qualifier value)"
+                                  "value": "Third trimester (qualifier value)",
+                                  "use": {
+                                    "system": "http://snomed.info/sct",
+                                    "code": "900000000000003001"
+                                  }
                                 }
                               ],
                               "system": "http://snomed.info/sct",
@@ -3123,11 +3191,19 @@
                                   "designations": [
                                     {
                                       "language": "en-US",
-                                      "value": "Medical facility"
+                                      "value": "Medical facility",
+                                      "use": {
+                                        "system": "http://snomed.info/sct",
+                                        "code": "900000000000003001"
+                                      }
                                     },
                                     {
                                       "language": "de-DE",
-                                      "value": "Medizinische Einrichtung"
+                                      "value": "Medizinische Einrichtung",
+                                      "use": {
+                                        "system": "http://snomed.info/sct",
+                                        "code": "900000000000003001"
+                                      }
                                     }
                                   ],
                                   "system": "https://demis.rki.de/fhir/CodeSystem/organizationType",
@@ -3139,11 +3215,19 @@
                                   "designations": [
                                     {
                                       "language": "en-US",
-                                      "value": "Hospital"
+                                      "value": "Hospital",
+                                      "use": {
+                                        "system": "http://snomed.info/sct",
+                                        "code": "900000000000003001"
+                                      }
                                     },
                                     {
                                       "language": "de-DE",
-                                      "value": "Krankenhaus"
+                                      "value": "Krankenhaus",
+                                      "use": {
+                                        "system": "http://snomed.info/sct",
+                                        "code": "900000000000003001"
+                                      }
                                     }
                                   ],
                                   "system": "https://demis.rki.de/fhir/CodeSystem/organizationType",
@@ -3156,11 +3240,19 @@
                                   "designations": [
                                     {
                                       "language": "en-US",
-                                      "value": "Facility for outpatient surgery"
+                                      "value": "Facility for outpatient surgery",
+                                      "use": {
+                                        "system": "http://snomed.info/sct",
+                                        "code": "900000000000003001"
+                                      }
                                     },
                                     {
                                       "language": "de-DE",
-                                      "value": "Einrichtung für ambulantes Operieren"
+                                      "value": "Einrichtung für ambulantes Operieren",
+                                      "use": {
+                                        "system": "http://snomed.info/sct",
+                                        "code": "900000000000003001"
+                                      }
                                     }
                                   ],
                                   "system": "https://demis.rki.de/fhir/CodeSystem/organizationType",
@@ -3173,11 +3265,19 @@
                                   "designations": [
                                     {
                                       "language": "en-US",
-                                      "value": "Preventive care or rehab facility"
+                                      "value": "Preventive care or rehab facility",
+                                      "use": {
+                                        "system": "http://snomed.info/sct",
+                                        "code": "900000000000003001"
+                                      }
                                     },
                                     {
                                       "language": "de-DE",
-                                      "value": "Vorsorge- oder Reha-Einrichtung"
+                                      "value": "Vorsorge- oder Reha-Einrichtung",
+                                      "use": {
+                                        "system": "http://snomed.info/sct",
+                                        "code": "900000000000003001"
+                                      }
                                     }
                                   ],
                                   "system": "https://demis.rki.de/fhir/CodeSystem/organizationType",
@@ -3190,11 +3290,19 @@
                                   "designations": [
                                     {
                                       "language": "en-US",
-                                      "value": "Dialysis facility"
+                                      "value": "Dialysis facility",
+                                      "use": {
+                                        "system": "http://snomed.info/sct",
+                                        "code": "900000000000003001"
+                                      }
                                     },
                                     {
                                       "language": "de-DE",
-                                      "value": "Dialyseeinrichtung"
+                                      "value": "Dialyseeinrichtung",
+                                      "use": {
+                                        "system": "http://snomed.info/sct",
+                                        "code": "900000000000003001"
+                                      }
                                     }
                                   ],
                                   "system": "https://demis.rki.de/fhir/CodeSystem/organizationType",
@@ -3207,11 +3315,19 @@
                                   "designations": [
                                     {
                                       "language": "en-US",
-                                      "value": "Day hospital"
+                                      "value": "Day hospital",
+                                      "use": {
+                                        "system": "http://snomed.info/sct",
+                                        "code": "900000000000003001"
+                                      }
                                     },
                                     {
                                       "language": "de-DE",
-                                      "value": "Tagesklinik"
+                                      "value": "Tagesklinik",
+                                      "use": {
+                                        "system": "http://snomed.info/sct",
+                                        "code": "900000000000003001"
+                                      }
                                     }
                                   ],
                                   "system": "https://demis.rki.de/fhir/CodeSystem/organizationType",
@@ -3224,11 +3340,19 @@
                                   "designations": [
                                     {
                                       "language": "en-US",
-                                      "value": "Maternity"
+                                      "value": "Maternity",
+                                      "use": {
+                                        "system": "http://snomed.info/sct",
+                                        "code": "900000000000003001"
+                                      }
                                     },
                                     {
                                       "language": "de-DE",
-                                      "value": "Entbindungseinrichtung"
+                                      "value": "Entbindungseinrichtung",
+                                      "use": {
+                                        "system": "http://snomed.info/sct",
+                                        "code": "900000000000003001"
+                                      }
                                     }
                                   ],
                                   "system": "https://demis.rki.de/fhir/CodeSystem/organizationType",
@@ -3241,11 +3365,19 @@
                                   "designations": [
                                     {
                                       "language": "en-US",
-                                      "value": "Physician's office"
+                                      "value": "Physician's office",
+                                      "use": {
+                                        "system": "http://snomed.info/sct",
+                                        "code": "900000000000003001"
+                                      }
                                     },
                                     {
                                       "language": "de-DE",
-                                      "value": "Arztpraxis"
+                                      "value": "Arztpraxis",
+                                      "use": {
+                                        "system": "http://snomed.info/sct",
+                                        "code": "900000000000003001"
+                                      }
                                     }
                                   ],
                                   "system": "https://demis.rki.de/fhir/CodeSystem/organizationType",
@@ -3258,11 +3390,19 @@
                                   "designations": [
                                     {
                                       "language": "en-US",
-                                      "value": "Dental surgery"
+                                      "value": "Dental surgery",
+                                      "use": {
+                                        "system": "http://snomed.info/sct",
+                                        "code": "900000000000003001"
+                                      }
                                     },
                                     {
                                       "language": "de-DE",
-                                      "value": "Zahnarztpraxis"
+                                      "value": "Zahnarztpraxis",
+                                      "use": {
+                                        "system": "http://snomed.info/sct",
+                                        "code": "900000000000003001"
+                                      }
                                     }
                                   ],
                                   "system": "https://demis.rki.de/fhir/CodeSystem/organizationType",
@@ -3275,11 +3415,19 @@
                                   "designations": [
                                     {
                                       "language": "en-US",
-                                      "value": "Psychotherapeutic facility"
+                                      "value": "Psychotherapeutic facility",
+                                      "use": {
+                                        "system": "http://snomed.info/sct",
+                                        "code": "900000000000003001"
+                                      }
                                     },
                                     {
                                       "language": "de-DE",
-                                      "value": "Psychotherapeutische Praxis"
+                                      "value": "Psychotherapeutische Praxis",
+                                      "use": {
+                                        "system": "http://snomed.info/sct",
+                                        "code": "900000000000003001"
+                                      }
                                     }
                                   ],
                                   "system": "https://demis.rki.de/fhir/CodeSystem/organizationType",
@@ -3292,11 +3440,19 @@
                                   "designations": [
                                     {
                                       "language": "en-US",
-                                      "value": "Other health professional practice"
+                                      "value": "Other health professional practice",
+                                      "use": {
+                                        "system": "http://snomed.info/sct",
+                                        "code": "900000000000003001"
+                                      }
                                     },
                                     {
                                       "language": "de-DE",
-                                      "value": "Sonstige Heilberufepraxis"
+                                      "value": "Sonstige Heilberufepraxis",
+                                      "use": {
+                                        "system": "http://snomed.info/sct",
+                                        "code": "900000000000003001"
+                                      }
                                     }
                                   ],
                                   "system": "https://demis.rki.de/fhir/CodeSystem/organizationType",
@@ -3309,11 +3465,19 @@
                                   "designations": [
                                     {
                                       "language": "en-US",
-                                      "value": "Public health medical facility"
+                                      "value": "Public health medical facility",
+                                      "use": {
+                                        "system": "http://snomed.info/sct",
+                                        "code": "900000000000003001"
+                                      }
                                     },
                                     {
                                       "language": "de-DE",
-                                      "value": "Medizinische Einrichtung des ÖGDs"
+                                      "value": "Medizinische Einrichtung des ÖGDs",
+                                      "use": {
+                                        "system": "http://snomed.info/sct",
+                                        "code": "900000000000003001"
+                                      }
                                     }
                                   ],
                                   "system": "https://demis.rki.de/fhir/CodeSystem/organizationType",
@@ -3326,11 +3490,19 @@
                                   "designations": [
                                     {
                                       "language": "en-US",
-                                      "value": "Emergency rescue service"
+                                      "value": "Emergency rescue service",
+                                      "use": {
+                                        "system": "http://snomed.info/sct",
+                                        "code": "900000000000003001"
+                                      }
                                     },
                                     {
                                       "language": "de-DE",
-                                      "value": "Rettungsdienst"
+                                      "value": "Rettungsdienst",
+                                      "use": {
+                                        "system": "http://snomed.info/sct",
+                                        "code": "900000000000003001"
+                                      }
                                     }
                                   ],
                                   "system": "https://demis.rki.de/fhir/CodeSystem/organizationType",
@@ -3343,11 +3515,19 @@
                                   "designations": [
                                     {
                                       "language": "en-US",
-                                      "value": "Facility for civil Protection and Disaster Assistance"
+                                      "value": "Facility for civil Protection and Disaster Assistance",
+                                      "use": {
+                                        "system": "http://snomed.info/sct",
+                                        "code": "900000000000003001"
+                                      }
                                     },
                                     {
                                       "language": "de-DE",
-                                      "value": "Einrichtungen des Zivil- und Katastrophenschutzes"
+                                      "value": "Einrichtungen des Zivil- und Katastrophenschutzes",
+                                      "use": {
+                                        "system": "http://snomed.info/sct",
+                                        "code": "900000000000003001"
+                                      }
                                     }
                                   ],
                                   "system": "https://demis.rki.de/fhir/CodeSystem/organizationType",
@@ -3360,11 +3540,19 @@
                                   "designations": [
                                     {
                                       "language": "en-US",
-                                      "value": "Other medical facility"
+                                      "value": "Other medical facility",
+                                      "use": {
+                                        "system": "http://snomed.info/sct",
+                                        "code": "900000000000003001"
+                                      }
                                     },
                                     {
                                       "language": "de-DE",
-                                      "value": "Sonstige medizinische Einrichtung"
+                                      "value": "Sonstige medizinische Einrichtung",
+                                      "use": {
+                                        "system": "http://snomed.info/sct",
+                                        "code": "900000000000003001"
+                                      }
                                     }
                                   ],
                                   "system": "https://demis.rki.de/fhir/CodeSystem/organizationType",
@@ -4348,7 +4536,11 @@
                     "designations": [
                       {
                         "language": "en-US",
-                        "value": "Acute respiratory distress syndrome (disorder)"
+                        "value": "Acute respiratory distress syndrome (disorder)",
+                        "use": {
+                          "system": "http://snomed.info/sct",
+                          "code": "900000000000003001"
+                        }
                       }
                     ],
                     "system": "http://snomed.info/sct",
@@ -4360,7 +4552,11 @@
                     "designations": [
                       {
                         "language": "en-US",
-                        "value": "Chill (finding)"
+                        "value": "Chill (finding)",
+                        "use": {
+                          "system": "http://snomed.info/sct",
+                          "code": "900000000000003001"
+                        }
                       }
                     ],
                     "system": "http://snomed.info/sct",
@@ -4372,7 +4568,11 @@
                     "designations": [
                       {
                         "language": "en-US",
-                        "value": "Headache (finding)"
+                        "value": "Headache (finding)",
+                        "use": {
+                          "system": "http://snomed.info/sct",
+                          "code": "900000000000003001"
+                        }
                       }
                     ],
                     "system": "http://snomed.info/sct",
@@ -4384,7 +4584,11 @@
                     "designations": [
                       {
                         "language": "en-US",
-                        "value": "Muscle pain (finding)"
+                        "value": "Muscle pain (finding)",
+                        "use": {
+                          "system": "http://snomed.info/sct",
+                          "code": "900000000000003001"
+                        }
                       }
                     ],
                     "system": "http://snomed.info/sct",
@@ -4396,7 +4600,11 @@
                     "designations": [
                       {
                         "language": "en-US",
-                        "value": "Patient ventilated (finding)"
+                        "value": "Patient ventilated (finding)",
+                        "use": {
+                          "system": "http://snomed.info/sct",
+                          "code": "900000000000003001"
+                        }
                       }
                     ],
                     "system": "http://snomed.info/sct",
@@ -4408,7 +4616,11 @@
                     "designations": [
                       {
                         "language": "en-US",
-                        "value": "Diarrhea (finding)"
+                        "value": "Diarrhea (finding)",
+                        "use": {
+                          "system": "http://snomed.info/sct",
+                          "code": "900000000000003001"
+                        }
                       }
                     ],
                     "system": "http://snomed.info/sct",
@@ -4420,7 +4632,11 @@
                     "designations": [
                       {
                         "language": "en-US",
-                        "value": "Generally unwell (finding)"
+                        "value": "Generally unwell (finding)",
+                        "use": {
+                          "system": "http://snomed.info/sct",
+                          "code": "900000000000003001"
+                        }
                       }
                     ],
                     "system": "http://snomed.info/sct",

@@ -1,0 +1,3178 @@
+{
+  "resourceType": "ValueSet",
+  "id": "laboratoryTestECOP",
+  "url": "https://demis.rki.de/fhir/ValueSet/laboratoryTestECOP",
+  "version": "1.8.1",
+  "name": "LaboratoryTestECOP",
+  "title": "Labortest für Escherichia coli (sonstige darmpathogene Stämme)",
+  "status": "active",
+  "experimental": false,
+  "date": "2025-12-05",
+  "publisher": "Robert Koch-Institut",
+  "contact": [
+    {
+      "telecom": [
+        {
+          "system": "email",
+          "value": "demis-support@rki.de"
+        }
+      ]
+    }
+  ],
+  "description": "Das ValueSet LaboratoryTestECOP enthält die Codes der Labortests für Escherichia coli (sonstige darmpathogene Stämme).",
+  "jurisdiction": [
+    {
+      "coding": [
+        {
+          "system": "urn:iso:std:iso:3166",
+          "version": "ALPHA-2",
+          "code": "DE"
+        }
+      ]
+    }
+  ],
+  "copyright": "This material contains content from LOINC (http://loinc.org/). LOINC is copyright © 1995-2023, Regenstrief Institute, Inc. and the Logical Observation Identifiers Names and Codes (LOINC) Committee and is available at no cost under the license at http://loinc.org/license. LOINC® is a registered United States trademark of Regenstrief Institute, Inc.\r\n\r\nDieses Material enthält Inhalte von LOINC (http://loinc.org/). LOINC ist urheberrechtlich geschützt © 1995-2023, Regenstrief Institute, Inc. und das Logical Observation Identifiers Names and Codes (LOINC) Committee und ist unter der Lizenz http://loinc.org/license kostenlos erhältlich. LOINC® ist eine eingetragene US-amerikanische Marke des Regenstrief Institute, Inc.\r\n\r\nDownloadbedingungen für LOINC-Übersetzungen für Anwendungszwecke in Deutschland\r\nÜbersetzungen in verschiedenen Sprachen werden von \"LOINC® Adopters\", meistens Behörden oder Forschungsinstituten verschiedener Länder, erstellt und an das Regenstrief Institute weitergegeben. Das Copyright für die Übersetzungen liegt beim Regenstrief Institute. Für Deutschland wird die LOINC®-Übersetzung durch das BfArM bereitgestellt. Die Übersetzungen werden durch das Regenstrief Institute als \"Linguistic Variants\" in den halbjährlichen LOINC®-Releases (Februar und August) veröffentlicht.\r\n\r\nDas Copyright für die Übersetzungen liegt beim Regenstrief Institute, 1101 W 10th St, Indianapolis, IN 46202, USA.\r\n\r\nMit dem Download von Dateien kommt ein Nutzungsvertrag zwischen Ihnen und dem Regenstrief Institute zustande. Sie verpflichten sich, die unten verlinkten Nutzungs- und Abgabebedingungen für LOINC vom Regenstrief Institute einzuhalten.",
+  "compose": {
+    "include": [
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "concept": [
+          {
+            "code": "101558-5",
+            "display": "Escherichia coli enteroinvasiv DNA [Nachweis] in Stuhl mittels Nukleinsäureamplifikation mit Sondendetektion"
+          },
+          {
+            "code": "13318-1",
+            "display": "Escherichia coli enteroinvasiv identifiziert in Stuhl mittels erregerspezifischer Kultur"
+          },
+          {
+            "code": "16832-8",
+            "display": "Escherichia coli enterotoxisch identifiziert in Stuhl mittels erregerspezifischer Kultur"
+          },
+          {
+            "code": "20789-4",
+            "display": "Escherichia coli Serotyp [Nachweis oder Identität] in Isolat"
+          },
+          {
+            "code": "41852-5",
+            "display": "Mikroorganismus oder Erreger identifiziert in Probenmaterial"
+          },
+          {
+            "code": "53944-5",
+            "display": "Escherichia coli enteroinvasiv [Nachweis] in Isolat"
+          },
+          {
+            "code": "61398-4",
+            "display": "Escherichia coli DNA [Nachweis] in Probenmaterial mittels Nukleinsäureamplifikation mit Sondendetektion"
+          },
+          {
+            "code": "63423-8",
+            "display": "Escherichia coli eaeA-Gen [Nachweis] in Probenmaterial mittels Nukleinsäureamplifikation mit Sondendetektion"
+          },
+          {
+            "code": "75756-7",
+            "display": "Bakterien identifiziert in Isolat mittels MS.MALDI-TOF"
+          },
+          {
+            "code": "80348-6",
+            "display": "Escherichia coli enteropathogen eae-Gen [Nachweis] in Stuhl mittels Nukleinsäureamplifikation mit Detektion ohne Sonde"
+          },
+          {
+            "code": "87318-2",
+            "display": "Escherichia coli eaeA-Gen [Nachweis] in Isolat mittels Nukleinsäureamplifikation mit Sondendetektion"
+          },
+          {
+            "code": "87320-8",
+            "display": "Escherichia coli enterotoxigen hitzelabiles Toxin DNA [Nachweis] in Isolat mittels Nukleinsäureamplifikation mit Sondendetektion"
+          },
+          {
+            "code": "87951-0",
+            "display": "Escherichia coli eaeA-Gen [Nachweis] in Stuhl mittels Nukleinsäureamplifikation mit Sondendetektion"
+          },
+          {
+            "code": "97317-2",
+            "display": "Escherichia coli enteroaggregativ DNA [Nachweis] in Stuhl mittels Nukleinsäureamplifikation mit Sondendetektion"
+          },
+          {
+            "code": "97318-0",
+            "display": "Escherichia coli enteropathogen DNA [Nachweis] in Stuhl mittels Nukleinsäureamplifikation mit Sondendetektion"
+          },
+          {
+            "code": "97319-8",
+            "display": "Escherichia coli enterotoxigen DNA [Nachweis] in Stuhl mittels Nukleinsäureamplifikation mit Sondendetektion"
+          }
+        ]
+      },
+      {
+        "valueSet": [
+          "https://demis.rki.de/fhir/ValueSet/resistance"
+        ]
+      },
+      {
+        "valueSet": [
+          "https://demis.rki.de/fhir/ValueSet/resistanceGene"
+        ]
+      }
+    ]
+  },
+  "expansion": {
+    "timestamp": "2025-12-05T00:00:00+01:00",
+    "contains": [
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "18985-2",
+        "display": "Sulfamethoxazol [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "101125-3",
+        "display": "Bakterielle Carbapenem-Resistenz blaOXA-235-ähnliches Gen [Nachweis] mittels Molekulargenetik"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "55614-2",
+        "display": "Amoxicillin+Sulbactam [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "18962-1",
+        "display": "Oxytetracyclin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "85501-5",
+        "display": "Carbapenem-Resistenz blaVIM-Gen [Nachweis] mittels Molekulargenetik"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "95540-1",
+        "display": "Carbapenem-Resistenz blaIMP+blaVIM-Gene [Nachweis] mittels Molekulargenetik"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "100050-4",
+        "display": "Erythromycin+Ethambutol [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "87791-0",
+        "display": "Carbadox [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "18864-9",
+        "display": "Ampicillin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "18887-0",
+        "display": "Cefotetan [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "256-8",
+        "display": "Foscarnet [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "72867-5",
+        "display": "Mycobacterium tuberculosis gyrB-Gen Mutation zu Fluorchinolon-Resistenz [Nachweis] mittels Molekulargenetik"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "87320-8",
+        "display": "Escherichia coli enterotoxigen hitzelabiles Toxin DNA [Nachweis] in Isolat mittels Nukleinsäureamplifikation mit Sondendetektion"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "105026-9",
+        "display": "Bakterielle Carbapenem-Resistenz blaOXA-162-Gen [Nachweis] mittels Molekulargenetik"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "18997-7",
+        "display": "Trimethoprim [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "97318-0",
+        "display": "Escherichia coli enteropathogen DNA [Nachweis] in Stuhl mittels Nukleinsäureamplifikation mit Sondendetektion"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "18974-6",
+        "display": "Rifampicin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "92968-7",
+        "display": "Methicillin-Resistenz mecA+mecC-Gene [Nachweis] in Isolat oder Probenmaterial mittels Molekulargenetik"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "51724-3",
+        "display": "Cefuroxim [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "55625-8",
+        "display": "Cefacetril [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "94062-7",
+        "display": "Arzneimittel-Resistenzmutation im bakteriellen rrs-Gen [Nachweis oder Identität] mittels Molekulargenetik"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "6-7",
+        "display": "Amantadin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "18951-4",
+        "display": "Nafcillin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "102120-3",
+        "display": "Carbapenemase [Typ] in Isolat mittels Immunoassay"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "100061-1",
+        "display": "Tosufloxacin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "35789-7",
+        "display": "Daptomycin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "18888-8",
+        "display": "Cefoxitin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "18899-5",
+        "display": "Cephaloridin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "100699-8",
+        "display": "Rifabutin+Ethambutol [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "18876-3",
+        "display": "Cefamandol [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "25595-0",
+        "display": "Econazol [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "87792-8",
+        "display": "Cefovecin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "105014-5",
+        "display": "Bakterielle Carbapenem-Resistenz blaGES-5-Gen [Nachweis] mittels Molekulargenetik"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "105037-6",
+        "display": "OXA-23-Carbapenemase [Nachweis] mittels Immunoassay-Schnelltest"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "20390-1",
+        "display": "Sulfadiazin-Silber [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "85840-7",
+        "display": "Beta-Lactam-Resistenz ESBL blaVEB-Gen [Nachweis] mittels Molekulargenetik"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "101124-6",
+        "display": "Bakterielle Carbapenem-Resistenz blaIMI+blaNMC-Gene [Nachweis] mittels Molekulargenetik"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "73982-1",
+        "display": "Carbapenem-Resistenz blaNDM-Gen [Nachweis] mittels Molekulargenetik"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "18984-5",
+        "display": "Sulfadiazin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "35779-8",
+        "display": "Ceftibuten [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "18961-3",
+        "display": "Oxacillin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "100051-2",
+        "display": "Ethambutol+Rifampicin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "35756-6",
+        "display": "Avilamycin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "18886-2",
+        "display": "Cefotaxim [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "18863-1",
+        "display": "Amphotericin B [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "35831-7",
+        "display": "Pirlimycin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "99037-4",
+        "display": "Bakterielle Trimethoprim-Resistenz dfrA12-Gen [Nachweis] mittels Molekulargenetik"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "105027-7",
+        "display": "Bakterielle Carbapenem-Resistenz blaOXA-23-Gen [Nachweis] mittels Molekulargenetik"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "35854-9",
+        "display": "Trospectomycin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "72868-3",
+        "display": "Mycobacterium leprae folP1-Gen Mutation zu Dapson-Resistenz [Nachweis] mittels Molekulargenetik"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "18973-8",
+        "display": "Pyrazinamid [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "18996-9",
+        "display": "Tobramycin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "87802-5",
+        "display": "Sulfachloropyridazin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "18950-6",
+        "display": "Latamoxef [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "23658-8",
+        "display": "Anderes Antibiotikum [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "97319-8",
+        "display": "Escherichia coli enterotoxigen DNA [Nachweis] in Stuhl mittels Nukleinsäureamplifikation mit Sondendetektion"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "18898-7",
+        "display": "Cephaloglycin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "62258-9",
+        "display": "Erythromyin+Clindamycin-Resistenz ermA + ermC-Gene [Nachweis] mittels Molekulargenetik"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "25596-8",
+        "display": "Fosfomycin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "25607-3",
+        "display": "Miconazol [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "18875-5",
+        "display": "Cefadroxil [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "105015-2",
+        "display": "Bakterielle Carbapenem-Resistenz blaGIM-1-Gen [Nachweis] mittels Molekulargenetik"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "41993-7",
+        "display": "Atazanavir [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "105038-4",
+        "display": "OXA-40+58-Carbapenemase [Nachweis] mittels Immunoassay-Schnelltest"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "18909-2",
+        "display": "Clotrimazol [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "85841-5",
+        "display": "Beta-Lactam-Resistenz AmpC blaACC-Gen [Nachweis] mittels Molekulargenetik"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "18941-5",
+        "display": "Lymecyclin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "18964-7",
+        "display": "Penicillin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "32381-6",
+        "display": "Isepamicin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "51504-9",
+        "display": "Penicillin G Benzathin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "55289-3",
+        "display": "Sulopenem [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "100052-0",
+        "display": "Flomoxef [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "18878-9",
+        "display": "Cefazolin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "55635-7",
+        "display": "Cefamandol+Sulbactam [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "85503-1",
+        "display": "Carbapenem-Resistenz blaOXA-48-Gen [Nachweis] mittels Molekulargenetik"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "18889-6",
+        "display": "Cefpirom [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "18866-4",
+        "display": "Azithromycin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "103654-0",
+        "display": "Meropenem [Empfindlichkeit] für Meningitis"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "54169-8",
+        "display": "Thiamphenicol [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "105024-4",
+        "display": "Bakterielle Carbapenem-Resistenz blaNDM-9-Gen [Nachweis] mittels Molekulargenetik"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "85831-6",
+        "display": "Beta-Lactam-Resistenz ESBL blaBEL-Gen [Nachweis] mittels Molekulargenetik"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "35874-7",
+        "display": "Penicillin+Novobiocin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "46245-7",
+        "display": "Mycobacterium tuberculosis pncA-Gen Mutation zu Pyrazinamid-Resistenz [Nachweis oder Identität] mittels Molekulargenetik"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "72869-1",
+        "display": "Mycobacterium leprae gyrA-Gen Mutation zu Fluorchinolon-Resistenz [Nachweis] mittels Molekulargenetik"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "101127-9",
+        "display": "Bakterielle Carbapenem-Resistenz blaSIM-Gen [Nachweis] mittels Molekulargenetik"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "94064-3",
+        "display": "Arzneimittel-Resistenzmutation im bakteriellen eis-Gen [Nachweis oder Identität] mittels Molekulargenetik"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "18999-3",
+        "display": "Troleandomycin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "89314-9",
+        "display": "Bakterielles 23S rRNA-Gen Mutation zu Azithromycin-Resistenz [Nachweis] mittels Molekulargenetik"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "18976-1",
+        "display": "Rolitetracyclin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "18930-8",
+        "display": "Gramicidin D [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "23659-6",
+        "display": "Apramycin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "18953-0",
+        "display": "Neomycin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "96309-0",
+        "display": "Methicillin-Resistenz mecA+mecC-Gene+SCCmec+OrfX junction [Nachweis] mittels Molekulargenetik"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "23636-4",
+        "display": "Cefdinir [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "18855-7",
+        "display": "5-Fluorocytosin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "41729-5",
+        "display": "Cefotetan+Clavulanat [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "105035-0",
+        "display": "Bakterielle Carbapenem-Resistenz blaVIM-2-Gen [Nachweis] mittels Molekulargenetik"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "58080-3",
+        "display": "Penicillin parenteral [Empfindlichkeit] für Meningitis"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "85842-3",
+        "display": "Beta-Lactam-Resistenz AmpC blaACT+blaMIR-Gene [Nachweis] mittels Molekulargenetik"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "101673-2",
+        "display": "KPC-Carbapenemase [Nachweis] in Isolat mittels Immunoassay-Schnelltest"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "101126-1",
+        "display": "Bakterielle Carbapenem-Resistenz blaOXA-24+blaOXA-40-Gene [Nachweis] mittels Molekulargenetik"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "29258-1",
+        "display": "Linezolid [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "18963-9",
+        "display": "Pefloxacin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "100053-8",
+        "display": "Fluorchinolon [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "18940-7",
+        "display": "Loracarbef [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "18986-0",
+        "display": "Sulfisoxazol [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "51503-1",
+        "display": "Penicillin G Procain [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "55657-1",
+        "display": "Clindamycin.Hochdosis [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "96372-8",
+        "display": "Imipenem+Relebactam [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "18865-6",
+        "display": "Ampicillin+Sulbactam [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "103653-2",
+        "display": "Ciprofloxacin [Empfindlichkeit] für Meningitis"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "105025-1",
+        "display": "Bakterielle Carbapenem-Resistenz blaOXA-181-Gen [Nachweis] mittels Molekulargenetik"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "46244-0",
+        "display": "Mycobacterium tuberculosis-Komplex rpoB-Gen Mutation zu Rifampicin-Resistenz identifiziert mittels Molekulargenetik"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "85832-4",
+        "display": "Beta-Lactam-Resistenz ESBL blaCTX-M-1-Gruppe-Gen [Nachweis] mittels Molekulargenetik"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "94063-5",
+        "display": "Arzneimittel-Resistenzmutation im bakteriellen rpsL-Gen [Nachweis oder Identität] mittels Molekulargenetik"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "18998-5",
+        "display": "Trimethoprim+Sulfamethoxazol [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "99036-6",
+        "display": "Bakterielle Trimethoprim-Resistenz dfrA7+dfrA17-Gene [Nachweis] mittels Molekulargenetik"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "18952-2",
+        "display": "Nalidixat [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "72276-9",
+        "display": "Mycobacterium tuberculosis gyrA-Gen Mutation zu Fluorchinolon-Resistenz [Nachweis] mittels Molekulargenetik"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "20789-4",
+        "display": "Escherichia coli Serotyp [Nachweis oder Identität] in Isolat"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "35851-5",
+        "display": "Tilmicosin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "18975-3",
+        "display": "Ristocetin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "48175-4",
+        "display": "Mycobacterium tuberculosis katG + inhA-Gene Mutation zu Isoniazid-Resistenz [Nachweis] mittels Molekulargenetik"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "87800-9",
+        "display": "Pradofloxacin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "100041-3",
+        "display": "Aminoglycosid [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "35776-4",
+        "display": "Ceftazidim+Clavulanat [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "20391-9",
+        "display": "Mafenid [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "18877-1",
+        "display": "Cefatrizin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "101576-7",
+        "display": "Bakterielles gyrB-Gen Arzneimittel-Resistenzmutation [Nachweis oder Identität] mittels Molekulargenetik"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "85843-1",
+        "display": "Beta-Lactam-Resistenz AmpC blaFOX-Gen [Nachweis] mittels Molekulargenetik"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "105013-7",
+        "display": "Bakterielle Carbapenem-Resistenz blaGES-11-Gen [Nachweis] mittels Molekulargenetik"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "101674-0",
+        "display": "OXA-48-like-Carbapenemase [Nachweis] in Isolat mittels Immunoassay-Schnelltest"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "18987-8",
+        "display": "Sulfonamid [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "23712-3",
+        "display": "Enrofloxacin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "105036-8",
+        "display": "Bakterielle Carbapenem-Resistenz blaVIM-4-Gen [Nachweis] mittels Molekulargenetik"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "42357-4",
+        "display": "Tigecyclin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "32383-2",
+        "display": "Pristinamycin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "100054-6",
+        "display": "Gamithromycin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "73602-5",
+        "display": "Ceftolozan+Tazobactam [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "18905-0",
+        "display": "Cinoxacin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "54170-6",
+        "display": "Imipenem+EDTA [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "86621-0",
+        "display": "Methicillin-Resistenz mecC-Gen [Nachweis] mittels Molekulargenetik"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "30308-1",
+        "display": "Ritonavir [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "6984-9",
+        "display": "Beta-Lactamase.Breitspektrum [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "18981-1",
+        "display": "Spiramycin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "98065-6",
+        "display": "Carbapenem-Resistenz blaOXA-143-Gen [Nachweis] mittels Molekulargenetik"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "18883-9",
+        "display": "Cefonicid [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "23709-9",
+        "display": "Ceftiofur [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "18860-7",
+        "display": "Amikacin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "105022-8",
+        "display": "Bakterielle Carbapenem-Resistenz blaNDM-5-Gen [Nachweis] mittels Molekulargenetik"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "73591-0",
+        "display": "Premafloxacin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "18917-5",
+        "display": "Doxycyclin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "85833-2",
+        "display": "Carbapenem-Resistenz blaGIM-Gen [Nachweis] mittels Molekulargenetik"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "41731-1",
+        "display": "Cefpodoxim+Clavulanat [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "46247-3",
+        "display": "Mycobacterium tuberculosis embB-Gen Mutation zu Ethambutol-Resistenz [Nachweis oder Identität] mittels Molekulargenetik"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "73592-8",
+        "display": "Plazomicin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "18993-6",
+        "display": "Tetracyclin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "101675-7",
+        "display": "IMP-Carbapenemase [Nachweis] in Isolat mittels Immunoassay-Schnelltest"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "41852-5",
+        "display": "Mikroorganismus oder Erreger identifiziert in Probenmaterial"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "18970-4",
+        "display": "Piperacillin+Tazobactam [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "100042-1",
+        "display": "Atovaquon [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "32372-5",
+        "display": "Fleroxacin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "55682-9",
+        "display": "Isoconazol [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "85844-9",
+        "display": "Beta-Lactam-Resistenz ESBL blaCTX-M-2-Gruppe-Gen [Nachweis] mittels Molekulargenetik"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "55196-0",
+        "display": "Terconazol [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "72836-0",
+        "display": "Vancomycin-Resistenz vanC2+vanC3-Gene [Nachweis] mittels Molekulargenetik"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "55670-4",
+        "display": "Dibekacin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "105033-5",
+        "display": "Bakterielle Carbapenem-Resistenz ISAba1 upstream des blaOXA-51-Gen [Nachweis] mittels Molekulargenetik"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "18895-3",
+        "display": "Ceftriaxon [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "18929-0",
+        "display": "Gentamicin.Hochdosis [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "18872-2",
+        "display": "Capreomycin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "18906-8",
+        "display": "Ciprofloxacin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "35845-7",
+        "display": "Telithromycin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "88886-7",
+        "display": "Telavancin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "100055-3",
+        "display": "Optochin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "18980-3",
+        "display": "Spectinomycin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "73603-3",
+        "display": "Ceftazidim+Avibactam [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "30307-3",
+        "display": "Indinavir [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "32384-0",
+        "display": "Thiacetazon [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "6985-6",
+        "display": "Beta-Lactamase.normal [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "99280-0",
+        "display": "Cefiderocol [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "18939-9",
+        "display": "Lomefloxacin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "98066-4",
+        "display": "Colistin-Resistenz mcr-3+mcr-4+mcr-5-Gene [Nachweis] mittels Molekulargenetik"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "55738-9",
+        "display": "Cefotiamhexetil [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "41732-9",
+        "display": "Ceftriaxon+Clavulanat [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "105023-6",
+        "display": "Bakterielle Carbapenem-Resistenz blaNDM-7-Gen [Nachweis] mittels Molekulargenetik"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "85834-0",
+        "display": "Beta-Lactam-Resistenz ESBL blaCTX-M-9-Gruppe-Gen [Nachweis] mittels Molekulargenetik"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "18882-1",
+        "display": "Cefodizim [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "35858-0",
+        "display": "Tylosin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "46246-5",
+        "display": "Mycobacterium tuberculosis katG-Gen Mutation zu hoher Isoniazid-Resistenz [Nachweis oder Identität] mittels Molekulargenetik"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "18916-7",
+        "display": "Dicloxacillin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "23740-4",
+        "display": "Florfenicol [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "72837-8",
+        "display": "Vancomycin-Resistenz vanC1-Gen [Nachweis] mittels Molekulargenetik"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "100043-9",
+        "display": "Azithromycin+Ethambutol [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "18992-8",
+        "display": "Terbinafin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "32373-3",
+        "display": "Arbekacin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "23642-2",
+        "display": "Trovafloxacin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "105034-3",
+        "display": "Bakterielle Carbapenem-Resistenz blaVIM-1-Gen [Nachweis] mittels Molekulargenetik"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "49617-4",
+        "display": "Carbapenem-Resistenz blaKPC-Gen [Nachweis] mittels Molekulargenetik"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "18894-6",
+        "display": "Ceftizoxim [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "32597-7",
+        "display": "Natamycin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "18871-4",
+        "display": "Butirosin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "88887-5",
+        "display": "Isavuconazol [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "18928-2",
+        "display": "Gentamicin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "101676-5",
+        "display": "VIM-Carbapenemase [Nachweis] in Isolat mittels Immunoassay-Schnelltest"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "50712-9",
+        "display": "Influenza-Virus.Neuraminidaseinhibitor-Resistenz [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "85822-5",
+        "display": "Beta-Lactam-Resistenz AmpC blaCMY+blaMOX-Gene [Nachweis] mittels Molekulargenetik"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "100056-1",
+        "display": "Panipenem [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "54191-2",
+        "display": "Cefotaxim+Sulbactam [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "18960-5",
+        "display": "Oleandomycin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "18983-7",
+        "display": "Streptomycin.Hochdosis [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "73600-9",
+        "display": "Faropenem [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "105020-2",
+        "display": "Bakterielle Carbapenem-Resistenz blaNDM-19-Gen [Nachweis] mittels Molekulargenetik"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "85835-7",
+        "display": "Beta-Lactam-Resistenz ESBL blaCTX-M-8+blaCTX-M-25-Gruppen-Gene [Nachweis] mittels Molekulargenetik"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "18885-4",
+        "display": "Ceforanid [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "18919-1",
+        "display": "Erythromycin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "18862-3",
+        "display": "Amoxicillin+Clavulanat [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "77682-3",
+        "display": "Staphylococcus aureus Methicillin-Resistenz SCCmec+orfX junction [Nachweis] in Probenmaterial von der Nase mittels Nukleinsäureamplifikation mit Sondendetektion"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "98063-1",
+        "display": "Beta-Lactam-Resistenz ESBL blaCTX-M-15-Gen [Nachweis] mittels Molekulargenetik"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "94061-9",
+        "display": "Arzneimittel-Resistenzmutation im bakteriellen gidB-Gen [Nachweis oder Identität] mittels Molekulargenetik"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "30299-2",
+        "display": "Amprenavir [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "93700-3",
+        "display": "Beta-Lactam-Resistenz AmpC blaDHA-Gen [Nachweis] mittels Molekulargenetik"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "69379-6",
+        "display": "Vancomycin-Resistenz vanA und vanB und vanC1 und vanC2-Gene [Nachweis oder Identität] mittels Molekulargenetik"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "100044-7",
+        "display": "Cefcapen [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "87803-3",
+        "display": "Sulfadimethoxin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "18972-0",
+        "display": "Polymyxin B [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "18995-1",
+        "display": "Ticarcillin+Clavulanat [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "94060-1",
+        "display": "Arzneimittel-Resistenzmutation im bakteriellen gyrA-Gen [Nachweis oder Identität] mittels Molekulargenetik"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "32374-1",
+        "display": "Cefotiam [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "18897-9",
+        "display": "Cephalexin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "18874-8",
+        "display": "Cefaclor [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "105031-9",
+        "display": "Bakterielle Carbapenem-Resistenz blaOXA-58-Gen [Nachweis] mittels Molekulargenetik"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "101677-3",
+        "display": "NDM-Carbapenemase [Nachweis] in Isolat mittels Immunoassay-Schnelltest"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "55691-0",
+        "display": "Ornidazol [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "18908-4",
+        "display": "Clindamycin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "43272-4",
+        "display": "Ceftobiprol [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "41740-2",
+        "display": "Tazobactam [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "85823-3",
+        "display": "Carbapenem-Resistenz blaGES-Gen [Nachweis] mittels Molekulargenetik"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "88250-6",
+        "display": "Cephalosporin-Resistenz blaCTX-M-Gen [Nachweis] mittels Molekulargenetik"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "42353-3",
+        "display": "Cefepim+Clavulanat [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "69574-2",
+        "display": "Furazolidon [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "18982-9",
+        "display": "Streptomycin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "30309-9",
+        "display": "Nelfinavir [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "73601-7",
+        "display": "Danofloxacin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "86620-2",
+        "display": "Methicillin-Resistenz mecA+mecC-Gene [Nachweis] in Probenmaterial von der Nase mittels Nukleinsäureamplifikation mit Sondendetektion"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "54928-7",
+        "display": "Tinidazol [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "105021-0",
+        "display": "Bakterielle Carbapenem-Resistenz blaNDM-4-Gen [Nachweis] mittels Molekulargenetik"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "33634-7",
+        "display": "Mycobacterium tuberculosis Rifampicin-Resistenzgen [Nachweis oder Identität] in Sputum mittels Nukleinsäureamplifikation mit Sondendetektion"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "85836-5",
+        "display": "Beta-Lactam-Resistenz ESBL blaGES-Gen [Nachweis] mittels Molekulargenetik"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "98064-9",
+        "display": "Beta-Lactam-Resistenz ESBL blaCTX-M-14-Gen [Nachweis] mittels Molekulargenetik"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "18884-7",
+        "display": "Cefoperazon [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "18861-5",
+        "display": "Amoxicillin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "32375-8",
+        "display": "Cefmenoxim [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "100057-9",
+        "display": "Prothionamid [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "18918-3",
+        "display": "Enoxacin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "73590-2",
+        "display": "Razupenem [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "30298-4",
+        "display": "Lamivudin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "41730-3",
+        "display": "Cefoxitin+Clavulanat [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "55649-8",
+        "display": "Ceftazidim+Sulbactam [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "93701-1",
+        "display": "Colistin-Resistenz mcr-2-Gen [Nachweis] mittels Molekulargenetik"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "100045-4",
+        "display": "Cefozopran [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "58085-2",
+        "display": "Penicillin parenteral [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "18994-4",
+        "display": "Ticarcillin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "54200-1",
+        "display": "Griseofulvin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "18971-2",
+        "display": "Pivampicillin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "105032-7",
+        "display": "Bakterielle Carbapenem-Resistenz blaOXA-72-Gen [Nachweis] mittels Molekulargenetik"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "19000-9",
+        "display": "Vancomycin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "265-9",
+        "display": "Ganciclovir [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "18896-1",
+        "display": "Cefuroxim parenteral [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "18873-0",
+        "display": "Carbenicillin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "62256-3",
+        "display": "Aminoglycosid-Resistenz aacA-Gen [Nachweis] mittels Molekulargenetik"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "18907-6",
+        "display": "Clarithromycin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "73606-6",
+        "display": "Besifloxacin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "18947-2",
+        "display": "Mezlocillin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "18924-1",
+        "display": "Fluconazol [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "30304-0",
+        "display": "Adefovir [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "85837-3",
+        "display": "Beta-Lactam-Resistenz ESBL blaPER-Gen [Nachweis] mittels Molekulargenetik"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "32376-6",
+        "display": "Clinafloxacin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "18959-7",
+        "display": "Ofloxacin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "100058-7",
+        "display": "Prulifloxacin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "18936-5",
+        "display": "Kanamycin.Hochdosis [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "41735-2",
+        "display": "Evernimicin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "42535-5",
+        "display": "Tipranavir [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "65340-2",
+        "display": "Micafungin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "35838-2",
+        "display": "Salinomycin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "73595-1",
+        "display": "Nitazoxanid [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "100046-2",
+        "display": "Cefquinom [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "73596-9",
+        "display": "Marbofloxacin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "75753-4",
+        "display": "Vancomycin-Resistenz vanD-Gen [Nachweis] mittels Molekulargenetik"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "18913-4",
+        "display": "Ciclacillin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "72870-9",
+        "display": "Mycobacterium leprae rpoB-Gen Mutation zu Rifampicin-Resistenz [Nachweis] mittels Molekulargenetik"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "54197-9",
+        "display": "Piperacillin+Sulbactam [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "85825-8",
+        "display": "Carbapenem-Resistenz blaOXA-23-ähnliches Gen [Nachweis] mittels Molekulargenetik"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "101558-5",
+        "display": "Escherichia coli enteroinvasiv DNA [Nachweis] in Stuhl mittels Nukleinsäureamplifikation mit Sondendetektion"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "19001-7",
+        "display": "Viomycin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "94059-3",
+        "display": "Arzneimittel-Resistenzmutation im bakteriellen pncA-Gen [Nachweis oder Identität] mittels Molekulargenetik"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "35792-1",
+        "display": "Difloxacin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "86930-5",
+        "display": "Carbapenemase [Nachweis] in Isolat"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "18902-7",
+        "display": "Cephradin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "18891-2",
+        "display": "Cefprozil [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "80348-6",
+        "display": "Escherichia coli enteropathogen eae-Gen [Nachweis] in Stuhl mittels Nukleinsäureamplifikation mit Detektion ohne Sonde"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "18900-1",
+        "display": "Cephalothin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "18946-4",
+        "display": "Metronidazol [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "100059-5",
+        "display": "Rifapentin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "18923-3",
+        "display": "Floxacillin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "30303-2",
+        "display": "Abacavir [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "105030-1",
+        "display": "Bakterielle Carbapenem-Resistenz blaOXA-244-Gen [Nachweis] mittels Molekulargenetik"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "35816-8",
+        "display": "Gemifloxacin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "85838-1",
+        "display": "Beta-Lactam-Resistenz ESBL blaSHV-Gen [Nachweis] mittels Molekulargenetik"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "18935-7",
+        "display": "Kanamycin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "18958-9",
+        "display": "Nystatin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "18912-6",
+        "display": "Colistin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "41736-0",
+        "display": "Oritavancin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "72421-1",
+        "display": "Vancomycin-Resistenz vanB-Gen [Nachweis] mittels Molekulargenetik"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "100047-0",
+        "display": "Cefteram [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "85498-4",
+        "display": "Carbapenem-Resistenz blaIMP-Gen [Nachweis] mittels Molekulargenetik"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "73597-7",
+        "display": "Iclaprim [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "62261-3",
+        "display": "Vancomycin-Resistenz vanA + vanB-Gene [Nachweis] mittels Molekulargenetik"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "32377-4",
+        "display": "Cefetamet [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "50633-7",
+        "display": "Ceftriaxon [Empfindlichkeit] für Meningitis"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "85826-6",
+        "display": "Carbapenem-Resistenz blaOXA-24-ähnliches Gen [Nachweis] mittels Molekulargenetik"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "87318-2",
+        "display": "Escherichia coli eaeA-Gen [Nachweis] in Isolat mittels Nukleinsäureamplifikation mit Sondendetektion"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "18901-9",
+        "display": "Cephapirin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "18890-4",
+        "display": "Cefpodoxim [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "35827-5",
+        "display": "Orbifloxacin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "73585-2",
+        "display": "Tizoxanid [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "94058-5",
+        "display": "Arzneimittel-Resistenzmutation im bakteriellen embB-Gen [Nachweis oder Identität] mittels Molekulargenetik"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "30306-5",
+        "display": "Efavirenz [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "77735-9",
+        "display": "Mycobacterium-abscessus-Komplex Clarithromycin-Resistenz verkürztes erm(41)-Gen [Nachweis] mittels Molekulargenetik"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "51719-3",
+        "display": "Paromomycin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "73604-1",
+        "display": "Ceftarolin+Avibactam [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "85839-9",
+        "display": "Beta-Lactam-Resistenz ESBL blaTEM-Gen [Nachweis] mittels Molekulargenetik"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "55696-9",
+        "display": "Oxolinat [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "63072-3",
+        "display": "Mycobacterium tuberculosis inhA-Gen Mutation zu geringer Isoniazid-Resistenz [Nachweis] mittels Molekulargenetik"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "31039-1",
+        "display": "Moxifloxacin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "41733-7",
+        "display": "Clavulanat [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "20629-2",
+        "display": "Levofloxacin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "32603-3",
+        "display": "Itraconazol [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "18881-3",
+        "display": "Cefmetazol [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "99281-8",
+        "display": "Lefamulin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "18915-9",
+        "display": "Demeclocyclin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "13318-1",
+        "display": "Escherichia coli enteroinvasiv identifiziert in Stuhl mittels erregerspezifischer Kultur"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "35813-5",
+        "display": "Garenoxacin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "52128-6",
+        "display": "Cefotaxim [Empfindlichkeit] für Meningitis"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "18938-1",
+        "display": "Lincomycin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "86713-5",
+        "display": "Carbapenem-Resistenz blaOXA-134-ähnliches Gen [Nachweis] mittels Molekulargenetik"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "20389-3",
+        "display": "Mupirocin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "32378-2",
+        "display": "Caspofungin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "53944-5",
+        "display": "Escherichia coli enteroinvasiv [Nachweis] in Isolat"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "18991-0",
+        "display": "Temocillin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "55292-7",
+        "display": "Linopristin+Flopristin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "55706-6",
+        "display": "Piromidat [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "85827-4",
+        "display": "Carbapenem-Resistenz blaOXA-48-ähnliches Gen [Nachweis] mittels Molekulargenetik"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "51698-9",
+        "display": "Dapson [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "18893-8",
+        "display": "Ceftazidim [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "18927-4",
+        "display": "Fusidat [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "18870-6",
+        "display": "Bacitracin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "18904-3",
+        "display": "Chlortetracyclin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "100048-8",
+        "display": "Clarithromycin+Ethambutol [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "87798-5",
+        "display": "Tulathromycin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "30305-7",
+        "display": "Delavirdin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "73605-8",
+        "display": "Ceftarolin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "18948-0",
+        "display": "Minocyclin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "77736-7",
+        "display": "Mycobacterium abscessus-Komplex Clarithromycin-Resistenz erm(41)-Gen [Interpretation] mittels Molekulargenetik"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "54194-6",
+        "display": "Mezlocillin+Sulbactam [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "63423-8",
+        "display": "Escherichia coli eaeA-Gen [Nachweis] in Probenmaterial mittels Nukleinsäureamplifikation mit Sondendetektion"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "31038-3",
+        "display": "Gatifloxacin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "41734-5",
+        "display": "Dalbavancin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "18880-5",
+        "display": "Cefixim [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "18937-3",
+        "display": "Ketoconazol [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "73594-4",
+        "display": "Omadacyclin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "55717-3",
+        "display": "Ticarcillin+Sulbactam [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "1-8",
+        "display": "Aciclovir [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "18914-2",
+        "display": "Cycloserin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "86712-7",
+        "display": "Carbapenem-Resistenz blaOXA-Gen [Nachweis] mittels Molekulargenetik"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "20388-5",
+        "display": "Nitrofurazon [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "32379-0",
+        "display": "Voriconazol [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "54908-9",
+        "display": "Cefminox [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "75756-7",
+        "display": "Bakterien identifiziert in Isolat mittels MS.MALDI-TOF"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "18990-2",
+        "display": "Temafloxacin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "23640-6",
+        "display": "Quinupristin+Dalfopristin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "85828-2",
+        "display": "Carbapenem-Resistenz blaOXA-58-ähnliches Gen [Nachweis] mittels Molekulargenetik"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "100049-6",
+        "display": "Eravacyclin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "18903-5",
+        "display": "Chloramphenicol [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "18926-6",
+        "display": "Framycetin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "35848-1",
+        "display": "Tiamulin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "87797-7",
+        "display": "Sulfathiazol [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "18949-8",
+        "display": "Miocamycin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "18892-0",
+        "display": "Cefsulodin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "35802-8",
+        "display": "Ertapenem [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "88885-9",
+        "display": "Delafloxacin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "18943-1",
+        "display": "Meropenem [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "18989-4",
+        "display": "Teicoplanin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "73588-6",
+        "display": "Sarafloxacin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "94055-1",
+        "display": "Arzneimittel-Resistenzmutation im bakteriellen inhA-Gen [Nachweis oder Identität] mittels Molekulargenetik"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "18966-2",
+        "display": "Penicillin V [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "30300-8",
+        "display": "Didanosin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "93850-6",
+        "display": "Pretomanid [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "35762-4",
+        "display": "Cefditoren [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "72863-4",
+        "display": "Mycobacterium leprae gyrB-Gen Mutation zu Fluorchinolon-Resistenz [Nachweis] mittels Molekulargenetik"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "89372-7",
+        "display": "Mycobacterium tuberculosis-Komplex rpoB-Gen Mutation zu Rifampicin-Resistenz [Nachweis] mittels Molekulargenetik"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "18868-0",
+        "display": "Aztreonam [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "41739-4",
+        "display": "Sulbactam [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "99034-1",
+        "display": "Bakterielle Trimethoprim-Resistenz dfrA1-Gen [Nachweis] mittels Molekulargenetik"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "94274-8",
+        "display": "Bedaquilin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "18978-7",
+        "display": "Roxithromycin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "18955-5",
+        "display": "Nitrofurantoin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "99035-8",
+        "display": "Bakterielle Trimethoprim-Resistenz dfrA5-Gen [Nachweis] mittels Molekulargenetik"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "19149-4",
+        "display": "Rifabutin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "18932-4",
+        "display": "Imipenem [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "93390-3",
+        "display": "Carbapenem-Resistance blaOXA-23-ähnliches+blaOXA-48-ähnliches Gen [Nachweis] in Isolat oder Probenmaterial mittels Molekulargenetik"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "30311-5",
+        "display": "Nevirapin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "54166-4",
+        "display": "Cefoperazon+Sulbactam [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "18869-8",
+        "display": "Bacampicillin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "23638-0",
+        "display": "Grepafloxacin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "57896-3",
+        "display": "Influenza-Virus A 2009 H1N1v.Neuraminidaseinhibitor-Resistenz [Empfindlichkeit] in Probenmaterial mittels Genotypisierung"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "41727-9",
+        "display": "Aztreonam+Clavulanat [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "85829-0",
+        "display": "Carbapenem-Resistenz blaSPM-Gen [Nachweis] mittels Molekulargenetik"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "18857-3",
+        "display": "Almecillin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "33627-1",
+        "display": "Tenofovir [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "18944-9",
+        "display": "Methacyclin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "63368-5",
+        "display": "Carbapenem-Resistenzgene [Nachweis oder Identität] mittels Nukleinsäureamplifikation mit Sondendetektion"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "61188-9",
+        "display": "Clindamycin.induziert [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "105018-6",
+        "display": "Bakterielle Carbapenem-Resistenz blaKPC-3-Gen [Nachweis] mittels Molekulargenetik"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "88462-7",
+        "display": "Carbapenem [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "18965-4",
+        "display": "Penicillin G [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "35861-4",
+        "display": "Virginiamycin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "18942-3",
+        "display": "Meclocyclin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "18988-6",
+        "display": "Talampicillin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "94054-4",
+        "display": "Arzneimittel-Resistenzmutation im bakteriellen katG-Gen [Nachweis oder Identität] mittels Molekulargenetik"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "73589-4",
+        "display": "Rifaximin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "23627-3",
+        "display": "Clofazimin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "18879-7",
+        "display": "Cefepim [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "77734-2",
+        "display": "Mycobacterium-abscessus-Komplex Clarithromycin-Resistenz erm(41)-Gen in voller Länge [Nachweis] mittels Molekulargenetik"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "72887-3",
+        "display": "Staphylococcus aureus Methicillin-Resistenz SCCmec [Nachweis] in Probenmaterial von der Nase mittels Nukleinsäureamplifikation mit Sondendetektion"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "93851-4",
+        "display": "Delamanid [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "72864-2",
+        "display": "Mycobacterium tuberculosis rpsL+rrs-Gene Mutation zu Aminoglycosid-Resistenz [Nachweis] mittels Molekulargenetik"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "18867-2",
+        "display": "Azlocillin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "18954-8",
+        "display": "Netilmicin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "18977-9",
+        "display": "Rosoxacin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "18931-6",
+        "display": "Hetacillin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "86714-3",
+        "display": "Carbapenem-Resistenz blaOXA-51-ähnliches Gen [Nachweis] mittels Molekulargenetik"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "94065-0",
+        "display": "Arzneimittel-Resistenzmutation im bakteriellen rpoB-Gen [Nachweis oder Identität] mittels Molekulargenetik"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "30310-7",
+        "display": "Saquinavir [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "41728-7",
+        "display": "Biapenem [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "33628-9",
+        "display": "Cidofovir [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "18920-9",
+        "display": "Erythromycin+Sulfisoxazol [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "531-4",
+        "display": "Zidovudin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "60535-2",
+        "display": "Doripenem [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "105019-4",
+        "display": "Bakterielle Carbapenem-Resistenz blaNDM-1-Gen [Nachweis] mittels Molekulargenetik"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "48816-3",
+        "display": "Staphylococcus aureus Panton-Valentine-leukocidin-Gene [Nachweis] in Isolat oder Probenmaterial mittels Molekulargenetik"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "48813-0",
+        "display": "Methicillin-Resistenz mecA-Gen [Nachweis] mittels Molekulargenetik"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "18922-5",
+        "display": "Ethionamid [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "101123-8",
+        "display": "Bakterielle Carbapenem-Resistenz blaIMI-Gen [Nachweis] mittels Molekulargenetik"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "30302-4",
+        "display": "Stavudin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "55631-6",
+        "display": "Cephalothin+Sulbactam [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "18859-9",
+        "display": "Amdinocillin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "23628-1",
+        "display": "Sparfloxacin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "97941-9",
+        "display": "Cycloheximid [Empfindlichkeit] in Isolat"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "41737-8",
+        "display": "Ramoplanin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "54188-8",
+        "display": "Posaconazol [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "35783-0",
+        "display": "Cefuroxim oral [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "72865-9",
+        "display": "Mycobacterium tuberculosis ethB-Gen Mutation zu Ethionamid-Resistenz [Nachweis] mittels Molekulargenetik"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "18911-8",
+        "display": "Colistimethat"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "105028-5",
+        "display": "Bakterielle Carbapenem-Resistenz blaOXA-232-Gen [Nachweis] mittels Molekulargenetik"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "18957-1",
+        "display": "Novobiocin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "18934-0",
+        "display": "Isoniazid [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "16832-8",
+        "display": "Escherichia coli enterotoxisch identifiziert in Stuhl mittels erregerspezifischer Kultur"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "73598-5",
+        "display": "Finafloxacin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "62260-5",
+        "display": "Tetracyclin-Resistenz tetK + tetM-Gene [Nachweis] mittels Molekulargenetik"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "25597-6",
+        "display": "Josamycin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "55676-1",
+        "display": "Flumequin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "61398-4",
+        "display": "Escherichia coli DNA [Nachweis] in Probenmaterial mittels Nukleinsäureamplifikation mit Sondendetektion"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "25608-1",
+        "display": "Nitroxolin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "35771-5",
+        "display": "Cefotaxim+Clavulanat [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "105016-0",
+        "display": "Bakterielle Carbapenem-Resistenz blaKPC-18-Gen [Nachweis] mittels Molekulargenetik"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "93699-7",
+        "display": "Beta-Lactam-Resistenz AmpC blaCMY-2-Gen [Nachweis] mittels Molekulargenetik"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "86221-9",
+        "display": "Colistin-Resistenz mcr-1-Gen [Nachweis] mittels Molekulargenetik"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "35805-1",
+        "display": "Bambermycine [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "73586-0",
+        "display": "Tedizolid [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "18969-6",
+        "display": "Piperacillin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "51694-8",
+        "display": "Carumonam [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "94057-7",
+        "display": "Arzneimittel-Resistenzmutation im bakteriellen ahpC-Gen [Nachweis oder Identität] mittels Molekulargenetik"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "23629-9",
+        "display": "Para-Aminosalicylat [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "18921-7",
+        "display": "Ethambutol [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "73587-8",
+        "display": "Solithromycin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "18967-0",
+        "display": "Phenethicillin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "30301-6",
+        "display": "Zalcitabin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "57095-2",
+        "display": "Anidulafungin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "41738-6",
+        "display": "Rosaramicin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "95809-0",
+        "display": "Carbapenem-Resistenzgene [Nachweis] mittels Molekulargenetik"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "103672-2",
+        "display": "Amoxicillin+Clavulanat [Empfindlichkeit] für Harnwegsinfektionen"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "105029-3",
+        "display": "Bakterielle Carbapenem-Resistenz blaOXA-24/40-Gen [Nachweis] mittels Molekulargenetik"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "18979-5",
+        "display": "Sisomicin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "72866-7",
+        "display": "Mycobacterium tuberculosis ethA-Gen Mutation zu Ethionamid-Resistenz [Nachweis] mittels Molekulargenetik"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "18956-3",
+        "display": "Norfloxacin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "73599-3",
+        "display": "Fidaxomicin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "18910-0",
+        "display": "Cloxacillin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "97317-2",
+        "display": "Escherichia coli enteroaggregativ DNA [Nachweis] in Stuhl mittels Nukleinsäureamplifikation mit Sondendetektion"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "88892-5",
+        "display": "Meropenem+Vaborbactam [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "100060-3",
+        "display": "Tildipirosin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "87951-0",
+        "display": "Escherichia coli eaeA-Gen [Nachweis] in Stuhl mittels Nukleinsäureamplifikation mit Sondendetektion"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "35795-4",
+        "display": "Dirithromycin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "48814-8",
+        "display": "Vancomycin-Resistenz vanA-Gen [Nachweis] mittels Molekulargenetik"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "41726-1",
+        "display": "ABT492 [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "18945-6",
+        "display": "Methicillin [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "94056-9",
+        "display": "Arzneimittel-Resistenzmutation im bakteriellen fabG1-Gen [Nachweis oder Identität] mittels Molekulargenetik"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "18968-8",
+        "display": "Pipemidat [Empfindlichkeit]"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "105017-8",
+        "display": "Bakterielle Carbapenem-Resistenz blaKPC-2-Gen [Nachweis] mittels Molekulargenetik"
+      }
+    ]
+  }
+}

@@ -2,12 +2,12 @@
   "resourceType": "ValueSet",
   "id": "answerSetCDCBHIVD",
   "url": "https://demis.rki.de/fhir/ValueSet/answerSetCDCBHIVD",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "name": "AnswerSetCDCBHIVD",
   "title": "Indikatorerkrankungen, definierend für HIV-Erkrankungen der Kategorie B.",
   "status": "active",
   "experimental": false,
-  "date": "2025-08-12",
+  "date": "2026-01-09",
   "publisher": "Robert Koch-Institut",
   "contact": [
     {
@@ -36,7 +36,7 @@
     "include": [
       {
         "system": "http://snomed.info/sct",
-        "version": "http://snomed.info/sct/11000274103/version/20241115",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
         "concept": [
           {
             "extension": [
@@ -46,7 +46,7 @@
               }
             ],
             "code": "198130006",
-            "display": "Female pelvic inflammatory disease (disorder)"
+            "display": "Unterleibsentzündung der Frau"
           },
           {
             "extension": [
@@ -56,7 +56,7 @@
               }
             ],
             "code": "235726002",
-            "display": "Human immunodeficiency virus enteropathy (disorder)"
+            "display": "Enteropathie durch humanes Immundefizienz-Virus"
           },
           {
             "extension": [
@@ -66,7 +66,7 @@
               }
             ],
             "code": "302873008",
-            "display": "Thrombocytopenic purpura (disorder)"
+            "display": "Thrombozytopenische Purpura"
           },
           {
             "extension": [
@@ -76,7 +76,7 @@
               }
             ],
             "code": "402901009",
-            "display": "Oral hairy leukoplakia associated with human immunodeficiency virus disease (disorder)"
+            "display": "Orale haarige Leukoplakie in Verbindung mit einer humanen Immundefizienz-Virus-Erkrankung"
           },
           {
             "extension": [
@@ -96,7 +96,7 @@
               }
             ],
             "code": "58213005",
-            "display": "Bacillary angiomatosis (disorder)"
+            "display": "Bazilläre Angiomatose"
           },
           {
             "extension": [
@@ -106,7 +106,7 @@
               }
             ],
             "code": "708126004",
-            "display": "Recurrent candidiasis of vagina (disorder)"
+            "display": "Rezidivierende Candidiasis der Vagina"
           },
           {
             "extension": [
@@ -126,7 +126,7 @@
               }
             ],
             "code": "713527009",
-            "display": "Disorder of peripheral nervous system co-occurrent with human immunodeficiency virus infection (disorder)"
+            "display": "Krankheit des peripheren Nervensystems bei HIV-Infektion"
           },
           {
             "extension": [
@@ -163,79 +163,79 @@
     ]
   },
   "expansion": {
-    "timestamp": "2025-08-12T00:00:00+02:00",
+    "timestamp": "2026-01-09T00:00:00+01:00",
     "contains": [
       {
         "system": "http://snomed.info/sct",
-        "version": "http://snomed.info/sct/11000274103/version/20241115",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
         "code": "235726002",
-        "display": "Human immunodeficiency virus enteropathy (disorder)"
+        "display": "Enteropathie durch humanes Immundefizienz-Virus"
       },
       {
         "system": "http://snomed.info/sct",
-        "version": "http://snomed.info/sct/11000274103/version/20241115",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
         "code": "402901009",
-        "display": "Oral hairy leukoplakia associated with human immunodeficiency virus disease (disorder)"
+        "display": "Orale haarige Leukoplakie in Verbindung mit einer humanen Immundefizienz-Virus-Erkrankung"
       },
       {
         "system": "http://snomed.info/sct",
-        "version": "http://snomed.info/sct/11000274103/version/20241115",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
         "code": "58213005",
-        "display": "Bacillary angiomatosis (disorder)"
+        "display": "Bazilläre Angiomatose"
       },
       {
         "system": "http://snomed.info/sct",
-        "version": "http://snomed.info/sct/11000274103/version/20241115",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
         "code": "4241002",
         "display": "Listeriose"
       },
       {
         "system": "http://snomed.info/sct",
-        "version": "http://snomed.info/sct/11000274103/version/20241115",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
         "code": "708126004",
-        "display": "Recurrent candidiasis of vagina (disorder)"
+        "display": "Rezidivierende Candidiasis der Vagina"
       },
       {
         "system": "http://snomed.info/sct",
-        "version": "http://snomed.info/sct/11000274103/version/20241115",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
         "code": "713527009",
-        "display": "Disorder of peripheral nervous system co-occurrent with human immunodeficiency virus infection (disorder)"
+        "display": "Krankheit des peripheren Nervensystems bei HIV-Infektion"
       },
       {
         "system": "http://snomed.info/sct",
-        "version": "http://snomed.info/sct/11000274103/version/20241115",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
         "code": "713731001",
         "display": "Pyrexia of unknown origin co-occurrent with human immunodeficiency virus infection (disorder)"
       },
       {
         "system": "http://snomed.info/sct",
-        "version": "http://snomed.info/sct/11000274103/version/20241115",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
         "code": "713497004",
         "display": "Candidiasis of mouth co-occurrent with human immunodeficiency virus infection (disorder)"
       },
       {
         "system": "http://snomed.info/sct",
-        "version": "http://snomed.info/sct/11000274103/version/20241115",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
         "code": "302873008",
-        "display": "Thrombocytopenic purpura (disorder)"
+        "display": "Thrombozytopenische Purpura"
       },
       {
         "system": "http://snomed.info/sct",
-        "version": "http://snomed.info/sct/11000274103/version/20241115",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
         "code": "713964006",
         "display": "Multidermatomal infection caused by Herpes zoster co-occurrent with human immunodeficiency virus infection (disorder)"
       },
       {
         "system": "http://snomed.info/sct",
-        "version": "http://snomed.info/sct/11000274103/version/20241115",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
         "code": "73391008",
         "display": "Dysplasie der Cervix uteri"
       },
       {
         "system": "http://snomed.info/sct",
-        "version": "http://snomed.info/sct/11000274103/version/20241115",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
         "code": "198130006",
-        "display": "Female pelvic inflammatory disease (disorder)"
+        "display": "Unterleibsentzündung der Frau"
       }
     ]
   }

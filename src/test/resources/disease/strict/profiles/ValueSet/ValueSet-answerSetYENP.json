@@ -1,0 +1,1486 @@
+{
+  "resourceType": "ValueSet",
+  "id": "answerSetYENP",
+  "url": "https://demis.rki.de/fhir/ValueSet/answerSetYENP",
+  "version": "1.8.1",
+  "name": "AnswerSetYENP",
+  "title": "AnswerSet für Yersinia spp. (darmpathogen)",
+  "status": "active",
+  "experimental": false,
+  "date": "2025-12-05",
+  "publisher": "Robert Koch-Institut",
+  "contact": [
+    {
+      "telecom": [
+        {
+          "system": "email",
+          "value": "demis-support@rki.de"
+        }
+      ]
+    }
+  ],
+  "description": "Das ValueSet AnswerSetYENP enthält die Codes der Answer-Codes für Yersinia spp. (darmpathogen).",
+  "jurisdiction": [
+    {
+      "coding": [
+        {
+          "system": "urn:iso:std:iso:3166",
+          "version": "ALPHA-2",
+          "code": "DE"
+        }
+      ]
+    }
+  ],
+  "copyright": "This material includes SNOMED Clinical Terms® (SNOMED CT®) which is used by permission of the International Health Terminology Standards Development Organisation (IHTSDO). All rights reserved. SNOMED CT®, was originally created by The College of American Pathologists. “SNOMED” and “SNOMED CT” are registered trademarks of the IHTSDO.\r\n\r\nDieses Material enthält SNOMED Clinical Terms® (SNOMED CT®), die mit Genehmigung der International Health Terminology Standards Development Organisation (IHTSDO) verwendet werden. Alle Rechte vorbehalten. SNOMED CT® wurde ursprünglich vom College of American Pathologists entwickelt. \"SNOMED\" und \"SNOMED CT\" sind eingetragene Warenzeichen der IHTSDO.\r\n\r\nDownloadbedingungen für SNOMED-CT\r\n\r\nEnthält durch SNOMED International urheberrechtlich geschützte Information. Jede Verwendung von SNOMED CT in Deutschland erfordert eine vollgültige Affiliate Lizenz oder eine Sublizenz. Die entsprechende Lizenz ist kostenlos, vorausgesetzt die Verwendung findet nur in Deutschland statt und erfüllt die Bedingungen des Affiliate License Agreements. Affiliate Lizenzen können über das Mitglieder-Lizenzierungs- und Distributions-Service (MLDS) direkt beim jeweiligen NRC beantragt werden. https://mlds.ihtsdotools.org/#/landing/DE?lang=de\r\n\r\nContains information protected by copyright of SNOMED International. Any use of SNOMED CT in Austria requires a valid affiliate license or sublicense. The corresponding license is free of charge, provided that the use only takes place in Austria and fulfills the conditions of the Affiliate License Agreement. Affiliate licenses can be requested directly from the respective NRC via the Member Licensing and Distribution Service (MLDS). ttps://mlds.ihtsdotools.org/#/landing/DE?lang=de",
+  "compose": {
+    "include": [
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "concept": [
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 1
+              }
+            ],
+            "code": "10334001",
+            "display": "Yersinia intermedia"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 88
+              }
+            ],
+            "code": "103430003",
+            "display": "Yersinia enterocolitica, Serogruppe O:3"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 1
+              }
+            ],
+            "code": "103431004",
+            "display": "Yersinia enterocolitica, Serogruppe O:5"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 1
+              }
+            ],
+            "code": "103432006",
+            "display": "Yersinia enterocolitica, Serogruppe O:8"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 1
+              }
+            ],
+            "code": "103433001",
+            "display": "Yersinia enterocolitica, Serogruppe O:9"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 1
+              }
+            ],
+            "code": "103434007",
+            "display": "Yersinia bercovieri"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 1
+              }
+            ],
+            "code": "103435008",
+            "display": "Yersinia mollaretii"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 1
+              }
+            ],
+            "code": "116502002",
+            "display": "Yersinia enterocolitica, Serogruppe O:13"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 1
+              }
+            ],
+            "code": "116503007",
+            "display": "Yersinia enterocoltica, Serogruppe O:8,14"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 1
+              }
+            ],
+            "code": "363762009",
+            "display": "Yersinia enterocolitica, Serogruppe O:48"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 1
+              }
+            ],
+            "code": "415854005",
+            "display": "Yersinia enterocolitica nicht-serogruppierbar"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 1
+              }
+            ],
+            "code": "415855006",
+            "display": "Yersinia enterocolitica, Serogruppe O:1,2a,3"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 1
+              }
+            ],
+            "code": "415856007",
+            "display": "Yersinia enterocolitica, Serogruppe O:12, 25"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 1
+              }
+            ],
+            "code": "415857003",
+            "display": "Yersinia enterocolitica, Serogruppe O:13a,13b"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 1
+              }
+            ],
+            "code": "415858008",
+            "display": "Yersinia enterocolitica, Serogruppe O:19"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 1
+              }
+            ],
+            "code": "415859000",
+            "display": "Yersinia enterocolitica, Serogruppe O:20"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 1
+              }
+            ],
+            "code": "415860005",
+            "display": "Yersinia enterocolitica, Serogruppe O:21"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 1
+              }
+            ],
+            "code": "415861009",
+            "display": "Yersinia enterocolitica, Serogruppe O:2a,3"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 1
+              }
+            ],
+            "code": "415862002",
+            "display": "Yersinia enterocolitica, Serogruppe O:4,32"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 1
+              }
+            ],
+            "code": "415863007",
+            "display": "Yersinia enterocolitica, Serogruppe O:5, 27"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 1
+              }
+            ],
+            "code": "415864001",
+            "display": "Yersinia enterocolitica, nicht O:3; O:8; oder O:5,27"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 1
+              }
+            ],
+            "code": "428139002",
+            "display": "Yersinia enterocolitica, Serogruppe O:14"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 1
+              }
+            ],
+            "code": "446489003",
+            "display": "Yersinia massiliensis"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 1
+              }
+            ],
+            "code": "450391006",
+            "display": "Yersinia aleksiciae"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 1
+              }
+            ],
+            "code": "450392004",
+            "display": "Yersinia similis"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 90
+              }
+            ],
+            "code": "4668009",
+            "display": "Gattung Yersinia"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 1
+              }
+            ],
+            "code": "64125009",
+            "display": "Yersinia ruckeri"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 89
+              }
+            ],
+            "code": "65255000",
+            "display": "Yersinia enterocolitica"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 87
+              }
+            ],
+            "code": "705166001",
+            "display": "Yersinia enterocolitica Subspecies enterocolitica"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 1
+              }
+            ],
+            "code": "705167005",
+            "display": "Yersinia enterocolitica Subspecies palearctica"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 1
+              }
+            ],
+            "code": "720758006",
+            "display": "Yersinia enterocolitica, Biotyp 1A"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 1
+              }
+            ],
+            "code": "720759003",
+            "display": "Yersinia enterocolitica, Biotyp 1B"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 1
+              }
+            ],
+            "code": "720760008",
+            "display": "Yersinia enterocolitica, Biotyp 2"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 1
+              }
+            ],
+            "code": "720761007",
+            "display": "Yersinia enterocolitica, Biotyp 3"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 1
+              }
+            ],
+            "code": "720762000",
+            "display": "Yersinia enterocolitica, Biotyp 4"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 1
+              }
+            ],
+            "code": "720763005",
+            "display": "Yersinia enterocolitica, Biotyp 5"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 1
+              }
+            ],
+            "code": "720764004",
+            "display": "Yersinia enterocolitica, Serogruppe O grob"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 1
+              }
+            ],
+            "code": "720765003",
+            "display": "Yersinia enterocolitica, Serogruppe O:6,30"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 1
+              }
+            ],
+            "code": "720766002",
+            "display": "Yersinia enterocolitica, Serogruppe O:6,31"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 1
+              }
+            ],
+            "code": "720767006",
+            "display": "Yersinia enterocolitica, Serogruppe O:7,8"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 1
+              }
+            ],
+            "code": "720768001",
+            "display": "Yersinia enterocolitica, Serogruppe O:10"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 1
+              }
+            ],
+            "code": "720769009",
+            "display": "Yersinia enterocolitica, Serogruppe O:16"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 1
+              }
+            ],
+            "code": "720771009",
+            "display": "Yersinia enterocolitica, Serogruppe O:22"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 1
+              }
+            ],
+            "code": "720772002",
+            "display": "Yersinia enterocolitica, Serogruppe O:36"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 1
+              }
+            ],
+            "code": "720773007",
+            "display": "Yersinia enterocolitica, Serogruppe O:57"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 1
+              }
+            ],
+            "code": "720774001",
+            "display": "Yersinia enterocolitica, Serogruppe O:18"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 1
+              }
+            ],
+            "code": "720775000",
+            "display": "Yersinia enterocolitica, Serogruppe O:1,2,3"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 1
+              }
+            ],
+            "code": "720776004",
+            "display": "Yersinia enterocolitica, Serogruppe O:2,3"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 1
+              }
+            ],
+            "code": "720777008",
+            "display": "Yersinia enterocolitica, Biotyp 1A nicht-serotypisierbar"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 1
+              }
+            ],
+            "code": "720778003",
+            "display": "Yersinia enterocolitica, Biotyp 1A, Serotyp O rau"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 1
+              }
+            ],
+            "code": "720779006",
+            "display": "Yersinia enterocolitica, Biotyp 1A, Serotyp O:5"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 1
+              }
+            ],
+            "code": "720780009",
+            "display": "Yersinia enterocolitica, Biotyp 1A, Serotyp O:6,30"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 1
+              }
+            ],
+            "code": "720781008",
+            "display": "Yersinia enterocolitica, Biotyp 1A, Serotyp O:6,31"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 1
+              }
+            ],
+            "code": "720782001",
+            "display": "Yersinia enterocolitica, Biotyp 1A, Serotyp O:7,8"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 1
+              }
+            ],
+            "code": "720784000",
+            "display": "Yersinia enterocolitica, Biotyp 1A, Serotyp O:7,13"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 1
+              }
+            ],
+            "code": "720785004",
+            "display": "Yersinia enterocolitica, Serogruppe O:7,13"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 1
+              }
+            ],
+            "code": "720786003",
+            "display": "Yersinia enterocolitica, Biotyp 1A, Serotyp O:10"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 1
+              }
+            ],
+            "code": "720787007",
+            "display": "Yersinia enterocolitica, Biotyp 1A, Serotyp O:14"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 1
+              }
+            ],
+            "code": "720788002",
+            "display": "Yersinia enterocolitica, Biotyp 1A, Serotyp O:16"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 1
+              }
+            ],
+            "code": "720790001",
+            "display": "Yersinia enterocolitica, Biotyp 1A, Serotyp O:22"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 1
+              }
+            ],
+            "code": "720791002",
+            "display": "Yersinia enterocolitica, Biotyp 1A, Serotyp O:36"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 1
+              }
+            ],
+            "code": "720792009",
+            "display": "Yersinia enterocolitica, Biotyp 1A, Serotyp O:57"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 1
+              }
+            ],
+            "code": "720793004",
+            "display": "Yersinia enterocolitica, Biotyp 1B nicht-serotypisierbar"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 1
+              }
+            ],
+            "code": "720794005",
+            "display": "Yersinia enterocolitica, Biotyp 1B, Serotyp O:8"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 1
+              }
+            ],
+            "code": "720795006",
+            "display": "Yersinia enterocolitica, Biotyp 1B, Serotyp O:13a,13b"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 1
+              }
+            ],
+            "code": "720796007",
+            "display": "Yersinia enterocolitica, Biotyp 1B, Serotyp O:18"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 1
+              }
+            ],
+            "code": "720797003",
+            "display": "Yersinia enterocolitica, Biotyp 1B, Serotyp O:20"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 1
+              }
+            ],
+            "code": "720798008",
+            "display": "Yersinia enterocolitica, Biotyp 1B, Serotyp O:21"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 1
+              }
+            ],
+            "code": "720799000",
+            "display": "Yersinia enterocolitica, Biotyp 2, Serotyp O:5,27"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 1
+              }
+            ],
+            "code": "720800001",
+            "display": "Yersinia enterocolitica, Biotyp 2, Serotyp O:9"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 1
+              }
+            ],
+            "code": "720801002",
+            "display": "Yersinia enterocolitica, Biotyp 3, Serotyp O:1,2,3"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 1
+              }
+            ],
+            "code": "720802009",
+            "display": "Yersinia enterocolitica, Biotyp 3, Serotyp O:3"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 1
+              }
+            ],
+            "code": "720803004",
+            "display": "Yersinia enterocolitica, Biotyp 3, Serotyp O:5,27"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 1
+              }
+            ],
+            "code": "720804005",
+            "display": "Yersinia enterocolitica, Biotyp 4, Serotyp O:3"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 1
+              }
+            ],
+            "code": "720805006",
+            "display": "Yersinia enterocolitica, Biotyp 5, Serotyp O:2,3"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 1
+              }
+            ],
+            "code": "720869003",
+            "display": "Yersinia enterocolitica, Biotyp 3 nicht-serotypisierbar"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 1
+              }
+            ],
+            "code": "720870002",
+            "display": "Yersinia enterocolitica, Serogruppe O:4,33"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 1
+              }
+            ],
+            "code": "720871003",
+            "display": "Yersinia enterocolitica, Biotyp 1A, Serotyp O:4,33"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 1
+              }
+            ],
+            "code": "732253000",
+            "display": "Yersinia enterocolitica, Biotyp 1A, Serotyp O:19,8"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 1
+              }
+            ],
+            "code": "732254006",
+            "display": "Yersinia enterocolitica, Serogruppe O:19,8"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 1
+              }
+            ],
+            "code": "85159008",
+            "display": "Yersinia frederiksenii"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 1
+              }
+            ],
+            "code": "87145000",
+            "display": "Yersinia rohdei"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 1
+              }
+            ],
+            "code": "90530002",
+            "display": "Yersinia pseudotuberculosis"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 1
+              }
+            ],
+            "code": "91042006",
+            "display": "Yersinia kristensenii"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 1
+              }
+            ],
+            "code": "91246002",
+            "display": "Yersinia aldovae"
+          }
+        ]
+      },
+      {
+        "valueSet": [
+          "https://demis.rki.de/fhir/ValueSet/answerSetLaboratoryTest-SNOMED"
+        ]
+      },
+      {
+        "valueSet": [
+          "https://demis.rki.de/fhir/ValueSet/answerSetResistance-SNOMED"
+        ]
+      }
+    ]
+  },
+  "expansion": {
+    "timestamp": "2025-12-05T00:00:00+01:00",
+    "contains": [
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "116502002",
+        "display": "Yersinia enterocolitica, Serogruppe O:13"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "720797003",
+        "display": "Yersinia enterocolitica, Biotyp 1B, Serotyp O:20"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "720780009",
+        "display": "Yersinia enterocolitica, Biotyp 1A, Serotyp O:6,30"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "415864001",
+        "display": "Yersinia enterocolitica, nicht O:3; O:8; oder O:5,27"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "4668009",
+        "display": "Gattung Yersinia"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "260385009",
+        "display": "Negativ"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "64125009",
+        "display": "Yersinia ruckeri"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "720768001",
+        "display": "Yersinia enterocolitica, Serogruppe O:10"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "415855006",
+        "display": "Yersinia enterocolitica, Serogruppe O:1,2a,3"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "446489003",
+        "display": "Yersinia massiliensis"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "720870002",
+        "display": "Yersinia enterocolitica, Serogruppe O:4,33"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "87145000",
+        "display": "Yersinia rohdei"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "363762009",
+        "display": "Yersinia enterocolitica, Serogruppe O:48"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "720769009",
+        "display": "Yersinia enterocolitica, Serogruppe O:16"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "720761007",
+        "display": "Yersinia enterocolitica, Biotyp 3"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "720771009",
+        "display": "Yersinia enterocolitica, Serogruppe O:22"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "705167005",
+        "display": "Yersinia enterocolitica Subspecies palearctica"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "720758006",
+        "display": "Yersinia enterocolitica, Biotyp 1A"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "720794005",
+        "display": "Yersinia enterocolitica, Biotyp 1B, Serotyp O:8"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "450391006",
+        "display": "Yersinia aleksiciae"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "415861009",
+        "display": "Yersinia enterocolitica, Serogruppe O:2a,3"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "103432006",
+        "display": "Yersinia enterocolitica, Serogruppe O:8"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "116503007",
+        "display": "Yersinia enterocoltica, Serogruppe O:8,14"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "720798008",
+        "display": "Yersinia enterocolitica, Biotyp 1B, Serotyp O:21"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "720790001",
+        "display": "Yersinia enterocolitica, Biotyp 1A, Serotyp O:22"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "720777008",
+        "display": "Yersinia enterocolitica, Biotyp 1A nicht-serotypisierbar"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "415856007",
+        "display": "Yersinia enterocolitica, Serogruppe O:12, 25"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "720805006",
+        "display": "Yersinia enterocolitica, Biotyp 5, Serotyp O:2,3"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "720801002",
+        "display": "Yersinia enterocolitica, Biotyp 3, Serotyp O:1,2,3"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "131196009",
+        "display": "Empfindlich"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "720765003",
+        "display": "Yersinia enterocolitica, Serogruppe O:6,30"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "720787007",
+        "display": "Yersinia enterocolitica, Biotyp 1A, Serotyp O:14"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "264841006",
+        "display": "Intermediär empfindlich"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "720786003",
+        "display": "Yersinia enterocolitica, Biotyp 1A, Serotyp O:10"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "720802009",
+        "display": "Yersinia enterocolitica, Biotyp 3, Serotyp O:3"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "720871003",
+        "display": "Yersinia enterocolitica, Biotyp 1A, Serotyp O:4,33"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "91042006",
+        "display": "Yersinia kristensenii"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "415859000",
+        "display": "Yersinia enterocolitica, Serogruppe O:20"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "415862002",
+        "display": "Yersinia enterocolitica, Serogruppe O:4,32"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "10334001",
+        "display": "Yersinia intermedia"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "260408008",
+        "display": "Schwach positiv"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "720772002",
+        "display": "Yersinia enterocolitica, Serogruppe O:36"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "720776004",
+        "display": "Yersinia enterocolitica, Serogruppe O:2,3"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "720759003",
+        "display": "Yersinia enterocolitica, Biotyp 1B"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "720793004",
+        "display": "Yersinia enterocolitica, Biotyp 1B nicht-serotypisierbar"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "260373001",
+        "display": "Nachgewiesen"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "103433001",
+        "display": "Yersinia enterocolitica, Serogruppe O:9"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "720799000",
+        "display": "Yersinia enterocolitica, Biotyp 2, Serotyp O:5,27"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "720804005",
+        "display": "Yersinia enterocolitica, Biotyp 4, Serotyp O:3"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "720800001",
+        "display": "Yersinia enterocolitica, Biotyp 2, Serotyp O:9"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "720782001",
+        "display": "Yersinia enterocolitica, Biotyp 1A, Serotyp O:7,8"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "260415000",
+        "display": "Nicht nachgewiesen"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "720766002",
+        "display": "Yersinia enterocolitica, Serogruppe O:6,31"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "732254006",
+        "display": "Yersinia enterocolitica, Serogruppe O:19,8"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "720762000",
+        "display": "Yersinia enterocolitica, Biotyp 4"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "428139002",
+        "display": "Yersinia enterocolitica, Serogruppe O:14"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "720869003",
+        "display": "Yersinia enterocolitica, Biotyp 3 nicht-serotypisierbar"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "415863007",
+        "display": "Yersinia enterocolitica, Serogruppe O:5, 27"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "720792009",
+        "display": "Yersinia enterocolitica, Biotyp 1A, Serotyp O:57"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "82334004",
+        "display": "Uneindeutig"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "720763005",
+        "display": "Yersinia enterocolitica, Biotyp 5"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "85159008",
+        "display": "Yersinia frederiksenii"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "720796007",
+        "display": "Yersinia enterocolitica, Biotyp 1B, Serotyp O:18"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "720773007",
+        "display": "Yersinia enterocolitica, Serogruppe O:57"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "10828004",
+        "display": "Positiv"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "103434007",
+        "display": "Yersinia bercovieri"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "720775000",
+        "display": "Yersinia enterocolitica, Serogruppe O:1,2,3"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "720779006",
+        "display": "Yersinia enterocolitica, Biotyp 1A, Serotyp O:5"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "1255965005",
+        "display": "Empfindlich bei erhöhter Exposition"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "103430003",
+        "display": "Yersinia enterocolitica, Serogruppe O:3"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "65255000",
+        "display": "Yersinia enterocolitica"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "720781008",
+        "display": "Yersinia enterocolitica, Biotyp 1A, Serotyp O:6,31"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "415858008",
+        "display": "Yersinia enterocolitica, Serogruppe O:19"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "732253000",
+        "display": "Yersinia enterocolitica, Biotyp 1A, Serotyp O:19,8"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "415854005",
+        "display": "Yersinia enterocolitica nicht-serogruppierbar"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "720803004",
+        "display": "Yersinia enterocolitica, Biotyp 3, Serotyp O:5,27"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "91246002",
+        "display": "Yersinia aldovae"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "720767006",
+        "display": "Yersinia enterocolitica, Serogruppe O:7,8"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "720788002",
+        "display": "Yersinia enterocolitica, Biotyp 1A, Serotyp O:16"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "720785004",
+        "display": "Yersinia enterocolitica, Serogruppe O:7,13"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "720784000",
+        "display": "Yersinia enterocolitica, Biotyp 1A, Serotyp O:7,13"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "415860005",
+        "display": "Yersinia enterocolitica, Serogruppe O:21"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "720764004",
+        "display": "Yersinia enterocolitica, Serogruppe O grob"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "90530002",
+        "display": "Yersinia pseudotuberculosis"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "415857003",
+        "display": "Yersinia enterocolitica, Serogruppe O:13a,13b"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "720760008",
+        "display": "Yersinia enterocolitica, Biotyp 2"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "720795006",
+        "display": "Yersinia enterocolitica, Biotyp 1B, Serotyp O:13a,13b"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "705166001",
+        "display": "Yersinia enterocolitica Subspecies enterocolitica"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "42425007",
+        "display": "Zweideutig"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "103435008",
+        "display": "Yersinia mollaretii"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "450392004",
+        "display": "Yersinia similis"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "720778003",
+        "display": "Yersinia enterocolitica, Biotyp 1A, Serotyp O rau"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "30714006",
+        "display": "Resistent"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "720774001",
+        "display": "Yersinia enterocolitica, Serogruppe O:18"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "720791002",
+        "display": "Yersinia enterocolitica, Biotyp 1A, Serotyp O:36"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "103431004",
+        "display": "Yersinia enterocolitica, Serogruppe O:5"
+      }
+    ]
+  }
+}

@@ -2,12 +2,12 @@
   "resourceType": "ValueSet",
   "id": "answerSetCoinfectionHDVD",
   "url": "https://demis.rki.de/fhir/ValueSet/answerSetCoinfectionHDVD",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "name": "AnswerSetCoinfectionHDVD",
   "title": "Anwort Koinfektion mit Hepatitis B bei Hepatitis D",
   "status": "active",
   "experimental": false,
-  "date": "2025-08-29",
+  "date": "2026-01-09",
   "publisher": "Robert Koch-Institut",
   "contact": [
     {
@@ -36,13 +36,13 @@
     "include": [
       {
         "system": "http://snomed.info/sct",
-        "version": "http://snomed.info/sct/11000274103/version/20241115",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
         "concept": [
           {
             "extension": [
               {
                 "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
-                "valueInteger": 12
+                "valueInteger": 10
               }
             ],
             "code": "235864009",
@@ -58,15 +58,19 @@
             "extension": [
               {
                 "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
-                "valueInteger": 10
+                "valueInteger": 11
               }
             ],
             "code": "235865005",
-            "display": "Hepatitis D superinfection of hepatitis B carrier (disorder)",
+            "display": "Hepatitis-D-Superinfektion bei Hepatitis-B-Träger",
             "designation": [
               {
                 "language": "de-DE",
-                "value": "Superinfektion zu HBV"
+                "use": {
+                  "system": "http://snomed.info/sct",
+                  "code": "900000000000013009"
+                },
+                "value": "HDV-Superinfektion zu HBV"
               }
             ]
           },
@@ -74,7 +78,7 @@
             "extension": [
               {
                 "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
-                "valueInteger": 11
+                "valueInteger": 12
               }
             ],
             "code": "235869004",
@@ -82,7 +86,11 @@
             "designation": [
               {
                 "language": "de-DE",
-                "value": "Simultaninfektion mit HBV, chronische Infektion"
+                "use": {
+                  "system": "http://snomed.info/sct",
+                  "code": "900000000000013009"
+                },
+                "value": "Chronische HBV-Infektion mit HDV-Simultaninfektion"
               }
             ]
           },
@@ -90,7 +98,7 @@
             "extension": [
               {
                 "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
-                "valueInteger": 1
+                "valueInteger": 5
               }
             ],
             "code": "74964007",
@@ -100,90 +108,78 @@
             "extension": [
               {
                 "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
-                "valueInteger": 2
-              }
-            ],
-            "code": "373067005",
-            "display": "No (qualifier value)",
-            "designation": [
-              {
-                "language": "de-DE",
-                "value": "Nein"
-              }
-            ]
-          },
-          {
-            "extension": [
-              {
-                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
-                "valueInteger": 999
+                "valueInteger": 1
               }
             ],
             "code": "1631000175102",
-            "display": "Patient not asked (contextual qualifier) (qualifier value)",
-            "designation": [
-              {
-                "language": "de-DE",
-                "value": "Patient/Patientin nicht gefragt"
-              }
-            ]
+            "display": "Patient/Patientin nicht gefragt"
           },
           {
             "extension": [
               {
                 "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
-                "valueInteger": 1000
+                "valueInteger": 2
               }
             ],
             "code": "261665006",
             "display": "Unbekannt"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 6
+              }
+            ],
+            "code": "373067005",
+            "display": "Nein"
           }
         ]
       }
     ]
   },
   "expansion": {
-    "timestamp": "2025-08-29T00:00:00+02:00",
+    "timestamp": "2026-01-09T00:00:00+01:00",
     "contains": [
       {
         "system": "http://snomed.info/sct",
-        "version": "http://snomed.info/sct/11000274103/version/20241115",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
         "code": "1631000175102",
-        "display": "Patient not asked (contextual qualifier) (qualifier value)"
+        "display": "Patient/Patientin nicht gefragt"
       },
       {
         "system": "http://snomed.info/sct",
-        "version": "http://snomed.info/sct/11000274103/version/20241115",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
         "code": "235864009",
         "display": "Acute hepatitis B with hepatitis D (disorder)"
       },
       {
         "system": "http://snomed.info/sct",
-        "version": "http://snomed.info/sct/11000274103/version/20241115",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
         "code": "373067005",
-        "display": "No (qualifier value)"
+        "display": "Nein"
       },
       {
         "system": "http://snomed.info/sct",
-        "version": "http://snomed.info/sct/11000274103/version/20241115",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
         "code": "261665006",
         "display": "Unbekannt"
       },
       {
         "system": "http://snomed.info/sct",
-        "version": "http://snomed.info/sct/11000274103/version/20241115",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
         "code": "235869004",
         "display": "Chronische Virushepatitis B mit Delta-Virus"
       },
       {
         "system": "http://snomed.info/sct",
-        "version": "http://snomed.info/sct/11000274103/version/20241115",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
         "code": "235865005",
-        "display": "Hepatitis D superinfection of hepatitis B carrier (disorder)"
+        "display": "Hepatitis-D-Superinfektion bei Hepatitis-B-Träger"
       },
       {
         "system": "http://snomed.info/sct",
-        "version": "http://snomed.info/sct/11000274103/version/20241115",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
         "code": "74964007",
         "display": "Andere"
       }

@@ -2,12 +2,12 @@
   "resourceType": "ValueSet",
   "id": "answerSetMedicationOtherNEGD",
   "url": "https://demis.rki.de/fhir/ValueSet/answerSetMedicationOtherNEGD",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "name": "AnswerSetMedicationOtherNEGD",
   "title": "Erweiterte Antibiotikaangaben.",
   "status": "active",
   "experimental": false,
-  "date": "2025-08-12",
+  "date": "2026-01-09",
   "publisher": "Robert Koch-Institut",
   "contact": [
     {
@@ -36,7 +36,7 @@
     "include": [
       {
         "system": "http://snomed.info/sct",
-        "version": "http://snomed.info/sct/11000274103/version/20241115",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
         "concept": [
           {
             "extension": [
@@ -152,7 +152,7 @@
             "extension": [
               {
                 "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
-                "valueInteger": 1
+                "valueInteger": 5
               }
             ],
             "code": "74964007",
@@ -166,13 +166,7 @@
               }
             ],
             "code": "764146007",
-            "display": "Substance with penicillin structure (substance)",
-            "designation": [
-              {
-                "language": "de-DE",
-                "value": "Penicillin"
-              }
-            ]
+            "display": "Penicillin"
           },
           {
             "extension": [
@@ -192,7 +186,7 @@
               }
             ],
             "code": "777642002",
-            "display": "Product containing only sulfamethoxazole and trimethoprim (medicinal product)",
+            "display": "Produkt nur aus Sulfamethoxazol und Trimethoprim",
             "designation": [
               {
                 "language": "de-DE",
@@ -205,95 +199,95 @@
     ]
   },
   "expansion": {
-    "timestamp": "2025-08-12T00:00:00+02:00",
+    "timestamp": "2026-01-09T00:00:00+01:00",
     "contains": [
       {
         "system": "http://snomed.info/sct",
-        "version": "http://snomed.info/sct/11000274103/version/20241115",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
         "code": "387534007",
         "display": "Cefpodoxim"
       },
       {
         "system": "http://snomed.info/sct",
-        "version": "http://snomed.info/sct/11000274103/version/20241115",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
         "code": "372687004",
         "display": "Amoxicillin"
       },
       {
         "system": "http://snomed.info/sct",
-        "version": "http://snomed.info/sct/11000274103/version/20241115",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
         "code": "372833007",
         "display": "Cefuroxim"
       },
       {
         "system": "http://snomed.info/sct",
-        "version": "http://snomed.info/sct/11000274103/version/20241115",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
         "code": "387321007",
         "display": "Gentamicin"
       },
       {
         "system": "http://snomed.info/sct",
-        "version": "http://snomed.info/sct/11000274103/version/20241115",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
         "code": "74964007",
         "display": "Andere"
       },
       {
         "system": "http://snomed.info/sct",
-        "version": "http://snomed.info/sct/11000274103/version/20241115",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
         "code": "777642002",
-        "display": "Product containing only sulfamethoxazole and trimethoprim (medicinal product)"
+        "display": "Produkt nur aus Sulfamethoxazol und Trimethoprim"
       },
       {
         "system": "http://snomed.info/sct",
-        "version": "http://snomed.info/sct/11000274103/version/20241115",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
         "code": "372602008",
         "display": "Metronidazol"
       },
       {
         "system": "http://snomed.info/sct",
-        "version": "http://snomed.info/sct/11000274103/version/20241115",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
         "code": "764146007",
-        "display": "Substance with penicillin structure (substance)"
+        "display": "Penicillin"
       },
       {
         "system": "http://snomed.info/sct",
-        "version": "http://snomed.info/sct/11000274103/version/20241115",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
         "code": "412439003",
         "display": "Moxifloxacin"
       },
       {
         "system": "http://snomed.info/sct",
-        "version": "http://snomed.info/sct/11000274103/version/20241115",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
         "code": "387200005",
         "display": "Ceftazidim"
       },
       {
         "system": "http://snomed.info/sct",
-        "version": "http://snomed.info/sct/11000274103/version/20241115",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
         "code": "372840008",
         "display": "Ciprofloxacin"
       },
       {
         "system": "http://snomed.info/sct",
-        "version": "http://snomed.info/sct/11000274103/version/20241115",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
         "code": "764147003",
         "display": "Cephalosporin"
       },
       {
         "system": "http://snomed.info/sct",
-        "version": "http://snomed.info/sct/11000274103/version/20241115",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
         "code": "387552007",
         "display": "Levofloxacin"
       },
       {
         "system": "http://snomed.info/sct",
-        "version": "http://snomed.info/sct/11000274103/version/20241115",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
         "code": "372478003",
         "display": "Doxycyclin"
       },
       {
         "system": "http://snomed.info/sct",
-        "version": "http://snomed.info/sct/11000274103/version/20241115",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
         "code": "372809001",
         "display": "Tetracyclin"
       }

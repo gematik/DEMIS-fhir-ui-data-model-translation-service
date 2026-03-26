@@ -1,0 +1,200 @@
+{
+  "resourceType": "ValueSet",
+  "id": "laboratoryTestNOVP",
+  "url": "https://demis.rki.de/fhir/ValueSet/laboratoryTestNOVP",
+  "version": "1.5.1",
+  "name": "LaboratoryTestNOVP",
+  "title": "Labortest für Norovirus",
+  "status": "active",
+  "experimental": false,
+  "date": "2025-12-05",
+  "publisher": "Robert Koch-Institut",
+  "contact": [
+    {
+      "telecom": [
+        {
+          "system": "email",
+          "value": "demis-support@rki.de"
+        }
+      ]
+    }
+  ],
+  "description": "Das ValueSet LaboratoryTestNOVP enthält die Codes der Labortests für Norovirus.",
+  "jurisdiction": [
+    {
+      "coding": [
+        {
+          "system": "urn:iso:std:iso:3166",
+          "version": "ALPHA-2",
+          "code": "DE"
+        }
+      ]
+    }
+  ],
+  "copyright": "This material contains content from LOINC (http://loinc.org/). LOINC is copyright © 1995-2023, Regenstrief Institute, Inc. and the Logical Observation Identifiers Names and Codes (LOINC) Committee and is available at no cost under the license at http://loinc.org/license. LOINC® is a registered United States trademark of Regenstrief Institute, Inc.\r\n\r\nDieses Material enthält Inhalte von LOINC (http://loinc.org/). LOINC ist urheberrechtlich geschützt © 1995-2023, Regenstrief Institute, Inc. und das Logical Observation Identifiers Names and Codes (LOINC) Committee und ist unter der Lizenz http://loinc.org/license kostenlos erhältlich. LOINC® ist eine eingetragene US-amerikanische Marke des Regenstrief Institute, Inc.\r\n\r\nDownloadbedingungen für LOINC-Übersetzungen für Anwendungszwecke in Deutschland\r\nÜbersetzungen in verschiedenen Sprachen werden von \"LOINC® Adopters\", meistens Behörden oder Forschungsinstituten verschiedener Länder, erstellt und an das Regenstrief Institute weitergegeben. Das Copyright für die Übersetzungen liegt beim Regenstrief Institute. Für Deutschland wird die LOINC®-Übersetzung durch das BfArM bereitgestellt. Die Übersetzungen werden durch das Regenstrief Institute als \"Linguistic Variants\" in den halbjährlichen LOINC®-Releases (Februar und August) veröffentlicht.\r\n\r\nDas Copyright für die Übersetzungen liegt beim Regenstrief Institute, 1101 W 10th St, Indianapolis, IN 46202, USA.\r\n\r\nMit dem Download von Dateien kommt ein Nutzungsvertrag zwischen Ihnen und dem Regenstrief Institute zustande. Sie verpflichten sich, die unten verlinkten Nutzungs- und Abgabebedingungen für LOINC vom Regenstrief Institute einzuhalten.",
+  "compose": {
+    "include": [
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "concept": [
+          {
+            "code": "105058-2",
+            "display": "Norovirus Genotypgruppe I+II RNA [Nachweis] in Probenmaterial"
+          },
+          {
+            "code": "41035-7",
+            "display": "Norovirus RNA [Nachweis] in Probenmaterial mittels Sondendetektion"
+          },
+          {
+            "code": "41852-5",
+            "display": "Mikroorganismus oder Erreger identifiziert in Probenmaterial"
+          },
+          {
+            "code": "49117-5",
+            "display": "Norovirus Antigen [Nachweis] in Stuhl"
+          },
+          {
+            "code": "54905-5",
+            "display": "Norovirus Genotypgruppe I RNA [Nachweis] in Stuhl mittels Nukleinsäureamplifikation mit Sondendetektion"
+          },
+          {
+            "code": "54906-3",
+            "display": "Norovirus Genotypgruppe II RNA [Nachweis] in Stuhl mittels Nukleinsäureamplifikation mit Sondendetektion"
+          },
+          {
+            "code": "56748-7",
+            "display": "Norovirus RNA [Nachweis] in Probenmaterial mittels Nukleinsäureamplifikation mit Sondendetektion"
+          },
+          {
+            "code": "76628-7",
+            "display": "Norovirus Genotypgruppe I und II RNA [Nachweis oder Identität] in Stuhl mittels Nukleinsäureamplifikation mit Sondendetektion"
+          },
+          {
+            "code": "79388-5",
+            "display": "Norovirus Genotypgruppe I+II orf1-orf2 junction-Region [Nachweis] in Stuhl mittels Nukleinsäureamplifikation mit Sondendetektion"
+          },
+          {
+            "code": "7974-9",
+            "display": "Norovirus RNA [Nachweis] in Stuhl mittels Nukleinsäureamplifikation mit Sondendetektion"
+          },
+          {
+            "code": "80375-9",
+            "display": "Norovirus Antigen [Nachweis] in Stuhl mittels Immunoassay-Schnelltest"
+          },
+          {
+            "code": "90449-0",
+            "display": "Norovirus Genotypgruppe I und II RNA [Nachweis oder Identität] in Probenmaterial mittels Nukleinsäureamplifikation mit Sondendetektion"
+          },
+          {
+            "code": "92692-3",
+            "display": "Norovirus Genotypgruppe I+II RNA [Nachweis] in Stuhl mittels Nukleinsäureamplifikation mit Sondendetektion"
+          },
+          {
+            "code": "97525-0",
+            "display": "Norovirus Genotypgruppe I RNA [Nachweis] in Probenmaterial mittels Nukleinsäureamplifikation mit Sondendetektion"
+          },
+          {
+            "code": "97532-6",
+            "display": "Norovirus Genotypgruppe II RNA [Nachweis] in Probenmaterial mittels Nukleinsäureamplifikation mit Sondendetektion"
+          }
+        ]
+      }
+    ]
+  },
+  "expansion": {
+    "timestamp": "2025-12-05T00:00:00+01:00",
+    "contains": [
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "80375-9",
+        "display": "Norovirus Antigen [Nachweis] in Stuhl mittels Immunoassay-Schnelltest"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "56748-7",
+        "display": "Norovirus RNA [Nachweis] in Probenmaterial mittels Nukleinsäureamplifikation mit Sondendetektion"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "76628-7",
+        "display": "Norovirus Genotypgruppe I und II RNA [Nachweis oder Identität] in Stuhl mittels Nukleinsäureamplifikation mit Sondendetektion"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "92692-3",
+        "display": "Norovirus Genotypgruppe I+II RNA [Nachweis] in Stuhl mittels Nukleinsäureamplifikation mit Sondendetektion"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "90449-0",
+        "display": "Norovirus Genotypgruppe I und II RNA [Nachweis oder Identität] in Probenmaterial mittels Nukleinsäureamplifikation mit Sondendetektion"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "41852-5",
+        "display": "Mikroorganismus oder Erreger identifiziert in Probenmaterial"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "49117-5",
+        "display": "Norovirus Antigen [Nachweis] in Stuhl"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "105058-2",
+        "display": "Norovirus Genotypgruppe I+II RNA [Nachweis] in Probenmaterial"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "54905-5",
+        "display": "Norovirus Genotypgruppe I RNA [Nachweis] in Stuhl mittels Nukleinsäureamplifikation mit Sondendetektion"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "54906-3",
+        "display": "Norovirus Genotypgruppe II RNA [Nachweis] in Stuhl mittels Nukleinsäureamplifikation mit Sondendetektion"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "7974-9",
+        "display": "Norovirus RNA [Nachweis] in Stuhl mittels Nukleinsäureamplifikation mit Sondendetektion"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "97532-6",
+        "display": "Norovirus Genotypgruppe II RNA [Nachweis] in Probenmaterial mittels Nukleinsäureamplifikation mit Sondendetektion"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "41035-7",
+        "display": "Norovirus RNA [Nachweis] in Probenmaterial mittels Sondendetektion"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "79388-5",
+        "display": "Norovirus Genotypgruppe I+II orf1-orf2 junction-Region [Nachweis] in Stuhl mittels Nukleinsäureamplifikation mit Sondendetektion"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "97525-0",
+        "display": "Norovirus Genotypgruppe I RNA [Nachweis] in Probenmaterial mittels Nukleinsäureamplifikation mit Sondendetektion"
+      }
+    ]
+  }
+}

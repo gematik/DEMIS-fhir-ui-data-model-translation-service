@@ -2,12 +2,12 @@
   "resourceType": "ValueSet",
   "id": "yesOrNoAnswer",
   "url": "https://demis.rki.de/fhir/ValueSet/yesOrNoAnswer",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "name": "YesOrNoAnswer",
   "title": "Ja/Nein-Antwort",
   "status": "active",
   "experimental": false,
-  "date": "2025-08-29",
+  "date": "2026-01-09",
   "publisher": "Robert Koch-Institut",
   "contact": [
     {
@@ -36,58 +36,46 @@
     "include": [
       {
         "system": "http://snomed.info/sct",
-        "version": "http://snomed.info/sct/11000274103/version/20241115",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
         "concept": [
           {
             "extension": [
               {
                 "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
-                "valueInteger": 3
+                "valueInteger": 7
               }
             ],
             "code": "373066001",
-            "display": "Yes (qualifier value)",
-            "designation": [
-              {
-                "language": "de-DE",
-                "value": "Ja"
-              }
-            ]
+            "display": "Ja"
           },
           {
             "extension": [
               {
                 "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
-                "valueInteger": 2
+                "valueInteger": 6
               }
             ],
             "code": "373067005",
-            "display": "No (qualifier value)",
-            "designation": [
-              {
-                "language": "de-DE",
-                "value": "Nein"
-              }
-            ]
+            "display": "Nein"
           }
         ]
       }
     ]
   },
   "expansion": {
-    "timestamp": "2025-08-29T00:00:00+02:00",
+    "timestamp": "2026-01-09T00:00:00+01:00",
     "contains": [
       {
         "system": "http://snomed.info/sct",
-        "version": "http://snomed.info/sct/11000274103/version/20241115",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
         "code": "373067005",
-        "display": "No (qualifier value)"
+        "display": "Nein"
       },
       {
         "system": "http://snomed.info/sct",
-        "version": "http://snomed.info/sct/11000274103/version/20241115",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
         "code": "373066001",
-        "display": "Yes (qualifier value)"
+        "display": "Ja"
       }
     ]
   }

@@ -2,12 +2,12 @@
   "resourceType": "CodeSystem",
   "id": "notificationCategory",
   "url": "https://demis.rki.de/fhir/CodeSystem/notificationCategory",
-  "version": "2.3.0",
+  "version": "2.3.1",
   "name": "NotificationCategory",
   "title": "Meldetatbestände nach § 7 IfSG",
   "status": "active",
   "experimental": false,
-  "date": "2025-08-11",
+  "date": "2026-01-19",
   "publisher": "Robert Koch-Institut",
   "contact": [
     {
@@ -3159,7 +3159,7 @@
       "property": [
         {
           "code": "inactive",
-          "valueBoolean": true
+          "valueBoolean": false
         },
         {
           "code": "diagnosticReport-profile",
@@ -3193,7 +3193,7 @@
       "property": [
         {
           "code": "inactive",
-          "valueBoolean": true
+          "valueBoolean": false
         },
         {
           "code": "diagnosticReport-profile",
@@ -3227,7 +3227,7 @@
       "property": [
         {
           "code": "inactive",
-          "valueBoolean": true
+          "valueBoolean": false
         },
         {
           "code": "diagnosticReport-profile",
@@ -3261,7 +3261,7 @@
       "property": [
         {
           "code": "inactive",
-          "valueBoolean": true
+          "valueBoolean": false
         },
         {
           "code": "diagnosticReport-profile",
@@ -3285,17 +3285,17 @@
         }
       ],
       "code": "toxp",
-      "display": "Toxoplasma gondii; Meldepflicht nur bei konnatalen Infektionen",
+      "display": "Toxoplasma gondii; Meldepflicht nur bei konnataler Infektion des Kindes",
       "designation": [
         {
           "language": "de-DE",
-          "value": "Toxoplasma gondii, konnatal"
+          "value": "Toxoplasma gondii, konnatale Infektion des Kindes"
         }
       ],
       "property": [
         {
           "code": "inactive",
-          "valueBoolean": true
+          "valueBoolean": false
         },
         {
           "code": "diagnosticReport-profile",
@@ -3329,7 +3329,7 @@
       "property": [
         {
           "code": "inactive",
-          "valueBoolean": true
+          "valueBoolean": false
         },
         {
           "code": "diagnosticReport-profile",

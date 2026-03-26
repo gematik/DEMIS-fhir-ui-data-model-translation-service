@@ -2,12 +2,12 @@
   "resourceType": "ValueSet",
   "id": "answerSetInfectionRiskJobHTVD",
   "url": "https://demis.rki.de/fhir/ValueSet/answerSetInfectionRiskJobHTVD",
-  "version": "2.0.0",
+  "version": "3.0.0",
   "name": "AnswerSetInfectionRiskJobHTVD",
   "title": "Antwortmöglichkeiten für die Angabe der beruflichen Risiken in Zusammenhang mit dem Meldetatbestand \"Hantavirus-Erkrankung, hämorrhagischer Verlauf\"",
   "status": "active",
   "experimental": false,
-  "date": "2025-09-03",
+  "date": "2026-01-09",
   "publisher": "Robert Koch-Institut",
   "contact": [
     {
@@ -36,7 +36,7 @@
     "include": [
       {
         "system": "http://snomed.info/sct",
-        "version": "http://snomed.info/sct/11000274103/version/20241115",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
         "concept": [
           {
             "extension": [
@@ -88,22 +88,6 @@
             "extension": [
               {
                 "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
-                "valueInteger": 14
-              }
-            ],
-            "code": "106440009",
-            "display": "Fleischzubereiter / Fleischzubereiterin",
-            "designation": [
-              {
-                "language": "de-DE",
-                "value": "Schlachthofmitarbeiter/-in; Metzger/-in"
-              }
-            ]
-          },
-          {
-            "extension": [
-              {
-                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
                 "valueInteger": 26
               }
             ],
@@ -138,13 +122,7 @@
               }
             ],
             "code": "159462004",
-            "display": "Animal trader (occupation)",
-            "designation": [
-              {
-                "language": "de-DE",
-                "value": "Tierhändler/-in"
-              }
-            ]
+            "display": "Tierhändler/Tierhändlerin"
           },
           {
             "extension": [
@@ -174,13 +152,7 @@
               }
             ],
             "code": "224152001",
-            "display": "Keeps pets (finding)",
-            "designation": [
-              {
-                "language": "de-DE",
-                "value": "Tierhalter/-in"
-              }
-            ]
+            "display": "Tierhalter/Tierhalterin"
           },
           {
             "extension": [
@@ -206,6 +178,16 @@
             "extension": [
               {
                 "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 0
+              }
+            ],
+            "code": "34317009",
+            "display": "Metzger/Metzgerin"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
                 "valueInteger": 23
               }
             ],
@@ -226,6 +208,16 @@
             "extension": [
               {
                 "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 0
+              }
+            ],
+            "code": "69919006",
+            "display": "Schlachthofmitarbeiter/-mitarbeiterin"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
                 "valueInteger": 21
               }
             ],
@@ -236,7 +228,7 @@
             "extension": [
               {
                 "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
-                "valueInteger": 1
+                "valueInteger": 5
               }
             ],
             "code": "74964007",
@@ -246,23 +238,17 @@
             "extension": [
               {
                 "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
-                "valueInteger": 999
+                "valueInteger": 1
               }
             ],
             "code": "1631000175102",
-            "display": "Patient not asked (contextual qualifier) (qualifier value)",
-            "designation": [
-              {
-                "language": "de-DE",
-                "value": "Patient/Patientin nicht gefragt"
-              }
-            ]
+            "display": "Patient/Patientin nicht gefragt"
           },
           {
             "extension": [
               {
                 "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
-                "valueInteger": 1000
+                "valueInteger": 2
               }
             ],
             "code": "261665006",
@@ -273,125 +259,131 @@
     ]
   },
   "expansion": {
-    "timestamp": "2025-09-03T00:00:00+02:00",
+    "timestamp": "2026-01-09T00:00:00+01:00",
     "contains": [
       {
         "system": "http://snomed.info/sct",
-        "version": "http://snomed.info/sct/11000274103/version/20241115",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
         "code": "34484007",
         "display": "Forstarbeiter/Forstarbeiterin"
       },
       {
         "system": "http://snomed.info/sct",
-        "version": "http://snomed.info/sct/11000274103/version/20241115",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
         "code": "34024003",
         "display": "Gärtner/Gärtnerin"
       },
       {
         "system": "http://snomed.info/sct",
-        "version": "http://snomed.info/sct/11000274103/version/20241115",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "69919006",
+        "display": "Schlachthofmitarbeiter/-mitarbeiterin"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
         "code": "53216000",
         "display": "Tierarzthelfer/Tierarzthelferin"
       },
       {
         "system": "http://snomed.info/sct",
-        "version": "http://snomed.info/sct/11000274103/version/20241115",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
         "code": "106400003",
         "display": "Fischer/Fischerin"
       },
       {
         "system": "http://snomed.info/sct",
-        "version": "http://snomed.info/sct/11000274103/version/20241115",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
         "code": "261665006",
         "display": "Unbekannt"
       },
       {
         "system": "http://snomed.info/sct",
-        "version": "http://snomed.info/sct/11000274103/version/20241115",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
         "code": "106290006",
         "display": "Tierarzt/Tierärztin"
       },
       {
         "system": "http://snomed.info/sct",
-        "version": "http://snomed.info/sct/11000274103/version/20241115",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
         "code": "160157004",
         "display": "Kanalarbeiter/Kanalarbeiterin"
       },
       {
         "system": "http://snomed.info/sct",
-        "version": "http://snomed.info/sct/11000274103/version/20241115",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
         "code": "224152001",
-        "display": "Keeps pets (finding)"
+        "display": "Tierhalter/Tierhalterin"
       },
       {
         "system": "http://snomed.info/sct",
-        "version": "http://snomed.info/sct/11000274103/version/20241115",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
         "code": "159116001",
         "display": "Florist/Floristin"
       },
       {
         "system": "http://snomed.info/sct",
-        "version": "http://snomed.info/sct/11000274103/version/20241115",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
         "code": "106388008",
         "display": "Landwirt/Landwirtin"
       },
       {
         "system": "http://snomed.info/sct",
-        "version": "http://snomed.info/sct/11000274103/version/20241115",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
         "code": "74964007",
         "display": "Andere"
       },
       {
         "system": "http://snomed.info/sct",
-        "version": "http://snomed.info/sct/11000274103/version/20241115",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
         "code": "1631000175102",
-        "display": "Patient not asked (contextual qualifier) (qualifier value)"
+        "display": "Patient/Patientin nicht gefragt"
       },
       {
         "system": "http://snomed.info/sct",
-        "version": "http://snomed.info/sct/11000274103/version/20241115",
-        "code": "106440009",
-        "display": "Fleischzubereiter / Fleischzubereiterin"
-      },
-      {
-        "system": "http://snomed.info/sct",
-        "version": "http://snomed.info/sct/11000274103/version/20241115",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
         "code": "160209004",
         "display": "Müllmann/Müllfrau"
       },
       {
         "system": "http://snomed.info/sct",
-        "version": "http://snomed.info/sct/11000274103/version/20241115",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
         "code": "308228003",
         "display": "Schäfer/Schäferin"
       },
       {
         "system": "http://snomed.info/sct",
-        "version": "http://snomed.info/sct/11000274103/version/20241115",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "34317009",
+        "display": "Metzger/Metzgerin"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
         "code": "1290220002",
         "display": "Laborarbeiter / Laborarbeiterin"
       },
       {
         "system": "http://snomed.info/sct",
-        "version": "http://snomed.info/sct/11000274103/version/20241115",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
         "code": "159462004",
-        "display": "Animal trader (occupation)"
+        "display": "Tierhändler/Tierhändlerin"
       },
       {
         "system": "http://snomed.info/sct",
-        "version": "http://snomed.info/sct/11000274103/version/20241115",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
         "code": "72867000",
         "display": "Jäger / Jägerin"
       },
       {
         "system": "http://snomed.info/sct",
-        "version": "http://snomed.info/sct/11000274103/version/20241115",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
         "code": "106524008",
         "display": "Bauarbeiter/Bauarbeiterin"
       },
       {
         "system": "http://snomed.info/sct",
-        "version": "http://snomed.info/sct/11000274103/version/20241115",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
         "code": "106390009",
         "display": "Agricultural/animal husbandry worker (occupation)"
       }

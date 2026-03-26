@@ -35,8 +35,8 @@ import de.gematik.demis.notification.builder.demis.fhir.notification.types.Notif
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -46,20 +46,11 @@ import org.springframework.web.server.ResponseStatusException;
 @OnlyInDiseaseContext
 @RestController
 @Slf4j
+@RequiredArgsConstructor
 public class DiseaseDataLoaderCtr {
 
   private final DiseaseDataLoaderSrv diseaseDataLoaderSrv;
   private final DiseaseFollowupSrv diseaseFollowupSrv;
-  private final boolean isNotification73Active;
-
-  public DiseaseDataLoaderCtr(
-      DiseaseDataLoaderSrv diseaseDataLoaderSrv,
-      DiseaseFollowupSrv diseaseFollowupSrv,
-      @Value("${feature.flag.notifications.7_3}") boolean isNotification73Active) {
-    this.diseaseDataLoaderSrv = diseaseDataLoaderSrv;
-    this.isNotification73Active = isNotification73Active;
-    this.diseaseFollowupSrv = diseaseFollowupSrv;
-  }
 
   @GetMapping("/disease/questionnaire/{code}/items")
   public QuestionnaireTranslation getQuestionsForSpecificCode(@PathVariable String code) {
@@ -84,11 +75,7 @@ public class DiseaseDataLoaderCtr {
 
   @GetMapping({"/disease/7.3"})
   public List<CodeDisplay> getAllAvailableCodesNonNominal() {
-    if (isNotification73Active) {
-      return diseaseDataLoaderSrv.getPossibleDiseaseCodesNonNominal();
-    } else {
-      throw new UnsupportedOperationException("Feature flag for §7.3 is not active");
-    }
+    return diseaseDataLoaderSrv.getPossibleDiseaseCodesNonNominal();
   }
 
   @GetMapping({
@@ -97,20 +84,12 @@ public class DiseaseDataLoaderCtr {
   })
   public Map<String, FormlyFieldConfigs[]> getFormlyRepresentationOfQuestionnaire(
       @PathVariable String code) {
-    if (isNotification73Active) {
-      return diseaseDataLoaderSrv.getData(code, NotificationCategory.P_6_1);
-    } else {
-      return diseaseDataLoaderSrv.getData(code);
-    }
+    return diseaseDataLoaderSrv.getData(code, NotificationCategory.P_6_1);
   }
 
   @GetMapping("/disease/7.3/questionnaire/{code}/formly")
   public Map<String, FormlyFieldConfigs[]> getFormlyRepresentationOfQuestionnaireNonNominal(
       @PathVariable String code) {
-    if (isNotification73Active) {
-      return diseaseDataLoaderSrv.getData(code, NotificationCategory.P_7_3);
-    } else {
-      throw new UnsupportedOperationException("Feature flag for §7.3 is not active");
-    }
+    return diseaseDataLoaderSrv.getData(code, NotificationCategory.P_7_3);
   }
 }

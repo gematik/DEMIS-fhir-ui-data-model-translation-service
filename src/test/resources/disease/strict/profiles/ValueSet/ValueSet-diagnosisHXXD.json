@@ -2,12 +2,12 @@
   "resourceType": "ValueSet",
   "id": "diagnosisHXXD",
   "url": "https://demis.rki.de/fhir/ValueSet/diagnosisHXXD",
-  "version": "1.3.4",
+  "version": "1.3.5",
   "name": "DiagnosisHXXD",
   "title": "Antwortmöglichkeiten für die Angabe einer Diagnose bei dem Meldetatbestand \"Akute Virushepatitis\"",
   "status": "active",
   "experimental": false,
-  "date": "2025-09-03",
+  "date": "2026-01-09",
   "publisher": "Robert Koch-Institut",
   "contact": [
     {
@@ -36,7 +36,7 @@
     "include": [
       {
         "system": "http://snomed.info/sct",
-        "version": "http://snomed.info/sct/11000274103/version/20241115",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
         "concept": [
           {
             "extension": [
@@ -46,7 +46,7 @@
               }
             ],
             "code": "40468003",
-            "display": "Virale Hepatitis Typ A",
+            "display": "Hepatitis A",
             "designation": [
               {
                 "language": "de-DE",
@@ -143,35 +143,35 @@
     ]
   },
   "expansion": {
-    "timestamp": "2025-09-03T00:00:00+02:00",
+    "timestamp": "2026-01-09T00:00:00+01:00",
     "contains": [
       {
         "system": "http://snomed.info/sct",
-        "version": "http://snomed.info/sct/11000274103/version/20241115",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
         "code": "707341005",
         "display": "Hepatitis delta"
       },
       {
         "system": "http://snomed.info/sct",
-        "version": "http://snomed.info/sct/11000274103/version/20241115",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
         "code": "40468003",
-        "display": "Virale Hepatitis Typ A"
+        "display": "Hepatitis A"
       },
       {
         "system": "http://snomed.info/sct",
-        "version": "http://snomed.info/sct/11000274103/version/20241115",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
         "code": "66071002",
         "display": "Virale Hepatitis, Typ B"
       },
       {
         "system": "http://snomed.info/sct",
-        "version": "http://snomed.info/sct/11000274103/version/20241115",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
         "code": "7111000119109",
         "display": "Virale Hepatitis Typ E"
       },
       {
         "system": "http://snomed.info/sct",
-        "version": "http://snomed.info/sct/11000274103/version/20241115",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
         "code": "50711007",
         "display": "Virale Hepatitis Typ C"
       }

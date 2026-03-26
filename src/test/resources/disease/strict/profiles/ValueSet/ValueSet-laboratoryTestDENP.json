@@ -1,0 +1,340 @@
+{
+  "resourceType": "ValueSet",
+  "id": "laboratoryTestDENP",
+  "url": "https://demis.rki.de/fhir/ValueSet/laboratoryTestDENP",
+  "version": "1.9.0",
+  "name": "LaboratoryTestDENP",
+  "title": "Labortest für Denguevirus",
+  "status": "active",
+  "experimental": false,
+  "date": "2025-12-05",
+  "publisher": "Robert Koch-Institut",
+  "contact": [
+    {
+      "telecom": [
+        {
+          "system": "email",
+          "value": "demis-support@rki.de"
+        }
+      ]
+    }
+  ],
+  "description": "Das ValueSet LaboratoryTestDENP enthält die Codes der Labortests für Denguevirus.",
+  "jurisdiction": [
+    {
+      "coding": [
+        {
+          "system": "urn:iso:std:iso:3166",
+          "version": "ALPHA-2",
+          "code": "DE"
+        }
+      ]
+    }
+  ],
+  "copyright": "This material contains content from LOINC (http://loinc.org/). LOINC is copyright © 1995-2023, Regenstrief Institute, Inc. and the Logical Observation Identifiers Names and Codes (LOINC) Committee and is available at no cost under the license at http://loinc.org/license. LOINC® is a registered United States trademark of Regenstrief Institute, Inc.\r\n\r\nDieses Material enthält Inhalte von LOINC (http://loinc.org/). LOINC ist urheberrechtlich geschützt © 1995-2023, Regenstrief Institute, Inc. und das Logical Observation Identifiers Names and Codes (LOINC) Committee und ist unter der Lizenz http://loinc.org/license kostenlos erhältlich. LOINC® ist eine eingetragene US-amerikanische Marke des Regenstrief Institute, Inc.\r\n\r\nDownloadbedingungen für LOINC-Übersetzungen für Anwendungszwecke in Deutschland\r\nÜbersetzungen in verschiedenen Sprachen werden von \"LOINC® Adopters\", meistens Behörden oder Forschungsinstituten verschiedener Länder, erstellt und an das Regenstrief Institute weitergegeben. Das Copyright für die Übersetzungen liegt beim Regenstrief Institute. Für Deutschland wird die LOINC®-Übersetzung durch das BfArM bereitgestellt. Die Übersetzungen werden durch das Regenstrief Institute als \"Linguistic Variants\" in den halbjährlichen LOINC®-Releases (Februar und August) veröffentlicht.\r\n\r\nDas Copyright für die Übersetzungen liegt beim Regenstrief Institute, 1101 W 10th St, Indianapolis, IN 46202, USA.\r\n\r\nMit dem Download von Dateien kommt ein Nutzungsvertrag zwischen Ihnen und dem Regenstrief Institute zustande. Sie verpflichten sich, die unten verlinkten Nutzungs- und Abgabebedingungen für LOINC vom Regenstrief Institute einzuhalten.",
+  "compose": {
+    "include": [
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "concept": [
+          {
+            "code": "100963-8",
+            "display": "Dengue-Virus 1+2+3+4 nsP1 IgG IgG-Antikörper [Einheiten/Volumen] in Serum oder Plasma mittels Immunoassay"
+          },
+          {
+            "code": "101206-1",
+            "display": "Dengue-Virus NS1 Antigen [Einheiten/Volumen] in Serum oder Plasma mittels Immunoassay"
+          },
+          {
+            "code": "108219-7",
+            "display": "Dengue virus 1+2+3+4 RNA [Presence] in Specimen by NAA with probe detection"
+          },
+          {
+            "code": "23958-2",
+            "display": "Dengue-Virus IgG-Antikörper [Einheiten/Volumen] in Serum"
+          },
+          {
+            "code": "23968-1",
+            "display": "Dengue-Virus IgM-Antikörper [Einheiten/Volumen] in Serum"
+          },
+          {
+            "code": "23992-1",
+            "display": "Dengue-Virus IgM-Antikörper [Einheiten/Volumen] in Serum mittels Immunoassay"
+          },
+          {
+            "code": "25338-5",
+            "display": "Dengue-Virus IgM-Antikörper [Nachweis] in Serum"
+          },
+          {
+            "code": "29663-2",
+            "display": "Dengue-Virus IgM-Antikörper [Nachweis] in Serum oder Plasma mittels Immunoassay"
+          },
+          {
+            "code": "29676-4",
+            "display": "Dengue-Virus IgG-Antikörper [Nachweis] in Serum"
+          },
+          {
+            "code": "31798-2",
+            "display": "Dengue-Virus Antigen [Nachweis] in Serum"
+          },
+          {
+            "code": "31799-0",
+            "display": "Dengue-Virus Antigen [Nachweis] in Probenmaterial"
+          },
+          {
+            "code": "34721-1",
+            "display": "Dengue-Virus IgM-Antikörper [Nachweis] in Liquor"
+          },
+          {
+            "code": "41852-5",
+            "display": "Mikroorganismus oder Erreger identifiziert in Probenmaterial"
+          },
+          {
+            "code": "60262-3",
+            "display": "Dengue-Virus 1 RNA [Nachweis] in Serum mittels Nukleinsäureamplifikation mit Sondendetektion"
+          },
+          {
+            "code": "60418-1",
+            "display": "Dengue-Virus 4 RNA [Nachweis] in Serum mittels Nukleinsäureamplifikation mit Sondendetektion"
+          },
+          {
+            "code": "60419-9",
+            "display": "Dengue-Virus 3 RNA [Nachweis] in Serum mittels Nukleinsäureamplifikation mit Sondendetektion"
+          },
+          {
+            "code": "60420-7",
+            "display": "Dengue-Virus 2 RNA [Nachweis] in Serum mittels Nukleinsäureamplifikation mit Sondendetektion"
+          },
+          {
+            "code": "6811-4",
+            "display": "Dengue-Virus IgG-Antikörper [Titer] in Serum"
+          },
+          {
+            "code": "6812-2",
+            "display": "Dengue-Virus IgM-Antikörper [Titer] in Serum"
+          },
+          {
+            "code": "75377-2",
+            "display": "Dengue-Virus NS1 Antigen [Nachweis] in Serum, Plasma oder Blut mittels Immunoassay-Schnelltest"
+          },
+          {
+            "code": "7855-0",
+            "display": "Dengue-Virus 1+2+3+4 RNA [Nachweis] in Serum oder Plasma mittels Nukleinsäureamplifikation mit Sondendetektion"
+          },
+          {
+            "code": "88188-8",
+            "display": "Dengue-Virus 1+2+3+4 RNA [Nachweis] in Urin mittels Nukleinsäureamplifikation mit Sondendetektion"
+          },
+          {
+            "code": "88189-6",
+            "display": "Dengue-Virus 1+2+3+4 RNA [Nachweis] in Blut mittels Nukleinsäureamplifikation mit Sondendetektion"
+          },
+          {
+            "code": "88203-5",
+            "display": "Dengue-Virus 1 und 2 und 3 und 4 RNA [Nachweis oder Identität] in Serum oder Blut mittels Nukleinsäureamplifikation mit Sondendetektion"
+          },
+          {
+            "code": "91064-6",
+            "display": "Dengue-Virus NS1 Antigen [Nachweis] in Serum oder Plasma mittels Immunoassay"
+          },
+          {
+            "code": "94837-2",
+            "display": "Dengue-Virus 1+2+3+4 RNA [Nachweis] in Amnionflüssigkeit mittels Nukleinsäureamplifikation mit Sondendetektion"
+          },
+          {
+            "code": "95673-0",
+            "display": "Dengue-Virus 1+2+3+4 IgG-Antikörper [Nachweis] in Probenmaterial mittels Immunoassay"
+          },
+          {
+            "code": "95688-8",
+            "display": "Dengue-Virus 1+2+3+4 IgM-Antikörper [Nachweis] in Probenmaterial mittels Immunoassay"
+          },
+          {
+            "code": "99111-7",
+            "display": "Dengue-Virus-neutralisierender Antikörper [Titer] in Probenmaterial mittels Neutralisationstest"
+          }
+        ]
+      }
+    ]
+  },
+  "expansion": {
+    "timestamp": "2025-12-05T00:00:00+01:00",
+    "contains": [
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "108219-7",
+        "display": "Dengue virus 1+2+3+4 RNA [Presence] in Specimen by NAA with probe detection"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "60420-7",
+        "display": "Dengue-Virus 2 RNA [Nachweis] in Serum mittels Nukleinsäureamplifikation mit Sondendetektion"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "60262-3",
+        "display": "Dengue-Virus 1 RNA [Nachweis] in Serum mittels Nukleinsäureamplifikation mit Sondendetektion"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "95688-8",
+        "display": "Dengue-Virus 1+2+3+4 IgM-Antikörper [Nachweis] in Probenmaterial mittels Immunoassay"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "99111-7",
+        "display": "Dengue-Virus-neutralisierender Antikörper [Titer] in Probenmaterial mittels Neutralisationstest"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "75377-2",
+        "display": "Dengue-Virus NS1 Antigen [Nachweis] in Serum, Plasma oder Blut mittels Immunoassay-Schnelltest"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "29676-4",
+        "display": "Dengue-Virus IgG-Antikörper [Nachweis] in Serum"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "101206-1",
+        "display": "Dengue-Virus NS1 Antigen [Einheiten/Volumen] in Serum oder Plasma mittels Immunoassay"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "88188-8",
+        "display": "Dengue-Virus 1+2+3+4 RNA [Nachweis] in Urin mittels Nukleinsäureamplifikation mit Sondendetektion"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "95673-0",
+        "display": "Dengue-Virus 1+2+3+4 IgG-Antikörper [Nachweis] in Probenmaterial mittels Immunoassay"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "6811-4",
+        "display": "Dengue-Virus IgG-Antikörper [Titer] in Serum"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "6812-2",
+        "display": "Dengue-Virus IgM-Antikörper [Titer] in Serum"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "23958-2",
+        "display": "Dengue-Virus IgG-Antikörper [Einheiten/Volumen] in Serum"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "91064-6",
+        "display": "Dengue-Virus NS1 Antigen [Nachweis] in Serum oder Plasma mittels Immunoassay"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "94837-2",
+        "display": "Dengue-Virus 1+2+3+4 RNA [Nachweis] in Amnionflüssigkeit mittels Nukleinsäureamplifikation mit Sondendetektion"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "23992-1",
+        "display": "Dengue-Virus IgM-Antikörper [Einheiten/Volumen] in Serum mittels Immunoassay"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "88203-5",
+        "display": "Dengue-Virus 1 und 2 und 3 und 4 RNA [Nachweis oder Identität] in Serum oder Blut mittels Nukleinsäureamplifikation mit Sondendetektion"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "60418-1",
+        "display": "Dengue-Virus 4 RNA [Nachweis] in Serum mittels Nukleinsäureamplifikation mit Sondendetektion"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "88189-6",
+        "display": "Dengue-Virus 1+2+3+4 RNA [Nachweis] in Blut mittels Nukleinsäureamplifikation mit Sondendetektion"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "34721-1",
+        "display": "Dengue-Virus IgM-Antikörper [Nachweis] in Liquor"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "41852-5",
+        "display": "Mikroorganismus oder Erreger identifiziert in Probenmaterial"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "25338-5",
+        "display": "Dengue-Virus IgM-Antikörper [Nachweis] in Serum"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "7855-0",
+        "display": "Dengue-Virus 1+2+3+4 RNA [Nachweis] in Serum oder Plasma mittels Nukleinsäureamplifikation mit Sondendetektion"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "23968-1",
+        "display": "Dengue-Virus IgM-Antikörper [Einheiten/Volumen] in Serum"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "29663-2",
+        "display": "Dengue-Virus IgM-Antikörper [Nachweis] in Serum oder Plasma mittels Immunoassay"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "31799-0",
+        "display": "Dengue-Virus Antigen [Nachweis] in Probenmaterial"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "100963-8",
+        "display": "Dengue-Virus 1+2+3+4 nsP1 IgG IgG-Antikörper [Einheiten/Volumen] in Serum oder Plasma mittels Immunoassay"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "31798-2",
+        "display": "Dengue-Virus Antigen [Nachweis] in Serum"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "60419-9",
+        "display": "Dengue-Virus 3 RNA [Nachweis] in Serum mittels Nukleinsäureamplifikation mit Sondendetektion"
+      }
+    ]
+  }
+}

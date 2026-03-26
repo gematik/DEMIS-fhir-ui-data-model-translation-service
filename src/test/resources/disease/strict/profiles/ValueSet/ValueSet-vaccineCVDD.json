@@ -2,12 +2,12 @@
   "resourceType": "ValueSet",
   "id": "vaccineCVDD",
   "url": "https://demis.rki.de/fhir/ValueSet/vaccineCVDD",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "name": "VaccineCVDD",
   "title": "Antwortmöglichkeiten für die Angabe des Impfstoffs in Bezug auf den Meldetatbestand \"Coronavirus-Krankheit-2019 (COVID-19)\"",
   "status": "active",
   "experimental": false,
-  "date": "2025-09-23",
+  "date": "2026-01-09",
   "publisher": "Robert Koch-Institut",
   "contact": [
     {
@@ -36,7 +36,7 @@
     "include": [
       {
         "system": "http://snomed.info/sct",
-        "version": "http://snomed.info/sct/11000274103/version/20241115",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
         "concept": [
           {
             "extension": [
@@ -154,7 +154,7 @@
             "extension": [
               {
                 "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
-                "valueInteger": 1
+                "valueInteger": 5
               }
             ],
             "code": "74964007",
@@ -164,23 +164,17 @@
             "extension": [
               {
                 "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
-                "valueInteger": 999
+                "valueInteger": 1
               }
             ],
             "code": "1631000175102",
-            "display": "Patient not asked (contextual qualifier) (qualifier value)",
-            "designation": [
-              {
-                "language": "de-DE",
-                "value": "Patient/Patientin nicht gefragt"
-              }
-            ]
+            "display": "Patient/Patientin nicht gefragt"
           },
           {
             "extension": [
               {
                 "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
-                "valueInteger": 1000
+                "valueInteger": 2
               }
             ],
             "code": "261665006",
@@ -191,65 +185,65 @@
     ]
   },
   "expansion": {
-    "timestamp": "2025-09-23T00:00:00+02:00",
+    "timestamp": "2026-01-09T00:00:00+01:00",
     "contains": [
       {
         "system": "http://snomed.info/sct",
-        "version": "http://snomed.info/sct/11000274103/version/20241115",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
         "code": "1287595003",
         "display": "Pädiatrischer mRNA-Impfstoff gegen COVID-19 der Sublinie B und BA.4/BA.5"
       },
       {
         "system": "http://snomed.info/sct",
-        "version": "http://snomed.info/sct/11000274103/version/20241115",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
         "code": "1631000175102",
-        "display": "Patient not asked (contextual qualifier) (qualifier value)"
+        "display": "Patient/Patientin nicht gefragt"
       },
       {
         "system": "http://snomed.info/sct",
-        "version": "http://snomed.info/sct/11000274103/version/20241115",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
         "code": "1162643001",
         "display": "Rekombinanter Spike-Protein-Antigen-Impfstoff gegen Covid-19"
       },
       {
         "system": "http://snomed.info/sct",
-        "version": "http://snomed.info/sct/11000274103/version/20241115",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
         "code": "1287596002",
         "display": "mRNA-Impfstoff gegen COVID-19 der Sublinie B und BA.4/BA.5 für Erwachsene"
       },
       {
         "system": "http://snomed.info/sct",
-        "version": "http://snomed.info/sct/11000274103/version/20241115",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
         "code": "1157024006",
         "display": "Impfstoff mit inaktiviertem ganzen SARS-CoV2-Antigen"
       },
       {
         "system": "http://snomed.info/sct",
-        "version": "http://snomed.info/sct/11000274103/version/20241115",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
         "code": "261665006",
         "display": "Unbekannt"
       },
       {
         "system": "http://snomed.info/sct",
-        "version": "http://snomed.info/sct/11000274103/version/20241115",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
         "code": "29061000087103",
         "display": "Nicht replizierender viraler Vektorimpfstoff gegen COVID-19"
       },
       {
         "system": "http://snomed.info/sct",
-        "version": "http://snomed.info/sct/11000274103/version/20241115",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
         "code": "1119349007",
         "display": "mRNA-Impfstoff gegen COVID-19"
       },
       {
         "system": "http://snomed.info/sct",
-        "version": "http://snomed.info/sct/11000274103/version/20241115",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
         "code": "1187593009",
         "display": "COVID-19 proteinbasierter Impfstoff"
       },
       {
         "system": "http://snomed.info/sct",
-        "version": "http://snomed.info/sct/11000274103/version/20241115",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
         "code": "74964007",
         "display": "Andere"
       }

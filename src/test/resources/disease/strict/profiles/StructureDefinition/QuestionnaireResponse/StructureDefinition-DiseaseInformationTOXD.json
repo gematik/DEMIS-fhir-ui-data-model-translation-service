@@ -2,11 +2,11 @@
   "resourceType": "StructureDefinition",
   "id": "DiseaseInformationTOXD",
   "url": "https://demis.rki.de/fhir/StructureDefinition/DiseaseInformationTOXD",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "name": "DiseaseInformationTOXD",
-  "title": "Klinische und epidemiologische Angaben für Toxoplasma gondii; Meldepflicht nur bei konnatalen Infektionen",
+  "title": "Klinische und epidemiologische Angaben für Toxoplasma gondii; Meldepflicht nur bei konnataler Infektion des Kindes",
   "status": "active",
-  "date": "2025-09-01",
+  "date": "2026-01-19",
   "publisher": "Robert Koch-Institut",
   "contact": [
     {
@@ -18,7 +18,7 @@
       ]
     }
   ],
-  "description": "Die klinischen und epidemiologischen Angaben für den Meldetatbestand \"Toxoplasma gondii; Meldepflicht nur bei konnatalen Infektionen\" werden in dieser QuestionnaireResponse-Ressource entsprechend dem dazugehörigen Fragebogen DiseaseQuestionsTOXD übermittelt.",
+  "description": "Die klinischen und epidemiologischen Angaben für den Meldetatbestand \"Toxoplasma gondii; Meldepflicht nur bei konnataler Infektion des Kindes\" werden in dieser QuestionnaireResponse-Ressource entsprechend dem dazugehörigen Fragebogen DiseaseQuestionsTOXD übermittelt.",
   "jurisdiction": [
     {
       "coding": [

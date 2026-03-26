@@ -1,0 +1,140 @@
+{
+  "resourceType": "ValueSet",
+  "id": "laboratoryTestCKVP",
+  "url": "https://demis.rki.de/fhir/ValueSet/laboratoryTestCKVP",
+  "version": "1.9.1",
+  "name": "LaboratoryTestCKVP",
+  "title": "Labortest für Chikungunya-Virus",
+  "status": "active",
+  "experimental": false,
+  "date": "2025-12-05",
+  "publisher": "Robert Koch-Institut",
+  "contact": [
+    {
+      "telecom": [
+        {
+          "system": "email",
+          "value": "demis-support@rki.de"
+        }
+      ]
+    }
+  ],
+  "description": "Das ValueSet LaboratoryTestCKVP enthält die Codes der Labortests für Chikungunya-Virus.",
+  "jurisdiction": [
+    {
+      "coding": [
+        {
+          "system": "urn:iso:std:iso:3166",
+          "version": "ALPHA-2",
+          "code": "DE"
+        }
+      ]
+    }
+  ],
+  "copyright": "This material contains content from LOINC (http://loinc.org/). LOINC is copyright © 1995-2023, Regenstrief Institute, Inc. and the Logical Observation Identifiers Names and Codes (LOINC) Committee and is available at no cost under the license at http://loinc.org/license. LOINC® is a registered United States trademark of Regenstrief Institute, Inc.\r\n\r\nDieses Material enthält Inhalte von LOINC (http://loinc.org/). LOINC ist urheberrechtlich geschützt © 1995-2023, Regenstrief Institute, Inc. und das Logical Observation Identifiers Names and Codes (LOINC) Committee und ist unter der Lizenz http://loinc.org/license kostenlos erhältlich. LOINC® ist eine eingetragene US-amerikanische Marke des Regenstrief Institute, Inc.\r\n\r\nDownloadbedingungen für LOINC-Übersetzungen für Anwendungszwecke in Deutschland\r\nÜbersetzungen in verschiedenen Sprachen werden von \"LOINC® Adopters\", meistens Behörden oder Forschungsinstituten verschiedener Länder, erstellt und an das Regenstrief Institute weitergegeben. Das Copyright für die Übersetzungen liegt beim Regenstrief Institute. Für Deutschland wird die LOINC®-Übersetzung durch das BfArM bereitgestellt. Die Übersetzungen werden durch das Regenstrief Institute als \"Linguistic Variants\" in den halbjährlichen LOINC®-Releases (Februar und August) veröffentlicht.\r\n\r\nDas Copyright für die Übersetzungen liegt beim Regenstrief Institute, 1101 W 10th St, Indianapolis, IN 46202, USA.\r\n\r\nMit dem Download von Dateien kommt ein Nutzungsvertrag zwischen Ihnen und dem Regenstrief Institute zustande. Sie verpflichten sich, die unten verlinkten Nutzungs- und Abgabebedingungen für LOINC vom Regenstrief Institute einzuhalten.",
+  "compose": {
+    "include": [
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "concept": [
+          {
+            "code": "41852-5",
+            "display": "Mikroorganismus oder Erreger identifiziert in Probenmaterial"
+          },
+          {
+            "code": "51664-1",
+            "display": "Chikungunya-Virus RNA [Nachweis] in Probenmaterial mittels Nukleinsäureamplifikation mit Sondendetektion"
+          },
+          {
+            "code": "57934-2",
+            "display": "Chikungunya-Virus IgM-Antikörper [Nachweis] in Serum oder Plasma"
+          },
+          {
+            "code": "88629-1",
+            "display": "Chikungunya-Virus IgM-Antikörper [Nachweis] in Serum oder Plasma mittels Immunoassay"
+          },
+          {
+            "code": "88630-9",
+            "display": "Chikungunya-Virus IgG-Antikörper [Nachweis] in Serum oder Plasma mittels Immunoassay"
+          },
+          {
+            "code": "93979-3",
+            "display": "Chikungunya-Virus IgG-Antikörper [Nachweis] in Serum oder Plasma"
+          },
+          {
+            "code": "95705-0",
+            "display": "Chikungunya-Virus IgA-Antikörper [Nachweis] in Probenmaterial mittels Immunoassay"
+          },
+          {
+            "code": "97866-8",
+            "display": "Chikungunya-Virus IgG-Antikörper [Einheiten/Volumen] in Serum oder Plasma mittels Immunoassay"
+          },
+          {
+            "code": "97867-6",
+            "display": "Chikungunya-Virus IgM-Antikörper [Einheiten/Volumen] in Serum oder Plasma mittels Immunoassay"
+          }
+        ]
+      }
+    ]
+  },
+  "expansion": {
+    "timestamp": "2025-12-05T00:00:00+01:00",
+    "contains": [
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "97866-8",
+        "display": "Chikungunya-Virus IgG-Antikörper [Einheiten/Volumen] in Serum oder Plasma mittels Immunoassay"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "97867-6",
+        "display": "Chikungunya-Virus IgM-Antikörper [Einheiten/Volumen] in Serum oder Plasma mittels Immunoassay"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "95705-0",
+        "display": "Chikungunya-Virus IgA-Antikörper [Nachweis] in Probenmaterial mittels Immunoassay"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "51664-1",
+        "display": "Chikungunya-Virus RNA [Nachweis] in Probenmaterial mittels Nukleinsäureamplifikation mit Sondendetektion"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "88629-1",
+        "display": "Chikungunya-Virus IgM-Antikörper [Nachweis] in Serum oder Plasma mittels Immunoassay"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "41852-5",
+        "display": "Mikroorganismus oder Erreger identifiziert in Probenmaterial"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "93979-3",
+        "display": "Chikungunya-Virus IgG-Antikörper [Nachweis] in Serum oder Plasma"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "57934-2",
+        "display": "Chikungunya-Virus IgM-Antikörper [Nachweis] in Serum oder Plasma"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "88630-9",
+        "display": "Chikungunya-Virus IgG-Antikörper [Nachweis] in Serum oder Plasma mittels Immunoassay"
+      }
+    ]
+  }
+}

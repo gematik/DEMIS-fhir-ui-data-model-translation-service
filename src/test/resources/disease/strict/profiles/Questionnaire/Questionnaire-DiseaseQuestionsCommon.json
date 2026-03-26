@@ -2,11 +2,11 @@
   "resourceType": "Questionnaire",
   "id": "DiseaseQuestionsCommon",
   "url": "https://demis.rki.de/fhir/Questionnaire/DiseaseQuestionsCommon",
-  "version": "1.4.2",
+  "version": "1.5.0",
   "name": "DiseaseQuestionsCommon",
   "title": "Fragebogen für meldetatbestandsübergreifende klinische und epidemiologische Angaben",
   "status": "active",
-  "date": "2025-10-18",
+  "date": "2026-01-19",
   "publisher": "Robert Koch-Institut",
   "contact": [
     {
@@ -148,8 +148,8 @@
         {
           "extension": [
             {
-              "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-referenceResource",
-              "valueCode": "Organization"
+              "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-referenceProfile",
+              "valueCanonical": "https://demis.rki.de/fhir/StructureDefinition/LaboratoryFacility"
             }
           ],
           "linkId": "labSpecimenLab",
@@ -424,8 +424,8 @@
             {
               "extension": [
                 {
-                  "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-referenceResource",
-                  "valueCode": "Organization"
+                  "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-referenceProfile",
+                  "valueCanonical": "https://demis.rki.de/fhir/StructureDefinition/InfectProtectFacility"
                 }
               ],
               "linkId": "infectProtectFacilityOrganization",

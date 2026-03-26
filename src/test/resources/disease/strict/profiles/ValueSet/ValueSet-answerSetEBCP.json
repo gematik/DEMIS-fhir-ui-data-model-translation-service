@@ -1,0 +1,3678 @@
+{
+  "resourceType": "ValueSet",
+  "id": "answerSetEBCP",
+  "url": "https://demis.rki.de/fhir/ValueSet/answerSetEBCP",
+  "version": "1.8.1",
+  "name": "AnswerSetEBCP",
+  "title": "AnswerSet für Enterobacterales bei Nachweis einer Carbapenemase-Determinante oder mit verminderter Empfindlichkeit gegenüber Carbapenemen außer bei natürlicher Resistenz; Meldepflicht nur bei Infektion oder Kolonisation",
+  "status": "active",
+  "experimental": false,
+  "date": "2025-12-05",
+  "publisher": "Robert Koch-Institut",
+  "contact": [
+    {
+      "telecom": [
+        {
+          "system": "email",
+          "value": "demis-support@rki.de"
+        }
+      ]
+    }
+  ],
+  "description": "Das ValueSet AnswerSetEBCP enthält die Codes der Answer-Codes für Enterobacterales bei Nachweis einer Carbapenemase-Determinante oder mit verminderter Empfindlichkeit gegenüber Carbapenemen außer bei natürlicher Resistenz; Meldepflicht nur bei Infektion oder Kolonisation.",
+  "jurisdiction": [
+    {
+      "coding": [
+        {
+          "system": "urn:iso:std:iso:3166",
+          "version": "ALPHA-2",
+          "code": "DE"
+        }
+      ]
+    }
+  ],
+  "copyright": "This material includes SNOMED Clinical Terms® (SNOMED CT®) which is used by permission of the International Health Terminology Standards Development Organisation (IHTSDO). All rights reserved. SNOMED CT®, was originally created by The College of American Pathologists. “SNOMED” and “SNOMED CT” are registered trademarks of the IHTSDO.\r\n\r\nDieses Material enthält SNOMED Clinical Terms® (SNOMED CT®), die mit Genehmigung der International Health Terminology Standards Development Organisation (IHTSDO) verwendet werden. Alle Rechte vorbehalten. SNOMED CT® wurde ursprünglich vom College of American Pathologists entwickelt. \"SNOMED\" und \"SNOMED CT\" sind eingetragene Warenzeichen der IHTSDO.\r\n\r\nDownloadbedingungen für SNOMED-CT\r\n\r\nEnthält durch SNOMED International urheberrechtlich geschützte Information. Jede Verwendung von SNOMED CT in Deutschland erfordert eine vollgültige Affiliate Lizenz oder eine Sublizenz. Die entsprechende Lizenz ist kostenlos, vorausgesetzt die Verwendung findet nur in Deutschland statt und erfüllt die Bedingungen des Affiliate License Agreements. Affiliate Lizenzen können über das Mitglieder-Lizenzierungs- und Distributions-Service (MLDS) direkt beim jeweiligen NRC beantragt werden. https://mlds.ihtsdotools.org/#/landing/DE?lang=de\r\n\r\nContains information protected by copyright of SNOMED International. Any use of SNOMED CT in Austria requires a valid affiliate license or sublicense. The corresponding license is free of charge, provided that the use only takes place in Austria and fulfills the conditions of the Affiliate License Agreement. Affiliate licenses can be requested directly from the respective NRC via the Member Licensing and Distribution Service (MLDS). ttps://mlds.ihtsdotools.org/#/landing/DE?lang=de",
+  "compose": {
+    "include": [
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "concept": [
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 719
+              }
+            ],
+            "code": "10021006",
+            "display": "Rahnella aquatilis"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 680
+              }
+            ],
+            "code": "10334001",
+            "display": "Yersinia intermedia"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 683
+              }
+            ],
+            "code": "103434007",
+            "display": "Yersinia bercovieri"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 705
+              }
+            ],
+            "code": "10413007",
+            "display": "Serratia odorifera"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 895
+              }
+            ],
+            "code": "10969007",
+            "display": "Buttiauxella agrestis"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 828
+              }
+            ],
+            "code": "112283007",
+            "display": "Escherichia coli"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 803
+              }
+            ],
+            "code": "112284001",
+            "display": "Gattung Providencia"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 713
+              }
+            ],
+            "code": "112329006",
+            "display": "Serratia fonticola"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 855
+              }
+            ],
+            "code": "113611000146106",
+            "display": "Enterobacter bugandensis"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 890
+              }
+            ],
+            "code": "114261007",
+            "display": "Buttiauxella noackiae"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 883
+              }
+            ],
+            "code": "114262000",
+            "display": "Citrobacter braakii"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 882
+              }
+            ],
+            "code": "114263005",
+            "display": "Citrobacter farmeri"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 879
+              }
+            ],
+            "code": "114264004",
+            "display": "Citrobacter koseri"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 876
+              }
+            ],
+            "code": "114265003",
+            "display": "Citrobacter sedlakii"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 874
+              }
+            ],
+            "code": "114442006",
+            "display": "Citrobacter werkmanii"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 873
+              }
+            ],
+            "code": "114443001",
+            "display": "Citrobacter youngae"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 877
+              }
+            ],
+            "code": "114444007",
+            "display": "Citrobacter rodentium"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 854
+              }
+            ],
+            "code": "114451003",
+            "display": "Enterobacter cancerogenus"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 848
+              }
+            ],
+            "code": "114454006",
+            "display": "Enterobacter hormaechei"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 733
+              }
+            ],
+            "code": "114455007",
+            "display": "Pluralibacter pyrinus"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 847
+              }
+            ],
+            "code": "114456008",
+            "display": "Enterobacter kobei"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 731
+              }
+            ],
+            "code": "114461005",
+            "display": "Proteus inconstans"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 701
+              }
+            ],
+            "code": "115004003",
+            "display": "Serratia proteamaculans Subspecies quinovora"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 712
+              }
+            ],
+            "code": "115005002",
+            "display": "Serratia grimesii"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 809
+              }
+            ],
+            "code": "115013001",
+            "display": "Gattung Pantoea"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 755
+              }
+            ],
+            "code": "115014007",
+            "display": "Pantoea ananatis"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 756
+              }
+            ],
+            "code": "115015008",
+            "display": "Pantoea agglomerans"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 751
+              }
+            ],
+            "code": "115017000",
+            "display": "Pantoea dispersa"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 746
+              }
+            ],
+            "code": "115019002",
+            "display": "Pantoea stewartii Subspecies indologenes"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 745
+              }
+            ],
+            "code": "115020008",
+            "display": "Pantoea stewartii Subspecies stewartii"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 805
+              }
+            ],
+            "code": "115024004",
+            "display": "Gattung Pragia"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 821
+              }
+            ],
+            "code": "1156339009",
+            "display": "Franconibacter pulveris"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 703
+              }
+            ],
+            "code": "116135003",
+            "display": "Serratia proteamaculans"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 702
+              }
+            ],
+            "code": "116136002",
+            "display": "Serratia proteamaculans Subspecies proteamaculans"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 796
+              }
+            ],
+            "code": "12162005",
+            "display": "Gattung Tatumella"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 747
+              }
+            ],
+            "code": "131300002",
+            "display": "Pantoea stewartii"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 724
+              }
+            ],
+            "code": "14196002",
+            "display": "Providencia rettgeri"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 853
+              }
+            ],
+            "code": "14385002",
+            "display": "Enterobacter cloacae"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 722
+              }
+            ],
+            "code": "1445008",
+            "display": "Providencia stuartii"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 858
+              }
+            ],
+            "code": "14566004",
+            "display": "Gattung Edwardsiella"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 794
+              }
+            ],
+            "code": "14943005",
+            "display": "Gattung Yokenella"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 824
+              }
+            ],
+            "code": "14961000146107",
+            "display": "Escherichia marmotae"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 688
+              }
+            ],
+            "code": "1546007",
+            "display": "Tatumella ptyseos"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 830
+              }
+            ],
+            "code": "17031002",
+            "display": "Erwinia tracheiphila"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 781
+              }
+            ],
+            "code": "17688001",
+            "display": "Klebsiella pneumoniae Subspecies rhinoscleromatis"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 782
+              }
+            ],
+            "code": "18400002",
+            "display": "Klebsiella pneumoniae Subspecies pneumoniae"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 822
+              }
+            ],
+            "code": "19027003",
+            "display": "Ewingella americana"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 723
+              }
+            ],
+            "code": "19196004",
+            "display": "Providencia rustigianii"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 818
+              }
+            ],
+            "code": "20523001",
+            "display": "Gattung Hafnia"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 887
+              }
+            ],
+            "code": "2345009",
+            "display": "Cedecea lapagei"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 711
+              }
+            ],
+            "code": "23787004",
+            "display": "Serratia liquefaciens"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 762
+              }
+            ],
+            "code": "243301005",
+            "display": "Morganella morganii"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 760
+              }
+            ],
+            "code": "243302003",
+            "display": "Morganella morganii Subspecies morganii"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 759
+              }
+            ],
+            "code": "243303008",
+            "display": "Morganella morganii Subspecies sibonii"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 758
+              }
+            ],
+            "code": "28501001",
+            "display": "Obesumbacterium proteus"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 704
+              }
+            ],
+            "code": "28955009",
+            "display": "Serratia plymuthica"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 768
+              }
+            ],
+            "code": "29511003",
+            "display": "Lelliottia nimipressuralis"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 835
+              }
+            ],
+            "code": "302568005",
+            "display": "Erwinia psidii"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 888
+              }
+            ],
+            "code": "30854004",
+            "display": "Cedecea davisae"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 774
+              }
+            ],
+            "code": "32547006",
+            "display": "Kluyvera cryocrescens"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 856
+              }
+            ],
+            "code": "33115003",
+            "display": "Enterobacter asburiae"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 710
+              }
+            ],
+            "code": "33522002",
+            "display": "Serratia marcescens"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 820
+              }
+            ],
+            "code": "3451006",
+            "display": "Gattung Buttiauxella"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 763
+              }
+            ],
+            "code": "37107002",
+            "display": "Moellerella wisconsensis"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 735
+              }
+            ],
+            "code": "38643006",
+            "display": "Plesiomonas shigelloides"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 819
+              }
+            ],
+            "code": "3878001",
+            "display": "Gattung Ewingella"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 833
+              }
+            ],
+            "code": "38865008",
+            "display": "Gattung Erwinia"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 787
+              }
+            ],
+            "code": "40886007",
+            "display": "Klebsiella oxytoca"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 716
+              }
+            ],
+            "code": "416096003",
+            "display": "Raoultella terrigena"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 773
+              }
+            ],
+            "code": "416156003",
+            "display": "Kluyvera georgiana"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 771
+              }
+            ],
+            "code": "416229008",
+            "display": "Kosakonia cowanii"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 717
+              }
+            ],
+            "code": "416264004",
+            "display": "Raoultella planticola"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 889
+              }
+            ],
+            "code": "416444007",
+            "display": "Buttiauxella warmboldiae"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 718
+              }
+            ],
+            "code": "416832000",
+            "display": "Raoultella ornithinolytica"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 894
+              }
+            ],
+            "code": "416844002",
+            "display": "Buttiauxella brennerae"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 892
+              }
+            ],
+            "code": "416852004",
+            "display": "Buttiauxella gaviniae"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 880
+              }
+            ],
+            "code": "416990006",
+            "display": "Citrobacter gillenii"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 891
+              }
+            ],
+            "code": "417035007",
+            "display": "Buttiauxella izardii"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 788
+              }
+            ],
+            "code": "417443008",
+            "display": "Klebsiella granulomatis"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 801
+              }
+            ],
+            "code": "417468005",
+            "display": "Gattung Raoultella"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 893
+              }
+            ],
+            "code": "417520001",
+            "display": "Buttiauxella ferragutiae"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 878
+              }
+            ],
+            "code": "417581000",
+            "display": "Citrobacter murliniae"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 732
+              }
+            ],
+            "code": "417592004",
+            "display": "Proteus hauseri"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 757
+              }
+            ],
+            "code": "417937002",
+            "display": "Ordnung Enterobacteriales"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 829
+              }
+            ],
+            "code": "419388003",
+            "display": "Escherichia albertii"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 799
+              }
+            ],
+            "code": "42025004",
+            "display": "Gattung Serratia"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 740
+              }
+            ],
+            "code": "420478006",
+            "display": "Pectobacterium carotovorum"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 900
+              }
+            ],
+            "code": "420490008",
+            "display": "Brenneria nigrifluens"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 739
+              }
+            ],
+            "code": "420518002",
+            "display": "Pectobacterium carotovorum Subspecies carotovorum"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 741
+              }
+            ],
+            "code": "420741007",
+            "display": "Pectobacterium cacticida"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 767
+              }
+            ],
+            "code": "420872003",
+            "display": "Lonsdalea quercina"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 861
+              }
+            ],
+            "code": "420926001",
+            "display": "Gattung Dickeya"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 742
+              }
+            ],
+            "code": "420948007",
+            "display": "Pectobacterium betavasculorum"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 743
+              }
+            ],
+            "code": "421190009",
+            "display": "Pectobacterium atrosepticum"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 863
+              }
+            ],
+            "code": "421225004",
+            "display": "Dickeya chrysanthemi"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 752
+              }
+            ],
+            "code": "421499000",
+            "display": "Pantoea cypripedii"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 862
+              }
+            ],
+            "code": "421625009",
+            "display": "Dickeya paradisiaca"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 736
+              }
+            ],
+            "code": "421786004",
+            "display": "Pectobacterium wasabiae"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 808
+              }
+            ],
+            "code": "422013009",
+            "display": "Gattung Pectobacterium"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 738
+              }
+            ],
+            "code": "422046003",
+            "display": "Pectobacterium carotovorum Subspecies odoriferum"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 899
+              }
+            ],
+            "code": "422105006",
+            "display": "Brenneria rubrifaciens"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 860
+              }
+            ],
+            "code": "4280005",
+            "display": "Edwardsiella hoshinae"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 807
+              }
+            ],
+            "code": "42929008",
+            "display": "Gattung Plesiomonas"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 898
+              }
+            ],
+            "code": "431100005",
+            "display": "Brenneria salicis"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 836
+              }
+            ],
+            "code": "431272005",
+            "display": "Erwinia persicina"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 837
+              }
+            ],
+            "code": "431273000",
+            "display": "Erwinia papayae"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 831
+              }
+            ],
+            "code": "431385006",
+            "display": "Erwinia toletana"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 841
+              }
+            ],
+            "code": "431386007",
+            "display": "Erwinia aphidicola"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 737
+              }
+            ],
+            "code": "431387003",
+            "display": "Pectobacterium rhapontici"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 776
+              }
+            ],
+            "code": "431976004",
+            "display": "Klebsiella variicola"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 772
+              }
+            ],
+            "code": "431977008",
+            "display": "Kluyvera intermedia"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 840
+              }
+            ],
+            "code": "432735003",
+            "display": "Erwinia billingiae"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 834
+              }
+            ],
+            "code": "432736002",
+            "display": "Erwinia pyrifoliae"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 846
+              }
+            ],
+            "code": "432763001",
+            "display": "Enterobacter ludwigii"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 777
+              }
+            ],
+            "code": "433047006",
+            "display": "Klebsiella singaporensis"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 815
+              }
+            ],
+            "code": "43590002",
+            "display": "Gattung Leclercia"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 700
+              }
+            ],
+            "code": "438199009",
+            "display": "Serratia quinivorans"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 708
+              }
+            ],
+            "code": "438911005",
+            "display": "Serratia marcescens marcescens"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 707
+              }
+            ],
+            "code": "438912003",
+            "display": "Serratia marcescens sakuensis"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 832
+              }
+            ],
+            "code": "4411000146103",
+            "display": "Erwinia tasmaniensis"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 866
+              }
+            ],
+            "code": "444664004",
+            "display": "Gattung Cronobacter"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 871
+              }
+            ],
+            "code": "445559002",
+            "display": "Cronobacter dublinensis"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 869
+              }
+            ],
+            "code": "445560007",
+            "display": "Cronobacter malonaticus"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 868
+              }
+            ],
+            "code": "445561006",
+            "display": "Cronobacter muytjensii"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 867
+              }
+            ],
+            "code": "445562004",
+            "display": "Cronobacter sakazakii"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 865
+              }
+            ],
+            "code": "445639005",
+            "display": "Cronobacter turicensis"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 678
+              }
+            ],
+            "code": "446489003",
+            "display": "Yersinia massiliensis"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 0
+              }
+            ],
+            "code": "446870005",
+            "display": "Carbapenem-resistente Klebsiella pneumoniae"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 684
+              }
+            ],
+            "code": "450391006",
+            "display": "Yersinia aleksiciae"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 674
+              }
+            ],
+            "code": "450392004",
+            "display": "Yersinia similis"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 706
+              }
+            ],
+            "code": "450415000",
+            "display": "Serratia nematodiphila"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 698
+              }
+            ],
+            "code": "450416004",
+            "display": "Serratia ureilytica"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 729
+              }
+            ],
+            "code": "45298005",
+            "display": "Proteus penneri"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 728
+              }
+            ],
+            "code": "45834001",
+            "display": "Proteus vulgaris"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 726
+              }
+            ],
+            "code": "46349009",
+            "display": "Providencia alcalifaciens"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 795
+              }
+            ],
+            "code": "4668009",
+            "display": "Gattung Yersinia"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 725
+              }
+            ],
+            "code": "47300009",
+            "display": "Providencia heimbachae"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 802
+              }
+            ],
+            "code": "48569008",
+            "display": "Gattung Rahnella"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 842
+              }
+            ],
+            "code": "50097002",
+            "display": "Erwinia amylovora"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 804
+              }
+            ],
+            "code": "50517009",
+            "display": "Gattung Proteus"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 811
+              }
+            ],
+            "code": "50713005",
+            "display": "Gattung Morganella"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 810
+              }
+            ],
+            "code": "50732004",
+            "display": "Gattung Obesumbacterium"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 720
+              }
+            ],
+            "code": "53013003",
+            "display": "Pseudescherichia vulneris"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 0
+              }
+            ],
+            "code": "541051000124105",
+            "display": "Carbapenem resistant Providencia (organism)"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 0
+              }
+            ],
+            "code": "541111000124108",
+            "display": "Carbapenem resistant Morganella morganii (organism)"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 884
+              }
+            ],
+            "code": "55744003",
+            "display": "Citrobacter amalonaticus"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 699
+              }
+            ],
+            "code": "55825002",
+            "display": "Serratia rubidaea"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 896
+              }
+            ],
+            "code": "55851000",
+            "display": "Gattung Budvicia"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 785
+              }
+            ],
+            "code": "56415008",
+            "display": "Klebsiella pneumoniae"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 748
+              }
+            ],
+            "code": "5681000146105",
+            "display": "Pantoea septica"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 849
+              }
+            ],
+            "code": "56813009",
+            "display": "Enterobacter cloacae Subspecies dissolvens"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 870
+              }
+            ],
+            "code": "5711000087108",
+            "display": "Cronobacter dublinensis Subspecies lausannensis"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 769
+              }
+            ],
+            "code": "57459006",
+            "display": "Leclercia adecarboxylata"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 775
+              }
+            ],
+            "code": "58493008",
+            "display": "Kluyvera ascorbata"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 844
+              }
+            ],
+            "code": "58683007",
+            "display": "Gattung Enterobacter"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 721
+              }
+            ],
+            "code": "6031000146109",
+            "display": "Providencia vermicola"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 816
+              }
+            ],
+            "code": "61161003",
+            "display": "Gattung Kluyvera"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 790
+              }
+            ],
+            "code": "62592009",
+            "display": "Klebsiella aerogenes"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 881
+              }
+            ],
+            "code": "6265002",
+            "display": "Citrobacter freundii"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 675
+              }
+            ],
+            "code": "64125009",
+            "display": "Yersinia ruckeri"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 823
+              }
+            ],
+            "code": "64735005",
+            "display": "Gattung Escherichia"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 783
+              }
+            ],
+            "code": "65186004",
+            "display": "Klebsiella pneumoniae Subspecies ozaenae"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 682
+              }
+            ],
+            "code": "65255000",
+            "display": "Yersinia enterocolitica"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 859
+              }
+            ],
+            "code": "68227003",
+            "display": "Edwardsiella ictaluri"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 885
+              }
+            ],
+            "code": "69937007",
+            "display": "Gattung Cedecea"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 864
+              }
+            ],
+            "code": "707335003",
+            "display": "Cronobacter universalis"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 838
+              }
+            ],
+            "code": "708449009",
+            "display": "Erwinia oleae"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 764
+              }
+            ],
+            "code": "709309007",
+            "display": "Mixta gaviniae"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 765
+              }
+            ],
+            "code": "709310002",
+            "display": "Mixta calida"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 0
+              }
+            ],
+            "code": "714007005",
+            "display": "Carbapenem-resistente Enterobacter cloacae"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 0
+              }
+            ],
+            "code": "715307006",
+            "display": "Carbapenem-resistente Escherichia coli"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 806
+              }
+            ],
+            "code": "716344002",
+            "display": "Gattung Pluralibacter"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 734
+              }
+            ],
+            "code": "716346000",
+            "display": "Pluralibacter gergoviae"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 812
+              }
+            ],
+            "code": "71655003",
+            "display": "Gattung Moellerella"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 754
+              }
+            ],
+            "code": "717167001",
+            "display": "Pantoea brenneri"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 753
+              }
+            ],
+            "code": "717168006",
+            "display": "Pantoea conspicua"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 750
+              }
+            ],
+            "code": "717170002",
+            "display": "Pantoea eucrina"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 792
+              }
+            ],
+            "code": "717644004",
+            "display": "Hafnia paralvei"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 814
+              }
+            ],
+            "code": "717652001",
+            "display": "Gattung Lelliottia"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 690
+              }
+            ],
+            "code": "717974005",
+            "display": "Siccibacter turicensis"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 791
+              }
+            ],
+            "code": "718798008",
+            "display": "Hafnia psychrotolerans"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 744
+              }
+            ],
+            "code": "718813007",
+            "display": "Pectobacterium aroidearum"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 697
+              }
+            ],
+            "code": "718823003",
+            "display": "Serratia vespertilionis"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 0
+              }
+            ],
+            "code": "719792001",
+            "display": "Carbapenem-resistente Klebsiella oxytoca"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 850
+              }
+            ],
+            "code": "721950003",
+            "display": "Enterobacter cloacae Subspecies cloacae"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 797
+              }
+            ],
+            "code": "723344008",
+            "display": "Gattung Siccibacter"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 691
+              }
+            ],
+            "code": "723345009",
+            "display": "Siccibacter colletis"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 826
+              }
+            ],
+            "code": "72461005",
+            "display": "Escherichia fergusonii"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 0
+              }
+            ],
+            "code": "734200008",
+            "display": "Carbapenem-resistente Klebsiella aerogenes"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 0
+              }
+            ],
+            "code": "734201007",
+            "display": "Carbapenem-resistente-Enterobacter-cloacae-Komplex"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 730
+              }
+            ],
+            "code": "73457008",
+            "display": "Proteus mirabilis"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 845
+              }
+            ],
+            "code": "738504009",
+            "display": "Enterobacter mori"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 857
+              }
+            ],
+            "code": "74672006",
+            "display": "Edwardsiella tarda"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 817
+              }
+            ],
+            "code": "75032006",
+            "display": "Gattung Klebsiella"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 897
+              }
+            ],
+            "code": "75464008",
+            "display": "Budvicia aquatica"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 875
+              }
+            ],
+            "code": "75972000",
+            "display": "Gattung Citrobacter"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 749
+              }
+            ],
+            "code": "765101001",
+            "display": "Pantoea intestinalis"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 715
+              }
+            ],
+            "code": "76656001",
+            "display": "Serratia entomophila"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 793
+              }
+            ],
+            "code": "76694001",
+            "display": "Hafnia alvei"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 843
+              }
+            ],
+            "code": "768157006",
+            "display": "Enterobacter xiangfangensis"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 766
+              }
+            ],
+            "code": "771468005",
+            "display": "Metakosakonia massiliensis"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 780
+              }
+            ],
+            "code": "781054004",
+            "display": "Klebsiella quasipneumoniae"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 778
+              }
+            ],
+            "code": "781055003",
+            "display": "Klebsiella quasipneumoniae Subspecies similipneumoniae"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 779
+              }
+            ],
+            "code": "781056002",
+            "display": "Klebsiella quasipneumoniae Subspecies quasipneumoniae"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 839
+              }
+            ],
+            "code": "79946002",
+            "display": "Erwinia mallotivora"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 714
+              }
+            ],
+            "code": "802004",
+            "display": "Serratia ficaria"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 0
+              }
+            ],
+            "code": "816049003",
+            "display": "Carbapenem-resistente Serratia marcescens"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 770
+              }
+            ],
+            "code": "8181000146108",
+            "display": "Kosakonia radicincitans"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 686
+              }
+            ],
+            "code": "8301000146102",
+            "display": "Tatumella terrea"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 687
+              }
+            ],
+            "code": "8311000146100",
+            "display": "Tatumella punctata"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 689
+              }
+            ],
+            "code": "8321000146105",
+            "display": "Tatumella citrea"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 692
+              }
+            ],
+            "code": "8361000146103",
+            "display": "Shimwellia blattae"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 886
+              }
+            ],
+            "code": "83767006",
+            "display": "Cedecea neteri"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 813
+              }
+            ],
+            "code": "84221003",
+            "display": "Gattung Lelliottia amnigena"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 681
+              }
+            ],
+            "code": "85159008",
+            "display": "Yersinia frederiksenii"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 825
+              }
+            ],
+            "code": "85786000",
+            "display": "Escherichia hermannii"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 872
+              }
+            ],
+            "code": "86145008",
+            "display": "Cosenzaea myxofaciens"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 676
+              }
+            ],
+            "code": "87145000",
+            "display": "Yersinia rohdei"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 673
+              }
+            ],
+            "code": "89477001",
+            "display": "Yokenella regensburgei"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 677
+              }
+            ],
+            "code": "90530002",
+            "display": "Yersinia pseudotuberculosis"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 679
+              }
+            ],
+            "code": "91042006",
+            "display": "Yersinia kristensenii"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 685
+              }
+            ],
+            "code": "91246002",
+            "display": "Yersinia aldovae"
+          }
+        ]
+      },
+      {
+        "valueSet": [
+          "https://demis.rki.de/fhir/ValueSet/answerSetLaboratoryTest-SNOMED"
+        ]
+      },
+      {
+        "valueSet": [
+          "https://demis.rki.de/fhir/ValueSet/answerSetResistance-SNOMED"
+        ]
+      }
+    ]
+  },
+  "expansion": {
+    "timestamp": "2025-12-05T00:00:00+01:00",
+    "contains": [
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "76656001",
+        "display": "Serratia entomophila"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "56415008",
+        "display": "Klebsiella pneumoniae"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "58683007",
+        "display": "Gattung Enterobacter"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "707335003",
+        "display": "Cronobacter universalis"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "46349009",
+        "display": "Providencia alcalifaciens"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "64735005",
+        "display": "Gattung Escherichia"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "417035007",
+        "display": "Buttiauxella izardii"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "50713005",
+        "display": "Gattung Morganella"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "723345009",
+        "display": "Siccibacter colletis"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "12162005",
+        "display": "Gattung Tatumella"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "114263005",
+        "display": "Citrobacter farmeri"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "709310002",
+        "display": "Mixta calida"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "417592004",
+        "display": "Proteus hauseri"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "85786000",
+        "display": "Escherichia hermannii"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "3878001",
+        "display": "Gattung Ewingella"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "432763001",
+        "display": "Enterobacter ludwigii"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "431385006",
+        "display": "Erwinia toletana"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "91042006",
+        "display": "Yersinia kristensenii"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "768157006",
+        "display": "Enterobacter xiangfangensis"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "115014007",
+        "display": "Pantoea ananatis"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "17031002",
+        "display": "Erwinia tracheiphila"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "28955009",
+        "display": "Serratia plymuthica"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "422105006",
+        "display": "Brenneria rubrifaciens"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "114451003",
+        "display": "Enterobacter cancerogenus"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "115020008",
+        "display": "Pantoea stewartii Subspecies stewartii"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "10021006",
+        "display": "Rahnella aquatilis"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "541051000124105",
+        "display": "Carbapenem resistant Providencia (organism)"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "33522002",
+        "display": "Serratia marcescens"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "431386007",
+        "display": "Erwinia aphidicola"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "718813007",
+        "display": "Pectobacterium aroidearum"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "115015008",
+        "display": "Pantoea agglomerans"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "445561006",
+        "display": "Cronobacter muytjensii"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "114456008",
+        "display": "Enterobacter kobei"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "708449009",
+        "display": "Erwinia oleae"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "716346000",
+        "display": "Pluralibacter gergoviae"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "71655003",
+        "display": "Gattung Moellerella"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "717167001",
+        "display": "Pantoea brenneri"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "79946002",
+        "display": "Erwinia mallotivora"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "69937007",
+        "display": "Gattung Cedecea"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "90530002",
+        "display": "Yersinia pseudotuberculosis"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "243303008",
+        "display": "Morganella morganii Subspecies sibonii"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "416156003",
+        "display": "Kluyvera georgiana"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "717974005",
+        "display": "Siccibacter turicensis"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "302568005",
+        "display": "Erwinia psidii"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "781056002",
+        "display": "Klebsiella quasipneumoniae Subspecies quasipneumoniae"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "416844002",
+        "display": "Buttiauxella brennerae"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "68227003",
+        "display": "Edwardsiella ictaluri"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "438912003",
+        "display": "Serratia marcescens sakuensis"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "89477001",
+        "display": "Yokenella regensburgei"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "431387003",
+        "display": "Pectobacterium rhapontici"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "816049003",
+        "display": "Carbapenem-resistente Serratia marcescens"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "717168006",
+        "display": "Pantoea conspicua"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "416229008",
+        "display": "Kosakonia cowanii"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "450416004",
+        "display": "Serratia ureilytica"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "75464008",
+        "display": "Budvicia aquatica"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "29511003",
+        "display": "Lelliottia nimipressuralis"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "8361000146103",
+        "display": "Shimwellia blattae"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "84221003",
+        "display": "Gattung Lelliottia amnigena"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "114444007",
+        "display": "Citrobacter rodentium"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "431977008",
+        "display": "Kluyvera intermedia"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "115013001",
+        "display": "Gattung Pantoea"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "1156339009",
+        "display": "Franconibacter pulveris"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "717652001",
+        "display": "Gattung Lelliottia"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "716344002",
+        "display": "Gattung Pluralibacter"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "421499000",
+        "display": "Pantoea cypripedii"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "416444007",
+        "display": "Buttiauxella warmboldiae"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "42025004",
+        "display": "Gattung Serratia"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "113611000146106",
+        "display": "Enterobacter bugandensis"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "50097002",
+        "display": "Erwinia amylovora"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "53013003",
+        "display": "Pseudescherichia vulneris"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "65186004",
+        "display": "Klebsiella pneumoniae Subspecies ozaenae"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "445560007",
+        "display": "Cronobacter malonaticus"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "721950003",
+        "display": "Enterobacter cloacae Subspecies cloacae"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "8301000146102",
+        "display": "Tatumella terrea"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "116135003",
+        "display": "Serratia proteamaculans"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "431272005",
+        "display": "Erwinia persicina"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "431100005",
+        "display": "Brenneria salicis"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "260408008",
+        "display": "Schwach positiv"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "114455007",
+        "display": "Pluralibacter pyrinus"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "112329006",
+        "display": "Serratia fonticola"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "114262000",
+        "display": "Citrobacter braakii"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "33115003",
+        "display": "Enterobacter asburiae"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "61161003",
+        "display": "Gattung Kluyvera"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "115024004",
+        "display": "Gattung Pragia"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "417581000",
+        "display": "Citrobacter murliniae"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "114461005",
+        "display": "Proteus inconstans"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "260415000",
+        "display": "Nicht nachgewiesen"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "38643006",
+        "display": "Plesiomonas shigelloides"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "10969007",
+        "display": "Buttiauxella agrestis"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "419388003",
+        "display": "Escherichia albertii"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "417520001",
+        "display": "Buttiauxella ferragutiae"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "416990006",
+        "display": "Citrobacter gillenii"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "243302003",
+        "display": "Morganella morganii Subspecies morganii"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "421786004",
+        "display": "Pectobacterium wasabiae"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "438911005",
+        "display": "Serratia marcescens marcescens"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "19196004",
+        "display": "Providencia rustigianii"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "718823003",
+        "display": "Serratia vespertilionis"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "10413007",
+        "display": "Serratia odorifera"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "83767006",
+        "display": "Cedecea neteri"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "28501001",
+        "display": "Obesumbacterium proteus"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "421625009",
+        "display": "Dickeya paradisiaca"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "14566004",
+        "display": "Gattung Edwardsiella"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "6031000146109",
+        "display": "Providencia vermicola"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "115019002",
+        "display": "Pantoea stewartii Subspecies indologenes"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "420741007",
+        "display": "Pectobacterium cacticida"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "445559002",
+        "display": "Cronobacter dublinensis"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "444664004",
+        "display": "Gattung Cronobacter"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "55744003",
+        "display": "Citrobacter amalonaticus"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "14385002",
+        "display": "Enterobacter cloacae"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "738504009",
+        "display": "Enterobacter mori"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "45834001",
+        "display": "Proteus vulgaris"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "450415000",
+        "display": "Serratia nematodiphila"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "417443008",
+        "display": "Klebsiella granulomatis"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "48569008",
+        "display": "Gattung Rahnella"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "723344008",
+        "display": "Gattung Siccibacter"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "75972000",
+        "display": "Gattung Citrobacter"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "541111000124108",
+        "display": "Carbapenem resistant Morganella morganii (organism)"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "72461005",
+        "display": "Escherichia fergusonii"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "431976004",
+        "display": "Klebsiella variicola"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "422013009",
+        "display": "Gattung Pectobacterium"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "30854004",
+        "display": "Cedecea davisae"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "422046003",
+        "display": "Pectobacterium carotovorum Subspecies odoriferum"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "420490008",
+        "display": "Brenneria nigrifluens"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "4668009",
+        "display": "Gattung Yersinia"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "260385009",
+        "display": "Negativ"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "420478006",
+        "display": "Pectobacterium carotovorum"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "64125009",
+        "display": "Yersinia ruckeri"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "446489003",
+        "display": "Yersinia massiliensis"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "114443001",
+        "display": "Citrobacter youngae"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "37107002",
+        "display": "Moellerella wisconsensis"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "87145000",
+        "display": "Yersinia rohdei"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "56813009",
+        "display": "Enterobacter cloacae Subspecies dissolvens"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "717170002",
+        "display": "Pantoea eucrina"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "62592009",
+        "display": "Klebsiella aerogenes"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "771468005",
+        "display": "Metakosakonia massiliensis"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "114454006",
+        "display": "Enterobacter hormaechei"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "42929008",
+        "display": "Gattung Plesiomonas"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "6265002",
+        "display": "Citrobacter freundii"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "115017000",
+        "display": "Pantoea dispersa"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "734201007",
+        "display": "Carbapenem-resistente-Enterobacter-cloacae-Komplex"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "8311000146100",
+        "display": "Tatumella punctata"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "8181000146108",
+        "display": "Kosakonia radicincitans"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "445639005",
+        "display": "Cronobacter turicensis"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "421225004",
+        "display": "Dickeya chrysanthemi"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "243301005",
+        "display": "Morganella morganii"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "40886007",
+        "display": "Klebsiella oxytoca"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "432736002",
+        "display": "Erwinia pyrifoliae"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "260373001",
+        "display": "Nachgewiesen"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "5681000146105",
+        "display": "Pantoea septica"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "718798008",
+        "display": "Hafnia psychrotolerans"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "416852004",
+        "display": "Buttiauxella gaviniae"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "3451006",
+        "display": "Gattung Buttiauxella"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "431273000",
+        "display": "Erwinia papayae"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "116136002",
+        "display": "Serratia proteamaculans Subspecies proteamaculans"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "112284001",
+        "display": "Gattung Providencia"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "114442006",
+        "display": "Citrobacter werkmanii"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "85159008",
+        "display": "Yersinia frederiksenii"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "5711000087108",
+        "display": "Cronobacter dublinensis Subspecies lausannensis"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "1546007",
+        "display": "Tatumella ptyseos"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "103434007",
+        "display": "Yersinia bercovieri"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "1255965005",
+        "display": "Empfindlich bei erhöhter Exposition"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "43590002",
+        "display": "Gattung Leclercia"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "421190009",
+        "display": "Pectobacterium atrosepticum"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "416096003",
+        "display": "Raoultella terrigena"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "715307006",
+        "display": "Carbapenem-resistente Escherichia coli"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "91246002",
+        "display": "Yersinia aldovae"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "32547006",
+        "display": "Kluyvera cryocrescens"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "114261007",
+        "display": "Buttiauxella noackiae"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "417937002",
+        "display": "Ordnung Enterobacteriales"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "47300009",
+        "display": "Providencia heimbachae"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "8321000146105",
+        "display": "Tatumella citrea"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "55825002",
+        "display": "Serratia rubidaea"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "719792001",
+        "display": "Carbapenem-resistente Klebsiella oxytoca"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "714007005",
+        "display": "Carbapenem-resistente Enterobacter cloacae"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "73457008",
+        "display": "Proteus mirabilis"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "114264004",
+        "display": "Citrobacter koseri"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "2345009",
+        "display": "Cedecea lapagei"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "765101001",
+        "display": "Pantoea intestinalis"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "18400002",
+        "display": "Klebsiella pneumoniae Subspecies pneumoniae"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "14943005",
+        "display": "Gattung Yokenella"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "432735003",
+        "display": "Erwinia billingiae"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "802004",
+        "display": "Serratia ficaria"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "45298005",
+        "display": "Proteus penneri"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "14961000146107",
+        "display": "Escherichia marmotae"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "50732004",
+        "display": "Gattung Obesumbacterium"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "14196002",
+        "display": "Providencia rettgeri"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "450391006",
+        "display": "Yersinia aleksiciae"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "17688001",
+        "display": "Klebsiella pneumoniae Subspecies rhinoscleromatis"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "86145008",
+        "display": "Cosenzaea myxofaciens"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "420926001",
+        "display": "Gattung Dickeya"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "23787004",
+        "display": "Serratia liquefaciens"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "58493008",
+        "display": "Kluyvera ascorbata"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "416264004",
+        "display": "Raoultella planticola"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "438199009",
+        "display": "Serratia quinivorans"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "131196009",
+        "display": "Empfindlich"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "264841006",
+        "display": "Intermediär empfindlich"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "115004003",
+        "display": "Serratia proteamaculans Subspecies quinovora"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "55851000",
+        "display": "Gattung Budvicia"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "57459006",
+        "display": "Leclercia adecarboxylata"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "38865008",
+        "display": "Gattung Erwinia"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "10334001",
+        "display": "Yersinia intermedia"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "420872003",
+        "display": "Lonsdalea quercina"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "19027003",
+        "display": "Ewingella americana"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "20523001",
+        "display": "Gattung Hafnia"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "781054004",
+        "display": "Klebsiella quasipneumoniae"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "420518002",
+        "display": "Pectobacterium carotovorum Subspecies carotovorum"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "4280005",
+        "display": "Edwardsiella hoshinae"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "709309007",
+        "display": "Mixta gaviniae"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "734200008",
+        "display": "Carbapenem-resistente Klebsiella aerogenes"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "433047006",
+        "display": "Klebsiella singaporensis"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "416832000",
+        "display": "Raoultella ornithinolytica"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "420948007",
+        "display": "Pectobacterium betavasculorum"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "717644004",
+        "display": "Hafnia paralvei"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "82334004",
+        "display": "Uneindeutig"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "75032006",
+        "display": "Gattung Klebsiella"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "10828004",
+        "display": "Positiv"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "74672006",
+        "display": "Edwardsiella tarda"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "4411000146103",
+        "display": "Erwinia tasmaniensis"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "781055003",
+        "display": "Klebsiella quasipneumoniae Subspecies similipneumoniae"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "114265003",
+        "display": "Citrobacter sedlakii"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "65255000",
+        "display": "Yersinia enterocolitica"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "446870005",
+        "display": "Carbapenem-resistente Klebsiella pneumoniae"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "131300002",
+        "display": "Pantoea stewartii"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "1445008",
+        "display": "Providencia stuartii"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "115005002",
+        "display": "Serratia grimesii"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "76694001",
+        "display": "Hafnia alvei"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "417468005",
+        "display": "Gattung Raoultella"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "50517009",
+        "display": "Gattung Proteus"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "42425007",
+        "display": "Zweideutig"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "450392004",
+        "display": "Yersinia similis"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "30714006",
+        "display": "Resistent"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "112283007",
+        "display": "Escherichia coli"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "445562004",
+        "display": "Cronobacter sakazakii"
+      }
+    ]
+  }
+}

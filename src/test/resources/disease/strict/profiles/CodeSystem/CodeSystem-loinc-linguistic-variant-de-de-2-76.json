@@ -6,7 +6,7 @@
   },
   "language": "de-DE",
   "url": "https://terminologieserver.bfarm.de/fhir/CodeSystem/loinc-linguistic-variant-de-de",
-  "version": "2.76",
+  "version": "2.81",
   "name": "LoincLinguisticVariantDeDe",
   "title": "LOINC Linguistic Variant de-DE",
   "status": "active",
@@ -21,7 +21,7 @@
   "description": "LOINC is a freely available international standard for tests, measurements, and observations",
   "copyright": "This material contains content from LOINC (http://loinc.org). LOINC is copyright ©1995-2023, Regenstrief Institute, Inc. and the Logical Observation Identifiers Names and Codes (LOINC) Committee and is available at no cost under the license at http://loinc.org/license. LOINC® is a registered United States trademark of Regenstrief Institute, Inc.",
   "content": "supplement",
-  "supplements": "http://loinc.org|2.76",
+  "supplements": "http://loinc.org|2.81",
   "concept": [ {
     "code": "14394-1",
     "designation": [ {

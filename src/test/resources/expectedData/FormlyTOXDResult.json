@@ -27,7 +27,8 @@
                     "designations": [
                       {
                         "language": "de-DE",
-                        "value": "Patient/Patientin nicht gefragt"
+                        "value": "Patient/Patientin nicht gefragt",
+                        "use": {}
                       }
                     ],
                     "system": "http://snomed.info/sct",
@@ -39,7 +40,8 @@
                     "designations": [
                       {
                         "language": "de-DE",
-                        "value": "Ja"
+                        "value": "Ja",
+                        "use": {}
                       }
                     ],
                     "system": "http://snomed.info/sct",
@@ -51,7 +53,8 @@
                     "designations": [
                       {
                         "language": "de-DE",
-                        "value": "Nein"
+                        "value": "Nein",
+                        "use": {}
                       }
                     ],
                     "system": "http://snomed.info/sct",
@@ -102,7 +105,8 @@
                     "designations": [
                       {
                         "language": "de-DE",
-                        "value": "Anhaltende Gelbsucht (Ikterus) bei Neugeborenem"
+                        "value": "Anhaltende Gelbsucht (Ikterus) bei Neugeborenem",
+                        "use": {}
                       }
                     ],
                     "system": "http://snomed.info/sct",
@@ -114,7 +118,8 @@
                     "designations": [
                       {
                         "language": "de-DE",
-                        "value": "Blutarmut (Anämie)"
+                        "value": "Blutarmut (Anämie)",
+                        "use": {}
                       }
                     ],
                     "system": "http://snomed.info/sct",
@@ -126,7 +131,11 @@
                     "designations": [
                       {
                         "language": "de-DE",
-                        "value": "Chorioretinale Entzündung"
+                        "value": "Chorioretinale Entzündung",
+                        "use": {
+                          "system": "http://snomed.info/sct",
+                          "code": "900000000000013009"
+                        }
                       }
                     ],
                     "system": "http://snomed.info/sct",
@@ -145,7 +154,8 @@
                     "designations": [
                       {
                         "language": "de-DE",
-                        "value": "Hydrocephalus"
+                        "value": "Hydrocephalus",
+                        "use": {}
                       }
                     ],
                     "system": "http://snomed.info/sct",
@@ -164,7 +174,8 @@
                     "designations": [
                       {
                         "language": "de-DE",
-                        "value": "Leber- und Milzvergrößerung (Hepatosplenomegalie)"
+                        "value": "Leber- und Milzvergrößerung (Hepatosplenomegalie)",
+                        "use": {}
                       }
                     ],
                     "system": "http://snomed.info/sct",
@@ -176,7 +187,11 @@
                     "designations": [
                       {
                         "language": "de-DE",
-                        "value": "Mikrozephalus"
+                        "value": "Mikrozephalus",
+                        "use": {
+                          "system": "http://snomed.info/sct",
+                          "code": "900000000000013009"
+                        }
                       }
                     ],
                     "system": "http://snomed.info/sct",
@@ -338,7 +353,8 @@
                     "designations": [
                       {
                         "language": "de-DE",
-                        "value": "Patient/Patientin nicht gefragt"
+                        "value": "Patient/Patientin nicht gefragt",
+                        "use": {}
                       }
                     ],
                     "system": "http://snomed.info/sct",
@@ -357,7 +373,8 @@
                     "designations": [
                       {
                         "language": "de-DE",
-                        "value": "Kontakt mit kontaminierter Erde"
+                        "value": "Kontakt mit kontaminierter Erde",
+                        "use": {}
                       }
                     ],
                     "system": "http://snomed.info/sct",
@@ -441,7 +458,8 @@
                         "designations": [
                           {
                             "language": "de-DE",
-                            "value": "Patient/Patientin nicht gefragt"
+                            "value": "Patient/Patientin nicht gefragt",
+                            "use": {}
                           }
                         ],
                         "system": "http://snomed.info/sct",
@@ -2010,7 +2028,8 @@
                     "designations": [
                       {
                         "language": "de-DE",
-                        "value": "Patient/Patientin nicht gefragt"
+                        "value": "Patient/Patientin nicht gefragt",
+                        "use": {}
                       }
                     ],
                     "system": "http://snomed.info/sct",

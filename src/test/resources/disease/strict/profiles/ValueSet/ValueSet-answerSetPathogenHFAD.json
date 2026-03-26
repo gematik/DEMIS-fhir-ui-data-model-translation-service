@@ -2,12 +2,12 @@
   "resourceType": "ValueSet",
   "id": "answerSetPathogenHFAD",
   "url": "https://demis.rki.de/fhir/ValueSet/answerSetPathogenHFAD",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "name": "AnswerSetPathogenHFAD",
   "title": "Antwortmöglichkeiten zur Angabe des Erregers bei dem Meldetatbestand \"Hämorrhagisches Fieber\"",
   "status": "active",
   "experimental": false,
-  "date": "2025-09-03",
+  "date": "2026-01-09",
   "publisher": "Robert Koch-Institut",
   "contact": [
     {
@@ -36,7 +36,7 @@
     "include": [
       {
         "system": "http://snomed.info/sct",
-        "version": "http://snomed.info/sct/11000274103/version/20241115",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
         "concept": [
           {
             "extension": [
@@ -46,11 +46,15 @@
               }
             ],
             "code": "1288039000",
-            "display": "Bandavirus dabieense (organism)",
+            "display": "Bandavirus dabieense",
             "designation": [
               {
                 "language": "de-DE",
-                "value": "Schweres-Fieber-mit-Thrombozytopeniesyndrom-Virus (severe fever with thrombocytopenia syndrome virus, Huaiyangshanvirus, SFTSV)"
+                "use": {
+                  "system": "http://snomed.info/sct",
+                  "code": "900000000000013009"
+                },
+                "value": "Schweres-Fieber-mit-Thrombozytopeniesyndrom-Virus"
               }
             ]
           },
@@ -142,17 +146,7 @@
               }
             ],
             "code": "32137001",
-            "display": "Kyasanur-Wald-Fieber-Virus",
-            "designation": [
-              {
-                "language": "de-DE",
-                "use": {
-                  "system": "http://snomed.info/sct",
-                  "code": "900000000000013009"
-                },
-                "value": "Kyasanur-Wald-Krankheit-Virus"
-              }
-            ]
+            "display": "Kyasanur-Wald-Fieber-Virus"
           },
           {
             "extension": [
@@ -228,7 +222,7 @@
             "extension": [
               {
                 "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
-                "valueInteger": 1
+                "valueInteger": 5
               }
             ],
             "code": "74964007",
@@ -278,23 +272,17 @@
             "extension": [
               {
                 "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
-                "valueInteger": 999
+                "valueInteger": 1
               }
             ],
             "code": "1631000175102",
-            "display": "Patient not asked (contextual qualifier) (qualifier value)",
-            "designation": [
-              {
-                "language": "de-DE",
-                "value": "Patient/Patientin nicht gefragt"
-              }
-            ]
+            "display": "Patient/Patientin nicht gefragt"
           },
           {
             "extension": [
               {
                 "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
-                "valueInteger": 1000
+                "valueInteger": 2
               }
             ],
             "code": "261665006",
@@ -305,101 +293,101 @@
     ]
   },
   "expansion": {
-    "timestamp": "2025-09-03T00:00:00+02:00",
+    "timestamp": "2026-01-09T00:00:00+01:00",
     "contains": [
       {
         "system": "http://snomed.info/sct",
-        "version": "http://snomed.info/sct/11000274103/version/20241115",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
         "code": "32137001",
         "display": "Kyasanur-Wald-Fieber-Virus"
       },
       {
         "system": "http://snomed.info/sct",
-        "version": "http://snomed.info/sct/11000274103/version/20241115",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
         "code": "51439004",
         "display": "Omsk-Hämorrhagisches-Fieber-Virus"
       },
       {
         "system": "http://snomed.info/sct",
-        "version": "http://snomed.info/sct/11000274103/version/20241115",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
         "code": "450621007",
         "display": "CHAV - Chapare-Virus"
       },
       {
         "system": "http://snomed.info/sct",
-        "version": "http://snomed.info/sct/11000274103/version/20241115",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
         "code": "261665006",
         "display": "Unbekannt"
       },
       {
         "system": "http://snomed.info/sct",
-        "version": "http://snomed.info/sct/11000274103/version/20241115",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
         "code": "764949001",
         "display": "Alkhurma-Virus"
       },
       {
         "system": "http://snomed.info/sct",
-        "version": "http://snomed.info/sct/11000274103/version/20241115",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
         "code": "71489006",
         "display": "Mammarenavirus machupoense"
       },
       {
         "system": "http://snomed.info/sct",
-        "version": "http://snomed.info/sct/11000274103/version/20241115",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
         "code": "1288039000",
-        "display": "Bandavirus dabieense (organism)"
+        "display": "Bandavirus dabieense"
       },
       {
         "system": "http://snomed.info/sct",
-        "version": "http://snomed.info/sct/11000274103/version/20241115",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
         "code": "450622000",
         "display": "Lujo-Virus"
       },
       {
         "system": "http://snomed.info/sct",
-        "version": "http://snomed.info/sct/11000274103/version/20241115",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
         "code": "74964007",
         "display": "Andere"
       },
       {
         "system": "http://snomed.info/sct",
-        "version": "http://snomed.info/sct/11000274103/version/20241115",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
         "code": "1631000175102",
-        "display": "Patient not asked (contextual qualifier) (qualifier value)"
+        "display": "Patient/Patientin nicht gefragt"
       },
       {
         "system": "http://snomed.info/sct",
-        "version": "http://snomed.info/sct/11000274103/version/20241115",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
         "code": "311506003",
         "display": "Guanarito-Virus"
       },
       {
         "system": "http://snomed.info/sct",
-        "version": "http://snomed.info/sct/11000274103/version/20241115",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
         "code": "79875007",
         "display": "CCHFV - Krim-Kongo-Hämorrhagisches-Fieber-Virus"
       },
       {
         "system": "http://snomed.info/sct",
-        "version": "http://snomed.info/sct/11000274103/version/20241115",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
         "code": "26352009",
         "display": "Mammarenavirus juninense"
       },
       {
         "system": "http://snomed.info/sct",
-        "version": "http://snomed.info/sct/11000274103/version/20241115",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
         "code": "311508002",
         "display": "Sabia-Virus"
       },
       {
         "system": "http://snomed.info/sct",
-        "version": "http://snomed.info/sct/11000274103/version/20241115",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
         "code": "28335002",
         "display": "Rift-Valley-Fieber-Virus"
       },
       {
         "system": "http://snomed.info/sct",
-        "version": "http://snomed.info/sct/11000274103/version/20241115",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
         "code": "82518003",
         "display": "Lymphozytische-Choriomeningitis-Virus"
       }

@@ -2,12 +2,35 @@
   "resourceType": "StructureDefinition",
   "id": "NotificationLaboratoryAnonymous",
   "url": "https://demis.rki.de/fhir/StructureDefinition/NotificationLaboratoryAnonymous",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "name": "NotificationLaboratoryAnonymous",
   "title": "Anonyme Erregernachweismeldung nach § 7 Abs. 3 IfSG",
   "status": "active",
-  "date": "2025-08-12",
+  "date": "2026-01-13",
+  "publisher": "Robert Koch-Institut",
+  "contact": [
+    {
+      "telecom": [
+        {
+          "system": "email",
+          "value": "demis-support@rki.de"
+        }
+      ]
+    }
+  ],
   "description": "Die anonyme Erregernachweismeldung definiert die Meldeinhalte, die von Laboren übermittelt werden müssen. Erregerspezifische Befunddaten werden über Subprofile des nichtnamentlichen Laborbericht-Profils definiert. In der anonymen Erregernachweismeldung nach § 7 Abs. 3 IfSG kann ein erregerspezifischer, nichtnamentlicher Laborbericht referenziert werden.",
+  "jurisdiction": [
+    {
+      "coding": [
+        {
+          "system": "urn:iso:std:iso:3166",
+          "version": "ALPHA-2",
+          "code": "DE"
+        }
+      ]
+    }
+  ],
+  "copyright": "Copyright (C) 2021-2025 Robert Koch-Institut",
   "fhirVersion": "4.0.1",
   "mapping": [
     {

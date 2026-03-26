@@ -46,7 +46,6 @@ import org.springframework.boot.test.autoconfigure.actuate.observability.AutoCon
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.ActiveProfiles;
-import org.springframework.test.context.TestPropertySource;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.MvcResult;
 
@@ -55,7 +54,6 @@ import org.springframework.test.web.servlet.MvcResult;
 @SpringBootTest
 @AutoConfigureObservability
 @ActiveProfiles("test-disease-strict")
-@TestPropertySource(properties = {"feature.flag.addDesignationUse=false"})
 class DiseaseDataLoaderCtrStrictIT {
   private final ObjectMapper mapper = new ObjectMapper();
 

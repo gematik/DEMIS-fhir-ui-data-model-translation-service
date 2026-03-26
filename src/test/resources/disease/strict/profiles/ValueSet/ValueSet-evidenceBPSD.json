@@ -2,12 +2,12 @@
   "resourceType": "ValueSet",
   "id": "evidenceBPSD",
   "url": "https://demis.rki.de/fhir/ValueSet/evidenceBPSD",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "name": "EvidenceBPSD",
   "title": "Symptome und Manifestationen in Bezug auf den Meldetatbestand \"Keuchhusten\"",
   "status": "active",
   "experimental": false,
-  "date": "2025-09-03",
+  "date": "2026-01-09",
   "publisher": "Robert Koch-Institut",
   "contact": [
     {
@@ -36,7 +36,7 @@
     "include": [
       {
         "system": "http://snomed.info/sct",
-        "version": "http://snomed.info/sct/11000274103/version/20241115",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
         "concept": [
           {
             "extension": [
@@ -76,7 +76,11 @@
             "designation": [
               {
                 "language": "de-DE",
-                "value": "anfallsweise auftretender Husten"
+                "use": {
+                  "system": "http://snomed.info/sct",
+                  "code": "900000000000013009"
+                },
+                "value": "Anfallsweise auftretender Husten"
               }
             ]
           },
@@ -98,7 +102,7 @@
               }
             ],
             "code": "58596002",
-            "display": "Inspiratory stridor (finding)",
+            "display": "Inspiratorischer Stridor",
             "designation": [
               {
                 "language": "de-DE",
@@ -121,41 +125,41 @@
     ]
   },
   "expansion": {
-    "timestamp": "2025-09-03T00:00:00+02:00",
+    "timestamp": "2026-01-09T00:00:00+01:00",
     "contains": [
       {
         "system": "http://snomed.info/sct",
-        "version": "http://snomed.info/sct/11000274103/version/20241115",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
         "code": "724229002",
         "display": "Apnoe, infantile"
       },
       {
         "system": "http://snomed.info/sct",
-        "version": "http://snomed.info/sct/11000274103/version/20241115",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
         "code": "424580008",
         "display": "Erbrechen nach Hustenanfall"
       },
       {
         "system": "http://snomed.info/sct",
-        "version": "http://snomed.info/sct/11000274103/version/20241115",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
         "code": "49727002",
         "display": "Husten"
       },
       {
         "system": "http://snomed.info/sct",
-        "version": "http://snomed.info/sct/11000274103/version/20241115",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
         "code": "43025008",
         "display": "Paroxysmaler Husten"
       },
       {
         "system": "http://snomed.info/sct",
-        "version": "http://snomed.info/sct/11000274103/version/20241115",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
         "code": "58596002",
-        "display": "Inspiratory stridor (finding)"
+        "display": "Inspiratorischer Stridor"
       },
       {
         "system": "http://snomed.info/sct",
-        "version": "http://snomed.info/sct/11000274103/version/20241115",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
         "code": "284523002",
         "display": "Persistierender Husten"
       }

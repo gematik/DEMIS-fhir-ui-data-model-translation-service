@@ -35,7 +35,7 @@ import static org.mockito.Mockito.when;
 import ca.uhn.fhir.context.FhirContext;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import de.gematik.demis.fhir_ui_data_model_translation_service.FeatureFlags;
-import de.gematik.demis.fhir_ui_data_model_translation_service.disease.DiseaseNotificationCategoriesSrvRegression;
+import de.gematik.demis.fhir_ui_data_model_translation_service.disease.DiseaseNotificationCategoriesSrv;
 import de.gematik.demis.fhir_ui_data_model_translation_service.disease.Questionnaires;
 import de.gematik.demis.fhir_ui_data_model_translation_service.disease.formly.model.FieldGroup;
 import de.gematik.demis.fhir_ui_data_model_translation_service.disease.formly.model.FormlyFieldConfigs;
@@ -54,7 +54,7 @@ import org.mockito.junit.jupiter.MockitoExtension;
 class DiseaseDataPreparationSrvTest {
 
   private final FhirContext fhirContext = FhirContext.forR4Cached();
-  @Mock private DiseaseNotificationCategoriesSrvRegression categoriesSrvRegressionMock;
+  @Mock private DiseaseNotificationCategoriesSrv categoriesSrvMock;
   @Mock private Questionnaires questionnairesMock;
   @Mock private ChoiceProcessor choiceProcessorMock;
   @Mock private DateProcessor dateProcessorMock;
@@ -69,7 +69,7 @@ class DiseaseDataPreparationSrvTest {
 
   @Test
   void shouldCreateQuestionnairesByCallingSupportingProcessors() throws JsonProcessingException {
-    when(categoriesSrvRegressionMock.getCategory(anyString()))
+    when(categoriesSrvMock.getCategory(anyString()))
         .thenReturn(CodeDisplay.builder().code("cvdd").display("Covid").build());
     when(choiceProcessorMock.createFieldGroup(any(), any(), anyString()))
         .thenReturn(new FieldGroup[0]);
@@ -84,8 +84,7 @@ class DiseaseDataPreparationSrvTest {
 
     diseaseDataPreparationSrv =
         new DiseaseDataPreparationSrv(
-            null,
-            categoriesSrvRegressionMock,
+            categoriesSrvMock,
             questionnairesMock,
             fhirContext,
             choiceProcessorMock,

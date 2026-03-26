@@ -2,12 +2,12 @@
   "resourceType": "ValueSet",
   "id": "answerSetInfectionLocalizationCHTD",
   "url": "https://demis.rki.de/fhir/ValueSet/answerSetInfectionLocalizationCHTD",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "name": "AnswerSetInfectionLocalizationCHTD",
   "title": "Angabe der Lokalisation der Infektion.",
   "status": "active",
   "experimental": false,
-  "date": "2025-08-12",
+  "date": "2026-01-09",
   "publisher": "Robert Koch-Institut",
   "contact": [
     {
@@ -36,7 +36,7 @@
     "include": [
       {
         "system": "http://snomed.info/sct",
-        "version": "http://snomed.info/sct/11000274103/version/20241115",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
         "concept": [
           {
             "extension": [
@@ -46,7 +46,7 @@
               }
             ],
             "code": "21514008",
-            "display": "Structure of genitourinary system (body structure)",
+            "display": "Urogenitale Struktur",
             "designation": [
               {
                 "language": "de-DE",
@@ -58,7 +58,7 @@
             "extension": [
               {
                 "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
-                "valueInteger": 1000
+                "valueInteger": 2
               }
             ],
             "code": "261665006",
@@ -71,8 +71,24 @@
                 "valueInteger": 12
               }
             ],
+            "code": "26893007",
+            "display": "Inguinal region structure (body structure)",
+            "designation": [
+              {
+                "language": "de-DE",
+                "value": "Leistenregion"
+              }
+            ]
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 13
+              }
+            ],
             "code": "281088000",
-            "display": "Structure of anus and/or rectum (body structure)",
+            "display": "Anorektale Struktur",
             "designation": [
               {
                 "language": "de-DE",
@@ -88,7 +104,7 @@
               }
             ],
             "code": "31389004",
-            "display": "Oropharyngeal structure (body structure)",
+            "display": "Oropharynx",
             "designation": [
               {
                 "language": "de-DE",
@@ -100,7 +116,7 @@
             "extension": [
               {
                 "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
-                "valueInteger": 1
+                "valueInteger": 5
               }
             ],
             "code": "74964007",
@@ -111,35 +127,41 @@
     ]
   },
   "expansion": {
-    "timestamp": "2025-08-12T00:00:00+02:00",
+    "timestamp": "2026-01-09T00:00:00+01:00",
     "contains": [
       {
         "system": "http://snomed.info/sct",
-        "version": "http://snomed.info/sct/11000274103/version/20241115",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
         "code": "281088000",
-        "display": "Structure of anus and/or rectum (body structure)"
+        "display": "Anorektale Struktur"
       },
       {
         "system": "http://snomed.info/sct",
-        "version": "http://snomed.info/sct/11000274103/version/20241115",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
+        "code": "26893007",
+        "display": "Inguinal region structure (body structure)"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
         "code": "261665006",
         "display": "Unbekannt"
       },
       {
         "system": "http://snomed.info/sct",
-        "version": "http://snomed.info/sct/11000274103/version/20241115",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
         "code": "31389004",
-        "display": "Oropharyngeal structure (body structure)"
+        "display": "Oropharynx"
       },
       {
         "system": "http://snomed.info/sct",
-        "version": "http://snomed.info/sct/11000274103/version/20241115",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
         "code": "21514008",
-        "display": "Structure of genitourinary system (body structure)"
+        "display": "Urogenitale Struktur"
       },
       {
         "system": "http://snomed.info/sct",
-        "version": "http://snomed.info/sct/11000274103/version/20241115",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
         "code": "74964007",
         "display": "Andere"
       }

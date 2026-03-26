@@ -2,12 +2,12 @@
   "resourceType": "ValueSet",
   "id": "answerSetCDCCHIVD",
   "url": "https://demis.rki.de/fhir/ValueSet/answerSetCDCCHIVD",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "name": "AnswerSetCDCCHIVD",
   "title": "Indikatorerkrankungen, definierend für HIV-Erkrankungen der Kategorie C.",
   "status": "active",
   "experimental": false,
-  "date": "2025-08-12",
+  "date": "2026-01-09",
   "publisher": "Robert Koch-Institut",
   "contact": [
     {
@@ -36,7 +36,7 @@
     "include": [
       {
         "system": "http://snomed.info/sct",
-        "version": "http://snomed.info/sct/11000274103/version/20241115",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
         "concept": [
           {
             "extension": [
@@ -46,7 +46,7 @@
               }
             ],
             "code": "1260096003",
-            "display": "Wasting syndrome due to acquired immunodeficiency syndrome (disorder)"
+            "display": "Wasting-Syndrom durch AIDS"
           },
           {
             "extension": [
@@ -66,7 +66,7 @@
               }
             ],
             "code": "192701001",
-            "display": "Toxoplasma encephalitis (disorder)"
+            "display": "Toxoplasma-Enzephalitis"
           },
           {
             "extension": [
@@ -86,7 +86,7 @@
               }
             ],
             "code": "415125002",
-            "display": "Pneumocystosis jirovecii pneumonia (disorder)"
+            "display": "Pneumocystis-jirovecii-Pneumonie"
           },
           {
             "extension": [
@@ -96,7 +96,7 @@
               }
             ],
             "code": "420524008",
-            "display": "Kaposi's sarcoma with acquired immunodeficiency syndrome (disorder)"
+            "display": "Kaposi-Sarkom bei AIDS"
           },
           {
             "extension": [
@@ -106,7 +106,7 @@
               }
             ],
             "code": "420554003",
-            "display": "Progressive multifocal leukoencephalopathy with acquired immunodeficiency syndrome (disorder)"
+            "display": "Progressive multifokale Leukoenzephalopathie bei AIDS"
           },
           {
             "extension": [
@@ -126,7 +126,7 @@
               }
             ],
             "code": "421047005",
-            "display": "Candidiasis of lung with acquired immunodeficiency syndrome (disorder)"
+            "display": "Candidiasis der Lunge bei AIDS"
           },
           {
             "extension": [
@@ -146,7 +146,7 @@
               }
             ],
             "code": "421827003",
-            "display": "Encephalopathy with acquired immunodeficiency syndrome (disorder)"
+            "display": "Enzephalopathie bei erworbenem Immundefektsyndrom"
           },
           {
             "extension": [
@@ -186,7 +186,7 @@
               }
             ],
             "code": "713297001",
-            "display": "Candidiasis of esophagus co-occurrent with human immunodeficiency virus infection (disorder)"
+            "display": "Kandidose der Speiseröhre gleichzeitig auftretend mit Infektion durch das humane Immundefizienz-Virus"
           },
           {
             "extension": [
@@ -226,7 +226,7 @@
               }
             ],
             "code": "713546005",
-            "display": "Isosporiasis co-occurrent with human immunodeficiency virus infection (disorder)"
+            "display": "Isosporiasis bei HIV-Infektion"
           },
           {
             "extension": [
@@ -256,7 +256,7 @@
               }
             ],
             "code": "713845004",
-            "display": "Infection caused by Cryptosporidium co-occurrent with human immunodeficiency virus infection (disorder)"
+            "display": "Infektion durch Cryptosporidium bei gleichzeitiger HIV-Infektion"
           },
           {
             "extension": [
@@ -276,7 +276,7 @@
               }
             ],
             "code": "713967004",
-            "display": "Disseminated atypical infection caused by Mycobacterium co-occurrent with human immunodeficiency virus infection (disorder)"
+            "display": "Disseminierte atypische Infektion durch Mycobacterium gleichzeitig auftretend mit HIV-Infektion"
           },
           {
             "extension": [
@@ -286,7 +286,7 @@
               }
             ],
             "code": "714083007",
-            "display": "Recurrent salmonella sepsis co-occurrent with human immunodeficiency virus infection (disorder)"
+            "display": "Rezidivierende Salmonellensepsis bei gleichzeitiger HIV-Infektion"
           },
           {
             "extension": [
@@ -296,7 +296,7 @@
               }
             ],
             "code": "719522009",
-            "display": "Infection of upper respiratory tract caused by Candida co-occurrent with human immunodeficiency virus infection (disorder)"
+            "display": "Infektion der oberen Atemwege durch Candida bei gleichzeitiger Infektion durch humanes Immundefizienz-Virus"
           },
           {
             "extension": [
@@ -316,182 +316,182 @@
               }
             ],
             "code": "733835007",
-            "display": "Extrapulmonary tuberculosis co-occurrent with human immunodeficiency virus infection (disorder)"
+            "display": "Extrapulmonale Tuberkulose gleichzeitig auftretend mit HIV-Infektion"
           }
         ]
       }
     ]
   },
   "expansion": {
-    "timestamp": "2025-08-12T00:00:00+02:00",
+    "timestamp": "2026-01-09T00:00:00+01:00",
     "contains": [
       {
         "system": "http://snomed.info/sct",
-        "version": "http://snomed.info/sct/11000274103/version/20241115",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
         "code": "713297001",
-        "display": "Candidiasis of esophagus co-occurrent with human immunodeficiency virus infection (disorder)"
+        "display": "Kandidose der Speiseröhre gleichzeitig auftretend mit Infektion durch das humane Immundefizienz-Virus"
       },
       {
         "system": "http://snomed.info/sct",
-        "version": "http://snomed.info/sct/11000274103/version/20241115",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
         "code": "713897006",
         "display": "Burkitt lymphoma co-occurrent with human immunodeficiency virus infection (disorder)"
       },
       {
         "system": "http://snomed.info/sct",
-        "version": "http://snomed.info/sct/11000274103/version/20241115",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
         "code": "154283005",
         "display": "Lungentuberkulose"
       },
       {
         "system": "http://snomed.info/sct",
-        "version": "http://snomed.info/sct/11000274103/version/20241115",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
         "code": "415125002",
-        "display": "Pneumocystosis jirovecii pneumonia (disorder)"
+        "display": "Pneumocystis-jirovecii-Pneumonie"
       },
       {
         "system": "http://snomed.info/sct",
-        "version": "http://snomed.info/sct/11000274103/version/20241115",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
         "code": "713446007",
         "display": "Chronic infection caused by herpes simplex virus co-occurrent with human immunodeficiency virus infection (disorder)"
       },
       {
         "system": "http://snomed.info/sct",
-        "version": "http://snomed.info/sct/11000274103/version/20241115",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
         "code": "733834006",
         "display": "Invasive carcinoma of uterine cervix co-occurrent with human immunodeficiency virus infection (disorder)"
       },
       {
         "system": "http://snomed.info/sct",
-        "version": "http://snomed.info/sct/11000274103/version/20241115",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
         "code": "420554003",
-        "display": "Progressive multifocal leukoencephalopathy with acquired immunodeficiency syndrome (disorder)"
+        "display": "Progressive multifokale Leukoenzephalopathie bei AIDS"
       },
       {
         "system": "http://snomed.info/sct",
-        "version": "http://snomed.info/sct/11000274103/version/20241115",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
         "code": "713967004",
-        "display": "Disseminated atypical infection caused by Mycobacterium co-occurrent with human immunodeficiency virus infection (disorder)"
+        "display": "Disseminierte atypische Infektion durch Mycobacterium gleichzeitig auftretend mit HIV-Infektion"
       },
       {
         "system": "http://snomed.info/sct",
-        "version": "http://snomed.info/sct/11000274103/version/20241115",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
         "code": "22455005",
         "display": "Zytomegalie-Retinitis"
       },
       {
         "system": "http://snomed.info/sct",
-        "version": "http://snomed.info/sct/11000274103/version/20241115",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
         "code": "713722001",
         "display": "Infection caused by Cytomegalovirus co-occurrent with human immunodeficiency virus infection (disorder)"
       },
       {
         "system": "http://snomed.info/sct",
-        "version": "http://snomed.info/sct/11000274103/version/20241115",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
         "code": "421403008",
         "display": "Cryptococcosis with acquired immunodeficiency syndrome (disorder)"
       },
       {
         "system": "http://snomed.info/sct",
-        "version": "http://snomed.info/sct/11000274103/version/20241115",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
         "code": "192701001",
-        "display": "Toxoplasma encephalitis (disorder)"
+        "display": "Toxoplasma-Enzephalitis"
       },
       {
         "system": "http://snomed.info/sct",
-        "version": "http://snomed.info/sct/11000274103/version/20241115",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
         "code": "428875002",
         "display": "Rezidivierende bakterielle Infektion"
       },
       {
         "system": "http://snomed.info/sct",
-        "version": "http://snomed.info/sct/11000274103/version/20241115",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
         "code": "713546005",
-        "display": "Isosporiasis co-occurrent with human immunodeficiency virus infection (disorder)"
+        "display": "Isosporiasis bei HIV-Infektion"
       },
       {
         "system": "http://snomed.info/sct",
-        "version": "http://snomed.info/sct/11000274103/version/20241115",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
         "code": "714083007",
-        "display": "Recurrent salmonella sepsis co-occurrent with human immunodeficiency virus infection (disorder)"
+        "display": "Rezidivierende Salmonellensepsis bei gleichzeitiger HIV-Infektion"
       },
       {
         "system": "http://snomed.info/sct",
-        "version": "http://snomed.info/sct/11000274103/version/20241115",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
         "code": "713718006",
         "display": "Diffuse non-Hodgkin immunoblastic lymphoma co-occurrent with human immunodeficiency virus infection (disorder)"
       },
       {
         "system": "http://snomed.info/sct",
-        "version": "http://snomed.info/sct/11000274103/version/20241115",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
         "code": "1260096003",
-        "display": "Wasting syndrome due to acquired immunodeficiency syndrome (disorder)"
+        "display": "Wasting-Syndrom durch AIDS"
       },
       {
         "system": "http://snomed.info/sct",
-        "version": "http://snomed.info/sct/11000274103/version/20241115",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
         "code": "719522009",
-        "display": "Infection of upper respiratory tract caused by Candida co-occurrent with human immunodeficiency virus infection (disorder)"
+        "display": "Infektion der oberen Atemwege durch Candida bei gleichzeitiger Infektion durch humanes Immundefizienz-Virus"
       },
       {
         "system": "http://snomed.info/sct",
-        "version": "http://snomed.info/sct/11000274103/version/20241115",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
         "code": "420945005",
         "display": "Histoplasmosis with acquired immunodeficiency syndrome (disorder)"
       },
       {
         "system": "http://snomed.info/sct",
-        "version": "http://snomed.info/sct/11000274103/version/20241115",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
         "code": "44274007",
         "display": "Pneumonie, interstitielle, lymphoide"
       },
       {
         "system": "http://snomed.info/sct",
-        "version": "http://snomed.info/sct/11000274103/version/20241115",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
         "code": "422337001",
         "display": "Coccidioidomycosis with acquired immunodeficiency syndrome (disorder)"
       },
       {
         "system": "http://snomed.info/sct",
-        "version": "http://snomed.info/sct/11000274103/version/20241115",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
         "code": "733835007",
-        "display": "Extrapulmonary tuberculosis co-occurrent with human immunodeficiency virus infection (disorder)"
+        "display": "Extrapulmonale Tuberkulose gleichzeitig auftretend mit HIV-Infektion"
       },
       {
         "system": "http://snomed.info/sct",
-        "version": "http://snomed.info/sct/11000274103/version/20241115",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
         "code": "713325002",
         "display": "Primary cerebral lymphoma co-occurrent with human immunodeficiency virus infection (disorder)"
       },
       {
         "system": "http://snomed.info/sct",
-        "version": "http://snomed.info/sct/11000274103/version/20241115",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
         "code": "713845004",
-        "display": "Infection caused by Cryptosporidium co-occurrent with human immunodeficiency virus infection (disorder)"
+        "display": "Infektion durch Cryptosporidium bei gleichzeitiger HIV-Infektion"
       },
       {
         "system": "http://snomed.info/sct",
-        "version": "http://snomed.info/sct/11000274103/version/20241115",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
         "code": "420524008",
-        "display": "Kaposi's sarcoma with acquired immunodeficiency syndrome (disorder)"
+        "display": "Kaposi-Sarkom bei AIDS"
       },
       {
         "system": "http://snomed.info/sct",
-        "version": "http://snomed.info/sct/11000274103/version/20241115",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
         "code": "421827003",
-        "display": "Encephalopathy with acquired immunodeficiency syndrome (disorder)"
+        "display": "Enzephalopathie bei erworbenem Immundefektsyndrom"
       },
       {
         "system": "http://snomed.info/sct",
-        "version": "http://snomed.info/sct/11000274103/version/20241115",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
         "code": "713526000",
         "display": "Recurrent bacterial pneumonia co-occurrent with human immunodeficiency virus infection (disorder)"
       },
       {
         "system": "http://snomed.info/sct",
-        "version": "http://snomed.info/sct/11000274103/version/20241115",
+        "version": "http://snomed.info/sct/11000274103/version/20251115",
         "code": "421047005",
-        "display": "Candidiasis of lung with acquired immunodeficiency syndrome (disorder)"
+        "display": "Candidiasis der Lunge bei AIDS"
       }
     ]
   }

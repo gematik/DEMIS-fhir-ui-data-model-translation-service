@@ -1,0 +1,388 @@
+{
+  "resourceType": "ValueSet",
+  "id": "resistanceGeneMYTP",
+  "url": "https://demis.rki.de/fhir/ValueSet/resistanceGeneMYTP",
+  "version": "1.0.6",
+  "name": "ResistanceGeneMYTP",
+  "title": "Resistenzdeterminante für Mycobacterium tuberculosis, Mycobacterium africanum, Mycobacterium bovis; Meldepflicht für den direkten Erregernachweis sowie nachfolgend für das Ergebnis der Resistenzbestimmung; vorab auch für den Nachweis säurefester Stäbchen im Sputum",
+  "status": "active",
+  "experimental": false,
+  "date": "2025-12-02",
+  "publisher": "Robert Koch-Institut",
+  "contact": [
+    {
+      "telecom": [
+        {
+          "system": "email",
+          "value": "demis-support@rki.de"
+        }
+      ]
+    }
+  ],
+  "description": "Das ValueSet ResistanceGeneMYTP enthält die Codes der Resistenzdeterminanten für Mycobacterium tuberculosis, Mycobacterium africanum, Mycobacterium bovis; Meldepflicht für den direkten Erregernachweis sowie nachfolgend für das Ergebnis der Resistenzbestimmung; vorab auch für den Nachweis säurefester Stäbchen im Sputum.",
+  "jurisdiction": [
+    {
+      "coding": [
+        {
+          "system": "urn:iso:std:iso:3166",
+          "version": "ALPHA-2",
+          "code": "DE"
+        }
+      ]
+    }
+  ],
+  "copyright": "This material contains content from LOINC (http://loinc.org/). LOINC is copyright © 1995-2023, Regenstrief Institute, Inc. and the Logical Observation Identifiers Names and Codes (LOINC) Committee and is available at no cost under the license at http://loinc.org/license. LOINC® is a registered United States trademark of Regenstrief Institute, Inc.\r\n\r\nDieses Material enthält Inhalte von LOINC (http://loinc.org/). LOINC ist urheberrechtlich geschützt © 1995-2023, Regenstrief Institute, Inc. und das Logical Observation Identifiers Names and Codes (LOINC) Committee und ist unter der Lizenz http://loinc.org/license kostenlos erhältlich. LOINC® ist eine eingetragene US-amerikanische Marke des Regenstrief Institute, Inc.\r\n\r\nDownloadbedingungen für LOINC-Übersetzungen für Anwendungszwecke in Deutschland\r\nÜbersetzungen in verschiedenen Sprachen werden von \"LOINC® Adopters\", meistens Behörden oder Forschungsinstituten verschiedener Länder, erstellt und an das Regenstrief Institute weitergegeben. Das Copyright für die Übersetzungen liegt beim Regenstrief Institute. Für Deutschland wird die LOINC®-Übersetzung durch das BfArM bereitgestellt. Die Übersetzungen werden durch das Regenstrief Institute als \"Linguistic Variants\" in den halbjährlichen LOINC®-Releases (Februar und August) veröffentlicht.\r\n\r\nDas Copyright für die Übersetzungen liegt beim Regenstrief Institute, 1101 W 10th St, Indianapolis, IN 46202, USA.\r\n\r\nMit dem Download von Dateien kommt ein Nutzungsvertrag zwischen Ihnen und dem Regenstrief Institute zustande. Sie verpflichten sich, die unten verlinkten Nutzungs- und Abgabebedingungen für LOINC vom Regenstrief Institute einzuhalten.",
+  "compose": {
+    "include": [
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "concept": [
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 19
+              }
+            ],
+            "code": "33634-7",
+            "display": "Mycobacterium tuberculosis Rifampicin-Resistenzgen [Nachweis oder Identität] in Sputum mittels Nukleinsäureamplifikation mit Sondendetektion",
+            "designation": [
+              {
+                "language": "de-DE",
+                "use": {
+                  "system": "http://loinc.org",
+                  "code": "COMPONENT"
+                },
+                "value": "Mycobacterium tuberculosis Rifampicin-Resistenzgen"
+              }
+            ]
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 16
+              }
+            ],
+            "code": "46244-0",
+            "display": "Mycobacterium tuberculosis-Komplex rpoB-Gen Mutation zu Rifampicin-Resistenz identifiziert mittels Molekulargenetik",
+            "designation": [
+              {
+                "language": "de-DE",
+                "use": {
+                  "system": "http://loinc.org",
+                  "code": "COMPONENT"
+                },
+                "value": "Mycobacterium tuberculosis-Komplex rpoB-Gen Rifampicin-Resistenz-Mutation"
+              }
+            ]
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 20
+              }
+            ],
+            "code": "46245-7",
+            "display": "Mycobacterium tuberculosis pncA-Gen Mutation zu Pyrazinamid-Resistenz [Nachweis oder Identität] mittels Molekulargenetik",
+            "designation": [
+              {
+                "language": "de-DE",
+                "use": {
+                  "system": "http://loinc.org",
+                  "code": "COMPONENT"
+                },
+                "value": "Mycobacterium tuberculosis pncA-Gen Pyrazinamid-Resistenz-Mutation"
+              }
+            ]
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 21
+              }
+            ],
+            "code": "46246-5",
+            "display": "Mycobacterium tuberculosis katG-Gen Mutation zu hoher Isoniazid-Resistenz [Nachweis oder Identität] mittels Molekulargenetik",
+            "designation": [
+              {
+                "language": "de-DE",
+                "use": {
+                  "system": "http://loinc.org",
+                  "code": "COMPONENT"
+                },
+                "value": "Mycobacterium tuberculosis katG-Gen hohe Isoniazid-Resistenz-Mutation"
+              }
+            ]
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 28
+              }
+            ],
+            "code": "46247-3",
+            "display": "Mycobacterium tuberculosis embB-Gen Mutation zu Ethambutol-Resistenz [Nachweis oder Identität] mittels Molekulargenetik",
+            "designation": [
+              {
+                "language": "de-DE",
+                "use": {
+                  "system": "http://loinc.org",
+                  "code": "COMPONENT"
+                },
+                "value": "Mycobacterium tuberculosis embB-Gen Ethambutol-Resistenz-Mutation"
+              }
+            ]
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 22
+              }
+            ],
+            "code": "48175-4",
+            "display": "Mycobacterium tuberculosis katG + inhA-Gene Mutation zu Isoniazid-Resistenz [Nachweis] mittels Molekulargenetik",
+            "designation": [
+              {
+                "language": "de-DE",
+                "use": {
+                  "system": "http://loinc.org",
+                  "code": "COMPONENT"
+                },
+                "value": "Mycobacterium tuberculosis katG + inhA-Gene Isoniazid-Resistenz-Mutation"
+              }
+            ]
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 23
+              }
+            ],
+            "code": "63072-3",
+            "display": "Mycobacterium tuberculosis inhA-Gen Mutation zu geringer Isoniazid-Resistenz [Nachweis] mittels Molekulargenetik",
+            "designation": [
+              {
+                "language": "de-DE",
+                "use": {
+                  "system": "http://loinc.org",
+                  "code": "COMPONENT"
+                },
+                "value": "Mycobacterium tuberculosis inhA-Gen geringe Isoniazid-Resistenz-Mutation"
+              }
+            ]
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 25
+              }
+            ],
+            "code": "72276-9",
+            "display": "Mycobacterium tuberculosis gyrA-Gen Mutation zu Fluorchinolon-Resistenz [Nachweis] mittels Molekulargenetik",
+            "designation": [
+              {
+                "language": "de-DE",
+                "use": {
+                  "system": "http://loinc.org",
+                  "code": "COMPONENT"
+                },
+                "value": "Mycobacterium tuberculosis gyrA-Gen Fluorchinolon-Resistenz-Mutation"
+              }
+            ]
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 18
+              }
+            ],
+            "code": "72864-2",
+            "display": "Mycobacterium tuberculosis rpsL+rrs-Gene Mutation zu Aminoglycosid-Resistenz [Nachweis] mittels Molekulargenetik",
+            "designation": [
+              {
+                "language": "de-DE",
+                "use": {
+                  "system": "http://loinc.org",
+                  "code": "COMPONENT"
+                },
+                "value": "Mycobacterium tuberculosis rpsL+rrs-Gene Aminoglycosid-Resistenz-Mutation"
+              }
+            ]
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 26
+              }
+            ],
+            "code": "72865-9",
+            "display": "Mycobacterium tuberculosis ethB-Gen Mutation zu Ethionamid-Resistenz [Nachweis] mittels Molekulargenetik",
+            "designation": [
+              {
+                "language": "de-DE",
+                "use": {
+                  "system": "http://loinc.org",
+                  "code": "COMPONENT"
+                },
+                "value": "Mycobacterium tuberculosis ethB-Gen Ethionamid-Resistenz-Mutation"
+              }
+            ]
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 27
+              }
+            ],
+            "code": "72866-7",
+            "display": "Mycobacterium tuberculosis ethA-Gen Mutation zu Ethionamid-Resistenz [Nachweis] mittels Molekulargenetik",
+            "designation": [
+              {
+                "language": "de-DE",
+                "use": {
+                  "system": "http://loinc.org",
+                  "code": "COMPONENT"
+                },
+                "value": "Mycobacterium tuberculosis ethA-Gen Ethionamid-Resistenz-Mutation"
+              }
+            ]
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 24
+              }
+            ],
+            "code": "72867-5",
+            "display": "Mycobacterium tuberculosis gyrB-Gen Mutation zu Fluorchinolon-Resistenz [Nachweis] mittels Molekulargenetik",
+            "designation": [
+              {
+                "language": "de-DE",
+                "use": {
+                  "system": "http://loinc.org",
+                  "code": "COMPONENT"
+                },
+                "value": "Mycobacterium tuberculosis gyrB-Gen Fluorchinolon-Resistenz-Mutation"
+              }
+            ]
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-conceptOrder",
+                "valueInteger": 17
+              }
+            ],
+            "code": "89372-7",
+            "display": "Mycobacterium tuberculosis-Komplex rpoB-Gen Mutation zu Rifampicin-Resistenz [Nachweis] mittels Molekulargenetik",
+            "designation": [
+              {
+                "language": "de-DE",
+                "use": {
+                  "system": "http://loinc.org",
+                  "code": "COMPONENT"
+                },
+                "value": "Mycobacterium tuberculosis-Komplex rpoB-Gen Rifampicin-Resistenz-Mutation"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "expansion": {
+    "timestamp": "2025-12-02T00:00:00+01:00",
+    "contains": [
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "72276-9",
+        "display": "Mycobacterium tuberculosis gyrA-Gen Mutation zu Fluorchinolon-Resistenz [Nachweis] mittels Molekulargenetik"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "48175-4",
+        "display": "Mycobacterium tuberculosis katG + inhA-Gene Mutation zu Isoniazid-Resistenz [Nachweis] mittels Molekulargenetik"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "63072-3",
+        "display": "Mycobacterium tuberculosis inhA-Gen Mutation zu geringer Isoniazid-Resistenz [Nachweis] mittels Molekulargenetik"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "33634-7",
+        "display": "Mycobacterium tuberculosis Rifampicin-Resistenzgen [Nachweis oder Identität] in Sputum mittels Nukleinsäureamplifikation mit Sondendetektion"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "72864-2",
+        "display": "Mycobacterium tuberculosis rpsL+rrs-Gene Mutation zu Aminoglycosid-Resistenz [Nachweis] mittels Molekulargenetik"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "89372-7",
+        "display": "Mycobacterium tuberculosis-Komplex rpoB-Gen Mutation zu Rifampicin-Resistenz [Nachweis] mittels Molekulargenetik"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "46244-0",
+        "display": "Mycobacterium tuberculosis-Komplex rpoB-Gen Mutation zu Rifampicin-Resistenz identifiziert mittels Molekulargenetik"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "72865-9",
+        "display": "Mycobacterium tuberculosis ethB-Gen Mutation zu Ethionamid-Resistenz [Nachweis] mittels Molekulargenetik"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "46246-5",
+        "display": "Mycobacterium tuberculosis katG-Gen Mutation zu hoher Isoniazid-Resistenz [Nachweis oder Identität] mittels Molekulargenetik"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "72867-5",
+        "display": "Mycobacterium tuberculosis gyrB-Gen Mutation zu Fluorchinolon-Resistenz [Nachweis] mittels Molekulargenetik"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "46245-7",
+        "display": "Mycobacterium tuberculosis pncA-Gen Mutation zu Pyrazinamid-Resistenz [Nachweis oder Identität] mittels Molekulargenetik"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "72866-7",
+        "display": "Mycobacterium tuberculosis ethA-Gen Mutation zu Ethionamid-Resistenz [Nachweis] mittels Molekulargenetik"
+      },
+      {
+        "system": "http://loinc.org",
+        "version": "2.81",
+        "code": "46247-3",
+        "display": "Mycobacterium tuberculosis embB-Gen Mutation zu Ethambutol-Resistenz [Nachweis oder Identität] mittels Molekulargenetik"
+      }
+    ]
+  }
+}

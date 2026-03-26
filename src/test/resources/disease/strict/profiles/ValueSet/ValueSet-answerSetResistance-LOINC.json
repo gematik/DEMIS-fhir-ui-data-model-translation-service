@@ -2,12 +2,12 @@
   "resourceType": "ValueSet",
   "id": "answerSetResistance-LOINC",
   "url": "https://demis.rki.de/fhir/ValueSet/answerSetResistance-LOINC",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "name": "AnswerSetResistance-LOINC",
   "title": "LOINC-AnswerSet für Resistenz",
   "status": "active",
   "experimental": false,
-  "date": "2025-04-08",
+  "date": "2025-12-05",
   "publisher": "Robert Koch-Institut",
   "contact": [
     {
@@ -36,7 +36,7 @@
     "include": [
       {
         "system": "http://loinc.org",
-        "version": "2.79",
+        "version": "2.81",
         "concept": [
           {
             "code": "LA11884-6",
@@ -83,29 +83,29 @@
     ]
   },
   "expansion": {
-    "timestamp": "2025-04-08T00:00:00+02:00",
+    "timestamp": "2025-12-05T00:00:00+01:00",
     "contains": [
       {
         "system": "http://loinc.org",
-        "version": "2.79",
+        "version": "2.81",
         "code": "LA24225-7",
         "display": "Susceptible"
       },
       {
         "system": "http://loinc.org",
-        "version": "2.79",
+        "version": "2.81",
         "code": "LA29303-7",
         "display": "Intermediate resistance"
       },
       {
         "system": "http://loinc.org",
-        "version": "2.79",
+        "version": "2.81",
         "code": "LA11884-6",
         "display": "Indeterminate"
       },
       {
         "system": "http://loinc.org",
-        "version": "2.79",
+        "version": "2.81",
         "code": "LA6676-6",
         "display": "Resistant"
       }

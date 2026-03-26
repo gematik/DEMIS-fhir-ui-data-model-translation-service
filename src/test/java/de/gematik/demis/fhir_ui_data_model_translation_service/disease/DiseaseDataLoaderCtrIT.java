@@ -55,7 +55,7 @@ import org.springframework.test.web.servlet.MvcResult;
 @SpringBootTest
 @AutoConfigureObservability
 @ActiveProfiles("test")
-@TestPropertySource(properties = {"feature.flag.addDesignationUse=false"})
+@TestPropertySource(properties = {"feature.flag.disease-questionnaire-org-input-validation=false"})
 class DiseaseDataLoaderCtrIT {
   private final ObjectMapper mapper = new ObjectMapper();
 
