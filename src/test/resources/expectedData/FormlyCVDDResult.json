@@ -291,7 +291,6 @@
                             "key": "valueDate",
                             "type": "datepicker",
                             "props": {
-                              "placeholder": "TT.MM.JJJJ | MM.JJJJ | JJJJ",
                               "label": "Beginn Infektionsumfeld",
                               "enableWhen": [
                                 {
@@ -314,7 +313,6 @@
                             "type": "datepicker",
                             "props": {
                               "required": false,
-                              "placeholder": "TT.MM.JJJJ | MM.JJJJ | JJJJ",
                               "label": "Ende Infektionsumfeld",
                               "enableWhen": [
                                 {
@@ -584,7 +582,6 @@
                                 "type": "datepicker",
                                 "props": {
                                   "required": true,
-                                  "placeholder": "TT.MM.JJJJ | MM.JJJJ | JJJJ",
                                   "label": "Datum der Impfung",
                                   "minDate": "1900-01-01",
                                   "maxDate": "${LOCAL_DATE_NOW}"
@@ -1022,7 +1019,6 @@
                   "key": "valueDate",
                   "type": "datepicker",
                   "props": {
-                    "placeholder": "TT.MM.JJJJ | MM.JJJJ | JJJJ",
                     "label": "Sterbedatum",
                     "enableWhen": [
                       {
@@ -2673,7 +2669,6 @@
                                         "type": "datepicker",
                                         "props": {
                                           "required": true,
-                                          "placeholder": "TT.MM.JJJJ | MM.JJJJ",
                                           "label": "Aufnahmedatum",
                                           "importSpec": {
                                             "importKey": "C.hospitalized.start",
@@ -2699,7 +2694,6 @@
                                         "type": "datepicker",
                                         "props": {
                                           "required": false,
-                                          "placeholder": "TT.MM.JJJJ | MM.JJJJ",
                                           "label": "Entlassdatum",
                                           "importSpec": {
                                             "importKey": "C.hospitalized.end",
@@ -3594,7 +3588,6 @@
                             "key": "valueDate",
                             "type": "datepicker",
                             "props": {
-                              "placeholder": "TT.MM.JJJJ | MM.JJJJ | JJJJ",
                               "label": "Beginn",
                               "enableWhen": [
                                 {
@@ -3620,7 +3613,6 @@
                             "key": "valueDate",
                             "type": "datepicker",
                             "props": {
-                              "placeholder": "TT.MM.JJJJ | MM.JJJJ | JJJJ",
                               "label": "Ende",
                               "enableWhen": [
                                 {
@@ -4071,7 +4063,6 @@
                             "key": "valueDate",
                             "type": "datepicker",
                             "props": {
-                              "placeholder": "TT.MM.JJJJ | MM.JJJJ | JJJJ",
                               "label": "Beginn",
                               "enableWhen": [
                                 {
@@ -4097,7 +4088,6 @@
                             "key": "valueDate",
                             "type": "datepicker",
                             "props": {
-                              "placeholder": "TT.MM.JJJJ | MM.JJJJ | JJJJ",
                               "label": "Ende",
                               "enableWhen": [
                                 {
@@ -4481,7 +4471,6 @@
               "key": "answer.valueDate",
               "type": "datepicker",
               "props": {
-                "placeholder": "TT.MM.JJJJ | MM.JJJJ",
                 "label": "Datum Diagnosestellung",
                 "importSpec": {
                   "importKey": "D.diagnosis",
@@ -4505,7 +4494,6 @@
               "key": "answer.valueDate",
               "type": "datepicker",
               "props": {
-                "placeholder": "TT.MM.JJJJ | MM.JJJJ",
                 "label": "Erkrankungsbeginn",
                 "importSpec": {
                   "importKey": "D.start",

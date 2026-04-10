@@ -61,8 +61,8 @@ class DiseaseProcessorTest {
     String expectedJsonString =
         """
       [
-        {"key":"recordedDate","fieldGroup":[{"key":"answer.valueDate","type":"datepicker","props":{"placeholder":"TT.MM.JJJJ | MM.JJJJ","label":"Datum Diagnosestellung","allowedPrecisions":["day","month"],"minDate":"1900-01-01","maxDate":"%s"},"className":"LinkId_recordedDate"}]},
-        {"key":"onset","fieldGroup":[{"key":"answer.valueDate","type":"datepicker","props":{"placeholder":"TT.MM.JJJJ | MM.JJJJ","label":"Erkrankungsbeginn","allowedPrecisions":["day","month"],"minDate":"1900-01-01","maxDate":"%s"},"className":"LinkId_onset"}]},
+        {"key":"recordedDate","fieldGroup":[{"key":"answer.valueDate","type":"datepicker","props":{"label":"Datum Diagnosestellung","allowedPrecisions":["day","month"],"minDate":"1900-01-01","maxDate":"%s"},"className":"LinkId_recordedDate"}]},
+        {"key":"onset","fieldGroup":[{"key":"answer.valueDate","type":"datepicker","props":{"label":"Erkrankungsbeginn","allowedPrecisions":["day","month"],"minDate":"1900-01-01","maxDate":"%s"},"className":"LinkId_onset"}]},
         {"key":"evidence","fieldGroup":[{"key":"answer.valueCoding","type":"autocomplete-multi-coding","props":{"options":[{"code":"67782005","display":"akutes schweres Atemnotsyndrom (ARDS)","designations":[{"language":"en-US","value":"Acute respiratory distress syndrome (disorder)"}],"system":"http://snomed.info/sct"},{"code":"43724002","display":"Frösteln","designations":[{"language":"en-US","value":"Chill (finding)"}],"system":"http://snomed.info/sct"}],"required":false,"clearable":true,"label":"Symptome und -Manifestationen"},"validators":{"validation":["codingValidator"]},"wrappers":["form-field"],"className":"LinkId_evidence"}]},
         {"key":"note","fieldGroup":[{"key":"answer.valueString","type":"input","props":{"label":"Diagnosehinweise"},"wrappers":["form-field"],"className":"LinkId_note"}]}
       ]
@@ -109,8 +109,8 @@ class DiseaseProcessorTest {
 
     String expectedJsonString =
         """
-      [{"key":"recordedDate","fieldGroup":[{"key":"answer.valueDate","type":"datepicker","props":{"placeholder":"TT.MM.JJJJ | MM.JJJJ","label":"Datum Diagnosestellung","allowedPrecisions":["day","month"],"minDate":"1900-01-01","maxDate":"%s"},"className":"LinkId_recordedDate"}]},
-      {"key":"onset","fieldGroup":[{"key":"answer.valueDate","type":"datepicker","props":{"placeholder":"TT.MM.JJJJ | MM.JJJJ","label":"Erkrankungsbeginn","allowedPrecisions":["day","month"],"minDate":"1900-01-01","maxDate":"%s"},"className":"LinkId_onset"}]},
+      [{"key":"recordedDate","fieldGroup":[{"key":"answer.valueDate","type":"datepicker","props":{"label":"Datum Diagnosestellung","allowedPrecisions":["day","month"],"minDate":"1900-01-01","maxDate":"%s"},"className":"LinkId_recordedDate"}]},
+      {"key":"onset","fieldGroup":[{"key":"answer.valueDate","type":"datepicker","props":{"label":"Erkrankungsbeginn","allowedPrecisions":["day","month"],"minDate":"1900-01-01","maxDate":"%s"},"className":"LinkId_onset"}]},
       {"key":"note","fieldGroup":[{"key":"answer.valueString","type":"input","props":{"label":"Diagnosehinweise"},"wrappers":["form-field"],"className":"LinkId_note"}]}]
       """
             .formatted(today, today);

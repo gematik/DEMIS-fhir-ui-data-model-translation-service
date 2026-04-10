@@ -184,7 +184,6 @@
                   "type": "datepicker",
                   "props": {
                     "required": false,
-                    "placeholder": "TT.MM.JJJJ | MM.JJJJ | JJJJ",
                     "label": "Jahr der Einreise in Deutschland",
                     "enableWhen": [
                       {
@@ -957,7 +956,6 @@
                                   "type": "datepicker",
                                   "props": {
                                     "required": false,
-                                    "placeholder": "TT.MM.JJJJ | MM.JJJJ | JJJJ",
                                     "label": "Jahr und Monat des Erhalts von Blutprodukten",
                                     "enableWhen": [
                                       {
@@ -1229,7 +1227,6 @@
                   "key": "valueDate",
                   "type": "datepicker",
                   "props": {
-                    "placeholder": "TT.MM.JJJJ | MM.JJJJ | JJJJ",
                     "label": "Sterbedatum",
                     "enableWhen": [
                       {
@@ -2880,7 +2877,6 @@
                                         "type": "datepicker",
                                         "props": {
                                           "required": true,
-                                          "placeholder": "TT.MM.JJJJ | MM.JJJJ",
                                           "label": "Aufnahmedatum",
                                           "importSpec": {
                                             "importKey": "C.hospitalized.start",
@@ -2906,7 +2902,6 @@
                                         "type": "datepicker",
                                         "props": {
                                           "required": false,
-                                          "placeholder": "TT.MM.JJJJ | MM.JJJJ",
                                           "label": "Entlassdatum",
                                           "importSpec": {
                                             "importKey": "C.hospitalized.end",
@@ -3801,7 +3796,6 @@
                             "key": "valueDate",
                             "type": "datepicker",
                             "props": {
-                              "placeholder": "TT.MM.JJJJ | MM.JJJJ | JJJJ",
                               "label": "Beginn",
                               "enableWhen": [
                                 {
@@ -3827,7 +3821,6 @@
                             "key": "valueDate",
                             "type": "datepicker",
                             "props": {
-                              "placeholder": "TT.MM.JJJJ | MM.JJJJ | JJJJ",
                               "label": "Ende",
                               "enableWhen": [
                                 {
@@ -4278,7 +4271,6 @@
                             "key": "valueDate",
                             "type": "datepicker",
                             "props": {
-                              "placeholder": "TT.MM.JJJJ | MM.JJJJ | JJJJ",
                               "label": "Beginn",
                               "enableWhen": [
                                 {
@@ -4304,7 +4296,6 @@
                             "key": "valueDate",
                             "type": "datepicker",
                             "props": {
-                              "placeholder": "TT.MM.JJJJ | MM.JJJJ | JJJJ",
                               "label": "Ende",
                               "enableWhen": [
                                 {
@@ -4688,7 +4679,6 @@
               "key": "answer.valueDate",
               "type": "datepicker",
               "props": {
-                "placeholder": "TT.MM.JJJJ | MM.JJJJ",
                 "label": "Datum Diagnosestellung",
                 "importSpec": {
                   "importKey": "D.diagnosis",
@@ -4712,7 +4702,6 @@
               "key": "answer.valueDate",
               "type": "datepicker",
               "props": {
-                "placeholder": "TT.MM.JJJJ | MM.JJJJ",
                 "label": "Erkrankungsbeginn",
                 "importSpec": {
                   "importKey": "D.start",

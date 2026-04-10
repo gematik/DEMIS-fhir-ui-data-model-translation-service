@@ -27,13 +27,14 @@ package de.gematik.demis.fhir_ui_data_model_translation_service.disease.formly.f
  * #L%
  */
 
+import static de.gematik.demis.fhir_ui_data_model_translation_service.disease.formly.fieldtypes.DatePickerSerializer.TODAY_PLACEHOLDER;
+
 import de.gematik.demis.fhir_ui_data_model_translation_service.disease.formly.model.FieldGroup;
 import de.gematik.demis.fhir_ui_data_model_translation_service.disease.formly.model.Props;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.EnumSet;
 import java.util.List;
-import java.util.stream.Collectors;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.experimental.SuperBuilder;
@@ -65,67 +66,6 @@ public class DatePicker extends TextInput {
   private LocalDate maxDate;
   private boolean startWithYearSelection;
 
-  @Override
-  void applyTo(FieldGroup.FieldGroupBuilder builder) {
-    super.applyTo(builder);
-    builder.key(KEY_DEFAULT);
-    builder.type(FieldGroup.TYPE_DATEPICKER);
-  }
-
-  @Override
-  void applyTo(Props.PropsBuilder builder) {
-    super.applyTo(builder);
-    setAllowedPrecisions(builder);
-    setPlaceholder(builder);
-    setMinDate(builder);
-    setMaxDate(builder);
-    setYearSelection(builder);
-  }
-
-  private void setAllowedPrecisions(Props.PropsBuilder builder) {
-    if ((allowedPrecisions != null)
-        && !allowedPrecisions.containsAll(EnumSet.allOf(Precision.class))) {
-      builder.allowedPrecisions(
-          allowedPrecisions.stream().sorted().map(Precision::getText).toArray(String[]::new));
-    }
-  }
-
-  private void setPlaceholder(Props.PropsBuilder builder) {
-    final List<Precision> precisions;
-    if (allowedPrecisions == null || allowedPrecisions.isEmpty()) {
-      precisions = new ArrayList<>(EnumSet.allOf(Precision.class));
-    } else {
-      precisions = allowedPrecisions;
-    }
-    builder.placeholder(
-        precisions.stream()
-            .sorted()
-            .map(Precision::getPlaceholder)
-            .collect(Collectors.joining(" | ")));
-  }
-
-  private void setMinDate(Props.PropsBuilder builder) {
-    if (minDate != null) {
-      builder.minDate(minDate.toString());
-    } else if (minDateDefault) {
-      builder.minDate(DEFAULT_MIN_DATE.toString());
-    }
-  }
-
-  private void setMaxDate(Props.PropsBuilder builder) {
-    if (maxDate != null) {
-      builder.maxDate(maxDate.toString());
-    } else if (maxDateNotInFuture) {
-      builder.maxDate(LocalDate.now().toString());
-    }
-  }
-
-  private void setYearSelection(Props.PropsBuilder builder) {
-    if (startWithYearSelection) {
-      builder.multiYear(Boolean.TRUE);
-    }
-  }
-
   /**
    * Parses a regex and infers which date precisions are allowed. It assumes that the regex contains
    * only valid ISO date formats, separated by '|' if multiple formats are allowed.
@@ -151,22 +91,49 @@ public class DatePicker extends TextInput {
     return new ArrayList<>(result);
   }
 
-  /**
-   * Extend the builder with a custom method to set allowed precisions from a regex.
-   *
-   * @param <C>
-   * @param <B>
-   */
-  public abstract static class DatePickerBuilder<
-          C extends DatePicker, B extends DatePickerBuilder<C, B>>
-      extends TextInputBuilder<C, B> {
+  @Override
+  void applyTo(FieldGroup.FieldGroupBuilder builder) {
+    super.applyTo(builder);
+    builder.key(KEY_DEFAULT);
+    builder.type(FieldGroup.TYPE_DATEPICKER);
+  }
 
-    public B allowedPrecisionsFromRegex(String regex) {
-      var precisionFromRegex = detectPrecisionsFromRegex(regex);
-      if (!precisionFromRegex.isEmpty()) {
-        this.allowedPrecisions = precisionFromRegex;
-      }
-      return self();
+  @Override
+  void applyTo(Props.PropsBuilder builder) {
+    super.applyTo(builder);
+    setAllowedPrecisions(builder);
+    setMinDate(builder);
+    setMaxDate(builder);
+    setYearSelection(builder);
+  }
+
+  private void setAllowedPrecisions(Props.PropsBuilder builder) {
+    if ((allowedPrecisions != null)
+        && !allowedPrecisions.containsAll(EnumSet.allOf(Precision.class))) {
+      builder.allowedPrecisions(
+          allowedPrecisions.stream().sorted().map(Precision::getText).toArray(String[]::new));
+    }
+  }
+
+  private void setMinDate(Props.PropsBuilder builder) {
+    if (minDate != null) {
+      builder.minDate(minDate.toString());
+    } else if (minDateDefault) {
+      builder.minDate(DEFAULT_MIN_DATE.toString());
+    }
+  }
+
+  private void setMaxDate(Props.PropsBuilder builder) {
+    if (maxDate != null) {
+      builder.maxDate(maxDate.toString());
+    } else if (maxDateNotInFuture) {
+      builder.maxDate(TODAY_PLACEHOLDER);
+    }
+  }
+
+  private void setYearSelection(Props.PropsBuilder builder) {
+    if (startWithYearSelection) {
+      builder.multiYear(Boolean.TRUE);
     }
   }
 
@@ -193,6 +160,25 @@ public class DatePicker extends TextInput {
     Precision(String text, String placeholder) {
       this.text = text;
       this.placeholder = placeholder;
+    }
+  }
+
+  /**
+   * Extend the builder with a custom method to set allowed precisions from a regex.
+   *
+   * @param <C> the type of the component being built (in this case, DatePicker or a subclass)
+   * @param <B> the type of the builder
+   */
+  public abstract static class DatePickerBuilder<
+          C extends DatePicker, B extends DatePickerBuilder<C, B>>
+      extends TextInputBuilder<C, B> {
+
+    public B allowedPrecisionsFromRegex(String regex) {
+      var precisionFromRegex = detectPrecisionsFromRegex(regex);
+      if (!precisionFromRegex.isEmpty()) {
+        this.allowedPrecisions = precisionFromRegex;
+      }
+      return self();
     }
   }
 }

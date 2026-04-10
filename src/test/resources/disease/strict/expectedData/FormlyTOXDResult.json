@@ -119,7 +119,6 @@
               "type": "datepicker",
               "props": {
                 "required": true,
-                "placeholder": "TT.MM.JJJJ | MM.JJJJ | JJJJ",
                 "label": "Welches ist das Geburtsdatum der Mutter?",
                 "minDate": "1900-01-01"
               },
@@ -181,7 +180,6 @@
                   "type": "datepicker",
                   "props": {
                     "required": true,
-                    "placeholder": "TT.MM.JJJJ | MM.JJJJ | JJJJ",
                     "label": "Bitte geben Sie an, wann die Symptome begonnen haben.",
                     "enableWhen": [
                       {
@@ -3051,7 +3049,6 @@
               "key": "answer.valueDate",
               "type": "datepicker",
               "props": {
-                "placeholder": "TT.MM.JJJJ | MM.JJJJ",
                 "label": "Datum Diagnosestellung",
                 "importSpec": {
                   "importKey": "D.diagnosis",
@@ -3075,7 +3072,6 @@
               "key": "answer.valueDate",
               "type": "datepicker",
               "props": {
-                "placeholder": "TT.MM.JJJJ | MM.JJJJ",
                 "label": "Erkrankungsbeginn",
                 "importSpec": {
                   "importKey": "D.start",
