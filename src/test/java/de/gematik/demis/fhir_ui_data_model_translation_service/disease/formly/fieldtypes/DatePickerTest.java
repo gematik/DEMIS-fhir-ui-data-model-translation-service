@@ -31,6 +31,7 @@ import static de.gematik.demis.fhir_ui_data_model_translation_service.disease.fo
 import static de.gematik.demis.fhir_ui_data_model_translation_service.disease.formly.fieldtypes.DatePicker.Precision.MONTH;
 import static de.gematik.demis.fhir_ui_data_model_translation_service.disease.formly.fieldtypes.DatePicker.Precision.YEAR;
 import static de.gematik.demis.fhir_ui_data_model_translation_service.disease.formly.fieldtypes.DatePicker.detectPrecisionsFromRegex;
+import static de.gematik.demis.fhir_ui_data_model_translation_service.disease.formly.fieldtypes.DatePickerSerializer.TODAY_PLACEHOLDER;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatException;
 import static org.assertj.core.api.Assertions.assertThatNoException;
@@ -78,9 +79,6 @@ class DatePickerTest {
     assertThat(props.getAllowedPrecisions())
         .as("precisions sorted on enum order")
         .isEqualTo(new String[] {"day", "year"});
-    assertThat(props.getPlaceholder())
-        .as("placeholder sorted on enum order")
-        .isEqualTo("TT.MM.JJJJ | JJJJ");
     assertThat(props.getMinDate()).isEqualTo(minDate.toString());
     assertThat(props.getMaxDate()).isEqualTo(maxDate.toString());
     assertThat(props.getMultiYear()).isTrue();
@@ -132,7 +130,7 @@ class DatePickerTest {
             .build()
             .createFieldGroup();
 
-    assertThat(datePicker.getProps().getMaxDate()).isEqualTo(LocalDate.now().toString());
+    assertThat(datePicker.getProps().getMaxDate()).isEqualTo(TODAY_PLACEHOLDER);
   }
 
   @Test

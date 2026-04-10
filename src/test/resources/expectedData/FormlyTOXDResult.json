@@ -3586,7 +3586,6 @@
               "key": "answer.valueDate",
               "type": "datepicker",
               "props": {
-                "placeholder": "TT.MM.JJJJ | MM.JJJJ",
                 "label": "Datum Diagnosestellung",
                 "importSpec": {
                   "importKey": "D.diagnosis",
@@ -3610,7 +3609,6 @@
               "key": "answer.valueDate",
               "type": "datepicker",
               "props": {
-                "placeholder": "TT.MM.JJJJ | MM.JJJJ",
                 "label": "Erkrankungsbeginn",
                 "importSpec": {
                   "importKey": "D.start",

@@ -28,6 +28,8 @@ package de.gematik.demis.fhir_ui_data_model_translation_service.disease.formly.m
  */
 
 import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import de.gematik.demis.fhir_ui_data_model_translation_service.disease.formly.fieldtypes.DatePickerSerializer;
 import de.gematik.demis.fhir_ui_data_model_translation_service.model.CodeDisplay;
 import java.math.BigDecimal;
 import lombok.Builder;
@@ -76,8 +78,13 @@ public class Props {
   private BigDecimal step; // BigDecimal can be null; float/double can't be
 
   private String[] allowedPrecisions;
+
+  @JsonSerialize(using = DatePickerSerializer.class)
   private String minDate;
+
+  @JsonSerialize(using = DatePickerSerializer.class)
   private String maxDate;
+
   private Boolean multiYear;
   private Integer maxLength;
 

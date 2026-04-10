@@ -2,6 +2,11 @@
  
 # FHIR-UI-Data-Model-Translation-Service Release Notes
 
+## Release 2.6.1
+- updated datepicker to use default placeholder
+- fixed caching issue where disease questionnaire date limits were computed once at startup instead of per request
+- bumped spring parent to 2.15.7
+
 ## Release 2.6.0 
 - updated base-image and updated from java 21 to java 25
 - Removed istio helm chart
@@ -13,7 +18,7 @@
 - removed FEATURE_FLAG_ADD_DESIGNATION_USE
 - removed FEATURE_FLAG_NOTIFICATIONS_7_3
 - removed fall back solutions and processing for pre snapshot 6 data
-- bumped spring parent to 2.15.5
+- bumped spring parent to 2.15.6
 - removed FEATURE_FLAG_SNAPSHOT_6
 
 ## Release 2.5.0
