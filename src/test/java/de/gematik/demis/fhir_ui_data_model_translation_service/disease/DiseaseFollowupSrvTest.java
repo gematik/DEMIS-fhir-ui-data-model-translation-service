@@ -99,4 +99,57 @@ class DiseaseFollowupSrvTest {
 
     assertTrue(result.isEmpty());
   }
+
+  @Test
+  void testGetPossibleDiseaseCodesForNonNominalFollowUp_CodeDisplayPresent() {
+    String code = "hivd";
+    CodeDisplay codeDisplay =
+        CodeDisplay.builder().code(code).display("Humanes Immundefizienz-Virus (HIV)").build();
+    when(diseaseDataLoaderSrv.getCodeDisplayForNonNominal(code))
+        .thenReturn(Optional.of(codeDisplay));
+
+    Set<CodeDisplay> result = diseaseFollowupSrv.getPossibleDiseaseCodesForNonNominalFollowUp(code);
+
+    assertEquals(1, result.size());
+    assertTrue(result.contains(codeDisplay));
+    verify(conceptMapPreparationSrv, never()).getPossibleCodesFromConceptMap(any(), any(), any());
+  }
+
+  @Test
+  void testGetPossibleDiseaseCodesForNonNominalFollowUp_CodeDisplayNotPresent() {
+    String code = "hivp";
+    Set<String> codes = new HashSet<>(Set.of("hivd", "hivx"));
+    CodeDisplay codeDisplay =
+        CodeDisplay.builder().code(code).display("Humanes Immundefizienz-Virus (HIV)").build();
+    CodeDisplay codeDisplay2 = CodeDisplay.builder().code(code).display("Ein neues HIV").build();
+
+    when(diseaseDataLoaderSrv.getCodeDisplayForNonNominal(code)).thenReturn(Optional.empty());
+    when(conceptMapPreparationSrv.getPossibleCodesFromConceptMap(eq(code), any(), any()))
+        .thenReturn(codes);
+    when(diseaseDataLoaderSrv.getCodeDisplayForNonNominal("hivd"))
+        .thenReturn(Optional.of(codeDisplay));
+    when(diseaseDataLoaderSrv.getCodeDisplayForNonNominal("hivx"))
+        .thenReturn(Optional.of(codeDisplay2));
+
+    Set<CodeDisplay> result = diseaseFollowupSrv.getPossibleDiseaseCodesForNonNominalFollowUp(code);
+
+    assertEquals(2, result.size());
+    assertTrue(result.contains(codeDisplay));
+  }
+
+  @Test
+  void testGetPossibleDiseaseCodesForNonNominalFollowUp_NoCodeDisplayFound() {
+    String code = "hivd";
+    String possibleCode = "hivx";
+
+    when(diseaseDataLoaderSrv.getCodeDisplayForNonNominal(code)).thenReturn(Optional.empty());
+    when(conceptMapPreparationSrv.getPossibleCodesFromConceptMap(eq(code), any(), any()))
+        .thenReturn(Set.of(possibleCode));
+    when(diseaseDataLoaderSrv.getCodeDisplayForNonNominal(possibleCode))
+        .thenReturn(Optional.empty());
+
+    Set<CodeDisplay> result = diseaseFollowupSrv.getPossibleDiseaseCodesForNonNominalFollowUp(code);
+
+    assertTrue(result.isEmpty());
+  }
 }

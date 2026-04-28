@@ -62,7 +62,11 @@ class ConceptMapPreparationSrvTest {
           new File(
               "src/test/resources/profiles/ConceptMap/ConceptMap-NotificationCategoryToTransmissionCategory.json"),
           new File(
-              "src/test/resources/profiles/ConceptMap/ConceptMap-NotificationDiseaseCategoryToTransmissionCategory.json"));
+              "src/test/resources/profiles/ConceptMap/ConceptMap-NotificationDiseaseCategoryToTransmissionCategory.json"),
+          new File(
+              "src/test/resources/profiles/ConceptMap/ConceptMap-NotificationDiseaseCategoryNonNominalToTransmissionCategory.json"),
+          new File(
+              "src/test/resources/profiles/ConceptMap/ConceptMap-NotificationCategoryNonNominalToTransmissionCategory.json"));
   @Mock private SnapshotFilesService snapshotFilesServiceMock;
   @Mock private FhirContext fhirContextMock;
 
@@ -75,7 +79,7 @@ class ConceptMapPreparationSrvTest {
     conceptMapPreparationSrv.init();
 
     verify(snapshotFilesServiceMock).getConceptMaps();
-    verify(fhirContextMock, times(5)).newJsonParser();
+    verify(fhirContextMock, times(7)).newJsonParser();
   }
 
   @Test
@@ -89,17 +93,21 @@ class ConceptMapPreparationSrvTest {
     List<String> allAvailableMaps = conceptMapPreparationSrv.getAllAvailableMaps();
 
     assertThat(allAvailableMaps)
-        .hasSize(10)
+        .hasSize(14)
         .containsExactlyInAnyOrder(
-            "https://demis.rki.de/fhir/ConceptMap/LOINCMethodToSNOMEDMethod",
             "https://demis.rki.de/fhir/ConceptMap/NotificationCategoryToTransmissionCategory",
             "https://demis.rki.de/fhir/ConceptMap/LOINCMaterialToSNOMEDMaterial",
+            "NotificationCategoryNonNominalToTransmissionCategory",
             "LOINCMethodToSNOMEDMethod",
             "NotificationCategoryToTransmissionCategory",
             "https://demis.rki.de/fhir/ConceptMap/NotificationDiseaseCategoryToTransmissionCategory",
             "NotificationDiseaseCategoryToTransmissionCategory",
-            "ISO3166CountryCodes2DEMISCountryCodes",
+            "https://demis.rki.de/fhir/ConceptMap/NotificationDiseaseCategoryNonNominalToTransmissionCategory",
             "https://demis.rki.de/fhir/ConceptMap/ISO3166CountryCodes2DEMISCountryCodes",
+            "https://demis.rki.de/fhir/ConceptMap/NotificationCategoryNonNominalToTransmissionCategory",
+            "https://demis.rki.de/fhir/ConceptMap/LOINCMethodToSNOMEDMethod",
+            "NotificationDiseaseCategoryNonNominalToTransmissionCategory",
+            "ISO3166CountryCodes2DEMISCountryCodes",
             "LOINCMaterialToSNOMEDMaterial");
   }
 
@@ -220,6 +228,37 @@ class ConceptMapPreparationSrvTest {
             srv.getPossibleCodesFromConceptMap(
                 "mytp",
                 "NotificationCategoryToTransmissionCategory",
+                "LOINCMaterialToSNOMEDMaterial"));
+  }
+
+  @Test
+  void testGetPossibleCodesFromNonNominalConceptMap() {
+    when(snapshotFilesServiceMock.getConceptMaps()).thenReturn(files);
+    when(fhirContextMock.newJsonParser()).thenReturn(FhirContext.forR4Cached().newJsonParser());
+    ConceptMapPreparationSrv conceptMapPreparationSrv =
+        new ConceptMapPreparationSrv(snapshotFilesServiceMock, fhirContextMock);
+    conceptMapPreparationSrv.init();
+    Set<String> possibleCodesFromConceptMap =
+        conceptMapPreparationSrv.getPossibleCodesFromConceptMap(
+            "hivp",
+            "NotificationCategoryNonNominalToTransmissionCategory",
+            "NotificationDiseaseCategoryNonNominalToTransmissionCategory");
+    assertThat(possibleCodesFromConceptMap).hasSize(1);
+  }
+
+  @Test
+  void testGetPossibleCodesFromNonNominalConceptMapWithNoResult() {
+    when(snapshotFilesServiceMock.getConceptMaps()).thenReturn(files);
+    when(fhirContextMock.newJsonParser()).thenReturn(FhirContext.forR4Cached().newJsonParser());
+    ConceptMapPreparationSrv srv =
+        new ConceptMapPreparationSrv(snapshotFilesServiceMock, fhirContextMock);
+    srv.init();
+    assertThrows(
+        ResponseStatusException.class,
+        () ->
+            srv.getPossibleCodesFromConceptMap(
+                "mytp",
+                "NotificationCategoryNonNominalToTransmissionCategory",
                 "LOINCMaterialToSNOMEDMaterial"));
   }
 }

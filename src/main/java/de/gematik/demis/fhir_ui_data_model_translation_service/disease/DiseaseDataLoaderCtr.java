@@ -73,6 +73,11 @@ public class DiseaseDataLoaderCtr {
     return diseaseFollowupSrv.getPossibleDiseaseCodesForFollowUp(code);
   }
 
+  @GetMapping({"/disease/7.3/followup/{code}"})
+  public Set<CodeDisplay> getPossibleDiseaseCodesForNonNominalFollowUp(@PathVariable String code) {
+    return diseaseFollowupSrv.getPossibleDiseaseCodesForNonNominalFollowUp(code);
+  }
+
   @GetMapping({"/disease/7.3"})
   public List<CodeDisplay> getAllAvailableCodesNonNominal() {
     return diseaseDataLoaderSrv.getPossibleDiseaseCodesNonNominal();
