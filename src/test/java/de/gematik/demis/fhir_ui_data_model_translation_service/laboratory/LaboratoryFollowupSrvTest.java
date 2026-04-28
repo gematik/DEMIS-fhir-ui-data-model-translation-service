@@ -114,4 +114,62 @@ class LaboratoryFollowupSrvTest {
 
     assertTrue(result.isEmpty());
   }
+
+  @Test
+  void testGetPossibleLaboratoryCodesForNonNominalFollowUp_CodeDisplayPresent() {
+    String code = "hivp";
+    PathogenNotificationCategory paragraph = PathogenNotificationCategory.P_7_3;
+    CodeDisplay codeDisplay =
+        CodeDisplay.builder().code(code).display("Humanes Immundefizienz-Virus (HIV)").build();
+    when(laboratoryDataLoaderSrv.getAvailableNotificationCategory(code, paragraph))
+        .thenReturn(Optional.of(codeDisplay));
+
+    Set<CodeDisplay> result =
+        laboratoryFollowupSrv.getPossibleLaboratoryCodesForFollowUp(code, paragraph);
+
+    assertEquals(1, result.size());
+    assertTrue(result.contains(codeDisplay));
+    verify(conceptMapPreparationSrv, never()).getPossibleCodesFromConceptMap(any(), any(), any());
+  }
+
+  @Test
+  void testGetPossibleLaboratoryCodesForNonNominalFollowUp_CodeDisplayNotPresent() {
+    String code = "hivp";
+    String possibleCode = "toxp";
+    PathogenNotificationCategory paragraph = PathogenNotificationCategory.P_7_3;
+    CodeDisplay codeDisplay =
+        CodeDisplay.builder().code(code).display("Humanes Immundefizienz-Virus (HIV)").build();
+
+    when(laboratoryDataLoaderSrv.getAvailableNotificationCategory(code, paragraph))
+        .thenReturn(Optional.empty());
+    when(conceptMapPreparationSrv.getPossibleCodesFromConceptMap(eq(code), any(), any()))
+        .thenReturn(Set.of(possibleCode));
+    when(laboratoryDataLoaderSrv.getAvailableNotificationCategory(possibleCode, paragraph))
+        .thenReturn(Optional.of(codeDisplay));
+
+    Set<CodeDisplay> result =
+        laboratoryFollowupSrv.getPossibleLaboratoryCodesForFollowUp(code, paragraph);
+
+    assertEquals(1, result.size());
+    assertTrue(result.contains(codeDisplay));
+  }
+
+  @Test
+  void testGetPossibleLaboratoryCodesForNonNominalFollowUp_NoCodeDisplayFound() {
+    String code = "hivp";
+    String possibleCode = "toxp";
+    PathogenNotificationCategory paragraph = PathogenNotificationCategory.P_7_3;
+
+    when(laboratoryDataLoaderSrv.getAvailableNotificationCategory(code, paragraph))
+        .thenReturn(Optional.empty());
+    when(conceptMapPreparationSrv.getPossibleCodesFromConceptMap(eq(code), any(), any()))
+        .thenReturn(Set.of(possibleCode));
+    when(laboratoryDataLoaderSrv.getAvailableNotificationCategory(possibleCode, paragraph))
+        .thenReturn(Optional.empty());
+
+    Set<CodeDisplay> result =
+        laboratoryFollowupSrv.getPossibleLaboratoryCodesForFollowUp(code, paragraph);
+
+    assertTrue(result.isEmpty());
+  }
 }

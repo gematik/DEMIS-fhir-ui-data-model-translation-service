@@ -14,6 +14,7 @@ All URIs are relative to *http://localhost*
 | [**getLaboratoryDataForSpecificCodeAndFederalState**](LaboratoryDataLoaderCtrApi.md#getLaboratoryDataForSpecificCodeAndFederalState) | **GET** /laboratory/federalState/{federalState} |  |
 | [**getLaboratoryDataForSpecificCodeAndFederalState1**](LaboratoryDataLoaderCtrApi.md#getLaboratoryDataForSpecificCodeAndFederalState1) | **GET** /laboratory/7.1/federalState/{federalState} |  |
 | [**getPossibleLaboratoryCodesForFollowUp**](LaboratoryDataLoaderCtrApi.md#getPossibleLaboratoryCodesForFollowUp) | **GET** /laboratory/7.1/followup/{code} |  |
+| [**getPossibleLaboratoryCodesForNonNominalFollowUp**](LaboratoryDataLoaderCtrApi.md#getPossibleLaboratoryCodesForNonNominalFollowUp) | **GET** /laboratory/7.3/followup/{code} |  |
 
 
 <a name="get71NotificationCategories"></a>
@@ -232,6 +233,31 @@ No authorization required
 <a name="getPossibleLaboratoryCodesForFollowUp"></a>
 # **getPossibleLaboratoryCodesForFollowUp**
 > Set getPossibleLaboratoryCodesForFollowUp(code)
+
+
+
+### Parameters
+
+|Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **code** | **String**|  | [default to null] |
+
+### Return type
+
+[**Set**](../Models/CodeDisplay.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: */*
+
+<a name="getPossibleLaboratoryCodesForNonNominalFollowUp"></a>
+# **getPossibleLaboratoryCodesForNonNominalFollowUp**
+> Set getPossibleLaboratoryCodesForNonNominalFollowUp(code)
 
 
 

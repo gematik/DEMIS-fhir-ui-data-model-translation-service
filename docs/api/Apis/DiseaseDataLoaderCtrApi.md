@@ -11,6 +11,7 @@ All URIs are relative to *http://localhost*
 | [**getFormlyRepresentationOfQuestionnaire1**](DiseaseDataLoaderCtrApi.md#getFormlyRepresentationOfQuestionnaire1) | **GET** /disease/questionnaire/{code}/formly |  |
 | [**getFormlyRepresentationOfQuestionnaireNonNominal**](DiseaseDataLoaderCtrApi.md#getFormlyRepresentationOfQuestionnaireNonNominal) | **GET** /disease/7.3/questionnaire/{code}/formly |  |
 | [**getPossibleDiseaseCodesForFollowUp**](DiseaseDataLoaderCtrApi.md#getPossibleDiseaseCodesForFollowUp) | **GET** /disease/6.1/followup/{code} |  |
+| [**getPossibleDiseaseCodesForNonNominalFollowUp**](DiseaseDataLoaderCtrApi.md#getPossibleDiseaseCodesForNonNominalFollowUp) | **GET** /disease/7.3/followup/{code} |  |
 | [**getQuestionsForSpecificCode**](DiseaseDataLoaderCtrApi.md#getQuestionsForSpecificCode) | **GET** /disease/questionnaire/{code}/items |  |
 
 
@@ -158,6 +159,31 @@ No authorization required
 <a name="getPossibleDiseaseCodesForFollowUp"></a>
 # **getPossibleDiseaseCodesForFollowUp**
 > Set getPossibleDiseaseCodesForFollowUp(code)
+
+
+
+### Parameters
+
+|Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **code** | **String**|  | [default to null] |
+
+### Return type
+
+[**Set**](../Models/CodeDisplay.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: */*
+
+<a name="getPossibleDiseaseCodesForNonNominalFollowUp"></a>
+# **getPossibleDiseaseCodesForNonNominalFollowUp**
+> Set getPossibleDiseaseCodesForNonNominalFollowUp(code)
 
 
 

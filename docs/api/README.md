@@ -20,6 +20,7 @@ All URIs are relative to *http://localhost*
 *DiseaseDataLoaderCtrApi* | [**getFormlyRepresentationOfQuestionnaire1**](Apis/DiseaseDataLoaderCtrApi.md#getFormlyRepresentationOfQuestionnaire1) | **GET** /disease/questionnaire/{code}/formly |  |
 *DiseaseDataLoaderCtrApi* | [**getFormlyRepresentationOfQuestionnaireNonNominal**](Apis/DiseaseDataLoaderCtrApi.md#getFormlyRepresentationOfQuestionnaireNonNominal) | **GET** /disease/7.3/questionnaire/{code}/formly |  |
 *DiseaseDataLoaderCtrApi* | [**getPossibleDiseaseCodesForFollowUp**](Apis/DiseaseDataLoaderCtrApi.md#getPossibleDiseaseCodesForFollowUp) | **GET** /disease/6.1/followup/{code} |  |
+*DiseaseDataLoaderCtrApi* | [**getPossibleDiseaseCodesForNonNominalFollowUp**](Apis/DiseaseDataLoaderCtrApi.md#getPossibleDiseaseCodesForNonNominalFollowUp) | **GET** /disease/7.3/followup/{code} |  |
 *DiseaseDataLoaderCtrApi* | [**getQuestionsForSpecificCode**](Apis/DiseaseDataLoaderCtrApi.md#getQuestionsForSpecificCode) | **GET** /disease/questionnaire/{code}/items |  |
 | *LaboratoryDataLoaderCtrApi* | [**get71NotificationCategories**](Apis/LaboratoryDataLoaderCtrApi.md#get71NotificationCategories) | **GET** /laboratory/7.1 |  |
 *LaboratoryDataLoaderCtrApi* | [**get73NotificationCategories**](Apis/LaboratoryDataLoaderCtrApi.md#get73NotificationCategories) | **GET** /laboratory/7.3 |  |
@@ -31,6 +32,7 @@ All URIs are relative to *http://localhost*
 *LaboratoryDataLoaderCtrApi* | [**getLaboratoryDataForSpecificCodeAndFederalState**](Apis/LaboratoryDataLoaderCtrApi.md#getLaboratoryDataForSpecificCodeAndFederalState) | **GET** /laboratory/federalState/{federalState} |  |
 *LaboratoryDataLoaderCtrApi* | [**getLaboratoryDataForSpecificCodeAndFederalState1**](Apis/LaboratoryDataLoaderCtrApi.md#getLaboratoryDataForSpecificCodeAndFederalState1) | **GET** /laboratory/7.1/federalState/{federalState} |  |
 *LaboratoryDataLoaderCtrApi* | [**getPossibleLaboratoryCodesForFollowUp**](Apis/LaboratoryDataLoaderCtrApi.md#getPossibleLaboratoryCodesForFollowUp) | **GET** /laboratory/7.1/followup/{code} |  |
+*LaboratoryDataLoaderCtrApi* | [**getPossibleLaboratoryCodesForNonNominalFollowUp**](Apis/LaboratoryDataLoaderCtrApi.md#getPossibleLaboratoryCodesForNonNominalFollowUp) | **GET** /laboratory/7.3/followup/{code} |  |
 | *UtilsCtrApi* | [**getDoubleCharacterCountryCode**](Apis/UtilsCtrApi.md#getDoubleCharacterCountryCode) | **GET** /utils/countryCodes |  |
 | *ValueSetCtrApi* | [**getAvailableCodeSystems**](Apis/ValueSetCtrApi.md#getAvailableCodeSystems) | **GET** /ValueSet |  |
 *ValueSetCtrApi* | [**getCode1**](Apis/ValueSetCtrApi.md#getCode1) | **GET** /ValueSet/{system}/{code} |  |

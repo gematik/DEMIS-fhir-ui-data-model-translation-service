@@ -77,4 +77,24 @@ public class DiseaseFollowupSrv {
     }
     return result;
   }
+
+  public Set<CodeDisplay> getPossibleDiseaseCodesForNonNominalFollowUp(String code) {
+    Set<CodeDisplay> result = new HashSet<>();
+    Optional<CodeDisplay> codeDisplay = diseaseDataLoaderSrv.getCodeDisplayForNonNominal(code);
+
+    if (codeDisplay.isPresent()) {
+      result.add(codeDisplay.get());
+    } else {
+      String mapNameFrom = "NotificationCategoryNonNominalToTransmissionCategory";
+      String mapNameTo = "NotificationDiseaseCategoryNonNominalToTransmissionCategory";
+
+      Set<String> possibleCodes =
+          conceptMapPreparationSrv.getPossibleCodesFromConceptMap(code, mapNameFrom, mapNameTo);
+      for (String possibleCode : possibleCodes) {
+        Optional<CodeDisplay> cd = diseaseDataLoaderSrv.getCodeDisplayForNonNominal(possibleCode);
+        cd.ifPresent(result::add);
+      }
+    }
+    return result;
+  }
 }

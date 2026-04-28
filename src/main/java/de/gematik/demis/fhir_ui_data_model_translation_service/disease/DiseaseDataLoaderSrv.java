@@ -115,4 +115,10 @@ public class DiseaseDataLoaderSrv {
         .filter(cd -> code.equals(cd.getCode()))
         .findFirst();
   }
+
+  public Optional<CodeDisplay> getCodeDisplayForNonNominal(String code) {
+    return this.getPossibleDiseaseCodesNonNominal().stream()
+        .filter(cd -> code.equals(cd.getCode()))
+        .findFirst();
+  }
 }

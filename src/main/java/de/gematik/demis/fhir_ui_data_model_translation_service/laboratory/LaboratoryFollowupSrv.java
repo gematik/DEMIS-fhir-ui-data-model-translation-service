@@ -67,11 +67,17 @@ public class LaboratoryFollowupSrv {
     if (codeDisplay.isPresent()) {
       result.add(codeDisplay.get());
     } else {
+      String mapNameFrom =
+          paragraph.equals(PathogenNotificationCategory.P_7_1)
+              ? "NotificationDiseaseCategoryToTransmissionCategory"
+              : "NotificationDiseaseCategoryNonNominalToTransmissionCategory";
+      String mapNameTo =
+          paragraph.equals(PathogenNotificationCategory.P_7_1)
+              ? "NotificationCategoryToTransmissionCategory"
+              : "NotificationCategoryNonNominalToTransmissionCategory";
+
       Set<String> possibleCodes =
-          conceptMapPreparationSrv.getPossibleCodesFromConceptMap(
-              code,
-              "NotificationDiseaseCategoryToTransmissionCategory",
-              "NotificationCategoryToTransmissionCategory");
+          conceptMapPreparationSrv.getPossibleCodesFromConceptMap(code, mapNameFrom, mapNameTo);
       for (String possibleCode : possibleCodes) {
         Optional<CodeDisplay> cd =
             laboratoryDataLoaderSrv.getAvailableNotificationCategory(possibleCode, paragraph);

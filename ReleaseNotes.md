@@ -2,6 +2,9 @@
  
 # FHIR-UI-Data-Model-Translation-Service Release Notes
 
+## Release 2.6.2
+- added 7.3 follow-up notification endpoints
+
 ## Release 2.6.1
 - updated datepicker to use default placeholder
 - fixed caching issue where disease questionnaire date limits were computed once at startup instead of per request

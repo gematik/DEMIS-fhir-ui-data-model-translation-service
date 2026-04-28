@@ -84,6 +84,13 @@ public class LaboratoryDataLoaderCtr {
         code, PathogenNotificationCategory.P_7_1);
   }
 
+  @GetMapping({"/laboratory/7.3/followup/{code}"})
+  public Set<CodeDisplay> getPossibleLaboratoryCodesForNonNominalFollowUp(
+      @PathVariable String code) {
+    return laboratoryFollowupSrv.getPossibleLaboratoryCodesForFollowUp(
+        code, PathogenNotificationCategory.P_7_3);
+  }
+
   @GetMapping("/laboratory/7.1")
   public SequencedCollection<CodeDisplay> get71NotificationCategories() {
     return laboratoryDataLoaderSrv.getAvailableNotificationCategories(
