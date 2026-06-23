@@ -38,4 +38,6 @@ public class FeatureFlags {
   boolean diseaseStrict;
   boolean addCodeDisplayVersion;
   boolean diseaseQuestionnaireOrgInputValidation;
+  boolean withoutDateFields73;
+  boolean diseaseIndent;
 }

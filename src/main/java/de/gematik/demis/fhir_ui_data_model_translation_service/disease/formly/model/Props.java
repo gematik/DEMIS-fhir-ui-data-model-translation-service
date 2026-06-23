@@ -28,13 +28,13 @@ package de.gematik.demis.fhir_ui_data_model_translation_service.disease.formly.m
  */
 
 import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import de.gematik.demis.fhir_ui_data_model_translation_service.disease.formly.fieldtypes.DatePickerSerializer;
 import de.gematik.demis.fhir_ui_data_model_translation_service.model.CodeDisplay;
 import java.math.BigDecimal;
 import lombok.Builder;
 import lombok.Data;
 import org.hl7.fhir.r4.model.Questionnaire;
+import tools.jackson.databind.annotation.JsonSerialize;
 
 @Builder
 @Data

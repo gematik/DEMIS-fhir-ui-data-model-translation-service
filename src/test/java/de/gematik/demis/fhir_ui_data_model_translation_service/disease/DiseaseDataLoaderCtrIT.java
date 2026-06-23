@@ -31,7 +31,6 @@ import static de.gematik.demis.fhir_ui_data_model_translation_service.utils.Test
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Paths;
@@ -42,23 +41,24 @@ import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 import org.junit.jupiter.params.provider.ValueSource;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.autoconfigure.actuate.observability.AutoConfigureObservability;
-import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
+import org.springframework.boot.micrometer.tracing.test.autoconfigure.AutoConfigureTracing;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.boot.webmvc.test.autoconfigure.AutoConfigureMockMvc;
 import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.TestPropertySource;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.MvcResult;
+import tools.jackson.databind.json.JsonMapper;
 
 @Slf4j
 @AutoConfigureMockMvc
 @SpringBootTest
-@AutoConfigureObservability
+@AutoConfigureTracing
 @ActiveProfiles("test")
 @TestPropertySource(properties = {"feature.flag.disease-questionnaire-org-input-validation=false"})
 class DiseaseDataLoaderCtrIT {
-  private final ObjectMapper mapper = new ObjectMapper();
 
+  @Autowired private JsonMapper mapper;
   @Autowired private MockMvc mockMvc;
 
   @ParameterizedTest

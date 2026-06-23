@@ -64,10 +64,12 @@ public class DiseaseProcessor {
   private final DataLoaderSrv dataLoaderSrv;
   private final DiseaseClipboardProps diseaseClipboardProps;
 
-  public FieldGroup[] createFieldGroup(String diseaseCode) {
+  public FieldGroup[] createFieldGroup(String diseaseCode, final boolean addDateFields) {
     List<FieldGroup> fieldGroups = new ArrayList<>();
-    fieldGroups.add(createDateOfDiagnosesFieldGroup());
-    fieldGroups.add(createDiseaseBeginnFieldGroup());
+    if (addDateFields) {
+      fieldGroups.add(createDateOfDiagnosesFieldGroup());
+      fieldGroups.add(createDiseaseBeginnFieldGroup());
+    }
     addEvidences(diseaseCode, fieldGroups);
     fieldGroups.add(createNoteFieldGroup());
     return fieldGroups.toArray(new FieldGroup[0]);

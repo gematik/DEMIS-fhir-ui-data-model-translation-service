@@ -29,15 +29,13 @@ package de.gematik.demis.fhir_ui_data_model_translation_service.utils;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.JsonNode;
-import com.fasterxml.jackson.databind.ObjectMapper;
+import tools.jackson.databind.JsonNode;
+import tools.jackson.databind.json.JsonMapper;
 
 public class TestUtils {
 
   public static void checkExpectedAndActualContentAsJsonNodes(
-      String contentAsString, String jsonContent, ObjectMapper mapper)
-      throws JsonProcessingException {
+      String contentAsString, String jsonContent, JsonMapper mapper) {
     JsonNode actualContent = mapper.readTree(contentAsString);
     JsonNode expectedContent = mapper.readTree(jsonContent);
 

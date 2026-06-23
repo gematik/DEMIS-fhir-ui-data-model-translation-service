@@ -44,6 +44,9 @@ import org.springframework.stereotype.Component;
 @RequiredArgsConstructor
 public class GroupProcessor implements ItemProcessor {
 
+  /** Prefix of FieldGroup class name to mark as item group */
+  static final String CLASSNAME_PREFIX = "ITEM_GROUP ";
+
   private final EnableWhenProcessor enableWhenProcessor;
   private final TooltipExtension tooltipExtension;
 
@@ -60,7 +63,7 @@ public class GroupProcessor implements ItemProcessor {
     FieldGroup.FieldGroupBuilder fieldGroupBuilder =
         FieldGroup.builder()
             .key(key)
-            .fieldGroupClassName("ITEM_GROUP " + fieldGroupClassName)
+            .fieldGroupClassName(CLASSNAME_PREFIX + fieldGroupClassName)
             .parent(parent);
 
     if (!isEmpty(label)) {

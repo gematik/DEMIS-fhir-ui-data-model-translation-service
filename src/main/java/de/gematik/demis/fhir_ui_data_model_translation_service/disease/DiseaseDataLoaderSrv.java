@@ -91,14 +91,6 @@ public class DiseaseDataLoaderSrv {
       name = "questionnaire",
       contextualName = "questionnaire",
       lowCardinalityKeyValues = {"disease", "fhir"})
-  public Map<String, FormlyFieldConfigs[]> getData(String code) {
-    return diseaseDataPreparationSrv.getQuestionnaire(code);
-  }
-
-  @Observed(
-      name = "questionnaire",
-      contextualName = "questionnaire",
-      lowCardinalityKeyValues = {"disease", "fhir"})
   public Map<String, FormlyFieldConfigs[]> getData(
       String code, NotificationCategory notificationCategory) {
     return diseaseDataPreparationSrv.getQuestionnaire(code, notificationCategory);

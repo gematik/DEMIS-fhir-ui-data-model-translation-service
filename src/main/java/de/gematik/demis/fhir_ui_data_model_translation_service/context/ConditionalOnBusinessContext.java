@@ -34,8 +34,8 @@ import org.springframework.context.annotation.Conditional;
  * Conditionally enables a bean based on the active business context derived from the configured
  * FHIR package name.
  *
- * <p>If the package registry feature flag is disabled, the condition always matches (legacy
- * behavior).
+ * <p>The active business context is determined from the {@code fhir-profile.package-name}
+ * configuration property.
  *
  * <p>Typical usage:
  *

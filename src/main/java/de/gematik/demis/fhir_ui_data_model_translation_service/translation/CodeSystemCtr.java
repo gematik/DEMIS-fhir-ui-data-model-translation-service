@@ -27,13 +27,15 @@ package de.gematik.demis.fhir_ui_data_model_translation_service.translation;
  * #L%
  */
 
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.databind.ObjectWriter;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.MediaType;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
+import tools.jackson.databind.ObjectWriter;
+import tools.jackson.databind.json.JsonMapper;
 
 @RestController
 @Slf4j
@@ -41,8 +43,7 @@ import org.springframework.web.bind.annotation.*;
 public class CodeSystemCtr {
 
   private final DataLoaderSrv dataLoaderSrv;
-
-  private final ObjectMapper objectMapper;
+  private final JsonMapper mapper;
 
   /**
    * This endpoint provides retrieval of translations for FHIR code systems. Originally intended to
@@ -55,15 +56,13 @@ public class CodeSystemCtr {
   public String getAvailableCodeSystems(
       @RequestParam(required = false) String system,
       @RequestParam(required = false) String code,
-      @RequestParam(required = false) String version)
-      throws JsonProcessingException {
+      @RequestParam(required = false) String version) {
     return processEnteredData(system, code, version);
   }
 
   @GetMapping(path = "/CodeSystem/{system}", produces = MediaType.APPLICATION_JSON_VALUE)
   public String getSystemContent(
-      @PathVariable String system, @RequestParam(required = false) String version)
-      throws JsonProcessingException {
+      @PathVariable String system, @RequestParam(required = false) String version) {
     return processEnteredData(system, null, version);
   }
 
@@ -71,14 +70,12 @@ public class CodeSystemCtr {
   public String getCode(
       @PathVariable String system,
       @PathVariable String code,
-      @RequestParam(required = false) String version)
-      throws JsonProcessingException {
+      @RequestParam(required = false) String version) {
     return processEnteredData(system, code, version);
   }
 
-  private String processEnteredData(String system, String code, String version)
-      throws JsonProcessingException {
-    ObjectWriter objectWriter = objectMapper.writerWithDefaultPrettyPrinter();
+  private String processEnteredData(String system, String code, String version) {
+    ObjectWriter objectWriter = mapper.writerWithDefaultPrettyPrinter();
     if (version != null && system != null) {
       system = system + "|" + version;
     }

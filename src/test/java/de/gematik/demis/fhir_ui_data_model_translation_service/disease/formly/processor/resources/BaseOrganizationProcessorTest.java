@@ -40,6 +40,7 @@ import java.util.List;
 import org.hl7.fhir.r4.model.Questionnaire;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.Mock;
@@ -105,6 +106,88 @@ class BaseOrganizationProcessorTest {
     final FieldGroup typeInput = fieldGroups.get(2);
     assertThat(typeInput.getKey()).isEqualTo(TYPE_KEY);
     assertThat(typeInput.getProps().getRequired()).isTrue();
+
+    // then address should use default panel wrapper (no type set)
+    final FieldGroup addressGroup = fieldGroups.get(3);
+    assertThat(addressGroup.getKey()).isEqualTo("address");
+    assertThat(addressGroup.getType()).isNull();
+  }
+
+  @Nested
+  @DisplayName("Address toggle feature flag")
+  class AddressToggleTest {
+
+    private BaseOrganizationProcessor processorWithAddressSwitch;
+
+    @BeforeEach
+    void createProcessorWithAddressSwitch() {
+      final FeatureFlags flags =
+          FeatureFlags.builder()
+              .diseaseQuestionnaireOrgInputValidation(true)
+              .diseaseStrict(true)
+              .build();
+      processorWithAddressSwitch =
+          new TestOrganizationProcessor(
+              enableWhenProcessor, diseaseClipboardProps, dataLoaderSrv, flags);
+    }
+
+    @Test
+    @DisplayName("should create address with type address-toggle when flag is enabled")
+    void shouldCreateAddressToggleType() {
+      // given
+      final Questionnaire.QuestionnaireItemComponent item =
+          new Questionnaire.QuestionnaireItemComponent();
+      item.setLinkId("linkId1");
+      final FieldGroup parent = FieldGroup.builder().build();
+
+      // when
+      final FieldGroup[] result = processorWithAddressSwitch.createFieldGroup(item, parent, "cvdd");
+
+      // then
+      final FieldGroup organization = result[0];
+      final FieldGroup addressGroup =
+          organization.getFieldGroups().stream()
+              .filter(fg -> "address".equals(fg.getKey()))
+              .findFirst()
+              .orElseThrow();
+
+      assertThat(addressGroup.getType()).isEqualTo("address-toggle");
+    }
+
+    @Test
+    @DisplayName("should set all address fields as required")
+    void shouldSetAddressFieldsRequired() {
+      // given
+      final Questionnaire.QuestionnaireItemComponent item =
+          new Questionnaire.QuestionnaireItemComponent();
+      item.setLinkId("linkId1");
+      final FieldGroup parent = FieldGroup.builder().build();
+
+      // when
+      final FieldGroup[] result = processorWithAddressSwitch.createFieldGroup(item, parent, "cvdd");
+
+      // then
+      final FieldGroup addressGroup =
+          result[0].getFieldGroups().stream()
+              .filter(fg -> "address".equals(fg.getKey()))
+              .findFirst()
+              .orElseThrow();
+      final List<FieldGroup> addressFields = addressGroup.getFieldGroups();
+
+      // street, houseNumber, postalCode, city should be required
+      assertThat(addressFields).hasSizeGreaterThanOrEqualTo(4);
+      for (int i = 0; i < 4; i++) {
+        final FieldGroup field = addressFields.get(i);
+        assertThat(field.getProps().getRequired())
+            .as("Field %s should be required", field.getKey())
+            .isTrue();
+      }
+
+      // country (autocomplete-coding) should also be present
+      final FieldGroup countryField = addressFields.get(4);
+      assertThat(countryField.getKey()).contains("country");
+      assertThat(countryField.getType()).isEqualTo(FieldGroup.TYPE_CODING);
+    }
   }
 
   private static final class TestOrganizationProcessor extends BaseOrganizationProcessor {
@@ -113,6 +196,14 @@ class BaseOrganizationProcessorTest {
         DiseaseClipboardProps diseaseClipboardProps,
         DataLoaderSrv dataLoaderSrv) {
       super(enableWhenProcessor, diseaseClipboardProps, dataLoaderSrv, FEATURE_FLAGS);
+    }
+
+    TestOrganizationProcessor(
+        EnableWhenProcessor enableWhenProcessor,
+        DiseaseClipboardProps diseaseClipboardProps,
+        DataLoaderSrv dataLoaderSrv,
+        FeatureFlags featureFlags) {
+      super(enableWhenProcessor, diseaseClipboardProps, dataLoaderSrv, featureFlags);
     }
 
     @Override

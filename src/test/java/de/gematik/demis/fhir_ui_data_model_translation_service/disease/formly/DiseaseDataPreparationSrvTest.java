@@ -29,11 +29,11 @@ package de.gematik.demis.fhir_ui_data_model_translation_service.disease.formly;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.ArgumentMatchers.any;
+import static org.mockito.ArgumentMatchers.anyBoolean;
 import static org.mockito.ArgumentMatchers.anyString;
 import static org.mockito.Mockito.when;
 
 import ca.uhn.fhir.context.FhirContext;
-import com.fasterxml.jackson.core.JsonProcessingException;
 import de.gematik.demis.fhir_ui_data_model_translation_service.FeatureFlags;
 import de.gematik.demis.fhir_ui_data_model_translation_service.disease.DiseaseNotificationCategoriesSrv;
 import de.gematik.demis.fhir_ui_data_model_translation_service.disease.Questionnaires;
@@ -42,6 +42,7 @@ import de.gematik.demis.fhir_ui_data_model_translation_service.disease.formly.mo
 import de.gematik.demis.fhir_ui_data_model_translation_service.disease.formly.processor.*;
 import de.gematik.demis.fhir_ui_data_model_translation_service.disease.formly.processor.DiseaseProcessor;
 import de.gematik.demis.fhir_ui_data_model_translation_service.model.CodeDisplay;
+import de.gematik.demis.notification.builder.demis.fhir.notification.types.NotificationCategory;
 import java.io.File;
 import java.util.HashMap;
 import java.util.Map;
@@ -63,12 +64,13 @@ class DiseaseDataPreparationSrvTest {
   @Mock private ReferenceProcessor referenceProcessorMock;
   @Mock private DiseaseProcessor diseaseProcessorMock;
   @Mock private QuantityProcessor quantityProcessorMock;
+  @Mock private QuestionnaireLayoutProcessor questionnaireLayoutProcessorMock;
   @Mock private FeatureFlags featureFlags;
 
   private DiseaseDataPreparationSrv diseaseDataPreparationSrv;
 
   @Test
-  void shouldCreateQuestionnairesByCallingSupportingProcessors() throws JsonProcessingException {
+  void shouldCreateQuestionnairesByCallingSupportingProcessors() {
     when(categoriesSrvMock.getCategory(anyString()))
         .thenReturn(CodeDisplay.builder().code("cvdd").display("Covid").build());
     when(choiceProcessorMock.createFieldGroup(any(), any(), anyString()))
@@ -79,7 +81,8 @@ class DiseaseDataPreparationSrvTest {
         .thenReturn(new FieldGroup[0]);
     when(referenceProcessorMock.createFieldGroup(any(), any(), anyString()))
         .thenReturn(new FieldGroup[0]);
-    when(diseaseProcessorMock.createFieldGroup(anyString())).thenReturn(new FieldGroup[0]);
+    when(diseaseProcessorMock.createFieldGroup(anyString(), anyBoolean()))
+        .thenReturn(new FieldGroup[0]);
     when(featureFlags.isDiseaseStrict()).thenReturn(false);
 
     diseaseDataPreparationSrv =
@@ -95,6 +98,7 @@ class DiseaseDataPreparationSrvTest {
             diseaseProcessorMock,
             new EnableWhenProcessor(),
             quantityProcessorMock,
+            questionnaireLayoutProcessorMock,
             featureFlags);
     Map<String, File> someMap = new HashMap<>();
     someMap.put(
@@ -104,7 +108,8 @@ class DiseaseDataPreparationSrvTest {
     when(questionnairesMock.getDiseaseQuestionnaires()).thenReturn(someMap);
 
     diseaseDataPreparationSrv.init();
-    Map<String, FormlyFieldConfigs[]> cvdd = diseaseDataPreparationSrv.getQuestionnaire("cvdd");
+    Map<String, FormlyFieldConfigs[]> cvdd =
+        diseaseDataPreparationSrv.getQuestionnaire("cvdd", NotificationCategory.P_6_1);
     assertThat(cvdd)
         .isNotNull()
         .containsKey("conditionConfigs")

@@ -31,50 +31,49 @@ import static de.gematik.demis.fhir_ui_data_model_translation_service.disease.fo
 import static de.gematik.demis.fhir_ui_data_model_translation_service.disease.formly.fieldtypes.DatePickerSerializer.ZONE_EUROPE_BERLIN;
 import static org.assertj.core.api.Assertions.assertThat;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
 import de.gematik.demis.fhir_ui_data_model_translation_service.disease.formly.model.Props;
 import java.time.LocalDate;
 import org.junit.jupiter.api.Test;
+import tools.jackson.databind.json.JsonMapper;
 
 class DatePickerSerializerTest {
 
-  private final ObjectMapper objectMapper = new ObjectMapper();
+  private final JsonMapper mapper = JsonMapper.builder().build();
 
   @Test
-  void resolvesPlaceholderToCurrentDateInBerlinTimezone() throws JsonProcessingException {
+  void resolvesPlaceholderToCurrentDateInBerlinTimezone() {
     Props props = Props.builder().maxDate(TODAY_PLACEHOLDER).build();
 
-    String json = objectMapper.writeValueAsString(props);
+    String json = mapper.writeValueAsString(props);
 
     String expectedDate = LocalDate.now(ZONE_EUROPE_BERLIN).toString();
     assertThat(json).contains("\"maxDate\":\"" + expectedDate + "\"");
   }
 
   @Test
-  void writesRegularDateAsIs() throws JsonProcessingException {
+  void writesRegularDateAsIs() {
     Props props = Props.builder().maxDate("2020-06-15").build();
 
-    String json = objectMapper.writeValueAsString(props);
+    String json = mapper.writeValueAsString(props);
 
     assertThat(json).contains("\"maxDate\":\"2020-06-15\"");
   }
 
   @Test
-  void resolvesPlaceholderOnMinDate() throws JsonProcessingException {
+  void resolvesPlaceholderOnMinDate() {
     Props props = Props.builder().minDate(TODAY_PLACEHOLDER).build();
 
-    String json = objectMapper.writeValueAsString(props);
+    String json = mapper.writeValueAsString(props);
 
     String expectedDate = LocalDate.now(ZONE_EUROPE_BERLIN).toString();
     assertThat(json).contains("\"minDate\":\"" + expectedDate + "\"");
   }
 
   @Test
-  void nullDatesAreOmitted() throws JsonProcessingException {
+  void nullDatesAreOmitted() {
     Props props = Props.builder().build();
 
-    String json = objectMapper.writeValueAsString(props);
+    String json = mapper.writeValueAsString(props);
 
     assertThat(json).doesNotContain("minDate").doesNotContain("maxDate");
   }

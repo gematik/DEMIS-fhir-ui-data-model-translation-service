@@ -2,11 +2,11 @@
   "resourceType": "Questionnaire",
   "id": "DiseaseQuestionsCommon",
   "url": "https://demis.rki.de/fhir/Questionnaire/DiseaseQuestionsCommon",
-  "version": "1.5.0",
+  "version": "1.6.0",
   "name": "DiseaseQuestionsCommon",
   "title": "Fragebogen für meldetatbestandsübergreifende klinische und epidemiologische Angaben",
   "status": "active",
-  "date": "2026-01-19",
+  "date": "2026-02-17",
   "publisher": "Robert Koch-Institut",
   "contact": [
     {
@@ -317,37 +317,6 @@
           "required": true,
           "repeats": true,
           "item": [
-            {
-              "extension": [
-                {
-                  "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-                  "valueCodeableConcept": {
-                    "coding": [
-                      {
-                        "system": "http://hl7.org/fhir/questionnaire-item-control",
-                        "code": "drop-down",
-                        "display": "Drop down"
-                      }
-                    ]
-                  }
-                }
-              ],
-              "linkId": "infectProtectFacilityType",
-              "text": "Art der Einrichtung",
-              "type": "choice",
-              "enableWhen": [
-                {
-                  "question": "infectProtectFacility",
-                  "operator": "=",
-                  "answerCoding": {
-                    "system": "http://snomed.info/sct",
-                    "code": "373066001"
-                  }
-                }
-              ],
-              "required": false,
-              "answerValueSet": "https://demis.rki.de/fhir/ValueSet/organizationType"
-            },
             {
               "extension": [
                 {
