@@ -32,24 +32,24 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
 import java.nio.charset.StandardCharsets;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.autoconfigure.actuate.observability.AutoConfigureObservability;
-import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
+import org.springframework.boot.micrometer.tracing.test.autoconfigure.AutoConfigureTracing;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.boot.webmvc.test.autoconfigure.AutoConfigureMockMvc;
 import org.springframework.test.context.TestPropertySource;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.MvcResult;
+import tools.jackson.databind.json.JsonMapper;
 
 @Slf4j
 @AutoConfigureMockMvc
 @SpringBootTest
-@AutoConfigureObservability
+@AutoConfigureTracing
 @TestPropertySource(locations = "classpath:application-test.properties")
 class CodeSystemsCtrIT {
 
@@ -58,7 +58,8 @@ class CodeSystemsCtrIT {
 
   public static final String CODE_DISPLAY_2 =
       "{\"code\":\"provisional\",\"display\":\"Provisional\",\"designations\":[]}";
-  private final ObjectMapper mapper = new ObjectMapper();
+
+  @Autowired private JsonMapper mapper;
   @Autowired private MockMvc mockMvc;
 
   @Test

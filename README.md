@@ -1,7 +1,6 @@
 <div style="text-align:right"><img src="https://raw.githubusercontent.com/gematik/gematik.github.io/master/Gematik_Logo_Flag_With_Background.png" width="250" height="47" alt="gematik GmbH Logo"/> <br/> </div> <br/>
 
 # Fhir-Ui-Data-Model-Translation-Service (FUTS)
-
 <details>
   <summary>Table of Contents</summary>
   <ol>
@@ -33,24 +32,20 @@
 [![Coverage](https://sonar.prod.ccs.gematik.solutions/api/project_badges/measure?project=de.gematik.demis%3Afhir-ui-data-model-translation-service&metric=coverage&token=56c451846feaca7a027fb63687da583540b88235)](https://sonar.prod.ccs.gematik.solutions/dashboard?id=de.gematik.demis%3Afhir-ui-data-model-translation-service)
 
 # About The Project
-
 This project provides a service that enables the translation of any code that is known for DEMIS notifications. It is
 possible to convert codes to a display value via their resource type. It is also possible to query the available
 resource lists and the available codes per resource type.
 
 ## Release Notes
-
 See [ReleaseNotes](./ReleaseNotes.md) for all information regarding the (newest) releases.
 ___
 
 # Getting Started
 
 ## Prerequisites
-
-The Project requires Java 21 and Maven 3.8+.
+The Project requires Java 25 and Maven 3.8+.
 
 ## Installation
-
 The Project can be built with the following command:
 
 ```sh
@@ -66,7 +61,6 @@ mvn clean install -Pdocker
 ___
 
 # Usage
-
 The application can be executed from a JAR file or a Docker Image:
 
 ```sh
@@ -84,7 +78,6 @@ helm install fhir-ui-data-model-translation-service ./deployment/helm/fhir-ui-da
 ```
 
 ## Endpoints
-
 Define here the available endpoints exposed by the service
 
 | Endpoint                                                                                                 | Input                                                                                                                                                                                              | Output                                                                                           |
@@ -114,7 +107,6 @@ Define here the available endpoints exposed by the service
 | /utils/countryCodes                                                                                      | none                                                                                                                                                                                               | returns all two digit country codes from iso 3166 code system sorted by their german designation |
 
 ## DEMIS-Profiles
-
 This service provides data for front-end applications, e.g. for the Microfrontends or PDF-Generator. Since the
 data is created from various sources, a profile snapshot of the DEMIS profiles must be available; further on, this data
 is referred to as base data.
@@ -124,13 +116,11 @@ volume. This image is maintained in
 DockerHub: [demis-profile-snapshots](https://hub.docker.com/repository/docker/gematik1/demis-fhir-profile-snapshots/general).
 
 ## Feature Flags
-
 | Property                                 | Description                                                         |
 |------------------------------------------|---------------------------------------------------------------------|
 | `feature.flag.moveHospitalizationReason` | moves question for hospitalization to the common questionnaire part | 
 
 ## Ops Flags
-
 | Property                           | Description                                                                                                                                                                                                                                                                                                                                                                                  |
 |------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | `add.test.data.error.case.for.lab` | activates a testcase for the laboratory notification portal. adds a notification category that will lead to an error when chosen by the user                                                                                                                                                                                                                                                 |
@@ -139,16 +129,13 @@ DockerHub: [demis-profile-snapshots](https://hub.docker.com/repository/docker/ge
 | `data.path.gapd.data`              | if path does not exist,  will not add any sorting testdata.                                                                                                                                                                                                                                                                                                                                  |                                                                                                                                                                                                                                                                                                                                  
 
 ## Security Policy
-
 If you want to see the security policy, please check our [SECURITY.md](.github/SECURITY.md).
 
 ## Contributing
-
 If you want to contribute, please check our [CONTRIBUTING.md](.github/CONTRIBUTING.md).
 
 ## License
-
-Copyright 2023-2025 gematik GmbH
+Copyright 2023-2026 gematik GmbH
 
 EUROPEAN UNION PUBLIC LICENCE v. 1.2
 
@@ -160,12 +147,11 @@ See the [LICENSE](./LICENSE.md) for the specific language governing permissions 
 
 1. Copyright notice: Each published work result is accompanied by an explicit statement of the license conditions for use. These are regularly typical conditions in connection with open source or free software. Programs described/provided/linked here are free software, unless otherwise stated.
 2. Permission notice: Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
-    1. The copyright notice (Item 1) and the permission notice (Item 2) shall be included in all copies or substantial portions of the Software.
-    2. The software is provided "as is" without warranty of any kind, either express or implied, including, but not limited to, the warranties of fitness for a particular purpose, merchantability, and/or non-infringement. The authors or copyright holders shall not be liable in any manner whatsoever for any damages or other claims arising from, out of or in connection with the software or the use or other dealings with the software, whether in an action of contract, tort, or otherwise.
-    3. We take open source license compliance very seriously. We are always striving to achieve compliance at all times and to improve our processes. If you find any issues or have any suggestions or comments, or if you see any other ways in which we can improve, please reach out to: ospo@gematik.de
+   1. The copyright notice (Item 1) and the permission notice (Item 2) shall be included in all copies or substantial portions of the Software.
+   2. The software is provided "as is" without warranty of any kind, either express or implied, including, but not limited to, the warranties of fitness for a particular purpose, merchantability, and/or non-infringement. The authors or copyright holders shall not be liable in any manner whatsoever for any damages or other claims arising from, out of or in connection with the software or the use or other dealings with the software, whether in an action of contract, tort, or otherwise.
+   3. We take open source license compliance very seriously. We are always striving to achieve compliance at all times and to improve our processes. If you find any issues or have any suggestions or comments, or if you see any other ways in which we can improve, please reach out to: ospo@gematik.de
 3. Please note: Parts of this code may have been generated using AI-supported technology. Please take this into account, especially when troubleshooting, for security analyses and possible adjustments.
 
 ## Contact
-
 E-Mail
 to [DEMIS Entwicklung](mailto:demis-entwicklung@gematik.de?subject=[GitHub]%20VFhir-Ui-Data-Model-Translation-Service)

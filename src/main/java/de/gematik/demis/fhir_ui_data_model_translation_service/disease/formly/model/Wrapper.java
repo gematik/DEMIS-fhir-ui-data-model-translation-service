@@ -32,6 +32,8 @@ import lombok.RequiredArgsConstructor;
 
 @RequiredArgsConstructor
 public enum Wrapper {
+
+  /** A field group with the wrapper <code>panel</code> will be indented. */
   PANEL("panel"),
   FORM_FIELD("form-field");
 

@@ -59,6 +59,11 @@ abstract class BaseOrganizationProcessor implements ItemProcessor {
   static final String CLIPBOARD_MARKER_ORGANIZATION = ".org.";
   static final String TYPE_LINK_ID = "type";
   static final String TYPE_VALUE_SET = "https://demis.rki.de/fhir/ValueSet/organizationType";
+  static final String TYPE_ADDRESS_TOGGLE = "address-toggle";
+  static final String STREET_LINK_ID = "street";
+  static final String HOUSE_NUMBER_LINK_ID = "houseNumber";
+  static final String POSTAL_CODE_LINK_ID = "zip";
+  static final String CITY_LINK_ID = "city";
   private static final int BSNR_MAX_LENGTH = 9;
 
   private final EnableWhenProcessor enableWhenProcessor;
@@ -178,14 +183,67 @@ abstract class BaseOrganizationProcessor implements ItemProcessor {
   }
 
   private void createAddress(Questionnaire.QuestionnaireItemComponent item, FieldGroup parent) {
+    if (this.featureFlags.isDiseaseStrict()) {
+      createAddressToggle(item, parent);
+    } else {
+      createAddressDefault(item, parent);
+    }
+  }
+
+  private void createAddressDefault(
+      Questionnaire.QuestionnaireItemComponent item, FieldGroup parent) {
     final FieldGroup address = createPanelFieldGroup("address", parent, "Adresse");
-    createInputFieldGroup(item, "street", "street", "Straße", address, Validation.TEXT);
+    createInputFieldGroup(item, STREET_LINK_ID, STREET_LINK_ID, "Straße", address, Validation.TEXT);
     createInputFieldGroup(
-        item, "houseNumber", "houseNumber", "Hausnummer", address, Validation.HOUSE_NUMBER);
+        item,
+        HOUSE_NUMBER_LINK_ID,
+        HOUSE_NUMBER_LINK_ID,
+        "Hausnummer",
+        address,
+        Validation.HOUSE_NUMBER);
     createInputFieldGroup(
-        item, "postalCode", "zip", "Postleitzahl", address, Validation.INTERNATIONAL_ZIP);
-    createInputFieldGroup(item, "city", "city", "Stadt", address, Validation.TEXT);
+        item,
+        "postalCode",
+        POSTAL_CODE_LINK_ID,
+        "Postleitzahl",
+        address,
+        Validation.INTERNATIONAL_ZIP);
+    createInputFieldGroup(item, CITY_LINK_ID, CITY_LINK_ID, "Stadt", address, Validation.TEXT);
     createCountry(item, address);
+  }
+
+  private void createAddressToggle(
+      Questionnaire.QuestionnaireItemComponent item, FieldGroup parent) {
+    final FieldGroup address =
+        FieldGroup.builder()
+            .key("address")
+            .type(TYPE_ADDRESS_TOGGLE)
+            .parent(parent)
+            .props(Props.builder().label("Adresse").build())
+            .build();
+    createRequiredAddressField(
+        item, STREET_LINK_ID, STREET_LINK_ID, "Straße", address, Validation.TEXT);
+    createRequiredAddressField(
+        item,
+        HOUSE_NUMBER_LINK_ID,
+        HOUSE_NUMBER_LINK_ID,
+        "Hausnummer",
+        address,
+        Validation.HOUSE_NUMBER);
+    createRequiredAddressField(
+        item, "postalCode", "zip", "Postleitzahl", address, Validation.INTERNATIONAL_ZIP);
+    createRequiredAddressField(item, "city", "city", "Stadt", address, Validation.TEXT);
+    createCountry(item, address);
+  }
+
+  private void createRequiredAddressField(
+      Questionnaire.QuestionnaireItemComponent item,
+      String parameter,
+      String className,
+      String label,
+      FieldGroup parent,
+      Validation... validations) {
+    createInputFieldGroup(item, parameter, className, label, true, parent, validations);
   }
 
   private void createCountry(Questionnaire.QuestionnaireItemComponent item, FieldGroup address) {

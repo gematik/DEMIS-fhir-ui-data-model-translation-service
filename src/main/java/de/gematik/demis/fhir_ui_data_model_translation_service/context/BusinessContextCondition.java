@@ -36,7 +36,6 @@ import org.springframework.core.type.AnnotatedTypeMetadata;
 
 class BusinessContextCondition implements Condition {
 
-  private static final String FEATURE_FLAG_PROPERTY = "feature.flag.package-registry.enabled";
   private static final String PACKAGE_NAME_PROPERTY = "fhir-profile.package-name";
 
   @Override
@@ -53,11 +52,6 @@ class BusinessContextCondition implements Condition {
     }
 
     BusinessContext[] allowedContexts = (BusinessContext[]) attrs.get("value");
-
-    boolean packageRegistryEnabled = env.getProperty(FEATURE_FLAG_PROPERTY, Boolean.class, false);
-    if (!packageRegistryEnabled) {
-      return true; // legacy behavior
-    }
 
     String packageName = env.getProperty(PACKAGE_NAME_PROPERTY);
     BusinessContext activeContext = BusinessContext.fromPackageName(packageName);

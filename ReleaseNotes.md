@@ -2,8 +2,22 @@
  
 # FHIR-UI-Data-Model-Translation-Service Release Notes
 
+## Release 2.7.0
+- added clipboard ID to disease InfectProtectFacility organization type input
+- updated base image to FHIR package initializer 1.1.6
+- added prometheus pod annotations to helm chart
+- removed date fields from symptoms questionnaire for §7.3 disease notifications 
+- added FEATURE_FLAG_WITHOUT_DATE_FIELDS_7_3
+- arranged jvm options and resource limits
+- optimized custom environment variables handling in helm chart
+- updated docker base image to gematik1/osadl-alpine-openjdk25-jre:1.0.5
+- added address-toggle field type for laboratory, infect protect und hospitalization
+- updated to spring boot 4 and jackson 3
+- Added indentation for follow-up questions in the disease questionnaires
+
 ## Release 2.6.2
 - added 7.3 follow-up notification endpoints
+- removed FEATURE_FLAG_PACKAGE_REGISTRY_ENABLED
 
 ## Release 2.6.1
 - updated datepicker to use default placeholder

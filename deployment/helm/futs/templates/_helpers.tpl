@@ -62,7 +62,7 @@ Selector labels
 {{- define "fhir-ui-data-model-translation-service.selectorLabels" -}}
 app: {{ include "fhir-ui-data-model-translation-service.name" . }}
 version: {{ .Chart.AppVersion | quote }}
-fhirProfile: {{ .Values.required.profiles.name | quote }}
+fhirProfile: {{ .Values.required.profiles.packageName | quote }}
 app.kubernetes.io/name: {{ include "fhir-ui-data-model-translation-service.name" . }}
 app.kubernetes.io/instance: {{ .Release.Name }}
 {{- end }}
@@ -88,3 +88,36 @@ Create the name of the service account to use
 {{- default "default" .Values.serviceAccount.name }}
 {{- end }}
 {{- end }}
+
+{{/*
+Environment Variables
+*/}}
+{{- define "fhir-ui-data-model-translation-service.env" -}}
+{{- $envs := dict -}}
+{{- if .profilesVersion -}}
+{{- $envs = set $envs "PACKAGE_VERSIONS" .profilesVersion -}}
+{{- $envs = set $envs "DATA_PATH_PROFILE_ROOT" (printf "/tmp/fhir-profiles/%s/Fhir" .profilesVersion) -}}
+{{- end -}}
+{{- if .Values.customEnvVars -}}
+{{- range $key, $value := .Values.customEnvVars -}}
+{{ if $value -}}
+{{- $envs = set $envs $key $value }}
+{{- end -}}
+{{- end -}}
+{{- end -}}
+{{- if .Values.debug.enable -}}
+{{- $toolOptions := printf "%s %s" (get $envs "JAVA_TOOL_OPTIONS") .Values.debug.params | trim -}}
+{{- $envs = set $envs "JAVA_TOOL_OPTIONS" $toolOptions -}}
+{{- end -}}
+{{- range $i, $key := keys $envs | sortAlpha -}}
+{{- if $i }}
+{{ end -}}
+{{- $v := get $envs $key -}}
+- name: {{ $key | quote }}
+{{- if kindIs "string" $v }}
+  value: {{ tpl $v $ | quote }}
+{{- else }}
+  value: {{ $v | quote }}
+{{- end }}
+{{- end -}}
+{{- end -}}

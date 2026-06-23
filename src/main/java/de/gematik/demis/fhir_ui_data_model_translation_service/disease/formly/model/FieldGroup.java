@@ -64,16 +64,18 @@ public class FieldGroup {
   @Setter private Props props;
   @Setter private Validator validators;
   private FieldArray fieldArray;
-  private List<Wrapper> wrappers;
+  @Getter @Setter private List<Wrapper> wrappers;
   @Setter private String className;
   private Object defaultValue;
 
   /** Children of this field group. */
   @JsonProperty("fieldGroup")
+  @Getter
+  @Setter
   private List<FieldGroup> fieldGroups;
 
   /** Parent of this field group. */
-  @JsonIgnore private FieldGroup parent;
+  @JsonIgnore @Setter private FieldGroup parent;
 
   public static FieldGroupBuilder builder() {
     return new ChildCareFieldGroupBuilder();

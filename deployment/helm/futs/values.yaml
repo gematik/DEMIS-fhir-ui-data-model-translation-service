@@ -6,6 +6,7 @@ replicaCount: 2
 # Enables debug mode
 debug:
   enable: false
+  params: "-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=*:9000"
 
 # Required Values for the Chart
 required:
@@ -21,7 +22,6 @@ required:
   # Version of the profiles to be used
   profiles:
     repository: europe-west3-docker.pkg.dev/gematik-all-infra-prod/demis-dev
-    name: fhir-profile-snapshots
     packageName: rki.demis.notification-api.snapshot
     version: 4.0.0-b67
 
@@ -36,17 +36,23 @@ deploymentLabels: {}
 
 # Environment Variables to be defined
 customEnvVars:
+  JAVA_TOOL_OPTIONS: "-XX:ActiveProcessorCount=2 -XX:MaxRAMPercentage=40.0 -XX:MaxMetaspaceSize=128m -XX:+UseG1GC"
+  TZ: "Europe/Berlin"
+  PACKAGE_NAME: "{{ .Values.required.profiles.packageName }}"
+  TARGET_DIR: "/tmp/fhir-profiles"
   DATA_PATH_HL7_DATA_ROOT: "classpath:/fhir-profile-snapshots/r4"
   DATA_PATH_GAPP_DATA: "classpath:/fhir-profile-snapshots/GAPP"
   FEATURE_FLAG_DISEASE_STRICT: "false"
   FEATURE_FLAG_CODE_DISPLAY_VERSION: "false"
   FEATURE_FLAG_DISEASE_QUESTIONNAIRE_ORG_INPUT_VALIDATION: "false"
+  FEATURE_FLAG_WITHOUT_DATE_FIELDS_7_3: "false"
+  FEATURE_FLAG_DISEASE_INDENT: "false"
 
 # Define custom Container Entrypoint and Arguments (e.g. JVM Tuning)
 # If not given, the Entrypoint defined in Dockerfile will be used
 application:
-  entrypoint: ["java"]
-  parameters: ["-XX:ActiveProcessorCount=2", "-XX:MaxRAMPercentage=65.0", "-XX:+TieredCompilation", "-XX:+UseG1GC", "-jar", "/app.jar"]
+  entrypoint: []
+  parameters: []
 
 imagePullPolicy: IfNotPresent
 # Define Image Pull Secrets if using private registry
@@ -67,7 +73,10 @@ serviceAccount:
 annotations: {}
 
 # Annotations for Pods
-podAnnotations: {}
+podAnnotations:
+  prometheus.io/scrape: "true"
+  prometheus.io/path: "/actuator/prometheus"
+  prometheus.io/port: "8080"
 
 # Pod Security Context - applies to all containers in a Pod
 podSecurityContext:
@@ -114,10 +123,10 @@ service:
 # Resources
 resources:
   limits:
-    memory: "750Mi"
+    memory: "500Mi"
   requests:
     cpu: "50m"
-    memory: "750Mi"
+    memory: "500Mi"
 
 autoscaling:
   enabled: false

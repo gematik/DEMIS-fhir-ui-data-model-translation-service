@@ -27,25 +27,23 @@ package de.gematik.demis.fhir_ui_data_model_translation_service.utils;
  * #L%
  */
 
-import static org.assertj.core.api.Assertions.assertThat;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
-import java.nio.charset.StandardCharsets;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.autoconfigure.actuate.observability.AutoConfigureObservability;
-import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
+import org.springframework.boot.micrometer.tracing.test.autoconfigure.AutoConfigureTracing;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.boot.webmvc.test.autoconfigure.AutoConfigureMockMvc;
 import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.web.servlet.MockMvc;
-import org.springframework.test.web.servlet.MvcResult;
 
 @Slf4j
 @AutoConfigureMockMvc
 @SpringBootTest
-@AutoConfigureObservability
+@AutoConfigureTracing
 @ActiveProfiles("test")
 class UtilsCtrIT {
 
@@ -53,11 +51,13 @@ class UtilsCtrIT {
 
   @Test
   void shouldReturnListOfCountryCodesInOrder() throws Exception {
-    MvcResult result =
-        mockMvc.perform(get("/utils/countryCodes")).andExpect(status().isOk()).andReturn();
-    String contentAsString = result.getResponse().getContentAsString(StandardCharsets.UTF_8);
-    assertThat(contentAsString)
-        .isEqualTo(
-            "[{\"code\":\"DE\",\"display\":\"Germany\",\"designations\":[{\"language\":\"de-DE\",\"value\":\"Deutschland\"}],\"system\":\"urn:iso:std:iso:3166\",\"version\":\"1.0.0\"},{\"code\":\"NZ\",\"display\":\"New Zealand\",\"designations\":[{\"language\":\"de-DE\",\"value\":\"Neuseeland\"}],\"system\":\"urn:iso:std:iso:3166\",\"version\":\"1.0.0\"},{\"code\":\"CH\",\"display\":\"Switzerland\",\"designations\":[{\"language\":\"de-DE\",\"value\":\"Schweiz\"}],\"system\":\"urn:iso:std:iso:3166\",\"version\":\"1.0.0\"}]");
+    mockMvc
+        .perform(get("/utils/countryCodes"))
+        .andExpect(status().isOk())
+        .andExpect(
+            content()
+                .json(
+                    """
+            [{"code":"DE","display":"Germany","designations":[{"language":"de-DE","value":"Deutschland"}],"system":"urn:iso:std:iso:3166","version":"1.0.0"},{"code":"NZ","display":"New Zealand","designations":[{"language":"de-DE","value":"Neuseeland"}],"system":"urn:iso:std:iso:3166","version":"1.0.0"},{"code":"CH","display":"Switzerland","designations":[{"language":"de-DE","value":"Schweiz"}],"system":"urn:iso:std:iso:3166","version":"1.0.0"}]"""));
   }
 }

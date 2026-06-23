@@ -32,9 +32,6 @@ import static java.util.Arrays.asList;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.Mockito.when;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.JsonNode;
-import com.fasterxml.jackson.databind.ObjectMapper;
 import de.gematik.demis.fhir_ui_data_model_translation_service.disease.formly.DiseaseClipboardProps;
 import de.gematik.demis.fhir_ui_data_model_translation_service.disease.formly.model.FieldGroup;
 import de.gematik.demis.fhir_ui_data_model_translation_service.exception.DataNotFoundExcp;
@@ -47,15 +44,19 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
+import tools.jackson.databind.JsonNode;
+import tools.jackson.databind.json.JsonMapper;
 
 @ExtendWith(MockitoExtension.class)
 class DiseaseProcessorTest {
+
+  private final JsonMapper mapper = JsonMapper.builder().build();
 
   @Mock DataLoaderSrv dataLoaderSrvMock;
   @Mock DiseaseClipboardProps diseaseClipboardProps;
 
   @Test
-  void shouldReturnFieldGroupsWithEvidenceOptions() throws JsonProcessingException {
+  void shouldReturnFieldGroupsWithEvidenceOptions() {
 
     String today = now().toString();
     String expectedJsonString =
@@ -86,7 +87,50 @@ class DiseaseProcessorTest {
             .system("http://snomed.info/sct")
             .build();
 
-    ObjectMapper objectMapper = new ObjectMapper();
+    when(dataLoaderSrvMock.getValueSetData("https://demis.rki.de/fhir/ValueSet/evidenceCVDD"))
+        .thenReturn(asList(cd67782005, cd43724002));
+    when(this.diseaseClipboardProps.condition()).thenReturn(Collections.emptyMap());
+
+    DiseaseProcessor diseaseProcessor =
+        new DiseaseProcessor(this.dataLoaderSrvMock, this.diseaseClipboardProps);
+    FieldGroup[] cvdd = diseaseProcessor.createFieldGroup("cvdd", true);
+
+    // pars cvdd to string with objectMapper
+    String cvddString = mapper.writeValueAsString(cvdd);
+    JsonNode expectedJson = mapper.readTree(expectedJsonString);
+    JsonNode actualJson = mapper.readTree(cvddString);
+    assertThat(actualJson).isEqualTo(expectedJson);
+  }
+
+  @Test
+  void shouldReturnFieldGroups_withoutDateFields() {
+
+    String today = now().toString();
+    String expectedJsonString =
+        """
+          [
+            {"key":"evidence","fieldGroup":[{"key":"answer.valueCoding","type":"autocomplete-multi-coding","props":{"options":[{"code":"67782005","display":"akutes schweres Atemnotsyndrom (ARDS)","designations":[{"language":"en-US","value":"Acute respiratory distress syndrome (disorder)"}],"system":"http://snomed.info/sct"},{"code":"43724002","display":"Frösteln","designations":[{"language":"en-US","value":"Chill (finding)"}],"system":"http://snomed.info/sct"}],"required":false,"clearable":true,"label":"Symptome und -Manifestationen"},"validators":{"validation":["codingValidator"]},"wrappers":["form-field"],"className":"LinkId_evidence"}]},
+            {"key":"note","fieldGroup":[{"key":"answer.valueString","type":"input","props":{"label":"Diagnosehinweise"},"wrappers":["form-field"],"className":"LinkId_note"}]}
+          ]
+          """
+            .formatted(today, today);
+
+    CodeDisplay cd67782005 =
+        CodeDisplay.builder()
+            .code("67782005")
+            .display("akutes schweres Atemnotsyndrom (ARDS)")
+            .designations(
+                Set.of(new Designation("en-US", "Acute respiratory distress syndrome (disorder)")))
+            .system("http://snomed.info/sct")
+            .build();
+
+    CodeDisplay cd43724002 =
+        CodeDisplay.builder()
+            .code("43724002")
+            .display("Frösteln")
+            .designations(Set.of(new Designation("en-US", "Chill (finding)")))
+            .system("http://snomed.info/sct")
+            .build();
 
     when(dataLoaderSrvMock.getValueSetData("https://demis.rki.de/fhir/ValueSet/evidenceCVDD"))
         .thenReturn(asList(cd67782005, cd43724002));
@@ -94,17 +138,17 @@ class DiseaseProcessorTest {
 
     DiseaseProcessor diseaseProcessor =
         new DiseaseProcessor(this.dataLoaderSrvMock, this.diseaseClipboardProps);
-    FieldGroup[] cvdd = diseaseProcessor.createFieldGroup("cvdd");
+    FieldGroup[] cvdd = diseaseProcessor.createFieldGroup("cvdd", false);
 
     // pars cvdd to string with objectMapper
-    String cvddString = objectMapper.writeValueAsString(cvdd);
-    JsonNode expectedJson = objectMapper.readTree(expectedJsonString);
-    JsonNode actualJson = objectMapper.readTree(cvddString);
+    String cvddString = mapper.writeValueAsString(cvdd);
+    JsonNode expectedJson = mapper.readTree(expectedJsonString);
+    JsonNode actualJson = mapper.readTree(cvddString);
     assertThat(actualJson).isEqualTo(expectedJson);
   }
 
   @Test
-  void shouldHandleNoDataFoundOnEvidences() throws Exception {
+  void shouldHandleNoDataFoundOnEvidences() {
     String today = now().toString();
 
     String expectedJsonString =
@@ -115,20 +159,18 @@ class DiseaseProcessorTest {
       """
             .formatted(today, today);
 
-    ObjectMapper objectMapper = new ObjectMapper();
-
     when(dataLoaderSrvMock.getValueSetData("https://demis.rki.de/fhir/ValueSet/evidenceCVDD"))
         .thenThrow(new DataNotFoundExcp("Database is empty."));
     when(this.diseaseClipboardProps.condition()).thenReturn(Collections.emptyMap());
 
     DiseaseProcessor diseaseProcessor =
         new DiseaseProcessor(this.dataLoaderSrvMock, this.diseaseClipboardProps);
-    FieldGroup[] cvdd = diseaseProcessor.createFieldGroup("cvdd");
+    FieldGroup[] cvdd = diseaseProcessor.createFieldGroup("cvdd", true);
 
     // pars cvdd to string with objectMapper
-    String cvddString = objectMapper.writeValueAsString(cvdd);
-    JsonNode expectedJson = objectMapper.readTree(expectedJsonString);
-    JsonNode actualJson = objectMapper.readTree(cvddString);
+    String cvddString = mapper.writeValueAsString(cvdd);
+    JsonNode expectedJson = mapper.readTree(expectedJsonString);
+    JsonNode actualJson = mapper.readTree(cvddString);
     assertThat(actualJson).isEqualTo(expectedJson);
   }
 }

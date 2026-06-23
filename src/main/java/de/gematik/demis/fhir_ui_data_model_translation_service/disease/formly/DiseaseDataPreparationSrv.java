@@ -61,6 +61,8 @@ import org.springframework.stereotype.Service;
 @Slf4j
 public class DiseaseDataPreparationSrv {
 
+  public static final String FIELD_GROUP_ROOT = "root";
+
   private static final String COVID = "cvdd";
   private static final String LINK_ID_HOSPITALIZATION_REASON = "reason";
 
@@ -76,6 +78,7 @@ public class DiseaseDataPreparationSrv {
   private final DiseaseProcessor diseaseProcessor;
   private final EnableWhenProcessor enableWhenProcessor;
   private final QuantityProcessor quantityProcessor;
+  private final QuestionnaireLayoutProcessor questionnaireLayoutProcessor;
 
   private final FeatureFlags featureFlags;
 
@@ -87,15 +90,11 @@ public class DiseaseDataPreparationSrv {
       log.info("Loading questionnaire: {}", entry.getKey());
       try {
         parseQuestionnaireAndExtractData(entry);
-      } catch (IOException e) {
-        log.error("Error while loading questionnaire: {}", entry.getKey(), e);
+      } catch (Exception e) {
+        throw new IllegalStateException("Error while loading questionnaire: " + entry.getKey(), e);
       }
       log.info("Loaded questionnaire: {}", entry.getKey());
     }
-  }
-
-  public Map<String, FormlyFieldConfigs[]> getQuestionnaire(String code) {
-    return getQuestionnaire(code, NotificationCategory.P_6_1);
   }
 
   public Map<String, FormlyFieldConfigs[]> getQuestionnaire(
@@ -108,11 +107,14 @@ public class DiseaseDataPreparationSrv {
     } else {
       title = this.categoriesSrv.getCategoryNonNominal(code).getDisplay();
     }
+    final boolean addDateFields =
+        !NotificationCategory.P_7_3.equals(notificationCategory)
+            || !featureFlags.isWithoutDateFields73();
     FormlyFieldConfigs conditionHeader =
         FormlyFieldConfigs.builder().template(title).className("QUESTIONNAIRE-TITLE").build();
     FormlyFieldConfigs conditionFormlyFieldConfig =
         FormlyFieldConfigs.builder()
-            .fieldGroup(diseaseProcessor.createFieldGroup(code))
+            .fieldGroup(diseaseProcessor.createFieldGroup(code, addDateFields))
             .fieldGroupClassName("QUESTIONS")
             .build();
     returnMap.put(
@@ -145,7 +147,7 @@ public class DiseaseDataPreparationSrv {
     completeData.add(mainTitlePart);
 
     // loop through all main questionnaireItems
-    FieldGroup root = FieldGroup.builder().key("root").build();
+    final FieldGroup root = FieldGroup.builder().key(FIELD_GROUP_ROOT).build();
     final AtomicInteger repeatSectionId = new AtomicInteger(0);
     final String diseaseCode = entry.getKey();
     for (Questionnaire.QuestionnaireItemComponent item : questionnaire.getItem()) {
@@ -153,6 +155,7 @@ public class DiseaseDataPreparationSrv {
         extractData(item, root, diseaseCode, repeatSectionId);
       }
     }
+    questionnaireLayoutProcessor.applyLayout(root);
     FormlyFieldConfigs allQuestions =
         FormlyFieldConfigs.builder()
             .fieldGroup(root.getFieldGroups().toArray(new FieldGroup[0]))

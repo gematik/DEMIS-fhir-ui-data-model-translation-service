@@ -27,12 +27,11 @@ package de.gematik.demis.fhir_ui_data_model_translation_service.disease.formly.f
  * #L%
  */
 
-import com.fasterxml.jackson.core.JsonGenerator;
-import com.fasterxml.jackson.databind.JsonSerializer;
-import com.fasterxml.jackson.databind.SerializerProvider;
-import java.io.IOException;
 import java.time.LocalDate;
 import java.time.ZoneId;
+import tools.jackson.core.JsonGenerator;
+import tools.jackson.databind.SerializationContext;
+import tools.jackson.databind.ValueSerializer;
 
 /**
  * Custom Jackson serializer for date picker string fields ({@code minDate}, {@code maxDate}).
@@ -40,7 +39,7 @@ import java.time.ZoneId;
  * <p>Resolves the {@link #TODAY_PLACEHOLDER} at serialization time to the current date in the
  * {@code Europe/Berlin} time zone. Every other value (including {@code null}) is written as-is.
  */
-public class DatePickerSerializer extends JsonSerializer<String> {
+public class DatePickerSerializer extends ValueSerializer<String> {
 
   /**
    * Placeholder for today to be replaced with current date in Europe/Berlin. This is an internal
@@ -51,8 +50,7 @@ public class DatePickerSerializer extends JsonSerializer<String> {
   static final ZoneId ZONE_EUROPE_BERLIN = ZoneId.of("Europe/Berlin");
 
   @Override
-  public void serialize(String value, JsonGenerator gen, SerializerProvider serializers)
-      throws IOException {
+  public void serialize(String value, JsonGenerator gen, SerializationContext serializers) {
     if (TODAY_PLACEHOLDER.equals(value)) {
       gen.writeString(LocalDate.now(ZONE_EUROPE_BERLIN).toString());
     } else {

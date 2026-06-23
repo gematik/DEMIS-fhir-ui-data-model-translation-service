@@ -31,8 +31,6 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 import ca.uhn.fhir.context.FhirContext;
 import ca.uhn.fhir.parser.IParser;
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
 import de.gematik.demis.fhir_ui_data_model_translation_service.disease.formly.fhir.TooltipExtension;
 import de.gematik.demis.fhir_ui_data_model_translation_service.disease.formly.model.FieldGroup;
 import de.gematik.demis.fhir_ui_data_model_translation_service.disease.formly.model.Props;
@@ -40,8 +38,11 @@ import org.hl7.fhir.r4.model.Questionnaire;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
+import tools.jackson.databind.JsonNode;
+import tools.jackson.databind.json.JsonMapper;
 
 class QuantityProcessorTest {
+  private final JsonMapper mapper = JsonMapper.builder().build();
 
   private static final String FHIR_JSON_WITH_QUANTITY_BOUNDS =
 """
@@ -165,7 +166,7 @@ class QuantityProcessorTest {
   }
 
   @Test
-  void shouldCreateFieldGroupForQuantityItem() throws JsonProcessingException {
+  void shouldCreateFieldGroupForQuantityItem() {
     // FHIR QuestionnaireItemComponent parsen
     FhirContext ctx = FhirContext.forR4Cached();
     IParser parser = ctx.newJsonParser();
@@ -193,10 +194,10 @@ class QuantityProcessorTest {
     assertThat(fg.getValidators()).isNotNull();
     assertThat(fg.getValidators().getValidation()).contains("numberValidator", "nonBlankValidator");
 
-    ObjectMapper objectMapper = new ObjectMapper();
-    String jsonResult = objectMapper.writeValueAsString(fg);
-
-    assertThat(jsonResult).isEqualToIgnoringWhitespace(EXPECTED_FORMLY_JSON);
+    String jsonResult = mapper.writeValueAsString(fg);
+    JsonNode actualJson = mapper.readTree(jsonResult);
+    JsonNode expectedJson = mapper.readTree(EXPECTED_FORMLY_JSON);
+    assertThat(actualJson).isEqualTo(expectedJson);
   }
 
   @Test

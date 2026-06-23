@@ -2,11 +2,11 @@
   "resourceType": "Questionnaire",
   "id": "DiseaseQuestionsHIVD",
   "url": "https://demis.rki.de/fhir/Questionnaire/DiseaseQuestionsHIVD",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "name": "DiseaseQuestionsHIVD",
   "title": "Humanes Immundefizienz-Virus (HIV): spezifische klinische und epidemiologische Angaben",
   "status": "active",
-  "date": "2026-01-15",
+  "date": "2026-02-17",
   "publisher": "Robert Koch-Institut",
   "contact": [
     {
@@ -464,51 +464,130 @@
       "type": "choice",
       "required": true,
       "repeats": true,
-      "answerValueSet": "https://demis.rki.de/fhir/ValueSet/answerSetCoinfectionHIVD",
+      "answerValueSet": "https://demis.rki.de/fhir/ValueSet/answerSetCoinfectionHIVD"
+    },
+    {
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+          "valueCodeableConcept": {
+            "coding": [
+              {
+                "system": "http://hl7.org/fhir/questionnaire-item-control",
+                "code": "radio-button",
+                "display": "Radio Button"
+              }
+            ]
+          }
+        }
+      ],
+      "linkId": "hivPrEPStatusHIVD",
+      "text": "Wurde innerhalb der letzten 12 Monate vor der HIV-Erstdiagnose eine HIV-PrEP eingenommen?",
+      "type": "choice",
+      "required": true,
+      "repeats": false,
+      "answerValueSet": "https://demis.rki.de/fhir/ValueSet/yesOrNoOrUnknown"
+    },
+    {
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+          "valueCodeableConcept": {
+            "coding": [
+              {
+                "system": "http://hl7.org/fhir/questionnaire-item-control",
+                "code": "radio-button",
+                "display": "Radio Button"
+              }
+            ]
+          }
+        }
+      ],
+      "linkId": "sexWork",
+      "text": "Hat die betroffene Person Sexarbeit ausgeübt oder in Anspruch genommen?",
+      "type": "choice",
+      "required": true,
+      "repeats": true,
+      "answerValueSet": "https://demis.rki.de/fhir/ValueSet/answerSetSexWork"
+    },
+    {
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+          "valueCodeableConcept": {
+            "coding": [
+              {
+                "system": "http://hl7.org/fhir/questionnaire-item-control",
+                "code": "drop-down",
+                "display": "Drop down"
+              }
+            ]
+          }
+        }
+      ],
+      "linkId": "infectionPathRisk",
+      "text": "Auf welchem Weg hat sich die betroffene Person wahrscheinlich infiziert?",
+      "type": "choice",
+      "required": true,
+      "repeats": true,
+      "answerValueSet": "https://demis.rki.de/fhir/ValueSet/answerSetInfectionPathHIVD",
       "item": [
         {
           "extension": [
             {
-              "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-              "valueCodeableConcept": {
-                "coding": [
-                  {
-                    "system": "http://hl7.org/fhir/questionnaire-item-control",
-                    "code": "radio-button",
-                    "display": "Radio Button"
-                  }
-                ]
+              "url": "http://hl7.org/fhir/StructureDefinition/regex",
+              "valueString": "^19[0-9]{2}-[0-9]{2}$|^20[0-9]{2}-[0-9]{2}$|^19[0-9]{2}$|^20[0-9]{2}$"
+            }
+          ],
+          "linkId": "bloodTransfusionDate",
+          "text": "Wann wurden die Blutprodukte verabreicht?",
+          "type": "date",
+          "enableWhen": [
+            {
+              "question": "infectionPathRisk",
+              "operator": "=",
+              "answerCoding": {
+                "system": "http://snomed.info/sct",
+                "code": "409496000:704326004=5447007"
               }
             }
           ],
-          "linkId": "hivPrEPStatusHIVD",
-          "text": "Wurde innerhalb der letzten 12 Monate vor der HIV-Erstdiagnose eine HIV-PrEP eingenommen?",
-          "type": "choice",
-          "required": true,
-          "repeats": false,
-          "answerValueSet": "https://demis.rki.de/fhir/ValueSet/yesOrNoOrUnknown"
+          "required": false,
+          "repeats": false
         },
         {
-          "extension": [
+          "linkId": "bloodTransfusionNote",
+          "text": "Können Sie die Verabreichung der Blutprodukte näher erläutern?",
+          "type": "text",
+          "enableWhen": [
             {
-              "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-              "valueCodeableConcept": {
-                "coding": [
-                  {
-                    "system": "http://hl7.org/fhir/questionnaire-item-control",
-                    "code": "radio-button",
-                    "display": "Radio Button"
-                  }
-                ]
+              "question": "infectionPathRisk",
+              "operator": "=",
+              "answerCoding": {
+                "system": "http://snomed.info/sct",
+                "code": "409496000:704326004=5447007"
               }
             }
           ],
-          "linkId": "sexWork",
-          "text": "Hat die betroffene Person Sexarbeit ausgeübt oder in Anspruch genommen?",
-          "type": "choice",
-          "required": true,
-          "repeats": true,
-          "answerValueSet": "https://demis.rki.de/fhir/ValueSet/answerSetSexWork"
+          "required": false,
+          "repeats": false
+        },
+        {
+          "linkId": "medicinalWorkerNote",
+          "text": "Können Sie die berufliche Exposition näher erläutern?",
+          "type": "text",
+          "enableWhen": [
+            {
+              "question": "infectionPathRisk",
+              "operator": "=",
+              "answerCoding": {
+                "system": "http://snomed.info/sct",
+                "code": "16090731000119102"
+              }
+            }
+          ],
+          "required": false,
+          "repeats": false
         },
         {
           "extension": [
@@ -525,202 +604,47 @@
               }
             }
           ],
-          "linkId": "infectionPathRisk",
-          "text": "Auf welchem Weg hat sich die betroffene Person wahrscheinlich infiziert?",
+          "linkId": "infectionSource",
+          "text": "Auf welchem Wege hat sich die Person infiziert, die als Infektionsquelle vermutet wird?",
           "type": "choice",
+          "enableWhen": [
+            {
+              "question": "infectionPathRisk",
+              "operator": "=",
+              "answerCoding": {
+                "system": "http://snomed.info/sct",
+                "code": "472986005"
+              }
+            },
+            {
+              "question": "infectionPathRisk",
+              "operator": "=",
+              "answerCoding": {
+                "system": "http://snomed.info/sct",
+                "code": "472987001"
+              }
+            },
+            {
+              "question": "infectionPathRisk",
+              "operator": "=",
+              "answerCoding": {
+                "system": "http://snomed.info/sct",
+                "code": "472988006"
+              }
+            },
+            {
+              "question": "infectionPathRisk",
+              "operator": "=",
+              "answerCoding": {
+                "system": "http://snomed.info/sct",
+                "code": "1290740005"
+              }
+            }
+          ],
+          "enableBehavior": "any",
           "required": true,
           "repeats": true,
-          "answerValueSet": "https://demis.rki.de/fhir/ValueSet/answerSetInfectionPathHIVD",
-          "item": [
-            {
-              "extension": [
-                {
-                  "url": "http://hl7.org/fhir/StructureDefinition/regex",
-                  "valueString": "^19[0-9]{2}-[0-9]{2}$|^20[0-9]{2}-[0-9]{2}$|^19[0-9]{2}$|^20[0-9]{2}$"
-                }
-              ],
-              "linkId": "bloodTransfusionDate",
-              "text": "Wann wurden die Blutprodukte verabreicht?",
-              "type": "date",
-              "enableWhen": [
-                {
-                  "question": "infectionPathRisk",
-                  "operator": "=",
-                  "answerCoding": {
-                    "system": "http://snomed.info/sct",
-                    "code": "409496000:704326004=5447007"
-                  }
-                }
-              ],
-              "required": false,
-              "repeats": false
-            },
-            {
-              "linkId": "bloodTransfusionNote",
-              "text": "Können Sie die Verabreichung der Blutprodukte näher erläutern?",
-              "type": "text",
-              "enableWhen": [
-                {
-                  "question": "infectionPathRisk",
-                  "operator": "=",
-                  "answerCoding": {
-                    "system": "http://snomed.info/sct",
-                    "code": "409496000:704326004=5447007"
-                  }
-                }
-              ],
-              "required": false,
-              "repeats": false
-            },
-            {
-              "linkId": "medicinalWorkerNote",
-              "text": "Können Sie die berufliche Exposition näher erläutern?",
-              "type": "text",
-              "enableWhen": [
-                {
-                  "question": "infectionPathRisk",
-                  "operator": "=",
-                  "answerCoding": {
-                    "system": "http://snomed.info/sct",
-                    "code": "16090731000119102"
-                  }
-                }
-              ],
-              "required": false,
-              "repeats": false
-            },
-            {
-              "extension": [
-                {
-                  "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-                  "valueCodeableConcept": {
-                    "coding": [
-                      {
-                        "system": "http://hl7.org/fhir/questionnaire-item-control",
-                        "code": "drop-down",
-                        "display": "Drop down"
-                      }
-                    ]
-                  }
-                }
-              ],
-              "linkId": "infectionSource",
-              "text": "Auf welchem Wege hat sich die Person infiziert, die als Infektionsquelle vermutet wird?",
-              "type": "choice",
-              "enableWhen": [
-                {
-                  "question": "infectionPathRisk",
-                  "operator": "=",
-                  "answerCoding": {
-                    "system": "http://snomed.info/sct",
-                    "code": "472986005"
-                  }
-                },
-                {
-                  "question": "infectionPathRisk",
-                  "operator": "=",
-                  "answerCoding": {
-                    "system": "http://snomed.info/sct",
-                    "code": "472987001"
-                  }
-                },
-                {
-                  "question": "infectionPathRisk",
-                  "operator": "=",
-                  "answerCoding": {
-                    "system": "http://snomed.info/sct",
-                    "code": "472988006"
-                  }
-                },
-                {
-                  "question": "infectionPathRisk",
-                  "operator": "=",
-                  "answerCoding": {
-                    "system": "http://snomed.info/sct",
-                    "code": "1290740005"
-                  }
-                }
-              ],
-              "enableBehavior": "any",
-              "required": true,
-              "repeats": true,
-              "answerValueSet": "https://demis.rki.de/fhir/ValueSet/answerSetInfectionPathHIVD"
-            },
-            {
-              "extension": [
-                {
-                  "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-                  "valueCodeableConcept": {
-                    "coding": [
-                      {
-                        "system": "http://hl7.org/fhir/questionnaire-item-control",
-                        "code": "radio-button",
-                        "display": "Radio Button"
-                      }
-                    ]
-                  }
-                }
-              ],
-              "linkId": "infectionSourceSecure",
-              "text": "Ist die HIV-Infektion der Person, die als Infektionsquelle vermutet wird, gesichert?",
-              "type": "choice",
-              "enableWhen": [
-                {
-                  "question": "infectionPathRisk",
-                  "operator": "=",
-                  "answerCoding": {
-                    "system": "http://snomed.info/sct",
-                    "code": "472986005"
-                  }
-                },
-                {
-                  "question": "infectionPathRisk",
-                  "operator": "=",
-                  "answerCoding": {
-                    "system": "http://snomed.info/sct",
-                    "code": "472987001"
-                  }
-                },
-                {
-                  "question": "infectionPathRisk",
-                  "operator": "=",
-                  "answerCoding": {
-                    "system": "http://snomed.info/sct",
-                    "code": "472988006"
-                  }
-                },
-                {
-                  "question": "infectionPathRisk",
-                  "operator": "=",
-                  "answerCoding": {
-                    "system": "http://snomed.info/sct",
-                    "code": "1290740005"
-                  }
-                }
-              ],
-              "enableBehavior": "any",
-              "required": true,
-              "repeats": false,
-              "answerValueSet": "https://demis.rki.de/fhir/ValueSet/yesOrNoOrUnknown"
-            },
-            {
-              "linkId": "otherNote",
-              "text": "Wenn Sie \"Andere\" ausgewählt haben, können Sie das näher erläutern?",
-              "type": "text",
-              "enableWhen": [
-                {
-                  "question": "infectionPathRisk",
-                  "operator": "=",
-                  "answerCoding": {
-                    "system": "http://snomed.info/sct",
-                    "code": "74964007"
-                  }
-                }
-              ],
-              "required": false,
-              "repeats": false
-            }
-          ]
+          "answerValueSet": "https://demis.rki.de/fhir/ValueSet/answerSetInfectionPathHIVD"
         },
         {
           "extension": [
@@ -737,14 +661,88 @@
               }
             }
           ],
-          "linkId": "genderDefintion",
-          "text": "Zusatzangabe zur geschlechtlichen Selbstdefinition der betroffenen Person, falls bekannt.",
+          "linkId": "infectionSourceSecure",
+          "text": "Ist die HIV-Infektion der Person, die als Infektionsquelle vermutet wird, gesichert?",
           "type": "choice",
-          "required": false,
+          "enableWhen": [
+            {
+              "question": "infectionPathRisk",
+              "operator": "=",
+              "answerCoding": {
+                "system": "http://snomed.info/sct",
+                "code": "472986005"
+              }
+            },
+            {
+              "question": "infectionPathRisk",
+              "operator": "=",
+              "answerCoding": {
+                "system": "http://snomed.info/sct",
+                "code": "472987001"
+              }
+            },
+            {
+              "question": "infectionPathRisk",
+              "operator": "=",
+              "answerCoding": {
+                "system": "http://snomed.info/sct",
+                "code": "472988006"
+              }
+            },
+            {
+              "question": "infectionPathRisk",
+              "operator": "=",
+              "answerCoding": {
+                "system": "http://snomed.info/sct",
+                "code": "1290740005"
+              }
+            }
+          ],
+          "enableBehavior": "any",
+          "required": true,
           "repeats": false,
-          "answerValueSet": "https://demis.rki.de/fhir/ValueSet/answerSetGenderDefinition"
+          "answerValueSet": "https://demis.rki.de/fhir/ValueSet/yesOrNoOrUnknown"
+        },
+        {
+          "linkId": "otherNote",
+          "text": "Wenn Sie \"Andere\" ausgewählt haben, können Sie das näher erläutern?",
+          "type": "text",
+          "enableWhen": [
+            {
+              "question": "infectionPathRisk",
+              "operator": "=",
+              "answerCoding": {
+                "system": "http://snomed.info/sct",
+                "code": "74964007"
+              }
+            }
+          ],
+          "required": false,
+          "repeats": false
         }
       ]
+    },
+    {
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+          "valueCodeableConcept": {
+            "coding": [
+              {
+                "system": "http://hl7.org/fhir/questionnaire-item-control",
+                "code": "radio-button",
+                "display": "Radio Button"
+              }
+            ]
+          }
+        }
+      ],
+      "linkId": "genderDefintion",
+      "text": "Zusatzangabe zur geschlechtlichen Selbstdefinition der betroffenen Person, falls bekannt.",
+      "type": "choice",
+      "required": false,
+      "repeats": false,
+      "answerValueSet": "https://demis.rki.de/fhir/ValueSet/answerSetGenderDefinition"
     }
   ]
 }

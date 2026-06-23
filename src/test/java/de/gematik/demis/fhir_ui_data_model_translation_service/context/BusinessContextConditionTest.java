@@ -29,7 +29,6 @@ package de.gematik.demis.fhir_ui_data_model_translation_service.context;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.runner.ApplicationContextRunner;
 import org.springframework.context.annotation.Bean;
@@ -40,22 +39,9 @@ class BusinessContextConditionTest {
   private final ApplicationContextRunner runner =
       new ApplicationContextRunner().withUserConfiguration(TestConfig.class);
 
-  @DisplayName("In legacy mode (package registry disabled ) business restriction never applies")
-  @Test
-  void createsBothBeans_whenPackageRegistryIsNotEnabled() {
-    runner
-        .withPropertyValues("feature.flag.package-registry.enabled=false")
-        .run(
-            ctx -> {
-              assertThat(ctx).hasSingleBean(FakeLaboratoryOnlyBean.class);
-              assertThat(ctx).hasSingleBean(FakeDiseaseOnlyBean.class);
-            });
-  }
-
   @Test
   void createsBothBeans_whenNotificationApiPackage() {
     runner
-        .withPropertyValues("feature.flag.package-registry.enabled=true")
         .withPropertyValues("fhir-profile.package-name=demis.rki.notification-api.snapshots")
         .run(
             ctx -> {
@@ -67,7 +53,6 @@ class BusinessContextConditionTest {
   @Test
   void createsLaboratoryBean_only_whenLaboratoryPackage() {
     runner
-        .withPropertyValues("feature.flag.package-registry.enabled=true")
         .withPropertyValues("fhir-profile.package-name=demis.rki.laboratory.snapshots")
         .run(
             ctx -> {
@@ -79,7 +64,6 @@ class BusinessContextConditionTest {
   @Test
   void createsDiseaseBean_only_whenDiseasePackage() {
     runner
-        .withPropertyValues("feature.flag.package-registry.enabled=true")
         .withPropertyValues("fhir-profile.package-name=demis.rki.disease.snapshots")
         .run(
             ctx -> {
@@ -91,7 +75,6 @@ class BusinessContextConditionTest {
   @Test
   void createsNoBeans_whenUnknownPackage() {
     runner
-        .withPropertyValues("feature.flag.package-registry.enabled=true")
         .withPropertyValues("fhir-profile.package-name=demis.rki.foo.snapshots")
         .run(
             ctx -> {
@@ -103,15 +86,14 @@ class BusinessContextConditionTest {
   @Test
   void contextFails_whenPackageNameIsMissing() {
     runner
-        .withPropertyValues("feature.flag.package-registry.enabled=true")
         // no package name set !
         .run(
-            ctx -> {
-              assertThat(ctx).hasFailed();
-              assertThat(ctx.getStartupFailure())
-                  .isInstanceOf(IllegalStateException.class)
-                  .hasMessageContaining("fhir-profile.package-name must be set");
-            });
+        ctx -> {
+          assertThat(ctx).hasFailed();
+          assertThat(ctx.getStartupFailure())
+              .isInstanceOf(IllegalStateException.class)
+              .hasMessageContaining("fhir-profile.package-name must be set");
+        });
   }
 
   @Configuration
