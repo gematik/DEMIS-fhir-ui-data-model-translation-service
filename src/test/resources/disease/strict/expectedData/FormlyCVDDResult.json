@@ -389,7 +389,7 @@
                     }
                   ],
                   "wrappers": [
-                    "panel"
+                    "demis-indent-group"
                   ]
                 }
               ],
@@ -417,7 +417,7 @@
                     }
                   ],
                   "wrappers": [
-                    "panel"
+                    "demis-indent-group"
                   ]
                 }
               ],
@@ -517,7 +517,7 @@
                     }
                   ],
                   "wrappers": [
-                    "panel"
+                    "demis-indent-group"
                   ]
                 }
               ],

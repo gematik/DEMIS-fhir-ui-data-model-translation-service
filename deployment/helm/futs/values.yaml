@@ -36,7 +36,7 @@ deploymentLabels: {}
 
 # Environment Variables to be defined
 customEnvVars:
-  JAVA_TOOL_OPTIONS: "-XX:ActiveProcessorCount=2 -XX:MaxRAMPercentage=40.0 -XX:MaxMetaspaceSize=128m -XX:+UseG1GC"
+  JAVA_TOOL_OPTIONS: "-XX:ActiveProcessorCount=2 -XX:MaxRAMPercentage=45.0 -XX:MaxMetaspaceSize=128m -XX:+UseG1GC"
   TZ: "Europe/Berlin"
   PACKAGE_NAME: "{{ .Values.required.profiles.packageName }}"
   TARGET_DIR: "/tmp/fhir-profiles"
@@ -123,10 +123,10 @@ service:
 # Resources
 resources:
   limits:
-    memory: "500Mi"
+    memory: "600Mi"
   requests:
     cpu: "50m"
-    memory: "500Mi"
+    memory: "600Mi"
 
 autoscaling:
   enabled: false

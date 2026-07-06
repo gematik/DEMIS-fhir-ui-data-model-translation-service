@@ -33,7 +33,6 @@ import de.gematik.demis.fhir_ui_data_model_translation_service.FeatureFlags;
 import de.gematik.demis.fhir_ui_data_model_translation_service.disease.formly.model.EnableWhen;
 import de.gematik.demis.fhir_ui_data_model_translation_service.disease.formly.model.FieldGroup;
 import de.gematik.demis.fhir_ui_data_model_translation_service.disease.formly.model.Props;
-import de.gematik.demis.fhir_ui_data_model_translation_service.disease.formly.model.Wrapper;
 import org.junit.jupiter.api.Test;
 
 class QuestionnaireLayoutProcessorTest {
@@ -55,7 +54,8 @@ class QuestionnaireLayoutProcessorTest {
 
     assertThat(root.getFieldGroups()).hasSize(1);
     final FieldGroup wrapper = root.getFieldGroups().getFirst();
-    assertThat(wrapper.getWrappers()).containsExactly(Wrapper.PANEL);
+    assertThat(wrapper.getWrappers())
+        .containsExactly(QuestionnaireLayoutItemIndentation.INDENTATION_WRAPPER);
     assertThat(wrapper.getFieldGroups()).containsExactly(followUp);
   }
 

@@ -1,10 +1,10 @@
 # Declare Source Digest for the Base Image
-ARG SOURCE_DIGEST=cf7854f101345a586ba34ec1ae87050e6c6c9d57aa1b36d95145a4b662be5f88
-FROM gematik1/demis-fhir-package-initializer:1.1.7@sha256:${SOURCE_DIGEST}
+ARG SOURCE_DIGEST=421507734e069b54b6bb2cd9df1ba0d6a0b056f5ad46cc1ba909728d4ee0c915
+FROM gematik1/demis-fhir-package-initializer:1.1.8@sha256:${SOURCE_DIGEST}
 
 # Redeclare Source Digest to be used in the build context
 # https://docs.docker.com/engine/reference/builder/#understand-how-arg-and-from-interact
-ARG SOURCE_DIGEST=cf7854f101345a586ba34ec1ae87050e6c6c9d57aa1b36d95145a4b662be5f88
+ARG SOURCE_DIGEST=421507734e069b54b6bb2cd9df1ba0d6a0b056f5ad46cc1ba909728d4ee0c915
 
 # The STOPSIGNAL instruction sets the system call signal that will be sent to the container to exit
 # SIGTERM = 15 - https://de.wikipedia.org/wiki/Signal_(Unix)
