@@ -33,9 +33,14 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor
 public enum Wrapper {
 
-  /** A field group with the wrapper <code>panel</code> will be indented. */
+  /**
+   * For named sections. Will get top and left margin. Label property text will be formatted as
+   * section heading.
+   */
   PANEL("panel"),
-  FORM_FIELD("form-field");
+  FORM_FIELD("form-field"),
+  /** For indentation. Will get left margin. */
+  INDENTATION("demis-indent-group");
 
   @JsonValue public final String value;
 }

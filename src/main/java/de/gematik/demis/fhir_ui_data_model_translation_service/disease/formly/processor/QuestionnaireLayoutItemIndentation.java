@@ -46,6 +46,7 @@ import org.apache.commons.lang3.Strings;
 final class QuestionnaireLayoutItemIndentation {
 
   static final int INDENTATION_LEVEL_MAX_DEFAULT = 4;
+  static final Wrapper INDENTATION_WRAPPER = Wrapper.INDENTATION;
 
   private final FieldGroup root;
   private final int indentationLevelMax;
@@ -172,7 +173,7 @@ final class QuestionnaireLayoutItemIndentation {
 
   private void indentFollowUp(FieldGroup fieldGroup) {
     if (isContainer(fieldGroup)) {
-      addPanelWrapper(fieldGroup);
+      addIndentationWrapper(fieldGroup);
     } else {
       wrapInPanelContainer(fieldGroup);
     }
@@ -216,14 +217,16 @@ final class QuestionnaireLayoutItemIndentation {
     return (fieldGroup != null) && Strings.CI.contains(fieldGroup.getKey(), "answer");
   }
 
-  private void addPanelWrapper(FieldGroup fieldGroup) {
+  private void addIndentationWrapper(FieldGroup fieldGroup) {
     List<Wrapper> wrappers = fieldGroup.getWrappers();
     if (wrappers == null) {
       wrappers = new ArrayList<>();
       fieldGroup.setWrappers(wrappers);
-      wrappers.add(Wrapper.PANEL);
-    } else if (!wrappers.contains(Wrapper.PANEL)) {
-      wrappers.add(Wrapper.PANEL);
+      wrappers.add(INDENTATION_WRAPPER);
+    } else if (!wrappers.contains(INDENTATION_WRAPPER) && !wrappers.contains(Wrapper.PANEL)) {
+      wrappers = new ArrayList<>(wrappers);
+      wrappers.add(INDENTATION_WRAPPER);
+      fieldGroup.setWrappers(wrappers);
     }
   }
 
@@ -263,7 +266,7 @@ final class QuestionnaireLayoutItemIndentation {
     final int index = children.indexOf(childToReplace);
     final FieldGroup panelContainer =
         FieldGroup.builder()
-            .wrappers(List.of(Wrapper.PANEL))
+            .wrappers(List.of(INDENTATION_WRAPPER))
             .fieldGroups(List.of(childToReplace))
             .build();
     children.set(index, panelContainer);

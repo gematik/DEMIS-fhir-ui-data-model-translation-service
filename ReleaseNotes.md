@@ -2,6 +2,11 @@
  
 # FHIR-UI-Data-Model-Translation-Service Release Notes
 
+## Release 2.8.0
+- arranged jvm options and resource limits
+- upgraded base image to gematik1/demis-fhir-package-initializer:1.1.8
+- changed disease questionnaire indentation to use demis-indent-group wrapper
+
 ## Release 2.7.0
 - added clipboard ID to disease InfectProtectFacility organization type input
 - updated base image to FHIR package initializer 1.1.6

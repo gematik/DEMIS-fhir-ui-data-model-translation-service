@@ -54,7 +54,8 @@ class QuestionnaireLayoutItemIndentationTest {
 
     assertThat(root.getFieldGroups()).hasSize(1);
     final FieldGroup wrapper = root.getFieldGroups().getFirst();
-    assertThat(wrapper.getWrappers()).containsExactly(Wrapper.PANEL);
+    assertThat(wrapper.getWrappers())
+        .containsExactly(QuestionnaireLayoutItemIndentation.INDENTATION_WRAPPER);
     assertThat(wrapper.getFieldGroups()).containsExactly(followUp);
     assertThat(followUp.getParent()).isSameAs(wrapper);
     assertThat(followUp.getProps().getEnableWhen())
@@ -76,7 +77,31 @@ class QuestionnaireLayoutItemIndentationTest {
     indent(root);
 
     assertThat(root.getFieldGroups()).containsExactly(containerFollowUp);
-    assertThat(containerFollowUp.getWrappers()).containsExactly(Wrapper.PANEL);
+    assertThat(containerFollowUp.getWrappers())
+        .containsExactly(QuestionnaireLayoutItemIndentation.INDENTATION_WRAPPER);
+    assertThat(containerFollowUp.getParent()).isSameAs(root);
+  }
+
+  @Test
+  void addsIndentationWrapperToFollowUpContainerWithImmutableWrapperList() {
+    final FieldGroup root = FieldGroup.builder().key("root").build();
+    final FieldGroup containerFollowUp =
+        FieldGroup.builder()
+            .parent(root)
+            .key("container")
+            // an immutable list created via List.of() - the production code must copy it before
+            // adding the indentation wrapper, otherwise an UnsupportedOperationException is thrown
+            .wrappers(List.of(Wrapper.FORM_FIELD))
+            .props(propsWithEnableWhen("trigger"))
+            .build();
+
+    indent(root);
+
+    assertThat(root.getFieldGroups()).containsExactly(containerFollowUp);
+    assertThat(containerFollowUp.getWrappers())
+        .as("the existing wrapper must be preserved and the indentation wrapper appended")
+        .containsExactly(
+            Wrapper.FORM_FIELD, QuestionnaireLayoutItemIndentation.INDENTATION_WRAPPER);
     assertThat(containerFollowUp.getParent()).isSameAs(root);
   }
 
@@ -98,7 +123,8 @@ class QuestionnaireLayoutItemIndentationTest {
     assertThat(section.getFieldGroups()).hasSize(2);
 
     final FieldGroup leadWrapper = section.getFieldGroups().getFirst();
-    assertThat(leadWrapper.getWrappers()).containsExactly(Wrapper.PANEL);
+    assertThat(leadWrapper.getWrappers())
+        .containsExactly(QuestionnaireLayoutItemIndentation.INDENTATION_WRAPPER);
     assertThat(leadWrapper.getFieldGroups()).containsExactly(leadFollowUp);
     assertThat(leadFollowUp.getProps().getEnableWhen())
         .singleElement()
@@ -106,7 +132,8 @@ class QuestionnaireLayoutItemIndentationTest {
         .isEqualTo("parent.trigger");
 
     assertThat(section.getFieldGroups().get(1)).isSameAs(nestedSubitem);
-    assertThat(nestedSubitem.getWrappers()).containsExactly(Wrapper.PANEL);
+    assertThat(nestedSubitem.getWrappers())
+        .containsExactly(QuestionnaireLayoutItemIndentation.INDENTATION_WRAPPER);
     assertThat(nestedSubitem.getParent()).isSameAs(section);
   }
 
@@ -236,7 +263,7 @@ class QuestionnaireLayoutItemIndentationTest {
     final FieldGroup wrapper = section.getFieldGroups().getFirst();
     assertThat(wrapper.getWrappers())
         .as("an answer item below a plain container must still be indented")
-        .containsExactly(Wrapper.PANEL);
+        .containsExactly(QuestionnaireLayoutItemIndentation.INDENTATION_WRAPPER);
     assertThat(wrapper.getFieldGroups()).containsExactly(answerFollowUp);
     assertThat(answerFollowUp.getProps().getEnableWhen())
         .singleElement()
@@ -268,7 +295,7 @@ class QuestionnaireLayoutItemIndentationTest {
     final FieldGroup wrapper = container.getFieldGroups().getFirst();
     assertThat(wrapper.getWrappers())
         .as("indentation is only suppressed on the first level; deeper answer items are indented")
-        .containsExactly(Wrapper.PANEL);
+        .containsExactly(QuestionnaireLayoutItemIndentation.INDENTATION_WRAPPER);
     assertThat(wrapper.getFieldGroups()).containsExactly(answerFollowUp);
     assertThat(answerFollowUp.getProps().getEnableWhen())
         .singleElement()
@@ -287,7 +314,7 @@ class QuestionnaireLayoutItemIndentationTest {
     for (int level = 1; level <= maxLevel; level++) {
       assertThat(chain.get(level - 1).getWrappers())
           .as("indentation level %d must be applied", level)
-          .containsExactly(Wrapper.PANEL);
+          .containsExactly(QuestionnaireLayoutItemIndentation.INDENTATION_WRAPPER);
     }
     assertThat(chain.get(maxLevel).getWrappers())
         .as("indentation level %d exceeds the maximum and must not be applied", maxLevel + 1)
@@ -302,8 +329,10 @@ class QuestionnaireLayoutItemIndentationTest {
 
     indent(root, maxLevel);
 
-    assertThat(chain.get(0).getWrappers()).containsExactly(Wrapper.PANEL);
-    assertThat(chain.get(1).getWrappers()).containsExactly(Wrapper.PANEL);
+    assertThat(chain.get(0).getWrappers())
+        .containsExactly(QuestionnaireLayoutItemIndentation.INDENTATION_WRAPPER);
+    assertThat(chain.get(1).getWrappers())
+        .containsExactly(QuestionnaireLayoutItemIndentation.INDENTATION_WRAPPER);
     assertThat(chain.get(2).getWrappers())
         .as("indentation beyond the configured maximum level must not be applied")
         .isNull();
