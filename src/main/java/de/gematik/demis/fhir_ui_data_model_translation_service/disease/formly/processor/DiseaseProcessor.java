@@ -60,12 +60,17 @@ public class DiseaseProcessor {
   public static final String LINK_ID_EVIDENCE = "evidence";
   private static final String DATE_PICKER_KEY_ANSWER = "answer." + DatePicker.KEY_DEFAULT;
   private static final String EVIDENCES_LABEL = "Symptome und -Manifestationen";
+  private static final Set<String> DISEASE_CODES_WITHOUT_DATE_FIELDS =
+      Set.of("negd", "trpd", "hivd", "chtd");
 
   private final DataLoaderSrv dataLoaderSrv;
   private final DiseaseClipboardProps diseaseClipboardProps;
 
-  public FieldGroup[] createFieldGroup(String diseaseCode, final boolean addDateFields) {
+  public FieldGroup[] createFieldGroup(String diseaseCode, final boolean isWithoutDateFields73) {
     List<FieldGroup> fieldGroups = new ArrayList<>();
+    final boolean addDateFields =
+        !DISEASE_CODES_WITHOUT_DATE_FIELDS.contains(diseaseCode.toLowerCase())
+            || !isWithoutDateFields73;
     if (addDateFields) {
       fieldGroups.add(createDateOfDiagnosesFieldGroup());
       fieldGroups.add(createDiseaseBeginnFieldGroup());
