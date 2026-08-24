@@ -100,7 +100,7 @@ Environment Variables
 {{- end -}}
 {{- if .Values.customEnvVars -}}
 {{- range $key, $value := .Values.customEnvVars -}}
-{{ if $value -}}
+{{- if not (kindIs "invalid" $value) -}}
 {{- $envs = set $envs $key $value }}
 {{- end -}}
 {{- end -}}

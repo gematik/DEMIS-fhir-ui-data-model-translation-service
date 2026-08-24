@@ -107,14 +107,13 @@ public class DiseaseDataPreparationSrv {
     } else {
       title = this.categoriesSrv.getCategoryNonNominal(code).getDisplay();
     }
-    final boolean addDateFields =
-        !NotificationCategory.P_7_3.equals(notificationCategory)
-            || !featureFlags.isWithoutDateFields73();
+
     FormlyFieldConfigs conditionHeader =
         FormlyFieldConfigs.builder().template(title).className("QUESTIONNAIRE-TITLE").build();
     FormlyFieldConfigs conditionFormlyFieldConfig =
         FormlyFieldConfigs.builder()
-            .fieldGroup(diseaseProcessor.createFieldGroup(code, addDateFields))
+            .fieldGroup(
+                diseaseProcessor.createFieldGroup(code, featureFlags.isWithoutDateFields73()))
             .fieldGroupClassName("QUESTIONS")
             .build();
     returnMap.put(

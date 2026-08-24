@@ -1,10 +1,10 @@
 # Declare Source Digest for the Base Image
-ARG SOURCE_DIGEST=421507734e069b54b6bb2cd9df1ba0d6a0b056f5ad46cc1ba909728d4ee0c915
-FROM gematik1/demis-fhir-package-initializer:1.1.8@sha256:${SOURCE_DIGEST}
+ARG SOURCE_DIGEST=b7aa83ce8449b62030a263d7b3fc1005326853d2510924ed3fe5fcd5c74034b8
+FROM gematik1/demis-fhir-package-initializer:1.2.0@sha256:${SOURCE_DIGEST}
 
 # Redeclare Source Digest to be used in the build context
 # https://docs.docker.com/engine/reference/builder/#understand-how-arg-and-from-interact
-ARG SOURCE_DIGEST=421507734e069b54b6bb2cd9df1ba0d6a0b056f5ad46cc1ba909728d4ee0c915
+ARG SOURCE_DIGEST=b7aa83ce8449b62030a263d7b3fc1005326853d2510924ed3fe5fcd5c74034b8
 
 # The STOPSIGNAL instruction sets the system call signal that will be sent to the container to exit
 # SIGTERM = 15 - https://de.wikipedia.org/wiki/Signal_(Unix)
@@ -27,7 +27,7 @@ ARG GROUPID=10000
 COPY --chown=$USERID:$GROUPID target/fhir-ui-data-model-translation-service.jar /app.jar
 
 # Run as User (not root)
-USER $USERID:$USERID
+USER $USERID:$GROUPID
 
 CMD ["-jar", "/app.jar"]
 # Git Args
@@ -40,7 +40,7 @@ ARG VERSION
 LABEL de.gematik.vendor="gematik GmbH" \
       maintainer="software-development@gematik.de" \
       de.gematik.app="FHIR UI Data Model Translation Service" \
-      de.gematik.git-repo-name="https://gitlab.prod.ccs.gematik.solutions//git/demis/fhir-ui-data-model-translation-service" \
+      de.gematik.git-repo-name="https://gitlab.prod.ccs.gematik.solutions/demis/services/fhir-ui-data-model-translation-service.git" \
       de.gematik.commit-sha=$COMMIT_HASH \
       de.gematik.version=$VERSION \
       de.gematik.source.digest=$SOURCE_DIGEST

@@ -2,10 +2,18 @@
  
 # FHIR-UI-Data-Model-Translation-Service Release Notes
 
+## Release 2.8.1
+- fixed handling of falsy custom environment variables (false, 0) in helm chart
+- upgraded base image to gematik1/demis-fhir-package-initializer:1.2.0
+- fixed missing date fields for TOXD and ECHD
+- upgraded spring parent to 4.1.8
+- added VEX documents to repository
+
 ## Release 2.8.0
 - arranged jvm options and resource limits
 - upgraded base image to gematik1/demis-fhir-package-initializer:1.1.8
 - changed disease questionnaire indentation to use demis-indent-group wrapper
+- upgraded spring parent to 4.1.4 
 
 ## Release 2.7.0
 - added clipboard ID to disease InfectProtectFacility organization type input

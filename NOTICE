@@ -91,10 +91,9 @@ This project includes:
   JUnit Platform Commons under Eclipse Public License v2.0
   JUnit Platform Engine API under Eclipse Public License v2.0
   Kotlin Stdlib under Apache-2.0
-  LatencyUtils under Public Domain, per Creative Commons CC0
   Log4j API to SLF4J Adapter under Apache-2.0
-  Logback Classic Module under Eclipse Public License - v 2.0 or GNU Lesser General Public License
-  Logback Core Module under Eclipse Public License - v 2.0 or GNU Lesser General Public License
+  Logback Classic Module under EPL-2.0 or LGPL-2.1-only
+  Logback Core Module under EPL-2.0 or LGPL-2.1-only
   Logstash Logback Encoder under Apache License, Version 2.0 or MIT License
   micrometer-commons under The Apache Software License, Version 2.0
   micrometer-core under The Apache Software License, Version 2.0

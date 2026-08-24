@@ -55,37 +55,25 @@ class DiseaseProcessorTest {
   @Mock DataLoaderSrv dataLoaderSrvMock;
   @Mock DiseaseClipboardProps diseaseClipboardProps;
 
+  final CodeDisplay cd67782005 =
+      CodeDisplay.builder()
+          .code("67782005")
+          .display("akutes schweres Atemnotsyndrom (ARDS)")
+          .designations(
+              Set.of(new Designation("en-US", "Acute respiratory distress syndrome (disorder)")))
+          .system("http://snomed.info/sct")
+          .build();
+
+  final CodeDisplay cd43724002 =
+      CodeDisplay.builder()
+          .code("43724002")
+          .display("Frösteln")
+          .designations(Set.of(new Designation("en-US", "Chill (finding)")))
+          .system("http://snomed.info/sct")
+          .build();
+
   @Test
   void shouldReturnFieldGroupsWithEvidenceOptions() {
-
-    String today = now().toString();
-    String expectedJsonString =
-        """
-      [
-        {"key":"recordedDate","fieldGroup":[{"key":"answer.valueDate","type":"datepicker","props":{"label":"Datum Diagnosestellung","allowedPrecisions":["day","month"],"minDate":"1900-01-01","maxDate":"%s"},"className":"LinkId_recordedDate"}]},
-        {"key":"onset","fieldGroup":[{"key":"answer.valueDate","type":"datepicker","props":{"label":"Erkrankungsbeginn","allowedPrecisions":["day","month"],"minDate":"1900-01-01","maxDate":"%s"},"className":"LinkId_onset"}]},
-        {"key":"evidence","fieldGroup":[{"key":"answer.valueCoding","type":"autocomplete-multi-coding","props":{"options":[{"code":"67782005","display":"akutes schweres Atemnotsyndrom (ARDS)","designations":[{"language":"en-US","value":"Acute respiratory distress syndrome (disorder)"}],"system":"http://snomed.info/sct"},{"code":"43724002","display":"Frösteln","designations":[{"language":"en-US","value":"Chill (finding)"}],"system":"http://snomed.info/sct"}],"required":false,"clearable":true,"label":"Symptome und -Manifestationen"},"validators":{"validation":["codingValidator"]},"wrappers":["form-field"],"className":"LinkId_evidence"}]},
-        {"key":"note","fieldGroup":[{"key":"answer.valueString","type":"input","props":{"label":"Diagnosehinweise"},"wrappers":["form-field"],"className":"LinkId_note"}]}
-      ]
-      """
-            .formatted(today, today);
-
-    CodeDisplay cd67782005 =
-        CodeDisplay.builder()
-            .code("67782005")
-            .display("akutes schweres Atemnotsyndrom (ARDS)")
-            .designations(
-                Set.of(new Designation("en-US", "Acute respiratory distress syndrome (disorder)")))
-            .system("http://snomed.info/sct")
-            .build();
-
-    CodeDisplay cd43724002 =
-        CodeDisplay.builder()
-            .code("43724002")
-            .display("Frösteln")
-            .designations(Set.of(new Designation("en-US", "Chill (finding)")))
-            .system("http://snomed.info/sct")
-            .build();
 
     when(dataLoaderSrvMock.getValueSetData("https://demis.rki.de/fhir/ValueSet/evidenceCVDD"))
         .thenReturn(asList(cd67782005, cd43724002));
@@ -97,52 +85,61 @@ class DiseaseProcessorTest {
 
     // pars cvdd to string with objectMapper
     String cvddString = mapper.writeValueAsString(cvdd);
-    JsonNode expectedJson = mapper.readTree(expectedJsonString);
+    JsonNode expectedJson = mapper.readTree(getExpectedFieldGroup(true));
     JsonNode actualJson = mapper.readTree(cvddString);
     assertThat(actualJson).isEqualTo(expectedJson);
   }
 
   @Test
-  void shouldReturnFieldGroups_withoutDateFields() {
+  void shouldReturnFieldGroups_withoutDateFields_enabled_TOXD() {
 
-    String today = now().toString();
-    String expectedJsonString =
-        """
-          [
-            {"key":"evidence","fieldGroup":[{"key":"answer.valueCoding","type":"autocomplete-multi-coding","props":{"options":[{"code":"67782005","display":"akutes schweres Atemnotsyndrom (ARDS)","designations":[{"language":"en-US","value":"Acute respiratory distress syndrome (disorder)"}],"system":"http://snomed.info/sct"},{"code":"43724002","display":"Frösteln","designations":[{"language":"en-US","value":"Chill (finding)"}],"system":"http://snomed.info/sct"}],"required":false,"clearable":true,"label":"Symptome und -Manifestationen"},"validators":{"validation":["codingValidator"]},"wrappers":["form-field"],"className":"LinkId_evidence"}]},
-            {"key":"note","fieldGroup":[{"key":"answer.valueString","type":"input","props":{"label":"Diagnosehinweise"},"wrappers":["form-field"],"className":"LinkId_note"}]}
-          ]
-          """
-            .formatted(today, today);
-
-    CodeDisplay cd67782005 =
-        CodeDisplay.builder()
-            .code("67782005")
-            .display("akutes schweres Atemnotsyndrom (ARDS)")
-            .designations(
-                Set.of(new Designation("en-US", "Acute respiratory distress syndrome (disorder)")))
-            .system("http://snomed.info/sct")
-            .build();
-
-    CodeDisplay cd43724002 =
-        CodeDisplay.builder()
-            .code("43724002")
-            .display("Frösteln")
-            .designations(Set.of(new Designation("en-US", "Chill (finding)")))
-            .system("http://snomed.info/sct")
-            .build();
-
-    when(dataLoaderSrvMock.getValueSetData("https://demis.rki.de/fhir/ValueSet/evidenceCVDD"))
+    when(dataLoaderSrvMock.getValueSetData("https://demis.rki.de/fhir/ValueSet/evidenceTOXD"))
         .thenReturn(asList(cd67782005, cd43724002));
     when(this.diseaseClipboardProps.condition()).thenReturn(Collections.emptyMap());
 
     DiseaseProcessor diseaseProcessor =
         new DiseaseProcessor(this.dataLoaderSrvMock, this.diseaseClipboardProps);
-    FieldGroup[] cvdd = diseaseProcessor.createFieldGroup("cvdd", false);
+    FieldGroup[] toxd = diseaseProcessor.createFieldGroup("toxd", true);
 
     // pars cvdd to string with objectMapper
-    String cvddString = mapper.writeValueAsString(cvdd);
-    JsonNode expectedJson = mapper.readTree(expectedJsonString);
+    String cvddString = mapper.writeValueAsString(toxd);
+    JsonNode expectedJson = mapper.readTree(getExpectedFieldGroup(true));
+    JsonNode actualJson = mapper.readTree(cvddString);
+    assertThat(actualJson).isEqualTo(expectedJson);
+  }
+
+  @Test
+  void shouldReturnFieldGroups_withoutDateFields_enabled_HIVD() {
+
+    when(dataLoaderSrvMock.getValueSetData("https://demis.rki.de/fhir/ValueSet/evidenceHIVD"))
+        .thenReturn(asList(cd67782005, cd43724002));
+    when(this.diseaseClipboardProps.condition()).thenReturn(Collections.emptyMap());
+
+    DiseaseProcessor diseaseProcessor =
+        new DiseaseProcessor(this.dataLoaderSrvMock, this.diseaseClipboardProps);
+    FieldGroup[] hivd = diseaseProcessor.createFieldGroup("hivd", true);
+
+    // pars cvdd to string with objectMapper
+    String cvddString = mapper.writeValueAsString(hivd);
+    JsonNode expectedJson = mapper.readTree(getExpectedFieldGroup(false));
+    JsonNode actualJson = mapper.readTree(cvddString);
+    assertThat(actualJson).isEqualTo(expectedJson);
+  }
+
+  @Test
+  void shouldReturnFieldGroups_withoutDateFields_disabled_HIVD() {
+
+    when(dataLoaderSrvMock.getValueSetData("https://demis.rki.de/fhir/ValueSet/evidenceHIVD"))
+        .thenReturn(asList(cd67782005, cd43724002));
+    when(this.diseaseClipboardProps.condition()).thenReturn(Collections.emptyMap());
+
+    DiseaseProcessor diseaseProcessor =
+        new DiseaseProcessor(this.dataLoaderSrvMock, this.diseaseClipboardProps);
+    FieldGroup[] hivd = diseaseProcessor.createFieldGroup("hivd", false);
+
+    // pars cvdd to string with objectMapper
+    String cvddString = mapper.writeValueAsString(hivd);
+    JsonNode expectedJson = mapper.readTree(getExpectedFieldGroup(true));
     JsonNode actualJson = mapper.readTree(cvddString);
     assertThat(actualJson).isEqualTo(expectedJson);
   }
@@ -172,5 +169,25 @@ class DiseaseProcessorTest {
     JsonNode expectedJson = mapper.readTree(expectedJsonString);
     JsonNode actualJson = mapper.readTree(cvddString);
     assertThat(actualJson).isEqualTo(expectedJson);
+  }
+
+  private String getExpectedFieldGroup(final boolean withDateFields) {
+    String today = now().toString();
+    return !withDateFields
+        ? """
+        [
+          {"key":"evidence","fieldGroup":[{"key":"answer.valueCoding","type":"autocomplete-multi-coding","props":{"options":[{"code":"67782005","display":"akutes schweres Atemnotsyndrom (ARDS)","designations":[{"language":"en-US","value":"Acute respiratory distress syndrome (disorder)"}],"system":"http://snomed.info/sct"},{"code":"43724002","display":"Frösteln","designations":[{"language":"en-US","value":"Chill (finding)"}],"system":"http://snomed.info/sct"}],"required":false,"clearable":true,"label":"Symptome und -Manifestationen"},"validators":{"validation":["codingValidator"]},"wrappers":["form-field"],"className":"LinkId_evidence"}]},
+          {"key":"note","fieldGroup":[{"key":"answer.valueString","type":"input","props":{"label":"Diagnosehinweise"},"wrappers":["form-field"],"className":"LinkId_note"}]}
+        ]
+        """
+        : """
+    [
+      {"key":"recordedDate","fieldGroup":[{"key":"answer.valueDate","type":"datepicker","props":{"label":"Datum Diagnosestellung","allowedPrecisions":["day","month"],"minDate":"1900-01-01","maxDate":"%s"},"className":"LinkId_recordedDate"}]},
+      {"key":"onset","fieldGroup":[{"key":"answer.valueDate","type":"datepicker","props":{"label":"Erkrankungsbeginn","allowedPrecisions":["day","month"],"minDate":"1900-01-01","maxDate":"%s"},"className":"LinkId_onset"}]},
+      {"key":"evidence","fieldGroup":[{"key":"answer.valueCoding","type":"autocomplete-multi-coding","props":{"options":[{"code":"67782005","display":"akutes schweres Atemnotsyndrom (ARDS)","designations":[{"language":"en-US","value":"Acute respiratory distress syndrome (disorder)"}],"system":"http://snomed.info/sct"},{"code":"43724002","display":"Frösteln","designations":[{"language":"en-US","value":"Chill (finding)"}],"system":"http://snomed.info/sct"}],"required":false,"clearable":true,"label":"Symptome und -Manifestationen"},"validators":{"validation":["codingValidator"]},"wrappers":["form-field"],"className":"LinkId_evidence"}]},
+      {"key":"note","fieldGroup":[{"key":"answer.valueString","type":"input","props":{"label":"Diagnosehinweise"},"wrappers":["form-field"],"className":"LinkId_note"}]}
+    ]
+    """
+            .formatted(today, today);
   }
 }

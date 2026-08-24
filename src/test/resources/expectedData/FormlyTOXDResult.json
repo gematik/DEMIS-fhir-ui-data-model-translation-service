@@ -3580,6 +3580,52 @@
     {
       "fieldGroup": [
         {
+          "key": "recordedDate",
+          "fieldGroup": [
+            {
+              "key": "answer.valueDate",
+              "type": "datepicker",
+              "props": {
+                "label": "Datum Diagnosestellung",
+                "importSpec": {
+                  "importKey": "D.diagnosis",
+                  "multi": false
+                },
+                "allowedPrecisions": [
+                  "day",
+                  "month"
+                ],
+                "minDate": "1900-01-01",
+                "maxDate": "${LOCAL_DATE_NOW}"
+              },
+              "className": "LinkId_recordedDate"
+            }
+          ]
+        },
+        {
+          "key": "onset",
+          "fieldGroup": [
+            {
+              "key": "answer.valueDate",
+              "type": "datepicker",
+              "props": {
+                "label": "Erkrankungsbeginn",
+                "importSpec": {
+                  "importKey": "D.start",
+                  "multi": false
+                },
+                "allowedPrecisions": [
+                  "day",
+                  "month"
+                ],
+                "minDate": "1900-01-01",
+                "maxDate": "${LOCAL_DATE_NOW}"
+              },
+              "className": "LinkId_onset"
+            }
+          ]
+        },
+        {
           "key": "note",
           "fieldGroup": [
             {
