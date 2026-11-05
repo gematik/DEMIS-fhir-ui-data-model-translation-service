@@ -38,6 +38,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.micrometer.tracing.test.autoconfigure.AutoConfigureTracing;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.webmvc.test.autoconfigure.AutoConfigureMockMvc;
+import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.TestPropertySource;
 import org.springframework.test.json.JsonCompareMode;
 import org.springframework.test.web.servlet.MockMvc;
@@ -46,7 +47,8 @@ import org.springframework.test.web.servlet.MockMvc;
 @AutoConfigureMockMvc
 @SpringBootTest
 @AutoConfigureTracing
-@TestPropertySource(locations = "classpath:application-test.properties")
+@ActiveProfiles("test")
+@TestPropertySource(properties = {"fhir-profile.package-name=rki.demis.laboratory"})
 class LaboratoryDataLoaderCtrIT {
 
   @Autowired private MockMvc mockMvc;

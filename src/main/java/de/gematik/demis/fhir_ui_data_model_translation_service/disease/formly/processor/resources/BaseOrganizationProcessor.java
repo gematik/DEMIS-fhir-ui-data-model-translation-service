@@ -278,12 +278,10 @@ abstract class BaseOrganizationProcessor implements ItemProcessor {
         createInputFieldGroup(item, "phone", "phoneNo", "Telefonnummer", telecom, Validation.PHONE);
     final FieldGroup email =
         createInputFieldGroup(item, "email", "email", "Email", telecom, Validation.EMAIL);
-    if (this.featureFlags.isDiseaseQuestionnaireOrgInputValidation()) {
-      // explicitly not required because UI applies required:true
-      // as default for phone and email fields
-      phone.getProps().setRequired(false);
-      email.getProps().setRequired(false);
-    }
+    // explicitly not required because UI applies required:true
+    // as default for phone and email fields
+    phone.getProps().setRequired(false);
+    email.getProps().setRequired(false);
   }
 
   private FieldGroup createInputFieldGroup(
@@ -316,10 +314,7 @@ abstract class BaseOrganizationProcessor implements ItemProcessor {
             .className(className)
             .props(props.build())
             .parent(parent)
-            .validators(
-                this.featureFlags.isDiseaseQuestionnaireOrgInputValidation()
-                    ? Validator.of(validations)
-                    : null)
+            .validators(Validator.of(validations))
             .build();
     clipboardKey(item, parameter).ifPresent(key -> createClipboard(key, false, fieldGroup));
     return fieldGroup;

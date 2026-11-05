@@ -40,8 +40,6 @@ enum BusinessContext {
   LABORATORY,
   STATISTIC,
   IGS,
-  LEGACY_DISEASE_LABORATORY_STATISTIC, // Can be removed as soon as we only work with separate FHIR
-  // packages
   UNKNOWN;
 
   /** This method maps the name of the FHIR package to a BusinessContext. */
@@ -50,12 +48,10 @@ enum BusinessContext {
       throw new IllegalStateException("fhir-profile.package-name must be set and not blank");
     }
     packageName = packageName.toLowerCase();
-    if (packageName.contains(".notification-api."))
-      return BusinessContext.LEGACY_DISEASE_LABORATORY_STATISTIC;
-    if (packageName.contains(".disease.")) return BusinessContext.DISEASE;
-    if (packageName.contains(".laboratory.")) return BusinessContext.LABORATORY;
-    if (packageName.contains(".statistic.")) return BusinessContext.STATISTIC;
-    if (packageName.contains(".igs.")) return BusinessContext.IGS;
+    if (packageName.contains(".disease")) return BusinessContext.DISEASE;
+    if (packageName.contains(".laboratory")) return BusinessContext.LABORATORY;
+    if (packageName.contains(".statistic")) return BusinessContext.STATISTIC;
+    if (packageName.contains(".igs")) return BusinessContext.IGS;
 
     return BusinessContext.UNKNOWN;
   }

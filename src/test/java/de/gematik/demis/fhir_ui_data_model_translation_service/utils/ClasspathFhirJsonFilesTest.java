@@ -54,6 +54,17 @@ class ClasspathFhirJsonFilesTest {
     ClasspathFhirJsonFiles classpathFhirJsonFiles = new ClasspathFhirJsonFiles(path);
     List<File> tempFiles = classpathFhirJsonFiles.createTempFiles();
     assertThat(tempFiles).hasSize(6);
+    assertThat(tempFiles)
+        .extracting(File::getName)
+        .containsExactlyInAnyOrder(
+            "ValueSet-answerSetGAPP.json",
+            "ValueSet-materialGAPP.json",
+            "ValueSet-methodGAPP.json",
+            "ValueSet-resistanceGAPP.json",
+            "ValueSet-resistanceGeneGAPP.json",
+            "ValueSet-substanceGAPP.json");
+    assertThat(tempFiles).allMatch(File::isFile);
+    assertThat(classpathFhirJsonFiles.createTempFiles()).doesNotContainAnyElementsOf(tempFiles);
   }
 
   @Test

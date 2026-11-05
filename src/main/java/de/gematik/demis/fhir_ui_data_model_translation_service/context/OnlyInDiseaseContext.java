@@ -36,8 +36,5 @@ import java.lang.annotation.*;
 @Target({ElementType.TYPE, ElementType.METHOD})
 @Retention(RetentionPolicy.RUNTIME)
 @Documented
-@ConditionalOnBusinessContext({
-  BusinessContext.DISEASE,
-  BusinessContext.LEGACY_DISEASE_LABORATORY_STATISTIC
-})
+@ConditionalOnBusinessContext({BusinessContext.DISEASE})
 public @interface OnlyInDiseaseContext {}

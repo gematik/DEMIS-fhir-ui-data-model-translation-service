@@ -40,17 +40,6 @@ class BusinessContextConditionTest {
       new ApplicationContextRunner().withUserConfiguration(TestConfig.class);
 
   @Test
-  void createsBothBeans_whenNotificationApiPackage() {
-    runner
-        .withPropertyValues("fhir-profile.package-name=demis.rki.notification-api.snapshots")
-        .run(
-            ctx -> {
-              assertThat(ctx).hasSingleBean(FakeLaboratoryOnlyBean.class);
-              assertThat(ctx).hasSingleBean(FakeDiseaseOnlyBean.class);
-            });
-  }
-
-  @Test
   void createsLaboratoryBean_only_whenLaboratoryPackage() {
     runner
         .withPropertyValues("fhir-profile.package-name=demis.rki.laboratory.snapshots")

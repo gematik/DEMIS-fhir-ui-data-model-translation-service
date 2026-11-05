@@ -49,8 +49,7 @@ import org.mockito.junit.jupiter.MockitoExtension;
 @ExtendWith(MockitoExtension.class)
 class BaseOrganizationProcessorTest {
 
-  static final FeatureFlags FEATURE_FLAGS =
-      FeatureFlags.builder().diseaseQuestionnaireOrgInputValidation(true).build();
+  static final FeatureFlags FEATURE_FLAGS = FeatureFlags.builder().build();
   private static final String BSNR_KEY = "bsnr.answer.valueString";
   private static final String TYPE_KEY = "type.answer.valueCoding";
   private static final String TEST_ORGANIZATION_LINK_ID = "TestOrganization";
@@ -121,11 +120,7 @@ class BaseOrganizationProcessorTest {
 
     @BeforeEach
     void createProcessorWithAddressSwitch() {
-      final FeatureFlags flags =
-          FeatureFlags.builder()
-              .diseaseQuestionnaireOrgInputValidation(true)
-              .diseaseStrict(true)
-              .build();
+      final FeatureFlags flags = FeatureFlags.builder().diseaseStrict(true).build();
       processorWithAddressSwitch =
           new TestOrganizationProcessor(
               enableWhenProcessor, diseaseClipboardProps, dataLoaderSrv, flags);
