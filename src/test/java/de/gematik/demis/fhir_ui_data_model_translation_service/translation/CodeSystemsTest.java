@@ -48,8 +48,8 @@ class CodeSystemsTest {
 
   public static final String CODE_SYSTEM_NULL_FLAVOR =
       "http://terminology.hl7.org/CodeSystem/v3-NullFlavor";
-  private static final FeatureFlags FEATURE_FLAGS_ENABLED =
-      FeatureFlags.builder().addCodeDisplayVersion(true).build();
+  private static final FeatureFlags DEFAULT_FEATURE_FLAGS =
+      FeatureFlags.builder().addCodeDisplayVersion(true).fhirPackagePostProcessing(true).build();
   private static final File CODE_SYSTEM_NO_CONTENT =
       new File("src/test/resources/profilesNotForIT/CodeSystem-pzn.json");
 
@@ -57,6 +57,10 @@ class CodeSystemsTest {
       new File("src/test/resources/profiles/CodeSystem/CodeSystem-addressUse.json");
   private final File addressUseFile2 =
       new File("src/test/resources/profiles/CodeSystem/CodeSystem-addressUse2.json");
+  private final File addressUseFile3 =
+      new File("src/test/resources/profilesNotForIT/CodeSystem-addressUse3.json");
+  private final File unversionedCodeSystemFile =
+      new File("src/test/resources/profilesNotForIT/CodeSystem-unversioned.json");
   private final File loincFile =
       new File("src/test/resources/profiles/CodeSystem/CodeSystem-loinc-2.74.json");
   private final File translationNullFlavorFile =
@@ -68,13 +72,21 @@ class CodeSystemsTest {
 
   private final File fileForSorting =
       new File("src/test/resources/profilesNotForIT/CodeSystem-addressUseForSorting.json");
+  private final File duplicateSnomedFragmentWithGermanDesignation =
+      new File(
+          "src/test/resources/profilesNotForIT/"
+              + "CodeSystem-snomed-fragment-with-german-designation.json");
+  private final File duplicateSnomedFragmentWithEnglishDesignation =
+      new File(
+          "src/test/resources/profilesNotForIT/"
+              + "CodeSystem-snomed-fragment-without-german-designation.json");
 
   @Test
   void shouldSortCodeSystemEntries() throws IOException {
     LinkedHashSet<File> files = new LinkedHashSet<>(Collections.singletonList(fileForSorting));
     CodeSystems codeSystems =
         new CodeSystems(
-            files, FhirContext.forR4Cached(), Collections.emptyList(), FEATURE_FLAGS_ENABLED);
+            files, FhirContext.forR4Cached(), Collections.emptyList(), DEFAULT_FEATURE_FLAGS);
     codeSystems.build();
 
     Map<String, CodeDisplay> codeSystem =
@@ -88,7 +100,7 @@ class CodeSystemsTest {
     LinkedHashSet<File> files = new LinkedHashSet<>(Arrays.asList(addressUseFile, loincFile));
     CodeSystems codeSystems =
         new CodeSystems(
-            files, FhirContext.forR4Cached(), Collections.emptyList(), FEATURE_FLAGS_ENABLED);
+            files, FhirContext.forR4Cached(), Collections.emptyList(), DEFAULT_FEATURE_FLAGS);
     codeSystems.build();
 
     Map<String, Map<String, CodeDisplay>> codeSystemData = codeSystems.getCodeSystemData();
@@ -106,7 +118,7 @@ class CodeSystemsTest {
         new LinkedHashSet<>(Arrays.asList(addressUseFile, addressUseFile2, loincFile));
     CodeSystems codeSystems =
         new CodeSystems(
-            files, FhirContext.forR4Cached(), Collections.emptyList(), FEATURE_FLAGS_ENABLED);
+            files, FhirContext.forR4Cached(), Collections.emptyList(), DEFAULT_FEATURE_FLAGS);
     codeSystems.build();
 
     Map<String, Map<String, CodeDisplay>> codeSystemData = codeSystems.getCodeSystemData();
@@ -126,12 +138,42 @@ class CodeSystemsTest {
   }
 
   @Test
+  void shouldUseHighestVersionForStandardCodeSystemAndVersionMap() throws IOException {
+    LinkedHashSet<File> files =
+        new LinkedHashSet<>(Arrays.asList(addressUseFile, addressUseFile2, addressUseFile3));
+    CodeSystems codeSystems =
+        new CodeSystems(
+            files, FhirContext.forR4Cached(), Collections.emptyList(), DEFAULT_FEATURE_FLAGS);
+    codeSystems.build();
+
+    String systemUrl = "https://demis.rki.de/fhir/CodeSystem/addressUse";
+    assertThat(codeSystems.getCodeSystemData())
+        .containsEntry(systemUrl, codeSystems.getCodeSystemData().get(systemUrl + "|3.0.0"));
+    assertThat(codeSystems.getCodeSystemVersions()).containsEntry(systemUrl, "3.0.0");
+  }
+
+  @Test
+  void shouldBuildUnversionedCodeSystemWithoutAddingItToVersionMap() throws IOException {
+    CodeSystems codeSystems =
+        new CodeSystems(
+            new LinkedHashSet<>(Collections.singletonList(unversionedCodeSystemFile)),
+            FhirContext.forR4Cached(),
+            Collections.emptyList(),
+            DEFAULT_FEATURE_FLAGS);
+    codeSystems.build();
+
+    assertThat(codeSystems.getCodeSystemData())
+        .containsKey("https://demis.rki.de/fhir/CodeSystem/unversioned");
+    assertThat(codeSystems.getCodeSystemVersions()).isEmpty();
+  }
+
+  @Test
   void shouldProcessSupplementDataWithMissingSupplementedCodeSystem() throws IOException {
     LinkedHashSet<File> files =
         new LinkedHashSet<>(Collections.singletonList(translationNullFlavorFile));
     CodeSystems codeSystems =
         new CodeSystems(
-            files, FhirContext.forR4Cached(), Collections.emptyList(), FEATURE_FLAGS_ENABLED);
+            files, FhirContext.forR4Cached(), Collections.emptyList(), DEFAULT_FEATURE_FLAGS);
     codeSystems.build();
 
     Map<String, Map<String, CodeDisplay>> codeSystemData = codeSystems.getCodeSystemData();
@@ -147,7 +189,7 @@ class CodeSystemsTest {
         new LinkedHashSet<>(Arrays.asList(translationNullFlavorFile, v3FlavorFile));
     CodeSystems codeSystems =
         new CodeSystems(
-            files, FhirContext.forR4Cached(), Collections.emptyList(), FEATURE_FLAGS_ENABLED);
+            files, FhirContext.forR4Cached(), Collections.emptyList(), DEFAULT_FEATURE_FLAGS);
     codeSystems.build();
 
     Map<String, Map<String, CodeDisplay>> codeSystemData = codeSystems.getCodeSystemData();
@@ -172,7 +214,7 @@ class CodeSystemsTest {
         new LinkedHashSet<>(Arrays.asList(translationNullFlavorFile, v3FlavorFileReduced));
     CodeSystems codeSystems =
         new CodeSystems(
-            files, FhirContext.forR4Cached(), Collections.emptyList(), FEATURE_FLAGS_ENABLED);
+            files, FhirContext.forR4Cached(), Collections.emptyList(), DEFAULT_FEATURE_FLAGS);
     codeSystems.build();
 
     Map<String, Map<String, CodeDisplay>> codeSystemData = codeSystems.getCodeSystemData();
@@ -196,7 +238,7 @@ class CodeSystemsTest {
             files,
             FhirContext.forR4Cached(),
             List.of(CODE_SYSTEM_NULL_FLAVOR),
-            FEATURE_FLAGS_ENABLED);
+            DEFAULT_FEATURE_FLAGS);
     codeSystems.build();
 
     Map<String, Map<String, CodeDisplay>> codeSystemData = codeSystems.getCodeSystemData();
@@ -214,7 +256,7 @@ class CodeSystemsTest {
     LinkedHashSet<File> files = new LinkedHashSet<>(Arrays.asList(addressUseFile, loincFile));
     CodeSystems codeSystems =
         new CodeSystems(
-            files, FhirContext.forR4Cached(), Collections.emptyList(), FEATURE_FLAGS_ENABLED);
+            files, FhirContext.forR4Cached(), Collections.emptyList(), DEFAULT_FEATURE_FLAGS);
     codeSystems.build();
 
     Map<String, CodeDisplay> mapToAdd = new HashMap<>();
@@ -237,11 +279,58 @@ class CodeSystemsTest {
     LinkedHashSet<File> files = new LinkedHashSet<>(List.of(CODE_SYSTEM_NO_CONTENT));
     CodeSystems codeSystems =
         new CodeSystems(
-            files, FhirContext.forR4Cached(), Collections.emptyList(), FEATURE_FLAGS_ENABLED);
+            files, FhirContext.forR4Cached(), Collections.emptyList(), DEFAULT_FEATURE_FLAGS);
     codeSystems.build();
 
     Map<String, Map<String, CodeDisplay>> codeSystemData = codeSystems.getCodeSystemData();
     assertThat(codeSystemData).isEmpty();
+  }
+
+  @Test
+  void shouldUseConsolidatorWhenFhirPackagePostProcessingIsEnabled() throws IOException {
+    LinkedHashSet<File> files =
+        new LinkedHashSet<>(
+            List.of(
+                duplicateSnomedFragmentWithGermanDesignation,
+                duplicateSnomedFragmentWithEnglishDesignation));
+    CodeSystems codeSystems =
+        new CodeSystems(
+            files, FhirContext.forR4Cached(), Collections.emptyList(), DEFAULT_FEATURE_FLAGS);
+
+    codeSystems.build();
+
+    CodeDisplay concept =
+        codeSystems.getCodeSystemData().get("http://snomed.info/sct|20250901").get("100");
+    assertThat(concept.getDisplay()).isEqualTo("German preferred concept");
+    assertThat(concept.getDesignations()).contains(new Designation("de", "Deutscher Text"));
+  }
+
+  @Test
+  void shouldNotUseConsolidatorWhenFhirPackagePostProcessingIsDisabled() throws IOException {
+    FeatureFlags featureFlagsWithoutPostProcessing =
+        FeatureFlags.builder().addCodeDisplayVersion(true).fhirPackagePostProcessing(false).build();
+    LinkedHashSet<File> files =
+        new LinkedHashSet<>(
+            List.of(
+                duplicateSnomedFragmentWithGermanDesignation,
+                duplicateSnomedFragmentWithEnglishDesignation));
+    CodeSystems codeSystems =
+        new CodeSystems(
+            files,
+            FhirContext.forR4Cached(),
+            Collections.emptyList(),
+            featureFlagsWithoutPostProcessing);
+
+    codeSystems.build();
+
+    CodeDisplay concept =
+        codeSystems.getCodeSystemData().get("http://snomed.info/sct|20250901").get("100");
+    assertThat(concept.getDisplay())
+        .as(
+            "without FHIR package post-processing, the historic last-wins behavior applies "
+                + "to concepts with the same url, version, and code")
+        .isEqualTo("English concept");
+    assertThat(concept.getDesignations()).contains(new Designation("en", "English text"));
   }
 
   @Nested
@@ -252,7 +341,7 @@ class CodeSystemsTest {
       LinkedHashSet<File> files = new LinkedHashSet<>(Arrays.asList(addressUseFile, loincFile));
       CodeSystems codeSystems =
           new CodeSystems(
-              files, FhirContext.forR4Cached(), Collections.emptyList(), FEATURE_FLAGS_ENABLED);
+              files, FhirContext.forR4Cached(), Collections.emptyList(), DEFAULT_FEATURE_FLAGS);
       codeSystems.build();
 
       Map<String, Map<String, CodeDisplay>> codeSystemData = codeSystems.getCodeSystemData();
@@ -269,7 +358,7 @@ class CodeSystemsTest {
           new LinkedHashSet<>(Collections.singletonList(translationNullFlavorFile));
       CodeSystems codeSystems =
           new CodeSystems(
-              files, FhirContext.forR4Cached(), Collections.emptyList(), FEATURE_FLAGS_ENABLED);
+              files, FhirContext.forR4Cached(), Collections.emptyList(), DEFAULT_FEATURE_FLAGS);
       codeSystems.build();
 
       Map<String, Map<String, CodeDisplay>> codeSystemData = codeSystems.getCodeSystemData();
@@ -285,7 +374,7 @@ class CodeSystemsTest {
           new LinkedHashSet<>(Arrays.asList(translationNullFlavorFile, v3FlavorFile));
       CodeSystems codeSystems =
           new CodeSystems(
-              files, FhirContext.forR4Cached(), Collections.emptyList(), FEATURE_FLAGS_ENABLED);
+              files, FhirContext.forR4Cached(), Collections.emptyList(), DEFAULT_FEATURE_FLAGS);
       codeSystems.build();
 
       Map<String, Map<String, CodeDisplay>> codeSystemData = codeSystems.getCodeSystemData();
@@ -310,7 +399,7 @@ class CodeSystemsTest {
           new LinkedHashSet<>(Arrays.asList(translationNullFlavorFile, v3FlavorFileReduced));
       CodeSystems codeSystems =
           new CodeSystems(
-              files, FhirContext.forR4Cached(), Collections.emptyList(), FEATURE_FLAGS_ENABLED);
+              files, FhirContext.forR4Cached(), Collections.emptyList(), DEFAULT_FEATURE_FLAGS);
       codeSystems.build();
 
       Map<String, Map<String, CodeDisplay>> codeSystemData = codeSystems.getCodeSystemData();
@@ -331,7 +420,7 @@ class CodeSystemsTest {
       LinkedHashSet<File> files = new LinkedHashSet<>(Arrays.asList(addressUseFile, loincFile));
       CodeSystems codeSystems =
           new CodeSystems(
-              files, FhirContext.forR4Cached(), Collections.emptyList(), FEATURE_FLAGS_ENABLED);
+              files, FhirContext.forR4Cached(), Collections.emptyList(), DEFAULT_FEATURE_FLAGS);
       codeSystems.build();
 
       Map<String, CodeDisplay> mapToAdd = new HashMap<>();

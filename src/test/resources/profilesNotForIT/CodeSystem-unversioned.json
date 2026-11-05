@@ -1,0 +1,13 @@
+{
+  "resourceType": "CodeSystem",
+  "id": "unversioned",
+  "url": "https://demis.rki.de/fhir/CodeSystem/unversioned",
+  "status": "active",
+  "content": "complete",
+  "concept": [
+    {
+      "code": "example",
+      "display": "Example"
+    }
+  ]
+}

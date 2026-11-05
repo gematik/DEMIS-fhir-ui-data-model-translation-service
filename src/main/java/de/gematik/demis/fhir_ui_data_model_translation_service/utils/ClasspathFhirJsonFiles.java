@@ -37,7 +37,6 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.attribute.PosixFilePermissions;
 import java.util.List;
-import java.util.UUID;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.core.io.Resource;
@@ -83,7 +82,7 @@ public final class ClasspathFhirJsonFiles {
     final ResourcePatternResolver resourceResolver = new PathMatchingResourcePatternResolver();
     try {
       return List.of(resourceResolver.getResources(this.path + "/**/*.json"));
-    } catch (FileNotFoundException e) {
+    } catch (FileNotFoundException _) {
       log.warn("No FHIR JSON files directory found in classpath at: {}", this.path);
       return List.of();
     }
@@ -107,7 +106,7 @@ public final class ClasspathFhirJsonFiles {
   /**
    * Creates a secure temporary file in a dedicated directory with restrictive permissions.
    *
-   * @param filename The original filename to use as suffix
+   * @param filename The original filename to preserve for resource categorization
    * @return Path to the created secure temporary file
    * @throws IOException if file creation fails
    */
@@ -115,8 +114,10 @@ public final class ClasspathFhirJsonFiles {
     if (this.securedTempDirectory == null) {
       this.securedTempDirectory = initializeSecureTempDirectory();
     }
-    final Path tempFile =
-        this.securedTempDirectory.resolve("resource-" + UUID.randomUUID() + "-" + filename);
+    final Path resourceDirectory =
+        Files.createTempDirectory(this.securedTempDirectory, "resource-");
+    resourceDirectory.toFile().deleteOnExit();
+    final Path tempFile = resourceDirectory.resolve(filename);
     Files.createFile(tempFile);
     if (posix) {
       try {

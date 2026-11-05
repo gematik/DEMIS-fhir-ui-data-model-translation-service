@@ -110,7 +110,7 @@ class SnapshotFilesServiceTest {
             "CodeSystem-CodeSystemISO31662DE.json",
             true,
             true,
-            "src/main/resources/fhir-profile-snapshots/GAPP",
+            "classpath:/fhir-profile-snapshots/GAPP",
             "src/test/resources/GAPD");
 
     profileSnapshotFileService.init();

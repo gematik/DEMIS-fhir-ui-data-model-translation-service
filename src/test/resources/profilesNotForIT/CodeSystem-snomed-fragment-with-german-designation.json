@@ -1,0 +1,19 @@
+{
+  "resourceType": "CodeSystem",
+  "url": "http://snomed.info/sct",
+  "version": "20250901",
+  "status": "active",
+  "content": "fragment",
+  "concept": [
+    {
+      "code": "100",
+      "display": "German preferred concept",
+      "designation": [
+        {
+          "language": "de",
+          "value": "Deutscher Text"
+        }
+      ]
+    }
+  ]
+}

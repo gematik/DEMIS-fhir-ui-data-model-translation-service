@@ -2,11 +2,20 @@
  
 # FHIR-UI-Data-Model-Translation-Service Release Notes
 
+## Release 2.8.2
+- Updated minor/patch versions of dependencies
+- added optional CodeSystem post-processing during FHIR resource loading (controlled by
+    `FEATURE_FLAG_FHIR_PACKAGE_POSTPROCESSING`) to consolidate related CodeSystems
+- upgraded base image to gematik1/demis-fhir-package-initializer:1.3.0
+- upgraded spring parent to 4.1.13
+- fixed loading GAPP test data from the classpath.
+- removed FEATURE_FLAG_DISEASE_QUESTIONNAIRE_ORG_INPUT_VALIDATION
+
 ## Release 2.8.1
 - fixed handling of falsy custom environment variables (false, 0) in helm chart
 - upgraded base image to gematik1/demis-fhir-package-initializer:1.2.0
 - fixed missing date fields for TOXD and ECHD
-- upgraded spring parent to 4.1.8
+- upgraded spring parent to 4.1.11
 - added VEX documents to repository
 
 ## Release 2.8.0

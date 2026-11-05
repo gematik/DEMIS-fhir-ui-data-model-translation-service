@@ -22,17 +22,6 @@ All URIs are relative to *http://localhost*
 *DiseaseDataLoaderCtrApi* | [**getPossibleDiseaseCodesForFollowUp**](Apis/DiseaseDataLoaderCtrApi.md#getPossibleDiseaseCodesForFollowUp) | **GET** /disease/6.1/followup/{code} |  |
 *DiseaseDataLoaderCtrApi* | [**getPossibleDiseaseCodesForNonNominalFollowUp**](Apis/DiseaseDataLoaderCtrApi.md#getPossibleDiseaseCodesForNonNominalFollowUp) | **GET** /disease/7.3/followup/{code} |  |
 *DiseaseDataLoaderCtrApi* | [**getQuestionsForSpecificCode**](Apis/DiseaseDataLoaderCtrApi.md#getQuestionsForSpecificCode) | **GET** /disease/questionnaire/{code}/items |  |
-| *LaboratoryDataLoaderCtrApi* | [**get71NotificationCategories**](Apis/LaboratoryDataLoaderCtrApi.md#get71NotificationCategories) | **GET** /laboratory/7.1 |  |
-*LaboratoryDataLoaderCtrApi* | [**get73NotificationCategories**](Apis/LaboratoryDataLoaderCtrApi.md#get73NotificationCategories) | **GET** /laboratory/7.3 |  |
-*LaboratoryDataLoaderCtrApi* | [**getAvailableFederalStates**](Apis/LaboratoryDataLoaderCtrApi.md#getAvailableFederalStates) | **GET** /laboratory/federalStates |  |
-*LaboratoryDataLoaderCtrApi* | [**getAvailableFederalStates1**](Apis/LaboratoryDataLoaderCtrApi.md#getAvailableFederalStates1) | **GET** /laboratory/7.1/federalStates |  |
-*LaboratoryDataLoaderCtrApi* | [**getLaboratoryDataForSpecificCode**](Apis/LaboratoryDataLoaderCtrApi.md#getLaboratoryDataForSpecificCode) | **GET** /laboratory/7.3/pathogenData/{code} |  |
-*LaboratoryDataLoaderCtrApi* | [**getLaboratoryDataForSpecificCode1**](Apis/LaboratoryDataLoaderCtrApi.md#getLaboratoryDataForSpecificCode1) | **GET** /laboratory/7.1/federalState/pathogenData/{code} |  |
-*LaboratoryDataLoaderCtrApi* | [**getLaboratoryDataForSpecificCode2**](Apis/LaboratoryDataLoaderCtrApi.md#getLaboratoryDataForSpecificCode2) | **GET** /laboratory/federalState/pathogenData/{code} |  |
-*LaboratoryDataLoaderCtrApi* | [**getLaboratoryDataForSpecificCodeAndFederalState**](Apis/LaboratoryDataLoaderCtrApi.md#getLaboratoryDataForSpecificCodeAndFederalState) | **GET** /laboratory/federalState/{federalState} |  |
-*LaboratoryDataLoaderCtrApi* | [**getLaboratoryDataForSpecificCodeAndFederalState1**](Apis/LaboratoryDataLoaderCtrApi.md#getLaboratoryDataForSpecificCodeAndFederalState1) | **GET** /laboratory/7.1/federalState/{federalState} |  |
-*LaboratoryDataLoaderCtrApi* | [**getPossibleLaboratoryCodesForFollowUp**](Apis/LaboratoryDataLoaderCtrApi.md#getPossibleLaboratoryCodesForFollowUp) | **GET** /laboratory/7.1/followup/{code} |  |
-*LaboratoryDataLoaderCtrApi* | [**getPossibleLaboratoryCodesForNonNominalFollowUp**](Apis/LaboratoryDataLoaderCtrApi.md#getPossibleLaboratoryCodesForNonNominalFollowUp) | **GET** /laboratory/7.3/followup/{code} |  |
 | *UtilsCtrApi* | [**getDoubleCharacterCountryCode**](Apis/UtilsCtrApi.md#getDoubleCharacterCountryCode) | **GET** /utils/countryCodes |  |
 | *ValueSetCtrApi* | [**getAvailableCodeSystems**](Apis/ValueSetCtrApi.md#getAvailableCodeSystems) | **GET** /ValueSet |  |
 *ValueSetCtrApi* | [**getCode1**](Apis/ValueSetCtrApi.md#getCode1) | **GET** /ValueSet/{system}/{code} |  |
@@ -48,11 +37,9 @@ All URIs are relative to *http://localhost*
  - [FieldGroup](./Models/FieldGroup.md)
  - [FormlyFieldConfigs](./Models/FormlyFieldConfigs.md)
  - [ImportSpec](./Models/ImportSpec.md)
- - [LabNotificationData](./Models/LabNotificationData.md)
  - [Props](./Models/Props.md)
  - [Quantity](./Models/Quantity.md)
  - [QuestionnaireTranslation](./Models/QuestionnaireTranslation.md)
- - [StaticSystemVersion](./Models/StaticSystemVersion.md)
  - [Use](./Models/Use.md)
  - [Validator](./Models/Validator.md)
 

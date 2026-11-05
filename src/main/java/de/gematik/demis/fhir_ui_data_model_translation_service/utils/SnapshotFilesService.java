@@ -194,23 +194,23 @@ public class SnapshotFilesService {
    * @param valueSetFileCategorizer The categorizer for ValueSet files.
    */
   private void processRawFiles(File file, ValueSetFileCategorizer valueSetFileCategorizer) {
-    if (file.getName().contains("CodeSystem")) {
+    if (file.getName().startsWith("CodeSystem")) {
       codeSystemFiles.add(file);
       checkAndSetCodeSystemFiles(
           profileLoincFileName, profileNotificationCategoryRegressionFileName, file);
     }
-    if (file.getName().contains("Category")) {
-      checkAndSetNotificationCategoryFiles(file);
-    }
-    if (file.getName().contains("Questionnaire")) {
+    if (file.getName().startsWith("Questionnaire")) {
       checkAndSetQuestionnaires(file);
     }
-    if (file.getName().contains("ConceptMap")) {
+    if (file.getName().startsWith("ConceptMap")) {
       checkAndSetConceptMaps(file);
     }
-    if (file.getName().contains("ValueSet")) {
+    if (file.getName().startsWith("ValueSet")) {
       valueSetFiles.add(file);
       valueSetFileCategorizer.categorizeFile(file);
+      if (file.getName().contains("Category")) {
+        checkAndSetNotificationCategoryFiles(file);
+      }
     }
   }
 
@@ -264,22 +264,23 @@ public class SnapshotFilesService {
   private void checkAndSetNotificationCategoryFiles(File file) {
     String name = file.getName();
     log.info("analysing {} for value set", name);
-    if (profileNotificationCategoryValueSetFileName.equals(name)) {
+    if (profileNotificationCategoryValueSetFileName.equalsIgnoreCase(name)) {
       profileNotificationCategoryValueSetFile = file;
       log.info(
           "Found Notification Category 7.1 File {}",
           profileNotificationCategoryValueSetFile.getAbsolutePath());
-    } else if (profileNotificationCategoryNonNominalValueSetFileName.equals(name)) {
+    } else if (profileNotificationCategoryNonNominalValueSetFileName.equalsIgnoreCase(name)) {
       profileNotificationCategoryNonNomimalValueSetFile = file;
       log.info(
           "Found Notification Category 7.3 File {}",
           profileNotificationCategoryNonNomimalValueSetFile.getAbsolutePath());
-    } else if (profileNotificationDiseaseCategoryValueSetFileName.equals(name)) {
+    } else if (profileNotificationDiseaseCategoryValueSetFileName.equalsIgnoreCase(name)) {
       profileNotificationDiseaseCategoryValueSetFile = file;
       log.info(
           "Found Notification Disease Category 6.1 File {}",
           profileNotificationDiseaseCategoryValueSetFile.getAbsolutePath());
-    } else if (profileNotificationDiseaseCategoryNonNominalValueSetFileName.equals(name)) {
+    } else if (profileNotificationDiseaseCategoryNonNominalValueSetFileName.equalsIgnoreCase(
+        name)) {
       profileNotificationDiseaseCategoryNonNominalValueSetFile = file;
       log.info(
           "Found Notification Disease Category 7.3 File {}",
@@ -302,17 +303,17 @@ public class SnapshotFilesService {
       if (name.contains(profileLoincFileName)) {
         profileLoincFile = file;
         log.info("Found Loinc File {}", profileLoincFile.getAbsolutePath());
-      } else if (profileNotificationCategoryFileName.equals(name)) {
+      } else if (profileNotificationCategoryFileName.equalsIgnoreCase(name)) {
         profileNotificationCategoryCodeSystemFile = file;
         log.info(
             "Found Notification Category File {}",
             profileNotificationCategoryCodeSystemFile.getAbsolutePath());
-      } else if (profileNotificationDiseaseCategoryCodeSystemFileName.equals(name)) {
+      } else if (profileNotificationDiseaseCategoryCodeSystemFileName.equalsIgnoreCase(name)) {
         profileDiseaseNotificationCategoryRegressionFile = file;
         log.info(
             "Found Disease Notification Category File {}",
             profileDiseaseNotificationCategoryRegressionFile.getAbsolutePath());
-      } else if (federalStateFileName.equals(name)) {
+      } else if (federalStateFileName.equalsIgnoreCase(name)) {
         federalStateFile = file;
         log.info(
             "Found Federal State Notification Category File {}",

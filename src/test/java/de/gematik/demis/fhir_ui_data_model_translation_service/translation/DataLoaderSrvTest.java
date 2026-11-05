@@ -72,6 +72,7 @@ class DataLoaderSrvTest {
   private static File supplementFileCS;
   private static File codeSystemWithSupplementedDataCS;
   private static File snomedCodesCS;
+  private static File unversionedCodeSystemCS;
   @Mock private SnapshotFilesService snapshotFilesServiceMock;
   @Mock private Hl7CodeSystemSrv hl7CodeSystemSrvMock;
 
@@ -80,6 +81,8 @@ class DataLoaderSrvTest {
     addressUseFileCS =
         new File("src/test/resources/profiles/CodeSystem/CodeSystem-addressUse.json");
     loincFileCS = new File("src/test/resources/profiles/CodeSystem/CodeSystem-loinc-2.74.json");
+    unversionedCodeSystemCS =
+        new File("src/test/resources/profilesNotForIT/CodeSystem-unversioned.json");
     emptyLoincFileCS =
         new File("src/test/resources/profiles/CodeSystem/CodeSystem-emptyLOINC.json");
     notificationCategoryFileCS =
@@ -823,6 +826,27 @@ class DataLoaderSrvTest {
         .isInstanceOf(DataNotFoundExcp.class)
         .hasMessage(
             "the version of the code system http://snomed.info/sct was not added to the version map");
+  }
+
+  @Test
+  void shouldReturnExceptionWhenRequestedCodeSystemHasNoVersion() throws IOException {
+    when(snapshotFilesServiceMock.getCodeSystemFiles())
+        .thenReturn(List.of(unversionedCodeSystemCS, loincFileCS));
+
+    DataLoaderSrv dataLoaderSrv =
+        new DataLoaderSrv(
+            snapshotFilesServiceMock,
+            FhirContext.forR4Cached(),
+            hl7CodeSystemSrvMock,
+            FEATURE_FLAGS_ENABLED);
+    dataLoaderSrv.initialize();
+
+    assertThatThrownBy(
+            () -> dataLoaderSrv.getVersion("https://demis.rki.de/fhir/CodeSystem/unversioned"))
+        .isInstanceOf(DataNotFoundExcp.class)
+        .hasMessage(
+            "the version of the code system https://demis.rki.de/fhir/CodeSystem/unversioned"
+                + " was not added to the version map");
   }
 
   @Test

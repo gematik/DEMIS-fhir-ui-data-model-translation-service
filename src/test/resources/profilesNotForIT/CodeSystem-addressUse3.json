@@ -1,0 +1,14 @@
+{
+  "resourceType": "CodeSystem",
+  "id": "addressUse",
+  "url": "https://demis.rki.de/fhir/CodeSystem/addressUse",
+  "version": "3.0.0",
+  "status": "active",
+  "content": "complete",
+  "concept": [
+    {
+      "code": "current",
+      "display": "Aktueller Aufenthaltsort"
+    }
+  ]
+}

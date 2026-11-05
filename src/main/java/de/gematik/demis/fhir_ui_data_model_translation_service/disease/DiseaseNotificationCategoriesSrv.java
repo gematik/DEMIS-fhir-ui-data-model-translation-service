@@ -112,6 +112,7 @@ public class DiseaseNotificationCategoriesSrv {
               .filter(codeDisplay -> !denyList.contains(normalizeCode(codeDisplay.getCode())))
               .toList();
     }
+
     if (log.isInfoEnabled()) {
       log.info(
           "Loaded disease notification categories. Size: {} Codes: {}",

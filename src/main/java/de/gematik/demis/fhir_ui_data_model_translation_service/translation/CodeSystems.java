@@ -55,6 +55,7 @@ class CodeSystems {
   private final FhirContext fhirContext;
   private final List<String> excludedCodeSystems;
   private final FeatureFlags featureFlags;
+  private final CodeSystemConsolidator codeSystemConsolidator = new CodeSystemConsolidator();
 
   /**
    * map that contains pairs of supplemented code systems and supplement code system. the key is the
@@ -153,60 +154,41 @@ class CodeSystems {
    * @throws IOException if reading/parsing files fails
    */
   CodeSystems build() throws IOException {
-    for (File file : codeSystemFiles) {
-      // read/parse file
-      try {
-        CodeSystem codeSystem =
-            fhirContext.newJsonParser().parseResource(CodeSystem.class, getFileString(file));
-        if (codeSystem.getContent() == CodeSystem.CodeSystemContentMode.NOTPRESENT) {
-          log.info("Code system in file {} has no content. Skipping file.", file.getName());
-          continue;
-        }
+    List<CodeSystem> parsedCodeSystems = parseUsableCodeSystems();
+    List<CodeSystem> codeSystems =
+        featureFlags.isFhirPackagePostProcessing()
+            ? codeSystemConsolidator.consolidateByUrlAndVersion(parsedCodeSystems)
+            : parsedCodeSystems;
 
-        // get data and map to CodeDisplay
-        final String systemUrl = codeSystem.getUrl();
-        final String version = codeSystem.getVersion();
+    for (CodeSystem codeSystem : codeSystems) {
+      // get data and map to CodeDisplay
+      final String systemUrl = codeSystem.getUrl();
+      final String version = codeSystem.getVersion();
 
-        String fileNameKey = systemUrl;
-        if (version != null) {
-          fileNameKey += "|" + version;
-        }
-        codeSystemData.putIfAbsent(fileNameKey, new LinkedHashMap<>());
-        Map<String, CodeDisplay> keyToCodeDisplayMap = codeSystemData.get(fileNameKey);
-
-        for (CodeSystem.ConceptDefinitionComponent concept : codeSystem.getConcept()) {
-          extractCodesRecursive(
-              keyToCodeDisplayMap, concept, systemUrl, version, fileNameKey, null);
-        }
-
-        // add supplementsystem if marked as supplement
-        addSupplementSystemIfMarkedAsSupp(codeSystem, fileNameKey);
-
-        // sort code displays for conceptorder
-        Map<String, CodeDisplay> sorted = sortCodeSystemEntries(keyToCodeDisplayMap);
-        codeSystemData.put(fileNameKey, sorted);
-
-        // check for multiple versions of the same code system
-        List<String> keysWithSameUrl =
-            codeSystemData.keySet().stream().filter(key -> key.startsWith(systemUrl)).toList();
-        // order keysWithSameUrl and search for latest version
-        Optional<String> codeSystemWithHighestVersion =
-            keysWithSameUrl.stream().max(Comparator.naturalOrder());
-
-        // add highest version as standard version if found code system is the current processed one
-        if (codeSystemWithHighestVersion.isPresent()
-            && codeSystemWithHighestVersion.get().equals(fileNameKey)) {
-          codeSystemData.put(systemUrl, codeSystemData.get(codeSystemWithHighestVersion.get()));
-        } else if (codeSystemWithHighestVersion.isEmpty()) {
-          // when no version is found, add the current version as standard version
-          codeSystemData.put(systemUrl, keyToCodeDisplayMap);
-        }
-
-        codeSystemVersions.put(codeSystem.getUrl(), codeSystem.getVersion());
-
-      } catch (DataFormatException e) {
-        log.error("Error while reading {}", file.getName(), e);
+      String fileNameKey = systemUrl;
+      if (version != null) {
+        fileNameKey += "|" + version;
       }
+      codeSystemData.putIfAbsent(fileNameKey, new LinkedHashMap<>());
+      Map<String, CodeDisplay> keyToCodeDisplayMap = codeSystemData.get(fileNameKey);
+
+      for (CodeSystem.ConceptDefinitionComponent concept : codeSystem.getConcept()) {
+        extractCodesRecursive(keyToCodeDisplayMap, concept, systemUrl, version, fileNameKey, null);
+      }
+
+      // add supplementsystem if marked as supplement
+      addSupplementSystemIfMarkedAsSupp(codeSystem, fileNameKey);
+
+      // sort code displays for conceptorder
+      Map<String, CodeDisplay> sorted = sortCodeSystemEntries(keyToCodeDisplayMap);
+      codeSystemData.put(fileNameKey, sorted);
+
+      Optional<String> highestVersionKey =
+          codeSystemData.keySet().stream()
+              .filter(key -> key.startsWith(systemUrl + "|"))
+              .max(Comparator.naturalOrder());
+
+      highestVersionKey.ifPresent(key -> setDefaultCodeSystem(systemUrl, key));
     }
 
     // check supplement data and add to codeDisplays for every entry in codeSystemToSupplement
@@ -215,6 +197,61 @@ class CodeSystems {
     sortCodeSystemData();
 
     return this;
+  }
+
+  /**
+   * Sets the default (unversioned-key) CodeSystem entry for {@code codeSystemData} to the
+   * CodeSystem identified by {@code newDefaultKey}, and updates {@code codeSystemVersions}
+   * accordingly.
+   *
+   * <p>The default entry is what every lookup for {@code systemUrl} resolves to, regardless of
+   * whether the lookup specifies a version or not. If a different CodeSystem was previously used as
+   * the default (e.g. an unversioned CodeSystem replaced by a versioned one, or a versioned
+   * CodeSystem replaced by a newer version), a warning is logged, since this can silently change
+   * the result of both versioned and unversioned lookups.
+   *
+   * @param systemUrl canonical URL of the CodeSystem
+   * @param newDefaultKey key ({@code url|version}) of the CodeSystem that becomes the new default;
+   *     the new default version is derived from this key
+   */
+  private void setDefaultCodeSystem(String systemUrl, String newDefaultKey) {
+    Map<String, CodeDisplay> existingDefault = codeSystemData.get(systemUrl);
+    Map<String, CodeDisplay> newDefault = codeSystemData.get(newDefaultKey);
+    String newDefaultVersion = newDefaultKey.substring(systemUrl.length() + 1);
+
+    if (existingDefault != null && existingDefault != newDefault) {
+      String previousDefaultVersion = codeSystemVersions.getOrDefault(systemUrl, "<unversioned>");
+      log.warn(
+          "Default CodeSystem changed for URL {}: previous default version={}, new default"
+              + " version={}. Every lookup for this URL always resolves to the current default,"
+              + " regardless of whether a specific version was requested or no version was"
+              + " requested at all - the requested version (or absence of one) is effectively"
+              + " ignored.",
+          systemUrl,
+          previousDefaultVersion,
+          newDefaultVersion);
+    }
+
+    codeSystemData.put(systemUrl, newDefault);
+    codeSystemVersions.put(systemUrl, newDefaultVersion);
+  }
+
+  private List<CodeSystem> parseUsableCodeSystems() throws IOException {
+    List<CodeSystem> parsedCodeSystems = new ArrayList<>();
+    for (File file : codeSystemFiles) {
+      try {
+        CodeSystem codeSystem =
+            fhirContext.newJsonParser().parseResource(CodeSystem.class, getFileString(file));
+        if (codeSystem.getContent() == CodeSystem.CodeSystemContentMode.NOTPRESENT) {
+          log.info("Code system in file {} has no content. Skipping file.", file.getName());
+          continue;
+        }
+        parsedCodeSystems.add(codeSystem);
+      } catch (DataFormatException e) {
+        log.error("Error while reading {}", file.getName(), e);
+      }
+    }
+    return parsedCodeSystems;
   }
 
   private void sortCodeSystemData() {
